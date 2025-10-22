@@ -1,0 +1,84 @@
+{% extends "yaget/base.html" %}
+{% load static %}
+
+{% block content %}
+<div class="content-wrapper">
+
+  <div class="content-header">
+    <div class="container-fluid">
+      <div class="row mb-2">
+        <div class="col-sm-6"><h1 class="m-0">wowmaカテゴリリスト一覧</h1></div>
+        <div class="col-sm-6">
+          <ol class="breadcrumb float-sm-right">
+            <li class="breadcrumb-item"><a href="/yaget/top/">Home</a></li>
+            <li class="breadcrumb-item active">wowmaカテゴリリスト一覧 です</li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <section class="content">
+
+    <div class="col-sm">
+      <nav class="pull-right header">
+        <ul id="menu">
+          <li><a href="{% url 'yaget:black_list_create' %}">※なにか追加したいアクションがあれば</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <h1>検索条件</h1>
+
+    {# 検索は GET にしてCSRF不要（POSTなら {% csrf_token %} を入れる） #}
+    <form method="get" action="">
+      <ul class="list-group">
+        <li class="list-group-item">
+          <div class="d-flex flex-sm-row">
+            <div class="p-2">
+              {% for field in test_form %}
+                {% if forloop.counter0|divisibleby:"4" and not forloop.first %}
+                  </div><div class="p-2">
+                {% endif %}
+                <div class="form-group">
+                  <label class="col small">{{ field.label }}:</label>
+                  <div class="col-md-8 small">{{ field }}</div>
+                </div>
+              {% endfor %}
+            </div>
+          </div>
+        </li>
+        <li class="list-group-item">
+          <input class="btn btn-success col-md-3" type="submit" value="検索">
+        </li>
+      </ul>
+    </form>
+
+    <div class="col-md-3">
+      {{ page_obj.start_index }} - {{ page_obj.end_index }}/ {{ page_obj.paginator.count }} 件中 ({{ page_obj.number }} / {{ page_obj.paginator.num_pages }} ページ)
+    </div>
+
+    <div class="col-6 offset-3 justify-content-center">
+      {% if is_paginated %}{% include "pagination.html" %}{% endif %}
+    </div>
+
+    {# フォームセット送信は POST + CSRF + management_form が必須 #}
+    <form method="post" action="">
+      {% csrf_token %}
+      {{ formset.management_form }}
+      <div class="row">
+        {% for form in formset %}
+          <div class="col-sm-4">{{ form.as_p }}</div>
+        {% endfor %}
+      </div>
+      <button type="submit" class="btn btn-primary">送信</button>
+    </form>
+
+  </section>
+
+  <div class="col-6 offset-3 justify-content-center">
+    {% if is_paginated %}{% include "pagination.html" %}{% endif %}
+  </div>
+
+</div>
+{% endblock content %}

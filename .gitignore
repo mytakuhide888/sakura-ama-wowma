@@ -1,0 +1,83 @@
+# --- Python/Django ---
+__pycache__/
+*.py[cod]
+*.egg-info/
+.env
+*.sqlite3
+db.sqlite3
+media/
+static_collected/
+staticfiles/
+*.log
+*.tar.gz
+*.log.1
+*.log.2
+*.log.3
+handoff_snapshot_*
+# venv / poetry
+.venv/
+venv/
+# VS Code
+.vscode/
+# Django collectstatic 出力先（使っていれば）
+static/
+# Byte-compiled / cache
+*.pyo
+# pytest / coverage
+.pytest_cache/
+.coverage
+htmlcov/
+# OS
+.DS_Store
+Thumbs.db
+# その他プロジェクト固有（必要に応じて追加）
+bk*.sqlite*
+*.csv
+# === yaget の実データ・原稿類は追跡しない ===
+/yaget/yabuyers/dwimg/
+/yaget/yabuyers/dwsrc/
+# 念のため拡張子でもブロック（必要なら）
+yaget/**/*.jpg
+yaget/**/*.png
+yaget/**/*.jpeg
+yaget/**/*.txt
+# === wowma_buyers のブラウザ/ユーザーデータは追跡しない ===
+/yaget/wowma_buyers/userdata/
+
+# 念のため、同種プロファイルを一括で弾く（将来の下位プロジェクトにも有効）
+yaget/*/userdata/
+yaget/userdata/Default/
+
+# （保険）Chromium系のよくあるキャッシュ/DB名
+**/Code Cache/
+**/GPUCache/
+**/Local Storage/
+**/Session Storage/
+**/Cookies
+**/Cookies-journal
+**/Preferences
+**/Local State
+**/DevToolsActivePort
+**/First Run
+# === secrets / credentials (never track) ===
+.env
+*.env
+*.key
+*.pem
+*.p12
+*.crt
+*.der
+*.jks
+*.keystore
+*.pfx
+*.cer
+
+# Google service account json 等
+**/*credentials*.json
+**/*service_account*.json
+**/*-firebase-adminsdk-*.json
+yaget/**/*.json
+
+# yaget 実行時プロファイル/キャッシュ等
+yaget/*/userdata/
+yaget/wowma_buyers/userdata/

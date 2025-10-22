@@ -1,0 +1,22 @@
+[0;1;32m●[0m gunicorn.service - gunicorn daemon
+     Loaded: loaded (/etc/systemd/system/gunicorn.service; enabled; vendor preset: enabled)
+     Active: [0;1;32mactive (running)[0m since Wed 2025-10-15 11:18:47 JST; 1 weeks 0 days ago
+   Main PID: 1043150 (gunicorn)
+      Tasks: 4 (limit: 1049)
+     Memory: 7.7M
+     CGroup: /system.slice/gunicorn.service
+             ├─1043150 /home/django/djangoenv/bin/python3 /home/django/djangoenv/bin/gunicorn --workers 3 --bind 127.0.0.1:8000 sample.wsgi:application
+             ├─1043163 /home/django/djangoenv/bin/python3 /home/django/djangoenv/bin/gunicorn --workers 3 --bind 127.0.0.1:8000 sample.wsgi:application
+             ├─1043164 /home/django/djangoenv/bin/python3 /home/django/djangoenv/bin/gunicorn --workers 3 --bind 127.0.0.1:8000 sample.wsgi:application
+             └─1043165 /home/django/djangoenv/bin/python3 /home/django/djangoenv/bin/gunicorn --workers 3 --bind 127.0.0.1:8000 sample.wsgi:application
+
+Oct 23 01:12:46 os3-367-16897 gunicorn[1043165]: Traceback (most recent call last):
+Oct 23 01:12:46 os3-367-16897 gunicorn[1043165]:   File "/home/django/djangoenv/lib/python3.8/site-packages/django/template/base.py", line 843, in _resolve_lookup
+Oct 23 01:12:46 os3-367-16897 gunicorn[1043165]:     current = current[int(bit)]
+Oct 23 01:12:46 os3-367-16897 gunicorn[1043165]: ValueError: invalid literal for int() with base 10: 'name'
+Oct 23 01:12:46 os3-367-16897 gunicorn[1043165]: During handling of the above exception, another exception occurred:
+Oct 23 01:12:46 os3-367-16897 gunicorn[1043165]: Traceback (most recent call last):
+Oct 23 01:12:46 os3-367-16897 gunicorn[1043165]:   File "/home/django/djangoenv/lib/python3.8/site-packages/django/template/base.py", line 848, in _resolve_lookup
+Oct 23 01:12:46 os3-367-16897 gunicorn[1043165]:     raise VariableDoesNotExist("Failed lookup for key "
+Oct 23 01:12:46 os3-367-16897 gunicorn[1043165]: django.template.base.VariableDoesNotExist: Failed lookup for key [name] in <URLResolver <module 'yaget.urls' from '/home/django/sample/yaget/urls.py'> (yaget:yaget) 'yaget/'>
+Oct 23 01:12:46 os3-367-16897 gunicorn[1043165]: 2025-10-23 01:12:46,725 WARNING  log                log_response  224: Not Found: /wk.php
