@@ -44,6 +44,8 @@ class Command(BaseCommand):
             for name in (
                 "get_marketplace_participations",
                 "getMarketplaceParticipations",
+                "get_marketplace_participation",
+                "getMarketplaceParticipation",
             ):
                 cand = getattr(client, name, None)
                 if callable(cand):
@@ -69,13 +71,34 @@ class Command(BaseCommand):
                 status = getattr(getattr(res, "_response", None), "status_code", None)
 
             payload = getattr(res, "payload", None) or {}
+            data = None
+            if isinstance(payload, dict) and payload.get("payload") is not None:
+                data = payload.get("payload")
+            else:
+                data = payload
+
             marketplaces = []
             try:
-                for p in payload.get("payload", payload) if isinstance(payload, dict) else payload:
-                    mk = p.get("marketplace", {})
-                    name = mk.get("name") or mk.get("defaultCountryCode") or mk.get("id")
-                    if name:
-                        marketplaces.append(name)
+                # case: list of participations
+                if isinstance(data, list):
+                    for p in data:
+                        mk = (p or {}).get("marketplace", {})
+                        name = mk.get("name") or mk.get("id") or mk.get("defaultCountryCode")
+                        if name:
+                            marketplaces.append(name)
+                # case: dict with marketplace or participations
+                elif isinstance(data, dict):
+                    if "marketplace" in data:
+                        mk = data.get("marketplace", {})
+                        name = mk.get("name") or mk.get("id") or mk.get("defaultCountryCode")
+                        if name:
+                            marketplaces.append(name)
+                    elif "participations" in data and isinstance(data["participations"], list):
+                        for p in data["participations"]:
+                            mk = (p or {}).get("marketplace", {})
+                            name = mk.get("name") or mk.get("id") or mk.get("defaultCountryCode")
+                            if name:
+                                marketplaces.append(name)
             except Exception:
                 pass
 
