@@ -38,7 +38,26 @@ class Command(BaseCommand):
 
         try:
             client = Sellers(credentials=creds, marketplace=Marketplaces.JP)
-            res = client.get_marketplace_participations()
+
+            # library version compatibility: try several method names
+            method = None
+            for name in (
+                "get_marketplace_participations",
+                "getMarketplaceParticipations",
+            ):
+                cand = getattr(client, name, None)
+                if callable(cand):
+                    method = cand
+                    break
+            if method is None:
+                # No known method found; surface available attributes to help troubleshooting
+                attrs = ",".join([a for a in dir(client) if not a.startswith("_")])
+                raise AttributeError(
+                    f"Sellers API method not found on client (looked for get_marketplace_participations). "
+                    f"Available: {attrs}"
+                )
+
+            res = method()
 
             # Resolve HTTP status code across library versions
             status = None
@@ -67,4 +86,3 @@ class Command(BaseCommand):
             msg = str(e)
             print(f"SP-API Sellers ping failed: code={code} status={status} msg={msg}", file=sys.stderr)
             sys.exit(1)
-
