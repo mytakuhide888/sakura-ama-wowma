@@ -63,7 +63,8 @@ import logging.handlers
 import logging.config
 import traceback
 
-# 繝ｭ繧ｰ蜃ｺ蜉帛・繝・ぅ繝ｬ繧ｯ繝医Μ繧剃ｺ句燕縺ｫ菴懈・・亥ｭ伜惠縺励↑縺・腸蠅・〒縺ｮ襍ｷ蜍輔お繝ｩ繝ｼ蝗樣∩・・try:
+# ログ出力ディレクトリを事前に作成（存在しない環境での起動エラー回避）
+try:
     os.makedirs('/home/django/sample/yaget/log', exist_ok=True)
 except Exception:
     pass
@@ -6768,3 +6769,4 @@ def spapi_oauth_callback(request):
     except Exception as e:
         logger.exception('spapi_oauth_callback failed: %s', e)
         return HttpResponse('OAuth callback failed', status=500)
+
