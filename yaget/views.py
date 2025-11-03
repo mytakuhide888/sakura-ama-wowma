@@ -223,7 +223,7 @@ def qoo_goods_detail_info_ajax(request):
 
     # Qoo10縺ｫ繧｢繧ｯ繧ｻ繧ｹ
     qoo10obj = Qoo10Access(logger)
-    msg = 'qoo蝠・刀諠・ｱ・・
+    msg = 'qoo10 start'
     qoo10obj.qoo10_create_cert_key()
 
     # Qoo10縺ｮ蝠・刀諠・ｱ繧呈､懃ｴ｢
@@ -1232,7 +1232,7 @@ class BuyersGoodsDetailList(generic.ListView):
         test_form = YaBuyersItemDetailSearchForm(initial=default_data) # 讀懃ｴ｢繝輔か繝ｼ繝
         ctx['test_form'] = test_form
         ctx['form_name'] = 'yaget'
-        ctx['message'] = '繝舌う繝､繝ｼ繧ｺ蝠・刀繝ｪ繧ｹ繝医〒縺・
+        ctx['message'] = '...'
         ctx['title'] = '繝舌う繝､繝ｼ繧ｺ蝠・刀繝ｪ繧ｹ繝・繧ｿ繧､繝医Ν'
         ctx['obj_all_cnt'] = YaBuyersItemDetail.objects.all().count()
         return ctx
@@ -1941,7 +1941,7 @@ class BuyersGoodsDetailImport(generic.FormView):
     def get_context_data(self, **kwargs):
         ctx = super().get_context_data(**kwargs)
         ctx['form_name'] = 'yaget'
-        ctx['message'] = 'BuyersGoodsDetailImport縲縺ｧ縺・
+        ctx['message'] = '...'
         return ctx
 
     def form_valid(self, form):
@@ -2103,7 +2103,7 @@ class BuyersGoodsDetailSmallImport(generic.FormView):
     def get_context_data(self, **kwargs):
         ctx = super().get_context_data(**kwargs)
         ctx['form_name'] = 'yaget'
-        ctx['message'] = 'BuyersGoodsDetailSmallImport縲縺ｧ縺・
+        ctx['message'] = '...'
         return ctx
 
     def form_valid(self, form):
@@ -2226,7 +2226,7 @@ class BuyersGoodsDelete(generic.FormView):
     def get_context_data(self, **kwargs):
         ctx = super().get_context_data(**kwargs)
         ctx['form_name'] = 'yaget'
-        ctx['message'] = '荳諡ｬ蜑企勁縺ｮ逕ｻ髱｢縺ｧ縺・
+        ctx['message'] = '...'
         return ctx
 
     def form_valid(self, form):
@@ -2347,7 +2347,7 @@ def buyers_goods_delete_done(request):
         logger.debug("--- BuyersGoodsDeleteDone delete out")
         # return super().form_valid(form)
         title = '蝠・刀蜑企勁繧帝幕蟋九＠縺ｾ縺励◆繧ｿ繧､繝医Ν'
-        msg = '蝠・刀蜑企勁繧帝幕蟋九＠縺ｾ縺励◆繧・
+        msg = '...'
     else:
         title = '蝠・刀蜑企勁繧帝幕蟋九＠縺ｾ縺励◆繧ｿ繧､繝医Ν get'
         msg = ' buyers_goods_delete_done Get蜻ｼ縺ｰ繧後∪縺励◆縲・'
@@ -2376,7 +2376,7 @@ class BuyersGoodsDeleteDone(generic.TemplateView):
         logger.debug("--- BuyersGoodsDeleteDone delete out")
         # return super().form_valid(form)
         context['title'] = '蝠・刀蜑企勁繧帝幕蟋九＠縺ｾ縺励◆繧ｿ繧､繝医Ν'
-        context['message'] = '蝠・刀蜑企勁繧帝幕蟋九＠縺ｾ縺励◆繧・
+        context['message'] = '...'
         return context
 """
 
@@ -2397,8 +2397,8 @@ class BuyersGoodsDetailDetail(generic.DetailView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context['title'] = '蝠・刀隧ｳ邏ｰ縺ｧ縺・
-        context['message'] = '蝠・刀隧ｳ邏ｰ繝｡繝・そ繝ｼ繧ｸ縺ｧ縺・
+        context['title'] = '...'
+        context['message'] = '...'
         return context
 
 
@@ -2640,8 +2640,8 @@ class BuyersGoodsDetailUpdate(generic.UpdateView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context['title'] = '蝠・刀隧ｳ邏ｰ 譖ｴ譁ｰ繝壹・繧ｸ縺ｧ縺・
-        context['message'] = '蝠・刀隧ｳ邏ｰ 譖ｴ譁ｰ繝壹・繧ｸ 繝｡繝・そ繝ｼ繧ｸ縺ｧ縺・
+        context['title'] = '...'
+        context['message'] = '...'
         return context
 
     def get_form(self):
@@ -2651,36 +2651,36 @@ class BuyersGoodsDetailUpdate(generic.UpdateView):
         form.fields['ss_url'].label = '繝ｪ繝ｳ繧ｯ蜈・Μ繧ｹ繝医・繝ｼ繧ｸURL'
         form.fields['bu_ctid'].label = '繝舌う繝､繝ｼ繧ｺ繧ｫ繝・ざ繝ｪID'
         form.fields['gsrc'].label = '繧ｵ繝繝阪う繝ｫ逕ｻ蜒酋RL'
-        form.fields['gname'].label = '蝠・刀蜷・
+        form.fields['gname'].label = '...'
         form.fields['gdetail'].label = '蝠・刀隧ｳ邏ｰ'
         form.fields['wow_lotnum'].label = 'wowma繝ｭ繝・ヨ逡ｪ蜿ｷ'
         form.fields['gnormalprice'].label = '騾壼ｸｸ萓｡譬ｼ'
         form.fields['gspprice'].label = '螟ｧ驥冗匱豕ｨ萓｡譬ｼ'
-        form.fields['gcode'].label = '繝舌う繝､繝ｼ繧ｺ蝠・刀繧ｳ繝ｼ繝・
+        form.fields['gcode'].label = '...'
         form.fields['stock'].label = '蝨ｨ蠎ｫ謨ｰ'
-        form.fields['wow_upd_status'].label = 'wow謗ｲ霈臥憾豕・
+        form.fields['wow_upd_status'].label = '...'
         form.fields['wow_on_flg'].label = 'wowma縺ｮ蜃ｺ蜩√せ繝・・繧ｿ繧ｹ'
-        form.fields['wow_gname'].label = 'wow蝠・刀蜷・
+        form.fields['wow_gname'].label = '...'
         form.fields['wow_gdetail'].label = 'wow蝠・刀隧ｳ邏ｰ'
-        form.fields['wow_worn_key'].label = 'wow隕∵ｳｨ諢上く繝ｼ繝ｯ繝ｼ繝・
+        form.fields['wow_worn_key'].label = '...'
         form.fields['wow_price'].label = 'wow萓｡譬ｼ'
         form.fields['wow_fixed_price'].label = 'wow蝗ｺ螳壻ｾ｡譬ｼ'
-        form.fields['wow_postage_segment'].label = 'wow騾∵侭險ｭ螳壼玄蛻・
+        form.fields['wow_postage_segment'].label = '...'
         form.fields['wow_postage'].label = 'wow蛟句挨騾∵侭'
         form.fields['wow_delivery_method_id'].label = 'wow驟埼∵婿豕肘D'
         form.fields['wow_ctid'].label = 'wow繧ｫ繝・ざ繝ｪID'
-        form.fields['qoo_upd_status'].label = 'qoo謗ｲ霈臥憾豕・
+        form.fields['qoo_upd_status'].label = '...'
         form.fields['qoo_on_flg'].label = 'qoo縺ｮ蜃ｺ蜩√せ繝・・繧ｿ繧ｹ'
-        form.fields['qoo_gname'].label = 'qoo蝠・刀蜷・
+        form.fields['qoo_gname'].label = '...'
         form.fields['qoo_gdetail'].label = 'qoo蝠・刀隧ｳ邏ｰ'
-        form.fields['qoo_worn_key'].label = 'qoo隕∵ｳｨ諢上く繝ｼ繝ｯ繝ｼ繝・
+        form.fields['qoo_worn_key'].label = '...'
         form.fields['qoo_price'].label = 'qoo萓｡譬ｼ'
         form.fields['qoo_fixed_price'].label = 'qoo蝗ｺ螳壻ｾ｡譬ｼ'
-        form.fields['qoo_shipping_no'].label = 'qoo騾∵侭繧ｳ繝ｼ繝・
+        form.fields['qoo_shipping_no'].label = '...'
         form.fields['qoo_postage'].label = 'qoo蛟句挨騾∵侭'
         form.fields['qoo_delivery_method_id'].label = 'qoo驟埼∵婿豕肘D'
         form.fields['qoo_ctid'].label = 'qoo繧ｫ繝・ざ繝ｪID'
-        form.fields['qoo_item_qty'].label = 'qoo蝠・刀謨ｰ驥・
+        form.fields['qoo_item_qty'].label = '...'
         form.fields['qoo_standard_img'].label = 'qoo蝠・刀莉｣陦ｨ逕ｻ蜒酋RL'
         form.fields['g_img_src_1'].label = '逕ｻ蜒酋RL_1'
         form.fields['g_img_src_2'].label = '逕ｻ蜒酋RL_2'
@@ -2868,8 +2868,8 @@ class BatchStatusDetail(generic.DetailView):
     def get(self, request, *args, **kwargs):
         self.object = self.get_object()
         context = self.get_context_data(object=self.object)
-        context['title'] = '繝舌ャ繝∝ｮ溯｡檎憾豕√・隧ｳ邏ｰ縺ｧ縺・
-        context['message'] = '繝舌ャ繝∝ｮ溯｡檎憾豕√・隧ｳ邏ｰ(繝｡繝・そ繝ｼ繧ｸ)縺ｧ縺・
+        context['title'] = '...'
+        context['message'] = '...'
         return self.render_to_response(context)
 
 
@@ -2970,7 +2970,7 @@ class BlackListDetail(generic.DetailView):
     def get(self, request, *args, **kwargs):
         self.object = self.get_object()
         context = self.get_context_data(object=self.object)
-        context['title'] = '繝舌ャ繝∝ｮ溯｡檎憾豕√・隧ｳ邏ｰ縺ｧ縺・
+        context['title'] = '...'
         return self.render_to_response(context)
 
 
@@ -3197,7 +3197,7 @@ class WowmaCatDetail(generic.DetailView):
     def get(self, request, *args, **kwargs):
         self.object = self.get_object()
         context = self.get_context_data(object=self.object)
-        context['title'] = 'wowma繧ｫ繝・ざ繝ｪ縺ｮ隧ｳ邏ｰ縺ｧ縺・
+        context['title'] = '...'
         return self.render_to_response(context)
 
 class WowmaCatUpdate(generic.UpdateView):
@@ -3241,8 +3241,8 @@ class WowmaCatUpdate(generic.UpdateView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context['title'] = 'Wowma繧ｫ繝・ざ繝ｪ諠・ｱ 譖ｴ譁ｰ繝壹・繧ｸ縺ｧ縺・
-        context['message'] = 'Wowma繧ｫ繝・ざ繝ｪ諠・ｱ 譖ｴ譁ｰ繝壹・繧ｸ 繝｡繝・そ繝ｼ繧ｸ縺ｧ縺・
+        context['title'] = '...'
+        context['message'] = '...'
         return context
 
 
@@ -3576,7 +3576,7 @@ class QooShopInfoDetail(generic.DetailView):
     def get(self, request, *args, **kwargs):
         self.object = self.get_object()
         context = self.get_context_data(object=self.object)
-        context['title'] = 'Qoo繧ｷ繝ｧ繝・・諠・ｱ縺ｮ隧ｳ邏ｰ縺ｧ縺・
+        context['title'] = '...'
         context['message'] = 'QooShopInfo繝・・繝悶Ν縺ｮ隧ｳ邏ｰ'
         return self.render_to_response(context)
 
@@ -3652,16 +3652,16 @@ class QooShopInfoUpdate(generic.UpdateView):
     def get_form(self):
         form = super(QooShopInfoUpdate, self).get_form()
         form.fields['my_shop_num'].label = '繧ｷ繝ｧ繝・・逡ｪ蜿ｷ'
-        form.fields['shop_name'].label = '繧ｷ繝ｧ繝・・蜷・
+        form.fields['shop_name'].label = '...'
         form.fields['auth_key'].label = 'auth_key'
         form.fields['user_id'].label = '繝ｦ繝ｼ繧ｶID'
-        form.fields['pwd'].label = '繝代せ繝ｯ繝ｼ繝・
+        form.fields['pwd'].label = '...'
         form.fields['target_url'].label = '雋ｩ螢ｲURL'
-        form.fields['from_name'].label = '逋ｺ騾∝・縲騾√ｊ荳ｻ蜷・
+        form.fields['from_name'].label = '...'
         form.fields['from_postcode'].label = '逋ｺ騾∝・縲驛ｵ萓ｿ逡ｪ蜿ｷ'
         form.fields['from_state'].label = '逋ｺ騾∝・縲驛ｽ驕灘ｺ懃恁'
-        form.fields['from_address_1'].label = '逋ｺ騾∝・縲菴乗園・・
-        form.fields['from_address_2'].label = '逋ｺ騾∝・縲菴乗園・・
+        form.fields['from_address_1'].label = '...'
+        form.fields['from_address_2'].label = '...'
         form.fields['from_phone'].label = '逋ｺ騾∝・縲髮ｻ隧ｱ逡ｪ蜿ｷ'
         form.fields['shop_status'].label = '繧ｹ繝・・繧ｿ繧ｹ'
         form.fields['create_date'].label = '逋ｻ骭ｲ譌･'
@@ -3669,8 +3669,8 @@ class QooShopInfoUpdate(generic.UpdateView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context['title'] = 'Qoo10繧ｷ繝ｧ繝・・諠・ｱ 譖ｴ譁ｰ繝壹・繧ｸ縺ｧ縺・
-        context['message'] = 'Qoo10繧ｷ繝ｧ繝・・諠・ｱ 譖ｴ譁ｰ繝壹・繧ｸ 繝｡繝・そ繝ｼ繧ｸ縺ｧ縺・
+        context['title'] = '...'
+        context['message'] = '...'
         return context
 
 
@@ -3784,7 +3784,7 @@ class WowShopInfoDetail(generic.DetailView):
     def get(self, request, *args, **kwargs):
         self.object = self.get_object()
         context = self.get_context_data(object=self.object)
-        context['title'] = 'Wowma繧ｷ繝ｧ繝・・諠・ｱ縺ｮ隧ｳ邏ｰ縺ｧ縺・
+        context['title'] = '...'
         context['message'] = 'WowShopInfo繝・・繝悶Ν縺ｮ荳隕ｧ'
         return self.render_to_response(context)
 
@@ -3859,14 +3859,14 @@ class WowShopInfoUpdate(generic.UpdateView):
         form = super(WowShopInfoUpdate, self).get_form()
         form.fields['my_shop_num'].label = '繧ｷ繝ｧ繝・・逡ｪ蜿ｷ'
         form.fields['shop_id'].label = '繧ｷ繝ｧ繝・・ID'
-        form.fields['shop_name'].label = '繧ｷ繝ｧ繝・・蜷・
+        form.fields['shop_name'].label = '...'
         form.fields['api_key'].label = 'api_key'
         form.fields['target_url'].label = '雋ｩ螢ｲURL'
-        form.fields['from_name'].label = '逋ｺ騾∝・縲騾√ｊ荳ｻ蜷・
+        form.fields['from_name'].label = '...'
         form.fields['from_postcode'].label = '逋ｺ騾∝・縲驛ｵ萓ｿ逡ｪ蜿ｷ'
         form.fields['from_state'].label = '逋ｺ騾∝・縲驛ｽ驕灘ｺ懃恁'
-        form.fields['from_address_1'].label = '逋ｺ騾∝・縲菴乗園・・
-        form.fields['from_address_2'].label = '逋ｺ騾∝・縲菴乗園・・
+        form.fields['from_address_1'].label = '...'
+        form.fields['from_address_2'].label = '...'
         form.fields['from_phone'].label = '逋ｺ騾∝・縲髮ｻ隧ｱ逡ｪ蜿ｷ'
         form.fields['shop_status'].label = '繧ｹ繝・・繧ｿ繧ｹ'
         form.fields['create_date'].label = '逋ｻ骭ｲ譌･'
@@ -3874,8 +3874,8 @@ class WowShopInfoUpdate(generic.UpdateView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context['title'] = 'Wowma繧ｷ繝ｧ繝・・諠・ｱ 譖ｴ譁ｰ繝壹・繧ｸ縺ｧ縺・
-        context['message'] = 'Wowma繧ｷ繝ｧ繝・・諠・ｱ 譖ｴ譁ｰ繝壹・繧ｸ 繝｡繝・そ繝ｼ繧ｸ縺ｧ縺・
+        context['title'] = '...'
+        context['message'] = '...'
         return context
 
 
@@ -4006,8 +4006,8 @@ class ErrorGoodsLogDetail(generic.DetailView):
     def get(self, request, *args, **kwargs):
         self.object = self.get_object()
         context = self.get_context_data(object=self.object)
-        context['title'] = '繧ｨ繝ｩ繝ｼ縺ｫ縺ｪ縺｣縺溷膚蜩∵峩譁ｰ縺ｮ隧ｳ邏ｰ縺ｧ縺・
-        context['message'] = '繧ｨ繝ｩ繝ｼ縺ｫ縺ｪ縺｣縺溷膚蜩∵峩譁ｰ縺ｮ隧ｳ邏ｰ繝｡繝・そ繝ｼ繧ｸ縺ｧ縺・
+        context['title'] = '...'
+        context['message'] = '...'
         return self.render_to_response(context)
 
 
@@ -4332,7 +4332,7 @@ class QooOrderUpdate(generic.UpdateView):
     def get_form(self):
         form = super(QooOrderUpdate, self).get_form()
         form.fields['order_no'].label = 'id 豕ｨ譁・分蜿ｷ'
-        form.fields['shipping_status'].label = '驟埼∫憾諷・
+        form.fields['shipping_status'].label = '...'
         form.fields['seller_id'].label = '雋ｩ螢ｲ閠・D'
         form.fields['pack_no'].label = 'id 繧ｫ繝ｼ繝育分蜿ｷ'
         form.fields['order_date'].label = '豕ｨ譁・律'
@@ -4341,21 +4341,21 @@ class QooOrderUpdate(generic.UpdateView):
         form.fields['shipping_date'].label = '逋ｺ騾∵律'
         form.fields['delivered_date'].label = '驟埼∝ｮ御ｺ・律'
         form.fields['buyer'].label = '雉ｼ蜈･閠・錐'
-        form.fields['buyer_gata'].label = '雉ｼ蜈･閠・錐・医き繧ｿ繧ｫ繝奇ｼ・
+        form.fields['buyer_gata'].label = '...'
         form.fields['buyer_tel'].label = '雉ｼ蜈･閠・・髮ｻ隧ｱ逡ｪ蜿ｷ'
         form.fields['buyer_mobile'].label = '雉ｼ蜈･閠・・謳ｺ蟶ｯ髮ｻ隧ｱ逡ｪ蜿ｷ'
         form.fields['buyer_email'].label = '雉ｼ蜈･閠・・謳ｺ蟶ｯ髮ｻ隧ｱ逡ｪ蜿ｷ'
         form.fields['item_code'].label = 'Qoo10蝠・刀逡ｪ蜿ｷ'
-        form.fields['seller_item_code'].label = '雋ｩ螢ｲ蝠・刀繧ｳ繝ｼ繝・
-        form.fields['item_title'].label = '蝠・刀蜷・
+        form.fields['seller_item_code'].label = '...'
+        form.fields['item_title'].label = '...'
         form.fields['option'].label = '繧ｪ繝励す繝ｧ繝ｳ'
-        form.fields['option_code'].label = '繧ｪ繝励す繝ｧ繝ｳ繧ｳ繝ｼ繝・
+        form.fields['option_code'].label = '...'
         form.fields['order_price'].label = '蝠・刀萓｡譬ｼ'
-        form.fields['order_qty'].label = '豕ｨ譁・焚驥・
-        form.fields['discount'].label = '蝠・刀蜑ｲ蠑暮≡鬘・
-        form.fields['total'].label = '豕ｨ譁・焚驥擾ｼ亥膚蜩∽ｾ｡譬ｼ + 繧ｪ繝励す繝ｧ繝ｳ萓｡譬ｼ - 蜑ｲ蠑暮｡搾ｼ・
-        form.fields['receiver'].label = '蜿怜叙莠ｺ蜷・
-        form.fields['receiver_gata'].label = '蜿怜叙莠ｺ蜷搾ｼ医き繧ｿ繧ｫ繝奇ｼ・
+        form.fields['order_qty'].label = '...'
+        form.fields['discount'].label = '...'
+        form.fields['total'].label = '...'
+        form.fields['receiver'].label = '...'
+        form.fields['receiver_gata'].label = '...'
         form.fields['shipping_country'].label = '縺雁ｱ翫￠蜈医・蝗ｽ螳ｶ'
         form.fields['zipcode'].label = '驛ｵ萓ｿ逡ｪ蜿ｷ'
         form.fields['shipping_addr'].label = '縺雁ｱ翫￠蜈井ｽ乗園'
@@ -4364,28 +4364,28 @@ class QooOrderUpdate(generic.UpdateView):
         form.fields['receiver_tel'].label = '蜿怜叙莠ｺ縺ｮ髮ｻ隧ｱ逡ｪ蜿ｷ'
         form.fields['receiver_mobile'].label = '蜿怜叙莠ｺ縺ｮ謳ｺ蟶ｯ髮ｻ隧ｱ逡ｪ蜿ｷ'
         form.fields['hope_date'].label = '驟埼∝ｸ梧悍譌･'
-        form.fields['sender_name'].label = '騾∽ｿ｡閠・
+        form.fields['sender_name'].label = '...'
         form.fields['sender_tel'].label = '騾√ｊ荳ｻ縺ｮ髮ｻ隧ｱ逡ｪ蜿ｷ'
         form.fields['sender_nation'].label = '騾√ｊ荳ｻ縺ｮ蝗ｽ螳ｶ'
         form.fields['sender_zipcode'].label = '騾√ｊ荳ｻ縺ｮ驛ｵ萓ｿ逡ｪ蜿ｷ'
         form.fields['sender_addr'].label = '騾√ｊ荳ｻ縺ｮ菴乗園'
-        form.fields['shipping_way'].label = '驟埼∵婿豕・
+        form.fields['shipping_way'].label = '...'
         form.fields['shipping_msg'].label = '驟埼√Γ繝・そ繝ｼ繧ｸ'
         form.fields['payment_method'].label = '豎ｺ貂域焔谿ｵ'
-        form.fields['seller_discount'].label = '雋ｩ螢ｲ閠・ｲ諡・牡蠑暮｡・
+        form.fields['seller_discount'].label = '...'
         form.fields['currency'].label = '豕ｨ譁・≡鬘埼夊ｲｨ'
         form.fields['shipping_rate'].label = '騾∵侭'
         form.fields['related_order'].label = '髢｢騾｣豕ｨ譁・分蜿ｷ・夲ｼ医・ｼ牙玄蛻・ｊ譁・ｭ励〒豕ｨ譁・分蜿ｷ蛹ｺ蛻・☆繧九ゆｾ具ｼ・2345432縲・2343212縲・2323232'
         form.fields['shipping_rate_type'].label = '騾∵侭繧ｰ繝ｫ繝ｼ繝励・遞ｮ鬘橸ｼ哥ree / Charge / Free on condition / Charge on delivery'
         form.fields['delivery_company'].label = '驟埼∽ｼ夂､ｾ'
         form.fields['voucher_code'].label = '險ｪ蝠丞女鬆倩ｪ崎ｨｼ逡ｪ蜿ｷ'
-        form.fields['packing_no'].label = '逋ｺ豕ｨ譎ゅ↓逕滓・縺輔ｌ繧九ヱ繝・く繝ｳ繧ｰ逡ｪ蜿ｷ・井ｾ具ｼ哽PP22894429・・
-        form.fields['seller_delivery_no'].label = '逋ｺ豕ｨ譎ゅ↓逕滓・縺輔ｌ繧九ヱ繝・く繝ｳ繧ｰ逡ｪ蜿ｷ縺ｨ1・・縺ｧ繝槭ャ繝√Φ繧ｰ縺輔ｌ繧玖ｲｩ螢ｲ閠・腰菴阪・繧ｷ繝ｪ繧｢繝ｫ逡ｪ蜿ｷ・井ｾ具ｼ・30705-0003・・
+        form.fields['packing_no'].label = '...'
+        form.fields['seller_delivery_no'].label = '...'
         form.fields['payment_nation'].label = '豕ｨ譁・し繧､繝亥嵜・哽P'
-        form.fields['gift'].label = '雍育ｭ泌刀・医ぐ繝輔ヨ縲√・繝ｬ繧ｼ繝ｳ繝医√♀縺ｾ縺托ｼ・
-        form.fields['cod_price'].label = '逹謇輔＞豎ｺ貂磯≡鬘・
-        form.fields['cart_discount_seller'].label = '雋ｩ螢ｲ閠・ｲ諡・き繝ｼ繝亥牡蠑・
-        form.fields['cart_discount_qoo10'].label = 'Qoo10雋諡・き繝ｼ繝亥牡蠑・
+        form.fields['gift'].label = '...'
+        form.fields['cod_price'].label = '...'
+        form.fields['cart_discount_seller'].label = '...'
+        form.fields['cart_discount_qoo10'].label = '...'
         form.fields['settle_price'].label = '邱丈ｾ帷ｵｦ蜴滉ｾ｡'
         form.fields['branch_name'].label = '謾ｯ蠎怜錐'
         form.fields['tracking_no'].label = '騾√ｊ迥ｶ逡ｪ蜿ｷ'
@@ -4395,14 +4395,14 @@ class QooOrderUpdate(generic.UpdateView):
         form.fields['oversea_consignment_zipcode'].label = '豬ｷ螟門ｧ碑ｨ・驛ｵ萓ｿ逡ｪ蜿ｷ'
         form.fields['oversea_consignment_addr1'].label = '豬ｷ螟門ｧ碑ｨ・菴乗園(驛ｽ驕灘ｺ懃恁/蟶ょ玄逕ｺ譚・'
         form.fields['oversea_consignment_addr2'].label = '豬ｷ螟門ｧ碑ｨ・菴乗園(蟶ょ玄逕ｺ譚台ｻ･髯・'
-        form.fields['delay_type'].label = '驕・ｻｶ縺ｮ逅・罰縲ゑｼ・・壼膚蜩∵ｺ門ｙ荳ｭ縲・・壽ｳｨ譁・｣ｽ菴懶ｼ医が繝ｼ繝繝ｼ繝｡繧､繝会ｼ峨・・夐｡ｧ螳｢縺ｮ隕∵ｱゅ・・壹◎縺ｮ莉厄ｼ・
+        form.fields['delay_type'].label = '...'
         form.fields['delay_memo'].label = '雋ｩ螢ｲ閠・Γ繝｢'
         return form
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context['title'] = 'Qoo10豕ｨ譁・ュ蝣ｱ 譖ｴ譁ｰ繝壹・繧ｸ縺ｧ縺・
-        context['message'] = 'Qoo10豕ｨ譁・ュ蝣ｱ 譖ｴ譁ｰ繝壹・繧ｸ 繝｡繝・そ繝ｼ繧ｸ縺ｧ縺・
+        context['title'] = '...'
+        context['message'] = '...'
         return context
 
 class QooOrderDelete(generic.DeleteView):
@@ -4712,8 +4712,8 @@ class WowOrderUpdate(generic.UpdateView):
         form.fields['sender_phone_number_1'].label = '騾∽ｻ伜・_髮ｻ隧ｱ逡ｪ蜿ｷ_1'
         form.fields['sender_phone_number_2'].label = '騾∽ｻ伜・_髮ｻ隧ｱ逡ｪ蜿ｷ_2'
         form.fields['order_option'].label = '豕ｨ譁・が繝励す繝ｧ繝ｳ'
-        form.fields['settlement_name'].label = '豎ｺ貂域婿豕・
-        form.fields['user_comment'].label = '繝ｦ繝ｼ繧ｶ繧ｳ繝｡繝ｳ繝・
+        form.fields['settlement_name'].label = '...'
+        form.fields['user_comment'].label = '...'
         form.fields['memo'].label = '繝｡繝｢'
         form.fields['order_status'].label = 'order_繧ｹ繝・・繧ｿ繧ｹ'
         form.fields['contact_status'].label = '繧ｳ繝ｳ繧ｿ繧ｯ繝・繧ｹ繝・・繧ｿ繧ｹ'
@@ -4723,30 +4723,30 @@ class WowOrderUpdate(generic.UpdateView):
         form.fields['print_status'].label = '蜊ｰ蛻ｷ_繧ｹ繝・・繧ｿ繧ｹ'
         form.fields['cancel_status'].label = '繧ｭ繝｣繝ｳ繧ｻ繝ｫ_繧ｹ繝・・繧ｿ繧ｹ'
         form.fields['cancel_reason'].label = '繧ｭ繝｣繝ｳ繧ｻ繝ｫ逅・罰'
-        form.fields['cancel_comment'].label = '繧ｭ繝｣繝ｳ繧ｻ繝ｫ繧ｳ繝｡繝ｳ繝・
-        form.fields['total_sale_price'].label = '螢ｲ荳企≡鬘榊粋險・
-        form.fields['total_sale_unit'].label = '螢ｲ荳雁区焚蜷郁ｨ・
+        form.fields['cancel_comment'].label = '...'
+        form.fields['total_sale_price'].label = '...'
+        form.fields['total_sale_unit'].label = '...'
         form.fields['postage_price'].label = '騾∵侭'
-        form.fields['charge_price'].label = '隲区ｱる≡鬘・
-        form.fields['total_price'].label = '邱丞粋險磯≡鬘・
-        form.fields['coupon_total_price'].label = '繧ｯ繝ｼ繝昴Φ蛻ｩ逕ｨ蜷郁ｨ磯≡鬘・
-        form.fields['use_point'].label = '蛻ｩ逕ｨ繝昴う繝ｳ繝・
-        form.fields['use_point_cancel'].label = '蛻ｩ逕ｨ繝昴う繝ｳ繝・繧ｭ繝｣繝ｳ繧ｻ繝ｫ蛻・
-        form.fields['use_au_point_price'].label = 'au蛻ｩ逕ｨ繝昴う繝ｳ繝磯≡鬘・
-        form.fields['use_au_point'].label = 'au蛻ｩ逕ｨ繝昴う繝ｳ繝・
-        form.fields['use_au_point_cancel'].label = 'au蛻ｩ逕ｨ繝昴う繝ｳ繝・繧ｭ繝｣繝ｳ繧ｻ繝ｫ蛻・
+        form.fields['charge_price'].label = '...'
+        form.fields['total_price'].label = '...'
+        form.fields['coupon_total_price'].label = '...'
+        form.fields['use_point'].label = '...'
+        form.fields['use_point_cancel'].label = '...'
+        form.fields['use_au_point_price'].label = '...'
+        form.fields['use_au_point'].label = '...'
+        form.fields['use_au_point_cancel'].label = '...'
         form.fields['point_fixed_status'].label = '繝昴う繝ｳ繝・fix繧ｹ繝・・繧ｿ繧ｹ'
         form.fields['settle_status'].label = '謇ｿ隱阪せ繝・・繧ｿ繧ｹ'
         form.fields['pg_result'].label = 'pg邨先棡'
         form.fields['pg_orderid'].label = 'pg_orderid'
-        form.fields['pg_request_price'].label = 'pg_隲区ｱる≡鬘・
-        form.fields['coupon_type'].label = '繧ｯ繝ｼ繝昴Φ繧ｿ繧､繝・
+        form.fields['pg_request_price'].label = '...'
+        form.fields['coupon_type'].label = '...'
         form.fields['coupon_key'].label = '繧ｯ繝ｼ繝昴Φ繧ｭ繝ｼ'
-        form.fields['card_jagdement'].label = '繧ｫ繝ｼ繝牙愛螳・
+        form.fields['card_jagdement'].label = '...'
         form.fields['delivery_name'].label = '驟埼∝錐'
         form.fields['delivery_method_id'].label = '驟埼∵婿豕品d'
         form.fields['delivery_request_time'].label = '縺雁ｱ雁ｸ梧悍譎る俣蟶ｯ'
-        form.fields['shipping_carrier'].label = '驟埼∵･ｭ閠・
+        form.fields['shipping_carrier'].label = '...'
         form.fields['shipping_number'].label = '霑ｽ霍｡逡ｪ蜿ｷ'
         form.fields['order_date'].label = '蜿玲ｳｨ譌･'
         form.fields['contact_date'].label = '繧ｳ繝ｳ繧ｿ繧ｯ繝医＠縺滓律'
@@ -4762,8 +4762,8 @@ class WowOrderUpdate(generic.UpdateView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context['title'] = 'Wowma豕ｨ譁・ュ蝣ｱ 譖ｴ譁ｰ繝壹・繧ｸ縺ｧ縺・
-        context['message'] = 'Wowma豕ｨ譁・ュ蝣ｱ 譖ｴ譁ｰ繝壹・繧ｸ 繝｡繝・そ繝ｼ繧ｸ縺ｧ縺・
+        context['title'] = '...'
+        context['message'] = '...'
         return context
 
 
@@ -5954,7 +5954,7 @@ def wow_order_sending_info_ajax(request):
             elif int(shipping_carrier) == 2:
                 order.shipping_carrier = '菴仙ｷ晄･萓ｿ'
             elif int(shipping_carrier) == 3:
-                order.shipping_carrier = 'JP繧ｨ繧ｯ繧ｹ繝励Ξ繧ｹ・域立 譌･譛ｬ騾夐°・・
+                order.shipping_carrier = '...'
             elif int(shipping_carrier) == 4:
                 order.shipping_carrier = '遖丞ｱｱ騾夐°'
             elif int(shipping_carrier) == 5:
@@ -5966,7 +5966,7 @@ def wow_order_sending_info_ajax(request):
             """
 
             # 繧ｹ繝・・繧ｿ繧ｹ縺ｯ螳御ｺ・↓縺励※縺翫￥
-            order.order_status = '螳御ｺ・
+            order.order_status = '...'
             order.ship_status = 'Y'
             order.save()
             logger.debug("--- wow_order_sending_info_ajax saved 驟埼∵･ｭ閠・{}] 驟埼∵律[{}] 驟埼∫分蜿ｷ[{}]".format(
@@ -6598,7 +6598,7 @@ class QooAsinCsvImport(generic.FormView):
     def get_context_data(self, **kwargs):
         ctx = super().get_context_data(**kwargs)
         ctx['form_name'] = 'yaget'
-        ctx['message'] = 'QooAsinCsvImport縺ｧ縺・
+        ctx['message'] = '...'
         return ctx
 
     def form_valid(self, form):
