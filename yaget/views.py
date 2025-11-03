@@ -48,9 +48,9 @@ from django.db.models import OuterRef, Subquery, IntegerField
 from .forms import CheckForm
 from .modules import GSpreadModule, TestMsgModule, ExecQoo10, ExecWowma
 from .qoo10_access import Qoo10Access
-from .wowma_access import WowmaAccess, WowmaAccessExec
+from wowma_access import WowmaAccess, WowmaAccessExec
 
-from .buyers_info import BuyersInfo, BuyersBrandInfo
+from buyers_info import BuyersInfo, BuyersBrandInfo
 from .apps import YagetConfig
 from django.core.paginator import Paginator
 from django.urls import reverse
