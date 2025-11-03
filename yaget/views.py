@@ -1,4 +1,4 @@
-from django.shortcuts import render
+﻿from django.shortcuts import render
 from django.http import HttpResponse
 from django.shortcuts import redirect
 from django.views import generic
@@ -57,32 +57,32 @@ from django.urls import reverse
 from django.conf import settings
 from django.http import JsonResponse
 
+import requests
 import logging
 import logging.handlers
 import logging.config
 import traceback
 
-# ログ出力先ディレクトリを事前に作成（存在しない環境での起動エラー回避）
-try:
+# 繝ｭ繧ｰ蜃ｺ蜉帛・繝・ぅ繝ｬ繧ｯ繝医Μ繧剃ｺ句燕縺ｫ菴懈・・亥ｭ伜惠縺励↑縺・腸蠅・〒縺ｮ襍ｷ蜍輔お繝ｩ繝ｼ蝗樣∩・・try:
     os.makedirs('/home/django/sample/yaget/log', exist_ok=True)
 except Exception:
     pass
 
-# ログ設定
-# ※バッチを呼び出せない場合などは、こちらをONにする。しかしこちらがONのままだと、バッチのstdoutとかぶってるのか
-# ログがこっちにしかはき出されなくなるので、片方だけにしよう。
+# 繝ｭ繧ｰ險ｭ螳・
+# 窶ｻ繝舌ャ繝√ｒ蜻ｼ縺ｳ蜃ｺ縺帙↑縺・ｴ蜷医↑縺ｩ縺ｯ縲√％縺｡繧峨ｒON縺ｫ縺吶ｋ縲ゅ＠縺九＠縺薙■繧峨′ON縺ｮ縺ｾ縺ｾ縺縺ｨ縲√ヰ繝・メ縺ｮstdout縺ｨ縺九・縺｣縺ｦ繧九・縺・
+# 繝ｭ繧ｰ縺後％縺｣縺｡縺ｫ縺励°縺ｯ縺榊・縺輔ｌ縺ｪ縺上↑繧九・縺ｧ縲∫援譁ｹ縺縺代↓縺励ｈ縺・・
 # logging
 #logging.basicConfig(filename='/home/django/sample/yaget/management/commands/log/yashop_amamws.log', level=logging.DEBUG)
 #logging.config.fileConfig(fname="/home/django/sample/yaget/log/yaget_logging.config", disable_existing_loggers=False)
 
 #logger = logging.getLogger(__name__)
 
-# --- logger 設定 -----------------------------------------
+# --- logger 險ｭ螳・-----------------------------------------
 logger = logging.getLogger(__name__)
 logger.setLevel(logging.DEBUG)
 #logger.setLevel(20)
 
-# ログローテ設定
+# 繝ｭ繧ｰ繝ｭ繝ｼ繝・ｨｭ螳・
 
 rh = logging.handlers.RotatingFileHandler(
     r'/home/django/sample/yaget/log/yaget_views.log',
@@ -100,13 +100,13 @@ ch.setFormatter(ch_formatter)
 
 logger.addHandler(rh)
 logger.addHandler(ch)
-# --- logger 設定 -----------------------------------------
+# --- logger 險ｭ螳・-----------------------------------------
 
 
 
 
 
-# アップロードしたファイルを保存するディレクトリ
+# 繧｢繝・・繝ｭ繝ｼ繝峨＠縺溘ヵ繧｡繧､繝ｫ繧剃ｿ晏ｭ倥☆繧九ョ繧｣繝ｬ繧ｯ繝医Μ
 #env = environ.Env()
 #env.read_env('.env')
 
@@ -118,7 +118,7 @@ mydeletecsv_dir = "/home/django/sample/yaget/wowma_buyers/deletecsv/"
 #sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8')
 
 
-# Ajaxテスト
+# Ajax繝・せ繝・
 def ajax_test(request):
     # ajax test
     title = request.POST.get('title')
@@ -129,7 +129,7 @@ def ajax_test(request):
     }
     return render(request, 'yaget/ajax_test.html', params)
 
-# Ajaxテスト
+# Ajax繝・せ繝・
 def buyers_goods_detail_ajax_res(request):
     model = YaBuyersItemDetail
     logger.debug("--- buyers_goods_detail_ajax_res in")
@@ -145,12 +145,12 @@ def buyers_goods_detail_ajax_res(request):
         }
         return JsonResponse(d)
 
-    # Qoo10にアクセス
+    # Qoo10縺ｫ繧｢繧ｯ繧ｻ繧ｹ
     qoo10obj = Qoo10Access(logger)
     msg = 'start[' + YagetConfig.verbose_name + ']'
     qoo10obj.qoo10_create_cert_key()
 
-    # Qoo10の商品情報を検索
+    # Qoo10縺ｮ蝠・刀諠・ｱ繧呈､懃ｴ｢
     #ret_code = qoo10obj.qoo10_items_lookup_get_all_goods_info('S0','1')
     #ret_code = qoo10obj.qoo10_items_lookup_get_all_goods_info('S1','1')
     ret_code = qoo10obj.qoo10_items_lookup_get_all_goods_info('S2','1')
@@ -205,7 +205,7 @@ class UnicodeCsvWriter:
           self.writerow(seq)
 
 
-# qoo10 から商品情報の取得
+# qoo10 縺九ｉ蝠・刀諠・ｱ縺ｮ蜿門ｾ・
 def qoo_goods_detail_info_ajax(request):
     model = YaBuyersItemDetail
     logger.debug("--- qoo_goods_detail_info_ajax in")
@@ -220,35 +220,35 @@ def qoo_goods_detail_info_ajax(request):
         }
         return JsonResponse(d)
 
-    # Qoo10にアクセス
+    # Qoo10縺ｫ繧｢繧ｯ繧ｻ繧ｹ
     qoo10obj = Qoo10Access(logger)
-    msg = 'qoo商品情報：'
+    msg = 'qoo蝠・刀諠・ｱ・・
     qoo10obj.qoo10_create_cert_key()
 
-    # Qoo10の商品情報を検索
-    # Qoo10に登録済みであれば　goods.qoo_gdno　に値が入っている(もしくはqoo_seller_codeだけの場合も)
+    # Qoo10縺ｮ蝠・刀諠・ｱ繧呈､懃ｴ｢
+    # Qoo10縺ｫ逋ｻ骭ｲ貂医∩縺ｧ縺ゅｌ縺ｰ縲goods.qoo_gdno縲縺ｫ蛟､縺悟・縺｣縺ｦ縺・ｋ(繧ゅ＠縺上・qoo_seller_code縺縺代・蝣ｴ蜷医ｂ)
     if goods.qoo_gdno or goods.qoo_seller_code:
-        # 更新
+        # 譖ｴ譁ｰ
         ret_obj_list = qoo10obj.qoo10_items_lookup_get_item_detail_info(goods)
         chk_flg = 0
         for ret_obj in ret_obj_list:
             if ret_obj['res_code'] != "0":
-                logger.debug("--- qoo_goods_detail_info_ajax qoo10 商品情報の取得でエラー [{}][{}]".format(ret_obj['res_code'],
+                logger.debug("--- qoo_goods_detail_info_ajax qoo10 蝠・刀諠・ｱ縺ｮ蜿門ｾ励〒繧ｨ繝ｩ繝ｼ [{}][{}]".format(ret_obj['res_code'],
                                                                                           ret_obj['res_msg']))
-                chk_flg = 1  # なにかエラーになってた
+                chk_flg = 1  # 縺ｪ縺ｫ縺九お繝ｩ繝ｼ縺ｫ縺ｪ縺｣縺ｦ縺・
                 break
         if chk_flg == 0:
-            # 取得成功
+            # 蜿門ｾ玲・蜉・
             msg += '[ok][{}][{}]'.format(ret_obj['res_msg'],ret_obj['res_obj'])
-            logger.debug("--- qoo_goods_detail_info_ajax qoo10 商品情報の取得ok [{}][{}]".format(ret_obj['res_code'],
+            logger.debug("--- qoo_goods_detail_info_ajax qoo10 蝠・刀諠・ｱ縺ｮ蜿門ｾ熔k [{}][{}]".format(ret_obj['res_code'],
                                                                                             ret_obj['res_msg']))
         else:
-            # 取得失敗
+            # 蜿門ｾ怜､ｱ謨・
             msg += '[ng]['
             msg += str(ret_obj['res_msg']) + ']'
 
     else:
-        # 呼び出し失敗
+        # 蜻ｼ縺ｳ蜃ｺ縺怜､ｱ謨・
         d = {
             'ret_code': None,
         }
@@ -263,7 +263,7 @@ def qoo_goods_detail_info_ajax(request):
     return JsonResponse(d)
 
 
-# qoo10 商品登録・更新
+# qoo10 蝠・刀逋ｻ骭ｲ繝ｻ譖ｴ譁ｰ
 def qoo_goods_upsert_ajax(request):
     model = YaBuyersItemDetail
     logger.debug("--- qoo_goods_u"
@@ -277,7 +277,7 @@ def qoo_goods_upsert_ajax(request):
         }
         return JsonResponse(d)
 
-    # Qoo10にアクセス
+    # Qoo10縺ｫ繧｢繧ｯ繧ｻ繧ｹ
     #qoo10obj = Qoo10Access(logger)
     #msg = 'start[' + YagetConfig.verbose_name + ']'
     #qoo10obj.qoo10_create_cert_key()
@@ -287,33 +287,33 @@ def qoo_goods_upsert_ajax(request):
     qoo10obj = ExecQoo10(logger)
 
     try:
-        # Qoo10の商品情報を検索
-        # Qoo10に登録済みであれば　goods.qoo_gdno　に値が入っている
+        # Qoo10縺ｮ蝠・刀諠・ｱ繧呈､懃ｴ｢
+        # Qoo10縺ｫ逋ｻ骭ｲ貂医∩縺ｧ縺ゅｌ縺ｰ縲goods.qoo_gdno縲縺ｫ蛟､縺悟・縺｣縺ｦ縺・ｋ
         status, msg = qoo10obj.exec_qoo10_goods_update(goods)
         """
         if goods.qoo_gdno:
-            # 更新
+            # 譖ｴ譁ｰ
             qoo10obj.qoo10_items_basic_update_goods(goods)
-            # 更新に成功している。続けて更新時のみ、商品詳細を更新
+            # 譖ｴ譁ｰ縺ｫ謌仙粥縺励※縺・ｋ縲らｶ壹￠縺ｦ譖ｴ譁ｰ譎ゅ・縺ｿ縲∝膚蜩∬ｩｳ邏ｰ繧呈峩譁ｰ
             qoo10obj.qoo10_items_contents_edit_goods_contents(goods)
-            # 更新に成功している。続けてステータスを更新
+            # 譖ｴ譁ｰ縺ｫ謌仙粥縺励※縺・ｋ縲らｶ壹￠縺ｦ繧ｹ繝・・繧ｿ繧ｹ繧呈峩譁ｰ
             qoo10obj.qoo10_items_basic_edit_goods_status(goods)
-            # 更新成功している。続けてマルチ画像を更新
+            # 譖ｴ譁ｰ謌仙粥縺励※縺・ｋ縲らｶ壹￠縺ｦ繝槭Ν繝∫判蜒上ｒ譖ｴ譁ｰ
             qoo10obj.qoo10_items_contents_edit_goods_multi_image(goods)
-            # 最後に在庫数を更新
+            # 譛蠕後↓蝨ｨ蠎ｫ謨ｰ繧呈峩譁ｰ
             qoo10obj.qoo10_items_order_set_goods_price_qty(goods)
         else:
-            # 新規登録
+            # 譁ｰ隕冗匳骭ｲ
             qoo10obj.qoo10_items_basic_set_new_goods(goods)
-            # 更新に成功している。続けてステータスを更新
+            # 譖ｴ譁ｰ縺ｫ謌仙粥縺励※縺・ｋ縲らｶ壹￠縺ｦ繧ｹ繝・・繧ｿ繧ｹ繧呈峩譁ｰ
             qoo10obj.qoo10_items_basic_edit_goods_status(goods)
-            # 更新成功している。続けてマルチ画像を更新
+            # 譖ｴ譁ｰ謌仙粥縺励※縺・ｋ縲らｶ壹￠縺ｦ繝槭Ν繝∫判蜒上ｒ譖ｴ譁ｰ
             qoo10obj.qoo10_items_contents_edit_goods_multi_image(goods)
-            # 最後に在庫数を更新
+            # 譛蠕後↓蝨ｨ蠎ｫ謨ｰ繧呈峩譁ｰ
             qoo10obj.qoo10_items_order_set_goods_price_qty(goods)
         """
     except:
-        # 更新時にエラー？
+        # 譖ｴ譁ｰ譎ゅ↓繧ｨ繝ｩ繝ｼ・・
         logger.debug(
             '--> error. qoo_goods_upsert_ajax 1 gid:[{}] msg[{}] '.format(
                 goods.gid, traceback.format_exc()))
@@ -329,7 +329,7 @@ def qoo_goods_upsert_ajax(request):
 
     return JsonResponse(d)
 
-# wowma 商品登録・更新
+# wowma 蝠・刀逋ｻ骭ｲ繝ｻ譖ｴ譁ｰ
 def wow_goods_upsert_ajax(request):
     model = YaBuyersItemDetail
     logger.debug("--- wow_goods_upsert_ajax in")
@@ -350,10 +350,10 @@ def wow_goods_upsert_ajax(request):
     wowma_obj = ExecWowma(logger)
 
     try:
-        # wowmaの商品情報を検索
+        # wowma縺ｮ蝠・刀諠・ｱ繧呈､懃ｴ｢
         status, msg = wowma_obj.exec_wowma_goods_update(goods, taglist_upd_flg)
     except:
-        # 更新時にエラー？
+        # 譖ｴ譁ｰ譎ゅ↓繧ｨ繝ｩ繝ｼ・・
         logger.debug(
             '--> error. wow_goods_upsert_ajax 1 gid:[{}] msg[{}] '.format(
                 goods.gid, traceback.format_exc()))
@@ -381,9 +381,9 @@ def ajax_test_add(request):
     return JsonResponse(d)
 
 
-# Qoo10 接続テスト
+# Qoo10 謗･邯壹ユ繧ｹ繝・
 def qoo10_cert_test(request):
-    # Qoo10のアクセサを初期化して呼び出してみる
+    # Qoo10縺ｮ繧｢繧ｯ繧ｻ繧ｵ繧貞・譛溷喧縺励※蜻ｼ縺ｳ蜃ｺ縺励※縺ｿ繧・
     qoo10obj = Qoo10Access(logger)
     #msg = ' call qoo10_cert_test start..'
     msg = 'start[' + YagetConfig.verbose_name + ']'
@@ -396,19 +396,19 @@ def qoo10_cert_test(request):
     return render(request, 'yaget/qoo10_cert_test.html', params)
 
 
-# 在庫チェック
+# 蝨ｨ蠎ｫ繝√ぉ繝・け
 def stock_chk(request):
-    # サブプロセスでyagetのコマンドをキックする
+    # 繧ｵ繝悶・繝ｭ繧ｻ繧ｹ縺ｧyaget縺ｮ繧ｳ繝槭Φ繝峨ｒ繧ｭ繝・け縺吶ｋ
     if (request.method == 'POST'):
         msg = ' start stock check.. <br>'
-        # ここでサププロセスをキック
+        # 縺薙％縺ｧ繧ｵ繝励・繝ｭ繧ｻ繧ｹ繧偵く繝・け
         cmd = "source /home/django/djangoenv/bin/activate;python /home/django/sample/manage.py wowma_stock_chk 123"
         p = subprocess.Popen(cmd, shell=True)
         msg += ' maybe ok.' + str(p.pid)
     else:
         msg = ' call stock_chk ..'
     params = {
-        'title': '在庫チェック開始します',
+        'title': '蝨ｨ蠎ｫ繝√ぉ繝・け髢句ｧ九＠縺ｾ縺・,
         'message': msg,
     }
 
@@ -420,15 +420,15 @@ def top(request):
 
 """
 --- google spread sheet ---
-参考：https://a-zumi.net/python-google-spreadsheet-api/
-使い方
+蜿り・ｼ喇ttps://a-zumi.net/python-google-spreadsheet-api/
+菴ｿ縺・婿
 if __name__ == '__main__':
   worksheet = WorkSheet("spreadsheetId")
 
-  # A列からC列までの値を取得
+  # A蛻励°繧韻蛻励∪縺ｧ縺ｮ蛟､繧貞叙蠕・
   print(worksheet.get_values('A:C'))
 
-  # E1とG1に値を挿入
+  # E1縺ｨG1縺ｫ蛟､繧呈諺蜈･
   worksheet.update('E1:G1', {'values': [1,2]})
 
 """
@@ -465,7 +465,7 @@ class GSpread(object):
             self.keyfilename = '/home/django/sample/yaget/test-app-flex-1-542896fdd03c.json'
 
     def get_gsheet(self, gsheetname):
-        # シートをopenして返却する。とりあえずシートは sheet1 で固定
+        # 繧ｷ繝ｼ繝医ｒopen縺励※霑泌唆縺吶ｋ縲ゅ→繧翫≠縺医★繧ｷ繝ｼ繝医・ sheet1 縺ｧ蝗ｺ螳・
         if gsheetname is None:
             return None
         credentials = ServiceAccountCredentials.from_json_keyfile_name(self.keyfilename, self.scope)
@@ -474,7 +474,7 @@ class GSpread(object):
         return wks
 
 
-# --- 以下はsampleから抜粋
+# --- 莉･荳九・sample縺九ｉ謚懃ｲ・
 def check(request):
     params = {
         'title': 'Hello',
@@ -520,8 +520,8 @@ def test_mail(request, num=1):
 
     page = Paginator(data, 3)
     params = {
-            'title': 'テストメール　配信できるか',
-            'message':'テストメール　配信できるかな',
+            'title': '繝・せ繝医Γ繝ｼ繝ｫ縲驟堺ｿ｡縺ｧ縺阪ｋ縺・,
+            'message':'繝・せ繝医Γ繝ｼ繝ｫ縲驟堺ｿ｡縺ｧ縺阪ｋ縺九↑',
             'data': page.get_page(num),
         }
     return render(request, 'yaget/test_mail.html', params)
@@ -532,29 +532,29 @@ def send_my_mail(request, num=1):
     data = YaItemList.objects.all()
     page = Paginator(data, 3)
     params = {
-        'title': 'メール送りました',
-        'message': 'メール送りましたよ',
+        'title': '繝｡繝ｼ繝ｫ騾√ｊ縺ｾ縺励◆',
+        'message': '繝｡繝ｼ繝ｫ騾√ｊ縺ｾ縺励◆繧・,
         'data': page.get_page(num),
     }
     if (request.method == 'POST'):
         if 'button_1' in request.POST:
             params = {
-                'title': 'メール送りました',
-                'message': 'おくります' + request.POST['button_1'],
+                'title': '繝｡繝ｼ繝ｫ騾√ｊ縺ｾ縺励◆',
+                'message': '縺翫￥繧翫∪縺・ + request.POST['button_1'],
                 'data': page.get_page(num),
             }
             return render(request, 'yaget/test_mail.html', params)
     else:
         params = {
-            'title': 'メール送ります',
-            'message': 'メール送りますよ',
+            'title': '繝｡繝ｼ繝ｫ騾√ｊ縺ｾ縺・,
+            'message': '繝｡繝ｼ繝ｫ騾√ｊ縺ｾ縺吶ｈ',
             'data': page.get_page(num),
         }
         return render(request, 'yaget/test_mail.html', params)
 
 
 def showdetail(request, num=1):
-    """ 詳細の登録済みレコードを一覧で返す """
+    """ 隧ｳ邏ｰ縺ｮ逋ｻ骭ｲ貂医∩繝ｬ繧ｳ繝ｼ繝峨ｒ荳隕ｧ縺ｧ霑斐☆ """
     data = YaItemDetail.objects.all()
     page = Paginator(data, 3)
     params = {
@@ -582,12 +582,12 @@ def read_s_sheet(request):
 
 
 def kick_yaget(request):
-    # サブプロセスでyagetのコマンドをキックする
+    # 繧ｵ繝悶・繝ｭ繧ｻ繧ｹ縺ｧyaget縺ｮ繧ｳ繝槭Φ繝峨ｒ繧ｭ繝・け縺吶ｋ
     if (request.method == 'POST'):
         yaurl = request.POST['YaUrl']
         form = KickYagetForm(request.POST)
         msg = ' be on kick [' + yaurl + ']'
-        # ここでサププロセスをキック
+        # 縺薙％縺ｧ繧ｵ繝励・繝ｭ繧ｻ繧ｹ繧偵く繝・け
         cmd = "source /home/django/djangoenv/bin/activate;python /home/django/sample/manage.py get_ya_src "
         cmd += yaurl
         msg += ' cmd[' + cmd + ']'
@@ -609,7 +609,7 @@ def kick_yaget(request):
     return render(request, 'yaget/kick_yaget.html', params)
 
 
-# アップロードされたファイルのハンドル
+# 繧｢繝・・繝ｭ繝ｼ繝峨＆繧後◆繝輔ぃ繧､繝ｫ縺ｮ繝上Φ繝峨Ν
 def handle_uploaded_file(f):
     sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='cp932')
     path = os.path.join(UPLOAD_DIR, f.name)
@@ -625,7 +625,7 @@ def upd_byers_ct_list_done(request):
 
 def upd_byers_ct_list(request):
     try:
-        # サブプロセスでbyersのコマンドをキックする
+        # 繧ｵ繝悶・繝ｭ繧ｻ繧ｹ縺ｧbyers縺ｮ繧ｳ繝槭Φ繝峨ｒ繧ｭ繝・け縺吶ｋ
         if (request.method == 'POST'):
 
             yaurl = request.POST['YaUrl']
@@ -634,11 +634,11 @@ def upd_byers_ct_list(request):
             if form.is_valid():
                 msg = ' be on kick upd_byers_ct_list'
                 #handle_uploaded_file(request.FILES['file'])
-                # ここでサププロセスをキック
+                # 縺薙％縺ｧ繧ｵ繝励・繝ｭ繧ｻ繧ｹ繧偵く繝・け
                 #cmd = "cd /home/django/sample/yaget/management/commands; source /home/django/djangoenv/bin/activate;python /home/django/sample/manage.py get_ya_buyers_list "
                 cmd = "cd /home/django/sample/yaget/management/commands; source /home/django/djangoenv/bin/activate;python /home/django/sample/manage.py get_wowma_buyers_list "
 
-                # 今は引数を見てない・・が仮に登録しておく
+                # 莉翫・蠑墓焚繧定ｦ九※縺ｪ縺・・繝ｻ縺御ｻｮ縺ｫ逋ｻ骭ｲ縺励※縺翫￥
                 cmd += "12345"
                 msg += ' cmd[' + cmd + ']'
                 # cmd = "pwd"
@@ -647,7 +647,7 @@ def upd_byers_ct_list(request):
 
                 #msg += ' maybe ok.' + p.stdout.readline()
 
-                # リアルタイムに取得　デバッグしたいときにONにすれば画面のmsgに標準出力を出せる
+                # 繝ｪ繧｢繝ｫ繧ｿ繧､繝縺ｫ蜿門ｾ励繝・ヰ繝・げ縺励◆縺・→縺阪↓ON縺ｫ縺吶ｌ縺ｰ逕ｻ髱｢縺ｮmsg縺ｫ讓呎ｺ門・蜉帙ｒ蜃ｺ縺帙ｋ
 
                 #p = subprocess.Popen(cmd, shell=True, stderr=subprocess.STDOUT, stdout=subprocess.PIPE)
                 """
@@ -658,9 +658,9 @@ def upd_byers_ct_list(request):
                 """
 
                 msg += ' maybe ok.' + str(p.pid)
-                # アップロード完了画面にリダイレクト
+                # 繧｢繝・・繝ｭ繝ｼ繝牙ｮ御ｺ・判髱｢縺ｫ繝ｪ繝繧､繝ｬ繧ｯ繝・
                 params = {
-                    'title': 'データ更新開始しました',
+                    'title': '繝・・繧ｿ譖ｴ譁ｰ髢句ｧ九＠縺ｾ縺励◆',
                     'message': msg,
                     'form': form,
                 }
@@ -699,13 +699,13 @@ wks.update_acell('A4', '3')
 print(wks.acell('A4'))
 print(wks.acell('B1'))
 
-# 行数
+# 陦梧焚
 print(wks.row_count)
 
-# 行を全て取得
+# 陦後ｒ蜈ｨ縺ｦ蜿門ｾ・
 print(wks.row_values(2))
 
-# 範囲を全て取得
+# 遽・峇繧貞・縺ｦ蜿門ｾ・
 print(wks.range('A2:C4'))
 
 """
@@ -725,27 +725,27 @@ def addlist(request):
     return render(request, 'yaget/addlist.html', params)
 
 
-# list のデータをspreadsheetに展開する
+# list 縺ｮ繝・・繧ｿ繧痴preadsheet縺ｫ螻暮幕縺吶ｋ
 def set_list_to_sheet(request):
     return HttpResponse("Hello yaget getdetail!")
     """
     if (request.method == 'POST'):
         sheetnum = request.POST['sheetnum']
         form = YaSetListToSheet(request.POST)
-        # とりあえず全件
+        # 縺ｨ繧翫≠縺医★蜈ｨ莉ｶ
         data = YaItemList.objects.all()
         msg = 'after post..'
 
-        # シートにセットする
+        # 繧ｷ繝ｼ繝医↓繧ｻ繝・ヨ縺吶ｋ
         worksheet = WorkSheet(sheetnum)
 
-        # E1とG1に値を挿入
+        # E1縺ｨG1縺ｫ蛟､繧呈諺蜈･
         worksheet.update('E1:G1', {'values': [1, 2]})
 
     else:
         msg = 'sheeet num...'
         form = YaSetListToSheet()
-        # とりあえず全件
+        # 縺ｨ繧翫≠縺医★蜈ｨ莉ｶ
         data = YaItemList.objects.all()
 
 
@@ -756,17 +756,17 @@ def set_list_to_sheet(request):
         'data':data,
     }
 
-    # とりあえず全件
+    # 縺ｨ繧翫≠縺医★蜈ｨ莉ｶ
     data = YaItemList.objects.all()
 
-    # シートにセットする
+    # 繧ｷ繝ｼ繝医↓繧ｻ繝・ヨ縺吶ｋ
     worksheet = WorkSheet(sheetnum)
 
-    # E1とG1に値を挿入
+    # E1縺ｨG1縺ｫ蛟､繧呈諺蜈･
     worksheet.update('E1:G1', {'values': [1, 2]})
 
-    # 上が通ったら・・ data の内容を展開してみたい
-    # dataは、1件だけ（all じゃなくfirst）ならいけるか
+    # 荳翫′騾壹▲縺溘ｉ繝ｻ繝ｻ data 縺ｮ蜀・ｮｹ繧貞ｱ暮幕縺励※縺ｿ縺溘＞
+    # data縺ｯ縲・莉ｶ縺縺托ｼ・ll 縺倥ｃ縺ｪ縺叔irst・峨↑繧峨＞縺代ｋ縺・
     #worksheet.update('A2:G2', {'values': data})
 
 
@@ -867,7 +867,7 @@ def message(request, page=1):
 
 class BuyersGoodsDetailList(generic.ListView):
     """
-    YaBuyersItemDetailテーブルの一覧表作成
+    YaBuyersItemDetail繝・・繝悶Ν縺ｮ荳隕ｧ陦ｨ菴懈・
     """
     model = YaBuyersItemDetail
     template_name = 'yaget/buyers_goods_detail_list.html'
@@ -913,15 +913,15 @@ class BuyersGoodsDetailList(generic.ListView):
             self.request.POST.get('create_date_to', None),
         ]
         request.session['form_value_buyers_goods_detail_list'] = form_value_buyers_goods_detail_list
-        # 検索時にページネーションに関連したエラーを防ぐ
+        # 讀懃ｴ｢譎ゅ↓繝壹・繧ｸ繝阪・繧ｷ繝ｧ繝ｳ縺ｫ髢｢騾｣縺励◆繧ｨ繝ｩ繝ｼ繧帝亟縺・
         self.request.GET = self.request.GET.copy()
         self.request.GET.clear()
         return self.get(request, *args, **kwargs)
 
-    # 抽出件数を絞る
+    # 謚ｽ蜃ｺ莉ｶ謨ｰ繧堤ｵ槭ｋ
     def get_queryset(self, queryset=None):
         #return YaBuyersItemDetail.objects.all()[:10]
-        # sessionに値がある場合、その値でクエリ発行する。
+        # session縺ｫ蛟､縺後≠繧句ｴ蜷医√◎縺ｮ蛟､縺ｧ繧ｯ繧ｨ繝ｪ逋ｺ陦後☆繧九・
         #if 'form_value_buyers_goods_detail_list' in self.request.session:
         #    self.request.session.clear()
 
@@ -963,7 +963,7 @@ class BuyersGoodsDetailList(generic.ListView):
             qoo_ctid = form_value_buyers_goods_detail_list[33]
             create_date_from = form_value_buyers_goods_detail_list[34]
             create_date_to = form_value_buyers_goods_detail_list[35]
-            # 検索条件
+            # 讀懃ｴ｢譚｡莉ｶ
             condition_gid = Q()
             condition_glink = Q()
             condition_gname = Q()
@@ -1111,7 +1111,7 @@ class BuyersGoodsDetailList(generic.ListView):
                 condition_create_date_to
             ).order_by("-update_date")[:10000]
         else:
-            # 何も返さない
+            # 菴輔ｂ霑斐＆縺ｪ縺・
             return YaBuyersItemDetail.objects.none()
 
     def get_context_data(self, **kwargs):
@@ -1228,18 +1228,18 @@ class BuyersGoodsDetailList(generic.ListView):
                     'create_date_from': create_date_from,
                     'create_date_to': create_date_to,
                     }
-        test_form = YaBuyersItemDetailSearchForm(initial=default_data) # 検索フォーム
+        test_form = YaBuyersItemDetailSearchForm(initial=default_data) # 讀懃ｴ｢繝輔か繝ｼ繝
         ctx['test_form'] = test_form
         ctx['form_name'] = 'yaget'
-        ctx['message'] = 'バイヤーズ商品リストです'
-        ctx['title'] = 'バイヤーズ商品リスト タイトル'
+        ctx['message'] = '繝舌う繝､繝ｼ繧ｺ蝠・刀繝ｪ繧ｹ繝医〒縺・
+        ctx['title'] = '繝舌う繝､繝ｼ繧ｺ蝠・刀繝ｪ繧ｹ繝・繧ｿ繧､繝医Ν'
         ctx['obj_all_cnt'] = YaBuyersItemDetail.objects.all().count()
         return ctx
 
 
 def BuyersGoodsDetailExport(request):
     """
-    YaBuyersItemDetail、CSVファイルを作成してresponseに出力します。
+    YaBuyersItemDetail縲，SV繝輔ぃ繧､繝ｫ繧剃ｽ懈・縺励※response縺ｫ蜃ｺ蜉帙＠縺ｾ縺吶・
     """
     response = HttpResponse(content_type='text/csv; charset=Shift-JIS')
     #response = HttpResponse(content_type='text/csv; charset=UTF-8')
@@ -1286,7 +1286,7 @@ def BuyersGoodsDetailExport(request):
         create_date_from = form_value_buyers_goods_detail_list[34]
         create_date_to = form_value_buyers_goods_detail_list[35]
 
-        # 検索条件
+        # 讀懃ｴ｢譚｡莉ｶ
         condition_gid = Q()
         condition_glink = Q()
         condition_gname = Q()
@@ -1397,45 +1397,45 @@ def BuyersGoodsDetailExport(request):
             condition_create_date_to = Q(create_date__lte=create_date_to)
 
         csvfilename = tstr + '_buyers_item_detail.csv'
-        csvfilename = csvfilename.replace(' ','').replace('>','_').replace('、','-')
+        csvfilename = csvfilename.replace(' ','').replace('>','_').replace('縲・,'-')
         writer = get_csv_writer(response, csvfilename)
 
-        # ヘッダ行セット
+        # 繝倥ャ繝陦後そ繝・ヨ
         writer.writerow([
-            '商品ID',
-            '商品リンク',
-            '商品名',
-            '商品詳細',
-            '通常価格',
-            '大量発注価格',
-            'バイヤーズ商品コード',
-            '在庫数',
-            'wow掲載状況',
-            'wowステータス',
-            'wow商品名',
-            'wow商品詳細',
-            'wow注意キーワード',
-            'wow価格',
-            'wow固定価格',
-            'wow送料設定区分',
-            'wow個別送料',
-            'wow送料設定区分',
-            'wowカテゴリID',
-            'qoo掲載状況',
-            'qooステータス',
-            'qoo販売者コード',
-            'qoo商品コード',
-            'qoo商品名',
-            'qoo商品詳細',
-            'qoo注意キーワード',
-            'qoo価格',
-            'qoo固定価格',
-            'qoo送料設定区分',
-            'qoo個別送料',
-            'qoo送料設定区分',
-            'qooカテゴリID',
-            '作成日',
-            '更新日',
+            '蝠・刀ID',
+            '蝠・刀繝ｪ繝ｳ繧ｯ',
+            '蝠・刀蜷・,
+            '蝠・刀隧ｳ邏ｰ',
+            '騾壼ｸｸ萓｡譬ｼ',
+            '螟ｧ驥冗匱豕ｨ萓｡譬ｼ',
+            '繝舌う繝､繝ｼ繧ｺ蝠・刀繧ｳ繝ｼ繝・,
+            '蝨ｨ蠎ｫ謨ｰ',
+            'wow謗ｲ霈臥憾豕・,
+            'wow繧ｹ繝・・繧ｿ繧ｹ',
+            'wow蝠・刀蜷・,
+            'wow蝠・刀隧ｳ邏ｰ',
+            'wow豕ｨ諢上く繝ｼ繝ｯ繝ｼ繝・,
+            'wow萓｡譬ｼ',
+            'wow蝗ｺ螳壻ｾ｡譬ｼ',
+            'wow騾∵侭險ｭ螳壼玄蛻・,
+            'wow蛟句挨騾∵侭',
+            'wow騾∵侭險ｭ螳壼玄蛻・,
+            'wow繧ｫ繝・ざ繝ｪID',
+            'qoo謗ｲ霈臥憾豕・,
+            'qoo繧ｹ繝・・繧ｿ繧ｹ',
+            'qoo雋ｩ螢ｲ閠・さ繝ｼ繝・,
+            'qoo蝠・刀繧ｳ繝ｼ繝・,
+            'qoo蝠・刀蜷・,
+            'qoo蝠・刀隧ｳ邏ｰ',
+            'qoo豕ｨ諢上く繝ｼ繝ｯ繝ｼ繝・,
+            'qoo萓｡譬ｼ',
+            'qoo蝗ｺ螳壻ｾ｡譬ｼ',
+            'qoo騾∵侭險ｭ螳壼玄蛻・,
+            'qoo蛟句挨騾∵侭',
+            'qoo騾∵侭險ｭ螳壼玄蛻・,
+            'qoo繧ｫ繝・ざ繝ｪID',
+            '菴懈・譌･',
+            '譖ｴ譁ｰ譌･',
         ])
 
         for retobj in YaBuyersItemDetail.objects.select_related().filter(
@@ -1476,7 +1476,7 @@ def BuyersGoodsDetailExport(request):
                 condition_create_date_from &
                 condition_create_date_to
         ).order_by("-update_date")[:10000]:
-            # 変換する文字。shift-jis変換でコケた文字はここに登録
+            # 螟画鋤縺吶ｋ譁・ｭ励Ｔhift-jis螟画鋤縺ｧ繧ｳ繧ｱ縺滓枚蟄励・縺薙％縺ｫ逋ｻ骭ｲ
             tmpgname = retobj.gname
             for exchange_words in BuyersBrandInfo._MY_EXCHANGE_WORDS:
                 tmpgname = re.sub(exchange_words[0], exchange_words[1], tmpgname)
@@ -1541,42 +1541,42 @@ def BuyersGoodsDetailExport(request):
         csvfilename = tstr + '_buyers_item_detail_all.csv'
         writer = get_csv_writer(response, csvfilename)
 
-        # ヘッダ行セット
+        # 繝倥ャ繝陦後そ繝・ヨ
         writer.writerow([
-            '商品ID',
-            '商品リンク',
-            '商品名',
-            '商品詳細',
-            '通常価格',
-            '大量発注価格',
-            'バイヤーズ商品コード',
-            '在庫数',
-            'wow掲載状況',
-            'wowステータス',
-            'wow商品名',
-            'wow商品詳細',
-            'wow注意キーワード',
-            'wow価格',
-            'wow固定価格',
-            'wow送料設定区分',
-            'wow個別送料',
-            'wow送料設定区分',
-            'wowカテゴリID',
-            'qoo掲載状況',
-            'qooステータス',
-            'qoo販売者コード',
-            'qoo商品コード',
-            'qoo商品名',
-            'qoo商品詳細',
-            'qoo注意キーワード',
-            'qoo価格',
-            'qoo固定価格',
-            'qoo送料設定区分',
-            'qoo個別送料',
-            'qoo送料設定区分',
-            'qooカテゴリID',
-            '作成日',
-            '更新日',
+            '蝠・刀ID',
+            '蝠・刀繝ｪ繝ｳ繧ｯ',
+            '蝠・刀蜷・,
+            '蝠・刀隧ｳ邏ｰ',
+            '騾壼ｸｸ萓｡譬ｼ',
+            '螟ｧ驥冗匱豕ｨ萓｡譬ｼ',
+            '繝舌う繝､繝ｼ繧ｺ蝠・刀繧ｳ繝ｼ繝・,
+            '蝨ｨ蠎ｫ謨ｰ',
+            'wow謗ｲ霈臥憾豕・,
+            'wow繧ｹ繝・・繧ｿ繧ｹ',
+            'wow蝠・刀蜷・,
+            'wow蝠・刀隧ｳ邏ｰ',
+            'wow豕ｨ諢上く繝ｼ繝ｯ繝ｼ繝・,
+            'wow萓｡譬ｼ',
+            'wow蝗ｺ螳壻ｾ｡譬ｼ',
+            'wow騾∵侭險ｭ螳壼玄蛻・,
+            'wow蛟句挨騾∵侭',
+            'wow騾∵侭險ｭ螳壼玄蛻・,
+            'wow繧ｫ繝・ざ繝ｪID',
+            'qoo謗ｲ霈臥憾豕・,
+            'qoo繧ｹ繝・・繧ｿ繧ｹ',
+            'qoo雋ｩ螢ｲ閠・さ繝ｼ繝・,
+            'qoo蝠・刀繧ｳ繝ｼ繝・,
+            'qoo蝠・刀蜷・,
+            'qoo蝠・刀隧ｳ邏ｰ',
+            'qoo豕ｨ諢上く繝ｼ繝ｯ繝ｼ繝・,
+            'qoo萓｡譬ｼ',
+            'qoo蝗ｺ螳壻ｾ｡譬ｼ',
+            'qoo騾∵侭險ｭ螳壼玄蛻・,
+            'qoo蛟句挨騾∵侭',
+            'qoo騾∵侭險ｭ螳壼玄蛻・,
+            'qoo繧ｫ繝・ざ繝ｪID',
+            '菴懈・譌･',
+            '譖ｴ譁ｰ譌･',
         ])
 
         for retobj in YaBuyersItemDetail.objects.all():
@@ -1622,7 +1622,7 @@ def BuyersGoodsDetailExport(request):
 
 def BuyersGoodsDetailSmallExport(request):
     """
-    YaBuyersItemDetail、商品説明などに項目を絞り込んだCSVファイルを作成してresponseに出力します。
+    YaBuyersItemDetail縲∝膚蜩∬ｪｬ譏弱↑縺ｩ縺ｫ鬆・岼繧堤ｵ槭ｊ霎ｼ繧薙□CSV繝輔ぃ繧､繝ｫ繧剃ｽ懈・縺励※response縺ｫ蜃ｺ蜉帙＠縺ｾ縺吶・
     """
     response = HttpResponse(content_type='text/csv; charset=Shift-JIS')
     #response = HttpResponse(content_type='text/csv; charset=UTF-8')
@@ -1669,7 +1669,7 @@ def BuyersGoodsDetailSmallExport(request):
         create_date_from = form_value_buyers_goods_detail_list[34]
         create_date_to = form_value_buyers_goods_detail_list[35]
 
-        # 検索条件
+        # 讀懃ｴ｢譚｡莉ｶ
         condition_gid = Q()
         condition_glink = Q()
         condition_gname = Q()
@@ -1779,30 +1779,30 @@ def BuyersGoodsDetailSmallExport(request):
         if len(create_date_to) != 0 and create_date_to[0]:
             condition_create_date_to = Q(create_date__lte=create_date_to)
 
-        # 縮小版は s 始まりのルールにする
+        # 邵ｮ蟆冗沿縺ｯ s 蟋九∪繧翫・繝ｫ繝ｼ繝ｫ縺ｫ縺吶ｋ
         csvfilename = 's_' + tstr + '_buyers_item_detail.csv'
-        csvfilename = csvfilename.replace(' ','').replace('>','_').replace('、','-')
+        csvfilename = csvfilename.replace(' ','').replace('>','_').replace('縲・,'-')
         writer = get_csv_writer(response, csvfilename)
 
-        # ヘッダ行セット
+        # 繝倥ャ繝陦後そ繝・ヨ
         writer.writerow([
-            '商品ID',
-            '商品名',
-            '商品詳細',
-            '通常価格',
-            '在庫数',
-            'wow掲載状況',
-            'wowステータス',
-            'wow商品名',
-            'wow商品詳細',
-            'wow注意キーワード',
-            'qoo掲載状況',
-            'qooステータス',
-            'qoo商品名',
-            'qoo商品詳細',
-            'qoo注意キーワード',
-            '作成日',
-            '更新日',
+            '蝠・刀ID',
+            '蝠・刀蜷・,
+            '蝠・刀隧ｳ邏ｰ',
+            '騾壼ｸｸ萓｡譬ｼ',
+            '蝨ｨ蠎ｫ謨ｰ',
+            'wow謗ｲ霈臥憾豕・,
+            'wow繧ｹ繝・・繧ｿ繧ｹ',
+            'wow蝠・刀蜷・,
+            'wow蝠・刀隧ｳ邏ｰ',
+            'wow豕ｨ諢上く繝ｼ繝ｯ繝ｼ繝・,
+            'qoo謗ｲ霈臥憾豕・,
+            'qoo繧ｹ繝・・繧ｿ繧ｹ',
+            'qoo蝠・刀蜷・,
+            'qoo蝠・刀隧ｳ邏ｰ',
+            'qoo豕ｨ諢上く繝ｼ繝ｯ繝ｼ繝・,
+            '菴懈・譌･',
+            '譖ｴ譁ｰ譌･',
         ])
 
         for retobj in YaBuyersItemDetail.objects.select_related().filter(
@@ -1843,7 +1843,7 @@ def BuyersGoodsDetailSmallExport(request):
                 condition_create_date_from &
                 condition_create_date_to
         ).order_by("-update_date")[:10000]:
-            # 変換する文字。shift-jis変換でコケた文字はここに登録
+            # 螟画鋤縺吶ｋ譁・ｭ励Ｔhift-jis螟画鋤縺ｧ繧ｳ繧ｱ縺滓枚蟄励・縺薙％縺ｫ逋ｻ骭ｲ
             tmpgname = retobj.gname
             for exchange_words in BuyersBrandInfo._MY_EXCHANGE_WORDS:
                 tmpgname = re.sub(exchange_words[0], exchange_words[1], tmpgname)
@@ -1886,25 +1886,25 @@ def BuyersGoodsDetailSmallExport(request):
         csvfilename = tstr + '_buyers_item_detail_all.csv'
         writer = get_csv_writer(response, csvfilename)
 
-        # ヘッダ行セット
+        # 繝倥ャ繝陦後そ繝・ヨ
         writer.writerow([
-            '商品ID',
-            '商品名',
-            '商品詳細',
-            '通常価格',
-            '在庫数',
-            'wow掲載状況',
-            'wowステータス',
-            'wow商品名',
-            'wow商品詳細',
-            'wow注意キーワード',
-            'qoo掲載状況',
-            'qooステータス',
-            'qoo商品名',
-            'qoo商品詳細',
-            'qoo注意キーワード',
-            '作成日',
-            '更新日',
+            '蝠・刀ID',
+            '蝠・刀蜷・,
+            '蝠・刀隧ｳ邏ｰ',
+            '騾壼ｸｸ萓｡譬ｼ',
+            '蝨ｨ蠎ｫ謨ｰ',
+            'wow謗ｲ霈臥憾豕・,
+            'wow繧ｹ繝・・繧ｿ繧ｹ',
+            'wow蝠・刀蜷・,
+            'wow蝠・刀隧ｳ邏ｰ',
+            'wow豕ｨ諢上く繝ｼ繝ｯ繝ｼ繝・,
+            'qoo謗ｲ霈臥憾豕・,
+            'qoo繧ｹ繝・・繧ｿ繧ｹ',
+            'qoo蝠・刀蜷・,
+            'qoo蝠・刀隧ｳ邏ｰ',
+            'qoo豕ｨ諢上く繝ｼ繝ｯ繝ｼ繝・,
+            '菴懈・譌･',
+            '譖ｴ譁ｰ譌･',
         ])
         for retobj in YaBuyersItemDetail.objects.all():
             writer.writerow([
@@ -1931,7 +1931,7 @@ def BuyersGoodsDetailSmallExport(request):
 
 class BuyersGoodsDetailImport(generic.FormView):
     """
-    YaBuyersItemDetailテーブルを全件検索して、CSVファイルを取り込みDBに格納します。
+    YaBuyersItemDetail繝・・繝悶Ν繧貞・莉ｶ讀懃ｴ｢縺励※縲，SV繝輔ぃ繧､繝ｫ繧貞叙繧願ｾｼ縺ｿDB縺ｫ譬ｼ邏阪＠縺ｾ縺吶・
     """
     template_name = 'yaget/buyers_goods_detail_import.html'
     success_url = reverse_lazy('yaget:buyers_goods_detail_list')
@@ -1940,19 +1940,19 @@ class BuyersGoodsDetailImport(generic.FormView):
     def get_context_data(self, **kwargs):
         ctx = super().get_context_data(**kwargs)
         ctx['form_name'] = 'yaget'
-        ctx['message'] = 'BuyersGoodsDetailImport　です'
+        ctx['message'] = 'BuyersGoodsDetailImport縲縺ｧ縺・
         return ctx
 
     def form_valid(self, form):
-        """postされたTSVファイルを読み込み、YaBuyersItemDetail テーブルに登録します"""
+        """post縺輔ｌ縺鬱SV繝輔ぃ繧､繝ｫ繧定ｪｭ縺ｿ霎ｼ縺ｿ縲〆aBuyersItemDetail 繝・・繝悶Ν縺ｫ逋ｻ骭ｲ縺励∪縺・""
         csvfile = TextIOWrapper(form.cleaned_data['file'], encoding='shift-JIS')
         #csvfile = TextIOWrapper(form.cleaned_data['file'], encoding='utf-8')
         reader = csv.reader(csvfile)
 
-        # 指定ディレクトリにcsvでカキコ
+        # 謖・ｮ壹ョ繧｣繝ｬ繧ｯ繝医Μ縺ｫcsv縺ｧ繧ｫ繧ｭ繧ｳ
         self.write_csv(reader)
 
-        # 書き込んだらバッチをキック
+        # 譖ｸ縺崎ｾｼ繧薙□繧峨ヰ繝・メ繧偵く繝・け
         mymsg = 'goods info update start. '
         cmd = "source /home/django/djangoenv/bin/activate;python /home/django/sample/manage.py upload_goods_info"
         p = subprocess.Popen(cmd, shell=True)
@@ -1962,14 +1962,14 @@ class BuyersGoodsDetailImport(generic.FormView):
         #reader = csv.reader(csvfile, delimiter="\t")
         for i, row in enumerate(reader):
             if i == 0:
-                continue # ヘッダ行は飛ばす
+                continue # 繝倥ャ繝陦後・鬟帙・縺・
 
-            #YaBuyersItemDetail テーブルをgid (primary key)で検索します
+            #YaBuyersItemDetail 繝・・繝悶Ν繧暖id (primary key)縺ｧ讀懃ｴ｢縺励∪縺・
             try:
                 #ya_b_item_detail, created = YaBuyersItemDetail.objects.get_or_create(gid=row[0])
                 ya_b_item_detail = YaBuyersItemDetail.objects.get(gid=row[0])
             except Exception as e:
-                # 該当レコードがなければパス
+                # 隧ｲ蠖薙Ξ繧ｳ繝ｼ繝峨′縺ｪ縺代ｌ縺ｰ繝代せ
                 continue
 
             #ya_b_item_detail.gid = row[0]
@@ -2006,13 +2006,13 @@ class BuyersGoodsDetailImport(generic.FormView):
         """
         return super().form_valid(form)
 
-    # csvにファイル出力
+    # csv縺ｫ繝輔ぃ繧､繝ｫ蜃ｺ蜉・
     def write_csv(self, reader):
         logger.debug('write_csv in .')
-        # csvはここで用意するか
+        # csv縺ｯ縺薙％縺ｧ逕ｨ諢上☆繧九°
         csvname = myupdcsv_dir + 'updcsv_' + "{0:%Y%m%d_%H%M%S}".format(datetime.datetime.now()) + '.csv'
 
-        # 以下はヘッダ行のみ
+        # 莉･荳九・繝倥ャ繝陦後・縺ｿ
         """
         with open(csvname, 'w', encoding='cp932') as csvfile:
             writer = csv.writer(csvfile, lineterminator='\n')
@@ -2049,7 +2049,7 @@ class BuyersGoodsDetailImport(generic.FormView):
                 'qoo_ctid',
             ])
         """
-        # データ行は追記
+        # 繝・・繧ｿ陦後・霑ｽ險・
         with open(csvname, 'w') as csvfile:
             writer = csv.writer(csvfile, lineterminator='\n')
             for item in reader:
@@ -2092,8 +2092,8 @@ class BuyersGoodsDetailImport(generic.FormView):
 
 class BuyersGoodsDetailSmallImport(generic.FormView):
     """
-    YaBuyersItemDetailテーブルを全件検索して、CSVファイルを取り込みDBに格納します。
-    絞り込み項目版
+    YaBuyersItemDetail繝・・繝悶Ν繧貞・莉ｶ讀懃ｴ｢縺励※縲，SV繝輔ぃ繧､繝ｫ繧貞叙繧願ｾｼ縺ｿDB縺ｫ譬ｼ邏阪＠縺ｾ縺吶・
+    邨槭ｊ霎ｼ縺ｿ鬆・岼迚・
     """
     template_name = 'yaget/buyers_goods_detail_small_import.html'
     success_url = reverse_lazy('yaget:buyers_goods_detail_list')
@@ -2102,21 +2102,21 @@ class BuyersGoodsDetailSmallImport(generic.FormView):
     def get_context_data(self, **kwargs):
         ctx = super().get_context_data(**kwargs)
         ctx['form_name'] = 'yaget'
-        ctx['message'] = 'BuyersGoodsDetailSmallImport　です'
+        ctx['message'] = 'BuyersGoodsDetailSmallImport縲縺ｧ縺・
         return ctx
 
     def form_valid(self, form):
         logger.debug("--- BuyersGoodsDetailSmallImport in")
 
-        """postされたTSVファイルを読み込み、YaBuyersItemDetail テーブルに登録します"""
+        """post縺輔ｌ縺鬱SV繝輔ぃ繧､繝ｫ繧定ｪｭ縺ｿ霎ｼ縺ｿ縲〆aBuyersItemDetail 繝・・繝悶Ν縺ｫ逋ｻ骭ｲ縺励∪縺・""
         csvfile = TextIOWrapper(form.cleaned_data['file'], encoding='shift-JIS')
         #csvfile = TextIOWrapper(form.cleaned_data['file'], encoding='utf-8')
         reader = csv.reader(csvfile)
 
-        # 指定ディレクトリにcsvでカキコ
+        # 謖・ｮ壹ョ繧｣繝ｬ繧ｯ繝医Μ縺ｫcsv縺ｧ繧ｫ繧ｭ繧ｳ
         self.write_csv(reader)
 
-        # 書き込んだらバッチをキック
+        # 譖ｸ縺崎ｾｼ繧薙□繧峨ヰ繝・メ繧偵く繝・け
         mymsg = 'goods info update start. '
         cmd = "source /home/django/djangoenv/bin/activate;python /home/django/sample/manage.py upload_goods_info"
         p = subprocess.Popen(cmd, shell=True)
@@ -2128,16 +2128,16 @@ class BuyersGoodsDetailSmallImport(generic.FormView):
             if i == 0:
                 logger.debug("--- BuyersGoodsDetailSmallImport i=0 continue")
 
-                continue # ヘッダ行は飛ばす
+                continue # 繝倥ャ繝陦後・鬟帙・縺・
 
-            #YaBuyersItemDetail テーブルをmyshop_cat_all (primary key)で検索します
+            #YaBuyersItemDetail 繝・・繝悶Ν繧知yshop_cat_all (primary key)縺ｧ讀懃ｴ｢縺励∪縺・
 
             try:
                 #ya_b_item_detail, created = YaBuyersItemDetail.objects.get_or_create(gid=row[0])
                 logger.debug("--- BuyersGoodsDetailSmallImport gid:[{}]".format(row[0]))
                 ya_b_item_detail = YaBuyersItemDetail.objects.get(gid=row[0])
             except Exception as e:
-                # 該当レコードがなければパス
+                # 隧ｲ蠖薙Ξ繧ｳ繝ｼ繝峨′縺ｪ縺代ｌ縺ｰ繝代せ
                 continue
             #ya_b_item_detail.gid = row[0]
             ya_b_item_detail.gname = row[1]
@@ -2160,13 +2160,13 @@ class BuyersGoodsDetailSmallImport(generic.FormView):
         logger.debug("--- BuyersGoodsDetailSmallImport out")
         return super().form_valid(form)
 
-    # csvにファイル出力(簡易版)
+    # csv縺ｫ繝輔ぃ繧､繝ｫ蜃ｺ蜉・邁｡譏鍋沿)
     def write_csv(self, reader):
         logger.debug('write_csv in .')
-        # csvはここで用意するか
+        # csv縺ｯ縺薙％縺ｧ逕ｨ諢上☆繧九°
         csvname = myupdcsv_dir + 's_updcsv_' + "{0:%Y%m%d_%H%M%S}".format(datetime.datetime.now()) + '.csv'
 
-        # 以下はヘッダ行のみ
+        # 莉･荳九・繝倥ャ繝陦後・縺ｿ
         """
         with open(csvname, 'w', encoding='cp932') as csvfile:
             writer = csv.writer(csvfile, lineterminator='\n')
@@ -2188,7 +2188,7 @@ class BuyersGoodsDetailSmallImport(generic.FormView):
                 'qoo_worn_key',
             ])
         """
-        # データ行は追記
+        # 繝・・繧ｿ陦後・霑ｽ險・
         with open(csvname, 'w') as csvfile:
             writer = csv.writer(csvfile, lineterminator='\n')
             for item in reader:
@@ -2216,7 +2216,7 @@ class BuyersGoodsDetailSmallImport(generic.FormView):
 
 class BuyersGoodsDelete(generic.FormView):
     """
-    YaBuyersItemDetailテーブルから指定されたgidの商品を削除、wowmaとqoo10からも削除します
+    YaBuyersItemDetail繝・・繝悶Ν縺九ｉ謖・ｮ壹＆繧後◆gid縺ｮ蝠・刀繧貞炎髯､縲『owma縺ｨqoo10縺九ｉ繧ょ炎髯､縺励∪縺・
     """
     template_name = 'yaget/buyers_goods_delete.html'
     success_url = reverse_lazy('yaget:buyers_goods_delete_confirm')
@@ -2225,7 +2225,7 @@ class BuyersGoodsDelete(generic.FormView):
     def get_context_data(self, **kwargs):
         ctx = super().get_context_data(**kwargs)
         ctx['form_name'] = 'yaget'
-        ctx['message'] = '一括削除の画面です'
+        ctx['message'] = '荳諡ｬ蜑企勁縺ｮ逕ｻ髱｢縺ｧ縺・
         return ctx
 
     def form_valid(self, form):
@@ -2233,14 +2233,14 @@ class BuyersGoodsDelete(generic.FormView):
         #ctx = {'form': form }
         #ctx['form_name'] = 'yaget'
         ctx = self.get_context_data()
-        # 確認画面での処理
+        # 遒ｺ隱咲判髱｢縺ｧ縺ｮ蜃ｦ逅・
         csvfile = TextIOWrapper(form.cleaned_data['file'], encoding='shift-JIS')
         # csvfile = TextIOWrapper(form.cleaned_data['file'], encoding='utf-8')
         reader = csv.reader(csvfile)
 
-        # 指定ディレクトリにcsvでカキコ
+        # 謖・ｮ壹ョ繧｣繝ｬ繧ｯ繝医Μ縺ｫcsv縺ｧ繧ｫ繧ｭ繧ｳ
         ctx['item_list'] = self._write_csv(reader)
-        ctx['message'] = '削除を実行しますよ'
+        ctx['message'] = '蜑企勁繧貞ｮ溯｡後＠縺ｾ縺吶ｈ'
 
         logger.debug("--- BuyersGoodsDelete confirm out")
         return render(self.request, 'yaget/buyers_goods_delete_confirm.html', ctx)
@@ -2248,56 +2248,56 @@ class BuyersGoodsDelete(generic.FormView):
 
         """
         if self.request.POST.get('next', '') == 'confirm':
-            # 確認画面での処理
+            # 遒ｺ隱咲判髱｢縺ｧ縺ｮ蜃ｦ逅・
             csvfile = TextIOWrapper(form.cleaned_data['file'], encoding='shift-JIS')
             # csvfile = TextIOWrapper(form.cleaned_data['file'], encoding='utf-8')
             reader = csv.reader(csvfile)
 
-            # 指定ディレクトリにcsvでカキコ
+            # 謖・ｮ壹ョ繧｣繝ｬ繧ｯ繝医Μ縺ｫcsv縺ｧ繧ｫ繧ｭ繧ｳ
             ctx['item_list'] = self._write_csv(reader)
-            ctx['message'] = '削除を実行しますよ'
+            ctx['message'] = '蜑企勁繧貞ｮ溯｡後＠縺ｾ縺吶ｈ'
 
             logger.debug("--- BuyersGoodsDelete confirm out")
             return render(self.request, 'yaget/buyers_goods_delete_confirm.html', ctx)
 
         if self.request.POST.get('next', '') == 'back':
-            # 元に戻るだけ
+            # 蜈・↓謌ｻ繧九□縺・
             logger.debug("--- BuyersGoodsDelete back out")
-            ctx['message'] = 'ファイルを選択し直してください'
+            ctx['message'] = '繝輔ぃ繧､繝ｫ繧帝∈謚槭＠逶ｴ縺励※縺上□縺輔＞'
             return render(self.request, 'yaget/buyers_goods_delete.html', ctx)
 
         if self.request.POST.get('next', '') == 'delete':
-            # 確認OKなので削除バッチをたたく
-            # 書き込んだらバッチをキック
-            mymsg = '削除バッチを実行します・・ '
+            # 遒ｺ隱弘K縺ｪ縺ｮ縺ｧ蜑企勁繝舌ャ繝√ｒ縺溘◆縺・
+            # 譖ｸ縺崎ｾｼ繧薙□繧峨ヰ繝・メ繧偵く繝・け
+            mymsg = '蜑企勁繝舌ャ繝√ｒ螳溯｡後＠縺ｾ縺吶・繝ｻ '
             cmd = "source /home/django/djangoenv/bin/activate;python /home/django/sample/manage.py delete_goods_info"
             p = subprocess.Popen(cmd, shell=True)
-            mymsg += ' 開始しました。 ' + str(p.pid)
+            mymsg += ' 髢句ｧ九＠縺ｾ縺励◆縲・' + str(p.pid)
 
             logger.debug("--- BuyersGoodsDelete delete out")
             #return super().form_valid(form)
             ctx['message'] = mymsg
             return render(self.request, 'yaget/buyers_goods_delete.html', ctx)
         else:
-            # 正常動作ではここは通らない。エラーページへの遷移でも良い
+            # 豁｣蟶ｸ蜍穂ｽ懊〒縺ｯ縺薙％縺ｯ騾壹ｉ縺ｪ縺・ゅお繝ｩ繝ｼ繝壹・繧ｸ縺ｸ縺ｮ驕ｷ遘ｻ縺ｧ繧り憶縺・
             logger.debug("--- BuyersGoodsDelete error occurred?")
             return redirect(reverse_lazy('yaget:buyers_goods_delete'))
         """
 
 
-    # csvにファイル出力。商品idと商品名を辞書にして戻す
+    # csv縺ｫ繝輔ぃ繧､繝ｫ蜃ｺ蜉帙ょ膚蜩（d縺ｨ蝠・刀蜷阪ｒ霎樊嶌縺ｫ縺励※謌ｻ縺・
     def _write_csv(self, reader):
         logger.debug('write_csv in .')
-        # csvはここで用意するか
+        # csv縺ｯ縺薙％縺ｧ逕ｨ諢上☆繧九°
         csvname = mydeletecsv_dir + 'deletecsv_' + "{0:%Y%m%d_%H%M%S}".format(datetime.datetime.now()) + '.csv'
         item_list = {}
-        # データ行は追記
+        # 繝・・繧ｿ陦後・霑ｽ險・
         with open(csvname, 'w') as csvfile:
             writer = csv.writer(csvfile, lineterminator='\n')
             for item in reader:
                 writer.writerow([
-                    item[0],  # 商品id
-                    item[1],  # 商品名
+                    item[0],  # 蝠・刀id
+                    item[1],  # 蝠・刀蜷・
                 ])
                 item_list[item[0]] = item[1]
 
@@ -2312,22 +2312,22 @@ class BuyersGoodsDeleteConfirm(generic.TemplateView):
         context = super().get_context_data(**kwargs)
 
         """
-        # 書き込んだらバッチをキック
-        msg = '削除バッチを実行します・・ '
+        # 譖ｸ縺崎ｾｼ繧薙□繧峨ヰ繝・メ繧偵く繝・け
+        msg = '蜑企勁繝舌ャ繝√ｒ螳溯｡後＠縺ｾ縺吶・繝ｻ '
         cmd = "source /home/django/djangoenv/bin/activate;python /home/django/sample/manage.py delete_goods_info"
         p = subprocess.Popen(cmd, shell=True)
-        msg += ' 開始しました。 ' + str(p.pid)
+        msg += ' 髢句ｧ九＠縺ｾ縺励◆縲・' + str(p.pid)
         """
 
         logger.debug("--- BuyersGoodsDelete delete out")
         # return super().form_valid(form)
-        context['title'] = '商品削除を開始しますよタイトル'
-        context['message'] = '商品削除を開始しますよー'
+        context['title'] = '蝠・刀蜑企勁繧帝幕蟋九＠縺ｾ縺吶ｈ繧ｿ繧､繝医Ν'
+        context['message'] = '蝠・刀蜑企勁繧帝幕蟋九＠縺ｾ縺吶ｈ繝ｼ'
         return render(self.request, 'yaget/buyers_goods_delete_done.html', context)
 
         """
         params = {
-            'title': '在庫チェック開始します',
+            'title': '蝨ｨ蠎ｫ繝√ぉ繝・け髢句ｧ九＠縺ｾ縺・,
             'message': msg,
         }
         return render(self.request, 'yaget/buyers_goods_delete_done.html', params)
@@ -2335,21 +2335,21 @@ class BuyersGoodsDeleteConfirm(generic.TemplateView):
 
 
 def buyers_goods_delete_done(request):
-    # サブプロセスでyagetのコマンドをキックする
+    # 繧ｵ繝悶・繝ｭ繧ｻ繧ｹ縺ｧyaget縺ｮ繧ｳ繝槭Φ繝峨ｒ繧ｭ繝・け縺吶ｋ
     if (request.method == 'POST'):
-        # 書き込んだらバッチをキック
-        msg = '削除バッチを実行します・・ '
+        # 譖ｸ縺崎ｾｼ繧薙□繧峨ヰ繝・メ繧偵く繝・け
+        msg = '蜑企勁繝舌ャ繝√ｒ螳溯｡後＠縺ｾ縺吶・繝ｻ '
         cmd = "source /home/django/djangoenv/bin/activate;python /home/django/sample/manage.py delete_goods_info"
         p = subprocess.Popen(cmd, shell=True)
-        msg += ' 開始しました。 ' + str(p.pid)
+        msg += ' 髢句ｧ九＠縺ｾ縺励◆縲・' + str(p.pid)
 
         logger.debug("--- BuyersGoodsDeleteDone delete out")
         # return super().form_valid(form)
-        title = '商品削除を開始しましたタイトル'
-        msg = '商品削除を開始しましたわ'
+        title = '蝠・刀蜑企勁繧帝幕蟋九＠縺ｾ縺励◆繧ｿ繧､繝医Ν'
+        msg = '蝠・刀蜑企勁繧帝幕蟋九＠縺ｾ縺励◆繧・
     else:
-        title = '商品削除を開始しましたタイトル get'
-        msg = ' buyers_goods_delete_done Get呼ばれました。 '
+        title = '蝠・刀蜑企勁繧帝幕蟋九＠縺ｾ縺励◆繧ｿ繧､繝医Ν get'
+        msg = ' buyers_goods_delete_done Get蜻ｼ縺ｰ繧後∪縺励◆縲・'
 
     params = {
         'title': title,
@@ -2366,23 +2366,23 @@ class BuyersGoodsDeleteDone(generic.TemplateView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
 
-        # 書き込んだらバッチをキック
-        msg = '削除バッチを実行します・・ '
+        # 譖ｸ縺崎ｾｼ繧薙□繧峨ヰ繝・メ繧偵く繝・け
+        msg = '蜑企勁繝舌ャ繝√ｒ螳溯｡後＠縺ｾ縺吶・繝ｻ '
         cmd = "source /home/django/djangoenv/bin/activate;python /home/django/sample/manage.py delete_goods_info"
         p = subprocess.Popen(cmd, shell=True)
-        msg += ' 開始しました。 ' + str(p.pid)
+        msg += ' 髢句ｧ九＠縺ｾ縺励◆縲・' + str(p.pid)
 
         logger.debug("--- BuyersGoodsDeleteDone delete out")
         # return super().form_valid(form)
-        context['title'] = '商品削除を開始しましたタイトル'
-        context['message'] = '商品削除を開始しましたわ'
+        context['title'] = '蝠・刀蜑企勁繧帝幕蟋九＠縺ｾ縺励◆繧ｿ繧､繝医Ν'
+        context['message'] = '蝠・刀蜑企勁繧帝幕蟋九＠縺ｾ縺励◆繧・
         return context
 """
 
 
 class BuyersGoodsDetailDetail(generic.DetailView):
     """
-    YaBuyersItemDetailテーブルのレコード詳細
+    YaBuyersItemDetail繝・・繝悶Ν縺ｮ繝ｬ繧ｳ繝ｼ繝芽ｩｳ邏ｰ
     """
     template_name = 'yaget/buyers_goods_detail_detail.html'
     model = YaBuyersItemDetail
@@ -2396,14 +2396,14 @@ class BuyersGoodsDetailDetail(generic.DetailView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context['title'] = '商品詳細です'
-        context['message'] = '商品詳細メッセージです'
+        context['title'] = '蝠・刀隧ｳ邏ｰ縺ｧ縺・
+        context['message'] = '蝠・刀隧ｳ邏ｰ繝｡繝・そ繝ｼ繧ｸ縺ｧ縺・
         return context
 
 
 class BuyersGoodsDetailAjaxRes(generic.DetailView):
     """
-    detailからqoo10更新用に呼ばれる
+    detail縺九ｉqoo10譖ｴ譁ｰ逕ｨ縺ｫ蜻ｼ縺ｰ繧後ｋ
     """
     template_name = 'yaget/buyers_goods_detail_ajax_res.html'
     model = YaBuyersItemDetail
@@ -2423,7 +2423,7 @@ class BuyersGoodsDetailAjaxRes(generic.DetailView):
 
 class BuyersGoodsDetailDelete(generic.DeleteView):
     """
-    YaBuyersItemDetailテーブルのレコード削除
+    YaBuyersItemDetail繝・・繝悶Ν縺ｮ繝ｬ繧ｳ繝ｼ繝牙炎髯､
     """
     template_name = 'yaget/buyers_goods_detail_delete.html'
     model = YaBuyersItemDetail
@@ -2434,53 +2434,53 @@ class BuyersGoodsDetailDelete(generic.DeleteView):
         self.object = self.get_object()
         logger.debug("--- BuyersGoodsDetailDelete in.gid:[{}]".format(self.object.gid))
         try:
-            # qoo10のステータスを削除に更新
-            # Qoo10にアクセス
+            # qoo10縺ｮ繧ｹ繝・・繧ｿ繧ｹ繧貞炎髯､縺ｫ譖ｴ譁ｰ
+            # Qoo10縺ｫ繧｢繧ｯ繧ｻ繧ｹ
             qoo10obj = Qoo10Access(logger)
             qoo10obj.qoo10_create_cert_key()
             wowma_access = WowmaAccess(logger)
 
             #goods_object = self.get_object()
 
-            self.object.qoo_upd_status = 3  # 取引廃止
+            self.object.qoo_upd_status = 3  # 蜿門ｼ募ｻ・ｭ｢
 
-            # qoo10から削除
-            # まず登録があるかどうか。なかったら処理しない
+            # qoo10縺九ｉ蜑企勁
+            # 縺ｾ縺夂匳骭ｲ縺後≠繧九°縺ｩ縺・°縲ゅ↑縺九▲縺溘ｉ蜃ｦ逅・＠縺ｪ縺・
             ret_obj_list = qoo10obj.qoo10_items_lookup_get_item_detail_info(self.object)
             chk_flg = 0
             for ret_obj in ret_obj_list:
                 if ret_obj['res_code'] != "0":
-                    logger.debug("--- BuyersGoodsDetailDelete qoo10 商品検索でエラー [{}][{}]".format(ret_obj['res_code'],ret_obj['res_msg'] ))
-                    chk_flg = 1  # なにかエラーになってた
+                    logger.debug("--- BuyersGoodsDetailDelete qoo10 蝠・刀讀懃ｴ｢縺ｧ繧ｨ繝ｩ繝ｼ [{}][{}]".format(ret_obj['res_code'],ret_obj['res_msg'] ))
+                    chk_flg = 1  # 縺ｪ縺ｫ縺九お繝ｩ繝ｼ縺ｫ縺ｪ縺｣縺ｦ縺・
             if chk_flg == 0:
-                # 商品が見つかったときだけqoo10から削除
+                # 蝠・刀縺瑚ｦ九▽縺九▲縺溘→縺阪□縺倉oo10縺九ｉ蜑企勁
                 qoo10obj.qoo10_items_basic_edit_goods_status(self.object)
-                logger.debug("--- BuyersGoodsDetailDelete qoo10 削除更新 ok")
+                logger.debug("--- BuyersGoodsDetailDelete qoo10 蜑企勁譖ｴ譁ｰ ok")
             else:
-                logger.debug("--- BuyersGoodsDetailDelete qoo10 で対象商品が見つからないのでスルー。wowmaの処理に続く")
+                logger.debug("--- BuyersGoodsDetailDelete qoo10 縺ｧ蟇ｾ雎｡蝠・刀縺瑚ｦ九▽縺九ｉ縺ｪ縺・・縺ｧ繧ｹ繝ｫ繝ｼ縲Ｘowma縺ｮ蜃ｦ逅・↓邯壹￥")
 
-            # 続けてwowmaから削除
-            # まず商品ステータスを変えてから
+            # 邯壹￠縺ｦwowma縺九ｉ蜑企勁
+            # 縺ｾ縺壼膚蜩√せ繝・・繧ｿ繧ｹ繧貞､峨∴縺ｦ縺九ｉ
             if wowma_access.wowma_update_stock(self.object.gid, 0, '2') == 0:
                 logger.debug('--- BuyersGoodsDetailDelete wow_delete wowma_update_stock ok.')
                 ret_code, ret_msg = wowma_access.wowma_delete_item_infos(self.object.gid)
                 if ret_code == 0:
-                    logger.info('--- BuyersGoodsDetailDelete wow 削除更新 ok')
+                    logger.info('--- BuyersGoodsDetailDelete wow 蜑企勁譖ｴ譁ｰ ok')
                 else:
                     messages.error(
-                        self.request, 'wowmaから削除に失敗しました。[{}][{}]'.format(ret_code, ret_msg))
+                        self.request, 'wowma縺九ｉ蜑企勁縺ｫ螟ｱ謨励＠縺ｾ縺励◆縲・{}][{}]'.format(ret_code, ret_msg))
                     context = self.get_context_data(object=self.object)
                     logger.debug('--- BuyersGoodsDetailDelete wow_delete error occurred.[{}][{}]'.format(ret_code, ret_msg))
                     return self.render_to_response(context)
             else:
-                logger.debug("--- BuyersGoodsDetailDelete wowma で対象商品が見つからないのでスルー。DBから消す")
+                logger.debug("--- BuyersGoodsDetailDelete wowma 縺ｧ蟇ｾ雎｡蝠・刀縺瑚ｦ九▽縺九ｉ縺ｪ縺・・縺ｧ繧ｹ繝ｫ繝ｼ縲・B縺九ｉ豸医☆")
 
             result = super().delete(request, *args, **kwargs)
             messages.success(
-                self.request, '「{}」を削除しました'.format(self.object))
+                self.request, '縲鶏}縲阪ｒ蜑企勁縺励∪縺励◆'.format(self.object))
         except Exception as e:
             messages.error(
-                self.request, '削除に失敗しました。[{}]'.format(traceback.format_exc()))
+                self.request, '蜑企勁縺ｫ螟ｱ謨励＠縺ｾ縺励◆縲・{}]'.format(traceback.format_exc()))
             context = self.get_context_data(object=self.object)
             logger.debug("--- BuyersGoodsDetailDelete error occurred.[{}]".format(traceback.format_exc()))
             return self.render_to_response(context)
@@ -2492,7 +2492,7 @@ class BuyersGoodsDetailDelete(generic.DeleteView):
 
 class BuyersGoodsDetailCreate(generic.CreateView):
     """
-    YaBuyersItemDetailテーブルのレコード作成
+    YaBuyersItemDetail繝・・繝悶Ν縺ｮ繝ｬ繧ｳ繝ｼ繝我ｽ懈・
     """
     template_name = 'yaget/buyers_goods_detail_create.html'
     model = YaBuyersItemDetail
@@ -2639,74 +2639,74 @@ class BuyersGoodsDetailUpdate(generic.UpdateView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context['title'] = '商品詳細 更新ページです'
-        context['message'] = '商品詳細 更新ページ メッセージです'
+        context['title'] = '蝠・刀隧ｳ邏ｰ 譖ｴ譁ｰ繝壹・繧ｸ縺ｧ縺・
+        context['message'] = '蝠・刀隧ｳ邏ｰ 譖ｴ譁ｰ繝壹・繧ｸ 繝｡繝・そ繝ｼ繧ｸ縺ｧ縺・
         return context
 
     def get_form(self):
         form = super(BuyersGoodsDetailUpdate, self).get_form()
-        form.fields['gid'].label = '商品ID'
-        form.fields['glink'].label = '商品リンク'
-        form.fields['ss_url'].label = 'リンク元リストページURL'
-        form.fields['bu_ctid'].label = 'バイヤーズカテゴリID'
-        form.fields['gsrc'].label = 'サムネイル画像URL'
-        form.fields['gname'].label = '商品名'
-        form.fields['gdetail'].label = '商品詳細'
-        form.fields['wow_lotnum'].label = 'wowmaロット番号'
-        form.fields['gnormalprice'].label = '通常価格'
-        form.fields['gspprice'].label = '大量発注価格'
-        form.fields['gcode'].label = 'バイヤーズ商品コード'
-        form.fields['stock'].label = '在庫数'
-        form.fields['wow_upd_status'].label = 'wow掲載状況'
-        form.fields['wow_on_flg'].label = 'wowmaの出品ステータス'
-        form.fields['wow_gname'].label = 'wow商品名'
-        form.fields['wow_gdetail'].label = 'wow商品詳細'
-        form.fields['wow_worn_key'].label = 'wow要注意キーワード'
-        form.fields['wow_price'].label = 'wow価格'
-        form.fields['wow_fixed_price'].label = 'wow固定価格'
-        form.fields['wow_postage_segment'].label = 'wow送料設定区分'
-        form.fields['wow_postage'].label = 'wow個別送料'
-        form.fields['wow_delivery_method_id'].label = 'wow配送方法ID'
-        form.fields['wow_ctid'].label = 'wowカテゴリID'
-        form.fields['qoo_upd_status'].label = 'qoo掲載状況'
-        form.fields['qoo_on_flg'].label = 'qooの出品ステータス'
-        form.fields['qoo_gname'].label = 'qoo商品名'
-        form.fields['qoo_gdetail'].label = 'qoo商品詳細'
-        form.fields['qoo_worn_key'].label = 'qoo要注意キーワード'
-        form.fields['qoo_price'].label = 'qoo価格'
-        form.fields['qoo_fixed_price'].label = 'qoo固定価格'
-        form.fields['qoo_shipping_no'].label = 'qoo送料コード'
-        form.fields['qoo_postage'].label = 'qoo個別送料'
-        form.fields['qoo_delivery_method_id'].label = 'qoo配送方法ID'
-        form.fields['qoo_ctid'].label = 'qooカテゴリID'
-        form.fields['qoo_item_qty'].label = 'qoo商品数量'
-        form.fields['qoo_standard_img'].label = 'qoo商品代表画像URL'
-        form.fields['g_img_src_1'].label = '画像URL_1'
-        form.fields['g_img_src_2'].label = '画像URL_2'
-        form.fields['g_img_src_3'].label = '画像URL_3'
-        form.fields['g_img_src_4'].label = '画像URL_4'
-        form.fields['g_img_src_5'].label = '画像URL_5'
-        form.fields['g_img_src_6'].label = '画像URL_6'
-        form.fields['g_img_src_7'].label = '画像URL_7'
-        form.fields['g_img_src_8'].label = '画像URL_8'
-        form.fields['g_img_src_9'].label = '画像URL_9'
-        form.fields['g_img_src_10'].label = '画像URL_10'
-        form.fields['g_img_src_11'].label = '画像URL_11'
-        form.fields['g_img_src_12'].label = '画像URL_12'
-        form.fields['g_img_src_13'].label = '画像URL_13'
-        form.fields['g_img_src_14'].label = '画像URL_14'
-        form.fields['g_img_src_15'].label = '画像URL_15'
-        form.fields['g_img_src_16'].label = '画像URL_16'
-        form.fields['g_img_src_17'].label = '画像URL_17'
-        form.fields['g_img_src_18'].label = '画像URL_18'
-        form.fields['g_img_src_19'].label = '画像URL_19'
-        form.fields['g_img_src_20'].label = '画像URL_20'
+        form.fields['gid'].label = '蝠・刀ID'
+        form.fields['glink'].label = '蝠・刀繝ｪ繝ｳ繧ｯ'
+        form.fields['ss_url'].label = '繝ｪ繝ｳ繧ｯ蜈・Μ繧ｹ繝医・繝ｼ繧ｸURL'
+        form.fields['bu_ctid'].label = '繝舌う繝､繝ｼ繧ｺ繧ｫ繝・ざ繝ｪID'
+        form.fields['gsrc'].label = '繧ｵ繝繝阪う繝ｫ逕ｻ蜒酋RL'
+        form.fields['gname'].label = '蝠・刀蜷・
+        form.fields['gdetail'].label = '蝠・刀隧ｳ邏ｰ'
+        form.fields['wow_lotnum'].label = 'wowma繝ｭ繝・ヨ逡ｪ蜿ｷ'
+        form.fields['gnormalprice'].label = '騾壼ｸｸ萓｡譬ｼ'
+        form.fields['gspprice'].label = '螟ｧ驥冗匱豕ｨ萓｡譬ｼ'
+        form.fields['gcode'].label = '繝舌う繝､繝ｼ繧ｺ蝠・刀繧ｳ繝ｼ繝・
+        form.fields['stock'].label = '蝨ｨ蠎ｫ謨ｰ'
+        form.fields['wow_upd_status'].label = 'wow謗ｲ霈臥憾豕・
+        form.fields['wow_on_flg'].label = 'wowma縺ｮ蜃ｺ蜩√せ繝・・繧ｿ繧ｹ'
+        form.fields['wow_gname'].label = 'wow蝠・刀蜷・
+        form.fields['wow_gdetail'].label = 'wow蝠・刀隧ｳ邏ｰ'
+        form.fields['wow_worn_key'].label = 'wow隕∵ｳｨ諢上く繝ｼ繝ｯ繝ｼ繝・
+        form.fields['wow_price'].label = 'wow萓｡譬ｼ'
+        form.fields['wow_fixed_price'].label = 'wow蝗ｺ螳壻ｾ｡譬ｼ'
+        form.fields['wow_postage_segment'].label = 'wow騾∵侭險ｭ螳壼玄蛻・
+        form.fields['wow_postage'].label = 'wow蛟句挨騾∵侭'
+        form.fields['wow_delivery_method_id'].label = 'wow驟埼∵婿豕肘D'
+        form.fields['wow_ctid'].label = 'wow繧ｫ繝・ざ繝ｪID'
+        form.fields['qoo_upd_status'].label = 'qoo謗ｲ霈臥憾豕・
+        form.fields['qoo_on_flg'].label = 'qoo縺ｮ蜃ｺ蜩√せ繝・・繧ｿ繧ｹ'
+        form.fields['qoo_gname'].label = 'qoo蝠・刀蜷・
+        form.fields['qoo_gdetail'].label = 'qoo蝠・刀隧ｳ邏ｰ'
+        form.fields['qoo_worn_key'].label = 'qoo隕∵ｳｨ諢上く繝ｼ繝ｯ繝ｼ繝・
+        form.fields['qoo_price'].label = 'qoo萓｡譬ｼ'
+        form.fields['qoo_fixed_price'].label = 'qoo蝗ｺ螳壻ｾ｡譬ｼ'
+        form.fields['qoo_shipping_no'].label = 'qoo騾∵侭繧ｳ繝ｼ繝・
+        form.fields['qoo_postage'].label = 'qoo蛟句挨騾∵侭'
+        form.fields['qoo_delivery_method_id'].label = 'qoo驟埼∵婿豕肘D'
+        form.fields['qoo_ctid'].label = 'qoo繧ｫ繝・ざ繝ｪID'
+        form.fields['qoo_item_qty'].label = 'qoo蝠・刀謨ｰ驥・
+        form.fields['qoo_standard_img'].label = 'qoo蝠・刀莉｣陦ｨ逕ｻ蜒酋RL'
+        form.fields['g_img_src_1'].label = '逕ｻ蜒酋RL_1'
+        form.fields['g_img_src_2'].label = '逕ｻ蜒酋RL_2'
+        form.fields['g_img_src_3'].label = '逕ｻ蜒酋RL_3'
+        form.fields['g_img_src_4'].label = '逕ｻ蜒酋RL_4'
+        form.fields['g_img_src_5'].label = '逕ｻ蜒酋RL_5'
+        form.fields['g_img_src_6'].label = '逕ｻ蜒酋RL_6'
+        form.fields['g_img_src_7'].label = '逕ｻ蜒酋RL_7'
+        form.fields['g_img_src_8'].label = '逕ｻ蜒酋RL_8'
+        form.fields['g_img_src_9'].label = '逕ｻ蜒酋RL_9'
+        form.fields['g_img_src_10'].label = '逕ｻ蜒酋RL_10'
+        form.fields['g_img_src_11'].label = '逕ｻ蜒酋RL_11'
+        form.fields['g_img_src_12'].label = '逕ｻ蜒酋RL_12'
+        form.fields['g_img_src_13'].label = '逕ｻ蜒酋RL_13'
+        form.fields['g_img_src_14'].label = '逕ｻ蜒酋RL_14'
+        form.fields['g_img_src_15'].label = '逕ｻ蜒酋RL_15'
+        form.fields['g_img_src_16'].label = '逕ｻ蜒酋RL_16'
+        form.fields['g_img_src_17'].label = '逕ｻ蜒酋RL_17'
+        form.fields['g_img_src_18'].label = '逕ｻ蜒酋RL_18'
+        form.fields['g_img_src_19'].label = '逕ｻ蜒酋RL_19'
+        form.fields['g_img_src_20'].label = '逕ｻ蜒酋RL_20'
         return form
 
 
 class BatchStatusList(generic.ListView):
     """
-    BatchStatusテーブルの一覧表作成
+    BatchStatus繝・・繝悶Ν縺ｮ荳隕ｧ陦ｨ菴懈・
     """
     model = BatchStatus
     template_name = 'yaget/batch_status_list.html'
@@ -2728,15 +2728,15 @@ class BatchStatusList(generic.ListView):
             self.request.POST.get('create_date_to', None),
         ]
         request.session['form_value_batch_status_list'] = form_value_batch_status_list
-        # 検索時にページネーションに関連したエラーを防ぐ
+        # 讀懃ｴ｢譎ゅ↓繝壹・繧ｸ繝阪・繧ｷ繝ｧ繝ｳ縺ｫ髢｢騾｣縺励◆繧ｨ繝ｩ繝ｼ繧帝亟縺・
         self.request.GET = self.request.GET.copy()
         self.request.GET.clear()
         return self.get(request, *args, **kwargs)
 
-    # 抽出件数を絞る
+    # 謚ｽ蜃ｺ莉ｶ謨ｰ繧堤ｵ槭ｋ
     def get_queryset(self, queryset=None):
         #return YaBuyersItemDetail.objects.all()[:10]
-        # sessionに値がある場合、その値でクエリ発行する。
+        # session縺ｫ蛟､縺後≠繧句ｴ蜷医√◎縺ｮ蛟､縺ｧ繧ｯ繧ｨ繝ｪ逋ｺ陦後☆繧九・
         #if 'form_value_batch_status_list' in self.request.session:
         #    self.request.session.clear()
 
@@ -2754,7 +2754,7 @@ class BatchStatusList(generic.ListView):
             stop_date_to = form_value_batch_status_list[9]
             create_date_from = form_value_batch_status_list[10]
             create_date_to = form_value_batch_status_list[11]
-            # 検索条件
+            # 讀懃ｴ｢譚｡莉ｶ
             condition_batch_id = Q()
             condition_batch_name = Q()
             condition_message = Q()
@@ -2806,7 +2806,7 @@ class BatchStatusList(generic.ListView):
                 condition_create_date_to
             ).order_by("-update_date")[:10000]
         else:
-            # 何も返さない
+            # 菴輔ｂ霑斐＆縺ｪ縺・
             return BatchStatus.objects.none()
 
     def get_context_data(self, **kwargs):
@@ -2851,7 +2851,7 @@ class BatchStatusList(generic.ListView):
                     'create_date_from': create_date_from,
                     'create_date_to': create_date_to,
                     }
-        test_form = BatchStatusSearchForm(initial=default_data) # 検索フォーム
+        test_form = BatchStatusSearchForm(initial=default_data) # 讀懃ｴ｢繝輔か繝ｼ繝
         ctx['test_form'] = test_form
         ctx['form_name'] = 'yaget'
         return ctx
@@ -2859,7 +2859,7 @@ class BatchStatusList(generic.ListView):
 
 class BatchStatusDetail(generic.DetailView):
     """
-    BatchStatusテーブルのレコード詳細
+    BatchStatus繝・・繝悶Ν縺ｮ繝ｬ繧ｳ繝ｼ繝芽ｩｳ邏ｰ
     """
     template_name = 'yaget/batch_status_detail.html'
     model = BatchStatus
@@ -2867,14 +2867,14 @@ class BatchStatusDetail(generic.DetailView):
     def get(self, request, *args, **kwargs):
         self.object = self.get_object()
         context = self.get_context_data(object=self.object)
-        context['title'] = 'バッチ実行状況の詳細です'
-        context['message'] = 'バッチ実行状況の詳細(メッセージ)です'
+        context['title'] = '繝舌ャ繝∝ｮ溯｡檎憾豕√・隧ｳ邏ｰ縺ｧ縺・
+        context['message'] = '繝舌ャ繝∝ｮ溯｡檎憾豕√・隧ｳ邏ｰ(繝｡繝・そ繝ｼ繧ｸ)縺ｧ縺・
         return self.render_to_response(context)
 
 
 class BatchStatusDelete(generic.DeleteView):
     """
-    BatchStatusのレコード削除
+    BatchStatus縺ｮ繝ｬ繧ｳ繝ｼ繝牙炎髯､
     """
     template_name = 'yaget/batch_status_delete.html'
     model = BatchStatus
@@ -2883,13 +2883,13 @@ class BatchStatusDelete(generic.DeleteView):
     def delete(self, request, *args, **kwargs):
         result = super().delete(request, *args, **kwargs)
         messages.success(
-            self.request, '「{}」を削除しました'.format(self.object))
+            self.request, '縲鶏}縲阪ｒ蜑企勁縺励∪縺励◆'.format(self.object))
         return result
 
 
 class BlackListList(generic.ListView):
     """
-    YaBuyersItemBlackListテーブルの一覧表作成
+    YaBuyersItemBlackList繝・・繝悶Ν縺ｮ荳隕ｧ陦ｨ菴懈・
     """
     model = YaBuyersItemBlackList
     template_name = 'yaget/black_list_list.html'
@@ -2902,15 +2902,15 @@ class BlackListList(generic.ListView):
             self.request.POST.get('create_date_to', None),
         ]
         request.session['form_value_black_list_list'] = form_value_black_list_list
-        # 検索時にページネーションに関連したエラーを防ぐ
+        # 讀懃ｴ｢譎ゅ↓繝壹・繧ｸ繝阪・繧ｷ繝ｧ繝ｳ縺ｫ髢｢騾｣縺励◆繧ｨ繝ｩ繝ｼ繧帝亟縺・
         self.request.GET = self.request.GET.copy()
         self.request.GET.clear()
         return self.get(request, *args, **kwargs)
 
-    # 抽出件数を絞る
+    # 謚ｽ蜃ｺ莉ｶ謨ｰ繧堤ｵ槭ｋ
     def get_queryset(self, queryset=None):
         #return YaBuyersItemDetail.objects.all()[:10]
-        # sessionに値がある場合、その値でクエリ発行する。
+        # session縺ｫ蛟､縺後≠繧句ｴ蜷医√◎縺ｮ蛟､縺ｧ繧ｯ繧ｨ繝ｪ逋ｺ陦後☆繧九・
         #if 'form_value_batch_status_list' in self.request.session:
         #    self.request.session.clear()
 
@@ -2919,7 +2919,7 @@ class BlackListList(generic.ListView):
             gid = form_value_black_list_list[0]
             create_date_from = form_value_black_list_list[1]
             create_date_to = form_value_black_list_list[2]
-            # 検索条件
+            # 讀懃ｴ｢譚｡莉ｶ
             condition_gid = Q()
             condition_create_date_from = Q()
             condition_create_date_to = Q()
@@ -2935,7 +2935,7 @@ class BlackListList(generic.ListView):
                 condition_create_date_to
             ).order_by("-update_date")[:10000]
         else:
-            # 何も返さない
+            # 菴輔ｂ霑斐＆縺ｪ縺・
             return YaBuyersItemBlackList.objects.none()
 
     def get_context_data(self, **kwargs):
@@ -2953,7 +2953,7 @@ class BlackListList(generic.ListView):
                     'create_date_from': create_date_from,
                     'create_date_to': create_date_to,
                     }
-        test_form = BlackListForm(initial=default_data) # 検索フォーム
+        test_form = BlackListForm(initial=default_data) # 讀懃ｴ｢繝輔か繝ｼ繝
         ctx['test_form'] = test_form
         ctx['form_name'] = 'yaget'
         return ctx
@@ -2961,7 +2961,7 @@ class BlackListList(generic.ListView):
 
 class BlackListDetail(generic.DetailView):
     """
-    YaBuyersItemBlackListテーブルのレコード詳細
+    YaBuyersItemBlackList繝・・繝悶Ν縺ｮ繝ｬ繧ｳ繝ｼ繝芽ｩｳ邏ｰ
     """
     template_name = 'yaget/black_list_detail.html'
     model = YaBuyersItemBlackList
@@ -2969,13 +2969,13 @@ class BlackListDetail(generic.DetailView):
     def get(self, request, *args, **kwargs):
         self.object = self.get_object()
         context = self.get_context_data(object=self.object)
-        context['title'] = 'バッチ実行状況の詳細です'
+        context['title'] = '繝舌ャ繝∝ｮ溯｡檎憾豕√・隧ｳ邏ｰ縺ｧ縺・
         return self.render_to_response(context)
 
 
 class BlackListDelete(generic.DeleteView):
     """
-    YaBuyersItemBlackListのレコード削除
+    YaBuyersItemBlackList縺ｮ繝ｬ繧ｳ繝ｼ繝牙炎髯､
     """
     template_name = 'yaget/black_list_delete.html'
     model = YaBuyersItemBlackList
@@ -2984,7 +2984,7 @@ class BlackListDelete(generic.DeleteView):
     def delete(self, request, *args, **kwargs):
         result = super().delete(request, *args, **kwargs)
         messages.success(
-            self.request, '「{}」を削除しました'.format(self.object))
+            self.request, '縲鶏}縲阪ｒ蜑企勁縺励∪縺励◆'.format(self.object))
         return result
 
 
@@ -2998,14 +2998,14 @@ class BlackListCreate(generic.CreateView):
 
     def get_form(self):
         form = super(BlackListCreate, self).get_form()
-        form.fields['gid'].label = 'バイヤーズの商品id'
+        form.fields['gid'].label = '繝舌う繝､繝ｼ繧ｺ縺ｮ蝠・刀id'
         form.fields['gid'].required = True
         return form
 
 
 class WowmaCatList(generic.ListView):
     """
-    WowCategoryテーブルの一覧表作成
+    WowCategory繝・・繝悶Ν縺ｮ荳隕ｧ陦ｨ菴懈・
     """
     model = WowCategory
     template_name = 'yaget/wowma_cat_list.html'
@@ -3029,15 +3029,15 @@ class WowmaCatList(generic.ListView):
             self.request.POST.get('create_date_to', None),
         ]
         request.session['form_value_wowma_cat_list'] = form_value_wowma_cat_list
-        # 検索時にページネーションに関連したエラーを防ぐ
+        # 讀懃ｴ｢譎ゅ↓繝壹・繧ｸ繝阪・繧ｷ繝ｧ繝ｳ縺ｫ髢｢騾｣縺励◆繧ｨ繝ｩ繝ｼ繧帝亟縺・
         self.request.GET = self.request.GET.copy()
         self.request.GET.clear()
         return self.get(request, *args, **kwargs)
 
-    # 抽出件数を絞る
+    # 謚ｽ蜃ｺ莉ｶ謨ｰ繧堤ｵ槭ｋ
     def get_queryset(self, queryset=None):
         #return WowmaCatList.objects.all()[:10]
-        # sessionに値がある場合、その値でクエリ発行する。
+        # session縺ｫ蛟､縺後≠繧句ｴ蜷医√◎縺ｮ蛟､縺ｧ繧ｯ繧ｨ繝ｪ逋ｺ陦後☆繧九・
         #if 'form_value_batch_status_list' in self.request.session:
         #    self.request.session.clear()
 
@@ -3057,7 +3057,7 @@ class WowmaCatList(generic.ListView):
             ama_level_3_cat_name = form_value_wowma_cat_list[11]
             create_date_from = form_value_wowma_cat_list[12]
             create_date_to = form_value_wowma_cat_list[13]
-            # 検索条件
+            # 讀懃ｴ｢譚｡莉ｶ
             condition_p_cat_id = Q()
             condition_p_cat_name = Q()
             condition_level_1_cat_name = Q()
@@ -3129,7 +3129,7 @@ class WowmaCatList(generic.ListView):
                 condition_create_date_to
             ).order_by("-update_date")[:10000]
         else:
-            # 何も返さない
+            # 菴輔ｂ霑斐＆縺ｪ縺・
             #return WowCategory.objects.none()
             return WowCategory.objects.select_related().order_by("-update_date")[:10000]
 
@@ -3181,14 +3181,14 @@ class WowmaCatList(generic.ListView):
                     'create_date_from': create_date_from,
                     'create_date_to': create_date_to,
                     }
-        test_form = WowCategoryForm(initial=default_data) # 検索フォーム
+        test_form = WowCategoryForm(initial=default_data) # 讀懃ｴ｢繝輔か繝ｼ繝
         ctx['test_form'] = test_form
         ctx['form_name'] = 'yaget'
         return ctx
 
 class WowmaCatDetail(generic.DetailView):
     """
-    WowmaCatListテーブルのレコード詳細
+    WowmaCatList繝・・繝悶Ν縺ｮ繝ｬ繧ｳ繝ｼ繝芽ｩｳ邏ｰ
     """
     template_name = 'yaget/wowma_cat_detail.html'
     model = WowCategory
@@ -3196,7 +3196,7 @@ class WowmaCatDetail(generic.DetailView):
     def get(self, request, *args, **kwargs):
         self.object = self.get_object()
         context = self.get_context_data(object=self.object)
-        context['title'] = 'wowmaカテゴリの詳細です'
+        context['title'] = 'wowma繧ｫ繝・ざ繝ｪ縺ｮ隧ｳ邏ｰ縺ｧ縺・
         return self.render_to_response(context)
 
 class WowmaCatUpdate(generic.UpdateView):
@@ -3235,22 +3235,22 @@ class WowmaCatUpdate(generic.UpdateView):
         form.fields['ama_level_1_cat_name'].label = 'ama_level_1_cat_name'
         form.fields['ama_level_2_cat_name'].label = 'ama_level_2_cat_name'
         form.fields['ama_level_3_cat_name'].label = 'ama_level_3_cat_name'
-        form.fields['create_date'].label = '登録日'
+        form.fields['create_date'].label = '逋ｻ骭ｲ譌･'
         return form
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context['title'] = 'Wowmaカテゴリ情報 更新ページです'
-        context['message'] = 'Wowmaカテゴリ情報 更新ページ メッセージです'
+        context['title'] = 'Wowma繧ｫ繝・ざ繝ｪ諠・ｱ 譖ｴ譁ｰ繝壹・繧ｸ縺ｧ縺・
+        context['message'] = 'Wowma繧ｫ繝・ざ繝ｪ諠・ｱ 譖ｴ譁ｰ繝壹・繧ｸ 繝｡繝・そ繝ｼ繧ｸ縺ｧ縺・
         return context
 
 
 class WowmaCatModelList(generic.ListView):
     """
-    WowCategoryテーブルの一覧表作成
-    ここ参考に。
+    WowCategory繝・・繝悶Ν縺ｮ荳隕ｧ陦ｨ菴懈・
+    縺薙％蜿り・↓縲・
     https://blog.narito.ninja/detail/30/
-    クラスビューを使うならこっちか
+    繧ｯ繝ｩ繧ｹ繝薙Η繝ｼ繧剃ｽｿ縺・↑繧峨％縺｣縺｡縺・
     https://k2ss.info/archives/2653/
     """
     model = WowCategory
@@ -3259,12 +3259,12 @@ class WowmaCatModelList(generic.ListView):
     form_class = WowCategoryModelForm
 
     def get_formset(self, *args, **kwargs):
-        """ 自身に設定されたモデルとフォームからフォームセットを作成する """
+        """ 閾ｪ霄ｫ縺ｫ險ｭ螳壹＆繧後◆繝｢繝・Ν縺ｨ繝輔か繝ｼ繝縺九ｉ繝輔か繝ｼ繝繧ｻ繝・ヨ繧剃ｽ懈・縺吶ｋ """
         formset = modelformset_factory(self.model, form=self.form_class, extra=0)
         return formset(*args, **kwargs)
 
     def post(self, request, *args, **kwargs):
-        # ListView が context を作れるように
+        # ListView 縺・context 繧剃ｽ懊ｌ繧九ｈ縺・↓
         self.object_list = self.get_queryset()
         base_ctx = super().get_context_data()
         page_qs = base_ctx['page_obj'].object_list if base_ctx.get('page_obj') else base_ctx['object_list']
@@ -3272,7 +3272,7 @@ class WowmaCatModelList(generic.ListView):
         FormSet = modelformset_factory(self.model, form=self.form_class, extra=0)
         formset = FormSet(request.POST, queryset=page_qs)
 
-        # 画面上の検索条件をセッションへ（今の実装を維持）
+        # 逕ｻ髱｢荳翫・讀懃ｴ｢譚｡莉ｶ繧偵そ繝・す繝ｧ繝ｳ縺ｸ・井ｻ翫・螳溯｣・ｒ邯ｭ謖・ｼ・
         form_value_wowma_cat_list = [
             request.POST.get('product_cat_id'),
             request.POST.get('product_cat_name'),
@@ -3293,18 +3293,18 @@ class WowmaCatModelList(generic.ListView):
 
         if formset.is_valid():
             formset.save()
-            # クエリ文字列を維持してリロード
+            # 繧ｯ繧ｨ繝ｪ譁・ｭ怜・繧堤ｶｭ謖√＠縺ｦ繝ｪ繝ｭ繝ｼ繝・
             qs = ('?' + request.META.get('QUERY_STRING')) if request.META.get('QUERY_STRING') else ''
             return redirect(request.path + qs)
 
-        # invalid のときはエラーを含めて再描画
+        # invalid 縺ｮ縺ｨ縺阪・繧ｨ繝ｩ繝ｼ繧貞性繧√※蜀肴緒逕ｻ
         ctx = self.get_context_data(formset=formset)
         return self.render_to_response(ctx)
 
-    # 抽出件数を絞る
+    # 謚ｽ蜃ｺ莉ｶ謨ｰ繧堤ｵ槭ｋ
     def get_queryset(self, queryset=None):
         #return WowmaCatList.objects.all()[:10]
-        # sessionに値がある場合、その値でクエリ発行する。
+        # session縺ｫ蛟､縺後≠繧句ｴ蜷医√◎縺ｮ蛟､縺ｧ繧ｯ繧ｨ繝ｪ逋ｺ陦後☆繧九・
         #if 'form_value_batch_status_list' in self.request.session:
         #    self.request.session.clear()
 
@@ -3324,7 +3324,7 @@ class WowmaCatModelList(generic.ListView):
             ama_level_3_cat_name = form_value_wowma_cat_list[11]
             create_date_from = form_value_wowma_cat_list[12]
             create_date_to = form_value_wowma_cat_list[13]
-            # 検索条件
+            # 讀懃ｴ｢譚｡莉ｶ
             condition_p_cat_id = Q()
             condition_p_cat_name = Q()
             condition_level_1_cat_name = Q()
@@ -3396,7 +3396,7 @@ class WowmaCatModelList(generic.ListView):
                 condition_create_date_to
             ).order_by("-update_date")[:10000]
         else:
-            # 何も返さない
+            # 菴輔ｂ霑斐＆縺ｪ縺・
             #return WowCategory.objects.none()
             return WowCategory.objects.select_related().order_by("-update_date")[:200]
 
@@ -3404,7 +3404,7 @@ class WowmaCatModelList(generic.ListView):
 
         ctx = super().get_context_data(**kwargs)
 
-        # ページに表示している分だけ formset を作る
+        # 繝壹・繧ｸ縺ｫ陦ｨ遉ｺ縺励※縺・ｋ蛻・□縺・formset 繧剃ｽ懊ｋ
         page_qs = ctx['page_obj'].object_list if ctx.get('page_obj') else ctx['object_list']
         FormSet = modelformset_factory(self.model, form=self.form_class, extra=0)
 
@@ -3459,7 +3459,7 @@ class WowmaCatModelList(generic.ListView):
                     'create_date_from': create_date_from,
                     'create_date_to': create_date_to,
                     }
-        test_form = WowCategoryForm(initial=default_data) # 検索フォーム
+        test_form = WowCategoryForm(initial=default_data) # 讀懃ｴ｢繝輔か繝ｼ繝
         ctx['test_form'] = test_form
         ctx['form_name'] = 'yaget'
         return ctx
@@ -3467,7 +3467,7 @@ class WowmaCatModelList(generic.ListView):
 
 class QooShopInfoList(generic.ListView):
     """
-    QooShopInfoテーブルの一覧表作成
+    QooShopInfo繝・・繝悶Ν縺ｮ荳隕ｧ陦ｨ菴懈・
     """
     model = QooShopInfo
     template_name = 'yaget/qoo_shop_info_list.html'
@@ -3483,15 +3483,15 @@ class QooShopInfoList(generic.ListView):
             self.request.POST.get('create_date_to', None),
         ]
         request.session['form_qoo_shop_info_list'] = form_qoo_shop_info_list
-        # 検索時にページネーションに関連したエラーを防ぐ
+        # 讀懃ｴ｢譎ゅ↓繝壹・繧ｸ繝阪・繧ｷ繝ｧ繝ｳ縺ｫ髢｢騾｣縺励◆繧ｨ繝ｩ繝ｼ繧帝亟縺・
         self.request.GET = self.request.GET.copy()
         self.request.GET.clear()
         return self.get(request, *args, **kwargs)
 
-    # 抽出件数を絞る
+    # 謚ｽ蜃ｺ莉ｶ謨ｰ繧堤ｵ槭ｋ
     def get_queryset(self, queryset=None):
         #return YaBuyersItemDetail.objects.all()[:10]
-        # sessionに値がある場合、その値でクエリ発行する。
+        # session縺ｫ蛟､縺後≠繧句ｴ蜷医√◎縺ｮ蛟､縺ｧ繧ｯ繧ｨ繝ｪ逋ｺ陦後☆繧九・
         #if 'form_value_batch_status_list' in self.request.session:
         #    self.request.session.clear()
 
@@ -3503,7 +3503,7 @@ class QooShopInfoList(generic.ListView):
             shop_status = form_qoo_shop_info_list[3]
             create_date_from = form_qoo_shop_info_list[4]
             create_date_to = form_qoo_shop_info_list[5]
-            # 検索条件
+            # 讀懃ｴ｢譚｡莉ｶ
             condition_my_shop_num = Q()
             condition_shop_name = Q()
             condition_user_id = Q()
@@ -3531,7 +3531,7 @@ class QooShopInfoList(generic.ListView):
                 condition_create_date_to
             ).order_by("-update_date")[:10000]
         else:
-            # 何も返さない
+            # 菴輔ｂ霑斐＆縺ｪ縺・
             return QooShopInfo.objects.none()
 
     def get_context_data(self, **kwargs):
@@ -3558,16 +3558,16 @@ class QooShopInfoList(generic.ListView):
                     'create_date_from': create_date_from,
                     'create_date_to': create_date_to,
                     }
-        test_form = QooShopInfoForm(initial=default_data) # 検索フォーム
+        test_form = QooShopInfoForm(initial=default_data) # 讀懃ｴ｢繝輔か繝ｼ繝
         ctx['test_form'] = test_form
         ctx['form_name'] = 'yaget'
-        ctx['message'] = 'QooShopInfoテーブルの一覧'
+        ctx['message'] = 'QooShopInfo繝・・繝悶Ν縺ｮ荳隕ｧ'
         return ctx
 
 
 class QooShopInfoDetail(generic.DetailView):
     """
-    QooShopInfoテーブルのレコード詳細
+    QooShopInfo繝・・繝悶Ν縺ｮ繝ｬ繧ｳ繝ｼ繝芽ｩｳ邏ｰ
     """
     template_name = 'yaget/qoo_shop_info_detail.html'
     model = QooShopInfo
@@ -3575,14 +3575,14 @@ class QooShopInfoDetail(generic.DetailView):
     def get(self, request, *args, **kwargs):
         self.object = self.get_object()
         context = self.get_context_data(object=self.object)
-        context['title'] = 'Qooショップ情報の詳細です'
-        context['message'] = 'QooShopInfoテーブルの詳細'
+        context['title'] = 'Qoo繧ｷ繝ｧ繝・・諠・ｱ縺ｮ隧ｳ邏ｰ縺ｧ縺・
+        context['message'] = 'QooShopInfo繝・・繝悶Ν縺ｮ隧ｳ邏ｰ'
         return self.render_to_response(context)
 
 
 class QooShopInfoDelete(generic.DeleteView):
     """
-    QooShopInfoのレコード削除
+    QooShopInfo縺ｮ繝ｬ繧ｳ繝ｼ繝牙炎髯､
     """
     template_name = 'yaget/qoo_shop_info_delete.html'
     model = QooShopInfo
@@ -3591,7 +3591,7 @@ class QooShopInfoDelete(generic.DeleteView):
     def delete(self, request, *args, **kwargs):
         result = super().delete(request, *args, **kwargs)
         messages.success(
-            self.request, '「{}」を削除しました'.format(self.object))
+            self.request, '縲鶏}縲阪ｒ蜑企勁縺励∪縺励◆'.format(self.object))
         return result
 
 
@@ -3620,7 +3620,7 @@ class QooShopInfoCreate(generic.CreateView):
 
     def get_form(self):
         form = super(QooShopInfoCreate, self).get_form()
-        form.fields['my_shop_num'].label = 'qoo10のショップ登録情報 id'
+        form.fields['my_shop_num'].label = 'qoo10縺ｮ繧ｷ繝ｧ繝・・逋ｻ骭ｲ諠・ｱ id'
         form.fields['my_shop_num'].required = True
         return form
 
@@ -3650,32 +3650,32 @@ class QooShopInfoUpdate(generic.UpdateView):
 
     def get_form(self):
         form = super(QooShopInfoUpdate, self).get_form()
-        form.fields['my_shop_num'].label = 'ショップ番号'
-        form.fields['shop_name'].label = 'ショップ名'
+        form.fields['my_shop_num'].label = '繧ｷ繝ｧ繝・・逡ｪ蜿ｷ'
+        form.fields['shop_name'].label = '繧ｷ繝ｧ繝・・蜷・
         form.fields['auth_key'].label = 'auth_key'
-        form.fields['user_id'].label = 'ユーザID'
-        form.fields['pwd'].label = 'パスワード'
-        form.fields['target_url'].label = '販売URL'
-        form.fields['from_name'].label = '発送元　送り主名'
-        form.fields['from_postcode'].label = '発送元　郵便番号'
-        form.fields['from_state'].label = '発送元　都道府県'
-        form.fields['from_address_1'].label = '発送元　住所１'
-        form.fields['from_address_2'].label = '発送元　住所２'
-        form.fields['from_phone'].label = '発送元　電話番号'
-        form.fields['shop_status'].label = 'ステータス'
-        form.fields['create_date'].label = '登録日'
+        form.fields['user_id'].label = '繝ｦ繝ｼ繧ｶID'
+        form.fields['pwd'].label = '繝代せ繝ｯ繝ｼ繝・
+        form.fields['target_url'].label = '雋ｩ螢ｲURL'
+        form.fields['from_name'].label = '逋ｺ騾∝・縲騾√ｊ荳ｻ蜷・
+        form.fields['from_postcode'].label = '逋ｺ騾∝・縲驛ｵ萓ｿ逡ｪ蜿ｷ'
+        form.fields['from_state'].label = '逋ｺ騾∝・縲驛ｽ驕灘ｺ懃恁'
+        form.fields['from_address_1'].label = '逋ｺ騾∝・縲菴乗園・・
+        form.fields['from_address_2'].label = '逋ｺ騾∝・縲菴乗園・・
+        form.fields['from_phone'].label = '逋ｺ騾∝・縲髮ｻ隧ｱ逡ｪ蜿ｷ'
+        form.fields['shop_status'].label = '繧ｹ繝・・繧ｿ繧ｹ'
+        form.fields['create_date'].label = '逋ｻ骭ｲ譌･'
         return form
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context['title'] = 'Qoo10ショップ情報 更新ページです'
-        context['message'] = 'Qoo10ショップ情報 更新ページ メッセージです'
+        context['title'] = 'Qoo10繧ｷ繝ｧ繝・・諠・ｱ 譖ｴ譁ｰ繝壹・繧ｸ縺ｧ縺・
+        context['message'] = 'Qoo10繧ｷ繝ｧ繝・・諠・ｱ 譖ｴ譁ｰ繝壹・繧ｸ 繝｡繝・そ繝ｼ繧ｸ縺ｧ縺・
         return context
 
 
 class WowShopInfoList(generic.ListView):
     """
-    WowmaShopInfoテーブルの一覧表作成
+    WowmaShopInfo繝・・繝悶Ν縺ｮ荳隕ｧ陦ｨ菴懈・
     """
     model = WowmaShopInfo
     template_name = 'yaget/wow_shop_info_list.html'
@@ -3691,15 +3691,15 @@ class WowShopInfoList(generic.ListView):
             self.request.POST.get('create_date_to', None),
         ]
         request.session['form_wow_shop_info_list'] = form_wow_shop_info_list
-        # 検索時にページネーションに関連したエラーを防ぐ
+        # 讀懃ｴ｢譎ゅ↓繝壹・繧ｸ繝阪・繧ｷ繝ｧ繝ｳ縺ｫ髢｢騾｣縺励◆繧ｨ繝ｩ繝ｼ繧帝亟縺・
         self.request.GET = self.request.GET.copy()
         self.request.GET.clear()
         return self.get(request, *args, **kwargs)
 
-    # 抽出件数を絞る
+    # 謚ｽ蜃ｺ莉ｶ謨ｰ繧堤ｵ槭ｋ
     def get_queryset(self, queryset=None):
         #return YaBuyersItemDetail.objects.all()[:10]
-        # sessionに値がある場合、その値でクエリ発行する。
+        # session縺ｫ蛟､縺後≠繧句ｴ蜷医√◎縺ｮ蛟､縺ｧ繧ｯ繧ｨ繝ｪ逋ｺ陦後☆繧九・
         #if 'form_value_batch_status_list' in self.request.session:
         #    self.request.session.clear()
 
@@ -3711,7 +3711,7 @@ class WowShopInfoList(generic.ListView):
             shop_status = form_wow_shop_info_list[3]
             create_date_from = form_wow_shop_info_list[4]
             create_date_to = form_wow_shop_info_list[5]
-            # 検索条件
+            # 讀懃ｴ｢譚｡莉ｶ
             condition_my_shop_num = Q()
             condition_shop_name = Q()
             condition_shop_id = Q()
@@ -3739,7 +3739,7 @@ class WowShopInfoList(generic.ListView):
                 condition_create_date_to
             ).order_by("-update_date")[:10000]
         else:
-            # 何も返さない
+            # 菴輔ｂ霑斐＆縺ｪ縺・
             return WowmaShopInfo.objects.none()
 
     def get_context_data(self, **kwargs):
@@ -3766,16 +3766,16 @@ class WowShopInfoList(generic.ListView):
                     'create_date_from': create_date_from,
                     'create_date_to': create_date_to,
                     }
-        test_form = WowShopInfoForm(initial=default_data) # 検索フォーム
+        test_form = WowShopInfoForm(initial=default_data) # 讀懃ｴ｢繝輔か繝ｼ繝
         ctx['test_form'] = test_form
         ctx['form_name'] = 'yaget'
-        ctx['message'] = 'WowShopInfoテーブルの一覧'
+        ctx['message'] = 'WowShopInfo繝・・繝悶Ν縺ｮ荳隕ｧ'
         return ctx
 
 
 class WowShopInfoDetail(generic.DetailView):
     """
-    WowmaShopInfoテーブルのレコード詳細
+    WowmaShopInfo繝・・繝悶Ν縺ｮ繝ｬ繧ｳ繝ｼ繝芽ｩｳ邏ｰ
     """
     template_name = 'yaget/wow_shop_info_detail.html'
     model = WowmaShopInfo
@@ -3783,14 +3783,14 @@ class WowShopInfoDetail(generic.DetailView):
     def get(self, request, *args, **kwargs):
         self.object = self.get_object()
         context = self.get_context_data(object=self.object)
-        context['title'] = 'Wowmaショップ情報の詳細です'
-        context['message'] = 'WowShopInfoテーブルの一覧'
+        context['title'] = 'Wowma繧ｷ繝ｧ繝・・諠・ｱ縺ｮ隧ｳ邏ｰ縺ｧ縺・
+        context['message'] = 'WowShopInfo繝・・繝悶Ν縺ｮ荳隕ｧ'
         return self.render_to_response(context)
 
 
 class WowShopInfoDelete(generic.DeleteView):
     """
-    WowmaShopInfoのレコード削除
+    WowmaShopInfo縺ｮ繝ｬ繧ｳ繝ｼ繝牙炎髯､
     """
     template_name = 'yaget/wow_shop_info_delete.html'
     model = WowmaShopInfo
@@ -3799,7 +3799,7 @@ class WowShopInfoDelete(generic.DeleteView):
     def delete(self, request, *args, **kwargs):
         result = super().delete(request, *args, **kwargs)
         messages.success(
-            self.request, '「{}」を削除しました'.format(self.object))
+            self.request, '縲鶏}縲阪ｒ蜑企勁縺励∪縺励◆'.format(self.object))
         return result
 
 
@@ -3827,7 +3827,7 @@ class WowShopInfoCreate(generic.CreateView):
 
     def get_form(self):
         form = super(WowShopInfoCreate, self).get_form()
-        form.fields['my_shop_num'].label = 'wowmaのショップ登録情報 id'
+        form.fields['my_shop_num'].label = 'wowma縺ｮ繧ｷ繝ｧ繝・・逋ｻ骭ｲ諠・ｱ id'
         form.fields['my_shop_num'].required = True
         return form
 
@@ -3856,31 +3856,31 @@ class WowShopInfoUpdate(generic.UpdateView):
 
     def get_form(self):
         form = super(WowShopInfoUpdate, self).get_form()
-        form.fields['my_shop_num'].label = 'ショップ番号'
-        form.fields['shop_id'].label = 'ショップID'
-        form.fields['shop_name'].label = 'ショップ名'
+        form.fields['my_shop_num'].label = '繧ｷ繝ｧ繝・・逡ｪ蜿ｷ'
+        form.fields['shop_id'].label = '繧ｷ繝ｧ繝・・ID'
+        form.fields['shop_name'].label = '繧ｷ繝ｧ繝・・蜷・
         form.fields['api_key'].label = 'api_key'
-        form.fields['target_url'].label = '販売URL'
-        form.fields['from_name'].label = '発送元　送り主名'
-        form.fields['from_postcode'].label = '発送元　郵便番号'
-        form.fields['from_state'].label = '発送元　都道府県'
-        form.fields['from_address_1'].label = '発送元　住所１'
-        form.fields['from_address_2'].label = '発送元　住所２'
-        form.fields['from_phone'].label = '発送元　電話番号'
-        form.fields['shop_status'].label = 'ステータス'
-        form.fields['create_date'].label = '登録日'
+        form.fields['target_url'].label = '雋ｩ螢ｲURL'
+        form.fields['from_name'].label = '逋ｺ騾∝・縲騾√ｊ荳ｻ蜷・
+        form.fields['from_postcode'].label = '逋ｺ騾∝・縲驛ｵ萓ｿ逡ｪ蜿ｷ'
+        form.fields['from_state'].label = '逋ｺ騾∝・縲驛ｽ驕灘ｺ懃恁'
+        form.fields['from_address_1'].label = '逋ｺ騾∝・縲菴乗園・・
+        form.fields['from_address_2'].label = '逋ｺ騾∝・縲菴乗園・・
+        form.fields['from_phone'].label = '逋ｺ騾∝・縲髮ｻ隧ｱ逡ｪ蜿ｷ'
+        form.fields['shop_status'].label = '繧ｹ繝・・繧ｿ繧ｹ'
+        form.fields['create_date'].label = '逋ｻ骭ｲ譌･'
         return form
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context['title'] = 'Wowmaショップ情報 更新ページです'
-        context['message'] = 'Wowmaショップ情報 更新ページ メッセージです'
+        context['title'] = 'Wowma繧ｷ繝ｧ繝・・諠・ｱ 譖ｴ譁ｰ繝壹・繧ｸ縺ｧ縺・
+        context['message'] = 'Wowma繧ｷ繝ｧ繝・・諠・ｱ 譖ｴ譁ｰ繝壹・繧ｸ 繝｡繝・そ繝ｼ繧ｸ縺ｧ縺・
         return context
 
 
 class ErrorGoodsLogList(generic.ListView):
     """
-    ErrorGoodsLogテーブルの一覧表作成
+    ErrorGoodsLog繝・・繝悶Ν縺ｮ荳隕ｧ陦ｨ菴懈・
     """
     model = ErrorGoodsLog
     template_name = 'yaget/error_goods_log_list.html'
@@ -3898,15 +3898,15 @@ class ErrorGoodsLogList(generic.ListView):
             self.request.POST.get('create_date_to', None),
         ]
         request.session['form_value_error_goods_log_list'] = form_value_error_goods_log_list
-        # 検索時にページネーションに関連したエラーを防ぐ
+        # 讀懃ｴ｢譎ゅ↓繝壹・繧ｸ繝阪・繧ｷ繝ｧ繝ｳ縺ｫ髢｢騾｣縺励◆繧ｨ繝ｩ繝ｼ繧帝亟縺・
         self.request.GET = self.request.GET.copy()
         self.request.GET.clear()
         return self.get(request, *args, **kwargs)
 
-    # 抽出件数を絞る
+    # 謚ｽ蜃ｺ莉ｶ謨ｰ繧堤ｵ槭ｋ
     def get_queryset(self, queryset=None):
         #return YaBuyersItemDetail.objects.all()[:10]
-        # sessionに値がある場合、その値でクエリ発行する。
+        # session縺ｫ蛟､縺後≠繧句ｴ蜷医√◎縺ｮ蛟､縺ｧ繧ｯ繧ｨ繝ｪ逋ｺ陦後☆繧九・
         #if 'form_value_error_goods_log_list' in self.request.session:
         #    self.request.session.clear()
 
@@ -3920,7 +3920,7 @@ class ErrorGoodsLogList(generic.ListView):
             message = form_value_error_goods_log_list[5]
             create_date_from = form_value_error_goods_log_list[6]
             create_date_to = form_value_error_goods_log_list[7]
-            # 検索条件
+            # 讀懃ｴ｢譚｡莉ｶ
             condition_id = Q()
             condition_batch_name = Q()
             condition_gid = Q()
@@ -3956,7 +3956,7 @@ class ErrorGoodsLogList(generic.ListView):
                 condition_create_date_to
             ).order_by("-update_date")[:10000]
         else:
-            # 何も返さない
+            # 菴輔ｂ霑斐＆縺ｪ縺・
             return ErrorGoodsLog.objects.none()
 
     def get_context_data(self, **kwargs):
@@ -3989,7 +3989,7 @@ class ErrorGoodsLogList(generic.ListView):
                     'create_date_from': create_date_from,
                     'create_date_to': create_date_to,
                     }
-        test_form = ErrorGoodsLogSearchForm(initial=default_data) # 検索フォーム
+        test_form = ErrorGoodsLogSearchForm(initial=default_data) # 讀懃ｴ｢繝輔か繝ｼ繝
         ctx['test_form'] = test_form
         ctx['form_name'] = 'yaget'
         return ctx
@@ -3997,7 +3997,7 @@ class ErrorGoodsLogList(generic.ListView):
 
 class ErrorGoodsLogDetail(generic.DetailView):
     """
-    ErrorGoodsLogテーブルのレコード詳細
+    ErrorGoodsLog繝・・繝悶Ν縺ｮ繝ｬ繧ｳ繝ｼ繝芽ｩｳ邏ｰ
     """
     template_name = 'yaget/error_goods_log_detail.html'
     model = ErrorGoodsLog
@@ -4005,14 +4005,14 @@ class ErrorGoodsLogDetail(generic.DetailView):
     def get(self, request, *args, **kwargs):
         self.object = self.get_object()
         context = self.get_context_data(object=self.object)
-        context['title'] = 'エラーになった商品更新の詳細です'
-        context['message'] = 'エラーになった商品更新の詳細メッセージです'
+        context['title'] = '繧ｨ繝ｩ繝ｼ縺ｫ縺ｪ縺｣縺溷膚蜩∵峩譁ｰ縺ｮ隧ｳ邏ｰ縺ｧ縺・
+        context['message'] = '繧ｨ繝ｩ繝ｼ縺ｫ縺ｪ縺｣縺溷膚蜩∵峩譁ｰ縺ｮ隧ｳ邏ｰ繝｡繝・そ繝ｼ繧ｸ縺ｧ縺・
         return self.render_to_response(context)
 
 
 class ErrorGoodsLogDelete(generic.DeleteView):
     """
-    ErrorGoodsLogのレコード削除
+    ErrorGoodsLog縺ｮ繝ｬ繧ｳ繝ｼ繝牙炎髯､
     """
     template_name = 'yaget/error_goods_log_delete.html'
     model = ErrorGoodsLog
@@ -4021,13 +4021,13 @@ class ErrorGoodsLogDelete(generic.DeleteView):
     def delete(self, request, *args, **kwargs):
         result = super().delete(request, *args, **kwargs)
         messages.success(
-            self.request, '「{}」を削除しました'.format(self.object))
+            self.request, '縲鶏}縲阪ｒ蜑企勁縺励∪縺励◆'.format(self.object))
         return result
 
 
 class AllOrderList(generic.ListView):
     """
-    AllOrderInfoテーブルの一覧表作成
+    AllOrderInfo繝・・繝悶Ν縺ｮ荳隕ｧ陦ｨ菴懈・
     """
     model = AllOrderInfo
     template_name = 'yaget/all_order_list.html'
@@ -4042,15 +4042,15 @@ class AllOrderList(generic.ListView):
             self.request.POST.get('create_date_to', None),
         ]
         request.session['form_all_order_list'] = form_all_order_list
-        # 検索時にページネーションに関連したエラーを防ぐ
+        # 讀懃ｴ｢譎ゅ↓繝壹・繧ｸ繝阪・繧ｷ繝ｧ繝ｳ縺ｫ髢｢騾｣縺励◆繧ｨ繝ｩ繝ｼ繧帝亟縺・
         self.request.GET = self.request.GET.copy()
         self.request.GET.clear()
         return self.get(request, *args, **kwargs)
 
-    # 抽出件数を絞る
+    # 謚ｽ蜃ｺ莉ｶ謨ｰ繧堤ｵ槭ｋ
     def get_queryset(self, queryset=None):
         #return YaBuyersItemDetail.objects.all()[:10]
-        # sessionに値がある場合、その値でクエリ発行する。
+        # session縺ｫ蛟､縺後≠繧句ｴ蜷医√◎縺ｮ蛟､縺ｧ繧ｯ繧ｨ繝ｪ逋ｺ陦後☆繧九・
 
         if 'form_all_order_list' in self.request.session:
             form_all_order_list = self.request.session['form_all_order_list']
@@ -4059,7 +4059,7 @@ class AllOrderList(generic.ListView):
             buyer = form_all_order_list[2]
             create_date_from = form_all_order_list[3]
             create_date_to = form_all_order_list[4]
-            # 検索条件
+            # 讀懃ｴ｢譚｡莉ｶ
             condition_qoo_id = Q()
             condition_wow_id = Q()
             condition_buyer = Q()
@@ -4083,7 +4083,7 @@ class AllOrderList(generic.ListView):
                 condition_create_date_to
             ).order_by("-update_date")[:10000]
         else:
-            # 何も返さない
+            # 菴輔ｂ霑斐＆縺ｪ縺・
             return AllOrderInfo.objects.none()
 
     def get_context_data(self, **kwargs):
@@ -4107,7 +4107,7 @@ class AllOrderList(generic.ListView):
                     'create_date_from': create_date_from,
                     'create_date_to': create_date_to,
                     }
-        test_form = AllOrderInfoForm(initial=default_data) # 検索フォーム
+        test_form = AllOrderInfoForm(initial=default_data) # 讀懃ｴ｢繝輔か繝ｼ繝
         ctx['test_form'] = test_form
         ctx['form_name'] = 'yaget'
         ctx['message'] = 'all_order_list'
@@ -4116,7 +4116,7 @@ class AllOrderList(generic.ListView):
 
 class QooOrderList(generic.ListView):
     """
-    QooOrderInfoテーブルの一覧表作成
+    QooOrderInfo繝・・繝悶Ν縺ｮ荳隕ｧ陦ｨ菴懈・
     """
     model = QooOrderInfo
     template_name = 'yaget/qoo_order_list.html'
@@ -4133,15 +4133,15 @@ class QooOrderList(generic.ListView):
             self.request.POST.get('create_date_to', None),
         ]
         request.session['form_qoo_order_list'] = form_qoo_order_list
-        # 検索時にページネーションに関連したエラーを防ぐ
+        # 讀懃ｴ｢譎ゅ↓繝壹・繧ｸ繝阪・繧ｷ繝ｧ繝ｳ縺ｫ髢｢騾｣縺励◆繧ｨ繝ｩ繝ｼ繧帝亟縺・
         self.request.GET = self.request.GET.copy()
         self.request.GET.clear()
         return self.get(request, *args, **kwargs)
 
-    # 抽出件数を絞る
+    # 謚ｽ蜃ｺ莉ｶ謨ｰ繧堤ｵ槭ｋ
     def get_queryset(self, queryset=None):
         #return YaBuyersItemDetail.objects.all()[:10]
-        # sessionに値がある場合、その値でクエリ発行する。
+        # session縺ｫ蛟､縺後≠繧句ｴ蜷医√◎縺ｮ蛟､縺ｧ繧ｯ繧ｨ繝ｪ逋ｺ陦後☆繧九・
 
         if 'form_qoo_order_list' in self.request.session:
             form_qoo_order_list = self.request.session['form_qoo_order_list']
@@ -4152,7 +4152,7 @@ class QooOrderList(generic.ListView):
             order_date = form_qoo_order_list[4]
             create_date_from = form_qoo_order_list[5]
             create_date_to = form_qoo_order_list[6]
-            # 検索条件
+            # 讀懃ｴ｢譚｡莉ｶ
             condition_seller_id = Q()
             condition_order_no = Q()
             condition_shipping_status = Q()
@@ -4184,7 +4184,7 @@ class QooOrderList(generic.ListView):
                 condition_create_date_to
             ).order_by("-update_date")[:10000]
         else:
-            # 何も返さない
+            # 菴輔ｂ霑斐＆縺ｪ縺・
             return QooOrderInfo.objects.none()
 
     def get_context_data(self, **kwargs):
@@ -4214,7 +4214,7 @@ class QooOrderList(generic.ListView):
                     'create_date_from': create_date_from,
                     'create_date_to': create_date_to,
                     }
-        test_form = QooOrderInfoForm(initial=default_data) # 検索フォーム
+        test_form = QooOrderInfoForm(initial=default_data) # 讀懃ｴ｢繝輔か繝ｼ繝
         ctx['test_form'] = test_form
         ctx['form_name'] = 'yaget'
         ctx['message'] = 'qoo_order_list'
@@ -4223,7 +4223,7 @@ class QooOrderList(generic.ListView):
 
 class QooOrderDetail(generic.DetailView):
     """
-    QooOrderInfoテーブルのレコード詳細
+    QooOrderInfo繝・・繝悶Ν縺ｮ繝ｬ繧ｳ繝ｼ繝芽ｩｳ邏ｰ
     """
     template_name = 'yaget/qoo_order_detail.html'
     model = QooOrderInfo
@@ -4330,83 +4330,83 @@ class QooOrderUpdate(generic.UpdateView):
 
     def get_form(self):
         form = super(QooOrderUpdate, self).get_form()
-        form.fields['order_no'].label = 'id 注文番号'
-        form.fields['shipping_status'].label = '配送状態'
-        form.fields['seller_id'].label = '販売者ID'
-        form.fields['pack_no'].label = 'id カート番号'
-        form.fields['order_date'].label = '注文日'
-        form.fields['payment_date'].label = '決済日'
-        form.fields['est_shipping_date'].label = '発送予定日'
-        form.fields['shipping_date'].label = '発送日'
-        form.fields['delivered_date'].label = '配送完了日'
-        form.fields['buyer'].label = '購入者名'
-        form.fields['buyer_gata'].label = '購入者名（カタカナ）'
-        form.fields['buyer_tel'].label = '購入者の電話番号'
-        form.fields['buyer_mobile'].label = '購入者の携帯電話番号'
-        form.fields['buyer_email'].label = '購入者の携帯電話番号'
-        form.fields['item_code'].label = 'Qoo10商品番号'
-        form.fields['seller_item_code'].label = '販売商品コード'
-        form.fields['item_title'].label = '商品名'
-        form.fields['option'].label = 'オプション'
-        form.fields['option_code'].label = 'オプションコード'
-        form.fields['order_price'].label = '商品価格'
-        form.fields['order_qty'].label = '注文数量'
-        form.fields['discount'].label = '商品割引金額'
-        form.fields['total'].label = '注文数量（商品価格 + オプション価格 - 割引額）'
-        form.fields['receiver'].label = '受取人名'
-        form.fields['receiver_gata'].label = '受取人名（カタカナ）'
-        form.fields['shipping_country'].label = 'お届け先の国家'
-        form.fields['zipcode'].label = '郵便番号'
-        form.fields['shipping_addr'].label = 'お届け先住所'
-        form.fields['addr1'].label = '住所(都道府県/市区町村)'
-        form.fields['addr2'].label = '住所(市区町村以降)'
-        form.fields['receiver_tel'].label = '受取人の電話番号'
-        form.fields['receiver_mobile'].label = '受取人の携帯電話番号'
-        form.fields['hope_date'].label = '配送希望日'
-        form.fields['sender_name'].label = '送信者'
-        form.fields['sender_tel'].label = '送り主の電話番号'
-        form.fields['sender_nation'].label = '送り主の国家'
-        form.fields['sender_zipcode'].label = '送り主の郵便番号'
-        form.fields['sender_addr'].label = '送り主の住所'
-        form.fields['shipping_way'].label = '配送方法'
-        form.fields['shipping_msg'].label = '配送メッセージ'
-        form.fields['payment_method'].label = '決済手段'
-        form.fields['seller_discount'].label = '販売者負担割引額'
-        form.fields['currency'].label = '注文金額通貨'
-        form.fields['shipping_rate'].label = '送料'
-        form.fields['related_order'].label = '関連注文番号：（、）区切り文字で注文番号区分する。例）12345432、12343212、12323232'
-        form.fields['shipping_rate_type'].label = '送料グループの種類：Free / Charge / Free on condition / Charge on delivery'
-        form.fields['delivery_company'].label = '配送会社'
-        form.fields['voucher_code'].label = '訪問受領認証番号'
-        form.fields['packing_no'].label = '発注時に生成されるパッキング番号（例：JPP22894429）'
-        form.fields['seller_delivery_no'].label = '発注時に生成されるパッキング番号と1：1でマッチングされる販売者単位のシリアル番号（例：130705-0003）'
-        form.fields['payment_nation'].label = '注文サイト国：JP'
-        form.fields['gift'].label = '贈答品（ギフト、プレゼント、おまけ）'
-        form.fields['cod_price'].label = '着払い決済金額'
-        form.fields['cart_discount_seller'].label = '販売者負担カート割引'
-        form.fields['cart_discount_qoo10'].label = 'Qoo10負担カート割引'
-        form.fields['settle_price'].label = '総供給原価'
-        form.fields['branch_name'].label = '支店名'
-        form.fields['tracking_no'].label = '送り状番号'
-        form.fields['oversea_consignment'].label = '海外委託 (Y/N)'
-        form.fields['oversea_consignment_receiver'].label = '海外委託受取人'
-        form.fields['oversea_consignment_country'].label = '海外委託国家'
-        form.fields['oversea_consignment_zipcode'].label = '海外委託 郵便番号'
-        form.fields['oversea_consignment_addr1'].label = '海外委託 住所(都道府県/市区町村)'
-        form.fields['oversea_consignment_addr2'].label = '海外委託 住所(市区町村以降)'
-        form.fields['delay_type'].label = '遅延の理由。（1：商品準備中、2：注文製作（オーダーメイド）、3：顧客の要求、4：その他）'
-        form.fields['delay_memo'].label = '販売者メモ'
+        form.fields['order_no'].label = 'id 豕ｨ譁・分蜿ｷ'
+        form.fields['shipping_status'].label = '驟埼∫憾諷・
+        form.fields['seller_id'].label = '雋ｩ螢ｲ閠・D'
+        form.fields['pack_no'].label = 'id 繧ｫ繝ｼ繝育分蜿ｷ'
+        form.fields['order_date'].label = '豕ｨ譁・律'
+        form.fields['payment_date'].label = '豎ｺ貂域律'
+        form.fields['est_shipping_date'].label = '逋ｺ騾∽ｺ亥ｮ壽律'
+        form.fields['shipping_date'].label = '逋ｺ騾∵律'
+        form.fields['delivered_date'].label = '驟埼∝ｮ御ｺ・律'
+        form.fields['buyer'].label = '雉ｼ蜈･閠・錐'
+        form.fields['buyer_gata'].label = '雉ｼ蜈･閠・錐・医き繧ｿ繧ｫ繝奇ｼ・
+        form.fields['buyer_tel'].label = '雉ｼ蜈･閠・・髮ｻ隧ｱ逡ｪ蜿ｷ'
+        form.fields['buyer_mobile'].label = '雉ｼ蜈･閠・・謳ｺ蟶ｯ髮ｻ隧ｱ逡ｪ蜿ｷ'
+        form.fields['buyer_email'].label = '雉ｼ蜈･閠・・謳ｺ蟶ｯ髮ｻ隧ｱ逡ｪ蜿ｷ'
+        form.fields['item_code'].label = 'Qoo10蝠・刀逡ｪ蜿ｷ'
+        form.fields['seller_item_code'].label = '雋ｩ螢ｲ蝠・刀繧ｳ繝ｼ繝・
+        form.fields['item_title'].label = '蝠・刀蜷・
+        form.fields['option'].label = '繧ｪ繝励す繝ｧ繝ｳ'
+        form.fields['option_code'].label = '繧ｪ繝励す繝ｧ繝ｳ繧ｳ繝ｼ繝・
+        form.fields['order_price'].label = '蝠・刀萓｡譬ｼ'
+        form.fields['order_qty'].label = '豕ｨ譁・焚驥・
+        form.fields['discount'].label = '蝠・刀蜑ｲ蠑暮≡鬘・
+        form.fields['total'].label = '豕ｨ譁・焚驥擾ｼ亥膚蜩∽ｾ｡譬ｼ + 繧ｪ繝励す繝ｧ繝ｳ萓｡譬ｼ - 蜑ｲ蠑暮｡搾ｼ・
+        form.fields['receiver'].label = '蜿怜叙莠ｺ蜷・
+        form.fields['receiver_gata'].label = '蜿怜叙莠ｺ蜷搾ｼ医き繧ｿ繧ｫ繝奇ｼ・
+        form.fields['shipping_country'].label = '縺雁ｱ翫￠蜈医・蝗ｽ螳ｶ'
+        form.fields['zipcode'].label = '驛ｵ萓ｿ逡ｪ蜿ｷ'
+        form.fields['shipping_addr'].label = '縺雁ｱ翫￠蜈井ｽ乗園'
+        form.fields['addr1'].label = '菴乗園(驛ｽ驕灘ｺ懃恁/蟶ょ玄逕ｺ譚・'
+        form.fields['addr2'].label = '菴乗園(蟶ょ玄逕ｺ譚台ｻ･髯・'
+        form.fields['receiver_tel'].label = '蜿怜叙莠ｺ縺ｮ髮ｻ隧ｱ逡ｪ蜿ｷ'
+        form.fields['receiver_mobile'].label = '蜿怜叙莠ｺ縺ｮ謳ｺ蟶ｯ髮ｻ隧ｱ逡ｪ蜿ｷ'
+        form.fields['hope_date'].label = '驟埼∝ｸ梧悍譌･'
+        form.fields['sender_name'].label = '騾∽ｿ｡閠・
+        form.fields['sender_tel'].label = '騾√ｊ荳ｻ縺ｮ髮ｻ隧ｱ逡ｪ蜿ｷ'
+        form.fields['sender_nation'].label = '騾√ｊ荳ｻ縺ｮ蝗ｽ螳ｶ'
+        form.fields['sender_zipcode'].label = '騾√ｊ荳ｻ縺ｮ驛ｵ萓ｿ逡ｪ蜿ｷ'
+        form.fields['sender_addr'].label = '騾√ｊ荳ｻ縺ｮ菴乗園'
+        form.fields['shipping_way'].label = '驟埼∵婿豕・
+        form.fields['shipping_msg'].label = '驟埼√Γ繝・そ繝ｼ繧ｸ'
+        form.fields['payment_method'].label = '豎ｺ貂域焔谿ｵ'
+        form.fields['seller_discount'].label = '雋ｩ螢ｲ閠・ｲ諡・牡蠑暮｡・
+        form.fields['currency'].label = '豕ｨ譁・≡鬘埼夊ｲｨ'
+        form.fields['shipping_rate'].label = '騾∵侭'
+        form.fields['related_order'].label = '髢｢騾｣豕ｨ譁・分蜿ｷ・夲ｼ医・ｼ牙玄蛻・ｊ譁・ｭ励〒豕ｨ譁・分蜿ｷ蛹ｺ蛻・☆繧九ゆｾ具ｼ・2345432縲・2343212縲・2323232'
+        form.fields['shipping_rate_type'].label = '騾∵侭繧ｰ繝ｫ繝ｼ繝励・遞ｮ鬘橸ｼ哥ree / Charge / Free on condition / Charge on delivery'
+        form.fields['delivery_company'].label = '驟埼∽ｼ夂､ｾ'
+        form.fields['voucher_code'].label = '險ｪ蝠丞女鬆倩ｪ崎ｨｼ逡ｪ蜿ｷ'
+        form.fields['packing_no'].label = '逋ｺ豕ｨ譎ゅ↓逕滓・縺輔ｌ繧九ヱ繝・く繝ｳ繧ｰ逡ｪ蜿ｷ・井ｾ具ｼ哽PP22894429・・
+        form.fields['seller_delivery_no'].label = '逋ｺ豕ｨ譎ゅ↓逕滓・縺輔ｌ繧九ヱ繝・く繝ｳ繧ｰ逡ｪ蜿ｷ縺ｨ1・・縺ｧ繝槭ャ繝√Φ繧ｰ縺輔ｌ繧玖ｲｩ螢ｲ閠・腰菴阪・繧ｷ繝ｪ繧｢繝ｫ逡ｪ蜿ｷ・井ｾ具ｼ・30705-0003・・
+        form.fields['payment_nation'].label = '豕ｨ譁・し繧､繝亥嵜・哽P'
+        form.fields['gift'].label = '雍育ｭ泌刀・医ぐ繝輔ヨ縲√・繝ｬ繧ｼ繝ｳ繝医√♀縺ｾ縺托ｼ・
+        form.fields['cod_price'].label = '逹謇輔＞豎ｺ貂磯≡鬘・
+        form.fields['cart_discount_seller'].label = '雋ｩ螢ｲ閠・ｲ諡・き繝ｼ繝亥牡蠑・
+        form.fields['cart_discount_qoo10'].label = 'Qoo10雋諡・き繝ｼ繝亥牡蠑・
+        form.fields['settle_price'].label = '邱丈ｾ帷ｵｦ蜴滉ｾ｡'
+        form.fields['branch_name'].label = '謾ｯ蠎怜錐'
+        form.fields['tracking_no'].label = '騾√ｊ迥ｶ逡ｪ蜿ｷ'
+        form.fields['oversea_consignment'].label = '豬ｷ螟門ｧ碑ｨ・(Y/N)'
+        form.fields['oversea_consignment_receiver'].label = '豬ｷ螟門ｧ碑ｨ怜女蜿紋ｺｺ'
+        form.fields['oversea_consignment_country'].label = '豬ｷ螟門ｧ碑ｨ怜嵜螳ｶ'
+        form.fields['oversea_consignment_zipcode'].label = '豬ｷ螟門ｧ碑ｨ・驛ｵ萓ｿ逡ｪ蜿ｷ'
+        form.fields['oversea_consignment_addr1'].label = '豬ｷ螟門ｧ碑ｨ・菴乗園(驛ｽ驕灘ｺ懃恁/蟶ょ玄逕ｺ譚・'
+        form.fields['oversea_consignment_addr2'].label = '豬ｷ螟門ｧ碑ｨ・菴乗園(蟶ょ玄逕ｺ譚台ｻ･髯・'
+        form.fields['delay_type'].label = '驕・ｻｶ縺ｮ逅・罰縲ゑｼ・・壼膚蜩∵ｺ門ｙ荳ｭ縲・・壽ｳｨ譁・｣ｽ菴懶ｼ医が繝ｼ繝繝ｼ繝｡繧､繝会ｼ峨・・夐｡ｧ螳｢縺ｮ隕∵ｱゅ・・壹◎縺ｮ莉厄ｼ・
+        form.fields['delay_memo'].label = '雋ｩ螢ｲ閠・Γ繝｢'
         return form
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context['title'] = 'Qoo10注文情報 更新ページです'
-        context['message'] = 'Qoo10注文情報 更新ページ メッセージです'
+        context['title'] = 'Qoo10豕ｨ譁・ュ蝣ｱ 譖ｴ譁ｰ繝壹・繧ｸ縺ｧ縺・
+        context['message'] = 'Qoo10豕ｨ譁・ュ蝣ｱ 譖ｴ譁ｰ繝壹・繧ｸ 繝｡繝・そ繝ｼ繧ｸ縺ｧ縺・
         return context
 
 class QooOrderDelete(generic.DeleteView):
     """
-    QooOrderInfoテーブルのレコード削除
+    QooOrderInfo繝・・繝悶Ν縺ｮ繝ｬ繧ｳ繝ｼ繝牙炎髯､
     """
     template_name = 'yaget/qoo_order_delete.html'
     model = QooOrderInfo
@@ -4417,9 +4417,9 @@ class QooOrderDelete(generic.DeleteView):
         self.object = self.get_object()
         logger.debug("--- QooOrderDelete in.gid:[{}]".format(self.object.gid))
         try:
-            # qoo10のステータスを削除に更新
-            # Qoo10にアクセス
-            # が必要だがまだできてない！
+            # qoo10縺ｮ繧ｹ繝・・繧ｿ繧ｹ繧貞炎髯､縺ｫ譖ｴ譁ｰ
+            # Qoo10縺ｫ繧｢繧ｯ繧ｻ繧ｹ
+            # 縺悟ｿ・ｦ√□縺後∪縺縺ｧ縺阪※縺ｪ縺・ｼ・
             """
             qoo10obj = Qoo10Access(logger)
             qoo10obj.qoo10_create_cert_key()
@@ -4428,32 +4428,32 @@ class QooOrderDelete(generic.DeleteView):
 
             #goods_object = self.get_object()
             """
-            self.object.qoo_upd_status = 3  # 取引廃止
+            self.object.qoo_upd_status = 3  # 蜿門ｼ募ｻ・ｭ｢
 
 
-            # 続けてwowmaから削除
-            # まず商品ステータスを変えてから
+            # 邯壹￠縺ｦwowma縺九ｉ蜑企勁
+            # 縺ｾ縺壼膚蜩√せ繝・・繧ｿ繧ｹ繧貞､峨∴縺ｦ縺九ｉ
             if wowma_access.wowma_update_stock(self.object.gid, 0, '2') == 0:
                 logger.debug('--- BuyersGoodsDetailDelete wow_delete wowma_update_stock ok.')
                 ret_code, ret_msg = wowma_access.wowma_delete_item_infos(self.object.gid)
                 if ret_code == 0:
-                    logger.info('--- BuyersGoodsDetailDelete wow 削除更新 ok')
+                    logger.info('--- BuyersGoodsDetailDelete wow 蜑企勁譖ｴ譁ｰ ok')
                 else:
                     messages.error(
-                        self.request, 'wowmaから削除に失敗しました。[{}][{}]'.format(ret_code, ret_msg))
+                        self.request, 'wowma縺九ｉ蜑企勁縺ｫ螟ｱ謨励＠縺ｾ縺励◆縲・{}][{}]'.format(ret_code, ret_msg))
                     context = self.get_context_data(object=self.object)
                     logger.debug('--- BuyersGoodsDetailDelete wow_delete error occurred.[{}][{}]'.format(ret_code, ret_msg))
                     return self.render_to_response(context)
             else:
-                logger.debug("--- BuyersGoodsDetailDelete wowma で対象商品が見つからないのでスルー。DBから消す")
+                logger.debug("--- BuyersGoodsDetailDelete wowma 縺ｧ蟇ｾ雎｡蝠・刀縺瑚ｦ九▽縺九ｉ縺ｪ縺・・縺ｧ繧ｹ繝ｫ繝ｼ縲・B縺九ｉ豸医☆")
             """
 
             result = super().delete(request, *args, **kwargs)
             messages.success(
-                self.request, '「{}」を削除しました'.format(self.object))
+                self.request, '縲鶏}縲阪ｒ蜑企勁縺励∪縺励◆'.format(self.object))
         except Exception as e:
             messages.error(
-                self.request, '削除に失敗しました。[{}]'.format(traceback.format_exc()))
+                self.request, '蜑企勁縺ｫ螟ｱ謨励＠縺ｾ縺励◆縲・{}]'.format(traceback.format_exc()))
             context = self.get_context_data(object=self.object)
             logger.debug("--- QooOrderDelete error occurred.[{}]".format(traceback.format_exc()))
             return self.render_to_response(context)
@@ -4464,7 +4464,7 @@ class QooOrderDelete(generic.DeleteView):
 
 class WowOrderList(generic.ListView):
     """
-    WowmaOrderInfoテーブルの一覧表作成
+    WowmaOrderInfo繝・・繝悶Ν縺ｮ荳隕ｧ陦ｨ菴懈・
     """
     model = WowmaOrderInfo
     template_name = 'yaget/wow_order_list.html'
@@ -4483,15 +4483,15 @@ class WowOrderList(generic.ListView):
             self.request.POST.get('create_date_to', None),
         ]
         request.session['form_wow_order_list'] = form_wow_order_list
-        # 検索時にページネーションに関連したエラーを防ぐ
+        # 讀懃ｴ｢譎ゅ↓繝壹・繧ｸ繝阪・繧ｷ繝ｧ繝ｳ縺ｫ髢｢騾｣縺励◆繧ｨ繝ｩ繝ｼ繧帝亟縺・
         self.request.GET = self.request.GET.copy()
         self.request.GET.clear()
         return self.get(request, *args, **kwargs)
 
-    # 抽出件数を絞る
+    # 謚ｽ蜃ｺ莉ｶ謨ｰ繧堤ｵ槭ｋ
     def get_queryset(self, queryset=None):
         #return YaBuyersItemDetail.objects.all()[:10]
-        # sessionに値がある場合、その値でクエリ発行する。
+        # session縺ｫ蛟､縺後≠繧句ｴ蜷医√◎縺ｮ蛟､縺ｧ繧ｯ繧ｨ繝ｪ逋ｺ陦後☆繧九・
 
         if 'form_wow_order_list' in self.request.session:
             form_wow_order_list = self.request.session['form_wow_order_list']
@@ -4504,7 +4504,7 @@ class WowOrderList(generic.ListView):
             order_date = form_wow_order_list[6]
             create_date_from = form_wow_order_list[7]
             create_date_to = form_wow_order_list[8]
-            # 検索条件
+            # 讀懃ｴ｢譚｡莉ｶ
             condition_orderid = Q()
             condition_shop_id = Q()
             condition_order_status = Q()
@@ -4544,7 +4544,7 @@ class WowOrderList(generic.ListView):
                 condition_create_date_to
             ).order_by("-update_date")[:10000]
         else:
-            # 何も返さない
+            # 菴輔ｂ霑斐＆縺ｪ縺・
             return WowmaOrderInfo.objects.none()
 
     def get_context_data(self, **kwargs):
@@ -4580,7 +4580,7 @@ class WowOrderList(generic.ListView):
                     'create_date_from': create_date_from,
                     'create_date_to': create_date_to,
                     }
-        test_form = WowOrderInfoForm(initial=default_data) # 検索フォーム
+        test_form = WowOrderInfoForm(initial=default_data) # 讀懃ｴ｢繝輔か繝ｼ繝
         ctx['test_form'] = test_form
         ctx['form_name'] = 'yaget'
         ctx['message'] = 'wow_order_list'
@@ -4589,7 +4589,7 @@ class WowOrderList(generic.ListView):
 
 class WowOrderDetail(generic.DetailView):
     """
-    WowOrderInfoテーブルのレコード詳細
+    WowOrderInfo繝・・繝悶Ν縺ｮ繝ｬ繧ｳ繝ｼ繝芽ｩｳ邏ｰ
     """
     template_name = 'yaget/wow_order_detail.html'
     model = WowmaOrderInfo
@@ -4697,78 +4697,78 @@ class WowOrderUpdate(generic.UpdateView):
         form.fields['orderid'].label = 'orderid'
         form.fields['site_and_device'].label = 'site and device'
         form.fields['mail_address'].label = 'mailaddress'
-        form.fields['order_name'].label = '注文者氏名'
+        form.fields['order_name'].label = '豕ｨ譁・・ｰ丞錐'
         form.fields['order_kana'].label = 'order_kana'
         form.fields['order_zipcode'].label = 'order_zipcode'
         form.fields['order_address'].label = 'order_address'
         form.fields['order_phone_number_1'].label = 'order_phone_number_1'
         form.fields['order_phone_number_2'].label = 'order_zipcode'
         form.fields['nickname'].label = 'nickname'
-        form.fields['sender_name'].label = '送付先氏名'
-        form.fields['sender_kana'].label = '送付先かな'
-        form.fields['sender_zipcode'].label = '送付先zipcode'
-        form.fields['sender_address'].label = '送付先住所'
-        form.fields['sender_phone_number_1'].label = '送付先_電話番号_1'
-        form.fields['sender_phone_number_2'].label = '送付先_電話番号_2'
-        form.fields['order_option'].label = '注文オプション'
-        form.fields['settlement_name'].label = '決済方法'
-        form.fields['user_comment'].label = 'ユーザコメント'
-        form.fields['memo'].label = 'メモ'
-        form.fields['order_status'].label = 'order_ステータス'
-        form.fields['contact_status'].label = 'コンタクト_ステータス'
-        form.fields['authorization_status'].label = '承認_ステータス'
-        form.fields['payment_status'].label = '支払い_ステータス'
-        form.fields['ship_status'].label = '発送_ステータス'
-        form.fields['print_status'].label = '印刷_ステータス'
-        form.fields['cancel_status'].label = 'キャンセル_ステータス'
-        form.fields['cancel_reason'].label = 'キャンセル理由'
-        form.fields['cancel_comment'].label = 'キャンセルコメント'
-        form.fields['total_sale_price'].label = '売上金額合計'
-        form.fields['total_sale_unit'].label = '売上個数合計'
-        form.fields['postage_price'].label = '送料'
-        form.fields['charge_price'].label = '請求金額'
-        form.fields['total_price'].label = '総合計金額'
-        form.fields['coupon_total_price'].label = 'クーポン利用合計金額'
-        form.fields['use_point'].label = '利用ポイント'
-        form.fields['use_point_cancel'].label = '利用ポイント キャンセル分'
-        form.fields['use_au_point_price'].label = 'au利用ポイント金額'
-        form.fields['use_au_point'].label = 'au利用ポイント'
-        form.fields['use_au_point_cancel'].label = 'au利用ポイント キャンセル分'
-        form.fields['point_fixed_status'].label = 'ポイント fixステータス'
-        form.fields['settle_status'].label = '承認ステータス'
-        form.fields['pg_result'].label = 'pg結果'
+        form.fields['sender_name'].label = '騾∽ｻ伜・豌丞錐'
+        form.fields['sender_kana'].label = '騾∽ｻ伜・縺九↑'
+        form.fields['sender_zipcode'].label = '騾∽ｻ伜・zipcode'
+        form.fields['sender_address'].label = '騾∽ｻ伜・菴乗園'
+        form.fields['sender_phone_number_1'].label = '騾∽ｻ伜・_髮ｻ隧ｱ逡ｪ蜿ｷ_1'
+        form.fields['sender_phone_number_2'].label = '騾∽ｻ伜・_髮ｻ隧ｱ逡ｪ蜿ｷ_2'
+        form.fields['order_option'].label = '豕ｨ譁・が繝励す繝ｧ繝ｳ'
+        form.fields['settlement_name'].label = '豎ｺ貂域婿豕・
+        form.fields['user_comment'].label = '繝ｦ繝ｼ繧ｶ繧ｳ繝｡繝ｳ繝・
+        form.fields['memo'].label = '繝｡繝｢'
+        form.fields['order_status'].label = 'order_繧ｹ繝・・繧ｿ繧ｹ'
+        form.fields['contact_status'].label = '繧ｳ繝ｳ繧ｿ繧ｯ繝・繧ｹ繝・・繧ｿ繧ｹ'
+        form.fields['authorization_status'].label = '謇ｿ隱浩繧ｹ繝・・繧ｿ繧ｹ'
+        form.fields['payment_status'].label = '謾ｯ謇輔＞_繧ｹ繝・・繧ｿ繧ｹ'
+        form.fields['ship_status'].label = '逋ｺ騾＼繧ｹ繝・・繧ｿ繧ｹ'
+        form.fields['print_status'].label = '蜊ｰ蛻ｷ_繧ｹ繝・・繧ｿ繧ｹ'
+        form.fields['cancel_status'].label = '繧ｭ繝｣繝ｳ繧ｻ繝ｫ_繧ｹ繝・・繧ｿ繧ｹ'
+        form.fields['cancel_reason'].label = '繧ｭ繝｣繝ｳ繧ｻ繝ｫ逅・罰'
+        form.fields['cancel_comment'].label = '繧ｭ繝｣繝ｳ繧ｻ繝ｫ繧ｳ繝｡繝ｳ繝・
+        form.fields['total_sale_price'].label = '螢ｲ荳企≡鬘榊粋險・
+        form.fields['total_sale_unit'].label = '螢ｲ荳雁区焚蜷郁ｨ・
+        form.fields['postage_price'].label = '騾∵侭'
+        form.fields['charge_price'].label = '隲区ｱる≡鬘・
+        form.fields['total_price'].label = '邱丞粋險磯≡鬘・
+        form.fields['coupon_total_price'].label = '繧ｯ繝ｼ繝昴Φ蛻ｩ逕ｨ蜷郁ｨ磯≡鬘・
+        form.fields['use_point'].label = '蛻ｩ逕ｨ繝昴う繝ｳ繝・
+        form.fields['use_point_cancel'].label = '蛻ｩ逕ｨ繝昴う繝ｳ繝・繧ｭ繝｣繝ｳ繧ｻ繝ｫ蛻・
+        form.fields['use_au_point_price'].label = 'au蛻ｩ逕ｨ繝昴う繝ｳ繝磯≡鬘・
+        form.fields['use_au_point'].label = 'au蛻ｩ逕ｨ繝昴う繝ｳ繝・
+        form.fields['use_au_point_cancel'].label = 'au蛻ｩ逕ｨ繝昴う繝ｳ繝・繧ｭ繝｣繝ｳ繧ｻ繝ｫ蛻・
+        form.fields['point_fixed_status'].label = '繝昴う繝ｳ繝・fix繧ｹ繝・・繧ｿ繧ｹ'
+        form.fields['settle_status'].label = '謇ｿ隱阪せ繝・・繧ｿ繧ｹ'
+        form.fields['pg_result'].label = 'pg邨先棡'
         form.fields['pg_orderid'].label = 'pg_orderid'
-        form.fields['pg_request_price'].label = 'pg_請求金額'
-        form.fields['coupon_type'].label = 'クーポンタイプ'
-        form.fields['coupon_key'].label = 'クーポンキー'
-        form.fields['card_jagdement'].label = 'カード判定'
-        form.fields['delivery_name'].label = '配送名'
-        form.fields['delivery_method_id'].label = '配送方法id'
-        form.fields['delivery_request_time'].label = 'お届希望時間帯'
-        form.fields['shipping_carrier'].label = '配送業者'
-        form.fields['shipping_number'].label = '追跡番号'
-        form.fields['order_date'].label = '受注日'
-        form.fields['contact_date'].label = 'コンタクトした日'
-        form.fields['authorization_date'].label = '承認日'
-        form.fields['payment_date'].label = '支払い日'
-        form.fields['ship_date'].label = '発送日'
-        form.fields['print_date'].label = '印刷日'
-        form.fields['cancel_date'].label = 'キャンセル日'
-        form.fields['point_fixed_date'].label = 'ポイント確定日'
-        form.fields['delivery_request_day'].label = '配送希望日'
-        form.fields['shipping_date'].label = '配送日'
+        form.fields['pg_request_price'].label = 'pg_隲区ｱる≡鬘・
+        form.fields['coupon_type'].label = '繧ｯ繝ｼ繝昴Φ繧ｿ繧､繝・
+        form.fields['coupon_key'].label = '繧ｯ繝ｼ繝昴Φ繧ｭ繝ｼ'
+        form.fields['card_jagdement'].label = '繧ｫ繝ｼ繝牙愛螳・
+        form.fields['delivery_name'].label = '驟埼∝錐'
+        form.fields['delivery_method_id'].label = '驟埼∵婿豕品d'
+        form.fields['delivery_request_time'].label = '縺雁ｱ雁ｸ梧悍譎る俣蟶ｯ'
+        form.fields['shipping_carrier'].label = '驟埼∵･ｭ閠・
+        form.fields['shipping_number'].label = '霑ｽ霍｡逡ｪ蜿ｷ'
+        form.fields['order_date'].label = '蜿玲ｳｨ譌･'
+        form.fields['contact_date'].label = '繧ｳ繝ｳ繧ｿ繧ｯ繝医＠縺滓律'
+        form.fields['authorization_date'].label = '謇ｿ隱肴律'
+        form.fields['payment_date'].label = '謾ｯ謇輔＞譌･'
+        form.fields['ship_date'].label = '逋ｺ騾∵律'
+        form.fields['print_date'].label = '蜊ｰ蛻ｷ譌･'
+        form.fields['cancel_date'].label = '繧ｭ繝｣繝ｳ繧ｻ繝ｫ譌･'
+        form.fields['point_fixed_date'].label = '繝昴う繝ｳ繝育｢ｺ螳壽律'
+        form.fields['delivery_request_day'].label = '驟埼∝ｸ梧悍譌･'
+        form.fields['shipping_date'].label = '驟埼∵律'
         return form
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context['title'] = 'Wowma注文情報 更新ページです'
-        context['message'] = 'Wowma注文情報 更新ページ メッセージです'
+        context['title'] = 'Wowma豕ｨ譁・ュ蝣ｱ 譖ｴ譁ｰ繝壹・繧ｸ縺ｧ縺・
+        context['message'] = 'Wowma豕ｨ譁・ュ蝣ｱ 譖ｴ譁ｰ繝壹・繧ｸ 繝｡繝・そ繝ｼ繧ｸ縺ｧ縺・
         return context
 
 
 class WowOrderDelete(generic.DeleteView):
     """
-    WowmaOrderInfoテーブルのレコード削除
+    WowmaOrderInfo繝・・繝悶Ν縺ｮ繝ｬ繧ｳ繝ｼ繝牙炎髯､
     """
     template_name = 'yaget/qoo_order_delete.html'
     model = WowmaOrderInfo
@@ -4779,9 +4779,9 @@ class WowOrderDelete(generic.DeleteView):
         self.object = self.get_object()
         logger.debug("--- WowOrderDelete in.gid:[{}]".format(self.object.gid))
         try:
-            # qoo10のステータスを削除に更新
-            # Qoo10にアクセス
-            # が必要だがまだできてない！
+            # qoo10縺ｮ繧ｹ繝・・繧ｿ繧ｹ繧貞炎髯､縺ｫ譖ｴ譁ｰ
+            # Qoo10縺ｫ繧｢繧ｯ繧ｻ繧ｹ
+            # 縺悟ｿ・ｦ√□縺後∪縺縺ｧ縺阪※縺ｪ縺・ｼ・
             """
             qoo10obj = Qoo10Access(logger)
             qoo10obj.qoo10_create_cert_key()
@@ -4790,32 +4790,32 @@ class WowOrderDelete(generic.DeleteView):
 
             #goods_object = self.get_object()
             """
-            self.object.qoo_upd_status = 3  # 取引廃止
+            self.object.qoo_upd_status = 3  # 蜿門ｼ募ｻ・ｭ｢
 
 
-            # 続けてwowmaから削除
-            # まず商品ステータスを変えてから
+            # 邯壹￠縺ｦwowma縺九ｉ蜑企勁
+            # 縺ｾ縺壼膚蜩√せ繝・・繧ｿ繧ｹ繧貞､峨∴縺ｦ縺九ｉ
             if wowma_access.wowma_update_stock(self.object.gid, 0, '2') == 0:
                 logger.debug('--- BuyersGoodsDetailDelete wow_delete wowma_update_stock ok.')
                 ret_code, ret_msg = wowma_access.wowma_delete_item_infos(self.object.gid)
                 if ret_code == 0:
-                    logger.info('--- BuyersGoodsDetailDelete wow 削除更新 ok')
+                    logger.info('--- BuyersGoodsDetailDelete wow 蜑企勁譖ｴ譁ｰ ok')
                 else:
                     messages.error(
-                        self.request, 'wowmaから削除に失敗しました。[{}][{}]'.format(ret_code, ret_msg))
+                        self.request, 'wowma縺九ｉ蜑企勁縺ｫ螟ｱ謨励＠縺ｾ縺励◆縲・{}][{}]'.format(ret_code, ret_msg))
                     context = self.get_context_data(object=self.object)
                     logger.debug('--- BuyersGoodsDetailDelete wow_delete error occurred.[{}][{}]'.format(ret_code, ret_msg))
                     return self.render_to_response(context)
             else:
-                logger.debug("--- BuyersGoodsDetailDelete wowma で対象商品が見つからないのでスルー。DBから消す")
+                logger.debug("--- BuyersGoodsDetailDelete wowma 縺ｧ蟇ｾ雎｡蝠・刀縺瑚ｦ九▽縺九ｉ縺ｪ縺・・縺ｧ繧ｹ繝ｫ繝ｼ縲・B縺九ｉ豸医☆")
             """
 
             result = super().delete(request, *args, **kwargs)
             messages.success(
-                self.request, '「{}」を削除しました'.format(self.object))
+                self.request, '縲鶏}縲阪ｒ蜑企勁縺励∪縺励◆'.format(self.object))
         except Exception as e:
             messages.error(
-                self.request, '削除に失敗しました。[{}]'.format(traceback.format_exc()))
+                self.request, '蜑企勁縺ｫ螟ｱ謨励＠縺ｾ縺励◆縲・{}]'.format(traceback.format_exc()))
             context = self.get_context_data(object=self.object)
             logger.debug("--- WowOrderDelete error occurred.[{}]".format(traceback.format_exc()))
             return self.render_to_response(context)
@@ -4828,7 +4828,7 @@ def cut_zenkaku(chk_text):
     return chk_text.replace('\u3000', ' ')
 
 
-# qoo10 最新の注文情報を取得
+# qoo10 譛譁ｰ縺ｮ豕ｨ譁・ュ蝣ｱ繧貞叙蠕・
 def qoo_get_order_info_ajax_res(request):
     model = QooOrderInfo
     logger.debug("--- qoo_get_order_info_ajax_res in")
@@ -4839,23 +4839,23 @@ def qoo_get_order_info_ajax_res(request):
     }
 
     try:
-        # 配送状態。（1：出荷待ち、2：出荷済み、3：発注確認、4：配送中、5：配送完了）
+        # 驟埼∫憾諷九ゑｼ・・壼・闕ｷ蠕・■縲・・壼・闕ｷ貂医∩縲・・夂匱豕ｨ遒ｺ隱阪・・夐・騾∽ｸｭ縲・・夐・騾∝ｮ御ｺ・ｼ・
         shipping_stat = request.POST.get('shipping_stat')
-        search_sdate = request.POST.get('search_sdate')  # 照会開始日 例）20190101 (yyyyMMdd), 20190101153000 (yyyyMMddHHmmss)
-        search_edate = request.POST.get('search_edate')  # 照会終了日 例）20190101 (yyyyMMdd), 20190101153000 (yyyyMMddHHmmss)
+        search_sdate = request.POST.get('search_sdate')  # 辣ｧ莨夐幕蟋区律 萓具ｼ・0190101 (yyyyMMdd), 20190101153000 (yyyyMMddHHmmss)
+        search_edate = request.POST.get('search_edate')  # 辣ｧ莨夂ｵゆｺ・律 萓具ｼ・0190101 (yyyyMMdd), 20190101153000 (yyyyMMddHHmmss)
         search_sdate = search_sdate.replace('-', '')
         search_edate = search_edate.replace('-', '')
-        search_condition = request.POST.get('search_condition')  # 日付の種類。（1：注文日、2：決済完了日、3：配送日、4：配送完了日）
+        search_condition = request.POST.get('search_condition')  # 譌･莉倥・遞ｮ鬘槭ゑｼ・・壽ｳｨ譁・律縲・・壽ｱｺ貂亥ｮ御ｺ・律縲・・夐・騾∵律縲・・夐・騾∝ｮ御ｺ・律・・
 
-        # Qoo10にアクセス
+        # Qoo10縺ｫ繧｢繧ｯ繧ｻ繧ｹ
         qoo10obj = Qoo10Access(logger)
         msg = 'start[' + YagetConfig.verbose_name + ']'
         qoo10obj.qoo10_create_cert_key()
 
         logger.debug("--- qoo_get_order_info_ajax_res 1")
 
-        # Qoo10の商品情報を検索
-        # Qoo10に登録済みであれば　goods.qoo_gdno　に値が入っている
+        # Qoo10縺ｮ蝠・刀諠・ｱ繧呈､懃ｴ｢
+        # Qoo10縺ｫ逋ｻ骭ｲ貂医∩縺ｧ縺ゅｌ縺ｰ縲goods.qoo_gdno縲縺ｫ蛟､縺悟・縺｣縺ｦ縺・ｋ
         #res_code, res_msg, res_obj = qoo10obj.qoo10_shipping_basic_get_shipping_info(
         res_obj_list = qoo10obj.qoo10_shipping_basic_get_shipping_info(
             shipping_stat,
@@ -4868,14 +4868,14 @@ def qoo_get_order_info_ajax_res(request):
         for res_obj in res_obj_list:
             if int(res_obj["res_code"]) < 0:
                 logger.debug("--- qoo_get_order_info_ajax_res 1 res_code[{}]".format(res_obj["res_code"]))
-                # エラー
+                # 繧ｨ繝ｩ繝ｼ
                 d = {
                     'msg': res_obj["res_msg"],
                     'ret_code': res_obj["res_code"],
                 }
             else:
-                # 成功
-                # QooOrderInfo　に新規レコードとして追加する
+                # 謌仙粥
+                # QooOrderInfo縲縺ｫ譁ｰ隕上Ξ繧ｳ繝ｼ繝峨→縺励※霑ｽ蜉縺吶ｋ
                 logger.debug("--- qoo_get_order_info_ajax_res 2 res_code[{}]".format(res_obj["res_code"]))
                 logger.debug("--- qoo_get_order_info_ajax_res 2_1 res_obj[{}]".format(res_obj["res_obj"]))
                 for order in res_obj["res_obj"]:
@@ -4887,7 +4887,7 @@ def qoo_get_order_info_ajax_res(request):
                     ))
                     msg += 'orderNo:' + str(order['orderNo']) + ' '
 
-                    # 注文詳細をそれぞれ取り込む
+                    # 豕ｨ譁・ｩｳ邏ｰ繧偵◎繧後◇繧悟叙繧願ｾｼ繧
                     new_obj = QooOrderInfo.objects.filter(
                         order_no=order['orderNo'],
                         seller_id=order['sellerID'],
@@ -5046,7 +5046,7 @@ def qoo_get_order_info_ajax_res(request):
     return JsonResponse(d)
 
 
-# qoo10 注文情報　発送予定日や遅延理由を送信
+# qoo10 豕ｨ譁・ュ蝣ｱ縲逋ｺ騾∽ｺ亥ｮ壽律繧・≦蟒ｶ逅・罰繧帝∽ｿ｡
 def qoo_order_seller_chk_ajax_res(request):
     model = QooOrderInfo
     logger.debug("--- qoo_order_seller_chk_ajax_res in")
@@ -5058,18 +5058,18 @@ def qoo_order_seller_chk_ajax_res(request):
             'ret_code': None,
         }
         return JsonResponse(d)
-    est_shipping_date = request.POST.get('est_shipping_date')  # 発送予定日 例）20190101 (yyyyMMdd), 20190101153000 (yyyyMMddHHmmss)
+    est_shipping_date = request.POST.get('est_shipping_date')  # 逋ｺ騾∽ｺ亥ｮ壽律 萓具ｼ・0190101 (yyyyMMdd), 20190101153000 (yyyyMMddHHmmss)
     est_shipping_date = est_shipping_date.replace('-', '')
-    delay_type = request.POST.get('delay_type')  # 遅延の理由。（1：商品準備中、2：注文製作（オーダーメイド）、3：顧客の要求、4：その他）
-    delay_memo = request.POST.get('delay_memo')  # 販売者メモ
+    delay_type = request.POST.get('delay_type')  # 驕・ｻｶ縺ｮ逅・罰縲ゑｼ・・壼膚蜩∵ｺ門ｙ荳ｭ縲・・壽ｳｨ譁・｣ｽ菴懶ｼ医が繝ｼ繝繝ｼ繝｡繧､繝会ｼ峨・・夐｡ｧ螳｢縺ｮ隕∵ｱゅ・・壹◎縺ｮ莉厄ｼ・
+    delay_memo = request.POST.get('delay_memo')  # 雋ｩ螢ｲ閠・Γ繝｢
 
-    # Qoo10にアクセス
+    # Qoo10縺ｫ繧｢繧ｯ繧ｻ繧ｹ
     qoo10obj = Qoo10Access(logger)
     msg = 'start[' + YagetConfig.verbose_name + ']'
     qoo10obj.qoo10_create_cert_key()
 
-    # Qoo10の商品情報を検索
-    # Qoo10に登録済みであれば　goods.qoo_gdno　に値が入っている
+    # Qoo10縺ｮ蝠・刀諠・ｱ繧呈､懃ｴ｢
+    # Qoo10縺ｫ逋ｻ骭ｲ貂医∩縺ｧ縺ゅｌ縺ｰ縲goods.qoo_gdno縲縺ｫ蛟､縺悟・縺｣縺ｦ縺・ｋ
     res_list = qoo10obj.qoo10_shipping_basic_set_seller_check_yn(
         order.order_no,
         est_shipping_date,
@@ -5083,7 +5083,7 @@ def qoo_order_seller_chk_ajax_res(request):
         my_ret_msg = res_item['res_msg']
         msg += my_ret_msg
         if my_ret_code == 0:
-            # 更新に成功している。次の処理は行わない
+            # 譖ｴ譁ｰ縺ｫ謌仙粥縺励※縺・ｋ縲よｬ｡縺ｮ蜃ｦ逅・・陦後ｏ縺ｪ縺・
             break
 
     d = {
@@ -5094,7 +5094,7 @@ def qoo_order_seller_chk_ajax_res(request):
     return JsonResponse(d)
 
 
-# qoo10 注文情報　発送日や追跡番号を送信
+# qoo10 豕ｨ譁・ュ蝣ｱ縲逋ｺ騾∵律繧・ｿｽ霍｡逡ｪ蜿ｷ繧帝∽ｿ｡
 def qoo_order_sending_info_ajax(request):
     model = QooOrderInfo
     logger.debug("--- qoo_order_sending_info_ajax in")
@@ -5106,15 +5106,15 @@ def qoo_order_sending_info_ajax(request):
             'ret_code': None,
         }
         return JsonResponse(d)
-    delivery_company = request.POST.get('delivery_company')  # 配送会社
-    tracking_no = request.POST.get('tracking_no')  # 送り状番号
+    delivery_company = request.POST.get('delivery_company')  # 驟埼∽ｼ夂､ｾ
+    tracking_no = request.POST.get('tracking_no')  # 騾√ｊ迥ｶ逡ｪ蜿ｷ
 
-    # Qoo10にアクセス
+    # Qoo10縺ｫ繧｢繧ｯ繧ｻ繧ｹ
     qoo10obj = Qoo10Access(logger)
     msg = 'start[' + YagetConfig.verbose_name + ']'
     qoo10obj.qoo10_create_cert_key()
 
-    # Qoo10の商品情報を検索
+    # Qoo10縺ｮ蝠・刀諠・ｱ繧呈､懃ｴ｢
     res_list = qoo10obj.qoo10_shipping_basic_set_sending_info(
         order.order_no,
         delivery_company,
@@ -5127,7 +5127,7 @@ def qoo_order_sending_info_ajax(request):
         my_ret_msg = res_item['res_msg']
         msg += my_ret_msg + ' '
         if my_ret_code == 0:
-            # 更新に成功している。次の処理は行わない
+            # 譖ｴ譁ｰ縺ｫ謌仙粥縺励※縺・ｋ縲よｬ｡縺ｮ蜃ｦ逅・・陦後ｏ縺ｪ縺・
             break
 
     d = {
@@ -5137,39 +5137,39 @@ def qoo_order_sending_info_ajax(request):
 
     return JsonResponse(d)
 
-# wowma 最新の注文情報を取得
+# wowma 譛譁ｰ縺ｮ豕ｨ譁・ュ蝣ｱ繧貞叙蠕・
 def wow_get_order_info_ajax_res(request):
     model = WowmaOrderInfo
     logger.debug("--- wow_get_order_info_ajax_res in")
 
-    # order_status は配送状態。
+    # order_status 縺ｯ驟埼∫憾諷九・
     """
-    新規受付
-    発送前入金待ち
-    発送後入金待ち
-    与信待ち
-    発送待ち
-    完了
-    保留
-    キャンセル
-    各種カスタムステータス（取引管理で貴店舗が登録したステータス名）
-    新規予約
-    予約中
-    不正取引審査中
-    審査保留
-    審査NG
-    キャンセル受付中
+    譁ｰ隕丞女莉・
+    逋ｺ騾∝燕蜈･驥大ｾ・■
+    逋ｺ騾∝ｾ悟・驥大ｾ・■
+    荳惹ｿ｡蠕・■
+    逋ｺ騾∝ｾ・■
+    螳御ｺ・
+    菫晉蕗
+    繧ｭ繝｣繝ｳ繧ｻ繝ｫ
+    蜷・ｨｮ繧ｫ繧ｹ繧ｿ繝繧ｹ繝・・繧ｿ繧ｹ・亥叙蠑慕ｮ｡逅・〒雋ｴ蠎苓・縺檎匳骭ｲ縺励◆繧ｹ繝・・繧ｿ繧ｹ蜷搾ｼ・
+    譁ｰ隕丈ｺ育ｴ・
+    莠育ｴ・ｸｭ
+    荳肴ｭ｣蜿門ｼ募ｯｩ譟ｻ荳ｭ
+    蟇ｩ譟ｻ菫晉蕗
+    蟇ｩ譟ｻNG
+    繧ｭ繝｣繝ｳ繧ｻ繝ｫ蜿嶺ｻ倅ｸｭ
     """
     try:
-        search_sdate = request.POST.get('search_sdate')  # 照会開始日 例）20190101 (yyyyMMdd), 20190101153000 (yyyyMMddHHmmss)
-        search_edate = request.POST.get('search_edate')  # 照会終了日 例）20190101 (yyyyMMdd), 20190101153000 (yyyyMMddHHmmss)
+        search_sdate = request.POST.get('search_sdate')  # 辣ｧ莨夐幕蟋区律 萓具ｼ・0190101 (yyyyMMdd), 20190101153000 (yyyyMMddHHmmss)
+        search_edate = request.POST.get('search_edate')  # 辣ｧ莨夂ｵゆｺ・律 萓具ｼ・0190101 (yyyyMMdd), 20190101153000 (yyyyMMddHHmmss)
         search_sdate = search_sdate.replace('-', '')
         search_edate = search_edate.replace('-', '')
-        date_type = request.POST.get('date_type')  # 日付の種類。0:注文日　1:発送日　2:入金日　3:発売(入荷)予定日　4:発送期限日　（デフォルト0）
+        date_type = request.POST.get('date_type')  # 譌･莉倥・遞ｮ鬘槭・:豕ｨ譁・律縲1:逋ｺ騾∵律縲2:蜈･驥第律縲3:逋ｺ螢ｲ(蜈･闕ｷ)莠亥ｮ壽律縲4:逋ｺ騾∵悄髯先律縲・医ョ繝輔か繝ｫ繝・・・
         order_status_1 = request.POST.get('order_status_1')
         order_status_2 = request.POST.get('order_status_2')
 
-        # wowmaにアクセス
+        # wowma縺ｫ繧｢繧ｯ繧ｻ繧ｹ
 
         wowma_access = WowmaAccess(logger)
 
@@ -5186,37 +5186,37 @@ def wow_get_order_info_ajax_res(request):
             )
 
         #logger.debug("--- wow_get_order_info_ajax_res doc_list len[{}]".format(len(document_list)))
-        # document は、[shop_obj, res_obj]　の配列で返している
+        # document 縺ｯ縲ーshop_obj, res_obj]縲縺ｮ驟榊・縺ｧ霑斐＠縺ｦ縺・ｋ
         for document in document_list:
             if document:
                 #logger.debug("--- wow_get_order_info_ajax_res doc_list doc[{}]".format(document.toprettyxml(indent="  ")))
 
-                #logger.debug(document.toprettyxml(indent="  "))  # パースされたXML情報をインデント付きで文字列に変換して表示
-                myrtn = document[1].getElementsByTagName("status")[0].firstChild.nodeValue  # 0なら成功、1　失敗
+                #logger.debug(document.toprettyxml(indent="  "))  # 繝代・繧ｹ縺輔ｌ縺盜ML諠・ｱ繧偵う繝ｳ繝・Φ繝井ｻ倥″縺ｧ譁・ｭ怜・縺ｫ螟画鋤縺励※陦ｨ遉ｺ
+                myrtn = document[1].getElementsByTagName("status")[0].firstChild.nodeValue  # 0縺ｪ繧画・蜉溘・縲螟ｱ謨・
                 if myrtn == 1:
                     my_code = str(document[1].getElementsByTagName("code")[0].firstChild.nodeValue)
                     my_message = str(document[1].getElementsByTagName("message")[0].firstChild.nodeValue)
-                    msg = 'エラー発生：[{}][{}]'.format(my_code, my_message)
+                    msg = '繧ｨ繝ｩ繝ｼ逋ｺ逕滂ｼ喙{}][{}]'.format(my_code, my_message)
                     logger.info('wow_get_order_info_ajax_res code:[{}] msg:[{}]'.format(my_code, my_message))
                 else:
-                    # 正常にデータ取得できた。DB登録
+                    # 豁｣蟶ｸ縺ｫ繝・・繧ｿ蜿門ｾ励〒縺阪◆縲・B逋ｻ骭ｲ
                     my_total_cnt = str(document[1].getElementsByTagName("resultCount")[0].firstChild.nodeValue)
-                    msg = '取得OK：件数[{}]'.format(my_total_cnt)
+                    msg = '蜿門ｾ涌K・壻ｻｶ謨ｰ[{}]'.format(my_total_cnt)
                     logger.debug('wow_get_order_info_ajax_res ok total_cnt:[{}]'.format(my_total_cnt))
 
-                    # 注文詳細をそれぞれ取り込む
+                    # 豕ｨ譁・ｩｳ邏ｰ繧偵◎繧後◇繧悟叙繧願ｾｼ繧
                     msg += 'orderId:\n'
                     for order_id_elm in document[1].getElementsByTagName("orderInfo"):
                         order_id = str(order_id_elm.getElementsByTagName("orderId")[0].firstChild.nodeValue)
                         logger.info('wow_get_order_info_ajax_res order_id:[{}]'.format(order_id))
                         msg += order_id + ' '
 
-                        # 注文詳細をそれぞれ取り込む
+                        # 豕ｨ譁・ｩｳ邏ｰ繧偵◎繧後◇繧悟叙繧願ｾｼ繧
                         new_obj = WowmaOrderInfo.objects.filter(
                             orderid=order_id,
                         ).first()
 
-                        # レスポンスに存在しない項目はチェックしないと
+                        # 繝ｬ繧ｹ繝昴Φ繧ｹ縺ｫ蟄伜惠縺励↑縺・・岼縺ｯ繝√ぉ繝・け縺励↑縺・→
                         releaseDate = ''
                         if order_id_elm.getElementsByTagName("releaseDate"):
                             if order_id_elm.getElementsByTagName("releaseDate")[0].firstChild:
@@ -5544,7 +5544,7 @@ def wow_get_order_info_ajax_res(request):
                             )
                             obj.save()
                             logger.debug('wow_get_order_info_ajax_res new_obj saved.')
-                            # 続いて受注明細を登録
+                            # 邯壹＞縺ｦ蜿玲ｳｨ譏守ｴｰ繧堤匳骭ｲ
                             for detail in order_id_elm.getElementsByTagName("detail"):
 
                                 total_item_charge_price = 0
@@ -5582,7 +5582,7 @@ def wow_get_order_info_ajax_res(request):
                                         noshi_presenter_name3 = str(
                                             order_id_elm.getElementsByTagName("noshiPresenterName3")[0].firstChild.nodeValue)
 
-                                # item_name は取り直して格納
+                                # item_name 縺ｯ蜿悶ｊ逶ｴ縺励※譬ｼ邏・
                                 my_item_code = str(detail.getElementsByTagName("itemCode")[0].firstChild.nodeValue)
                                 item = YaBuyersItemDetail.objects.filter(
                                     gid=my_item_code,
@@ -5751,7 +5751,7 @@ def wow_get_order_info_ajax_res(request):
                             new_obj.save()
                             logger.debug('wow_get_order_info_ajax_res new_obj already exists saved.')
 
-                            # 続いて受注明細を登録
+                            # 邯壹＞縺ｦ蜿玲ｳｨ譏守ｴｰ繧堤匳骭ｲ
 
                             for detail in order_id_elm.getElementsByTagName("detail"):
 
@@ -5794,7 +5794,7 @@ def wow_get_order_info_ajax_res(request):
                                     order_detail_id=str(detail.getElementsByTagName("orderDetailId")[0].firstChild.nodeValue)
                                 ).all()
 
-                                # item_name は取り直して格納
+                                # item_name 縺ｯ蜿悶ｊ逶ｴ縺励※譬ｼ邏・
                                 my_item_code = str(detail.getElementsByTagName("itemCode")[0].firstChild.nodeValue)
 
                                 item = YaBuyersItemDetail.objects.filter(
@@ -5852,7 +5852,7 @@ def wow_get_order_info_ajax_res(request):
                 ret_code = 1
 
     except:
-        # 更新時にエラー？
+        # 譖ｴ譁ｰ譎ゅ↓繧ｨ繝ｩ繝ｼ・・
         logger.info(
             '--> error(info). wow_get_order_info_ajax_res msg[{}] '.format(traceback.format_exc()))
         logger.debug(
@@ -5868,7 +5868,7 @@ def wow_get_order_info_ajax_res(request):
     return JsonResponse(d)
 
 
-# wowma 注文ステータスを送信
+# wowma 豕ｨ譁・せ繝・・繧ｿ繧ｹ繧帝∽ｿ｡
 def wow_order_seller_chk_ajax_res(request):
     model = WowmaOrderInfo
     logger.debug("--- wow_order_seller_chk_ajax_res in")
@@ -5881,9 +5881,9 @@ def wow_order_seller_chk_ajax_res(request):
             'ret_code': None,
         }
         return JsonResponse(d)
-    order_status = request.POST.get('order_status')  # 注文ステータス
+    order_status = request.POST.get('order_status')  # 豕ｨ譁・せ繝・・繧ｿ繧ｹ
 
-    # wowmaにアクセス
+    # wowma縺ｫ繧｢繧ｯ繧ｻ繧ｹ
     wowma_access = WowmaAccess(logger)
     msg = 'start[' + YagetConfig.verbose_name + ']'
 
@@ -5897,7 +5897,7 @@ def wow_order_seller_chk_ajax_res(request):
         my_ret_msg = res_item['res_msg']
         msg += my_ret_msg
         if my_ret_code == 0:
-            # 更新に成功している。次の処理は行わない
+            # 譖ｴ譁ｰ縺ｫ謌仙粥縺励※縺・ｋ縲よｬ｡縺ｮ蜃ｦ逅・・陦後ｏ縺ｪ縺・
             break
 
     d = {
@@ -5907,7 +5907,7 @@ def wow_order_seller_chk_ajax_res(request):
     return JsonResponse(d)
 
 
-# wowma 注文情報　発送日や追跡番号を送信
+# wowma 豕ｨ譁・ュ蝣ｱ縲逋ｺ騾∵律繧・ｿｽ霍｡逡ｪ蜿ｷ繧帝∽ｿ｡
 def wow_order_sending_info_ajax(request):
     model = WowmaOrderInfo
     logger.debug("--- wow_order_sending_info_ajax in")
@@ -5920,16 +5920,16 @@ def wow_order_sending_info_ajax(request):
             'ret_code': None,
         }
         return JsonResponse(d)
-    shipping_date = request.POST.get('shipping_date')  # 配送会社
-    shipping_carrier = request.POST.get('shipping_carrier')  # 配送会社
-    shipping_number = request.POST.get('shipping_number')  # 送り状番号
+    shipping_date = request.POST.get('shipping_date')  # 驟埼∽ｼ夂､ｾ
+    shipping_carrier = request.POST.get('shipping_carrier')  # 驟埼∽ｼ夂､ｾ
+    shipping_number = request.POST.get('shipping_number')  # 騾√ｊ迥ｶ逡ｪ蜿ｷ
     logger.debug("--- wow_order_sending_info_ajax shipping_carrier[{}]".format(shipping_carrier))
 
-    # wowmaにアクセス
+    # wowma縺ｫ繧｢繧ｯ繧ｻ繧ｹ
     wowma_access = WowmaAccess(logger)
     msg = 'start[' + YagetConfig.verbose_name + ']'
 
-    # wowmaの商品情報を検索
+    # wowma縺ｮ蝠・刀諠・ｱ繧呈､懃ｴ｢
     res_list = wowma_access.wowma_update_trade_info_proc(
         order.orderid,
         shipping_date,
@@ -5942,33 +5942,33 @@ def wow_order_sending_info_ajax(request):
         my_ret_msg = res_item['res_msg']
         msg += my_ret_msg
         if my_ret_code == 0:
-            # 更新に成功している。次の処理は行わない
-            # DBを更新しておく
+            # 譖ｴ譁ｰ縺ｫ謌仙粥縺励※縺・ｋ縲よｬ｡縺ｮ蜃ｦ逅・・陦後ｏ縺ｪ縺・
+            # DB繧呈峩譁ｰ縺励※縺翫￥
             order.shipping_date = shipping_date
             order.shipping_number = shipping_number
             order.shipping_carrier = shipping_carrier
             """
             if int(shipping_carrier) == 1:
-                order.shipping_carrier = 'クロネコヤマト'
+                order.shipping_carrier = '繧ｯ繝ｭ繝阪さ繝､繝槭ヨ'
             elif int(shipping_carrier) == 2:
-                order.shipping_carrier = '佐川急便'
+                order.shipping_carrier = '菴仙ｷ晄･萓ｿ'
             elif int(shipping_carrier) == 3:
-                order.shipping_carrier = 'JPエクスプレス（旧 日本通運）'
+                order.shipping_carrier = 'JP繧ｨ繧ｯ繧ｹ繝励Ξ繧ｹ・域立 譌･譛ｬ騾夐°・・
             elif int(shipping_carrier) == 4:
-                order.shipping_carrier = '福山通運'
+                order.shipping_carrier = '遖丞ｱｱ騾夐°'
             elif int(shipping_carrier) == 5:
-                order.shipping_carrier = '西濃運輸'
+                order.shipping_carrier = '隘ｿ豼・°霈ｸ'
             elif int(shipping_carrier) == 6:
-                order.shipping_carrier = '日本郵便'
+                order.shipping_carrier = '譌･譛ｬ驛ｵ萓ｿ'
             else:
-                order.shipping_carrier = 'その他配送会社'
+                order.shipping_carrier = '縺昴・莉夜・騾∽ｼ夂､ｾ'
             """
 
-            # ステータスは完了にしておく
-            order.order_status = '完了'
+            # 繧ｹ繝・・繧ｿ繧ｹ縺ｯ螳御ｺ・↓縺励※縺翫￥
+            order.order_status = '螳御ｺ・
             order.ship_status = 'Y'
             order.save()
-            logger.debug("--- wow_order_sending_info_ajax saved 配送業者[{}] 配送日[{}] 配送番号[{}]".format(
+            logger.debug("--- wow_order_sending_info_ajax saved 驟埼∵･ｭ閠・{}] 驟埼∵律[{}] 驟埼∫分蜿ｷ[{}]".format(
                 order.shipping_carrier, order.shipping_date, order.shipping_number
             ))
             break
@@ -5981,7 +5981,7 @@ def wow_order_sending_info_ajax(request):
     return JsonResponse(d)
 
 
-# qoo10 バイヤーズに発注をかける
+# qoo10 繝舌う繝､繝ｼ繧ｺ縺ｫ逋ｺ豕ｨ繧偵°縺代ｋ
 def qoo_do_order_buyers_ajax(request):
     model = QooOrderInfo
     msg = ''
@@ -5990,14 +5990,14 @@ def qoo_do_order_buyers_ajax(request):
     pk = request.POST.get('pk')
     payment_method = request.POST.get('payment_method')
     if pk:
-        # ここでサププロセスをキック
+        # 縺薙％縺ｧ繧ｵ繝励・繝ｭ繧ｻ繧ｹ繧偵く繝・け
         cmd = "source /home/django/djangoenv/bin/activate;python /home/django/sample/manage.py qoo_do_buyers_order --pk "
         cmd += pk + " --payment_method " + payment_method
         msg += ' cmd[' + cmd + ']'
         p = subprocess.Popen(cmd, shell=True)
         msg += ' maybe ok.' + str(p.pid)
 
-        # pkが得られたらコマンドをキック
+        # pk縺悟ｾ励ｉ繧後◆繧峨さ繝槭Φ繝峨ｒ繧ｭ繝・け
 
     else:
         d = {
@@ -6005,7 +6005,7 @@ def qoo_do_order_buyers_ajax(request):
         }
         return JsonResponse(d)
 
-    # 以下、受注した商品コードからバイヤーズにアクセスして購入のフローを。
+    # 莉･荳九∝女豕ｨ縺励◆蝠・刀繧ｳ繝ｼ繝峨°繧峨ヰ繧､繝､繝ｼ繧ｺ縺ｫ繧｢繧ｯ繧ｻ繧ｹ縺励※雉ｼ蜈･縺ｮ繝輔Ο繝ｼ繧偵・
     msg = 'start:'
 
     res_msg = 'qoo_do_order_buyers_ajax: start'
@@ -6019,7 +6019,7 @@ def qoo_do_order_buyers_ajax(request):
     return JsonResponse(d)
 
 
-# wowma バイヤーズに発注をかける
+# wowma 繝舌う繝､繝ｼ繧ｺ縺ｫ逋ｺ豕ｨ繧偵°縺代ｋ
 def wow_do_order_buyers_ajax(request):
     model = WowmaOrderInfo
     msg = ''
@@ -6029,7 +6029,7 @@ def wow_do_order_buyers_ajax(request):
     payment_method = request.POST.get('payment_method')
     if pk:
         #order = model.objects.get(pk=pk)
-        # ここでサププロセスをキック
+        # 縺薙％縺ｧ繧ｵ繝励・繝ｭ繧ｻ繧ｹ繧偵く繝・け
         cmd = "source /home/django/djangoenv/bin/activate;python /home/django/sample/manage.py wowma_do_buyers_order --pk "
         cmd += pk + " --payment_method " + payment_method
         msg += ' cmd[' + cmd + ']'
@@ -6037,7 +6037,7 @@ def wow_do_order_buyers_ajax(request):
         #msg += ' maybe ok.' + p.stdout.readline()
         msg += ' maybe ok.' + str(p.pid)
 
-        # pkが得られたらコマンドをキック
+        # pk縺悟ｾ励ｉ繧後◆繧峨さ繝槭Φ繝峨ｒ繧ｭ繝・け
 
     else:
         d = {
@@ -6045,13 +6045,13 @@ def wow_do_order_buyers_ajax(request):
         }
         return JsonResponse(d)
 
-    # 以下、受注した商品コードからバイヤーズにアクセスして購入のフローを。
+    # 莉･荳九∝女豕ｨ縺励◆蝠・刀繧ｳ繝ｼ繝峨°繧峨ヰ繧､繝､繝ｼ繧ｺ縺ｫ繧｢繧ｯ繧ｻ繧ｹ縺励※雉ｼ蜈･縺ｮ繝輔Ο繝ｼ繧偵・
     msg = 'start:'
     #buinfo_obj = BuyersInfo(logger)
-    # バイヤーズにログインしておく
+    # 繝舌う繝､繝ｼ繧ｺ縺ｫ繝ｭ繧ｰ繧､繝ｳ縺励※縺翫￥
     #buinfo_obj.login_buyers()
 
-    # wowmaの商品情報を検索
+    # wowma縺ｮ蝠・刀諠・ｱ繧呈､懃ｴ｢
     """
     res_code, res_msg = wowma_access.wowma_update_trade_info_proc(
         order.orderid,
@@ -6072,7 +6072,7 @@ def wow_do_order_buyers_ajax(request):
     return JsonResponse(d)
 
 
-# wowma 指定されたメール種別（type）でgmailを送信
+# wowma 謖・ｮ壹＆繧後◆繝｡繝ｼ繝ｫ遞ｮ蛻･・・ype・峨〒gmail繧帝∽ｿ｡
 def wow_send_gmail_ajax(request):
     model = WowmaOrderInfo
     msg = ''
@@ -6086,14 +6086,14 @@ def wow_send_gmail_ajax(request):
     if pk:
         logger.info("--- wow_send_gmail_ajax pk:[{}]".format(pk))
         #order = model.objects.get(pk=pk)
-        # ここでサププロセスをキック
+        # 縺薙％縺ｧ繧ｵ繝励・繝ｭ繧ｻ繧ｹ繧偵く繝・け
         cmd = "source /home/django/djangoenv/bin/activate;python /home/django/sample/manage.py wowma_send_gmail --pk "
         cmd += pk + " --mail_type " + mail_type + " --other_message " + other_message
         msg += ' cmd[' + cmd + ']'
         p = subprocess.Popen(cmd, shell=True)
         msg += ' maybe ok.' + str(p.pid)
 
-        # pkが得られたらコマンドをキック
+        # pk縺悟ｾ励ｉ繧後◆繧峨さ繝槭Φ繝峨ｒ繧ｭ繝・け
 
     else:
         logger.info("--- wow_send_gmail_ajax cant get pt")
@@ -6116,23 +6116,23 @@ def wow_send_gmail_ajax(request):
 
 def get_qoo_asin_detail_upd_csv(request):
     """
-    20220807 追加。指定したASINのリストCSVをアップロードして
-    SP-API呼び出しでUS or JPからデータを引っ張る。
-    Qoo10販売用として対象は絞るイメージ
-    なんならついでにKeepa APIも呼び出して詳細を保存したいが・・
+    20220807 霑ｽ蜉縲よ欠螳壹＠縺蘗SIN縺ｮ繝ｪ繧ｹ繝・SV繧偵い繝・・繝ｭ繝ｼ繝峨＠縺ｦ
+    SP-API蜻ｼ縺ｳ蜃ｺ縺励〒US or JP縺九ｉ繝・・繧ｿ繧貞ｼ輔▲蠑ｵ繧九・
+    Qoo10雋ｩ螢ｲ逕ｨ縺ｨ縺励※蟇ｾ雎｡縺ｯ邨槭ｋ繧､繝｡繝ｼ繧ｸ
+    縺ｪ繧薙↑繧峨▽縺・〒縺ｫKeepa API繧ょ他縺ｳ蜃ｺ縺励※隧ｳ邏ｰ繧剃ｿ晏ｭ倥＠縺溘＞縺後・繝ｻ
 
-    ★取り込むcsvのフォーマット
+    笘・叙繧願ｾｼ繧csv縺ｮ繝輔か繝ｼ繝槭ャ繝・
     | asin | wholesale_price | wholesale_name |
-    asin:asinコードそのまま
-    wholesale_price: 卸業者の下代
-    wholesale_name: 卸業者の名称
+    asin:asin繧ｳ繝ｼ繝峨◎縺ｮ縺ｾ縺ｾ
+    wholesale_price: 蜊ｸ讌ｭ閠・・荳倶ｻ｣
+    wholesale_name: 蜊ｸ讌ｭ閠・・蜷咲ｧｰ
 
     """
 
     logger.debug("get_qoo_asin_detail_upd_csv in")
 
     msg = "get_qoo_asin_detail_upd_csv start."
-    # まず、フォームから渡されるCSVをとりこみましょ
+    # 縺ｾ縺壹√ヵ繧ｩ繝ｼ繝縺九ｉ貂｡縺輔ｌ繧気SV繧偵→繧翫％縺ｿ縺ｾ縺励ｇ
     if request.method == 'POST':
         try:
             form = QooAsinUpdCsvForm(request.POST, request.FILES)
@@ -6140,7 +6140,7 @@ def get_qoo_asin_detail_upd_csv(request):
                 form_data = TextIOWrapper(request.FILES['file'].file, encoding='utf-8')
                 csv_file = csv.reader(form_data, delimiter="\t")
 
-                # QooAsinDetail の csv_no に、取り込んだcsv単位で管理用連番をふる。 + 1
+                # QooAsinDetail 縺ｮ csv_no 縺ｫ縲∝叙繧願ｾｼ繧薙□csv蜊倅ｽ阪〒邂｡逅・畑騾｣逡ｪ繧偵・繧九・+ 1
                 db_entries = QooAsinDetail.objects.all().order_by("-csv_no")[0:1]
                 if not db_entries:
                     new_csv_no = 1
@@ -6152,10 +6152,10 @@ def get_qoo_asin_detail_upd_csv(request):
                     if i == 0:
                         continue
                     if len(line) < 4:
-                        # form is_validがNG
+                        # form is_valid縺君G
                         params = {
-                            'title': 'csvの取り込み失敗',
-                            'message': 'csvの形式が正しくありません(行の数が足らない:[' + str(len(line)) + '])',
+                            'title': 'csv縺ｮ蜿悶ｊ霎ｼ縺ｿ螟ｱ謨・,
+                            'message': 'csv縺ｮ蠖｢蠑上′豁｣縺励￥縺ゅｊ縺ｾ縺帙ｓ(陦後・謨ｰ縺瑚ｶｳ繧峨↑縺・[' + str(len(line)) + '])',
                         }
                         return render(request, 'yaget/get_qoo_asin_detail_upd_csv.html', params)
 
@@ -6178,16 +6178,16 @@ def get_qoo_asin_detail_upd_csv(request):
                     msg += '<br> QooAsinDetail save done.'
 
                 msg += "<br> csv-> all db set ok."
-                # サブプロセスでyagetのコマンドをキックする
+                # 繧ｵ繝悶・繝ｭ繧ｻ繧ｹ縺ｧyaget縺ｮ繧ｳ繝槭Φ繝峨ｒ繧ｭ繝・け縺吶ｋ
                 msg += '<br>--------------------'
                 msg += '<br> be on kick csvno. [' + str(new_csv_no) + ']'
-                # ここでサププロセスをキック
+                # 縺薙％縺ｧ繧ｵ繝励・繝ｭ繧ｻ繧ｹ繧偵く繝・け
                 cmd = "source /home/django/djangoenv/bin/activate;python /home/django/sample/manage.py exec_get_qoo_asin_detail_upd_csv --traceback --csv_no "
                 #cmd = "python3.6 /home/django/sample/manage.py exec_get_qoo_asin_detail_upd_csv --traceback "
                 cmd += str(new_csv_no)
                 msg += ' cmd[' + cmd + ']'
 
-                # 2019/7/6 以下は普通の呼び出しだったが標準出力を取りたい
+                # 2019/7/6 莉･荳九・譎ｮ騾壹・蜻ｼ縺ｳ蜃ｺ縺励□縺｣縺溘′讓呎ｺ門・蜉帙ｒ蜿悶ｊ縺溘＞
                 p = subprocess.Popen(cmd, shell=True)
 
                 #msg += ' maybe ok.' + p.stdout.readline()
@@ -6196,24 +6196,24 @@ def get_qoo_asin_detail_upd_csv(request):
                 msg += '<br>--------------------'
                 msg += "<br> end of get_qoo_asin_detail_upd_csv"
                 params = {
-                    'title': 'CSV UPLOAD完了。ASIN情報の更新を開始します',
+                    'title': 'CSV UPLOAD螳御ｺ・・SIN諠・ｱ縺ｮ譖ｴ譁ｰ繧帝幕蟋九＠縺ｾ縺・,
                     'message': msg,
                     'form': form,
                 }
                 logger.debug("get_qoo_asin_detail_upd_csv called [exec_get_qoo_asin_detail_upd_csv]")
                 return render(request, 'yaget/get_qoo_asin_detail_upd_csv.html', params)
             else:
-                # form is_validがNG
+                # form is_valid縺君G
                 params = {
-                    'title': 'csvの取り込み失敗',
-                    'message': 'csvの形式が正しくありません',
+                    'title': 'csv縺ｮ蜿悶ｊ霎ｼ縺ｿ螟ｱ謨・,
+                    'message': 'csv縺ｮ蠖｢蠑上′豁｣縺励￥縺ゅｊ縺ｾ縺帙ｓ',
                 }
                 logger.debug("get_qoo_asin_detail_upd_csv invalid csv format.")
                 return render(request, 'yaget/get_qoo_asin_detail_upd_csv.html', params)
         except Exception as e:
             msg += str(traceback.format_tb(e.__traceback__))
             params = {
-                'title': 'CSV UPLOAD 失敗・・',
+                'title': 'CSV UPLOAD 螟ｱ謨励・繝ｻ',
                 'message': msg,
                 'form': form,
             }
@@ -6223,8 +6223,8 @@ def get_qoo_asin_detail_upd_csv(request):
     else:
         csvform = QooAsinUpdCsvForm()
         params = {
-            'title': '(Qoo10用) ASINリストCSVによるASIN詳細情報取得 UPLOAD FORM',
-            'message': 'CSVを指定してアップロードしてください',
+            'title': '(Qoo10逕ｨ) ASIN繝ｪ繧ｹ繝・SV縺ｫ繧医ｋASIN隧ｳ邏ｰ諠・ｱ蜿門ｾ・UPLOAD FORM',
+            'message': 'CSV繧呈欠螳壹＠縺ｦ繧｢繝・・繝ｭ繝ｼ繝峨＠縺ｦ縺上□縺輔＞',
             'form': csvform,
         }
 
@@ -6235,19 +6235,19 @@ def get_qoo_asin_detail_upd_csv(request):
 
 def get_qoo_asin_detail_single(request):
     """
-    20220820 追加。指定したASIN単体について
-    SP-API呼び出しでUS or JPからデータを引っ張る。
-    Qoo10販売用として対象は絞るイメージ
-    なんならついでにKeepa APIも呼び出して詳細を保存したいが・・
+    20220820 霑ｽ蜉縲よ欠螳壹＠縺蘗SIN蜊倅ｽ薙↓縺､縺・※
+    SP-API蜻ｼ縺ｳ蜃ｺ縺励〒US or JP縺九ｉ繝・・繧ｿ繧貞ｼ輔▲蠑ｵ繧九・
+    Qoo10雋ｩ螢ｲ逕ｨ縺ｨ縺励※蟇ｾ雎｡縺ｯ邨槭ｋ繧､繝｡繝ｼ繧ｸ
+    縺ｪ繧薙↑繧峨▽縺・〒縺ｫKeepa API繧ょ他縺ｳ蜃ｺ縺励※隧ｳ邏ｰ繧剃ｿ晏ｭ倥＠縺溘＞縺後・繝ｻ
 
-    POST引数はasinだけ。
+    POST蠑墓焚縺ｯasin縺縺代・
 
     """
 
     logger.debug("get_qoo_asin_detail_single in")
 
     msg = "get_qoo_asin_detail_single start."
-    # まず、フォームから渡されるCSVをとりこみましょ
+    # 縺ｾ縺壹√ヵ繧ｩ繝ｼ繝縺九ｉ貂｡縺輔ｌ繧気SV繧偵→繧翫％縺ｿ縺ｾ縺励ｇ
     if request.method == 'POST':
         try:
             form = QooAsinUpdAsinForm(request.POST)
@@ -6274,16 +6274,16 @@ def get_qoo_asin_detail_single(request):
                 msg += '<br> QooAsinDetail save done.'
 
                 msg += "<br> csv-> all db set ok."
-                # サブプロセスでyagetのコマンドをキックする
+                # 繧ｵ繝悶・繝ｭ繧ｻ繧ｹ縺ｧyaget縺ｮ繧ｳ繝槭Φ繝峨ｒ繧ｭ繝・け縺吶ｋ
                 msg += '<br>--------------------'
-                # ここでサププロセスをキック
+                # 縺薙％縺ｧ繧ｵ繝励・繝ｭ繧ｻ繧ｹ繧偵く繝・け
                 cmd = "source /home/django/djangoenv/bin/activate;python /home/django/sample/manage.py exec_get_qoo_asin_detail_upd_csv --traceback --asin "
                 #cmd = "python3.6 /home/django/sample/manage.py exec_get_qoo_asin_detail_upd_csv --traceback --asin "
                 cmd += str(request.POST['asin'])
-                cmd += ' --csv_no ' + str(0) # csv_no は空でいい
+                cmd += ' --csv_no ' + str(0) # csv_no 縺ｯ遨ｺ縺ｧ縺・＞
                 msg += ' cmd[' + cmd + ']'
 
-                # 2019/7/6 以下は普通の呼び出しだったが標準出力を取りたい
+                # 2019/7/6 莉･荳九・譎ｮ騾壹・蜻ｼ縺ｳ蜃ｺ縺励□縺｣縺溘′讓呎ｺ門・蜉帙ｒ蜿悶ｊ縺溘＞
                 p = subprocess.Popen(cmd, shell=True)
 
                 #msg += ' maybe ok.' + p.stdout.readline()
@@ -6292,17 +6292,17 @@ def get_qoo_asin_detail_single(request):
                 msg += '<br>--------------------'
                 msg += "<br> end of get_qoo_asin_detail_single"
                 params = {
-                    'title': 'ASIN情報の更新を開始します・・・',
+                    'title': 'ASIN諠・ｱ縺ｮ譖ｴ譁ｰ繧帝幕蟋九＠縺ｾ縺吶・繝ｻ繝ｻ',
                     'message': msg,
                     'form': form,
                 }
                 logger.debug("get_qoo_asin_detail_single called [exec_get_qoo_asin_detail_upd_csv]")
                 return render(request, 'yaget/get_qoo_asin_detail_upd_asin.html', params)
             else:
-                # form is_validがNG
+                # form is_valid縺君G
                 params = {
-                    'title': 'asin取り込み失敗',
-                    'message': 'asinの形式が正しくありません',
+                    'title': 'asin蜿悶ｊ霎ｼ縺ｿ螟ｱ謨・,
+                    'message': 'asin縺ｮ蠖｢蠑上′豁｣縺励￥縺ゅｊ縺ｾ縺帙ｓ',
                     'form': form,
                 }
                 logger.debug("get_qoo_asin_detail_single invalid csv format.")
@@ -6310,7 +6310,7 @@ def get_qoo_asin_detail_single(request):
         except Exception as e:
             msg += str(traceback.format_tb(e.__traceback__))
             params = {
-                'title': 'ASIN UPLOAD 失敗・・',
+                'title': 'ASIN UPLOAD 螟ｱ謨励・繝ｻ',
                 'message': msg,
                 'form': form,
             }
@@ -6318,10 +6318,10 @@ def get_qoo_asin_detail_single(request):
             return render(request, 'yaget/get_qoo_asin_detail_upd_asin.html', params)
 
     else:
-        asinform = QooAsinUpdAsinForm() # FormはASINを個別入力するフォームに
+        asinform = QooAsinUpdAsinForm() # Form縺ｯASIN繧貞句挨蜈･蜉帙☆繧九ヵ繧ｩ繝ｼ繝縺ｫ
         params = {
-            'title': '(Qoo10用) ASIN詳細情報取得 UPLOAD FORM',
-            'message': 'ASINを指定してください',
+            'title': '(Qoo10逕ｨ) ASIN隧ｳ邏ｰ諠・ｱ蜿門ｾ・UPLOAD FORM',
+            'message': 'ASIN繧呈欠螳壹＠縺ｦ縺上□縺輔＞',
             'form': asinform,
         }
 
@@ -6333,7 +6333,7 @@ def get_qoo_asin_detail_single(request):
 
 class QooAsinDetailList(generic.ListView):
     """
-    QooAsinDetailテーブルの一覧表作成
+    QooAsinDetail繝・・繝悶Ν縺ｮ荳隕ｧ陦ｨ菴懈・
     """
     model = QooAsinDetail
     template_name = 'yaget/qoo_asin_detail_list.html'
@@ -6351,12 +6351,12 @@ class QooAsinDetailList(generic.ListView):
             self.request.POST.get('create_date_to', None),
         ]
         request.session['form_value_imp_asin'] = form_value_imp_asin
-        # 検索時にページネーションに関連したエラーを防ぐ
+        # 讀懃ｴ｢譎ゅ↓繝壹・繧ｸ繝阪・繧ｷ繝ｧ繝ｳ縺ｫ髢｢騾｣縺励◆繧ｨ繝ｩ繝ｼ繧帝亟縺・
         self.request.GET = self.request.GET.copy()
         self.request.GET.clear()
         return self.get(request, *args, **kwargs)
 
-    # 抽出件数を絞る
+    # 謚ｽ蜃ｺ莉ｶ謨ｰ繧堤ｵ槭ｋ
     def get_queryset(self, queryset=None):
         #return YaShopImportAmaGoodsDetail.objects.all()[:10]
 
@@ -6370,7 +6370,7 @@ class QooAsinDetailList(generic.ListView):
             myshop_cat_2 = form_value_qoo_asin[5]
             create_date_from = form_value_qoo_asin[6]
             create_date_to = form_value_qoo_asin[7]
-            # 検索条件
+            # 讀懃ｴ｢譚｡莉ｶ
             condition_csv_no = Q()
             condition_asin = Q()
             condition_shopid = Q()
@@ -6406,7 +6406,7 @@ class QooAsinDetailList(generic.ListView):
                 condition_create_date_to
             ).order_by("-update_date")[:10000]
         else:
-            # 何も返さない
+            # 菴輔ｂ霑斐＆縺ｪ縺・
             return QooAsinDetail.objects.none()
 
     def get_context_data(self, **kwargs):
@@ -6438,7 +6438,7 @@ class QooAsinDetailList(generic.ListView):
                         'create_date_from': create_date_from,
                         'create_date_to': create_date_to,
                         }
-        test_form = QooAsinDetailSearchForm(initial=default_data) # 検索フォーム
+        test_form = QooAsinDetailSearchForm(initial=default_data) # 讀懃ｴ｢繝輔か繝ｼ繝
         ctx['test_form'] = test_form
         ctx['form_name'] = 'yaget'
         ctx['obj_all_cnt'] = QooAsinDetail.objects.all().count()
@@ -6446,14 +6446,14 @@ class QooAsinDetailList(generic.ListView):
 
 class QooAsinDetailDetail(generic.DetailView):
     """
-    QooAsinDetailテーブルのレコード詳細
+    QooAsinDetail繝・・繝悶Ν縺ｮ繝ｬ繧ｳ繝ｼ繝芽ｩｳ邏ｰ
     """
     template_name = 'yaget/qoo_asin_detail_detail.html'
     model = QooAsinDetail
 
 class QooAsinDetailDelete(generic.DeleteView):
     """
-    QooAsinDetailテーブルのレコード削除
+    QooAsinDetail繝・・繝悶Ν縺ｮ繝ｬ繧ｳ繝ｼ繝牙炎髯､
     """
     template_name = 'yaget/qoo_asin_detail_delete.html'
     model = QooAsinDetail
@@ -6462,13 +6462,13 @@ class QooAsinDetailDelete(generic.DeleteView):
     def delete(self, request, *args, **kwargs):
         result = super().delete(request, *args, **kwargs)
         messages.success(
-            self.request, '「{}」を削除しました'.format(self.object))
+            self.request, '縲鶏}縲阪ｒ蜑企勁縺励∪縺励◆'.format(self.object))
         return result
 
 
 class QooAsinDetailCreate(generic.CreateView):
     """
-    QooAsinDetailテーブルのレコード作成
+    QooAsinDetail繝・・繝悶Ν縺ｮ繝ｬ繧ｳ繝ｼ繝我ｽ懈・
     """
     template_name = 'yaget/qoo_asin_detail_create.html'
     model = QooAsinDetail
@@ -6588,7 +6588,7 @@ class QooAsinDetailUpdate(generic.UpdateView):
 
 class QooAsinCsvImport(generic.FormView):
     """
-    QooAsinDetailを全件検索して、CSVファイルを取り込みDBに格納します。
+    QooAsinDetail繧貞・莉ｶ讀懃ｴ｢縺励※縲，SV繝輔ぃ繧､繝ｫ繧貞叙繧願ｾｼ縺ｿDB縺ｫ譬ｼ邏阪＠縺ｾ縺吶・
     """
     template_name = 'yaget/qoo_asin_csv_import.html'
     success_url = reverse_lazy('yaget:qoo_asin_detail_list')
@@ -6597,16 +6597,16 @@ class QooAsinCsvImport(generic.FormView):
     def get_context_data(self, **kwargs):
         ctx = super().get_context_data(**kwargs)
         ctx['form_name'] = 'yaget'
-        ctx['message'] = 'QooAsinCsvImportです'
+        ctx['message'] = 'QooAsinCsvImport縺ｧ縺・
         return ctx
 
     def form_valid(self, form):
-        """postされたTSVファイルを読み込み、YaShopImportCat テーブルに登録します"""
+        """post縺輔ｌ縺鬱SV繝輔ぃ繧､繝ｫ繧定ｪｭ縺ｿ霎ｼ縺ｿ縲〆aShopImportCat 繝・・繝悶Ν縺ｫ逋ｻ骭ｲ縺励∪縺・""
         csvfile = TextIOWrapper(form.cleaned_data['file'], encoding='utf-8')
         reader = csv.reader(csvfile, delimiter="\t")
         for row in reader:
             """
-            YaShopImportCat テーブルをmyshop_cat_all (primary key)で検索します
+            YaShopImportCat 繝・・繝悶Ν繧知yshop_cat_all (primary key)縺ｧ讀懃ｴ｢縺励∪縺・
             """
             qoo_asin, created = QooAsinDetail.objects.get_or_create(asin=row[0])
             qoo_asin.asin = row[0]
@@ -6618,7 +6618,7 @@ class QooAsinCsvImport(generic.FormView):
 
 def QooAsinCsvExport(request):
     """
-    QooAsinDetailのレコードから、CSVファイルを作成してresponseに出力します。
+    QooAsinDetail縺ｮ繝ｬ繧ｳ繝ｼ繝峨°繧峨，SV繝輔ぃ繧､繝ｫ繧剃ｽ懈・縺励※response縺ｫ蜃ｺ蜉帙＠縺ｾ縺吶・
     """
     response = HttpResponse(content_type='text/csv; charset=Shift-JIS')
     tdatetime = dt.now()
@@ -6636,7 +6636,7 @@ def QooAsinCsvExport(request):
         create_date_from = form_value_qoo_asin[6]
         create_date_to = form_value_qoo_asin[7]
 
-        # 検索条件
+        # 讀懃ｴ｢譚｡莉ｶ
         condition_csv_no = Q()
         condition_asin = Q()
         condition_shopid = Q()
@@ -6673,7 +6673,7 @@ def QooAsinCsvExport(request):
                 condition_create_date_to
         ).order_by("-update_date")[:1]:
             csvfilename = tstr + '_asin_' + retobj_tmp.y_cat_1 + '_' + retobj_tmp.myshop_cat_1 + '_' + retobj_tmp.myshop_cat_2 + '.csv'
-            csvfilename = csvfilename.replace(' ','').replace('>','_').replace('、','-')
+            csvfilename = csvfilename.replace(' ','').replace('>','_').replace('縲・,'-')
 
         writer = get_csv_writer(response, csvfilename)
 
@@ -6698,3 +6698,73 @@ def QooAsinCsvExport(request):
                 retobj.asin,
             ])
     return response
+
+# ===== SP-API LWA OAuth (minimal handlers) =====
+def spapi_oauth_start(request):
+    """Start Login With Amazon flow for SP-API.
+    Redirects user to Amazon authorization page. Requires LWA client ID and a registered redirect URI.
+    """
+    try:
+        client_id = os.environ.get('LWA_APP_ID') or os.environ.get('LWA_CLIENT_ID') or ''
+        if not client_id:
+            messages.error(request, 'LWA client ID is not configured.')
+            return redirect('index')
+        callback_url = request.build_absolute_uri(reverse('spapi_oauth_callback'))
+        params = {
+            'client_id': client_id,
+            'response_type': 'code',
+            'redirect_uri': callback_url,
+            'scope': 'sellingpartnerapi::migration',
+            'state': 'spapi'
+        }
+        url = 'https://www.amazon.com/ap/oa?' + urllib.parse.urlencode(params)
+        return redirect(url)
+    except Exception as e:
+        logger.exception('spapi_oauth_start failed: %s', e)
+        return HttpResponse('OAuth start failed', status=500)
+
+
+def spapi_oauth_callback(request):
+    """Handle LWA redirect, exchange code for tokens and show a short result.
+    Note: Persisting tokens is not implemented here; extend as needed.
+    """
+    error = request.GET.get('error')
+    if error:
+        return HttpResponse('OAuth error: ' + error, status=400)
+    code = request.GET.get('code')
+    if not code:
+        return HttpResponse('Missing authorization code', status=400)
+    try:
+        client_id = os.environ.get('LWA_APP_ID') or os.environ.get('LWA_CLIENT_ID') or ''
+        client_secret = os.environ.get('LWA_CLIENT_SECRET') or ''
+        if not (client_id and client_secret):
+            return HttpResponse('LWA credentials not configured', status=500)
+        callback_url = request.build_absolute_uri(reverse('spapi_oauth_callback'))
+        token_url = 'https://api.amazon.com/auth/o2/token'
+        data = {
+            'grant_type': 'authorization_code',
+            'code': code,
+            'client_id': client_id,
+            'client_secret': client_secret,
+            'redirect_uri': callback_url,
+        }
+        res = requests.post(token_url, data=data, timeout=15)
+        try:
+            js = res.json()
+        except Exception:
+            js = {'_text': res.text}
+        if res.status_code != 200:
+            logger.error('LWA token exchange failed: %s %s', res.status_code, js)
+            return HttpResponse('Token exchange failed', status=502)
+        def mask(v):
+            return (v[:6] + '…' + v[-4:]) if isinstance(v, str) and len(v) > 12 else v
+        payload = {
+            'access_token_preview': mask(js.get('access_token', '')),
+            'refresh_token_preview': mask(js.get('refresh_token', '')),
+            'expires_in': js.get('expires_in'),
+            'token_type': js.get('token_type')
+        }
+        return JsonResponse(payload)
+    except Exception as e:
+        logger.exception('spapi_oauth_callback failed: %s', e)
+        return HttpResponse('OAuth callback failed', status=500)
