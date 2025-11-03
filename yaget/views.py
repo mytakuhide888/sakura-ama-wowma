@@ -215,7 +215,7 @@ def qoo_goods_detail_info_ajax(request):
 
     # Qoo10縺ｫ繧｢繧ｯ繧ｻ繧ｹ
     qoo10obj = Qoo10Access(logger)
-    msg = 'qoo蝠・刀諠・ｱ・・
+    msg = 'qoo_goods_detail_info_ajax start'
     qoo10obj.qoo10_create_cert_key()
 
     # Qoo10縺ｮ蝠・刀諠・ｱ繧呈､懃ｴ｢
