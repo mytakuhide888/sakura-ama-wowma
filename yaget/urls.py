@@ -10,6 +10,8 @@ admin.site.index_title = 'バイヤーズ メニュー'
 
 app_name = 'yaget'
 urlpatterns = [
+    path('spapi/oauth/start/', views.spapi_oauth_start, name='spapi_oauth_start'),
+    path('spapi/oauth/callback/', views.spapi_oauth_callback, name='spapi_oauth_callback'),
     path('', views.index, name='index'),
     path('<int:num>', views.index, name='index'),
     path('test_mail/', views.test_mail, name='test_mail'),

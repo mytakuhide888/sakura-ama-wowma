@@ -61,21 +61,21 @@ import logging
 import logging.config
 import traceback
 
-# ログ設定
-# ※バッチを呼び出せない場合などは、こちらをONにする。しかしこちらがONのままだと、バッチのstdoutとかぶってるのか
-# ログがこっちにしかはき出されなくなるので、片方だけにしよう。
+# ログ設宁E
+# ※バッチを呼び出せなぁE��合などは、こちらをONにする。しかしこちらがONのままだと、バチE��のstdoutとか�Eってる�EぁE
+# ログがこっちにしかはき�Eされなくなる�Eで、片方だけにしよぁE��E
 # logging
 #logging.basicConfig(filename='/home/django/sample/yaget/management/commands/log/yashop_amamws.log', level=logging.DEBUG)
 #logging.config.fileConfig(fname="/home/django/sample/yaget/log/yaget_logging.config", disable_existing_loggers=False)
 
 #logger = logging.getLogger(__name__)
 
-# --- logger 設定 -----------------------------------------
+# --- logger 設宁E-----------------------------------------
 logger = logging.getLogger(__name__)
 logger.setLevel(logging.DEBUG)
 #logger.setLevel(20)
 
-# ログローテ設定
+# ログローチE��宁E
 
 rh = logging.handlers.RotatingFileHandler(
     r'/home/django/sample/yaget/log/yaget_views.log',
@@ -93,13 +93,13 @@ ch.setFormatter(ch_formatter)
 
 logger.addHandler(rh)
 logger.addHandler(ch)
-# --- logger 設定 -----------------------------------------
+# --- logger 設宁E-----------------------------------------
 
 
 
 
 
-# アップロードしたファイルを保存するディレクトリ
+# アチE�Eロードしたファイルを保存するディレクトリ
 #env = environ.Env()
 #env.read_env('.env')
 
@@ -111,7 +111,7 @@ mydeletecsv_dir = "/home/django/sample/yaget/wowma_buyers/deletecsv/"
 #sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8')
 
 
-# Ajaxテスト
+# AjaxチE��チE
 def ajax_test(request):
     # ajax test
     title = request.POST.get('title')
@@ -122,7 +122,7 @@ def ajax_test(request):
     }
     return render(request, 'yaget/ajax_test.html', params)
 
-# Ajaxテスト
+# AjaxチE��チE
 def buyers_goods_detail_ajax_res(request):
     model = YaBuyersItemDetail
     logger.debug("--- buyers_goods_detail_ajax_res in")
@@ -143,7 +143,7 @@ def buyers_goods_detail_ajax_res(request):
     msg = 'start[' + YagetConfig.verbose_name + ']'
     qoo10obj.qoo10_create_cert_key()
 
-    # Qoo10の商品情報を検索
+    # Qoo10の啁E��惁E��を検索
     #ret_code = qoo10obj.qoo10_items_lookup_get_all_goods_info('S0','1')
     #ret_code = qoo10obj.qoo10_items_lookup_get_all_goods_info('S1','1')
     ret_code = qoo10obj.qoo10_items_lookup_get_all_goods_info('S2','1')
@@ -198,7 +198,7 @@ class UnicodeCsvWriter:
           self.writerow(seq)
 
 
-# qoo10 から商品情報の取得
+# qoo10 から啁E��惁E��の取征E
 def qoo_goods_detail_info_ajax(request):
     model = YaBuyersItemDetail
     logger.debug("--- qoo_goods_detail_info_ajax in")
@@ -215,33 +215,33 @@ def qoo_goods_detail_info_ajax(request):
 
     # Qoo10にアクセス
     qoo10obj = Qoo10Access(logger)
-    msg = 'qoo商品情報：'
+    msg = 'qoo啁E��惁E���E�E
     qoo10obj.qoo10_create_cert_key()
 
-    # Qoo10の商品情報を検索
-    # Qoo10に登録済みであれば　goods.qoo_gdno　に値が入っている(もしくはqoo_seller_codeだけの場合も)
+    # Qoo10の啁E��惁E��を検索
+    # Qoo10に登録済みであれば　goods.qoo_gdno　に値が�EってぁE��(もしく�Eqoo_seller_codeだけ�E場合も)
     if goods.qoo_gdno or goods.qoo_seller_code:
         # 更新
         ret_obj_list = qoo10obj.qoo10_items_lookup_get_item_detail_info(goods)
         chk_flg = 0
         for ret_obj in ret_obj_list:
             if ret_obj['res_code'] != "0":
-                logger.debug("--- qoo_goods_detail_info_ajax qoo10 商品情報の取得でエラー [{}][{}]".format(ret_obj['res_code'],
+                logger.debug("--- qoo_goods_detail_info_ajax qoo10 啁E��惁E��の取得でエラー [{}][{}]".format(ret_obj['res_code'],
                                                                                           ret_obj['res_msg']))
-                chk_flg = 1  # なにかエラーになってた
+                chk_flg = 1  # なにかエラーになってぁE
                 break
         if chk_flg == 0:
-            # 取得成功
+            # 取得�E劁E
             msg += '[ok][{}][{}]'.format(ret_obj['res_msg'],ret_obj['res_obj'])
-            logger.debug("--- qoo_goods_detail_info_ajax qoo10 商品情報の取得ok [{}][{}]".format(ret_obj['res_code'],
+            logger.debug("--- qoo_goods_detail_info_ajax qoo10 啁E��惁E��の取得ok [{}][{}]".format(ret_obj['res_code'],
                                                                                             ret_obj['res_msg']))
         else:
-            # 取得失敗
+            # 取得失敁E
             msg += '[ng]['
             msg += str(ret_obj['res_msg']) + ']'
 
     else:
-        # 呼び出し失敗
+        # 呼び出し失敁E
         d = {
             'ret_code': None,
         }
@@ -256,7 +256,7 @@ def qoo_goods_detail_info_ajax(request):
     return JsonResponse(d)
 
 
-# qoo10 商品登録・更新
+# qoo10 啁E��登録・更新
 def qoo_goods_upsert_ajax(request):
     model = YaBuyersItemDetail
     logger.debug("--- qoo_goods_u"
@@ -280,33 +280,33 @@ def qoo_goods_upsert_ajax(request):
     qoo10obj = ExecQoo10(logger)
 
     try:
-        # Qoo10の商品情報を検索
-        # Qoo10に登録済みであれば　goods.qoo_gdno　に値が入っている
+        # Qoo10の啁E��惁E��を検索
+        # Qoo10に登録済みであれば　goods.qoo_gdno　に値が�EってぁE��
         status, msg = qoo10obj.exec_qoo10_goods_update(goods)
         """
         if goods.qoo_gdno:
             # 更新
             qoo10obj.qoo10_items_basic_update_goods(goods)
-            # 更新に成功している。続けて更新時のみ、商品詳細を更新
+            # 更新に成功してぁE��。続けて更新時�Eみ、商品詳細を更新
             qoo10obj.qoo10_items_contents_edit_goods_contents(goods)
-            # 更新に成功している。続けてステータスを更新
+            # 更新に成功してぁE��。続けてスチE�Eタスを更新
             qoo10obj.qoo10_items_basic_edit_goods_status(goods)
-            # 更新成功している。続けてマルチ画像を更新
+            # 更新成功してぁE��。続けてマルチ画像を更新
             qoo10obj.qoo10_items_contents_edit_goods_multi_image(goods)
             # 最後に在庫数を更新
             qoo10obj.qoo10_items_order_set_goods_price_qty(goods)
         else:
             # 新規登録
             qoo10obj.qoo10_items_basic_set_new_goods(goods)
-            # 更新に成功している。続けてステータスを更新
+            # 更新に成功してぁE��。続けてスチE�Eタスを更新
             qoo10obj.qoo10_items_basic_edit_goods_status(goods)
-            # 更新成功している。続けてマルチ画像を更新
+            # 更新成功してぁE��。続けてマルチ画像を更新
             qoo10obj.qoo10_items_contents_edit_goods_multi_image(goods)
             # 最後に在庫数を更新
             qoo10obj.qoo10_items_order_set_goods_price_qty(goods)
         """
     except:
-        # 更新時にエラー？
+        # 更新時にエラー�E�E
         logger.debug(
             '--> error. qoo_goods_upsert_ajax 1 gid:[{}] msg[{}] '.format(
                 goods.gid, traceback.format_exc()))
@@ -322,7 +322,7 @@ def qoo_goods_upsert_ajax(request):
 
     return JsonResponse(d)
 
-# wowma 商品登録・更新
+# wowma 啁E��登録・更新
 def wow_goods_upsert_ajax(request):
     model = YaBuyersItemDetail
     logger.debug("--- wow_goods_upsert_ajax in")
@@ -343,10 +343,10 @@ def wow_goods_upsert_ajax(request):
     wowma_obj = ExecWowma(logger)
 
     try:
-        # wowmaの商品情報を検索
+        # wowmaの啁E��惁E��を検索
         status, msg = wowma_obj.exec_wowma_goods_update(goods, taglist_upd_flg)
     except:
-        # 更新時にエラー？
+        # 更新時にエラー�E�E
         logger.debug(
             '--> error. wow_goods_upsert_ajax 1 gid:[{}] msg[{}] '.format(
                 goods.gid, traceback.format_exc()))
@@ -374,9 +374,9 @@ def ajax_test_add(request):
     return JsonResponse(d)
 
 
-# Qoo10 接続テスト
+# Qoo10 接続テスチE
 def qoo10_cert_test(request):
-    # Qoo10のアクセサを初期化して呼び出してみる
+    # Qoo10のアクセサを�E期化して呼び出してみめE
     qoo10obj = Qoo10Access(logger)
     #msg = ' call qoo10_cert_test start..'
     msg = 'start[' + YagetConfig.verbose_name + ']'
@@ -389,19 +389,19 @@ def qoo10_cert_test(request):
     return render(request, 'yaget/qoo10_cert_test.html', params)
 
 
-# 在庫チェック
+# 在庫チェチE��
 def stock_chk(request):
-    # サブプロセスでyagetのコマンドをキックする
+    # サブ�EロセスでyagetのコマンドをキチE��する
     if (request.method == 'POST'):
         msg = ' start stock check.. <br>'
-        # ここでサププロセスをキック
+        # ここでサプ�EロセスをキチE��
         cmd = "source /home/django/djangoenv/bin/activate;python /home/django/sample/manage.py wowma_stock_chk 123"
         p = subprocess.Popen(cmd, shell=True)
         msg += ' maybe ok.' + str(p.pid)
     else:
         msg = ' call stock_chk ..'
     params = {
-        'title': '在庫チェック開始します',
+        'title': '在庫チェチE��開始しまぁE,
         'message': msg,
     }
 
@@ -413,12 +413,12 @@ def top(request):
 
 """
 --- google spread sheet ---
-参考：https://a-zumi.net/python-google-spreadsheet-api/
-使い方
+参老E��https://a-zumi.net/python-google-spreadsheet-api/
+使ぁE��
 if __name__ == '__main__':
   worksheet = WorkSheet("spreadsheetId")
 
-  # A列からC列までの値を取得
+  # A列からC列までの値を取征E
   print(worksheet.get_values('A:C'))
 
   # E1とG1に値を挿入
@@ -458,7 +458,7 @@ class GSpread(object):
             self.keyfilename = '/home/django/sample/yaget/test-app-flex-1-542896fdd03c.json'
 
     def get_gsheet(self, gsheetname):
-        # シートをopenして返却する。とりあえずシートは sheet1 で固定
+        # シートをopenして返却する。とりあえずシート�E sheet1 で固宁E
         if gsheetname is None:
             return None
         credentials = ServiceAccountCredentials.from_json_keyfile_name(self.keyfilename, self.scope)
@@ -467,7 +467,7 @@ class GSpread(object):
         return wks
 
 
-# --- 以下はsampleから抜粋
+# --- 以下�Esampleから抜粁E
 def check(request):
     params = {
         'title': 'Hello',
@@ -513,8 +513,8 @@ def test_mail(request, num=1):
 
     page = Paginator(data, 3)
     params = {
-            'title': 'テストメール　配信できるか',
-            'message':'テストメール　配信できるかな',
+            'title': 'チE��トメール　配信できるぁE,
+            'message':'チE��トメール　配信できるかな',
             'data': page.get_page(num),
         }
     return render(request, 'yaget/test_mail.html', params)
@@ -526,20 +526,20 @@ def send_my_mail(request, num=1):
     page = Paginator(data, 3)
     params = {
         'title': 'メール送りました',
-        'message': 'メール送りましたよ',
+        'message': 'メール送りましためE,
         'data': page.get_page(num),
     }
     if (request.method == 'POST'):
         if 'button_1' in request.POST:
             params = {
                 'title': 'メール送りました',
-                'message': 'おくります' + request.POST['button_1'],
+                'message': 'おくりまぁE + request.POST['button_1'],
                 'data': page.get_page(num),
             }
             return render(request, 'yaget/test_mail.html', params)
     else:
         params = {
-            'title': 'メール送ります',
+            'title': 'メール送りまぁE,
             'message': 'メール送りますよ',
             'data': page.get_page(num),
         }
@@ -575,12 +575,12 @@ def read_s_sheet(request):
 
 
 def kick_yaget(request):
-    # サブプロセスでyagetのコマンドをキックする
+    # サブ�EロセスでyagetのコマンドをキチE��する
     if (request.method == 'POST'):
         yaurl = request.POST['YaUrl']
         form = KickYagetForm(request.POST)
         msg = ' be on kick [' + yaurl + ']'
-        # ここでサププロセスをキック
+        # ここでサプ�EロセスをキチE��
         cmd = "source /home/django/djangoenv/bin/activate;python /home/django/sample/manage.py get_ya_src "
         cmd += yaurl
         msg += ' cmd[' + cmd + ']'
@@ -602,7 +602,7 @@ def kick_yaget(request):
     return render(request, 'yaget/kick_yaget.html', params)
 
 
-# アップロードされたファイルのハンドル
+# アチE�Eロードされたファイルのハンドル
 def handle_uploaded_file(f):
     sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='cp932')
     path = os.path.join(UPLOAD_DIR, f.name)
@@ -618,7 +618,7 @@ def upd_byers_ct_list_done(request):
 
 def upd_byers_ct_list(request):
     try:
-        # サブプロセスでbyersのコマンドをキックする
+        # サブ�EロセスでbyersのコマンドをキチE��する
         if (request.method == 'POST'):
 
             yaurl = request.POST['YaUrl']
@@ -627,11 +627,11 @@ def upd_byers_ct_list(request):
             if form.is_valid():
                 msg = ' be on kick upd_byers_ct_list'
                 #handle_uploaded_file(request.FILES['file'])
-                # ここでサププロセスをキック
+                # ここでサプ�EロセスをキチE��
                 #cmd = "cd /home/django/sample/yaget/management/commands; source /home/django/djangoenv/bin/activate;python /home/django/sample/manage.py get_ya_buyers_list "
                 cmd = "cd /home/django/sample/yaget/management/commands; source /home/django/djangoenv/bin/activate;python /home/django/sample/manage.py get_wowma_buyers_list "
 
-                # 今は引数を見てない・・が仮に登録しておく
+                # 今�E引数を見てなぁE�E・が仮に登録しておく
                 cmd += "12345"
                 msg += ' cmd[' + cmd + ']'
                 # cmd = "pwd"
@@ -640,7 +640,7 @@ def upd_byers_ct_list(request):
 
                 #msg += ' maybe ok.' + p.stdout.readline()
 
-                # リアルタイムに取得　デバッグしたいときにONにすれば画面のmsgに標準出力を出せる
+                # リアルタイムに取得　チE��チE��したぁE��きにONにすれば画面のmsgに標準�E力を出せる
 
                 #p = subprocess.Popen(cmd, shell=True, stderr=subprocess.STDOUT, stdout=subprocess.PIPE)
                 """
@@ -651,9 +651,9 @@ def upd_byers_ct_list(request):
                 """
 
                 msg += ' maybe ok.' + str(p.pid)
-                # アップロード完了画面にリダイレクト
+                # アチE�Eロード完亁E��面にリダイレクチE
                 params = {
-                    'title': 'データ更新開始しました',
+                    'title': 'チE�Eタ更新開始しました',
                     'message': msg,
                     'form': form,
                 }
@@ -695,10 +695,10 @@ print(wks.acell('B1'))
 # 行数
 print(wks.row_count)
 
-# 行を全て取得
+# 行を全て取征E
 print(wks.row_values(2))
 
-# 範囲を全て取得
+# 篁E��を�Eて取征E
 print(wks.range('A2:C4'))
 
 """
@@ -718,7 +718,7 @@ def addlist(request):
     return render(request, 'yaget/addlist.html', params)
 
 
-# list のデータをspreadsheetに展開する
+# list のチE�Eタをspreadsheetに展開する
 def set_list_to_sheet(request):
     return HttpResponse("Hello yaget getdetail!")
     """
@@ -729,7 +729,7 @@ def set_list_to_sheet(request):
         data = YaItemList.objects.all()
         msg = 'after post..'
 
-        # シートにセットする
+        # シートにセチE��する
         worksheet = WorkSheet(sheetnum)
 
         # E1とG1に値を挿入
@@ -752,14 +752,14 @@ def set_list_to_sheet(request):
     # とりあえず全件
     data = YaItemList.objects.all()
 
-    # シートにセットする
+    # シートにセチE��する
     worksheet = WorkSheet(sheetnum)
 
     # E1とG1に値を挿入
     worksheet.update('E1:G1', {'values': [1, 2]})
 
-    # 上が通ったら・・ data の内容を展開してみたい
-    # dataは、1件だけ（all じゃなくfirst）ならいけるか
+    # 上が通ったら・・ data の冁E��を展開してみたい
+    # dataは、E件だけ！Ell じゃなくfirst�E�ならいけるぁE
     #worksheet.update('A2:G2', {'values': data})
 
 
@@ -860,7 +860,7 @@ def message(request, page=1):
 
 class BuyersGoodsDetailList(generic.ListView):
     """
-    YaBuyersItemDetailテーブルの一覧表作成
+    YaBuyersItemDetailチE�Eブルの一覧表作�E
     """
     model = YaBuyersItemDetail
     template_name = 'yaget/buyers_goods_detail_list.html'
@@ -906,7 +906,7 @@ class BuyersGoodsDetailList(generic.ListView):
             self.request.POST.get('create_date_to', None),
         ]
         request.session['form_value_buyers_goods_detail_list'] = form_value_buyers_goods_detail_list
-        # 検索時にページネーションに関連したエラーを防ぐ
+        # 検索時にペ�Eジネ�Eションに関連したエラーを防ぁE
         self.request.GET = self.request.GET.copy()
         self.request.GET.clear()
         return self.get(request, *args, **kwargs)
@@ -914,7 +914,7 @@ class BuyersGoodsDetailList(generic.ListView):
     # 抽出件数を絞る
     def get_queryset(self, queryset=None):
         #return YaBuyersItemDetail.objects.all()[:10]
-        # sessionに値がある場合、その値でクエリ発行する。
+        # sessionに値がある場合、その値でクエリ発行する、E
         #if 'form_value_buyers_goods_detail_list' in self.request.session:
         #    self.request.session.clear()
 
@@ -1104,7 +1104,7 @@ class BuyersGoodsDetailList(generic.ListView):
                 condition_create_date_to
             ).order_by("-update_date")[:10000]
         else:
-            # 何も返さない
+            # 何も返さなぁE
             return YaBuyersItemDetail.objects.none()
 
     def get_context_data(self, **kwargs):
@@ -1224,15 +1224,15 @@ class BuyersGoodsDetailList(generic.ListView):
         test_form = YaBuyersItemDetailSearchForm(initial=default_data) # 検索フォーム
         ctx['test_form'] = test_form
         ctx['form_name'] = 'yaget'
-        ctx['message'] = 'バイヤーズ商品リストです'
-        ctx['title'] = 'バイヤーズ商品リスト タイトル'
+        ctx['message'] = 'バイヤーズ啁E��リストでぁE
+        ctx['title'] = 'バイヤーズ啁E��リスチEタイトル'
         ctx['obj_all_cnt'] = YaBuyersItemDetail.objects.all().count()
         return ctx
 
 
 def BuyersGoodsDetailExport(request):
     """
-    YaBuyersItemDetail、CSVファイルを作成してresponseに出力します。
+    YaBuyersItemDetail、CSVファイルを作�Eしてresponseに出力します、E
     """
     response = HttpResponse(content_type='text/csv; charset=Shift-JIS')
     #response = HttpResponse(content_type='text/csv; charset=UTF-8')
@@ -1390,44 +1390,44 @@ def BuyersGoodsDetailExport(request):
             condition_create_date_to = Q(create_date__lte=create_date_to)
 
         csvfilename = tstr + '_buyers_item_detail.csv'
-        csvfilename = csvfilename.replace(' ','').replace('>','_').replace('、','-')
+        csvfilename = csvfilename.replace(' ','').replace('>','_').replace('、E,'-')
         writer = get_csv_writer(response, csvfilename)
 
-        # ヘッダ行セット
+        # ヘッダ行セチE��
         writer.writerow([
-            '商品ID',
-            '商品リンク',
-            '商品名',
-            '商品詳細',
+            '啁E��ID',
+            '啁E��リンク',
+            '啁E��吁E,
+            '啁E��詳細',
             '通常価格',
             '大量発注価格',
-            'バイヤーズ商品コード',
+            'バイヤーズ啁E��コーチE,
             '在庫数',
-            'wow掲載状況',
-            'wowステータス',
-            'wow商品名',
-            'wow商品詳細',
-            'wow注意キーワード',
+            'wow掲載状況E,
+            'wowスチE�Eタス',
+            'wow啁E��吁E,
+            'wow啁E��詳細',
+            'wow注意キーワーチE,
             'wow価格',
             'wow固定価格',
-            'wow送料設定区分',
+            'wow送料設定区刁E,
             'wow個別送料',
-            'wow送料設定区分',
-            'wowカテゴリID',
-            'qoo掲載状況',
-            'qooステータス',
-            'qoo販売者コード',
-            'qoo商品コード',
-            'qoo商品名',
-            'qoo商品詳細',
-            'qoo注意キーワード',
+            'wow送料設定区刁E,
+            'wowカチE��リID',
+            'qoo掲載状況E,
+            'qooスチE�Eタス',
+            'qoo販売老E��ーチE,
+            'qoo啁E��コーチE,
+            'qoo啁E��吁E,
+            'qoo啁E��詳細',
+            'qoo注意キーワーチE,
             'qoo価格',
             'qoo固定価格',
-            'qoo送料設定区分',
+            'qoo送料設定区刁E,
             'qoo個別送料',
-            'qoo送料設定区分',
-            'qooカテゴリID',
-            '作成日',
+            'qoo送料設定区刁E,
+            'qooカチE��リID',
+            '作�E日',
             '更新日',
         ])
 
@@ -1469,7 +1469,7 @@ def BuyersGoodsDetailExport(request):
                 condition_create_date_from &
                 condition_create_date_to
         ).order_by("-update_date")[:10000]:
-            # 変換する文字。shift-jis変換でコケた文字はここに登録
+            # 変換する斁E��。shift-jis変換でコケた文字�Eここに登録
             tmpgname = retobj.gname
             for exchange_words in BuyersBrandInfo._MY_EXCHANGE_WORDS:
                 tmpgname = re.sub(exchange_words[0], exchange_words[1], tmpgname)
@@ -1534,41 +1534,41 @@ def BuyersGoodsDetailExport(request):
         csvfilename = tstr + '_buyers_item_detail_all.csv'
         writer = get_csv_writer(response, csvfilename)
 
-        # ヘッダ行セット
+        # ヘッダ行セチE��
         writer.writerow([
-            '商品ID',
-            '商品リンク',
-            '商品名',
-            '商品詳細',
+            '啁E��ID',
+            '啁E��リンク',
+            '啁E��吁E,
+            '啁E��詳細',
             '通常価格',
             '大量発注価格',
-            'バイヤーズ商品コード',
+            'バイヤーズ啁E��コーチE,
             '在庫数',
-            'wow掲載状況',
-            'wowステータス',
-            'wow商品名',
-            'wow商品詳細',
-            'wow注意キーワード',
+            'wow掲載状況E,
+            'wowスチE�Eタス',
+            'wow啁E��吁E,
+            'wow啁E��詳細',
+            'wow注意キーワーチE,
             'wow価格',
             'wow固定価格',
-            'wow送料設定区分',
+            'wow送料設定区刁E,
             'wow個別送料',
-            'wow送料設定区分',
-            'wowカテゴリID',
-            'qoo掲載状況',
-            'qooステータス',
-            'qoo販売者コード',
-            'qoo商品コード',
-            'qoo商品名',
-            'qoo商品詳細',
-            'qoo注意キーワード',
+            'wow送料設定区刁E,
+            'wowカチE��リID',
+            'qoo掲載状況E,
+            'qooスチE�Eタス',
+            'qoo販売老E��ーチE,
+            'qoo啁E��コーチE,
+            'qoo啁E��吁E,
+            'qoo啁E��詳細',
+            'qoo注意キーワーチE,
             'qoo価格',
             'qoo固定価格',
-            'qoo送料設定区分',
+            'qoo送料設定区刁E,
             'qoo個別送料',
-            'qoo送料設定区分',
-            'qooカテゴリID',
-            '作成日',
+            'qoo送料設定区刁E,
+            'qooカチE��リID',
+            '作�E日',
             '更新日',
         ])
 
@@ -1615,7 +1615,7 @@ def BuyersGoodsDetailExport(request):
 
 def BuyersGoodsDetailSmallExport(request):
     """
-    YaBuyersItemDetail、商品説明などに項目を絞り込んだCSVファイルを作成してresponseに出力します。
+    YaBuyersItemDetail、商品説明などに頁E��を絞り込んだCSVファイルを作�Eしてresponseに出力します、E
     """
     response = HttpResponse(content_type='text/csv; charset=Shift-JIS')
     #response = HttpResponse(content_type='text/csv; charset=UTF-8')
@@ -1772,29 +1772,29 @@ def BuyersGoodsDetailSmallExport(request):
         if len(create_date_to) != 0 and create_date_to[0]:
             condition_create_date_to = Q(create_date__lte=create_date_to)
 
-        # 縮小版は s 始まりのルールにする
+        # 縮小版は s 始まり�Eルールにする
         csvfilename = 's_' + tstr + '_buyers_item_detail.csv'
-        csvfilename = csvfilename.replace(' ','').replace('>','_').replace('、','-')
+        csvfilename = csvfilename.replace(' ','').replace('>','_').replace('、E,'-')
         writer = get_csv_writer(response, csvfilename)
 
-        # ヘッダ行セット
+        # ヘッダ行セチE��
         writer.writerow([
-            '商品ID',
-            '商品名',
-            '商品詳細',
+            '啁E��ID',
+            '啁E��吁E,
+            '啁E��詳細',
             '通常価格',
             '在庫数',
-            'wow掲載状況',
-            'wowステータス',
-            'wow商品名',
-            'wow商品詳細',
-            'wow注意キーワード',
-            'qoo掲載状況',
-            'qooステータス',
-            'qoo商品名',
-            'qoo商品詳細',
-            'qoo注意キーワード',
-            '作成日',
+            'wow掲載状況E,
+            'wowスチE�Eタス',
+            'wow啁E��吁E,
+            'wow啁E��詳細',
+            'wow注意キーワーチE,
+            'qoo掲載状況E,
+            'qooスチE�Eタス',
+            'qoo啁E��吁E,
+            'qoo啁E��詳細',
+            'qoo注意キーワーチE,
+            '作�E日',
             '更新日',
         ])
 
@@ -1836,7 +1836,7 @@ def BuyersGoodsDetailSmallExport(request):
                 condition_create_date_from &
                 condition_create_date_to
         ).order_by("-update_date")[:10000]:
-            # 変換する文字。shift-jis変換でコケた文字はここに登録
+            # 変換する斁E��。shift-jis変換でコケた文字�Eここに登録
             tmpgname = retobj.gname
             for exchange_words in BuyersBrandInfo._MY_EXCHANGE_WORDS:
                 tmpgname = re.sub(exchange_words[0], exchange_words[1], tmpgname)
@@ -1879,24 +1879,24 @@ def BuyersGoodsDetailSmallExport(request):
         csvfilename = tstr + '_buyers_item_detail_all.csv'
         writer = get_csv_writer(response, csvfilename)
 
-        # ヘッダ行セット
+        # ヘッダ行セチE��
         writer.writerow([
-            '商品ID',
-            '商品名',
-            '商品詳細',
+            '啁E��ID',
+            '啁E��吁E,
+            '啁E��詳細',
             '通常価格',
             '在庫数',
-            'wow掲載状況',
-            'wowステータス',
-            'wow商品名',
-            'wow商品詳細',
-            'wow注意キーワード',
-            'qoo掲載状況',
-            'qooステータス',
-            'qoo商品名',
-            'qoo商品詳細',
-            'qoo注意キーワード',
-            '作成日',
+            'wow掲載状況E,
+            'wowスチE�Eタス',
+            'wow啁E��吁E,
+            'wow啁E��詳細',
+            'wow注意キーワーチE,
+            'qoo掲載状況E,
+            'qooスチE�Eタス',
+            'qoo啁E��吁E,
+            'qoo啁E��詳細',
+            'qoo注意キーワーチE,
+            '作�E日',
             '更新日',
         ])
         for retobj in YaBuyersItemDetail.objects.all():
@@ -1924,7 +1924,7 @@ def BuyersGoodsDetailSmallExport(request):
 
 class BuyersGoodsDetailImport(generic.FormView):
     """
-    YaBuyersItemDetailテーブルを全件検索して、CSVファイルを取り込みDBに格納します。
+    YaBuyersItemDetailチE�Eブルを�E件検索して、CSVファイルを取り込みDBに格納します、E
     """
     template_name = 'yaget/buyers_goods_detail_import.html'
     success_url = reverse_lazy('yaget:buyers_goods_detail_list')
@@ -1933,19 +1933,19 @@ class BuyersGoodsDetailImport(generic.FormView):
     def get_context_data(self, **kwargs):
         ctx = super().get_context_data(**kwargs)
         ctx['form_name'] = 'yaget'
-        ctx['message'] = 'BuyersGoodsDetailImport　です'
+        ctx['message'] = 'BuyersGoodsDetailImport　でぁE
         return ctx
 
     def form_valid(self, form):
-        """postされたTSVファイルを読み込み、YaBuyersItemDetail テーブルに登録します"""
+        """postされたTSVファイルを読み込み、YaBuyersItemDetail チE�Eブルに登録しまぁE""
         csvfile = TextIOWrapper(form.cleaned_data['file'], encoding='shift-JIS')
         #csvfile = TextIOWrapper(form.cleaned_data['file'], encoding='utf-8')
         reader = csv.reader(csvfile)
 
-        # 指定ディレクトリにcsvでカキコ
+        # 持E��ディレクトリにcsvでカキコ
         self.write_csv(reader)
 
-        # 書き込んだらバッチをキック
+        # 書き込んだらバチE��をキチE��
         mymsg = 'goods info update start. '
         cmd = "source /home/django/djangoenv/bin/activate;python /home/django/sample/manage.py upload_goods_info"
         p = subprocess.Popen(cmd, shell=True)
@@ -1955,9 +1955,9 @@ class BuyersGoodsDetailImport(generic.FormView):
         #reader = csv.reader(csvfile, delimiter="\t")
         for i, row in enumerate(reader):
             if i == 0:
-                continue # ヘッダ行は飛ばす
+                continue # ヘッダ行�E飛�EぁE
 
-            #YaBuyersItemDetail テーブルをgid (primary key)で検索します
+            #YaBuyersItemDetail チE�Eブルをgid (primary key)で検索しまぁE
             try:
                 #ya_b_item_detail, created = YaBuyersItemDetail.objects.get_or_create(gid=row[0])
                 ya_b_item_detail = YaBuyersItemDetail.objects.get(gid=row[0])
@@ -1999,13 +1999,13 @@ class BuyersGoodsDetailImport(generic.FormView):
         """
         return super().form_valid(form)
 
-    # csvにファイル出力
+    # csvにファイル出劁E
     def write_csv(self, reader):
         logger.debug('write_csv in .')
         # csvはここで用意するか
         csvname = myupdcsv_dir + 'updcsv_' + "{0:%Y%m%d_%H%M%S}".format(datetime.datetime.now()) + '.csv'
 
-        # 以下はヘッダ行のみ
+        # 以下�Eヘッダ行�Eみ
         """
         with open(csvname, 'w', encoding='cp932') as csvfile:
             writer = csv.writer(csvfile, lineterminator='\n')
@@ -2042,7 +2042,7 @@ class BuyersGoodsDetailImport(generic.FormView):
                 'qoo_ctid',
             ])
         """
-        # データ行は追記
+        # チE�Eタ行�E追訁E
         with open(csvname, 'w') as csvfile:
             writer = csv.writer(csvfile, lineterminator='\n')
             for item in reader:
@@ -2085,8 +2085,8 @@ class BuyersGoodsDetailImport(generic.FormView):
 
 class BuyersGoodsDetailSmallImport(generic.FormView):
     """
-    YaBuyersItemDetailテーブルを全件検索して、CSVファイルを取り込みDBに格納します。
-    絞り込み項目版
+    YaBuyersItemDetailチE�Eブルを�E件検索して、CSVファイルを取り込みDBに格納します、E
+    絞り込み頁E��牁E
     """
     template_name = 'yaget/buyers_goods_detail_small_import.html'
     success_url = reverse_lazy('yaget:buyers_goods_detail_list')
@@ -2095,21 +2095,21 @@ class BuyersGoodsDetailSmallImport(generic.FormView):
     def get_context_data(self, **kwargs):
         ctx = super().get_context_data(**kwargs)
         ctx['form_name'] = 'yaget'
-        ctx['message'] = 'BuyersGoodsDetailSmallImport　です'
+        ctx['message'] = 'BuyersGoodsDetailSmallImport　でぁE
         return ctx
 
     def form_valid(self, form):
         logger.debug("--- BuyersGoodsDetailSmallImport in")
 
-        """postされたTSVファイルを読み込み、YaBuyersItemDetail テーブルに登録します"""
+        """postされたTSVファイルを読み込み、YaBuyersItemDetail チE�Eブルに登録しまぁE""
         csvfile = TextIOWrapper(form.cleaned_data['file'], encoding='shift-JIS')
         #csvfile = TextIOWrapper(form.cleaned_data['file'], encoding='utf-8')
         reader = csv.reader(csvfile)
 
-        # 指定ディレクトリにcsvでカキコ
+        # 持E��ディレクトリにcsvでカキコ
         self.write_csv(reader)
 
-        # 書き込んだらバッチをキック
+        # 書き込んだらバチE��をキチE��
         mymsg = 'goods info update start. '
         cmd = "source /home/django/djangoenv/bin/activate;python /home/django/sample/manage.py upload_goods_info"
         p = subprocess.Popen(cmd, shell=True)
@@ -2121,9 +2121,9 @@ class BuyersGoodsDetailSmallImport(generic.FormView):
             if i == 0:
                 logger.debug("--- BuyersGoodsDetailSmallImport i=0 continue")
 
-                continue # ヘッダ行は飛ばす
+                continue # ヘッダ行�E飛�EぁE
 
-            #YaBuyersItemDetail テーブルをmyshop_cat_all (primary key)で検索します
+            #YaBuyersItemDetail チE�Eブルをmyshop_cat_all (primary key)で検索しまぁE
 
             try:
                 #ya_b_item_detail, created = YaBuyersItemDetail.objects.get_or_create(gid=row[0])
@@ -2153,13 +2153,13 @@ class BuyersGoodsDetailSmallImport(generic.FormView):
         logger.debug("--- BuyersGoodsDetailSmallImport out")
         return super().form_valid(form)
 
-    # csvにファイル出力(簡易版)
+    # csvにファイル出劁E簡易版)
     def write_csv(self, reader):
         logger.debug('write_csv in .')
         # csvはここで用意するか
         csvname = myupdcsv_dir + 's_updcsv_' + "{0:%Y%m%d_%H%M%S}".format(datetime.datetime.now()) + '.csv'
 
-        # 以下はヘッダ行のみ
+        # 以下�Eヘッダ行�Eみ
         """
         with open(csvname, 'w', encoding='cp932') as csvfile:
             writer = csv.writer(csvfile, lineterminator='\n')
@@ -2181,7 +2181,7 @@ class BuyersGoodsDetailSmallImport(generic.FormView):
                 'qoo_worn_key',
             ])
         """
-        # データ行は追記
+        # チE�Eタ行�E追訁E
         with open(csvname, 'w') as csvfile:
             writer = csv.writer(csvfile, lineterminator='\n')
             for item in reader:
@@ -2209,7 +2209,7 @@ class BuyersGoodsDetailSmallImport(generic.FormView):
 
 class BuyersGoodsDelete(generic.FormView):
     """
-    YaBuyersItemDetailテーブルから指定されたgidの商品を削除、wowmaとqoo10からも削除します
+    YaBuyersItemDetailチE�Eブルから持E��されたgidの啁E��を削除、wowmaとqoo10からも削除しまぁE
     """
     template_name = 'yaget/buyers_goods_delete.html'
     success_url = reverse_lazy('yaget:buyers_goods_delete_confirm')
@@ -2218,7 +2218,7 @@ class BuyersGoodsDelete(generic.FormView):
     def get_context_data(self, **kwargs):
         ctx = super().get_context_data(**kwargs)
         ctx['form_name'] = 'yaget'
-        ctx['message'] = '一括削除の画面です'
+        ctx['message'] = '一括削除の画面でぁE
         return ctx
 
     def form_valid(self, form):
@@ -2226,12 +2226,12 @@ class BuyersGoodsDelete(generic.FormView):
         #ctx = {'form': form }
         #ctx['form_name'] = 'yaget'
         ctx = self.get_context_data()
-        # 確認画面での処理
+        # 確認画面での処琁E
         csvfile = TextIOWrapper(form.cleaned_data['file'], encoding='shift-JIS')
         # csvfile = TextIOWrapper(form.cleaned_data['file'], encoding='utf-8')
         reader = csv.reader(csvfile)
 
-        # 指定ディレクトリにcsvでカキコ
+        # 持E��ディレクトリにcsvでカキコ
         ctx['item_list'] = self._write_csv(reader)
         ctx['message'] = '削除を実行しますよ'
 
@@ -2241,12 +2241,12 @@ class BuyersGoodsDelete(generic.FormView):
 
         """
         if self.request.POST.get('next', '') == 'confirm':
-            # 確認画面での処理
+            # 確認画面での処琁E
             csvfile = TextIOWrapper(form.cleaned_data['file'], encoding='shift-JIS')
             # csvfile = TextIOWrapper(form.cleaned_data['file'], encoding='utf-8')
             reader = csv.reader(csvfile)
 
-            # 指定ディレクトリにcsvでカキコ
+            # 持E��ディレクトリにcsvでカキコ
             ctx['item_list'] = self._write_csv(reader)
             ctx['message'] = '削除を実行しますよ'
 
@@ -2254,43 +2254,43 @@ class BuyersGoodsDelete(generic.FormView):
             return render(self.request, 'yaget/buyers_goods_delete_confirm.html', ctx)
 
         if self.request.POST.get('next', '') == 'back':
-            # 元に戻るだけ
+            # 允E��戻るだぁE
             logger.debug("--- BuyersGoodsDelete back out")
             ctx['message'] = 'ファイルを選択し直してください'
             return render(self.request, 'yaget/buyers_goods_delete.html', ctx)
 
         if self.request.POST.get('next', '') == 'delete':
-            # 確認OKなので削除バッチをたたく
-            # 書き込んだらバッチをキック
-            mymsg = '削除バッチを実行します・・ '
+            # 確認OKなので削除バッチをたたぁE
+            # 書き込んだらバチE��をキチE��
+            mymsg = '削除バッチを実行します�E・ '
             cmd = "source /home/django/djangoenv/bin/activate;python /home/django/sample/manage.py delete_goods_info"
             p = subprocess.Popen(cmd, shell=True)
-            mymsg += ' 開始しました。 ' + str(p.pid)
+            mymsg += ' 開始しました、E' + str(p.pid)
 
             logger.debug("--- BuyersGoodsDelete delete out")
             #return super().form_valid(form)
             ctx['message'] = mymsg
             return render(self.request, 'yaget/buyers_goods_delete.html', ctx)
         else:
-            # 正常動作ではここは通らない。エラーページへの遷移でも良い
+            # 正常動作ではここは通らなぁE��エラーペ�Eジへの遷移でも良ぁE
             logger.debug("--- BuyersGoodsDelete error occurred?")
             return redirect(reverse_lazy('yaget:buyers_goods_delete'))
         """
 
 
-    # csvにファイル出力。商品idと商品名を辞書にして戻す
+    # csvにファイル出力。商品idと啁E��名を辞書にして戻ぁE
     def _write_csv(self, reader):
         logger.debug('write_csv in .')
         # csvはここで用意するか
         csvname = mydeletecsv_dir + 'deletecsv_' + "{0:%Y%m%d_%H%M%S}".format(datetime.datetime.now()) + '.csv'
         item_list = {}
-        # データ行は追記
+        # チE�Eタ行�E追訁E
         with open(csvname, 'w') as csvfile:
             writer = csv.writer(csvfile, lineterminator='\n')
             for item in reader:
                 writer.writerow([
-                    item[0],  # 商品id
-                    item[1],  # 商品名
+                    item[0],  # 啁E��id
+                    item[1],  # 啁E��吁E
                 ])
                 item_list[item[0]] = item[1]
 
@@ -2305,22 +2305,22 @@ class BuyersGoodsDeleteConfirm(generic.TemplateView):
         context = super().get_context_data(**kwargs)
 
         """
-        # 書き込んだらバッチをキック
-        msg = '削除バッチを実行します・・ '
+        # 書き込んだらバチE��をキチE��
+        msg = '削除バッチを実行します�E・ '
         cmd = "source /home/django/djangoenv/bin/activate;python /home/django/sample/manage.py delete_goods_info"
         p = subprocess.Popen(cmd, shell=True)
-        msg += ' 開始しました。 ' + str(p.pid)
+        msg += ' 開始しました、E' + str(p.pid)
         """
 
         logger.debug("--- BuyersGoodsDelete delete out")
         # return super().form_valid(form)
-        context['title'] = '商品削除を開始しますよタイトル'
-        context['message'] = '商品削除を開始しますよー'
+        context['title'] = '啁E��削除を開始しますよタイトル'
+        context['message'] = '啁E��削除を開始しますよー'
         return render(self.request, 'yaget/buyers_goods_delete_done.html', context)
 
         """
         params = {
-            'title': '在庫チェック開始します',
+            'title': '在庫チェチE��開始しまぁE,
             'message': msg,
         }
         return render(self.request, 'yaget/buyers_goods_delete_done.html', params)
@@ -2328,21 +2328,21 @@ class BuyersGoodsDeleteConfirm(generic.TemplateView):
 
 
 def buyers_goods_delete_done(request):
-    # サブプロセスでyagetのコマンドをキックする
+    # サブ�EロセスでyagetのコマンドをキチE��する
     if (request.method == 'POST'):
-        # 書き込んだらバッチをキック
-        msg = '削除バッチを実行します・・ '
+        # 書き込んだらバチE��をキチE��
+        msg = '削除バッチを実行します�E・ '
         cmd = "source /home/django/djangoenv/bin/activate;python /home/django/sample/manage.py delete_goods_info"
         p = subprocess.Popen(cmd, shell=True)
-        msg += ' 開始しました。 ' + str(p.pid)
+        msg += ' 開始しました、E' + str(p.pid)
 
         logger.debug("--- BuyersGoodsDeleteDone delete out")
         # return super().form_valid(form)
-        title = '商品削除を開始しましたタイトル'
-        msg = '商品削除を開始しましたわ'
+        title = '啁E��削除を開始しましたタイトル'
+        msg = '啁E��削除を開始しましためE
     else:
-        title = '商品削除を開始しましたタイトル get'
-        msg = ' buyers_goods_delete_done Get呼ばれました。 '
+        title = '啁E��削除を開始しましたタイトル get'
+        msg = ' buyers_goods_delete_done Get呼ばれました、E'
 
     params = {
         'title': title,
@@ -2359,23 +2359,23 @@ class BuyersGoodsDeleteDone(generic.TemplateView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
 
-        # 書き込んだらバッチをキック
-        msg = '削除バッチを実行します・・ '
+        # 書き込んだらバチE��をキチE��
+        msg = '削除バッチを実行します�E・ '
         cmd = "source /home/django/djangoenv/bin/activate;python /home/django/sample/manage.py delete_goods_info"
         p = subprocess.Popen(cmd, shell=True)
-        msg += ' 開始しました。 ' + str(p.pid)
+        msg += ' 開始しました、E' + str(p.pid)
 
         logger.debug("--- BuyersGoodsDeleteDone delete out")
         # return super().form_valid(form)
-        context['title'] = '商品削除を開始しましたタイトル'
-        context['message'] = '商品削除を開始しましたわ'
+        context['title'] = '啁E��削除を開始しましたタイトル'
+        context['message'] = '啁E��削除を開始しましためE
         return context
 """
 
 
 class BuyersGoodsDetailDetail(generic.DetailView):
     """
-    YaBuyersItemDetailテーブルのレコード詳細
+    YaBuyersItemDetailチE�Eブルのレコード詳細
     """
     template_name = 'yaget/buyers_goods_detail_detail.html'
     model = YaBuyersItemDetail
@@ -2389,8 +2389,8 @@ class BuyersGoodsDetailDetail(generic.DetailView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context['title'] = '商品詳細です'
-        context['message'] = '商品詳細メッセージです'
+        context['title'] = '啁E��詳細でぁE
+        context['message'] = '啁E��詳細メチE��ージでぁE
         return context
 
 
@@ -2416,7 +2416,7 @@ class BuyersGoodsDetailAjaxRes(generic.DetailView):
 
 class BuyersGoodsDetailDelete(generic.DeleteView):
     """
-    YaBuyersItemDetailテーブルのレコード削除
+    YaBuyersItemDetailチE�Eブルのレコード削除
     """
     template_name = 'yaget/buyers_goods_detail_delete.html'
     model = YaBuyersItemDetail
@@ -2427,7 +2427,7 @@ class BuyersGoodsDetailDelete(generic.DeleteView):
         self.object = self.get_object()
         logger.debug("--- BuyersGoodsDetailDelete in.gid:[{}]".format(self.object.gid))
         try:
-            # qoo10のステータスを削除に更新
+            # qoo10のスチE�Eタスを削除に更新
             # Qoo10にアクセス
             qoo10obj = Qoo10Access(logger)
             qoo10obj.qoo10_create_cert_key()
@@ -2435,25 +2435,25 @@ class BuyersGoodsDetailDelete(generic.DeleteView):
 
             #goods_object = self.get_object()
 
-            self.object.qoo_upd_status = 3  # 取引廃止
+            self.object.qoo_upd_status = 3  # 取引廁E��
 
             # qoo10から削除
-            # まず登録があるかどうか。なかったら処理しない
+            # まず登録があるかどぁE��。なかったら処琁E��なぁE
             ret_obj_list = qoo10obj.qoo10_items_lookup_get_item_detail_info(self.object)
             chk_flg = 0
             for ret_obj in ret_obj_list:
                 if ret_obj['res_code'] != "0":
-                    logger.debug("--- BuyersGoodsDetailDelete qoo10 商品検索でエラー [{}][{}]".format(ret_obj['res_code'],ret_obj['res_msg'] ))
-                    chk_flg = 1  # なにかエラーになってた
+                    logger.debug("--- BuyersGoodsDetailDelete qoo10 啁E��検索でエラー [{}][{}]".format(ret_obj['res_code'],ret_obj['res_msg'] ))
+                    chk_flg = 1  # なにかエラーになってぁE
             if chk_flg == 0:
-                # 商品が見つかったときだけqoo10から削除
+                # 啁E��が見つかったときだけqoo10から削除
                 qoo10obj.qoo10_items_basic_edit_goods_status(self.object)
                 logger.debug("--- BuyersGoodsDetailDelete qoo10 削除更新 ok")
             else:
-                logger.debug("--- BuyersGoodsDetailDelete qoo10 で対象商品が見つからないのでスルー。wowmaの処理に続く")
+                logger.debug("--- BuyersGoodsDetailDelete qoo10 で対象啁E��が見つからなぁE�Eでスルー。wowmaの処琁E��続く")
 
             # 続けてwowmaから削除
-            # まず商品ステータスを変えてから
+            # まず商品スチE�Eタスを変えてから
             if wowma_access.wowma_update_stock(self.object.gid, 0, '2') == 0:
                 logger.debug('--- BuyersGoodsDetailDelete wow_delete wowma_update_stock ok.')
                 ret_code, ret_msg = wowma_access.wowma_delete_item_infos(self.object.gid)
@@ -2461,19 +2461,19 @@ class BuyersGoodsDetailDelete(generic.DeleteView):
                     logger.info('--- BuyersGoodsDetailDelete wow 削除更新 ok')
                 else:
                     messages.error(
-                        self.request, 'wowmaから削除に失敗しました。[{}][{}]'.format(ret_code, ret_msg))
+                        self.request, 'wowmaから削除に失敗しました、E{}][{}]'.format(ret_code, ret_msg))
                     context = self.get_context_data(object=self.object)
                     logger.debug('--- BuyersGoodsDetailDelete wow_delete error occurred.[{}][{}]'.format(ret_code, ret_msg))
                     return self.render_to_response(context)
             else:
-                logger.debug("--- BuyersGoodsDetailDelete wowma で対象商品が見つからないのでスルー。DBから消す")
+                logger.debug("--- BuyersGoodsDetailDelete wowma で対象啁E��が見つからなぁE�Eでスルー、EBから消す")
 
             result = super().delete(request, *args, **kwargs)
             messages.success(
                 self.request, '「{}」を削除しました'.format(self.object))
         except Exception as e:
             messages.error(
-                self.request, '削除に失敗しました。[{}]'.format(traceback.format_exc()))
+                self.request, '削除に失敗しました、E{}]'.format(traceback.format_exc()))
             context = self.get_context_data(object=self.object)
             logger.debug("--- BuyersGoodsDetailDelete error occurred.[{}]".format(traceback.format_exc()))
             return self.render_to_response(context)
@@ -2485,7 +2485,7 @@ class BuyersGoodsDetailDelete(generic.DeleteView):
 
 class BuyersGoodsDetailCreate(generic.CreateView):
     """
-    YaBuyersItemDetailテーブルのレコード作成
+    YaBuyersItemDetailチE�Eブルのレコード作�E
     """
     template_name = 'yaget/buyers_goods_detail_create.html'
     model = YaBuyersItemDetail
@@ -2632,48 +2632,48 @@ class BuyersGoodsDetailUpdate(generic.UpdateView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context['title'] = '商品詳細 更新ページです'
-        context['message'] = '商品詳細 更新ページ メッセージです'
+        context['title'] = '啁E��詳細 更新ペ�EジでぁE
+        context['message'] = '啁E��詳細 更新ペ�Eジ メチE��ージでぁE
         return context
 
     def get_form(self):
         form = super(BuyersGoodsDetailUpdate, self).get_form()
-        form.fields['gid'].label = '商品ID'
-        form.fields['glink'].label = '商品リンク'
-        form.fields['ss_url'].label = 'リンク元リストページURL'
-        form.fields['bu_ctid'].label = 'バイヤーズカテゴリID'
+        form.fields['gid'].label = '啁E��ID'
+        form.fields['glink'].label = '啁E��リンク'
+        form.fields['ss_url'].label = 'リンク允E��スト�EージURL'
+        form.fields['bu_ctid'].label = 'バイヤーズカチE��リID'
         form.fields['gsrc'].label = 'サムネイル画像URL'
-        form.fields['gname'].label = '商品名'
-        form.fields['gdetail'].label = '商品詳細'
-        form.fields['wow_lotnum'].label = 'wowmaロット番号'
+        form.fields['gname'].label = '啁E��吁E
+        form.fields['gdetail'].label = '啁E��詳細'
+        form.fields['wow_lotnum'].label = 'wowmaロチE��番号'
         form.fields['gnormalprice'].label = '通常価格'
         form.fields['gspprice'].label = '大量発注価格'
-        form.fields['gcode'].label = 'バイヤーズ商品コード'
+        form.fields['gcode'].label = 'バイヤーズ啁E��コーチE
         form.fields['stock'].label = '在庫数'
-        form.fields['wow_upd_status'].label = 'wow掲載状況'
-        form.fields['wow_on_flg'].label = 'wowmaの出品ステータス'
-        form.fields['wow_gname'].label = 'wow商品名'
-        form.fields['wow_gdetail'].label = 'wow商品詳細'
-        form.fields['wow_worn_key'].label = 'wow要注意キーワード'
+        form.fields['wow_upd_status'].label = 'wow掲載状況E
+        form.fields['wow_on_flg'].label = 'wowmaの出品スチE�Eタス'
+        form.fields['wow_gname'].label = 'wow啁E��吁E
+        form.fields['wow_gdetail'].label = 'wow啁E��詳細'
+        form.fields['wow_worn_key'].label = 'wow要注意キーワーチE
         form.fields['wow_price'].label = 'wow価格'
         form.fields['wow_fixed_price'].label = 'wow固定価格'
-        form.fields['wow_postage_segment'].label = 'wow送料設定区分'
+        form.fields['wow_postage_segment'].label = 'wow送料設定区刁E
         form.fields['wow_postage'].label = 'wow個別送料'
         form.fields['wow_delivery_method_id'].label = 'wow配送方法ID'
-        form.fields['wow_ctid'].label = 'wowカテゴリID'
-        form.fields['qoo_upd_status'].label = 'qoo掲載状況'
-        form.fields['qoo_on_flg'].label = 'qooの出品ステータス'
-        form.fields['qoo_gname'].label = 'qoo商品名'
-        form.fields['qoo_gdetail'].label = 'qoo商品詳細'
-        form.fields['qoo_worn_key'].label = 'qoo要注意キーワード'
+        form.fields['wow_ctid'].label = 'wowカチE��リID'
+        form.fields['qoo_upd_status'].label = 'qoo掲載状況E
+        form.fields['qoo_on_flg'].label = 'qooの出品スチE�Eタス'
+        form.fields['qoo_gname'].label = 'qoo啁E��吁E
+        form.fields['qoo_gdetail'].label = 'qoo啁E��詳細'
+        form.fields['qoo_worn_key'].label = 'qoo要注意キーワーチE
         form.fields['qoo_price'].label = 'qoo価格'
         form.fields['qoo_fixed_price'].label = 'qoo固定価格'
-        form.fields['qoo_shipping_no'].label = 'qoo送料コード'
+        form.fields['qoo_shipping_no'].label = 'qoo送料コーチE
         form.fields['qoo_postage'].label = 'qoo個別送料'
         form.fields['qoo_delivery_method_id'].label = 'qoo配送方法ID'
-        form.fields['qoo_ctid'].label = 'qooカテゴリID'
-        form.fields['qoo_item_qty'].label = 'qoo商品数量'
-        form.fields['qoo_standard_img'].label = 'qoo商品代表画像URL'
+        form.fields['qoo_ctid'].label = 'qooカチE��リID'
+        form.fields['qoo_item_qty'].label = 'qoo啁E��数釁E
+        form.fields['qoo_standard_img'].label = 'qoo啁E��代表画像URL'
         form.fields['g_img_src_1'].label = '画像URL_1'
         form.fields['g_img_src_2'].label = '画像URL_2'
         form.fields['g_img_src_3'].label = '画像URL_3'
@@ -2699,7 +2699,7 @@ class BuyersGoodsDetailUpdate(generic.UpdateView):
 
 class BatchStatusList(generic.ListView):
     """
-    BatchStatusテーブルの一覧表作成
+    BatchStatusチE�Eブルの一覧表作�E
     """
     model = BatchStatus
     template_name = 'yaget/batch_status_list.html'
@@ -2721,7 +2721,7 @@ class BatchStatusList(generic.ListView):
             self.request.POST.get('create_date_to', None),
         ]
         request.session['form_value_batch_status_list'] = form_value_batch_status_list
-        # 検索時にページネーションに関連したエラーを防ぐ
+        # 検索時にペ�Eジネ�Eションに関連したエラーを防ぁE
         self.request.GET = self.request.GET.copy()
         self.request.GET.clear()
         return self.get(request, *args, **kwargs)
@@ -2729,7 +2729,7 @@ class BatchStatusList(generic.ListView):
     # 抽出件数を絞る
     def get_queryset(self, queryset=None):
         #return YaBuyersItemDetail.objects.all()[:10]
-        # sessionに値がある場合、その値でクエリ発行する。
+        # sessionに値がある場合、その値でクエリ発行する、E
         #if 'form_value_batch_status_list' in self.request.session:
         #    self.request.session.clear()
 
@@ -2799,7 +2799,7 @@ class BatchStatusList(generic.ListView):
                 condition_create_date_to
             ).order_by("-update_date")[:10000]
         else:
-            # 何も返さない
+            # 何も返さなぁE
             return BatchStatus.objects.none()
 
     def get_context_data(self, **kwargs):
@@ -2852,7 +2852,7 @@ class BatchStatusList(generic.ListView):
 
 class BatchStatusDetail(generic.DetailView):
     """
-    BatchStatusテーブルのレコード詳細
+    BatchStatusチE�Eブルのレコード詳細
     """
     template_name = 'yaget/batch_status_detail.html'
     model = BatchStatus
@@ -2860,8 +2860,8 @@ class BatchStatusDetail(generic.DetailView):
     def get(self, request, *args, **kwargs):
         self.object = self.get_object()
         context = self.get_context_data(object=self.object)
-        context['title'] = 'バッチ実行状況の詳細です'
-        context['message'] = 'バッチ実行状況の詳細(メッセージ)です'
+        context['title'] = 'バッチ実行状況�E詳細でぁE
+        context['message'] = 'バッチ実行状況�E詳細(メチE��ージ)でぁE
         return self.render_to_response(context)
 
 
@@ -2882,7 +2882,7 @@ class BatchStatusDelete(generic.DeleteView):
 
 class BlackListList(generic.ListView):
     """
-    YaBuyersItemBlackListテーブルの一覧表作成
+    YaBuyersItemBlackListチE�Eブルの一覧表作�E
     """
     model = YaBuyersItemBlackList
     template_name = 'yaget/black_list_list.html'
@@ -2895,7 +2895,7 @@ class BlackListList(generic.ListView):
             self.request.POST.get('create_date_to', None),
         ]
         request.session['form_value_black_list_list'] = form_value_black_list_list
-        # 検索時にページネーションに関連したエラーを防ぐ
+        # 検索時にペ�Eジネ�Eションに関連したエラーを防ぁE
         self.request.GET = self.request.GET.copy()
         self.request.GET.clear()
         return self.get(request, *args, **kwargs)
@@ -2903,7 +2903,7 @@ class BlackListList(generic.ListView):
     # 抽出件数を絞る
     def get_queryset(self, queryset=None):
         #return YaBuyersItemDetail.objects.all()[:10]
-        # sessionに値がある場合、その値でクエリ発行する。
+        # sessionに値がある場合、その値でクエリ発行する、E
         #if 'form_value_batch_status_list' in self.request.session:
         #    self.request.session.clear()
 
@@ -2928,7 +2928,7 @@ class BlackListList(generic.ListView):
                 condition_create_date_to
             ).order_by("-update_date")[:10000]
         else:
-            # 何も返さない
+            # 何も返さなぁE
             return YaBuyersItemBlackList.objects.none()
 
     def get_context_data(self, **kwargs):
@@ -2954,7 +2954,7 @@ class BlackListList(generic.ListView):
 
 class BlackListDetail(generic.DetailView):
     """
-    YaBuyersItemBlackListテーブルのレコード詳細
+    YaBuyersItemBlackListチE�Eブルのレコード詳細
     """
     template_name = 'yaget/black_list_detail.html'
     model = YaBuyersItemBlackList
@@ -2962,7 +2962,7 @@ class BlackListDetail(generic.DetailView):
     def get(self, request, *args, **kwargs):
         self.object = self.get_object()
         context = self.get_context_data(object=self.object)
-        context['title'] = 'バッチ実行状況の詳細です'
+        context['title'] = 'バッチ実行状況�E詳細でぁE
         return self.render_to_response(context)
 
 
@@ -2991,14 +2991,14 @@ class BlackListCreate(generic.CreateView):
 
     def get_form(self):
         form = super(BlackListCreate, self).get_form()
-        form.fields['gid'].label = 'バイヤーズの商品id'
+        form.fields['gid'].label = 'バイヤーズの啁E��id'
         form.fields['gid'].required = True
         return form
 
 
 class WowmaCatList(generic.ListView):
     """
-    WowCategoryテーブルの一覧表作成
+    WowCategoryチE�Eブルの一覧表作�E
     """
     model = WowCategory
     template_name = 'yaget/wowma_cat_list.html'
@@ -3022,7 +3022,7 @@ class WowmaCatList(generic.ListView):
             self.request.POST.get('create_date_to', None),
         ]
         request.session['form_value_wowma_cat_list'] = form_value_wowma_cat_list
-        # 検索時にページネーションに関連したエラーを防ぐ
+        # 検索時にペ�Eジネ�Eションに関連したエラーを防ぁE
         self.request.GET = self.request.GET.copy()
         self.request.GET.clear()
         return self.get(request, *args, **kwargs)
@@ -3030,7 +3030,7 @@ class WowmaCatList(generic.ListView):
     # 抽出件数を絞る
     def get_queryset(self, queryset=None):
         #return WowmaCatList.objects.all()[:10]
-        # sessionに値がある場合、その値でクエリ発行する。
+        # sessionに値がある場合、その値でクエリ発行する、E
         #if 'form_value_batch_status_list' in self.request.session:
         #    self.request.session.clear()
 
@@ -3122,7 +3122,7 @@ class WowmaCatList(generic.ListView):
                 condition_create_date_to
             ).order_by("-update_date")[:10000]
         else:
-            # 何も返さない
+            # 何も返さなぁE
             #return WowCategory.objects.none()
             return WowCategory.objects.select_related().order_by("-update_date")[:10000]
 
@@ -3181,7 +3181,7 @@ class WowmaCatList(generic.ListView):
 
 class WowmaCatDetail(generic.DetailView):
     """
-    WowmaCatListテーブルのレコード詳細
+    WowmaCatListチE�Eブルのレコード詳細
     """
     template_name = 'yaget/wowma_cat_detail.html'
     model = WowCategory
@@ -3189,7 +3189,7 @@ class WowmaCatDetail(generic.DetailView):
     def get(self, request, *args, **kwargs):
         self.object = self.get_object()
         context = self.get_context_data(object=self.object)
-        context['title'] = 'wowmaカテゴリの詳細です'
+        context['title'] = 'wowmaカチE��リの詳細でぁE
         return self.render_to_response(context)
 
 class WowmaCatUpdate(generic.UpdateView):
@@ -3233,17 +3233,17 @@ class WowmaCatUpdate(generic.UpdateView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context['title'] = 'Wowmaカテゴリ情報 更新ページです'
-        context['message'] = 'Wowmaカテゴリ情報 更新ページ メッセージです'
+        context['title'] = 'WowmaカチE��リ惁E�� 更新ペ�EジでぁE
+        context['message'] = 'WowmaカチE��リ惁E�� 更新ペ�Eジ メチE��ージでぁE
         return context
 
 
 class WowmaCatModelList(generic.ListView):
     """
-    WowCategoryテーブルの一覧表作成
-    ここ参考に。
+    WowCategoryチE�Eブルの一覧表作�E
+    ここ参老E��、E
     https://blog.narito.ninja/detail/30/
-    クラスビューを使うならこっちか
+    クラスビューを使ぁE��らこっちぁE
     https://k2ss.info/archives/2653/
     """
     model = WowCategory
@@ -3252,12 +3252,12 @@ class WowmaCatModelList(generic.ListView):
     form_class = WowCategoryModelForm
 
     def get_formset(self, *args, **kwargs):
-        """ 自身に設定されたモデルとフォームからフォームセットを作成する """
+        """ 自身に設定されたモチE��とフォームからフォームセチE��を作�Eする """
         formset = modelformset_factory(self.model, form=self.form_class, extra=0)
         return formset(*args, **kwargs)
 
     def post(self, request, *args, **kwargs):
-        # ListView が context を作れるように
+        # ListView ぁEcontext を作れるよぁE��
         self.object_list = self.get_queryset()
         base_ctx = super().get_context_data()
         page_qs = base_ctx['page_obj'].object_list if base_ctx.get('page_obj') else base_ctx['object_list']
@@ -3265,7 +3265,7 @@ class WowmaCatModelList(generic.ListView):
         FormSet = modelformset_factory(self.model, form=self.form_class, extra=0)
         formset = FormSet(request.POST, queryset=page_qs)
 
-        # 画面上の検索条件をセッションへ（今の実装を維持）
+        # 画面上�E検索条件をセチE��ョンへ�E�今�E実裁E��維持E��E
         form_value_wowma_cat_list = [
             request.POST.get('product_cat_id'),
             request.POST.get('product_cat_name'),
@@ -3286,18 +3286,18 @@ class WowmaCatModelList(generic.ListView):
 
         if formset.is_valid():
             formset.save()
-            # クエリ文字列を維持してリロード
+            # クエリ斁E���Eを維持してリローチE
             qs = ('?' + request.META.get('QUERY_STRING')) if request.META.get('QUERY_STRING') else ''
             return redirect(request.path + qs)
 
-        # invalid のときはエラーを含めて再描画
+        # invalid のとき�Eエラーを含めて再描画
         ctx = self.get_context_data(formset=formset)
         return self.render_to_response(ctx)
 
     # 抽出件数を絞る
     def get_queryset(self, queryset=None):
         #return WowmaCatList.objects.all()[:10]
-        # sessionに値がある場合、その値でクエリ発行する。
+        # sessionに値がある場合、その値でクエリ発行する、E
         #if 'form_value_batch_status_list' in self.request.session:
         #    self.request.session.clear()
 
@@ -3389,7 +3389,7 @@ class WowmaCatModelList(generic.ListView):
                 condition_create_date_to
             ).order_by("-update_date")[:10000]
         else:
-            # 何も返さない
+            # 何も返さなぁE
             #return WowCategory.objects.none()
             return WowCategory.objects.select_related().order_by("-update_date")[:200]
 
@@ -3397,7 +3397,7 @@ class WowmaCatModelList(generic.ListView):
 
         ctx = super().get_context_data(**kwargs)
 
-        # ページに表示している分だけ formset を作る
+        # ペ�Eジに表示してぁE��刁E��ぁEformset を作る
         page_qs = ctx['page_obj'].object_list if ctx.get('page_obj') else ctx['object_list']
         FormSet = modelformset_factory(self.model, form=self.form_class, extra=0)
 
@@ -3460,7 +3460,7 @@ class WowmaCatModelList(generic.ListView):
 
 class QooShopInfoList(generic.ListView):
     """
-    QooShopInfoテーブルの一覧表作成
+    QooShopInfoチE�Eブルの一覧表作�E
     """
     model = QooShopInfo
     template_name = 'yaget/qoo_shop_info_list.html'
@@ -3476,7 +3476,7 @@ class QooShopInfoList(generic.ListView):
             self.request.POST.get('create_date_to', None),
         ]
         request.session['form_qoo_shop_info_list'] = form_qoo_shop_info_list
-        # 検索時にページネーションに関連したエラーを防ぐ
+        # 検索時にペ�Eジネ�Eションに関連したエラーを防ぁE
         self.request.GET = self.request.GET.copy()
         self.request.GET.clear()
         return self.get(request, *args, **kwargs)
@@ -3484,7 +3484,7 @@ class QooShopInfoList(generic.ListView):
     # 抽出件数を絞る
     def get_queryset(self, queryset=None):
         #return YaBuyersItemDetail.objects.all()[:10]
-        # sessionに値がある場合、その値でクエリ発行する。
+        # sessionに値がある場合、その値でクエリ発行する、E
         #if 'form_value_batch_status_list' in self.request.session:
         #    self.request.session.clear()
 
@@ -3524,7 +3524,7 @@ class QooShopInfoList(generic.ListView):
                 condition_create_date_to
             ).order_by("-update_date")[:10000]
         else:
-            # 何も返さない
+            # 何も返さなぁE
             return QooShopInfo.objects.none()
 
     def get_context_data(self, **kwargs):
@@ -3554,13 +3554,13 @@ class QooShopInfoList(generic.ListView):
         test_form = QooShopInfoForm(initial=default_data) # 検索フォーム
         ctx['test_form'] = test_form
         ctx['form_name'] = 'yaget'
-        ctx['message'] = 'QooShopInfoテーブルの一覧'
+        ctx['message'] = 'QooShopInfoチE�Eブルの一覧'
         return ctx
 
 
 class QooShopInfoDetail(generic.DetailView):
     """
-    QooShopInfoテーブルのレコード詳細
+    QooShopInfoチE�Eブルのレコード詳細
     """
     template_name = 'yaget/qoo_shop_info_detail.html'
     model = QooShopInfo
@@ -3568,8 +3568,8 @@ class QooShopInfoDetail(generic.DetailView):
     def get(self, request, *args, **kwargs):
         self.object = self.get_object()
         context = self.get_context_data(object=self.object)
-        context['title'] = 'Qooショップ情報の詳細です'
-        context['message'] = 'QooShopInfoテーブルの詳細'
+        context['title'] = 'QooショチE�E惁E��の詳細でぁE
+        context['message'] = 'QooShopInfoチE�Eブルの詳細'
         return self.render_to_response(context)
 
 
@@ -3613,7 +3613,7 @@ class QooShopInfoCreate(generic.CreateView):
 
     def get_form(self):
         form = super(QooShopInfoCreate, self).get_form()
-        form.fields['my_shop_num'].label = 'qoo10のショップ登録情報 id'
+        form.fields['my_shop_num'].label = 'qoo10のショチE�E登録惁E�� id'
         form.fields['my_shop_num'].required = True
         return form
 
@@ -3643,32 +3643,32 @@ class QooShopInfoUpdate(generic.UpdateView):
 
     def get_form(self):
         form = super(QooShopInfoUpdate, self).get_form()
-        form.fields['my_shop_num'].label = 'ショップ番号'
-        form.fields['shop_name'].label = 'ショップ名'
+        form.fields['my_shop_num'].label = 'ショチE�E番号'
+        form.fields['shop_name'].label = 'ショチE�E吁E
         form.fields['auth_key'].label = 'auth_key'
         form.fields['user_id'].label = 'ユーザID'
-        form.fields['pwd'].label = 'パスワード'
+        form.fields['pwd'].label = 'パスワーチE
         form.fields['target_url'].label = '販売URL'
-        form.fields['from_name'].label = '発送元　送り主名'
-        form.fields['from_postcode'].label = '発送元　郵便番号'
-        form.fields['from_state'].label = '発送元　都道府県'
-        form.fields['from_address_1'].label = '発送元　住所１'
-        form.fields['from_address_2'].label = '発送元　住所２'
-        form.fields['from_phone'].label = '発送元　電話番号'
-        form.fields['shop_status'].label = 'ステータス'
+        form.fields['from_name'].label = '発送�E　送り主吁E
+        form.fields['from_postcode'].label = '発送�E　郵便番号'
+        form.fields['from_state'].label = '発送�E　都道府県'
+        form.fields['from_address_1'].label = '発送�E　住所�E�E
+        form.fields['from_address_2'].label = '発送�E　住所�E�E
+        form.fields['from_phone'].label = '発送�E　電話番号'
+        form.fields['shop_status'].label = 'スチE�Eタス'
         form.fields['create_date'].label = '登録日'
         return form
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context['title'] = 'Qoo10ショップ情報 更新ページです'
-        context['message'] = 'Qoo10ショップ情報 更新ページ メッセージです'
+        context['title'] = 'Qoo10ショチE�E惁E�� 更新ペ�EジでぁE
+        context['message'] = 'Qoo10ショチE�E惁E�� 更新ペ�Eジ メチE��ージでぁE
         return context
 
 
 class WowShopInfoList(generic.ListView):
     """
-    WowmaShopInfoテーブルの一覧表作成
+    WowmaShopInfoチE�Eブルの一覧表作�E
     """
     model = WowmaShopInfo
     template_name = 'yaget/wow_shop_info_list.html'
@@ -3684,7 +3684,7 @@ class WowShopInfoList(generic.ListView):
             self.request.POST.get('create_date_to', None),
         ]
         request.session['form_wow_shop_info_list'] = form_wow_shop_info_list
-        # 検索時にページネーションに関連したエラーを防ぐ
+        # 検索時にペ�Eジネ�Eションに関連したエラーを防ぁE
         self.request.GET = self.request.GET.copy()
         self.request.GET.clear()
         return self.get(request, *args, **kwargs)
@@ -3692,7 +3692,7 @@ class WowShopInfoList(generic.ListView):
     # 抽出件数を絞る
     def get_queryset(self, queryset=None):
         #return YaBuyersItemDetail.objects.all()[:10]
-        # sessionに値がある場合、その値でクエリ発行する。
+        # sessionに値がある場合、その値でクエリ発行する、E
         #if 'form_value_batch_status_list' in self.request.session:
         #    self.request.session.clear()
 
@@ -3732,7 +3732,7 @@ class WowShopInfoList(generic.ListView):
                 condition_create_date_to
             ).order_by("-update_date")[:10000]
         else:
-            # 何も返さない
+            # 何も返さなぁE
             return WowmaShopInfo.objects.none()
 
     def get_context_data(self, **kwargs):
@@ -3762,13 +3762,13 @@ class WowShopInfoList(generic.ListView):
         test_form = WowShopInfoForm(initial=default_data) # 検索フォーム
         ctx['test_form'] = test_form
         ctx['form_name'] = 'yaget'
-        ctx['message'] = 'WowShopInfoテーブルの一覧'
+        ctx['message'] = 'WowShopInfoチE�Eブルの一覧'
         return ctx
 
 
 class WowShopInfoDetail(generic.DetailView):
     """
-    WowmaShopInfoテーブルのレコード詳細
+    WowmaShopInfoチE�Eブルのレコード詳細
     """
     template_name = 'yaget/wow_shop_info_detail.html'
     model = WowmaShopInfo
@@ -3776,8 +3776,8 @@ class WowShopInfoDetail(generic.DetailView):
     def get(self, request, *args, **kwargs):
         self.object = self.get_object()
         context = self.get_context_data(object=self.object)
-        context['title'] = 'Wowmaショップ情報の詳細です'
-        context['message'] = 'WowShopInfoテーブルの一覧'
+        context['title'] = 'WowmaショチE�E惁E��の詳細でぁE
+        context['message'] = 'WowShopInfoチE�Eブルの一覧'
         return self.render_to_response(context)
 
 
@@ -3820,7 +3820,7 @@ class WowShopInfoCreate(generic.CreateView):
 
     def get_form(self):
         form = super(WowShopInfoCreate, self).get_form()
-        form.fields['my_shop_num'].label = 'wowmaのショップ登録情報 id'
+        form.fields['my_shop_num'].label = 'wowmaのショチE�E登録惁E�� id'
         form.fields['my_shop_num'].required = True
         return form
 
@@ -3849,31 +3849,31 @@ class WowShopInfoUpdate(generic.UpdateView):
 
     def get_form(self):
         form = super(WowShopInfoUpdate, self).get_form()
-        form.fields['my_shop_num'].label = 'ショップ番号'
-        form.fields['shop_id'].label = 'ショップID'
-        form.fields['shop_name'].label = 'ショップ名'
+        form.fields['my_shop_num'].label = 'ショチE�E番号'
+        form.fields['shop_id'].label = 'ショチE�EID'
+        form.fields['shop_name'].label = 'ショチE�E吁E
         form.fields['api_key'].label = 'api_key'
         form.fields['target_url'].label = '販売URL'
-        form.fields['from_name'].label = '発送元　送り主名'
-        form.fields['from_postcode'].label = '発送元　郵便番号'
-        form.fields['from_state'].label = '発送元　都道府県'
-        form.fields['from_address_1'].label = '発送元　住所１'
-        form.fields['from_address_2'].label = '発送元　住所２'
-        form.fields['from_phone'].label = '発送元　電話番号'
-        form.fields['shop_status'].label = 'ステータス'
+        form.fields['from_name'].label = '発送�E　送り主吁E
+        form.fields['from_postcode'].label = '発送�E　郵便番号'
+        form.fields['from_state'].label = '発送�E　都道府県'
+        form.fields['from_address_1'].label = '発送�E　住所�E�E
+        form.fields['from_address_2'].label = '発送�E　住所�E�E
+        form.fields['from_phone'].label = '発送�E　電話番号'
+        form.fields['shop_status'].label = 'スチE�Eタス'
         form.fields['create_date'].label = '登録日'
         return form
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context['title'] = 'Wowmaショップ情報 更新ページです'
-        context['message'] = 'Wowmaショップ情報 更新ページ メッセージです'
+        context['title'] = 'WowmaショチE�E惁E�� 更新ペ�EジでぁE
+        context['message'] = 'WowmaショチE�E惁E�� 更新ペ�Eジ メチE��ージでぁE
         return context
 
 
 class ErrorGoodsLogList(generic.ListView):
     """
-    ErrorGoodsLogテーブルの一覧表作成
+    ErrorGoodsLogチE�Eブルの一覧表作�E
     """
     model = ErrorGoodsLog
     template_name = 'yaget/error_goods_log_list.html'
@@ -3891,7 +3891,7 @@ class ErrorGoodsLogList(generic.ListView):
             self.request.POST.get('create_date_to', None),
         ]
         request.session['form_value_error_goods_log_list'] = form_value_error_goods_log_list
-        # 検索時にページネーションに関連したエラーを防ぐ
+        # 検索時にペ�Eジネ�Eションに関連したエラーを防ぁE
         self.request.GET = self.request.GET.copy()
         self.request.GET.clear()
         return self.get(request, *args, **kwargs)
@@ -3899,7 +3899,7 @@ class ErrorGoodsLogList(generic.ListView):
     # 抽出件数を絞る
     def get_queryset(self, queryset=None):
         #return YaBuyersItemDetail.objects.all()[:10]
-        # sessionに値がある場合、その値でクエリ発行する。
+        # sessionに値がある場合、その値でクエリ発行する、E
         #if 'form_value_error_goods_log_list' in self.request.session:
         #    self.request.session.clear()
 
@@ -3949,7 +3949,7 @@ class ErrorGoodsLogList(generic.ListView):
                 condition_create_date_to
             ).order_by("-update_date")[:10000]
         else:
-            # 何も返さない
+            # 何も返さなぁE
             return ErrorGoodsLog.objects.none()
 
     def get_context_data(self, **kwargs):
@@ -3990,7 +3990,7 @@ class ErrorGoodsLogList(generic.ListView):
 
 class ErrorGoodsLogDetail(generic.DetailView):
     """
-    ErrorGoodsLogテーブルのレコード詳細
+    ErrorGoodsLogチE�Eブルのレコード詳細
     """
     template_name = 'yaget/error_goods_log_detail.html'
     model = ErrorGoodsLog
@@ -3998,8 +3998,8 @@ class ErrorGoodsLogDetail(generic.DetailView):
     def get(self, request, *args, **kwargs):
         self.object = self.get_object()
         context = self.get_context_data(object=self.object)
-        context['title'] = 'エラーになった商品更新の詳細です'
-        context['message'] = 'エラーになった商品更新の詳細メッセージです'
+        context['title'] = 'エラーになった商品更新の詳細でぁE
+        context['message'] = 'エラーになった商品更新の詳細メチE��ージでぁE
         return self.render_to_response(context)
 
 
@@ -4020,7 +4020,7 @@ class ErrorGoodsLogDelete(generic.DeleteView):
 
 class AllOrderList(generic.ListView):
     """
-    AllOrderInfoテーブルの一覧表作成
+    AllOrderInfoチE�Eブルの一覧表作�E
     """
     model = AllOrderInfo
     template_name = 'yaget/all_order_list.html'
@@ -4035,7 +4035,7 @@ class AllOrderList(generic.ListView):
             self.request.POST.get('create_date_to', None),
         ]
         request.session['form_all_order_list'] = form_all_order_list
-        # 検索時にページネーションに関連したエラーを防ぐ
+        # 検索時にペ�Eジネ�Eションに関連したエラーを防ぁE
         self.request.GET = self.request.GET.copy()
         self.request.GET.clear()
         return self.get(request, *args, **kwargs)
@@ -4043,7 +4043,7 @@ class AllOrderList(generic.ListView):
     # 抽出件数を絞る
     def get_queryset(self, queryset=None):
         #return YaBuyersItemDetail.objects.all()[:10]
-        # sessionに値がある場合、その値でクエリ発行する。
+        # sessionに値がある場合、その値でクエリ発行する、E
 
         if 'form_all_order_list' in self.request.session:
             form_all_order_list = self.request.session['form_all_order_list']
@@ -4076,7 +4076,7 @@ class AllOrderList(generic.ListView):
                 condition_create_date_to
             ).order_by("-update_date")[:10000]
         else:
-            # 何も返さない
+            # 何も返さなぁE
             return AllOrderInfo.objects.none()
 
     def get_context_data(self, **kwargs):
@@ -4109,7 +4109,7 @@ class AllOrderList(generic.ListView):
 
 class QooOrderList(generic.ListView):
     """
-    QooOrderInfoテーブルの一覧表作成
+    QooOrderInfoチE�Eブルの一覧表作�E
     """
     model = QooOrderInfo
     template_name = 'yaget/qoo_order_list.html'
@@ -4126,7 +4126,7 @@ class QooOrderList(generic.ListView):
             self.request.POST.get('create_date_to', None),
         ]
         request.session['form_qoo_order_list'] = form_qoo_order_list
-        # 検索時にページネーションに関連したエラーを防ぐ
+        # 検索時にペ�Eジネ�Eションに関連したエラーを防ぁE
         self.request.GET = self.request.GET.copy()
         self.request.GET.clear()
         return self.get(request, *args, **kwargs)
@@ -4134,7 +4134,7 @@ class QooOrderList(generic.ListView):
     # 抽出件数を絞る
     def get_queryset(self, queryset=None):
         #return YaBuyersItemDetail.objects.all()[:10]
-        # sessionに値がある場合、その値でクエリ発行する。
+        # sessionに値がある場合、その値でクエリ発行する、E
 
         if 'form_qoo_order_list' in self.request.session:
             form_qoo_order_list = self.request.session['form_qoo_order_list']
@@ -4177,7 +4177,7 @@ class QooOrderList(generic.ListView):
                 condition_create_date_to
             ).order_by("-update_date")[:10000]
         else:
-            # 何も返さない
+            # 何も返さなぁE
             return QooOrderInfo.objects.none()
 
     def get_context_data(self, **kwargs):
@@ -4216,7 +4216,7 @@ class QooOrderList(generic.ListView):
 
 class QooOrderDetail(generic.DetailView):
     """
-    QooOrderInfoテーブルのレコード詳細
+    QooOrderInfoチE�Eブルのレコード詳細
     """
     template_name = 'yaget/qoo_order_detail.html'
     model = QooOrderInfo
@@ -4323,83 +4323,83 @@ class QooOrderUpdate(generic.UpdateView):
 
     def get_form(self):
         form = super(QooOrderUpdate, self).get_form()
-        form.fields['order_no'].label = 'id 注文番号'
-        form.fields['shipping_status'].label = '配送状態'
-        form.fields['seller_id'].label = '販売者ID'
+        form.fields['order_no'].label = 'id 注斁E��号'
+        form.fields['shipping_status'].label = '配送状慁E
+        form.fields['seller_id'].label = '販売老ED'
         form.fields['pack_no'].label = 'id カート番号'
-        form.fields['order_date'].label = '注文日'
+        form.fields['order_date'].label = '注斁E��'
         form.fields['payment_date'].label = '決済日'
         form.fields['est_shipping_date'].label = '発送予定日'
         form.fields['shipping_date'].label = '発送日'
-        form.fields['delivered_date'].label = '配送完了日'
-        form.fields['buyer'].label = '購入者名'
-        form.fields['buyer_gata'].label = '購入者名（カタカナ）'
-        form.fields['buyer_tel'].label = '購入者の電話番号'
-        form.fields['buyer_mobile'].label = '購入者の携帯電話番号'
-        form.fields['buyer_email'].label = '購入者の携帯電話番号'
-        form.fields['item_code'].label = 'Qoo10商品番号'
-        form.fields['seller_item_code'].label = '販売商品コード'
-        form.fields['item_title'].label = '商品名'
+        form.fields['delivered_date'].label = '配送完亁E��'
+        form.fields['buyer'].label = '購入老E��'
+        form.fields['buyer_gata'].label = '購入老E���E�カタカナ！E
+        form.fields['buyer_tel'].label = '購入老E�E電話番号'
+        form.fields['buyer_mobile'].label = '購入老E�E携帯電話番号'
+        form.fields['buyer_email'].label = '購入老E�E携帯電話番号'
+        form.fields['item_code'].label = 'Qoo10啁E��番号'
+        form.fields['seller_item_code'].label = '販売啁E��コーチE
+        form.fields['item_title'].label = '啁E��吁E
         form.fields['option'].label = 'オプション'
-        form.fields['option_code'].label = 'オプションコード'
-        form.fields['order_price'].label = '商品価格'
-        form.fields['order_qty'].label = '注文数量'
-        form.fields['discount'].label = '商品割引金額'
-        form.fields['total'].label = '注文数量（商品価格 + オプション価格 - 割引額）'
-        form.fields['receiver'].label = '受取人名'
-        form.fields['receiver_gata'].label = '受取人名（カタカナ）'
-        form.fields['shipping_country'].label = 'お届け先の国家'
+        form.fields['option_code'].label = 'オプションコーチE
+        form.fields['order_price'].label = '啁E��価格'
+        form.fields['order_qty'].label = '注斁E��釁E
+        form.fields['discount'].label = '啁E��割引��顁E
+        form.fields['total'].label = '注斁E��量（商品価格 + オプション価格 - 割引額！E
+        form.fields['receiver'].label = '受取人吁E
+        form.fields['receiver_gata'].label = '受取人名（カタカナ！E
+        form.fields['shipping_country'].label = 'お届け先�E国家'
         form.fields['zipcode'].label = '郵便番号'
         form.fields['shipping_addr'].label = 'お届け先住所'
-        form.fields['addr1'].label = '住所(都道府県/市区町村)'
-        form.fields['addr2'].label = '住所(市区町村以降)'
+        form.fields['addr1'].label = '住所(都道府県/市区町杁E'
+        form.fields['addr2'].label = '住所(市区町村以陁E'
         form.fields['receiver_tel'].label = '受取人の電話番号'
         form.fields['receiver_mobile'].label = '受取人の携帯電話番号'
         form.fields['hope_date'].label = '配送希望日'
-        form.fields['sender_name'].label = '送信者'
+        form.fields['sender_name'].label = '送信老E
         form.fields['sender_tel'].label = '送り主の電話番号'
         form.fields['sender_nation'].label = '送り主の国家'
         form.fields['sender_zipcode'].label = '送り主の郵便番号'
         form.fields['sender_addr'].label = '送り主の住所'
-        form.fields['shipping_way'].label = '配送方法'
-        form.fields['shipping_msg'].label = '配送メッセージ'
+        form.fields['shipping_way'].label = '配送方況E
+        form.fields['shipping_msg'].label = '配送メチE��ージ'
         form.fields['payment_method'].label = '決済手段'
-        form.fields['seller_discount'].label = '販売者負担割引額'
-        form.fields['currency'].label = '注文金額通貨'
+        form.fields['seller_discount'].label = '販売老E��拁E��引顁E
+        form.fields['currency'].label = '注斁E��額通貨'
         form.fields['shipping_rate'].label = '送料'
-        form.fields['related_order'].label = '関連注文番号：（、）区切り文字で注文番号区分する。例）12345432、12343212、12323232'
-        form.fields['shipping_rate_type'].label = '送料グループの種類：Free / Charge / Free on condition / Charge on delivery'
+        form.fields['related_order'].label = '関連注斁E��号�E�（、E��区刁E��斁E��で注斁E��号区刁E��る。例！E2345432、E2343212、E2323232'
+        form.fields['shipping_rate_type'].label = '送料グループ�E種類：Free / Charge / Free on condition / Charge on delivery'
         form.fields['delivery_company'].label = '配送会社'
         form.fields['voucher_code'].label = '訪問受領認証番号'
-        form.fields['packing_no'].label = '発注時に生成されるパッキング番号（例：JPP22894429）'
-        form.fields['seller_delivery_no'].label = '発注時に生成されるパッキング番号と1：1でマッチングされる販売者単位のシリアル番号（例：130705-0003）'
-        form.fields['payment_nation'].label = '注文サイト国：JP'
-        form.fields['gift'].label = '贈答品（ギフト、プレゼント、おまけ）'
-        form.fields['cod_price'].label = '着払い決済金額'
-        form.fields['cart_discount_seller'].label = '販売者負担カート割引'
-        form.fields['cart_discount_qoo10'].label = 'Qoo10負担カート割引'
+        form.fields['packing_no'].label = '発注時に生�EされるパチE��ング番号�E�例：JPP22894429�E�E
+        form.fields['seller_delivery_no'].label = '発注時に生�EされるパチE��ング番号と1�E�Eでマッチングされる販売老E��位�Eシリアル番号�E�例！E30705-0003�E�E
+        form.fields['payment_nation'].label = '注斁E��イト国�E�JP'
+        form.fields['gift'].label = '贈答品�E�ギフト、�Eレゼント、おまけ！E
+        form.fields['cod_price'].label = '着払い決済��顁E
+        form.fields['cart_discount_seller'].label = '販売老E��拁E��ート割弁E
+        form.fields['cart_discount_qoo10'].label = 'Qoo10負拁E��ート割弁E
         form.fields['settle_price'].label = '総供給原価'
         form.fields['branch_name'].label = '支店名'
         form.fields['tracking_no'].label = '送り状番号'
-        form.fields['oversea_consignment'].label = '海外委託 (Y/N)'
+        form.fields['oversea_consignment'].label = '海外委訁E(Y/N)'
         form.fields['oversea_consignment_receiver'].label = '海外委託受取人'
         form.fields['oversea_consignment_country'].label = '海外委託国家'
-        form.fields['oversea_consignment_zipcode'].label = '海外委託 郵便番号'
-        form.fields['oversea_consignment_addr1'].label = '海外委託 住所(都道府県/市区町村)'
-        form.fields['oversea_consignment_addr2'].label = '海外委託 住所(市区町村以降)'
-        form.fields['delay_type'].label = '遅延の理由。（1：商品準備中、2：注文製作（オーダーメイド）、3：顧客の要求、4：その他）'
-        form.fields['delay_memo'].label = '販売者メモ'
+        form.fields['oversea_consignment_zipcode'].label = '海外委訁E郵便番号'
+        form.fields['oversea_consignment_addr1'].label = '海外委訁E住所(都道府県/市区町杁E'
+        form.fields['oversea_consignment_addr2'].label = '海外委訁E住所(市区町村以陁E'
+        form.fields['delay_type'].label = '遁E��の琁E��。！E�E�商品準備中、E�E�注斁E��作（オーダーメイド）、E�E�顧客の要求、E�E�その他！E
+        form.fields['delay_memo'].label = '販売老E��モ'
         return form
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context['title'] = 'Qoo10注文情報 更新ページです'
-        context['message'] = 'Qoo10注文情報 更新ページ メッセージです'
+        context['title'] = 'Qoo10注斁E��報 更新ペ�EジでぁE
+        context['message'] = 'Qoo10注斁E��報 更新ペ�Eジ メチE��ージでぁE
         return context
 
 class QooOrderDelete(generic.DeleteView):
     """
-    QooOrderInfoテーブルのレコード削除
+    QooOrderInfoチE�Eブルのレコード削除
     """
     template_name = 'yaget/qoo_order_delete.html'
     model = QooOrderInfo
@@ -4410,9 +4410,9 @@ class QooOrderDelete(generic.DeleteView):
         self.object = self.get_object()
         logger.debug("--- QooOrderDelete in.gid:[{}]".format(self.object.gid))
         try:
-            # qoo10のステータスを削除に更新
+            # qoo10のスチE�Eタスを削除に更新
             # Qoo10にアクセス
-            # が必要だがまだできてない！
+            # が忁E��だがまだできてなぁE��E
             """
             qoo10obj = Qoo10Access(logger)
             qoo10obj.qoo10_create_cert_key()
@@ -4421,11 +4421,11 @@ class QooOrderDelete(generic.DeleteView):
 
             #goods_object = self.get_object()
             """
-            self.object.qoo_upd_status = 3  # 取引廃止
+            self.object.qoo_upd_status = 3  # 取引廁E��
 
 
             # 続けてwowmaから削除
-            # まず商品ステータスを変えてから
+            # まず商品スチE�Eタスを変えてから
             if wowma_access.wowma_update_stock(self.object.gid, 0, '2') == 0:
                 logger.debug('--- BuyersGoodsDetailDelete wow_delete wowma_update_stock ok.')
                 ret_code, ret_msg = wowma_access.wowma_delete_item_infos(self.object.gid)
@@ -4433,12 +4433,12 @@ class QooOrderDelete(generic.DeleteView):
                     logger.info('--- BuyersGoodsDetailDelete wow 削除更新 ok')
                 else:
                     messages.error(
-                        self.request, 'wowmaから削除に失敗しました。[{}][{}]'.format(ret_code, ret_msg))
+                        self.request, 'wowmaから削除に失敗しました、E{}][{}]'.format(ret_code, ret_msg))
                     context = self.get_context_data(object=self.object)
                     logger.debug('--- BuyersGoodsDetailDelete wow_delete error occurred.[{}][{}]'.format(ret_code, ret_msg))
                     return self.render_to_response(context)
             else:
-                logger.debug("--- BuyersGoodsDetailDelete wowma で対象商品が見つからないのでスルー。DBから消す")
+                logger.debug("--- BuyersGoodsDetailDelete wowma で対象啁E��が見つからなぁE�Eでスルー、EBから消す")
             """
 
             result = super().delete(request, *args, **kwargs)
@@ -4446,7 +4446,7 @@ class QooOrderDelete(generic.DeleteView):
                 self.request, '「{}」を削除しました'.format(self.object))
         except Exception as e:
             messages.error(
-                self.request, '削除に失敗しました。[{}]'.format(traceback.format_exc()))
+                self.request, '削除に失敗しました、E{}]'.format(traceback.format_exc()))
             context = self.get_context_data(object=self.object)
             logger.debug("--- QooOrderDelete error occurred.[{}]".format(traceback.format_exc()))
             return self.render_to_response(context)
@@ -4457,7 +4457,7 @@ class QooOrderDelete(generic.DeleteView):
 
 class WowOrderList(generic.ListView):
     """
-    WowmaOrderInfoテーブルの一覧表作成
+    WowmaOrderInfoチE�Eブルの一覧表作�E
     """
     model = WowmaOrderInfo
     template_name = 'yaget/wow_order_list.html'
@@ -4476,7 +4476,7 @@ class WowOrderList(generic.ListView):
             self.request.POST.get('create_date_to', None),
         ]
         request.session['form_wow_order_list'] = form_wow_order_list
-        # 検索時にページネーションに関連したエラーを防ぐ
+        # 検索時にペ�Eジネ�Eションに関連したエラーを防ぁE
         self.request.GET = self.request.GET.copy()
         self.request.GET.clear()
         return self.get(request, *args, **kwargs)
@@ -4484,7 +4484,7 @@ class WowOrderList(generic.ListView):
     # 抽出件数を絞る
     def get_queryset(self, queryset=None):
         #return YaBuyersItemDetail.objects.all()[:10]
-        # sessionに値がある場合、その値でクエリ発行する。
+        # sessionに値がある場合、その値でクエリ発行する、E
 
         if 'form_wow_order_list' in self.request.session:
             form_wow_order_list = self.request.session['form_wow_order_list']
@@ -4537,7 +4537,7 @@ class WowOrderList(generic.ListView):
                 condition_create_date_to
             ).order_by("-update_date")[:10000]
         else:
-            # 何も返さない
+            # 何も返さなぁE
             return WowmaOrderInfo.objects.none()
 
     def get_context_data(self, **kwargs):
@@ -4582,7 +4582,7 @@ class WowOrderList(generic.ListView):
 
 class WowOrderDetail(generic.DetailView):
     """
-    WowOrderInfoテーブルのレコード詳細
+    WowOrderInfoチE�Eブルのレコード詳細
     """
     template_name = 'yaget/wow_order_detail.html'
     model = WowmaOrderInfo
@@ -4690,55 +4690,55 @@ class WowOrderUpdate(generic.UpdateView):
         form.fields['orderid'].label = 'orderid'
         form.fields['site_and_device'].label = 'site and device'
         form.fields['mail_address'].label = 'mailaddress'
-        form.fields['order_name'].label = '注文者氏名'
+        form.fields['order_name'].label = '注斁E��E��名'
         form.fields['order_kana'].label = 'order_kana'
         form.fields['order_zipcode'].label = 'order_zipcode'
         form.fields['order_address'].label = 'order_address'
         form.fields['order_phone_number_1'].label = 'order_phone_number_1'
         form.fields['order_phone_number_2'].label = 'order_zipcode'
         form.fields['nickname'].label = 'nickname'
-        form.fields['sender_name'].label = '送付先氏名'
-        form.fields['sender_kana'].label = '送付先かな'
-        form.fields['sender_zipcode'].label = '送付先zipcode'
-        form.fields['sender_address'].label = '送付先住所'
-        form.fields['sender_phone_number_1'].label = '送付先_電話番号_1'
-        form.fields['sender_phone_number_2'].label = '送付先_電話番号_2'
-        form.fields['order_option'].label = '注文オプション'
-        form.fields['settlement_name'].label = '決済方法'
-        form.fields['user_comment'].label = 'ユーザコメント'
+        form.fields['sender_name'].label = '送付�E氏名'
+        form.fields['sender_kana'].label = '送付�Eかな'
+        form.fields['sender_zipcode'].label = '送付�Ezipcode'
+        form.fields['sender_address'].label = '送付�E住所'
+        form.fields['sender_phone_number_1'].label = '送付�E_電話番号_1'
+        form.fields['sender_phone_number_2'].label = '送付�E_電話番号_2'
+        form.fields['order_option'].label = '注斁E��プション'
+        form.fields['settlement_name'].label = '決済方況E
+        form.fields['user_comment'].label = 'ユーザコメンチE
         form.fields['memo'].label = 'メモ'
-        form.fields['order_status'].label = 'order_ステータス'
-        form.fields['contact_status'].label = 'コンタクト_ステータス'
-        form.fields['authorization_status'].label = '承認_ステータス'
-        form.fields['payment_status'].label = '支払い_ステータス'
-        form.fields['ship_status'].label = '発送_ステータス'
-        form.fields['print_status'].label = '印刷_ステータス'
-        form.fields['cancel_status'].label = 'キャンセル_ステータス'
-        form.fields['cancel_reason'].label = 'キャンセル理由'
-        form.fields['cancel_comment'].label = 'キャンセルコメント'
-        form.fields['total_sale_price'].label = '売上金額合計'
-        form.fields['total_sale_unit'].label = '売上個数合計'
+        form.fields['order_status'].label = 'order_スチE�Eタス'
+        form.fields['contact_status'].label = 'コンタクチEスチE�Eタス'
+        form.fields['authorization_status'].label = '承認_スチE�Eタス'
+        form.fields['payment_status'].label = '支払い_スチE�Eタス'
+        form.fields['ship_status'].label = '発送_スチE�Eタス'
+        form.fields['print_status'].label = '印刷_スチE�Eタス'
+        form.fields['cancel_status'].label = 'キャンセル_スチE�Eタス'
+        form.fields['cancel_reason'].label = 'キャンセル琁E��'
+        form.fields['cancel_comment'].label = 'キャンセルコメンチE
+        form.fields['total_sale_price'].label = '売上��額合訁E
+        form.fields['total_sale_unit'].label = '売上個数合訁E
         form.fields['postage_price'].label = '送料'
-        form.fields['charge_price'].label = '請求金額'
-        form.fields['total_price'].label = '総合計金額'
-        form.fields['coupon_total_price'].label = 'クーポン利用合計金額'
-        form.fields['use_point'].label = '利用ポイント'
-        form.fields['use_point_cancel'].label = '利用ポイント キャンセル分'
-        form.fields['use_au_point_price'].label = 'au利用ポイント金額'
-        form.fields['use_au_point'].label = 'au利用ポイント'
-        form.fields['use_au_point_cancel'].label = 'au利用ポイント キャンセル分'
-        form.fields['point_fixed_status'].label = 'ポイント fixステータス'
-        form.fields['settle_status'].label = '承認ステータス'
+        form.fields['charge_price'].label = '請求��顁E
+        form.fields['total_price'].label = '総合計��顁E
+        form.fields['coupon_total_price'].label = 'クーポン利用合計��顁E
+        form.fields['use_point'].label = '利用ポインチE
+        form.fields['use_point_cancel'].label = '利用ポインチEキャンセル刁E
+        form.fields['use_au_point_price'].label = 'au利用ポイント��顁E
+        form.fields['use_au_point'].label = 'au利用ポインチE
+        form.fields['use_au_point_cancel'].label = 'au利用ポインチEキャンセル刁E
+        form.fields['point_fixed_status'].label = 'ポインチEfixスチE�Eタス'
+        form.fields['settle_status'].label = '承認スチE�Eタス'
         form.fields['pg_result'].label = 'pg結果'
         form.fields['pg_orderid'].label = 'pg_orderid'
-        form.fields['pg_request_price'].label = 'pg_請求金額'
-        form.fields['coupon_type'].label = 'クーポンタイプ'
+        form.fields['pg_request_price'].label = 'pg_請求��顁E
+        form.fields['coupon_type'].label = 'クーポンタイチE
         form.fields['coupon_key'].label = 'クーポンキー'
-        form.fields['card_jagdement'].label = 'カード判定'
+        form.fields['card_jagdement'].label = 'カード判宁E
         form.fields['delivery_name'].label = '配送名'
         form.fields['delivery_method_id'].label = '配送方法id'
         form.fields['delivery_request_time'].label = 'お届希望時間帯'
-        form.fields['shipping_carrier'].label = '配送業者'
+        form.fields['shipping_carrier'].label = '配送業老E
         form.fields['shipping_number'].label = '追跡番号'
         form.fields['order_date'].label = '受注日'
         form.fields['contact_date'].label = 'コンタクトした日'
@@ -4754,14 +4754,14 @@ class WowOrderUpdate(generic.UpdateView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context['title'] = 'Wowma注文情報 更新ページです'
-        context['message'] = 'Wowma注文情報 更新ページ メッセージです'
+        context['title'] = 'Wowma注斁E��報 更新ペ�EジでぁE
+        context['message'] = 'Wowma注斁E��報 更新ペ�Eジ メチE��ージでぁE
         return context
 
 
 class WowOrderDelete(generic.DeleteView):
     """
-    WowmaOrderInfoテーブルのレコード削除
+    WowmaOrderInfoチE�Eブルのレコード削除
     """
     template_name = 'yaget/qoo_order_delete.html'
     model = WowmaOrderInfo
@@ -4772,9 +4772,9 @@ class WowOrderDelete(generic.DeleteView):
         self.object = self.get_object()
         logger.debug("--- WowOrderDelete in.gid:[{}]".format(self.object.gid))
         try:
-            # qoo10のステータスを削除に更新
+            # qoo10のスチE�Eタスを削除に更新
             # Qoo10にアクセス
-            # が必要だがまだできてない！
+            # が忁E��だがまだできてなぁE��E
             """
             qoo10obj = Qoo10Access(logger)
             qoo10obj.qoo10_create_cert_key()
@@ -4783,11 +4783,11 @@ class WowOrderDelete(generic.DeleteView):
 
             #goods_object = self.get_object()
             """
-            self.object.qoo_upd_status = 3  # 取引廃止
+            self.object.qoo_upd_status = 3  # 取引廁E��
 
 
             # 続けてwowmaから削除
-            # まず商品ステータスを変えてから
+            # まず商品スチE�Eタスを変えてから
             if wowma_access.wowma_update_stock(self.object.gid, 0, '2') == 0:
                 logger.debug('--- BuyersGoodsDetailDelete wow_delete wowma_update_stock ok.')
                 ret_code, ret_msg = wowma_access.wowma_delete_item_infos(self.object.gid)
@@ -4795,12 +4795,12 @@ class WowOrderDelete(generic.DeleteView):
                     logger.info('--- BuyersGoodsDetailDelete wow 削除更新 ok')
                 else:
                     messages.error(
-                        self.request, 'wowmaから削除に失敗しました。[{}][{}]'.format(ret_code, ret_msg))
+                        self.request, 'wowmaから削除に失敗しました、E{}][{}]'.format(ret_code, ret_msg))
                     context = self.get_context_data(object=self.object)
                     logger.debug('--- BuyersGoodsDetailDelete wow_delete error occurred.[{}][{}]'.format(ret_code, ret_msg))
                     return self.render_to_response(context)
             else:
-                logger.debug("--- BuyersGoodsDetailDelete wowma で対象商品が見つからないのでスルー。DBから消す")
+                logger.debug("--- BuyersGoodsDetailDelete wowma で対象啁E��が見つからなぁE�Eでスルー、EBから消す")
             """
 
             result = super().delete(request, *args, **kwargs)
@@ -4808,7 +4808,7 @@ class WowOrderDelete(generic.DeleteView):
                 self.request, '「{}」を削除しました'.format(self.object))
         except Exception as e:
             messages.error(
-                self.request, '削除に失敗しました。[{}]'.format(traceback.format_exc()))
+                self.request, '削除に失敗しました、E{}]'.format(traceback.format_exc()))
             context = self.get_context_data(object=self.object)
             logger.debug("--- WowOrderDelete error occurred.[{}]".format(traceback.format_exc()))
             return self.render_to_response(context)
@@ -4821,7 +4821,7 @@ def cut_zenkaku(chk_text):
     return chk_text.replace('\u3000', ' ')
 
 
-# qoo10 最新の注文情報を取得
+# qoo10 最新の注斁E��報を取征E
 def qoo_get_order_info_ajax_res(request):
     model = QooOrderInfo
     logger.debug("--- qoo_get_order_info_ajax_res in")
@@ -4832,13 +4832,13 @@ def qoo_get_order_info_ajax_res(request):
     }
 
     try:
-        # 配送状態。（1：出荷待ち、2：出荷済み、3：発注確認、4：配送中、5：配送完了）
+        # 配送状態。！E�E��E荷征E��、E�E��E荷済み、E�E�発注確認、E�E��E送中、E�E��E送完亁E��E
         shipping_stat = request.POST.get('shipping_stat')
-        search_sdate = request.POST.get('search_sdate')  # 照会開始日 例）20190101 (yyyyMMdd), 20190101153000 (yyyyMMddHHmmss)
-        search_edate = request.POST.get('search_edate')  # 照会終了日 例）20190101 (yyyyMMdd), 20190101153000 (yyyyMMddHHmmss)
+        search_sdate = request.POST.get('search_sdate')  # 照会開始日 例！E0190101 (yyyyMMdd), 20190101153000 (yyyyMMddHHmmss)
+        search_edate = request.POST.get('search_edate')  # 照会終亁E�� 例！E0190101 (yyyyMMdd), 20190101153000 (yyyyMMddHHmmss)
         search_sdate = search_sdate.replace('-', '')
         search_edate = search_edate.replace('-', '')
-        search_condition = request.POST.get('search_condition')  # 日付の種類。（1：注文日、2：決済完了日、3：配送日、4：配送完了日）
+        search_condition = request.POST.get('search_condition')  # 日付�E種類。！E�E�注斁E��、E�E�決済完亁E��、E�E��E送日、E�E��E送完亁E���E�E
 
         # Qoo10にアクセス
         qoo10obj = Qoo10Access(logger)
@@ -4847,8 +4847,8 @@ def qoo_get_order_info_ajax_res(request):
 
         logger.debug("--- qoo_get_order_info_ajax_res 1")
 
-        # Qoo10の商品情報を検索
-        # Qoo10に登録済みであれば　goods.qoo_gdno　に値が入っている
+        # Qoo10の啁E��惁E��を検索
+        # Qoo10に登録済みであれば　goods.qoo_gdno　に値が�EってぁE��
         #res_code, res_msg, res_obj = qoo10obj.qoo10_shipping_basic_get_shipping_info(
         res_obj_list = qoo10obj.qoo10_shipping_basic_get_shipping_info(
             shipping_stat,
@@ -4880,7 +4880,7 @@ def qoo_get_order_info_ajax_res(request):
                     ))
                     msg += 'orderNo:' + str(order['orderNo']) + ' '
 
-                    # 注文詳細をそれぞれ取り込む
+                    # 注斁E��細をそれぞれ取り込む
                     new_obj = QooOrderInfo.objects.filter(
                         order_no=order['orderNo'],
                         seller_id=order['sellerID'],
@@ -5039,7 +5039,7 @@ def qoo_get_order_info_ajax_res(request):
     return JsonResponse(d)
 
 
-# qoo10 注文情報　発送予定日や遅延理由を送信
+# qoo10 注斁E��報　発送予定日めE��延琁E��を送信
 def qoo_order_seller_chk_ajax_res(request):
     model = QooOrderInfo
     logger.debug("--- qoo_order_seller_chk_ajax_res in")
@@ -5051,18 +5051,18 @@ def qoo_order_seller_chk_ajax_res(request):
             'ret_code': None,
         }
         return JsonResponse(d)
-    est_shipping_date = request.POST.get('est_shipping_date')  # 発送予定日 例）20190101 (yyyyMMdd), 20190101153000 (yyyyMMddHHmmss)
+    est_shipping_date = request.POST.get('est_shipping_date')  # 発送予定日 例！E0190101 (yyyyMMdd), 20190101153000 (yyyyMMddHHmmss)
     est_shipping_date = est_shipping_date.replace('-', '')
-    delay_type = request.POST.get('delay_type')  # 遅延の理由。（1：商品準備中、2：注文製作（オーダーメイド）、3：顧客の要求、4：その他）
-    delay_memo = request.POST.get('delay_memo')  # 販売者メモ
+    delay_type = request.POST.get('delay_type')  # 遁E��の琁E��。！E�E�商品準備中、E�E�注斁E��作（オーダーメイド）、E�E�顧客の要求、E�E�その他！E
+    delay_memo = request.POST.get('delay_memo')  # 販売老E��モ
 
     # Qoo10にアクセス
     qoo10obj = Qoo10Access(logger)
     msg = 'start[' + YagetConfig.verbose_name + ']'
     qoo10obj.qoo10_create_cert_key()
 
-    # Qoo10の商品情報を検索
-    # Qoo10に登録済みであれば　goods.qoo_gdno　に値が入っている
+    # Qoo10の啁E��惁E��を検索
+    # Qoo10に登録済みであれば　goods.qoo_gdno　に値が�EってぁE��
     res_list = qoo10obj.qoo10_shipping_basic_set_seller_check_yn(
         order.order_no,
         est_shipping_date,
@@ -5076,7 +5076,7 @@ def qoo_order_seller_chk_ajax_res(request):
         my_ret_msg = res_item['res_msg']
         msg += my_ret_msg
         if my_ret_code == 0:
-            # 更新に成功している。次の処理は行わない
+            # 更新に成功してぁE��。次の処琁E�E行わなぁE
             break
 
     d = {
@@ -5087,7 +5087,7 @@ def qoo_order_seller_chk_ajax_res(request):
     return JsonResponse(d)
 
 
-# qoo10 注文情報　発送日や追跡番号を送信
+# qoo10 注斁E��報　発送日めE��跡番号を送信
 def qoo_order_sending_info_ajax(request):
     model = QooOrderInfo
     logger.debug("--- qoo_order_sending_info_ajax in")
@@ -5107,7 +5107,7 @@ def qoo_order_sending_info_ajax(request):
     msg = 'start[' + YagetConfig.verbose_name + ']'
     qoo10obj.qoo10_create_cert_key()
 
-    # Qoo10の商品情報を検索
+    # Qoo10の啁E��惁E��を検索
     res_list = qoo10obj.qoo10_shipping_basic_set_sending_info(
         order.order_no,
         delivery_company,
@@ -5120,7 +5120,7 @@ def qoo_order_sending_info_ajax(request):
         my_ret_msg = res_item['res_msg']
         msg += my_ret_msg + ' '
         if my_ret_code == 0:
-            # 更新に成功している。次の処理は行わない
+            # 更新に成功してぁE��。次の処琁E�E行わなぁE
             break
 
     d = {
@@ -5130,35 +5130,35 @@ def qoo_order_sending_info_ajax(request):
 
     return JsonResponse(d)
 
-# wowma 最新の注文情報を取得
+# wowma 最新の注斁E��報を取征E
 def wow_get_order_info_ajax_res(request):
     model = WowmaOrderInfo
     logger.debug("--- wow_get_order_info_ajax_res in")
 
-    # order_status は配送状態。
+    # order_status は配送状態、E
     """
-    新規受付
-    発送前入金待ち
-    発送後入金待ち
-    与信待ち
-    発送待ち
-    完了
+    新規受仁E
+    発送前入金征E��
+    発送後�E金征E��
+    与信征E��
+    発送征E��
+    完亁E
     保留
     キャンセル
-    各種カスタムステータス（取引管理で貴店舗が登録したステータス名）
-    新規予約
-    予約中
+    吁E��カスタムスチE�Eタス�E�取引管琁E��貴店�Eが登録したスチE�Eタス名！E
+    新規予紁E
+    予紁E��
     不正取引審査中
     審査保留
     審査NG
     キャンセル受付中
     """
     try:
-        search_sdate = request.POST.get('search_sdate')  # 照会開始日 例）20190101 (yyyyMMdd), 20190101153000 (yyyyMMddHHmmss)
-        search_edate = request.POST.get('search_edate')  # 照会終了日 例）20190101 (yyyyMMdd), 20190101153000 (yyyyMMddHHmmss)
+        search_sdate = request.POST.get('search_sdate')  # 照会開始日 例！E0190101 (yyyyMMdd), 20190101153000 (yyyyMMddHHmmss)
+        search_edate = request.POST.get('search_edate')  # 照会終亁E�� 例！E0190101 (yyyyMMdd), 20190101153000 (yyyyMMddHHmmss)
         search_sdate = search_sdate.replace('-', '')
         search_edate = search_edate.replace('-', '')
-        date_type = request.POST.get('date_type')  # 日付の種類。0:注文日　1:発送日　2:入金日　3:発売(入荷)予定日　4:発送期限日　（デフォルト0）
+        date_type = request.POST.get('date_type')  # 日付�E種類、E:注斁E��　1:発送日　2:入金日　3:発売(入荷)予定日　4:発送期限日　�E�デフォルチE�E�E
         order_status_1 = request.POST.get('order_status_1')
         order_status_2 = request.POST.get('order_status_2')
 
@@ -5179,37 +5179,37 @@ def wow_get_order_info_ajax_res(request):
             )
 
         #logger.debug("--- wow_get_order_info_ajax_res doc_list len[{}]".format(len(document_list)))
-        # document は、[shop_obj, res_obj]　の配列で返している
+        # document は、[shop_obj, res_obj]　の配�Eで返してぁE��
         for document in document_list:
             if document:
                 #logger.debug("--- wow_get_order_info_ajax_res doc_list doc[{}]".format(document.toprettyxml(indent="  ")))
 
-                #logger.debug(document.toprettyxml(indent="  "))  # パースされたXML情報をインデント付きで文字列に変換して表示
-                myrtn = document[1].getElementsByTagName("status")[0].firstChild.nodeValue  # 0なら成功、1　失敗
+                #logger.debug(document.toprettyxml(indent="  "))  # パ�EスされたXML惁E��をインチE��ト付きで斁E���Eに変換して表示
+                myrtn = document[1].getElementsByTagName("status")[0].firstChild.nodeValue  # 0なら�E功、E　失敁E
                 if myrtn == 1:
                     my_code = str(document[1].getElementsByTagName("code")[0].firstChild.nodeValue)
                     my_message = str(document[1].getElementsByTagName("message")[0].firstChild.nodeValue)
                     msg = 'エラー発生：[{}][{}]'.format(my_code, my_message)
                     logger.info('wow_get_order_info_ajax_res code:[{}] msg:[{}]'.format(my_code, my_message))
                 else:
-                    # 正常にデータ取得できた。DB登録
+                    # 正常にチE�Eタ取得できた、EB登録
                     my_total_cnt = str(document[1].getElementsByTagName("resultCount")[0].firstChild.nodeValue)
-                    msg = '取得OK：件数[{}]'.format(my_total_cnt)
+                    msg = '取得OK�E�件数[{}]'.format(my_total_cnt)
                     logger.debug('wow_get_order_info_ajax_res ok total_cnt:[{}]'.format(my_total_cnt))
 
-                    # 注文詳細をそれぞれ取り込む
+                    # 注斁E��細をそれぞれ取り込む
                     msg += 'orderId:\n'
                     for order_id_elm in document[1].getElementsByTagName("orderInfo"):
                         order_id = str(order_id_elm.getElementsByTagName("orderId")[0].firstChild.nodeValue)
                         logger.info('wow_get_order_info_ajax_res order_id:[{}]'.format(order_id))
                         msg += order_id + ' '
 
-                        # 注文詳細をそれぞれ取り込む
+                        # 注斁E��細をそれぞれ取り込む
                         new_obj = WowmaOrderInfo.objects.filter(
                             orderid=order_id,
                         ).first()
 
-                        # レスポンスに存在しない項目はチェックしないと
+                        # レスポンスに存在しなぁE��E��はチェチE��しなぁE��
                         releaseDate = ''
                         if order_id_elm.getElementsByTagName("releaseDate"):
                             if order_id_elm.getElementsByTagName("releaseDate")[0].firstChild:
@@ -5575,7 +5575,7 @@ def wow_get_order_info_ajax_res(request):
                                         noshi_presenter_name3 = str(
                                             order_id_elm.getElementsByTagName("noshiPresenterName3")[0].firstChild.nodeValue)
 
-                                # item_name は取り直して格納
+                                # item_name は取り直して格紁E
                                 my_item_code = str(detail.getElementsByTagName("itemCode")[0].firstChild.nodeValue)
                                 item = YaBuyersItemDetail.objects.filter(
                                     gid=my_item_code,
@@ -5787,7 +5787,7 @@ def wow_get_order_info_ajax_res(request):
                                     order_detail_id=str(detail.getElementsByTagName("orderDetailId")[0].firstChild.nodeValue)
                                 ).all()
 
-                                # item_name は取り直して格納
+                                # item_name は取り直して格紁E
                                 my_item_code = str(detail.getElementsByTagName("itemCode")[0].firstChild.nodeValue)
 
                                 item = YaBuyersItemDetail.objects.filter(
@@ -5845,7 +5845,7 @@ def wow_get_order_info_ajax_res(request):
                 ret_code = 1
 
     except:
-        # 更新時にエラー？
+        # 更新時にエラー�E�E
         logger.info(
             '--> error(info). wow_get_order_info_ajax_res msg[{}] '.format(traceback.format_exc()))
         logger.debug(
@@ -5861,7 +5861,7 @@ def wow_get_order_info_ajax_res(request):
     return JsonResponse(d)
 
 
-# wowma 注文ステータスを送信
+# wowma 注斁E��チE�Eタスを送信
 def wow_order_seller_chk_ajax_res(request):
     model = WowmaOrderInfo
     logger.debug("--- wow_order_seller_chk_ajax_res in")
@@ -5874,7 +5874,7 @@ def wow_order_seller_chk_ajax_res(request):
             'ret_code': None,
         }
         return JsonResponse(d)
-    order_status = request.POST.get('order_status')  # 注文ステータス
+    order_status = request.POST.get('order_status')  # 注斁E��チE�Eタス
 
     # wowmaにアクセス
     wowma_access = WowmaAccess(logger)
@@ -5890,7 +5890,7 @@ def wow_order_seller_chk_ajax_res(request):
         my_ret_msg = res_item['res_msg']
         msg += my_ret_msg
         if my_ret_code == 0:
-            # 更新に成功している。次の処理は行わない
+            # 更新に成功してぁE��。次の処琁E�E行わなぁE
             break
 
     d = {
@@ -5900,7 +5900,7 @@ def wow_order_seller_chk_ajax_res(request):
     return JsonResponse(d)
 
 
-# wowma 注文情報　発送日や追跡番号を送信
+# wowma 注斁E��報　発送日めE��跡番号を送信
 def wow_order_sending_info_ajax(request):
     model = WowmaOrderInfo
     logger.debug("--- wow_order_sending_info_ajax in")
@@ -5922,7 +5922,7 @@ def wow_order_sending_info_ajax(request):
     wowma_access = WowmaAccess(logger)
     msg = 'start[' + YagetConfig.verbose_name + ']'
 
-    # wowmaの商品情報を検索
+    # wowmaの啁E��惁E��を検索
     res_list = wowma_access.wowma_update_trade_info_proc(
         order.orderid,
         shipping_date,
@@ -5935,7 +5935,7 @@ def wow_order_sending_info_ajax(request):
         my_ret_msg = res_item['res_msg']
         msg += my_ret_msg
         if my_ret_code == 0:
-            # 更新に成功している。次の処理は行わない
+            # 更新に成功してぁE��。次の処琁E�E行わなぁE
             # DBを更新しておく
             order.shipping_date = shipping_date
             order.shipping_number = shipping_number
@@ -5946,22 +5946,22 @@ def wow_order_sending_info_ajax(request):
             elif int(shipping_carrier) == 2:
                 order.shipping_carrier = '佐川急便'
             elif int(shipping_carrier) == 3:
-                order.shipping_carrier = 'JPエクスプレス（旧 日本通運）'
+                order.shipping_carrier = 'JPエクスプレス�E�旧 日本通運�E�E
             elif int(shipping_carrier) == 4:
                 order.shipping_carrier = '福山通運'
             elif int(shipping_carrier) == 5:
-                order.shipping_carrier = '西濃運輸'
+                order.shipping_carrier = '西濁E��輸'
             elif int(shipping_carrier) == 6:
                 order.shipping_carrier = '日本郵便'
             else:
-                order.shipping_carrier = 'その他配送会社'
+                order.shipping_carrier = 'そ�E他�E送会社'
             """
 
-            # ステータスは完了にしておく
-            order.order_status = '完了'
+            # スチE�Eタスは完亁E��しておく
+            order.order_status = '完亁E
             order.ship_status = 'Y'
             order.save()
-            logger.debug("--- wow_order_sending_info_ajax saved 配送業者[{}] 配送日[{}] 配送番号[{}]".format(
+            logger.debug("--- wow_order_sending_info_ajax saved 配送業老E{}] 配送日[{}] 配送番号[{}]".format(
                 order.shipping_carrier, order.shipping_date, order.shipping_number
             ))
             break
@@ -5983,14 +5983,14 @@ def qoo_do_order_buyers_ajax(request):
     pk = request.POST.get('pk')
     payment_method = request.POST.get('payment_method')
     if pk:
-        # ここでサププロセスをキック
+        # ここでサプ�EロセスをキチE��
         cmd = "source /home/django/djangoenv/bin/activate;python /home/django/sample/manage.py qoo_do_buyers_order --pk "
         cmd += pk + " --payment_method " + payment_method
         msg += ' cmd[' + cmd + ']'
         p = subprocess.Popen(cmd, shell=True)
         msg += ' maybe ok.' + str(p.pid)
 
-        # pkが得られたらコマンドをキック
+        # pkが得られたらコマンドをキチE��
 
     else:
         d = {
@@ -5998,7 +5998,7 @@ def qoo_do_order_buyers_ajax(request):
         }
         return JsonResponse(d)
 
-    # 以下、受注した商品コードからバイヤーズにアクセスして購入のフローを。
+    # 以下、受注した啁E��コードからバイヤーズにアクセスして購入のフローを、E
     msg = 'start:'
 
     res_msg = 'qoo_do_order_buyers_ajax: start'
@@ -6022,7 +6022,7 @@ def wow_do_order_buyers_ajax(request):
     payment_method = request.POST.get('payment_method')
     if pk:
         #order = model.objects.get(pk=pk)
-        # ここでサププロセスをキック
+        # ここでサプ�EロセスをキチE��
         cmd = "source /home/django/djangoenv/bin/activate;python /home/django/sample/manage.py wowma_do_buyers_order --pk "
         cmd += pk + " --payment_method " + payment_method
         msg += ' cmd[' + cmd + ']'
@@ -6030,7 +6030,7 @@ def wow_do_order_buyers_ajax(request):
         #msg += ' maybe ok.' + p.stdout.readline()
         msg += ' maybe ok.' + str(p.pid)
 
-        # pkが得られたらコマンドをキック
+        # pkが得られたらコマンドをキチE��
 
     else:
         d = {
@@ -6038,13 +6038,13 @@ def wow_do_order_buyers_ajax(request):
         }
         return JsonResponse(d)
 
-    # 以下、受注した商品コードからバイヤーズにアクセスして購入のフローを。
+    # 以下、受注した啁E��コードからバイヤーズにアクセスして購入のフローを、E
     msg = 'start:'
     #buinfo_obj = BuyersInfo(logger)
     # バイヤーズにログインしておく
     #buinfo_obj.login_buyers()
 
-    # wowmaの商品情報を検索
+    # wowmaの啁E��惁E��を検索
     """
     res_code, res_msg = wowma_access.wowma_update_trade_info_proc(
         order.orderid,
@@ -6065,7 +6065,7 @@ def wow_do_order_buyers_ajax(request):
     return JsonResponse(d)
 
 
-# wowma 指定されたメール種別（type）でgmailを送信
+# wowma 持E��されたメール種別�E�Eype�E�でgmailを送信
 def wow_send_gmail_ajax(request):
     model = WowmaOrderInfo
     msg = ''
@@ -6079,14 +6079,14 @@ def wow_send_gmail_ajax(request):
     if pk:
         logger.info("--- wow_send_gmail_ajax pk:[{}]".format(pk))
         #order = model.objects.get(pk=pk)
-        # ここでサププロセスをキック
+        # ここでサプ�EロセスをキチE��
         cmd = "source /home/django/djangoenv/bin/activate;python /home/django/sample/manage.py wowma_send_gmail --pk "
         cmd += pk + " --mail_type " + mail_type + " --other_message " + other_message
         msg += ' cmd[' + cmd + ']'
         p = subprocess.Popen(cmd, shell=True)
         msg += ' maybe ok.' + str(p.pid)
 
-        # pkが得られたらコマンドをキック
+        # pkが得られたらコマンドをキチE��
 
     else:
         logger.info("--- wow_send_gmail_ajax cant get pt")
@@ -6109,16 +6109,16 @@ def wow_send_gmail_ajax(request):
 
 def get_qoo_asin_detail_upd_csv(request):
     """
-    20220807 追加。指定したASINのリストCSVをアップロードして
-    SP-API呼び出しでUS or JPからデータを引っ張る。
+    20220807 追加。指定したASINのリスチESVをアチE�Eロードして
+    SP-API呼び出しでUS or JPからチE�Eタを引っ張る、E
     Qoo10販売用として対象は絞るイメージ
-    なんならついでにKeepa APIも呼び出して詳細を保存したいが・・
+    なんならつぁE��にKeepa APIも呼び出して詳細を保存したいが�E・
 
-    ★取り込むcsvのフォーマット
+    ☁E��り込むcsvのフォーマッチE
     | asin | wholesale_price | wholesale_name |
     asin:asinコードそのまま
-    wholesale_price: 卸業者の下代
-    wholesale_name: 卸業者の名称
+    wholesale_price: 卸業老E�E下代
+    wholesale_name: 卸業老E�E名称
 
     """
 
@@ -6133,7 +6133,7 @@ def get_qoo_asin_detail_upd_csv(request):
                 form_data = TextIOWrapper(request.FILES['file'].file, encoding='utf-8')
                 csv_file = csv.reader(form_data, delimiter="\t")
 
-                # QooAsinDetail の csv_no に、取り込んだcsv単位で管理用連番をふる。 + 1
+                # QooAsinDetail の csv_no に、取り込んだcsv単位で管琁E��連番を�Eる、E+ 1
                 db_entries = QooAsinDetail.objects.all().order_by("-csv_no")[0:1]
                 if not db_entries:
                     new_csv_no = 1
@@ -6147,8 +6147,8 @@ def get_qoo_asin_detail_upd_csv(request):
                     if len(line) < 4:
                         # form is_validがNG
                         params = {
-                            'title': 'csvの取り込み失敗',
-                            'message': 'csvの形式が正しくありません(行の数が足らない:[' + str(len(line)) + '])',
+                            'title': 'csvの取り込み失敁E,
+                            'message': 'csvの形式が正しくありません(行�E数が足らなぁE[' + str(len(line)) + '])',
                         }
                         return render(request, 'yaget/get_qoo_asin_detail_upd_csv.html', params)
 
@@ -6171,16 +6171,16 @@ def get_qoo_asin_detail_upd_csv(request):
                     msg += '<br> QooAsinDetail save done.'
 
                 msg += "<br> csv-> all db set ok."
-                # サブプロセスでyagetのコマンドをキックする
+                # サブ�EロセスでyagetのコマンドをキチE��する
                 msg += '<br>--------------------'
                 msg += '<br> be on kick csvno. [' + str(new_csv_no) + ']'
-                # ここでサププロセスをキック
+                # ここでサプ�EロセスをキチE��
                 cmd = "source /home/django/djangoenv/bin/activate;python /home/django/sample/manage.py exec_get_qoo_asin_detail_upd_csv --traceback --csv_no "
                 #cmd = "python3.6 /home/django/sample/manage.py exec_get_qoo_asin_detail_upd_csv --traceback "
                 cmd += str(new_csv_no)
                 msg += ' cmd[' + cmd + ']'
 
-                # 2019/7/6 以下は普通の呼び出しだったが標準出力を取りたい
+                # 2019/7/6 以下�E普通�E呼び出しだったが標準�E力を取りたい
                 p = subprocess.Popen(cmd, shell=True)
 
                 #msg += ' maybe ok.' + p.stdout.readline()
@@ -6189,7 +6189,7 @@ def get_qoo_asin_detail_upd_csv(request):
                 msg += '<br>--------------------'
                 msg += "<br> end of get_qoo_asin_detail_upd_csv"
                 params = {
-                    'title': 'CSV UPLOAD完了。ASIN情報の更新を開始します',
+                    'title': 'CSV UPLOAD完亁E��ESIN惁E��の更新を開始しまぁE,
                     'message': msg,
                     'form': form,
                 }
@@ -6198,7 +6198,7 @@ def get_qoo_asin_detail_upd_csv(request):
             else:
                 # form is_validがNG
                 params = {
-                    'title': 'csvの取り込み失敗',
+                    'title': 'csvの取り込み失敁E,
                     'message': 'csvの形式が正しくありません',
                 }
                 logger.debug("get_qoo_asin_detail_upd_csv invalid csv format.")
@@ -6206,7 +6206,7 @@ def get_qoo_asin_detail_upd_csv(request):
         except Exception as e:
             msg += str(traceback.format_tb(e.__traceback__))
             params = {
-                'title': 'CSV UPLOAD 失敗・・',
+                'title': 'CSV UPLOAD 失敗�E・',
                 'message': msg,
                 'form': form,
             }
@@ -6216,8 +6216,8 @@ def get_qoo_asin_detail_upd_csv(request):
     else:
         csvform = QooAsinUpdCsvForm()
         params = {
-            'title': '(Qoo10用) ASINリストCSVによるASIN詳細情報取得 UPLOAD FORM',
-            'message': 'CSVを指定してアップロードしてください',
+            'title': '(Qoo10用) ASINリスチESVによるASIN詳細惁E��取征EUPLOAD FORM',
+            'message': 'CSVを指定してアチE�Eロードしてください',
             'form': csvform,
         }
 
@@ -6228,12 +6228,12 @@ def get_qoo_asin_detail_upd_csv(request):
 
 def get_qoo_asin_detail_single(request):
     """
-    20220820 追加。指定したASIN単体について
-    SP-API呼び出しでUS or JPからデータを引っ張る。
+    20220820 追加。指定したASIN単体につぁE��
+    SP-API呼び出しでUS or JPからチE�Eタを引っ張る、E
     Qoo10販売用として対象は絞るイメージ
-    なんならついでにKeepa APIも呼び出して詳細を保存したいが・・
+    なんならつぁE��にKeepa APIも呼び出して詳細を保存したいが�E・
 
-    POST引数はasinだけ。
+    POST引数はasinだけ、E
 
     """
 
@@ -6267,16 +6267,16 @@ def get_qoo_asin_detail_single(request):
                 msg += '<br> QooAsinDetail save done.'
 
                 msg += "<br> csv-> all db set ok."
-                # サブプロセスでyagetのコマンドをキックする
+                # サブ�EロセスでyagetのコマンドをキチE��する
                 msg += '<br>--------------------'
-                # ここでサププロセスをキック
+                # ここでサプ�EロセスをキチE��
                 cmd = "source /home/django/djangoenv/bin/activate;python /home/django/sample/manage.py exec_get_qoo_asin_detail_upd_csv --traceback --asin "
                 #cmd = "python3.6 /home/django/sample/manage.py exec_get_qoo_asin_detail_upd_csv --traceback --asin "
                 cmd += str(request.POST['asin'])
-                cmd += ' --csv_no ' + str(0) # csv_no は空でいい
+                cmd += ' --csv_no ' + str(0) # csv_no は空でぁE��
                 msg += ' cmd[' + cmd + ']'
 
-                # 2019/7/6 以下は普通の呼び出しだったが標準出力を取りたい
+                # 2019/7/6 以下�E普通�E呼び出しだったが標準�E力を取りたい
                 p = subprocess.Popen(cmd, shell=True)
 
                 #msg += ' maybe ok.' + p.stdout.readline()
@@ -6285,7 +6285,7 @@ def get_qoo_asin_detail_single(request):
                 msg += '<br>--------------------'
                 msg += "<br> end of get_qoo_asin_detail_single"
                 params = {
-                    'title': 'ASIN情報の更新を開始します・・・',
+                    'title': 'ASIN惁E��の更新を開始します�E・・',
                     'message': msg,
                     'form': form,
                 }
@@ -6294,7 +6294,7 @@ def get_qoo_asin_detail_single(request):
             else:
                 # form is_validがNG
                 params = {
-                    'title': 'asin取り込み失敗',
+                    'title': 'asin取り込み失敁E,
                     'message': 'asinの形式が正しくありません',
                     'form': form,
                 }
@@ -6303,7 +6303,7 @@ def get_qoo_asin_detail_single(request):
         except Exception as e:
             msg += str(traceback.format_tb(e.__traceback__))
             params = {
-                'title': 'ASIN UPLOAD 失敗・・',
+                'title': 'ASIN UPLOAD 失敗�E・',
                 'message': msg,
                 'form': form,
             }
@@ -6313,7 +6313,7 @@ def get_qoo_asin_detail_single(request):
     else:
         asinform = QooAsinUpdAsinForm() # FormはASINを個別入力するフォームに
         params = {
-            'title': '(Qoo10用) ASIN詳細情報取得 UPLOAD FORM',
+            'title': '(Qoo10用) ASIN詳細惁E��取征EUPLOAD FORM',
             'message': 'ASINを指定してください',
             'form': asinform,
         }
@@ -6326,7 +6326,7 @@ def get_qoo_asin_detail_single(request):
 
 class QooAsinDetailList(generic.ListView):
     """
-    QooAsinDetailテーブルの一覧表作成
+    QooAsinDetailチE�Eブルの一覧表作�E
     """
     model = QooAsinDetail
     template_name = 'yaget/qoo_asin_detail_list.html'
@@ -6344,7 +6344,7 @@ class QooAsinDetailList(generic.ListView):
             self.request.POST.get('create_date_to', None),
         ]
         request.session['form_value_imp_asin'] = form_value_imp_asin
-        # 検索時にページネーションに関連したエラーを防ぐ
+        # 検索時にペ�Eジネ�Eションに関連したエラーを防ぁE
         self.request.GET = self.request.GET.copy()
         self.request.GET.clear()
         return self.get(request, *args, **kwargs)
@@ -6399,7 +6399,7 @@ class QooAsinDetailList(generic.ListView):
                 condition_create_date_to
             ).order_by("-update_date")[:10000]
         else:
-            # 何も返さない
+            # 何も返さなぁE
             return QooAsinDetail.objects.none()
 
     def get_context_data(self, **kwargs):
@@ -6439,14 +6439,14 @@ class QooAsinDetailList(generic.ListView):
 
 class QooAsinDetailDetail(generic.DetailView):
     """
-    QooAsinDetailテーブルのレコード詳細
+    QooAsinDetailチE�Eブルのレコード詳細
     """
     template_name = 'yaget/qoo_asin_detail_detail.html'
     model = QooAsinDetail
 
 class QooAsinDetailDelete(generic.DeleteView):
     """
-    QooAsinDetailテーブルのレコード削除
+    QooAsinDetailチE�Eブルのレコード削除
     """
     template_name = 'yaget/qoo_asin_detail_delete.html'
     model = QooAsinDetail
@@ -6461,7 +6461,7 @@ class QooAsinDetailDelete(generic.DeleteView):
 
 class QooAsinDetailCreate(generic.CreateView):
     """
-    QooAsinDetailテーブルのレコード作成
+    QooAsinDetailチE�Eブルのレコード作�E
     """
     template_name = 'yaget/qoo_asin_detail_create.html'
     model = QooAsinDetail
@@ -6581,7 +6581,7 @@ class QooAsinDetailUpdate(generic.UpdateView):
 
 class QooAsinCsvImport(generic.FormView):
     """
-    QooAsinDetailを全件検索して、CSVファイルを取り込みDBに格納します。
+    QooAsinDetailを�E件検索して、CSVファイルを取り込みDBに格納します、E
     """
     template_name = 'yaget/qoo_asin_csv_import.html'
     success_url = reverse_lazy('yaget:qoo_asin_detail_list')
@@ -6590,16 +6590,16 @@ class QooAsinCsvImport(generic.FormView):
     def get_context_data(self, **kwargs):
         ctx = super().get_context_data(**kwargs)
         ctx['form_name'] = 'yaget'
-        ctx['message'] = 'QooAsinCsvImportです'
+        ctx['message'] = 'QooAsinCsvImportでぁE
         return ctx
 
     def form_valid(self, form):
-        """postされたTSVファイルを読み込み、YaShopImportCat テーブルに登録します"""
+        """postされたTSVファイルを読み込み、YaShopImportCat チE�Eブルに登録しまぁE""
         csvfile = TextIOWrapper(form.cleaned_data['file'], encoding='utf-8')
         reader = csv.reader(csvfile, delimiter="\t")
         for row in reader:
             """
-            YaShopImportCat テーブルをmyshop_cat_all (primary key)で検索します
+            YaShopImportCat チE�Eブルをmyshop_cat_all (primary key)で検索しまぁE
             """
             qoo_asin, created = QooAsinDetail.objects.get_or_create(asin=row[0])
             qoo_asin.asin = row[0]
@@ -6611,7 +6611,7 @@ class QooAsinCsvImport(generic.FormView):
 
 def QooAsinCsvExport(request):
     """
-    QooAsinDetailのレコードから、CSVファイルを作成してresponseに出力します。
+    QooAsinDetailのレコードから、CSVファイルを作�Eしてresponseに出力します、E
     """
     response = HttpResponse(content_type='text/csv; charset=Shift-JIS')
     tdatetime = dt.now()
@@ -6666,7 +6666,7 @@ def QooAsinCsvExport(request):
                 condition_create_date_to
         ).order_by("-update_date")[:1]:
             csvfilename = tstr + '_asin_' + retobj_tmp.y_cat_1 + '_' + retobj_tmp.myshop_cat_1 + '_' + retobj_tmp.myshop_cat_2 + '.csv'
-            csvfilename = csvfilename.replace(' ','').replace('>','_').replace('、','-')
+            csvfilename = csvfilename.replace(' ','').replace('>','_').replace('、E,'-')
 
         writer = get_csv_writer(response, csvfilename)
 
@@ -6691,3 +6691,102 @@ def QooAsinCsvExport(request):
                 retobj.asin,
             ])
     return response
+# --- SP-API OAuth minimal endpoints ---
+def spapi_oauth_start(request):
+    try:
+        app_client_id = os.getenv('LWA_APP_ID') or os.getenv('LWA_CLIENT_ID')
+        if not app_client_id:
+            return HttpResponse('LWA_APP_ID/LWA_CLIENT_ID �����ݒ�ł�', status=500)
+
+        # �D��: �����I�ɐݒ肳�ꂽ���_�C���N�gURI�B�������URL���o�[�X���琶��
+        redirect_uri = os.getenv('SPAPI_REDIRECT_URI')
+        if not redirect_uri:
+            try:
+                redirect_uri = request.build_absolute_uri(reverse('yaget:spapi_oauth_callback'))
+            except Exception:
+                redirect_uri = 'https://boasolte.com/yaget/spapi/oauth/callback/'
+
+        # state �̓Z�b�V�����ɕێ�
+        import secrets
+        state = secrets.token_urlsafe(16)
+        request.session['spapi_oauth_state'] = state
+
+        consent_base = 'https://sellercentral.amazon.co.jp/apps/authorize/consent'
+        params = {
+            'application_id': app_client_id,
+            'state': state,
+            'version': 'beta',
+            'redirect_uri': redirect_uri,
+        }
+        import urllib.parse
+        url = consent_base + '?' + urllib.parse.urlencode(params)
+        return redirect(url)
+    except Exception as e:
+        logger.error('spapi_oauth_start error: %s', traceback.format_exc())
+        return HttpResponse('start error', status=500)
+
+
+def spapi_oauth_callback(request):
+    code = request.GET.get('spapi_oauth_code')
+    spid = request.GET.get('selling_partner_id')
+    state = request.GET.get('state')
+
+    # state �ȈՌ��؁i���݂̂݁j
+    sess_state = request.session.get('spapi_oauth_state')
+    state_ok = bool(sess_state) and (sess_state == state)
+
+    # �}�X�N�\��
+    def mask(s, head=6, tail=4):
+        if not s:
+            return ''
+        if len(s) <= head + tail:
+            return s[0:2] + '***'
+        return s[:head] + '...' + s[-tail:]
+
+    # �����ɕK�v�ȃN���f���V�����i.env�j
+    app_client_id = os.getenv('LWA_APP_ID') or os.getenv('LWA_CLIENT_ID') or ''
+    app_client_secret = os.getenv('LWA_CLIENT_SECRET') or ''
+
+    # ����̃��_�C���N�gURI
+    redirect_uri = os.getenv('SPAPI_REDIRECT_URI')
+    if not redirect_uri:
+        try:
+            redirect_uri = request.build_absolute_uri(reverse('yaget:spapi_oauth_callback'))
+        except Exception:
+            redirect_uri = 'https://boasolte.com/yaget/spapi/oauth/callback/'
+
+    logger.info('spapi_oauth_callback code(len=%s) state_ok=%s spid=%s',
+                len(code) if code else 0, state_ok, spid)
+
+    # �܂��� cURL �ł̌����菇��Ԃ��i�ő��f�o�b�O�p�j
+    curl_snippet = f"""
+    curl -sS -X POST https://api.amazon.com/auth/o2/token \
+      -H 'content-type: application/x-www-form-urlencoded;charset=UTF-8' \
+      --data-urlencode 'grant_type=authorization_code' \
+      --data-urlencode 'code={code}' \
+      --data-urlencode 'client_id={app_client_id}' \
+      --data-urlencode 'client_secret={app_client_secret}' \
+      --data-urlencode 'redirect_uri={redirect_uri}' | jq .
+    """.strip()
+
+    html = f"""
+    <pre>
+SP-API OAuth callback ��M
+- selling_partner_id: {spid}
+- spapi_oauth_code: {mask(code)}
+- state_ok: {state_ok}
+
+���� cURL �����s���� refresh_token ���擾���Ă��������i�T�[�o�E�[���̂ǂ���ł��j:
+
+{curl_snippet}
+
+�擾���� refresh_token �� .env �Ɉȉ��̂����ꂩ�̃L�[�ŕۑ�:
+- SP_API_REFRESH_TOKEN=...  �܂���  LWA_REFRESH_TOKEN=...
+
+�ۑ���̊m�F:
+  $ python manage.py spapi_ping
+  $ python manage.py spapi_catalog_item --asin B0XXXXXXXX
+    </pre>
+    """
+    return HttpResponse(html)
+# --- end SP-API OAuth minimal endpoints ---
