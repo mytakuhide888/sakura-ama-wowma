@@ -1,12 +1,12 @@
 # -*- coding: utf-8 -*-
-import os
 import sys
 
 from django.core.management.base import BaseCommand
+from django.conf import settings
 
-from dotenv import load_dotenv
+import environ
 
-load_dotenv()
+from yaget.models import LwaCredential
 
 from sp_api.api import Sellers
 from sp_api.base.marketplaces import Marketplaces
@@ -14,32 +14,60 @@ from sp_api.base import SellingApiException
 
 
 class Command(BaseCommand):
-    help = "SP-API ping using Sellers.get_marketplace_participations()"
+    help = "SP-API ping using Sellers.get_marketplace_participations() with DB refresh_token"
 
     def handle(self, *args, **options):
-        refresh_token = os.getenv("SP_API_REFRESH_TOKEN") or os.getenv("LWA_REFRESH_TOKEN")
-        lwa_app_id = os.getenv("LWA_APP_ID") or os.getenv("LWA_CLIENT_ID")
-        lwa_client_secret = os.getenv("LWA_CLIENT_SECRET")
-        aws_access_key = os.getenv("AWS_ACCESS_KEY_ID")
-        aws_secret_key = os.getenv("AWS_SECRET_ACCESS_KEY")
-        role_arn = os.getenv("ROLE_ARN")
+        # Load .env (no environment-variable side effects; read values directly)
+        env = environ.Env()
+        try:
+            env.read_env(str(getattr(settings, "BASE_DIR", ".")) + "/.env")
+        except Exception:
+            env.read_env(".env")
 
-        marketplace_id = os.getenv("SPAPI_MARKETPLACE_ID", "A1VC38T7YXB528")
+        # Refresh token: prefer DB, then fall back to .env
+        refresh_token = (
+            LwaCredential.objects.values_list("refresh_token", flat=True).first()
+            or env("SP_API_REFRESH_TOKEN", default=None)
+            or env("LWA_REFRESH_TOKEN", default=None)
+        )
+        if not refresh_token:
+            self.stderr.write("No refresh_token found (DB or .env). Abort.")
+            sys.exit(1)
+
+        # LWA credentials from .env
+        lwa_app_id = env("LWA_CLIENT_ID", default=None) or env("LWA_APP_ID", default=None)
+        lwa_client_secret = env("LWA_CLIENT_SECRET", default=None)
+        if not lwa_app_id or not lwa_client_secret:
+            self.stderr.write("Missing LWA_CLIENT_ID/LWA_CLIENT_SECRET in .env. Abort.")
+            sys.exit(1)
+
+        # AWS signing keys (user or role)
+        aws_access_key = (
+            env("AWS_ACCESS_KEY_ID", default=None)
+            or env("SP_API_ACCESS_KEY", default=None)
+            or env("SP_API_ACCESS_KEY_ID", default=None)
+        )
+        aws_secret_key = env("AWS_SECRET_ACCESS_KEY", default=None) or env("SP_API_SECRET_KEY", default=None)
+        role_arn = env("ROLE_ARN", default=None) or env("SP_API_ROLE_ARN", default=None)
+        if not role_arn and (not aws_access_key or not aws_secret_key):
+            self.stderr.write("Missing AWS keys (AWS_ACCESS_KEY_ID/AWS_SECRET_ACCESS_KEY) or ROLE_ARN. Abort.")
+            sys.exit(1)
 
         creds = {
-            "refresh_token": refresh_token or "",
-            "lwa_app_id": lwa_app_id or "",
-            "lwa_client_secret": lwa_client_secret or "",
-            "aws_access_key": aws_access_key or "",
-            "aws_secret_key": aws_secret_key or "",
+            "refresh_token": refresh_token,
+            "lwa_app_id": lwa_app_id,
+            "lwa_client_secret": lwa_client_secret,
         }
         if role_arn:
             creds["role_arn"] = role_arn
+        else:
+            creds["aws_access_key"] = aws_access_key
+            creds["aws_secret_key"] = aws_secret_key
 
         try:
             client = Sellers(credentials=creds, marketplace=Marketplaces.JP)
 
-            # library version compatibility: try several method names
+            # Compatibility across versions
             method = None
             for name in (
                 "get_marketplace_participations",
@@ -52,16 +80,14 @@ class Command(BaseCommand):
                     method = cand
                     break
             if method is None:
-                # No known method found; surface available attributes to help troubleshooting
                 attrs = ",".join([a for a in dir(client) if not a.startswith("_")])
                 raise AttributeError(
-                    f"Sellers API method not found on client (looked for get_marketplace_participations). "
-                    f"Available: {attrs}"
+                    "Sellers API method not found (get_marketplace_participations). Available: " + attrs
                 )
 
             res = method()
 
-            # Resolve HTTP status code across library versions
+            # Resolve HTTP status code
             status = None
             try:
                 status = getattr(getattr(res, "raw", None), "status_code", None)
@@ -71,22 +97,15 @@ class Command(BaseCommand):
                 status = getattr(getattr(res, "_response", None), "status_code", None)
 
             payload = getattr(res, "payload", None) or {}
-            data = None
-            if isinstance(payload, dict) and payload.get("payload") is not None:
-                data = payload.get("payload")
-            else:
-                data = payload
-
             marketplaces = []
             try:
-                # case: list of participations
+                data = payload.get("payload") if isinstance(payload, dict) and "payload" in payload else payload
                 if isinstance(data, list):
                     for p in data:
                         mk = (p or {}).get("marketplace", {})
                         name = mk.get("name") or mk.get("id") or mk.get("defaultCountryCode")
                         if name:
                             marketplaces.append(name)
-                # case: dict with marketplace or participations
                 elif isinstance(data, dict):
                     if "marketplace" in data:
                         mk = data.get("marketplace", {})
@@ -102,10 +121,10 @@ class Command(BaseCommand):
             except Exception:
                 pass
 
-            print(f"status={status or 'unknown'} marketplace_id={marketplace_id} marketplaces={marketplaces}")
+            self.stdout.write(f"status={status or 'unknown'} marketplaces={marketplaces}")
         except SellingApiException as e:
             code = getattr(e, "code", None)
             status = getattr(e, "status_code", None)
             msg = str(e)
-            print(f"SP-API Sellers ping failed: code={code} status={status} msg={msg}", file=sys.stderr)
+            self.stderr.write(f"SP-API Sellers ping failed: code={code} status={status} msg={msg}")
             sys.exit(1)
