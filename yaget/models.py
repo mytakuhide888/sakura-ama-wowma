@@ -1494,3 +1494,12 @@ class QooCategory(models.Model):
 
     def __str__(self):
         return '<QooCategory:s_cat_id=' + str(self.s_cat_id) + '>'
+
+class LwaCredential(models.Model):
+    name = models.CharField(max_length=64, unique=True, default='default')
+    refresh_token = models.TextField(default='')
+    created_at = models.DateTimeField(default=timezone.now)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    def __str__(self):
+        return f"<LwaCredential:name={self.name}>"
