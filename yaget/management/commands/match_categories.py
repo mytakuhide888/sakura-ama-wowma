@@ -109,8 +109,9 @@ class Command(BaseCommand):
         t = t.replace("＆", "&")
         for ch in [">", "/", "\\", "|", "・", "&"]:
             t = t.replace(ch, " ")
-        t = re.sub(r"[^0-9a-zA-Zぁ-んァ-ン一-龥\\s]+", " ", t)
-        tokens = [tok for tok in re.split(r"\\s+", t) if tok]
+        # Allow alnum + Japanese + whitespace, collapse everything else to space
+        t = re.sub(r"[^0-9a-zA-Zぁ-んァ-ン一-龥\s]+", " ", t)
+        tokens = [tok for tok in re.split(r"\s+", t) if tok]
         normed = []
         for tok in tokens:
             normed.append(synonyms.get(tok, tok))
