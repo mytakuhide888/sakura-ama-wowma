@@ -117,19 +117,20 @@ class Command(BaseCommand):
         return " ".join(normed)
 
     def build_wow_index(self, wow_records, synonyms):
-        idx3 = defaultdict(list)
+        idx1 = defaultdict(list)
         idx2 = defaultdict(list)
         norm_cache = {}
         for w in wow_records:
             levels = [w.level_1_cat_name, w.level_2_cat_name, w.level_3_cat_name, w.level_4_cat_name]
             levels = [lv for lv in levels if lv]
             norm_levels = [self.normalize(lv, synonyms) for lv in levels]
-            norm_cache[w.product_cat_id] = (levels, norm_levels)
-            if len(norm_levels) >= 3:
-                idx3[tuple(norm_levels[:3])].append(w.product_cat_id)
+            norm_path = " / ".join(norm_levels)
+            norm_cache[w.product_cat_id] = (levels, norm_levels, norm_path)
+            if norm_levels:
+                idx1[norm_levels[0]].append(w.product_cat_id)
             if len(norm_levels) >= 2:
-                idx2[tuple(norm_levels[:2])].append(w.product_cat_id)
-        return {"idx3": idx3, "idx2": idx2, "norm_cache": norm_cache}
+                idx2[" ".join(norm_levels[:2])].append(w.product_cat_id)
+        return {"idx1": idx1, "idx2": idx2, "norm_cache": norm_cache}
 
     def fuzzy(self, a: str, b: str) -> float:
         if not a or not b:
@@ -157,29 +158,41 @@ class Command(BaseCommand):
                 continue
             norm_levels = [self.normalize(lv, synonyms) for lv in levels]
             ama_path = "/".join([lv for lv in levels if lv])
+            ama_norm_path = " / ".join(norm_levels)
 
-            # try prefix-3
             candidates = []
-            if len(norm_levels) >= 3:
-                candidates.extend(wow_index["idx3"].get(tuple(norm_levels[:3]), []))
-            if not candidates and len(norm_levels) >= 2:
-                candidates.extend(wow_index["idx2"].get(tuple(norm_levels[:2]), []))
+            if norm_levels:
+                candidates.extend(wow_index["idx1"].get(norm_levels[0], []))
+            if len(norm_levels) >= 2:
+                candidates.extend(wow_index["idx2"].get(" ".join(norm_levels[:2]), []))
 
             if not candidates:
                 continue
 
-            for cid in candidates:
-                w_levels, w_norm = wow_index["norm_cache"][cid]
-                wow_path = "/".join([lv for lv in w_levels if lv])
-                score = self.fuzzy(norm_levels[-1], w_norm[-1] if w_norm else "")
+            best = None
+            best_level2 = None
 
-                if len(norm_levels) >= 3 and len(w_norm) >= 3 and tuple(norm_levels[:3]) == tuple(w_norm[:3]):
-                    if score >= auto_threshold:
-                        auto_rows.append([a.product_cat_id, ama_path, cid, wow_path, f"{score:.3f}", "3level_match", ""])
-                    elif score >= review_threshold:
-                        review_rows.append([a.product_cat_id, ama_path, cid, wow_path, f"{score:.3f}", "needs_review_score", ""])
-                elif len(norm_levels) >= 2 and len(w_norm) >= 2 and tuple(norm_levels[:2]) == tuple(w_norm[:2]):
-                    review_lvl2_rows.append([a.product_cat_id, ama_path, cid, wow_path, f"{score:.3f}", "level2_fallback", ""])
+            for cid in candidates:
+                w_levels, w_norm, w_norm_path = wow_index["norm_cache"][cid]
+                wow_path = "/".join([lv for lv in w_levels if lv])
+                score = self.fuzzy(ama_norm_path, w_norm_path)
+
+                if len(norm_levels) >= 3 and len(w_norm) >= 3:
+                    if best is None or score > best[0]:
+                        best = (score, cid, wow_path)
+                elif len(norm_levels) >= 2 and len(w_norm) >= 2:
+                    if best_level2 is None or score > best_level2[0]:
+                        best_level2 = (score, cid, wow_path)
+
+            if best:
+                score, cid, wow_path = best
+                if score >= auto_threshold:
+                    auto_rows.append([a.product_cat_id, ama_path, cid, wow_path, f"{score:.3f}", "auto_prefix", ""])
+                elif score >= review_threshold:
+                    review_rows.append([a.product_cat_id, ama_path, cid, wow_path, f"{score:.3f}", "needs_review_score", ""])
+            elif best_level2:
+                score, cid, wow_path = best_level2
+                review_lvl2_rows.append([a.product_cat_id, ama_path, cid, wow_path, f"{score:.3f}", "level2_fallback", ""])
 
         return auto_rows, review_rows, review_lvl2_rows
 
