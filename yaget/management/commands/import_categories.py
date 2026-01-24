@@ -113,10 +113,10 @@ class Command(BaseCommand):
                 levels = [p.strip() for p in node_path.split("/") if p.strip()]
                 fields = {
                     "product_cat_name": node_path,
-                    "parent_cat_id": "",
-                    "qoo_cat_id": "",
-                    "wow_cat_id": "",
-                    "yahoo_cat_id": "",
+                    "parent_cat_id": 0,
+                    "qoo_cat_id": 0,
+                    "wow_cat_id": 0,
+                    "yahoo_cat_id": 0,
                 }
                 for idx, name in enumerate(levels[:8], start=1):
                     fields[f"level_{idx}_cat_name"] = name
