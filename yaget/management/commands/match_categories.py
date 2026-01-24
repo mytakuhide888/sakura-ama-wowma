@@ -121,6 +121,7 @@ class Command(BaseCommand):
         idx1 = defaultdict(list)
         idx2 = defaultdict(list)
         norm_cache = {}
+        first_tokens = set()
         for w in wow_records:
             levels = [w.level_1_cat_name, w.level_2_cat_name, w.level_3_cat_name, w.level_4_cat_name]
             levels = [lv for lv in levels if lv]
@@ -129,9 +130,10 @@ class Command(BaseCommand):
             norm_cache[w.product_cat_id] = (levels, norm_levels, norm_path)
             if norm_levels:
                 idx1[norm_levels[0]].append(w.product_cat_id)
+                first_tokens.add(norm_levels[0])
             if len(norm_levels) >= 2:
                 idx2[" ".join(norm_levels[:2])].append(w.product_cat_id)
-        return {"idx1": idx1, "idx2": idx2, "norm_cache": norm_cache}
+        return {"idx1": idx1, "idx2": idx2, "norm_cache": norm_cache, "first_tokens": list(first_tokens)}
 
     def fuzzy(self, a: str, b: str) -> float:
         if not a or not b:
@@ -167,8 +169,18 @@ class Command(BaseCommand):
             if len(norm_levels) >= 2:
                 candidates.extend(wow_index["idx2"].get(" ".join(norm_levels[:2]), []))
 
-            if not candidates:
-                continue
+            # fallback: fuzzy on first token to nearest wow first token
+            if not candidates and norm_levels:
+                ama_first = norm_levels[0]
+                best_token = None
+                best_sim = 0.0
+                for token in wow_index["first_tokens"]:
+                    sim = self.fuzzy(ama_first, token)
+                    if sim > best_sim:
+                        best_sim = sim
+                        best_token = token
+                if best_sim >= 0.3 and best_token:
+                    candidates.extend(wow_index["idx1"].get(best_token, []))
 
             best = None
             best_level2 = None
