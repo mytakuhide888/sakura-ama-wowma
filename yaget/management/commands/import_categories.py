@@ -63,14 +63,22 @@ class Command(BaseCommand):
             self.stdout.write(self.style.SUCCESS(f"Imported {count} Wowma categories"))
 
     def import_amazon(self, base_dir: Path, limit=None) -> int:
-        files = sorted(base_dir.glob("*.xls*"))
+        files = [
+            f
+            for f in sorted(base_dir.glob("*.xls*"))
+            if f.suffix.lower() in (".xls", ".xlsx") and "Zone.Identifier" not in f.name
+        ]
         if not files:
-            raise CommandError(f"No BTG .xls files found in {base_dir}")
+            raise CommandError(f"No BTG .xls/.xlsx files found in {base_dir}")
 
         objs = []
         total = 0
         for file in files:
-            book = xlrd.open_workbook(file)
+            try:
+                book = xlrd.open_workbook(file)
+            except Exception as e:
+                self.stdout.write(self.style.WARNING(f"Skip {file.name}: {e}"))
+                continue
             if book.nsheets < 2:
                 continue
             sh = book.sheet_by_index(1)
