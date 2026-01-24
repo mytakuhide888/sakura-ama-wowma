@@ -1,0 +1,2 @@
+# review TSV columns (tab-separated, header only)
+AmaCatID	AmaPath	WowCatID_candidate	WowPath	score	decision_reason	comment
