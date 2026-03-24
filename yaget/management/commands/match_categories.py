@@ -49,6 +49,12 @@ class Command(BaseCommand):
             help="TSV mapping of Ama level1+level2 to Wow level1+level2",
         )
         parser.add_argument(
+            "--level3-map",
+            type=str,
+            default=str(Path("docs/category_mapping/level_3_cat.txt")),
+            help="TSV mapping of Ama level1+level2+level3 to Wow level1+level2 (higher priority than level2-map)",
+        )
+        parser.add_argument(
             "--outdir",
             type=str,
             default="codex_out",
@@ -67,7 +73,8 @@ class Command(BaseCommand):
 
         level1_map = self.load_level1_map(Path(options["level1_map"]))
         level2_map = self.load_level2_map(Path(options["level2_map"]))
-        self.stdout.write(f"Loaded level2_map entries: {len(level2_map)}")
+        level3_map = self.load_level3_map(Path(options["level3_map"]))
+        self.stdout.write(f"Loaded level2_map entries: {len(level2_map)}, level3_map entries: {len(level3_map)}")
         wow_records = self.filter_wow_by_level1(level1_map)
         ama_records = list(AmaCategory.objects.all())
         self.stdout.write(f"Loaded Ama: {len(ama_records)}, Wow (filtered): {len(wow_records)}")
@@ -79,6 +86,7 @@ class Command(BaseCommand):
             synonyms,
             level1_map,
             level2_map,
+            level3_map,
             auto_threshold=options["auto_threshold"],
             review_threshold=options["review_threshold"],
         )
@@ -175,6 +183,30 @@ class Command(BaseCommand):
                 mapping[key].append((wow_l1, wow_l2))
         return mapping
 
+    def load_level3_map(self, path: Path):
+        """Load level3 mapping: (AmaL1, AmaL2, AmaL3) -> [(WowL1, WowL2)]"""
+        mapping = {}
+        if not path.exists():
+            return mapping
+        lines = path.read_text(encoding="utf-8").splitlines()
+        for line in lines[1:]:  # skip header
+            if not line.strip() or line.strip().startswith("#"):
+                continue
+            parts = line.split("\t")
+            if len(parts) < 5:
+                continue
+            ama_l1 = parts[0].strip().strip('"')
+            ama_l2 = parts[1].strip().strip('"')
+            ama_l3 = parts[2].strip().strip('"')
+            wow_l1 = parts[3].strip().strip('"')
+            wow_l2 = parts[4].strip().strip('"')
+            if ama_l1 and ama_l2 and ama_l3 and wow_l1 and wow_l2:
+                key = (ama_l1, ama_l2, ama_l3)
+                if key not in mapping:
+                    mapping[key] = []
+                mapping[key].append((wow_l1, wow_l2))
+        return mapping
+
     def filter_wow_by_level1(self, level1_map):
         wow = list(WowCategory.objects.all())
         if not level1_map:
@@ -229,7 +261,9 @@ class Command(BaseCommand):
             return 0.0
         return SequenceMatcher(None, a, b).ratio()
 
-    def match_all(self, ama_records, wow_index, synonyms, level1_map, level2_map, auto_threshold=0.7, review_threshold=0.4):
+    def match_all(self, ama_records, wow_index, synonyms, level1_map, level2_map, level3_map=None, auto_threshold=0.7, review_threshold=0.4):
+        if level3_map is None:
+            level3_map = {}
         auto_rows = []
         review_rows = []
         review_lvl2_rows = []
@@ -255,8 +289,17 @@ class Command(BaseCommand):
             candidates = []
             used_level2 = False
 
-            # level2_mapを使ってAmazon第1+第2階層から対応するWowma第1+第2階層を取得
-            if len(levels) >= 2:
+            # level3_mapを使ってAmazon第1+第2+第3階層から対応するWowma第1+第2階層を取得（最高優先度）
+            if len(levels) >= 3:
+                ama_key3 = (levels[0], levels[1], levels[2])
+                if ama_key3 in level3_map:
+                    used_level2 = True  # スコアボーナスを適用
+                    for wow_l1, wow_l2 in level3_map[ama_key3]:
+                        cands = wow_index["idx_by_wow_l1l2"].get((wow_l1, wow_l2), [])
+                        candidates.extend(cands)
+
+            # level3_mapにマッチがない場合、level2_mapを使ってAmazon第1+第2階層から対応するWowma第1+第2階層を取得
+            if not candidates and len(levels) >= 2:
                 ama_key = (levels[0], levels[1])
                 if ama_key in level2_map:
                     used_level2 = True

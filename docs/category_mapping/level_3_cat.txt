@@ -1,0 +1,11 @@
+AmaL1	AmaL2	AmaL3	WowL1	WowL2
+# Clothing, Shoes & Jewelry の L3 特化マッピング
+# Women向け
+Clothing, Shoes & Jewelry	Women	Shoes	レディースファッション	靴・シューズ
+Clothing, Shoes & Jewelry	Women	Jewelry	アクセサリー・ジュエリー	その他アクセサリー・ジュエリー
+Clothing, Shoes & Jewelry	Women	Accessories	バッグ・財布・ファッション小物	ファッション小物
+Clothing, Shoes & Jewelry	Women	Watches	腕時計	腕時計レディース
+# Men向け
+Clothing, Shoes & Jewelry	Men	Shoes	メンズファッション	靴・シューズ
+Clothing, Shoes & Jewelry	Men	Accessories	バッグ・財布・ファッション小物	ファッション小物
+Clothing, Shoes & Jewelry	Men	Watches	腕時計	腕時計メンズ
