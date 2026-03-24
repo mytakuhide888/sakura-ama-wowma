@@ -288,13 +288,17 @@ class Command(BaseCommand):
 
             candidates = []
             used_level2 = False
+            used_level3 = False
+            level3_targets = []  # level3_mapがマッチした場合の(wow_l1, wow_l2)リスト
 
             # level3_mapを使ってAmazon第1+第2+第3階層から対応するWowma第1+第2階層を取得（最高優先度）
             if len(levels) >= 3:
                 ama_key3 = (levels[0], levels[1], levels[2])
                 if ama_key3 in level3_map:
                     used_level2 = True  # スコアボーナスを適用
-                    for wow_l1, wow_l2 in level3_map[ama_key3]:
+                    used_level3 = True
+                    level3_targets = level3_map[ama_key3]
+                    for wow_l1, wow_l2 in level3_targets:
                         cands = wow_index["idx_by_wow_l1l2"].get((wow_l1, wow_l2), [])
                         candidates.extend(cands)
 
@@ -355,7 +359,6 @@ class Command(BaseCommand):
             score_bonus = 0.15 if used_level2 else 0.0
             reason_suffix = "_l2map" if used_level2 else ""
 
-            chosen_reason = None
             if best_prefix and (best is None or best_prefix[1] >= best[0] + 0.05):
                 # prefer strong prefix match unless fuzzy is clearly better
                 _, pscore, cid, wow_path = best_prefix
@@ -364,6 +367,14 @@ class Command(BaseCommand):
                     auto_rows.append([a.product_cat_id, ama_path, cid, wow_path, f"{effective_score:.3f}", f"prefix_match{reason_suffix}", ""])
                     continue
                 elif effective_score >= review_threshold:
+                    if used_level3:
+                        # level3_map対象のL2内にあるその他カテゴリへフォールバック
+                        sonota = self._find_sonota_in_level3_targets(level3_targets, wow_index)
+                        if sonota:
+                            sonota_cid, sonota_levels = sonota
+                            sonota_path = "/".join(sonota_levels)
+                            auto_rows.append([a.product_cat_id, ama_path, sonota_cid, sonota_path, "0.600", "sonota_l3fallback", ""])
+                            continue
                     review_rows.append([a.product_cat_id, ama_path, cid, wow_path, f"{effective_score:.3f}", f"prefix_match{reason_suffix}", ""])
                     continue
 
@@ -373,7 +384,17 @@ class Command(BaseCommand):
                 if effective_score >= auto_threshold:
                     auto_rows.append([a.product_cat_id, ama_path, cid, wow_path, f"{effective_score:.3f}", f"auto_fuzzy{reason_suffix}", ""])
                 elif effective_score >= review_threshold:
-                    review_rows.append([a.product_cat_id, ama_path, cid, wow_path, f"{effective_score:.3f}", f"needs_review{reason_suffix}", ""])
+                    if used_level3:
+                        # level3_map対象のL2内にあるその他カテゴリへフォールバック
+                        sonota = self._find_sonota_in_level3_targets(level3_targets, wow_index)
+                        if sonota:
+                            sonota_cid, sonota_levels = sonota
+                            sonota_path = "/".join(sonota_levels)
+                            auto_rows.append([a.product_cat_id, ama_path, sonota_cid, sonota_path, "0.600", "sonota_l3fallback", ""])
+                        else:
+                            review_rows.append([a.product_cat_id, ama_path, cid, wow_path, f"{effective_score:.3f}", f"needs_review{reason_suffix}", ""])
+                    else:
+                        review_rows.append([a.product_cat_id, ama_path, cid, wow_path, f"{effective_score:.3f}", f"needs_review{reason_suffix}", ""])
                 else:
                     # スコアが低い場合は「その他」カテゴリにフォールバック
                     sonota = self._find_sonota_fallback(levels, level1_map, level2_map, wow_index)
@@ -387,7 +408,17 @@ class Command(BaseCommand):
                 if effective_score >= 0.75:
                     auto_rows.append([a.product_cat_id, ama_path, cid, wow_path, f"{effective_score:.3f}", f"auto_level2{reason_suffix}", ""])
                 elif effective_score >= review_threshold:
-                    review_lvl2_rows.append([a.product_cat_id, ama_path, cid, wow_path, f"{effective_score:.3f}", f"level2_fallback{reason_suffix}", ""])
+                    if used_level3:
+                        # level3_map対象のL2内にあるその他カテゴリへフォールバック
+                        sonota = self._find_sonota_in_level3_targets(level3_targets, wow_index)
+                        if sonota:
+                            sonota_cid, sonota_levels = sonota
+                            sonota_path = "/".join(sonota_levels)
+                            auto_rows.append([a.product_cat_id, ama_path, sonota_cid, sonota_path, "0.600", "sonota_l3fallback", ""])
+                        else:
+                            review_lvl2_rows.append([a.product_cat_id, ama_path, cid, wow_path, f"{effective_score:.3f}", f"level2_fallback{reason_suffix}", ""])
+                    else:
+                        review_lvl2_rows.append([a.product_cat_id, ama_path, cid, wow_path, f"{effective_score:.3f}", f"level2_fallback{reason_suffix}", ""])
                 else:
                     # スコアが低い場合は「その他」カテゴリにフォールバック
                     sonota = self._find_sonota_fallback(levels, level1_map, level2_map, wow_index)
@@ -404,6 +435,21 @@ class Command(BaseCommand):
                     auto_rows.append([a.product_cat_id, ama_path, sonota_cid, sonota_path, "0.600", "sonota_fallback", ""])
 
         return auto_rows, review_rows, review_lvl2_rows
+
+    def _find_sonota_in_level3_targets(self, level3_targets, wow_index):
+        """level3_mapがマッチしたWowma L1+L2内の「その他」カテゴリを検索"""
+        for wow_l1, wow_l2 in level3_targets:
+            key = (wow_l1, wow_l2)
+            if key in wow_index["sonota_by_l1l2"]:
+                return wow_index["sonota_by_l1l2"][key]
+            # wow_l2自体が「その他」で始まる場合はそのカテゴリを直接使用
+            if wow_l2.startswith("その他"):
+                cids = wow_index["idx_by_wow_l1l2"].get(key, [])
+                if cids:
+                    norm_cache = wow_index["norm_cache"]
+                    best_cid = min(cids, key=lambda c: len(norm_cache[c][0]))
+                    return (best_cid, norm_cache[best_cid][0])
+        return None
 
     def _find_sonota_fallback(self, ama_levels, level1_map, level2_map, wow_index):
         """「その他」カテゴリへのフォールバックを検索"""
