@@ -62,6 +62,7 @@ yaget/userdata/Default/
 # === secrets / credentials (never track) ===
 .env
 *.env
+spapi_secrets.local.env
 *.key
 *.pem
 *.p12

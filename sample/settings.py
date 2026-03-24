@@ -14,6 +14,10 @@ from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
+LOG_DIR = Path("/home/django/sample/log")
+if not LOG_DIR.exists():
+    LOG_DIR = BASE_DIR / "log"
+LOG_DIR.mkdir(parents=True, exist_ok=True)
 
 
 # Quick-start development settings - unsuitable for production
@@ -162,7 +166,7 @@ LOGGING = {
         'file': {
             'level': 'DEBUG',
             'class': 'logging.handlers.RotatingFileHandler',
-            'filename': '/home/django/sample/log/debug.log',
+            'filename': str(LOG_DIR / 'debug.log'),
             'maxBytes': 300000,
             'backupCount':2,
             'formatter':'standard',
@@ -170,7 +174,7 @@ LOGGING = {
         'django': {
             'level': 'DEBUG',
             'class': 'logging.handlers.RotatingFileHandler',
-            'filename': '/home/django/sample/log/django_only_debug.log',
+            'filename': str(LOG_DIR / 'django_only_debug.log'),
             'maxBytes': 300000,
             'backupCount':2,
             'formatter':'standard',
@@ -185,7 +189,7 @@ LOGGING = {
 
             'level': 'DEBUG',
             'class': 'logging.FileHandler',
-            'filename': '/home/django/sample/log/django_debug.log',
+            'filename': str(LOG_DIR / 'django_debug.log'),
             'formatter': 'standard'
         },
     },

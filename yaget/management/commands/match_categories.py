@@ -37,6 +37,18 @@ class Command(BaseCommand):
             help="TSV file of synonyms (key<TAB>comma-separated synonyms)",
         )
         parser.add_argument(
+            "--level1-map",
+            type=str,
+            default=str(Path("docs/category_mapping/level_1_cat.txt")),
+            help="TSV mapping of Ama level1 to allowed Wow level1 (columns: AmaPath第一階層\tWowPath第一階層)",
+        )
+        parser.add_argument(
+            "--level2-map",
+            type=str,
+            default=str(Path("docs/category_mapping/level_2_cat.txt")),
+            help="TSV mapping of Ama level1+level2 to Wow level1+level2",
+        )
+        parser.add_argument(
             "--outdir",
             type=str,
             default="codex_out",
@@ -53,15 +65,20 @@ class Command(BaseCommand):
         synonyms = self.load_synonyms(syn_path)
         self.stdout.write(f"Loaded synonyms entries: {len(synonyms)}")
 
-        wow_records = list(WowCategory.objects.all())
+        level1_map = self.load_level1_map(Path(options["level1_map"]))
+        level2_map = self.load_level2_map(Path(options["level2_map"]))
+        self.stdout.write(f"Loaded level2_map entries: {len(level2_map)}")
+        wow_records = self.filter_wow_by_level1(level1_map)
         ama_records = list(AmaCategory.objects.all())
-        self.stdout.write(f"Loaded Ama: {len(ama_records)}, Wow: {len(wow_records)}")
+        self.stdout.write(f"Loaded Ama: {len(ama_records)}, Wow (filtered): {len(wow_records)}")
 
         wow_index = self.build_wow_index(wow_records, synonyms)
         auto_rows, review_rows, review_lvl2_rows = self.match_all(
             ama_records,
             wow_index,
             synonyms,
+            level1_map,
+            level2_map,
             auto_threshold=options["auto_threshold"],
             review_threshold=options["review_threshold"],
         )
@@ -110,16 +127,68 @@ class Command(BaseCommand):
         for ch in [">", "/", "\\", "|", "・", "&"]:
             t = t.replace(ch, " ")
         # Allow alnum + Japanese + whitespace, collapse everything else to space
-        t = re.sub(r"[^0-9a-zA-Zぁ-んァ-ン一-龥\s]+", " ", t)
+        # カタカナ長音「ー」(U+30FC)、ヴ等の拡張カタカナも許可
+        t = re.sub(r"[^0-9a-zA-Zぁ-んァ-ヶー一-龥\s]+", " ", t)
         tokens = [tok for tok in re.split(r"\s+", t) if tok]
         normed = []
         for tok in tokens:
             normed.append(synonyms.get(tok, tok))
         return " ".join(normed)
 
+    def load_level1_map(self, path: Path):
+        mapping = set()
+        if not path.exists():
+            return mapping
+        lines = path.read_text(encoding="utf-8").splitlines()
+        for line in lines[1:]:  # skip header
+            if not line.strip():
+                continue
+            parts = line.split("\t")
+            if len(parts) < 2:
+                continue
+            ama = parts[0].strip().strip('"')
+            wow = parts[1].strip().strip('"')
+            if ama and wow:
+                mapping.add((ama, wow))
+        return mapping
+
+    def load_level2_map(self, path: Path):
+        """Load level2 mapping: (AmaL1, AmaL2) -> (WowL1, WowL2)"""
+        mapping = {}
+        if not path.exists():
+            return mapping
+        lines = path.read_text(encoding="utf-8").splitlines()
+        for line in lines[1:]:  # skip header
+            if not line.strip() or line.strip().startswith("#"):
+                continue
+            parts = line.split("\t")
+            if len(parts) < 4:
+                continue
+            ama_l1 = parts[0].strip().strip('"')
+            ama_l2 = parts[1].strip().strip('"')
+            wow_l1 = parts[2].strip().strip('"')
+            wow_l2 = parts[3].strip().strip('"')
+            if ama_l1 and ama_l2 and wow_l1 and wow_l2:
+                key = (ama_l1, ama_l2)
+                if key not in mapping:
+                    mapping[key] = []
+                mapping[key].append((wow_l1, wow_l2))
+        return mapping
+
+    def filter_wow_by_level1(self, level1_map):
+        wow = list(WowCategory.objects.all())
+        if not level1_map:
+            return wow
+        allowed = set([wow1 for ama1, wow1 in level1_map])
+        return [w for w in wow if w.level_1_cat_name in allowed]
+
     def build_wow_index(self, wow_records, synonyms):
         idx1 = defaultdict(list)
         idx2 = defaultdict(list)
+        idx_by_wow_l1 = defaultdict(list)  # Wowma第1階層（原文）でインデックス
+        idx_by_wow_l1l2 = defaultdict(list)  # Wowma第1+第2階層（原文）でインデックス
+        sonota_by_l1 = {}  # 「その他」カテゴリ（第1階層→カテゴリID）
+        sonota_by_l1l2 = {}  # 「その他」カテゴリ（第1+第2階層→カテゴリID）
         norm_cache = {}
         first_tokens = set()
         for w in wow_records:
@@ -128,19 +197,39 @@ class Command(BaseCommand):
             norm_levels = [self.normalize(lv, synonyms) for lv in levels]
             norm_path = " / ".join(norm_levels)
             norm_cache[w.product_cat_id] = (levels, norm_levels, norm_path)
+            # Wowma第1階層（原文）でインデックス作成
+            if levels:
+                idx_by_wow_l1[levels[0]].append(w.product_cat_id)
+            # Wowma第1+第2階層（原文）でインデックス作成
+            if len(levels) >= 2:
+                idx_by_wow_l1l2[(levels[0], levels[1])].append(w.product_cat_id)
+                # 「その他」カテゴリをL1+L2レベルで記録
+                if levels[1].startswith("その他"):
+                    if levels[0] not in sonota_by_l1:
+                        sonota_by_l1[levels[0]] = (w.product_cat_id, levels)
+            # 「その他」カテゴリをL2+L3レベルで記録
+            if len(levels) >= 3 and levels[2].startswith("その他"):
+                key = (levels[0], levels[1])
+                if key not in sonota_by_l1l2:
+                    sonota_by_l1l2[key] = (w.product_cat_id, levels)
             if norm_levels:
                 idx1[norm_levels[0]].append(w.product_cat_id)
                 first_tokens.add(norm_levels[0])
             if len(norm_levels) >= 2:
                 idx2[" ".join(norm_levels[:2])].append(w.product_cat_id)
-        return {"idx1": idx1, "idx2": idx2, "norm_cache": norm_cache, "first_tokens": list(first_tokens)}
+        return {
+            "idx1": idx1, "idx2": idx2,
+            "idx_by_wow_l1": idx_by_wow_l1, "idx_by_wow_l1l2": idx_by_wow_l1l2,
+            "sonota_by_l1": sonota_by_l1, "sonota_by_l1l2": sonota_by_l1l2,
+            "norm_cache": norm_cache, "first_tokens": list(first_tokens)
+        }
 
     def fuzzy(self, a: str, b: str) -> float:
         if not a or not b:
             return 0.0
         return SequenceMatcher(None, a, b).ratio()
 
-    def match_all(self, ama_records, wow_index, synonyms, auto_threshold=0.7, review_threshold=0.4):
+    def match_all(self, ama_records, wow_index, synonyms, level1_map, level2_map, auto_threshold=0.7, review_threshold=0.4):
         auto_rows = []
         review_rows = []
         review_lvl2_rows = []
@@ -164,31 +253,53 @@ class Command(BaseCommand):
             ama_norm_path = " / ".join(norm_levels)
 
             candidates = []
-            if norm_levels:
-                candidates.extend(wow_index["idx1"].get(norm_levels[0], []))
-            if len(norm_levels) >= 2:
-                candidates.extend(wow_index["idx2"].get(" ".join(norm_levels[:2]), []))
+            used_level2 = False
 
-            # fallback: fuzzy on first token to nearest wow first token
-            if not candidates and norm_levels:
-                ama_first = norm_levels[0]
-                best_token = None
-                best_sim = 0.0
-                for token in wow_index["first_tokens"]:
-                    sim = self.fuzzy(ama_first, token)
-                    if sim > best_sim:
-                        best_sim = sim
-                        best_token = token
-                if best_sim >= 0.3 and best_token:
-                    candidates.extend(wow_index["idx1"].get(best_token, []))
+            # level2_mapを使ってAmazon第1+第2階層から対応するWowma第1+第2階層を取得
+            if len(levels) >= 2:
+                ama_key = (levels[0], levels[1])
+                if ama_key in level2_map:
+                    used_level2 = True
+                    for wow_l1, wow_l2 in level2_map[ama_key]:
+                        cands = wow_index["idx_by_wow_l1l2"].get((wow_l1, wow_l2), [])
+                        candidates.extend(cands)
+
+            # level2_mapにマッチがない場合はlevel1_mapにフォールバック
+            if not candidates:
+                # level1_mapを使ってAmazon第1階層から対応するWowma第1階層を取得
+                allowed_wow_levels = [wow for ama, wow in level1_map if ama == levels[0]]
+                allowed_wow_levels = set(allowed_wow_levels)
+
+                # Wowma第1階層（原文）でインデックスを引く（level1_mapに基づく）
+                for wow_l1 in allowed_wow_levels:
+                    cands = wow_index["idx_by_wow_l1"].get(wow_l1, [])
+                    candidates.extend(cands)
+
+            # 重複を除去
+            candidates = list(set(candidates))
 
             best = None
             best_level2 = None
+            best_prefix = None
 
             for cid in candidates:
                 w_levels, w_norm, w_norm_path = wow_index["norm_cache"][cid]
                 wow_path = "/".join([lv for lv in w_levels if lv])
                 score = self.fuzzy(ama_norm_path, w_norm_path)
+
+                # prefix-based hierarchical match (prefer long shared prefix)
+                common_prefix = 0
+                for ama_tok, wow_tok in zip(norm_levels, w_norm):
+                    if ama_tok == wow_tok:
+                        common_prefix += 1
+                    else:
+                        break
+                if common_prefix >= 2:
+                    prefix_score = common_prefix / max(len(norm_levels), len(w_norm))
+                    if best_prefix is None or common_prefix > best_prefix[0] or (
+                        common_prefix == best_prefix[0] and prefix_score > best_prefix[1]
+                    ):
+                        best_prefix = (common_prefix, prefix_score, cid, wow_path)
 
                 if len(norm_levels) >= 3 and len(w_norm) >= 3:
                     if best is None or score > best[0]:
@@ -197,17 +308,78 @@ class Command(BaseCommand):
                     if best_level2 is None or score > best_level2[0]:
                         best_level2 = (score, cid, wow_path)
 
+            # level2マップを使った場合はスコアにボーナスを付与
+            score_bonus = 0.15 if used_level2 else 0.0
+            reason_suffix = "_l2map" if used_level2 else ""
+
+            chosen_reason = None
+            if best_prefix and (best is None or best_prefix[1] >= best[0] + 0.05):
+                # prefer strong prefix match unless fuzzy is clearly better
+                _, pscore, cid, wow_path = best_prefix
+                effective_score = min(1.0, pscore + score_bonus)
+                if effective_score >= auto_threshold:
+                    auto_rows.append([a.product_cat_id, ama_path, cid, wow_path, f"{effective_score:.3f}", f"prefix_match{reason_suffix}", ""])
+                    continue
+                elif effective_score >= review_threshold:
+                    review_rows.append([a.product_cat_id, ama_path, cid, wow_path, f"{effective_score:.3f}", f"prefix_match{reason_suffix}", ""])
+                    continue
+
             if best:
                 score, cid, wow_path = best
-                if score >= auto_threshold:
-                    auto_rows.append([a.product_cat_id, ama_path, cid, wow_path, f"{score:.3f}", "auto_prefix", ""])
-                elif score >= review_threshold:
-                    review_rows.append([a.product_cat_id, ama_path, cid, wow_path, f"{score:.3f}", "needs_review_score", ""])
+                effective_score = min(1.0, score + score_bonus)
+                if effective_score >= auto_threshold:
+                    auto_rows.append([a.product_cat_id, ama_path, cid, wow_path, f"{effective_score:.3f}", f"auto_fuzzy{reason_suffix}", ""])
+                elif effective_score >= review_threshold:
+                    review_rows.append([a.product_cat_id, ama_path, cid, wow_path, f"{effective_score:.3f}", f"needs_review{reason_suffix}", ""])
+                else:
+                    # スコアが低い場合は「その他」カテゴリにフォールバック
+                    sonota = self._find_sonota_fallback(levels, level1_map, level2_map, wow_index)
+                    if sonota:
+                        sonota_cid, sonota_levels = sonota
+                        sonota_path = "/".join(sonota_levels)
+                        auto_rows.append([a.product_cat_id, ama_path, sonota_cid, sonota_path, "0.600", "sonota_fallback", ""])
             elif best_level2:
                 score, cid, wow_path = best_level2
-                review_lvl2_rows.append([a.product_cat_id, ama_path, cid, wow_path, f"{score:.3f}", "level2_fallback", ""])
+                effective_score = min(1.0, score + score_bonus)
+                if effective_score >= 0.75:
+                    auto_rows.append([a.product_cat_id, ama_path, cid, wow_path, f"{effective_score:.3f}", f"auto_level2{reason_suffix}", ""])
+                elif effective_score >= review_threshold:
+                    review_lvl2_rows.append([a.product_cat_id, ama_path, cid, wow_path, f"{effective_score:.3f}", f"level2_fallback{reason_suffix}", ""])
+                else:
+                    # スコアが低い場合は「その他」カテゴリにフォールバック
+                    sonota = self._find_sonota_fallback(levels, level1_map, level2_map, wow_index)
+                    if sonota:
+                        sonota_cid, sonota_levels = sonota
+                        sonota_path = "/".join(sonota_levels)
+                        auto_rows.append([a.product_cat_id, ama_path, sonota_cid, sonota_path, "0.600", "sonota_fallback", ""])
+            else:
+                # マッチがない場合は「その他」カテゴリにフォールバック
+                sonota = self._find_sonota_fallback(levels, level1_map, level2_map, wow_index)
+                if sonota:
+                    sonota_cid, sonota_levels = sonota
+                    sonota_path = "/".join(sonota_levels)
+                    auto_rows.append([a.product_cat_id, ama_path, sonota_cid, sonota_path, "0.600", "sonota_fallback", ""])
 
         return auto_rows, review_rows, review_lvl2_rows
+
+    def _find_sonota_fallback(self, ama_levels, level1_map, level2_map, wow_index):
+        """「その他」カテゴリへのフォールバックを検索"""
+        # level2_mapにマッチがあれば、そのL1+L2に対応する「その他」を探す
+        if len(ama_levels) >= 2:
+            ama_key = (ama_levels[0], ama_levels[1])
+            if ama_key in level2_map:
+                for wow_l1, wow_l2 in level2_map[ama_key]:
+                    key = (wow_l1, wow_l2)
+                    if key in wow_index["sonota_by_l1l2"]:
+                        return wow_index["sonota_by_l1l2"][key]
+
+        # level1_mapからWowma L1を取得し、そのL1に対応する「その他」を探す
+        allowed_wow_l1 = [wow for ama, wow in level1_map if ama == ama_levels[0]]
+        for wow_l1 in allowed_wow_l1:
+            if wow_l1 in wow_index["sonota_by_l1"]:
+                return wow_index["sonota_by_l1"][wow_l1]
+
+        return None
 
     def write_tsv(self, path: Path, header, rows):
         with path.open("w", encoding="utf-8", newline="") as f:

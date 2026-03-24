@@ -1,0 +1,649 @@
+AmaPath第一階層	AmaPath第二階層	WowPath第一階層	WowPath第二階層
+# Musical Instruments → 楽器・音響機器
+Musical Instruments	Guitars	楽器・音響機器	ギター
+Musical Instruments	Bass Guitars	楽器・音響機器	ベース
+Musical Instruments	Drums & Percussion	楽器・音響機器	ドラム・パーカッション
+Musical Instruments	Keyboard Instruments	楽器・音響機器	キーボード・ピアノ
+Musical Instruments	Keyboards & MIDI	楽器・音響機器	キーボード・ピアノ
+Musical Instruments	Pianos & Keyboards	楽器・音響機器	キーボード・ピアノ
+Musical Instruments	Wind & Woodwind Instruments	楽器・音響機器	管楽器
+Musical Instruments	Brass Instruments	楽器・音響機器	管楽器
+Musical Instruments	Stringed Instruments	楽器・音響機器	弦楽器
+Musical Instruments	Ukuleles, Mandolins & Banjos	楽器・音響機器	弦楽器
+Musical Instruments	Studio Recording Equipment	楽器・音響機器	DTM・レコーディング・PA機器
+Musical Instruments	Live Sound & Stage	楽器・音響機器	DTM・レコーディング・PA機器
+Musical Instruments	Recording Equipment	楽器・音響機器	DTM・レコーディング・PA機器
+Musical Instruments	Electronic Music, DJ & Karaoke	楽器・音響機器	DJ＆VJ機材
+Musical Instruments	DJ Equipment	楽器・音響機器	DJ＆VJ機材
+Musical Instruments	Amplifiers & Effects	楽器・音響機器	エフェクター
+Musical Instruments	Instrument Accessories	楽器・音響機器	その他楽器・音響機器
+Musical Instruments	General Accessories & Apparel	楽器・音響機器	その他楽器・音響機器
+Musical Instruments	Microphones	楽器・音響機器	DTM・レコーディング・PA機器
+Musical Instruments	PA Systems	楽器・音響機器	DTM・レコーディング・PA機器
+# Sports & Outdoors → スポーツ・アウトドア
+Sports & Outdoors	Hunting & Fishing	スポーツ・アウトドア	フィッシング
+Sports & Outdoors	Fishing	スポーツ・アウトドア	フィッシング
+Sports & Outdoors	Outdoor Recreation	スポーツ・アウトドア	アウトドア
+Sports & Outdoors	Camping & Hiking	スポーツ・アウトドア	アウトドア
+Sports & Outdoors	Cycling	スポーツ・アウトドア	自転車
+Sports & Outdoors	Sports	スポーツ・アウトドア	その他のスポーツ
+Sports & Outdoors	Fan Shop	スポーツ・アウトドア	その他のスポーツ
+Sports & Outdoors	Exercise & Fitness	ダイエット・健康	ダイエット
+Sports & Outdoors	Sports & Fitness	ダイエット・健康	ダイエット
+# Electronics → 複数カテゴリ
+Electronics	Camera & Photo	テレビ・オーディオ・カメラ	カメラ
+Electronics	Home Audio	テレビ・オーディオ・カメラ	オーディオ
+Electronics	Television & Video	テレビ・オーディオ・カメラ	テレビ本体
+Electronics	Portable Audio & Video	テレビ・オーディオ・カメラ	オーディオ
+Electronics	Headphones	テレビ・オーディオ・カメラ	ヘッドホン・イヤホン
+Electronics	Cell Phones & Accessories	スマホ・タブレット・モバイル通信	スマホアクセサリー
+Electronics	Computers & Accessories	パソコン・PC周辺機器	PCアクセサリ・サプライ
+Electronics	Accessories & Supplies	家電	その他家電
+Electronics	Office Electronics	家電	オフィス家電・電子文具
+Electronics	Wearable Technology	スマホ・タブレット・モバイル通信	ウェアラブルデバイス
+Electronics	eBook Readers & Accessories	スマホ・タブレット・モバイル通信	電子書籍リーダーアクセサリー
+Electronics	GPS, Finders & Accessories	カー用品・バイク用品	カー用品
+Electronics	Car & Vehicle Electronics	カー用品・バイク用品	カー用品
+Electronics	Security & Surveillance	家電	その他家電
+# Grocery & Gourmet Food → グルメ・食品
+Grocery & Gourmet Food	Pantry Staples	グルメ・食品	惣菜・食材
+Grocery & Gourmet Food	Produce	グルメ・食品	野菜・きのこ
+Grocery & Gourmet Food	Meat & Seafood	グルメ・食品	魚介類・シーフード
+Grocery & Gourmet Food	Frozen	グルメ・食品	惣菜・食材
+Grocery & Gourmet Food	Snacks & Sweets	スイーツ・お菓子	スナック菓子・駄菓子
+Grocery & Gourmet Food	Breads & Bakery	グルメ・食品	パン・ジャム・シリアル
+Grocery & Gourmet Food	Deli & Prepared Foods	グルメ・食品	惣菜・食材
+Grocery & Gourmet Food	Beverages	水・ソフトドリンク・お茶	ソフトドリンク
+Grocery & Gourmet Food	Dairy, Eggs & Plant-Based Alternatives	グルメ・食品	チーズ・乳製品
+Grocery & Gourmet Food	Home Brewing & Winemaking	ビール・ワイン・お酒	リキュール
+Grocery & Gourmet Food	Alcoholic Beverages	ビール・ワイン・お酒	リキュール
+Grocery & Gourmet Food	Baby Foods	キッズベビー・マタニティ	ベビー
+Grocery & Gourmet Food	Breakfast Foods	グルメ・食品	パン・ジャム・シリアル
+Grocery & Gourmet Food	Breakfast Cereal	グルメ・食品	パン・ジャム・シリアル
+# Health & Household → 複数カテゴリ
+Health & Household	Medical Supplies & Equipment	医療・介護・医薬品	衛生医療品
+Health & Household	Personal Care	ビューティ・コスメ	ボディケア
+Health & Household	Health Care	ダイエット・健康	健康グッズ
+Health & Household	Household Supplies	日用品・文房具・手芸用品	日用品・生活雑貨
+Health & Household	Vitamins, Minerals & Supplements	ダイエット・健康	サプリメント
+Health & Household	Sexual Wellness	医療・介護・医薬品	避妊具
+Health & Household	Diet & Sports Nutrition	ダイエット・健康	ダイエット
+Health & Household	Baby & Child Care	キッズベビー・マタニティ	ベビー
+Health & Household	Oral Care	ダイエット・健康	デンタルケア
+Health & Household	Wellness & Relaxation	ダイエット・健康	リラックス・マッサージ用品
+Health & Household	Vision	コンタクトレンズ・カラコン	コンタクトレンズ
+# Arts, Crafts & Sewing → 日用品・文房具・手芸用品/おもちゃ・趣味
+Arts, Crafts & Sewing	Crafting	日用品・文房具・手芸用品	手芸・クラフト・生地
+Arts, Crafts & Sewing	Sewing	日用品・文房具・手芸用品	手芸・クラフト・生地
+Arts, Crafts & Sewing	Painting, Drawing & Art Supplies	日用品・文房具・手芸用品	文房具・事務用品・画材
+Arts, Crafts & Sewing	Model & Hobby Building	おもちゃ・趣味	模型・プラモデル
+Arts, Crafts & Sewing	Beading & Jewelry Making	日用品・文房具・手芸用品	手芸・クラフト・生地
+Arts, Crafts & Sewing	Scrapbooking & Stamping	日用品・文房具・手芸用品	手芸・クラフト・生地
+Arts, Crafts & Sewing	Needlework	日用品・文房具・手芸用品	手芸・クラフト・生地
+Arts, Crafts & Sewing	Printmaking	日用品・文房具・手芸用品	文房具・事務用品・画材
+Arts, Crafts & Sewing	Party Decorations & Supplies	おもちゃ・趣味	パーティーグッズ
+Arts, Crafts & Sewing	Knitting & Crochet	日用品・文房具・手芸用品	手芸・クラフト・生地
+Arts, Crafts & Sewing	Fabric	日用品・文房具・手芸用品	手芸・クラフト・生地
+# Clothing, Shoes & Jewelry → ファッション関連
+Clothing, Shoes & Jewelry	Women	レディースファッション	トップス
+Clothing, Shoes & Jewelry	Men	メンズファッション	トップス
+Clothing, Shoes & Jewelry	Girls	キッズベビー・マタニティ	キッズ
+Clothing, Shoes & Jewelry	Boys	キッズベビー・マタニティ	キッズ
+Clothing, Shoes & Jewelry	Baby	キッズベビー・マタニティ	ベビー
+Clothing, Shoes & Jewelry	Sport Specific Clothing	スポーツ・アウトドア	スポーツウェア
+Clothing, Shoes & Jewelry	Novelty & More	レディースファッション	コスチューム
+Clothing, Shoes & Jewelry	Traditional & Cultural Wear	レディースファッション	和装・和服
+Clothing, Shoes & Jewelry	Uniforms, Work & Safety	メンズファッション	作業服
+Clothing, Shoes & Jewelry	Costumes & Accessories	レディースファッション	コスチューム
+Clothing, Shoes & Jewelry	Shoe, Jewelry & Watch Accessories	アクセサリー・ジュエリー	その他アクセサリー・ジュエリー
+Clothing, Shoes & Jewelry	Luggage & Travel Gear	バッグ・財布・ファッション小物	バッグ
+# Home & Kitchen → インテリア・寝具/キッチン
+Home & Kitchen	Kitchen & Dining	キッチン・食器・調理	キッチン用品・キッチン雑貨
+Home & Kitchen	Bedding	インテリア・寝具	寝具
+Home & Kitchen	Bath	日用品・文房具・手芸用品	バス・お風呂用品
+Home & Kitchen	Furniture	インテリア・寝具	収納家具
+Home & Kitchen	Home Décor	インテリア・寝具	インテリア小物・置物
+Home & Kitchen	Lighting & Ceiling Fans	インテリア・寝具	ライト・照明
+Home & Kitchen	Storage & Organization	インテリア・寝具	収納家具
+Home & Kitchen	Cleaning Supplies	日用品・文房具・手芸用品	掃除用具
+# Toys & Games → おもちゃ・趣味/ゲーム
+Toys & Games	Games & Accessories	おもちゃ・趣味	ボードゲーム
+Toys & Games	Building Toys	おもちゃ・趣味	おもちゃ
+Toys & Games	Puzzles	おもちゃ・趣味	パズル
+Toys & Games	Dolls & Accessories	おもちゃ・趣味	おもちゃ
+Toys & Games	Arts & Crafts	おもちゃ・趣味	お絵かき・ねんど・シール
+Toys & Games	Learning & Education	おもちゃ・趣味	知育玩具・教育玩具
+Toys & Games	Stuffed Animals & Plush Toys	おもちゃ・趣味	おもちゃ
+Toys & Games	Action Figures & Statues	おもちゃ・趣味	フィギュア
+Toys & Games	Toy Remote Control & Play Vehicles	おもちゃ・趣味	ラジコン
+Toys & Games	Collectible Toys	おもちゃ・趣味	コレクション
+Toys & Games	Sports & Outdoor Play	おもちゃ・趣味	大型遊具
+Toys & Games	Kids' Electronics	おもちゃ・趣味	おもちゃ
+Toys & Games	Novelty & Gag Toys	おもちゃ・趣味	パーティーグッズ
+# Video Games → ゲーム機・ゲームソフト
+Video Games	PlayStation 5	ゲーム機・ゲームソフト	PlayStation 5
+Video Games	PlayStation 4	ゲーム機・ゲームソフト	PlayStation 4
+Video Games	Nintendo Switch	ゲーム機・ゲームソフト	Nintendo Switch
+Video Games	Xbox Series X & S	ゲーム機・ゲームソフト	Xbox Series S/X
+Video Games	PC	ゲーム機・ゲームソフト	PCゲーム
+Video Games	Accessories	ゲーム機・ゲームソフト	旧世代ゲーム機
+Video Games	Legacy Systems	ゲーム機・ゲームソフト	旧世代ゲーム機
+# Tools & Home Improvement → 花・ガーデン・DIY工具
+Tools & Home Improvement	Power & Hand Tools	花・ガーデン・DIY工具	DIY工具
+Tools & Home Improvement	Hardware	花・ガーデン・DIY工具	DIY工具
+Tools & Home Improvement	Electrical	花・ガーデン・DIY工具	DIY工具
+Tools & Home Improvement	Plumbing	花・ガーデン・DIY工具	建築・住宅・設備
+Tools & Home Improvement	Building Supplies	花・ガーデン・DIY工具	建築・住宅・設備
+Tools & Home Improvement	Painting Supplies & Wall Treatments	花・ガーデン・DIY工具	DIY工具
+Tools & Home Improvement	Safety & Security	日用品・文房具・手芸用品	防犯・護身用品
+Tools & Home Improvement	Lighting & Ceiling Fans	インテリア・寝具	ライト・照明
+# Patio, Lawn & Garden → 花・ガーデン・DIY工具
+Patio, Lawn & Garden	Gardening & Lawn Care	花・ガーデン・DIY工具	ガーデニング
+Patio, Lawn & Garden	Plants, Seeds & Bulbs	花・ガーデン・DIY工具	花・観葉植物・盆栽
+Patio, Lawn & Garden	Outdoor Décor	花・ガーデン・DIY工具	エクステリア
+Patio, Lawn & Garden	Patio Furniture & Accessories	花・ガーデン・DIY工具	エクステリア
+Patio, Lawn & Garden	Outdoor Power Tools	花・ガーデン・DIY工具	DIY工具
+Patio, Lawn & Garden	Grills & Outdoor Cooking	キッチン・食器・調理	調理道具・下ごしらえ用品
+# Pet Supplies → ペット・ペットグッズ
+Pet Supplies	Dogs	ペット・ペットグッズ	犬用品・ドッグフード
+Pet Supplies	Cats	ペット・ペットグッズ	猫用品・キャットフード
+Pet Supplies	Fish & Aquatic Pets	ペット・ペットグッズ	熱帯魚・アクアリウム用品
+Pet Supplies	Birds	ペット・ペットグッズ	小動物・鳥用品
+Pet Supplies	Small Animals	ペット・ペットグッズ	小動物・鳥用品
+Pet Supplies	Reptiles & Amphibians	ペット・ペットグッズ	爬虫類・両生類用品
+# Industrial & Scientific → 複数カテゴリ
+Industrial & Scientific	Lab & Scientific Products	花・ガーデン・DIY工具	DIY工具
+Industrial & Scientific	Industrial Electrical	花・ガーデン・DIY工具	DIY工具
+Industrial & Scientific	Janitorial & Sanitation Supplies	日用品・文房具・手芸用品	掃除用具
+Industrial & Scientific	Occupational Health & Safety Products	医療・介護・医薬品	衛生医療品
+Industrial & Scientific	Material Handling Products	花・ガーデン・DIY工具	DIY工具
+Industrial & Scientific	Food Service Equipment & Supplies	キッチン・食器・調理	業務用厨房機器
+# Books → 本・コミック・雑誌
+Books	Children's Books	本・コミック・雑誌	絵本・児童書
+Books	Arts & Photography	本・コミック・雑誌	アート・建築・デザイン
+Books	Crafts, Hobbies & Home	本・コミック・雑誌	趣味・ホビー
+Books	Science & Math	本・コミック・雑誌	科学・テクノロジー
+Books	Computers & Technology	本・コミック・雑誌	コンピュータ・IT
+Books	Health, Fitness & Dieting	本・コミック・雑誌	美容・健康・料理・子育て
+Books	Business & Money	本・コミック・雑誌	ビジネス・経済
+Books	Cookbooks, Food & Wine	本・コミック・雑誌	美容・健康・料理・子育て
+Books	Comics & Graphic Novels	本・コミック・雑誌	コミック・ライトノベル
+Books	Travel	本・コミック・雑誌	旅行・留学・海外赴任
+Books	Teen & Young Adult	本・コミック・雑誌	小説・文芸・エッセイ
+Books	History	本・コミック・雑誌	歴史・地理
+Books	Religion & Spirituality	本・コミック・雑誌	人文・思想
+Books	Medical Books	本・コミック・雑誌	医学・薬学・看護学・歯科学
+Books	Education & Teaching	本・コミック・雑誌	教育・学参・受験
+Books	Science Fiction & Fantasy	本・コミック・雑誌	小説・文芸・エッセイ
+Books	Engineering & Transportation	本・コミック・雑誌	科学・テクノロジー
+Books	Politics & Social Sciences	本・コミック・雑誌	社会・政治
+Books	Biographies & Memoirs	本・コミック・雑誌	ノンフィクション
+Books	Self-Help	本・コミック・雑誌	暮らし・実用
+Books	Reference	本・コミック・雑誌	語学・辞事典・年鑑
+Books	Mystery, Thriller & Suspense	本・コミック・雑誌	小説・文芸・エッセイ
+Books	Romance	本・コミック・雑誌	小説・文芸・エッセイ
+Books	LGBTQ+ Books	本・コミック・雑誌	小説・文芸・エッセイ
+Books	Parenting & Relationships	本・コミック・雑誌	美容・健康・料理・子育て
+# Sports & Outdoors 詳細マッピング（第3階層対応）
+Sports & Outdoors	Clothing	スポーツ・アウトドア	スポーツウェア
+Sports & Outdoors	Memorabilia Display & Storage	おもちゃ・趣味	コレクション
+Sports & Outdoors	Sports & Outdoor Recreation Accessories	スポーツ・アウトドア	体育館・グラウンド用品
+# Hunting & Fishing 詳細（L3: Fishing, Hunting, Archery, Shooting）
+# Note: level3はmatch_categories.pyでは直接参照しないが、
+# Hunting & Fishing全体をフィッシングにマッピングしているため問題なし
+# 以下は追加マッピング（重複しても最初にマッチしたものが使われる）
+# Outdoor Recreation 詳細
+Sports & Outdoors	Water Sports	スポーツ・アウトドア	マリンスポーツ
+Sports & Outdoors	Winter Sports	スポーツ・アウトドア	ウィンタースポーツ
+Sports & Outdoors	Climbing	スポーツ・アウトドア	アウトドア
+# Exercise & Fitness 詳細
+Sports & Outdoors	Yoga	ダイエット・健康	ヨガ・ピラティス
+Sports & Outdoors	Pilates	ダイエット・健康	ヨガ・ピラティス
+Sports & Outdoors	Strength Training Equipment	ダイエット・健康	ダイエット
+Sports & Outdoors	Cardio Training	ダイエット・健康	ダイエット
+Sports & Outdoors	Running	スポーツ・アウトドア	陸上・トラック競技
+# Sports 詳細
+Sports & Outdoors	Team Sports	スポーツ・アウトドア	その他のスポーツ
+Sports & Outdoors	Golf	スポーツ・アウトドア	ゴルフ
+Sports & Outdoors	Airsoft	おもちゃ・趣味	サバイバルゲーム
+Sports & Outdoors	Boating & Sailing	スポーツ・アウトドア	マリンスポーツ
+Sports & Outdoors	Skates, Skateboards & Scooters	スポーツ・アウトドア	スケートボード
+Sports & Outdoors	Leisure Sports & Game Room	おもちゃ・趣味	ダーツ
+Sports & Outdoors	Other Sports	スポーツ・アウトドア	その他のスポーツ
+Sports & Outdoors	Triathlon	スポーツ・アウトドア	陸上・トラック競技
+# 追加マッピング（未マッピングの主要カテゴリ）
+# Office Products
+Office Products	Office & School Supplies	日用品・文房具・手芸用品	文房具・事務用品・画材
+Office Products	Office Furniture & Lighting	インテリア・寝具	オフィス家具
+# Industrial & Scientific 追加
+Industrial & Scientific	Professional Dental Supplies	医療・介護・医薬品	衛生医療品
+Industrial & Scientific	Professional Medical Supplies	医療・介護・医薬品	衛生医療品
+Industrial & Scientific	Hydraulics, Pneumatics & Plumbing	花・ガーデン・DIY工具	建築・住宅・設備
+Industrial & Scientific	Power Transmission Products	花・ガーデン・DIY工具	DIY工具
+Industrial & Scientific	Test, Measure & Inspect	花・ガーデン・DIY工具	DIY工具
+Industrial & Scientific	Raw Materials	花・ガーデン・DIY工具	DIY工具
+Industrial & Scientific	Cutting Tools	花・ガーデン・DIY工具	DIY工具
+Industrial & Scientific	Industrial Hardware	花・ガーデン・DIY工具	DIY工具
+Industrial & Scientific	Commercial Door Products	花・ガーデン・DIY工具	建築・住宅・設備
+Industrial & Scientific	Adhesives, Sealants & Lubricants	花・ガーデン・DIY工具	DIY工具
+Industrial & Scientific	Retail Store Fixtures & Equipment	花・ガーデン・DIY工具	DIY工具
+Industrial & Scientific	Filtration	花・ガーデン・DIY工具	DIY工具
+# Home & Kitchen 追加
+Home & Kitchen	Home Décor Products	インテリア・寝具	インテリア小物・置物
+Home & Kitchen	Heating, Cooling & Air Quality	家電	エアコン
+Home & Kitchen	Event & Party Supplies	おもちゃ・趣味	パーティーグッズ
+# Tools & Home Improvement 追加
+Tools & Home Improvement	Appliances	家電	キッチン家電
+Tools & Home Improvement	Kitchen & Bath Fixtures	花・ガーデン・DIY工具	建築・住宅・設備
+Tools & Home Improvement	Paint, Wall Treatments & Supplies	花・ガーデン・DIY工具	DIY工具
+Tools & Home Improvement	Welding & Soldering	花・ガーデン・DIY工具	DIY工具
+# Patio, Lawn & Garden 追加
+Patio, Lawn & Garden	Farm & Ranch	花・ガーデン・DIY工具	ガーデニング
+Patio, Lawn & Garden	Pools, Hot Tubs & Supplies	花・ガーデン・DIY工具	エクステリア
+# Toys & Games 追加
+Toys & Games	Remote & App Controlled Vehicles & Parts	おもちゃ・趣味	ラジコン
+Toys & Games	Dress Up & Pretend Play	おもちゃ・趣味	おもちゃ
+# Video Games 追加
+Video Games	Xbox One	ゲーム機・ゲームソフト	Xbox One
+Video Games	PlayStation 3	ゲーム機・ゲームソフト	PlayStation 3
+Video Games	Wii & Wii U	ゲーム機・ゲームソフト	Wii U
+Video Games	Nintendo 3DS & 2DS	ゲーム機・ゲームソフト	Nintendo 3DS・2DS
+Video Games	PlayStation Vita	ゲーム機・ゲームソフト	PlayStation Vita
+Video Games	Mac	ゲーム機・ゲームソフト	PCゲーム
+Video Games	Digital Games	ゲーム機・ゲームソフト	ダウンロードソフト
+Video Games	Kids & Family	ゲーム機・ゲームソフト	キッズ向けゲーム
+Video Games	Retro Gaming & Microconsoles	ゲーム機・ゲームソフト	旧世代ゲーム機
+Video Games	Virtual Reality	ゲーム機・ゲームソフト	VRゲーム
+Video Games	Gaming Chairs	ゲーム機・ゲームソフト	ゲーミングチェア
+Video Games	Headsets	ゲーム機・ゲームソフト	ゲーミングヘッドセット
+Video Games	Controllers	ゲーム機・ゲームソフト	コントローラー
+Video Games	Cables & Adapters	ゲーム機・ゲームソフト	ゲーム周辺機器
+# Pet Supplies 追加
+Pet Supplies	Horses	ペット・ペットグッズ	小動物・鳥用品
+# Musical Instruments 追加
+Musical Instruments	Band & Orchestra	楽器・音響機器	管楽器
+# Jewelry 追加
+Jewelry	Women	アクセサリー・ジュエリー	ネックレス
+Jewelry	Novelty & More	アクセサリー・ジュエリー	その他アクセサリー・ジュエリー
+# Watches → 腕時計
+Watches	Men	腕時計	メンズ腕時計
+Watches	Women	腕時計	レディース腕時計
+Watches	Boys	腕時計	キッズ腕時計
+Watches	Girls	腕時計	キッズ腕時計
+# ============================================================
+# Electronics L3 詳細マッピング
+# ============================================================
+# Camera & Photo 詳細
+Electronics	Digital Cameras	テレビ・オーディオ・カメラ	デジタルカメラ
+Electronics	DSLR Cameras	テレビ・オーディオ・カメラ	デジタル一眼カメラ
+Electronics	Mirrorless Cameras	テレビ・オーディオ・カメラ	ミラーレス一眼
+Electronics	Camcorders	テレビ・オーディオ・カメラ	ビデオカメラ
+Electronics	Lenses	テレビ・オーディオ・カメラ	カメラ用交換レンズ
+Electronics	Tripods & Monopods	テレビ・オーディオ・カメラ	カメラアクセサリー
+Electronics	Flashes	テレビ・オーディオ・カメラ	ストロボ・フラッシュ
+Electronics	Camera Bags & Cases	テレビ・オーディオ・カメラ	カメラバッグ
+Electronics	Film Photography	テレビ・オーディオ・カメラ	フィルムカメラ
+Electronics	Binoculars & Scopes	テレビ・オーディオ・カメラ	双眼鏡・望遠鏡
+# Home Audio 詳細
+Electronics	Speakers	テレビ・オーディオ・カメラ	スピーカー
+Electronics	Receivers & Amplifiers	テレビ・オーディオ・カメラ	オーディオアンプ
+Electronics	Soundbars	テレビ・オーディオ・カメラ	サウンドバー・シアターバー
+Electronics	Turntables & Accessories	テレビ・オーディオ・カメラ	レコードプレーヤー
+Electronics	CD Players	テレビ・オーディオ・カメラ	オーディオ
+Electronics	Bluetooth & Wireless Speakers	テレビ・オーディオ・カメラ	Bluetoothスピーカー
+# Television & Video 詳細
+Electronics	TVs	テレビ・オーディオ・カメラ	テレビ本体
+Electronics	Projectors	テレビ・オーディオ・カメラ	プロジェクター
+Electronics	Streaming Media Players	テレビ・オーディオ・カメラ	メディアストリーミング端末
+Electronics	DVD & Blu-ray Players	テレビ・オーディオ・カメラ	ブルーレイ・DVDプレーヤー
+Electronics	Home Theater Systems	テレビ・オーディオ・カメラ	ホームシアターシステム
+Electronics	TV Mounts & Stands	テレビ・オーディオ・カメラ	テレビアクセサリー
+# Portable Audio & Video 詳細
+Electronics	MP3 & MP4 Players	テレビ・オーディオ・カメラ	デジタルオーディオプレーヤー
+Electronics	Portable Speakers	テレビ・オーディオ・カメラ	Bluetoothスピーカー
+Electronics	Digital Voice Recorders	テレビ・オーディオ・カメラ	ICレコーダー
+Electronics	Radios	テレビ・オーディオ・カメラ	ラジオ
+# Headphones 詳細
+Electronics	Over-Ear Headphones	テレビ・オーディオ・カメラ	ヘッドホン
+Electronics	On-Ear Headphones	テレビ・オーディオ・カメラ	ヘッドホン
+Electronics	In-Ear Headphones	テレビ・オーディオ・カメラ	イヤホン
+Electronics	Earbuds	テレビ・オーディオ・カメラ	イヤホン
+Electronics	Wireless Headphones	テレビ・オーディオ・カメラ	ワイヤレスヘッドホン
+Electronics	Noise Cancelling Headphones	テレビ・オーディオ・カメラ	ノイズキャンセリングヘッドホン
+# Cell Phones & Accessories 詳細
+Electronics	Cell Phone Cases	スマホ・タブレット・モバイル通信	スマホケース
+Electronics	Screen Protectors	スマホ・タブレット・モバイル通信	スマホフィルム
+Electronics	Chargers & Power Adapters	スマホ・タブレット・モバイル通信	スマホ充電器
+Electronics	Portable Chargers	スマホ・タブレット・モバイル通信	モバイルバッテリー
+Electronics	Power Banks	スマホ・タブレット・モバイル通信	モバイルバッテリー
+Electronics	SIM Cards	スマホ・タブレット・モバイル通信	SIMカード
+Electronics	Cell Phone Stands	スマホ・タブレット・モバイル通信	スマホスタンド
+# Computers & Accessories 詳細
+Electronics	Monitors	パソコン・PC周辺機器	ディスプレイ・モニター
+Electronics	Keyboards	パソコン・PC周辺機器	キーボード
+Electronics	Mice	パソコン・PC周辺機器	マウス
+Electronics	Computer Speakers	パソコン・PC周辺機器	PCスピーカー
+Electronics	Webcams	パソコン・PC周辺機器	Webカメラ
+Electronics	External Hard Drives	パソコン・PC周辺機器	外付けHDD・ポータブルHDD
+Electronics	USB Flash Drives	パソコン・PC周辺機器	USBメモリ
+Electronics	Memory Cards	パソコン・PC周辺機器	SDカード・メモリーカード
+Electronics	Internal Hard Drives	パソコン・PC周辺機器	内蔵HDD
+Electronics	SSDs	パソコン・PC周辺機器	内蔵SSD
+Electronics	RAM	パソコン・PC周辺機器	メモリ
+Electronics	Graphics Cards	パソコン・PC周辺機器	グラフィックボード
+Electronics	Computer Components	パソコン・PC周辺機器	PCパーツ
+Electronics	Printers	パソコン・PC周辺機器	プリンタ・複合機
+Electronics	Scanners	パソコン・PC周辺機器	スキャナー
+Electronics	Routers	パソコン・PC周辺機器	ルーター
+Electronics	Networking Devices	パソコン・PC周辺機器	ネットワーク機器
+Electronics	Laptop Bags & Cases	パソコン・PC周辺機器	PCバッグ・ケース
+Electronics	Laptop Stands	パソコン・PC周辺機器	PCスタンド
+Electronics	Docking Stations	パソコン・PC周辺機器	ドッキングステーション
+Electronics	USB Hubs	パソコン・PC周辺機器	USBハブ
+Electronics	Cables & Adapters	パソコン・PC周辺機器	接続ケーブル
+# ============================================================
+# Clothing, Shoes & Jewelry L3 詳細マッピング
+# ============================================================
+# Women 詳細
+Clothing, Shoes & Jewelry	Tops	レディースファッション	トップス
+Clothing, Shoes & Jewelry	Blouses	レディースファッション	シャツ・ブラウス
+Clothing, Shoes & Jewelry	T-Shirts	レディースファッション	Tシャツ・カットソー
+Clothing, Shoes & Jewelry	Sweaters	レディースファッション	ニット・セーター
+Clothing, Shoes & Jewelry	Dresses	レディースファッション	ワンピース
+Clothing, Shoes & Jewelry	Skirts	レディースファッション	スカート
+Clothing, Shoes & Jewelry	Pants	レディースファッション	パンツ
+Clothing, Shoes & Jewelry	Jeans	レディースファッション	パンツ
+Clothing, Shoes & Jewelry	Shorts	レディースファッション	パンツ
+Clothing, Shoes & Jewelry	Coats & Jackets	レディースファッション	コート・ジャケット
+Clothing, Shoes & Jewelry	Blazers	レディースファッション	スーツ・セットアップ
+Clothing, Shoes & Jewelry	Suits	レディースファッション	スーツ・セットアップ
+Clothing, Shoes & Jewelry	Activewear	レディースファッション	スポーツウェア
+Clothing, Shoes & Jewelry	Swimwear	レディースファッション	水着
+Clothing, Shoes & Jewelry	Sleepwear & Loungewear	インナー・ルームウェア	パジャマ・ルームウェア
+Clothing, Shoes & Jewelry	Lingerie & Underwear	インナー・ルームウェア	インナー・下着
+Clothing, Shoes & Jewelry	Bras	インナー・ルームウェア	ブラジャー
+Clothing, Shoes & Jewelry	Panties	インナー・ルームウェア	ショーツ
+Clothing, Shoes & Jewelry	Socks & Hosiery	レディースファッション	靴下・レッグウェア
+# Shoes 詳細
+Clothing, Shoes & Jewelry	Athletic Shoes	レディースファッション	スニーカー
+Clothing, Shoes & Jewelry	Sneakers	レディースファッション	スニーカー
+Clothing, Shoes & Jewelry	Boots	レディースファッション	ブーツ
+Clothing, Shoes & Jewelry	Heels	レディースファッション	パンプス
+Clothing, Shoes & Jewelry	Pumps	レディースファッション	パンプス
+Clothing, Shoes & Jewelry	Flats	レディースファッション	フラットシューズ
+Clothing, Shoes & Jewelry	Sandals	レディースファッション	サンダル
+Clothing, Shoes & Jewelry	Slippers	インナー・ルームウェア	ルームシューズ
+# Jewelry 詳細
+Clothing, Shoes & Jewelry	Necklaces	アクセサリー・ジュエリー	ネックレス
+Clothing, Shoes & Jewelry	Bracelets	アクセサリー・ジュエリー	ブレスレット
+Clothing, Shoes & Jewelry	Earrings	アクセサリー・ジュエリー	ピアス・イヤリング
+Clothing, Shoes & Jewelry	Rings	アクセサリー・ジュエリー	リング・指輪
+Clothing, Shoes & Jewelry	Pendants	アクセサリー・ジュエリー	ペンダント
+Clothing, Shoes & Jewelry	Charms	アクセサリー・ジュエリー	チャーム
+# Accessories 詳細
+Clothing, Shoes & Jewelry	Handbags	バッグ・財布・ファッション小物	ハンドバッグ
+Clothing, Shoes & Jewelry	Shoulder Bags	バッグ・財布・ファッション小物	ショルダーバッグ
+Clothing, Shoes & Jewelry	Tote Bags	バッグ・財布・ファッション小物	トートバッグ
+Clothing, Shoes & Jewelry	Crossbody Bags	バッグ・財布・ファッション小物	ショルダーバッグ
+Clothing, Shoes & Jewelry	Backpacks	バッグ・財布・ファッション小物	リュック・バックパック
+Clothing, Shoes & Jewelry	Wallets	バッグ・財布・ファッション小物	財布
+Clothing, Shoes & Jewelry	Clutches	バッグ・財布・ファッション小物	クラッチバッグ
+Clothing, Shoes & Jewelry	Belts	バッグ・財布・ファッション小物	ベルト
+Clothing, Shoes & Jewelry	Scarves	バッグ・財布・ファッション小物	マフラー・スカーフ
+Clothing, Shoes & Jewelry	Hats & Caps	バッグ・財布・ファッション小物	帽子
+Clothing, Shoes & Jewelry	Sunglasses	バッグ・財布・ファッション小物	サングラス
+Clothing, Shoes & Jewelry	Gloves	バッグ・財布・ファッション小物	手袋
+Clothing, Shoes & Jewelry	Umbrellas	日用品・文房具・手芸用品	傘・レインコート
+# Men 詳細
+Clothing, Shoes & Jewelry	Dress Shirts	メンズファッション	ワイシャツ
+Clothing, Shoes & Jewelry	Casual Shirts	メンズファッション	カジュアルシャツ
+Clothing, Shoes & Jewelry	Polos	メンズファッション	ポロシャツ
+Clothing, Shoes & Jewelry	Hoodies	メンズファッション	パーカー
+Clothing, Shoes & Jewelry	Sweatshirts	メンズファッション	スウェット・トレーナー
+Clothing, Shoes & Jewelry	Vests	メンズファッション	ベスト
+Clothing, Shoes & Jewelry	Ties	メンズファッション	ネクタイ
+Clothing, Shoes & Jewelry	Dress Pants	メンズファッション	スラックス
+Clothing, Shoes & Jewelry	Chinos	メンズファッション	チノパン
+Clothing, Shoes & Jewelry	Cargo Pants	メンズファッション	カーゴパンツ
+Clothing, Shoes & Jewelry	Underwear	インナー・ルームウェア	メンズインナー
+Clothing, Shoes & Jewelry	Boxers	インナー・ルームウェア	ボクサーパンツ
+Clothing, Shoes & Jewelry	Briefs	インナー・ルームウェア	ブリーフ
+Clothing, Shoes & Jewelry	Undershirts	インナー・ルームウェア	アンダーシャツ
+# ============================================================
+# Software L2マッピング（新規）
+# ============================================================
+Software	Business & Office	パソコン・PC周辺機器	ビジネスソフト
+Software	Education & Reference	パソコン・PC周辺機器	教育・学習ソフト
+Software	Lifestyle & Hobbies	パソコン・PC周辺機器	一般ソフト
+Software	Music	パソコン・PC周辺機器	音楽制作ソフト
+Software	Photography	パソコン・PC周辺機器	画像・写真編集ソフト
+Software	Programming & Web Development	パソコン・PC周辺機器	開発・プログラミングソフト
+Software	Security	パソコン・PC周辺機器	セキュリティソフト
+Software	Utilities	パソコン・PC周辺機器	ユーティリティソフト
+Software	Video	パソコン・PC周辺機器	動画編集ソフト
+Software	Operating Systems	パソコン・PC周辺機器	OS・システムソフト
+Software	Tax Preparation	パソコン・PC周辺機器	ビジネスソフト
+Software	Accounting & Finance	パソコン・PC周辺機器	ビジネスソフト
+Software	Antivirus & Security	パソコン・PC周辺機器	セキュリティソフト
+Software	Children's	パソコン・PC周辺機器	教育・学習ソフト
+Software	Games	ゲーム機・ゲームソフト	PCゲーム
+# ============================================================
+# Jewelry L2マッピング追加
+# ============================================================
+Jewelry	Men	アクセサリー・ジュエリー	メンズジュエリー・アクセサリー
+Jewelry	Girls	アクセサリー・ジュエリー	その他アクセサリー・ジュエリー
+Jewelry	Boys	アクセサリー・ジュエリー	その他アクセサリー・ジュエリー
+Jewelry	Wedding & Engagement	アクセサリー・ジュエリー	ブライダルジュエリー
+Jewelry	Fine	アクセサリー・ジュエリー	ファインジュエリー
+Jewelry	Fashion	アクセサリー・ジュエリー	ファッションジュエリー
+Jewelry	Body	アクセサリー・ジュエリー	ボディピアス
+Jewelry	Bracelets	アクセサリー・ジュエリー	ブレスレット
+Jewelry	Earrings	アクセサリー・ジュエリー	ピアス・イヤリング
+Jewelry	Necklaces	アクセサリー・ジュエリー	ネックレス
+Jewelry	Rings	アクセサリー・ジュエリー	リング・指輪
+Jewelry	Pendants	アクセサリー・ジュエリー	ペンダント
+Jewelry	Brooches & Pins	アクセサリー・ジュエリー	ブローチ
+Jewelry	Charms	アクセサリー・ジュエリー	チャーム
+# ============================================================
+# Office Products L2マッピング追加
+# ============================================================
+Office Products	Office Electronics	家電	オフィス家電・電子文具
+Office Products	Office Paper Products	日用品・文房具・手芸用品	紙製品・封筒
+Office Products	Desk Accessories & Workspace Organizers	日用品・文房具・手芸用品	文房具・事務用品・画材
+Office Products	Writing & Correction Supplies	日用品・文房具・手芸用品	筆記具
+Office Products	Labels, Indexes & Stamps	日用品・文房具・手芸用品	ファイル・バインダー
+Office Products	Binders & Binding Systems	日用品・文房具・手芸用品	ファイル・バインダー
+Office Products	Calendars, Planners & Organizers	日用品・文房具・手芸用品	手帳・カレンダー
+Office Products	Envelopes, Mailers & Shipping Supplies	日用品・文房具・手芸用品	梱包資材
+Office Products	Presentation Boards	日用品・文房具・手芸用品	文房具・事務用品・画材
+Office Products	Cutting & Measuring Devices	日用品・文房具・手芸用品	はさみ・カッター
+Office Products	Tape, Adhesives & Fasteners	日用品・文房具・手芸用品	テープ・接着用品
+Office Products	Clipboards	日用品・文房具・手芸用品	ファイル・バインダー
+Office Products	Notebooks & Writing Pads	日用品・文房具・手芸用品	ノート・メモ帳
+# ============================================================
+# Toys & Games L2マッピング追加
+# ============================================================
+Toys & Games	Vehicles	おもちゃ・趣味	ミニカー・乗り物
+Toys & Games	Toy Figures & Playsets	おもちゃ・趣味	フィギュア
+Toys & Games	Baby & Toddler Toys	おもちゃ・趣味	ベビー向けおもちゃ
+Toys & Games	Tricycles, Scooters & Wagons	おもちゃ・趣味	乗用玩具
+Toys & Games	Puppets & Puppet Theaters	おもちゃ・趣味	おもちゃ
+Toys & Games	Riding Toys	おもちゃ・趣味	乗用玩具
+Toys & Games	Play Vehicles	おもちゃ・趣味	ミニカー・乗り物
+Toys & Games	Stacking & Nesting	おもちゃ・趣味	知育玩具・教育玩具
+Toys & Games	Sorting & Matching	おもちゃ・趣味	知育玩具・教育玩具
+Toys & Games	Musical Toys	おもちゃ・趣味	楽器玩具
+Toys & Games	Pretend Play	おもちゃ・趣味	ごっこ遊び
+Toys & Games	Outdoor Play	おもちゃ・趣味	大型遊具
+Toys & Games	Pool Toys	おもちゃ・趣味	浮き輪・プール
+Toys & Games	Balls	おもちゃ・趣味	ボール
+Toys & Games	Kites & Wind Spinners	おもちゃ・趣味	凧・カイト
+# ============================================================
+# Grocery & Gourmet Food L2マッピング追加
+# ============================================================
+Grocery & Gourmet Food	Meat Substitutes	グルメ・食品	大豆ミート・代替肉
+Grocery & Gourmet Food	Fresh Flowers & Live Indoor Plants	花・ガーデン・DIY工具	花・観葉植物・盆栽
+Grocery & Gourmet Food	Food & Beverage Gifts	グルメ・食品	グルメギフト
+Grocery & Gourmet Food	Gift Baskets	グルメ・食品	グルメギフト
+Grocery & Gourmet Food	Coffee, Tea & Beverages	水・ソフトドリンク・お茶	コーヒー・ココア
+Grocery & Gourmet Food	Candy & Chocolate	スイーツ・お菓子	チョコレート・キャンディ
+Grocery & Gourmet Food	Condiments & Salad Dressings	グルメ・食品	調味料
+Grocery & Gourmet Food	Cooking & Baking	グルメ・食品	製菓材料・パン材料
+Grocery & Gourmet Food	Herbs, Spices & Seasonings	グルメ・食品	調味料
+Grocery & Gourmet Food	Pasta & Noodles	グルメ・食品	麺類
+Grocery & Gourmet Food	Rice & Grains	グルメ・食品	米・穀物
+Grocery & Gourmet Food	Sauces, Gravies & Marinades	グルメ・食品	調味料
+Grocery & Gourmet Food	Soups, Stocks & Broths	グルメ・食品	惣菜・食材
+Grocery & Gourmet Food	Canned, Jarred & Packaged Foods	グルメ・食品	缶詰・瓶詰
+Grocery & Gourmet Food	Chips, Snacks & Side Dishes	スイーツ・お菓子	スナック菓子・駄菓子
+Grocery & Gourmet Food	Nuts & Seeds	グルメ・食品	ナッツ・シード
+Grocery & Gourmet Food	Syrups, Sugars & Sweeteners	グルメ・食品	砂糖・甘味料
+Grocery & Gourmet Food	International Foods	グルメ・食品	各国料理・エスニック
+Grocery & Gourmet Food	Baby Food	キッズベビー・マタニティ	ベビーフード
+Grocery & Gourmet Food	Gourmet Gifts	グルメ・食品	グルメギフト
+# ============================================================
+# Health & Household L2マッピング追加
+# ============================================================
+Health & Household	Funeral	日用品・文房具・手芸用品	冠婚葬祭
+Health & Household	Stationery & Gift Wrapping Supplies	日用品・文房具・手芸用品	ラッピング用品
+Health & Household	Sports Nutrition	ダイエット・健康	プロテイン・スポーツ栄養
+Health & Household	Feminine Care	ビューティ・コスメ	生理用品
+Health & Household	Incontinence & Ostomy	医療・介護・医薬品	介護用品
+Health & Household	Skin Care	ビューティ・コスメ	スキンケア
+Health & Household	Hair Care	ビューティ・コスメ	ヘアケア
+Health & Household	Shaving & Hair Removal	ビューティ・コスメ	シェービング
+Health & Household	First Aid	医療・介護・医薬品	救急用品
+Health & Household	Allergy, Sinus & Asthma	医療・介護・医薬品	医薬品
+Health & Household	Pain Relievers	医療・介護・医薬品	医薬品
+Health & Household	Cold, Flu & Cough	医療・介護・医薬品	医薬品
+Health & Household	Digestive Health	医療・介護・医薬品	医薬品
+Health & Household	Sleep & Snoring	ダイエット・健康	睡眠サポート
+Health & Household	Eye Care	コンタクトレンズ・カラコン	コンタクトケア用品
+Health & Household	Foot Health	ダイエット・健康	フットケア
+Health & Household	Hand & Wrist Care	医療・介護・医薬品	サポーター
+Health & Household	Back & Knee Care	医療・介護・医薬品	サポーター
+Health & Household	Mobility & Daily Living Aids	医療・介護・医薬品	介護用品
+Health & Household	Home Tests	医療・介護・医薬品	検査キット
+# ============================================================
+# Home & Kitchen L2マッピング追加
+# ============================================================
+Home & Kitchen	Vacuums & Floor Care	家電	掃除機
+Home & Kitchen	Wall Art	インテリア・寝具	アートパネル・絵画
+Home & Kitchen	Candles & Holders	インテリア・寝具	キャンドル・アロマ
+Home & Kitchen	Clocks	インテリア・寝具	置き時計・掛け時計
+Home & Kitchen	Picture Frames	インテリア・寝具	フォトフレーム
+Home & Kitchen	Mirrors	インテリア・寝具	ミラー・鏡
+Home & Kitchen	Window Treatments	インテリア・寝具	カーテン・ブラインド
+Home & Kitchen	Rugs, Pads & Protectors	インテリア・寝具	ラグ・カーペット
+Home & Kitchen	Slipcovers	インテリア・寝具	ソファカバー
+Home & Kitchen	Seasonal Décor	インテリア・寝具	季節用品・行事
+Home & Kitchen	Artificial Plants & Flowers	インテリア・寝具	造花・フェイクグリーン
+Home & Kitchen	Vases	インテリア・寝具	花瓶
+Home & Kitchen	Decorative Accessories	インテリア・寝具	インテリア小物・置物
+Home & Kitchen	Dining & Entertaining	キッチン・食器・調理	食器
+Home & Kitchen	Bakeware	キッチン・食器・調理	製菓・製パン器具
+Home & Kitchen	Cookware	キッチン・食器・調理	鍋・フライパン
+Home & Kitchen	Cutlery & Knife Accessories	キッチン・食器・調理	包丁・ナイフ
+Home & Kitchen	Food Storage	キッチン・食器・調理	保存容器
+Home & Kitchen	Kitchen Utensils & Gadgets	キッチン・食器・調理	キッチン用品・キッチン雑貨
+Home & Kitchen	Small Appliances	家電	キッチン家電
+Home & Kitchen	Coffee, Tea & Espresso	キッチン・食器・調理	コーヒー・ティー用品
+Home & Kitchen	Wine & Bar	キッチン・食器・調理	ワイン・バー用品
+Home & Kitchen	Travel & To-Go Drinkware	キッチン・食器・調理	水筒・マグボトル
+Home & Kitchen	Glassware & Drinkware	キッチン・食器・調理	グラス・タンブラー
+Home & Kitchen	Flatware	キッチン・食器・調理	カトラリー
+Home & Kitchen	Irons & Steamers	家電	アイロン
+Home & Kitchen	Laundry	日用品・文房具・手芸用品	洗濯用品
+Home & Kitchen	Air Quality	家電	空気清浄機
+Home & Kitchen	Heating & Cooling	家電	エアコン
+Home & Kitchen	Fans	家電	扇風機・サーキュレーター
+# ============================================================
+# Pet Supplies L2マッピング追加
+# ============================================================
+Pet Supplies	Food	ペット・ペットグッズ	ペットフード
+Pet Supplies	Treats	ペット・ペットグッズ	ペットおやつ
+Pet Supplies	Collars, Harnesses & Leashes	ペット・ペットグッズ	首輪・リード
+Pet Supplies	Beds & Furniture	ペット・ペットグッズ	ペットベッド
+Pet Supplies	Carriers & Travel Products	ペット・ペットグッズ	キャリーバッグ
+Pet Supplies	Crates, Houses & Pens	ペット・ペットグッズ	ペットハウス・ケージ
+Pet Supplies	Feeding & Watering Supplies	ペット・ペットグッズ	食器・給水器
+Pet Supplies	Grooming	ペット・ペットグッズ	ペットケア用品
+Pet Supplies	Health Supplies	ペット・ペットグッズ	ペット医薬品
+Pet Supplies	Litter & Housebreaking	ペット・ペットグッズ	トイレ用品
+Pet Supplies	Toys	ペット・ペットグッズ	ペットおもちゃ
+Pet Supplies	Training & Behavior Aids	ペット・ペットグッズ	しつけ用品
+Pet Supplies	Apparel & Accessories	ペット・ペットグッズ	ペットウェア
+Pet Supplies	Aquarium Supplies	ペット・ペットグッズ	熱帯魚・アクアリウム用品
+Pet Supplies	Terrarium Supplies	ペット・ペットグッズ	爬虫類・両生類用品
+Pet Supplies	Memorials	ペット・ペットグッズ	ペットメモリアル用品
+# ============================================================
+# Patio, Lawn & Garden L2マッピング追加
+# ============================================================
+Patio, Lawn & Garden	Watering Equipment	花・ガーデン・DIY工具	散水用品
+Patio, Lawn & Garden	Garden Fencing	花・ガーデン・DIY工具	エクステリア
+Patio, Lawn & Garden	Greenhouses & Grow Tents	花・ガーデン・DIY工具	温室・ビニールハウス
+Patio, Lawn & Garden	Garden Tool Accessories	花・ガーデン・DIY工具	ガーデニング
+Patio, Lawn & Garden	Composting & Yard Waste	花・ガーデン・DIY工具	コンポスト
+Patio, Lawn & Garden	Pest Control	花・ガーデン・DIY工具	害虫駆除
+Patio, Lawn & Garden	Snow Removal	花・ガーデン・DIY工具	除雪用品
+Patio, Lawn & Garden	Outdoor Heating	花・ガーデン・DIY工具	アウトドアヒーター
+Patio, Lawn & Garden	Outdoor Lighting	花・ガーデン・DIY工具	エクステリアライト
+Patio, Lawn & Garden	Umbrellas & Shade	花・ガーデン・DIY工具	パラソル・日よけ
+Patio, Lawn & Garden	Outdoor Storage	花・ガーデン・DIY工具	物置・屋外収納
+# ============================================================
+# Musical Instruments L2マッピング追加
+# ============================================================
+Musical Instruments	Scores, Songbooks & Lyrics	本・コミック・雑誌	楽譜・スコア
+Musical Instruments	Karaoke Equipment	楽器・音響機器	カラオケ機器
+Musical Instruments	Orchestra Accessories	楽器・音響機器	その他楽器・音響機器
+# ============================================================
+# Watches L2マッピング追加
+# ============================================================
+Watches	Accessories	腕時計	腕時計用アクセサリー
+Watches	Bands	腕時計	腕時計用ベルト・バンド
+Watches	Watch Boxes	腕時計	時計収納ケース
+Watches	Watch Winders	腕時計	ワインディングマシーン
+Watches	Luxury	腕時計	ラグジュアリーウォッチ
+Watches	Sport	腕時計	スポーツウォッチ
+Watches	Dress	腕時計	ドレスウォッチ
+Watches	Casual	腕時計	カジュアルウォッチ
+Watches	Smartwatches	スマホ・タブレット・モバイル通信	スマートウォッチ
+Watches	Pocket Watches	腕時計	懐中時計
+Watches	Watch Parts & Repair	腕時計	時計修理用品
+Watches	Watch Tools	腕時計	時計工具
+# ============================================================
+# Tools & Home Improvement L2マッピング追加
+# ============================================================
+Tools & Home Improvement	Hand Tools	花・ガーデン・DIY工具	DIY工具
+Tools & Home Improvement	Power Tool Parts & Accessories	花・ガーデン・DIY工具	電動工具アクセサリー
+Tools & Home Improvement	Air Tools & Compressors	花・ガーデン・DIY工具	エアコンプレッサー
+Tools & Home Improvement	Measuring & Layout Tools	花・ガーデン・DIY工具	計測工具
+Tools & Home Improvement	Tool Organizers	花・ガーデン・DIY工具	工具収納
+Tools & Home Improvement	Rough Plumbing	花・ガーデン・DIY工具	配管・水回り
+Tools & Home Improvement	Door Hardware & Locks	花・ガーデン・DIY工具	建具・ドア金具
+Tools & Home Improvement	Cabinet Hardware	花・ガーデン・DIY工具	家具金物
+Tools & Home Improvement	Nails, Screws & Fasteners	花・ガーデン・DIY工具	ネジ・釘・金具
+Tools & Home Improvement	Adhesives & Sealers	花・ガーデン・DIY工具	接着剤・シーラント
+Tools & Home Improvement	Tape	花・ガーデン・DIY工具	テープ
+Tools & Home Improvement	Personal Protective Equipment	花・ガーデン・DIY工具	安全保護具
+Tools & Home Improvement	Generators & Portable Power	花・ガーデン・DIY工具	発電機
+# ============================================================
+# Industrial & Scientific L2マッピング追加
+# ============================================================
+Industrial & Scientific	Abrasives	花・ガーデン・DIY工具	研磨材
+Industrial & Scientific	Additive Manufacturing Products	花・ガーデン・DIY工具	3Dプリンター用品
+Industrial & Scientific	Fasteners	花・ガーデン・DIY工具	ボルト・ナット
+Industrial & Scientific	Packaging & Shipping Supplies	日用品・文房具・手芸用品	梱包資材
+Industrial & Scientific	Science Education	おもちゃ・趣味	科学・実験
+# ============================================================
+# Arts, Crafts & Sewing L2マッピング追加
+# ============================================================
+Arts, Crafts & Sewing	Organization, Storage & Transport	日用品・文房具・手芸用品	収納ケース
+Arts, Crafts & Sewing	Gift Wrapping Supplies	日用品・文房具・手芸用品	ラッピング用品
+Arts, Crafts & Sewing	Floral Arranging	花・ガーデン・DIY工具	フラワーアレンジメント
+Arts, Crafts & Sewing	Leather & Leather Crafting	日用品・文房具・手芸用品	レザークラフト
+Arts, Crafts & Sewing	Candle Making	日用品・文房具・手芸用品	キャンドル作り
+Arts, Crafts & Sewing	Soap Making	日用品・文房具・手芸用品	石鹸作り
+Arts, Crafts & Sewing	Yarn & Fiber	日用品・文房具・手芸用品	毛糸・編み物
+Arts, Crafts & Sewing	Sewing Notions & Supplies	日用品・文房具・手芸用品	ソーイング用品
+Arts, Crafts & Sewing	Sewing Machines & Accessories	家電	ミシン

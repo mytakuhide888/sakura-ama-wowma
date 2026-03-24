@@ -1,0 +1,47 @@
+AmaPath第一階層	WowPath第一階層
+Electronics	ゲーム機・ゲームソフト
+Electronics	スマホ・タブレット・モバイル通信
+Electronics	テレビ・オーディオ・カメラ
+Electronics	パソコン・PC周辺機器
+Electronics	家電
+Software	パソコン・PC周辺機器
+Home & Kitchen	キッズベビー・マタニティ
+Home & Kitchen	インテリア・寝具
+Home & Kitchen	キッチン・食器・調理
+Video Games	ゲーム機・ゲームソフト
+Tools & Home Improvement	花・ガーデン・DIY工具
+"Patio, Lawn & Garden"	花・ガーデン・DIY工具
+Musical Instruments	音楽・映像
+Musical Instruments	楽器・音響機器
+Sports & Outdoors	ペット・ペットグッズ
+Sports & Outdoors	スポーツ・アウトドア
+Sports & Outdoors	カー用品・バイク用品
+Sports & Outdoors	腕時計
+Health & Household	医療・介護・医薬品
+Health & Household	ビューティ・コスメ
+Health & Household	ダイエット・健康
+"Arts, Crafts & Sewing"	おもちゃ・趣味
+"Arts, Crafts & Sewing"	日用品・文房具・手芸用品
+Toys & Games	ゲーム機・ゲームソフト
+Toys & Games	音楽・映像
+Toys & Games	おもちゃ・趣味
+Grocery & Gourmet Food	キッチン・食器・調理
+Grocery & Gourmet Food	グルメ・食品
+Grocery & Gourmet Food	スイーツ・お菓子
+Grocery & Gourmet Food	ビール・ワイン・お酒
+Grocery & Gourmet Food	水・ソフトドリンク・お茶
+Industrial & Scientific	家電
+Industrial & Scientific	ダイエット・健康
+Industrial & Scientific	花・ガーデン・DIY工具
+"Clothing, Shoes & Jewelry"	アクセサリー・ジュエリー
+"Clothing, Shoes & Jewelry"	インテリア・寝具
+"Clothing, Shoes & Jewelry"	インナー・ルームウェア
+"Clothing, Shoes & Jewelry"	キッズベビー・マタニティ
+"Clothing, Shoes & Jewelry"	メンズファッション
+"Clothing, Shoes & Jewelry"	腕時計
+"Clothing, Shoes & Jewelry"	レディースファッション
+Pet Supplies	ペット・ペットグッズ
+Jewelry	アクセサリー・ジュエリー
+Books	本・コミック・雑誌
+Office Products	日用品・文房具・手芸用品
+Watches	腕時計
