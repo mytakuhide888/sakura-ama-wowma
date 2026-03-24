@@ -372,6 +372,13 @@ class Command(BaseCommand):
                     key = (wow_l1, wow_l2)
                     if key in wow_index["sonota_by_l1l2"]:
                         return wow_index["sonota_by_l1l2"][key]
+                    # wow_l2自体が「その他」で始まる場合はそのカテゴリを直接使用
+                    if wow_l2.startswith("その他"):
+                        cids = wow_index["idx_by_wow_l1l2"].get(key, [])
+                        if cids:
+                            norm_cache = wow_index["norm_cache"]
+                            best_cid = min(cids, key=lambda c: len(norm_cache[c][0]))
+                            return (best_cid, norm_cache[best_cid][0])
 
         # level1_mapからWowma L1を取得し、そのL1に対応する「その他」を探す
         allowed_wow_l1 = [wow for ama, wow in level1_map if ama == ama_levels[0]]

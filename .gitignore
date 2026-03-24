@@ -63,6 +63,7 @@ yaget/userdata/Default/
 .env
 *.env
 spapi_secrets.local.env
+CLAUDE/server_info.md
 *.key
 *.pem
 *.p12
