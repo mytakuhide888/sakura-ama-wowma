@@ -40,6 +40,7 @@ Industrial & Scientific	花・ガーデン・DIY工具
 "Clothing, Shoes & Jewelry"	メンズファッション
 "Clothing, Shoes & Jewelry"	腕時計
 "Clothing, Shoes & Jewelry"	レディースファッション
+"Clothing, Shoes & Jewelry"	バッグ・財布・ファッション小物
 Pet Supplies	ペット・ペットグッズ
 Jewelry	アクセサリー・ジュエリー
 Books	本・コミック・雑誌
