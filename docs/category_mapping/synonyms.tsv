@@ -688,7 +688,7 @@ drapes	drapes,カーテン
 drawing	drawing,描画
 drawstring	drawstring,巾着
 dress	dress,ドレス
-dresses	dresses,ドレス
+dresses	dresses,dress,ドレス,ワンピース
 dressing	dressing,ドレッシング
 dried	dried,乾燥した
 drill	drill,ドリル
@@ -2040,7 +2040,7 @@ survival	survival
 sushi	sushi,寿司
 suspenders	suspenders,サスペンダー
 suspension	suspension,サスペンション
-sweaters	sweaters,セーター
+sweaters	sweaters,セーター,ニット
 sweatshirts	sweatshirts,スウェットシャツ
 sweets	sweets,お菓子
 swimming	swimming,水泳
@@ -4965,7 +4965,7 @@ kneepads	kneepads,ニーパッド
 kneeskins	kneeskins,ニースキン
 knickers	knickers,ニッカーズ
 knit	knit,ニット
-knits	knits,ニット
+knits	knit,knits,ニット
 knob	knob,ノブ
 knockers	knockers,オッカー
 knockout	knockout,ノックアウト
