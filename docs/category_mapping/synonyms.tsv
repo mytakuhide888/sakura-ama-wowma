@@ -287,7 +287,7 @@ board	board,ボード
 boards	boards,ボード
 boas	boas,ボアズ
 boats	boats,ボート
-bobbers	bobbers,浮き者
+bobbers	bobbers,ウキ,浮き
 bobbleheads	bobbleheads,ボブルヘッド
 bobs	bobs,ボブ
 body	body,体
@@ -1710,7 +1710,7 @@ robot	robot,ロボット
 robotics	robotics,ロボット工学
 rock	rock
 rockets	rockets,ロケット
-rod	rod
+rod	rod,ロッド,竿
 rodeo	rodeo
 rods	rods,ロッド
 roes	roes,卵
@@ -1941,7 +1941,7 @@ spheres	spheres,球体
 spike	spike,スパイク
 spikes	spikes
 spin	spin,スピン
-spinners	spinners
+spinners	spinners,スピナー
 spinning	spinning,紡糸
 spoke	spoke,スポーク
 spokes	spokes,スポーク
@@ -2059,7 +2059,7 @@ tables	tables,テーブル
 tablets	tablets,錠剤
 tabs	tabs,タブ
 tack	tack,タック
-tackle	tackle,取り組む
+tackle	tackle,タックル,釣具
 tactical	tactical,戦術的な
 taekwondo	taekwondo
 tagines	tagines
