@@ -36,3 +36,35 @@ Clothing, Shoes & Jewelry	Men	Clothing	Clothing Sets	メンズファッション
 Clothing, Shoes & Jewelry	Men	Clothing	Jeans	メンズファッション	パンツ・ボトムス
 Clothing, Shoes & Jewelry	Men	Clothing	Overalls	メンズファッション	パンツ・ボトムス
 Clothing, Shoes & Jewelry	Men	Clothing	T-Shirts & Tanks	メンズファッション	トップス
+# Girls/Clothing L4 特化マッピング
+Clothing, Shoes & Jewelry	Girls	Clothing	Active	スポーツ・アウトドア	スポーツウェア
+Clothing, Shoes & Jewelry	Girls	Clothing	Snow & Rainwear	スポーツ・アウトドア	アウトドア
+Clothing, Shoes & Jewelry	Girls	Clothing	Swimwear	キッズベビー・マタニティ	キッズ
+Clothing, Shoes & Jewelry	Girls	Clothing	Swim	キッズベビー・マタニティ	キッズ
+Clothing, Shoes & Jewelry	Girls	Clothing	Jackets & Coats	キッズベビー・マタニティ	キッズ
+Clothing, Shoes & Jewelry	Girls	Clothing	Tops, Tees & Blouses	キッズベビー・マタニティ	キッズ
+Clothing, Shoes & Jewelry	Girls	Clothing	Pants	キッズベビー・マタニティ	キッズ
+Clothing, Shoes & Jewelry	Girls	Clothing	Shorts	キッズベビー・マタニティ	キッズ
+Clothing, Shoes & Jewelry	Girls	Clothing	Jeans	キッズベビー・マタニティ	キッズ
+Clothing, Shoes & Jewelry	Girls	Clothing	Dresses	キッズベビー・マタニティ	キッズ
+Clothing, Shoes & Jewelry	Girls	Clothing	Skirts	キッズベビー・マタニティ	キッズ
+Clothing, Shoes & Jewelry	Girls	Clothing	Sweaters	キッズベビー・マタニティ	キッズ
+Clothing, Shoes & Jewelry	Girls	Clothing	Sleepwear & Robes	キッズベビー・マタニティ	キッズ
+Clothing, Shoes & Jewelry	Girls	Clothing	Underwear	キッズベビー・マタニティ	キッズ
+Clothing, Shoes & Jewelry	Girls	Clothing	Socks & Tights	キッズベビー・マタニティ	キッズ
+Clothing, Shoes & Jewelry	Girls	Clothing	Uniforms	キッズベビー・マタニティ	キッズ
+# Boys/Clothing L4 特化マッピング
+Clothing, Shoes & Jewelry	Boys	Clothing	Active	スポーツ・アウトドア	スポーツウェア
+Clothing, Shoes & Jewelry	Boys	Clothing	Snow & Rainwear	スポーツ・アウトドア	アウトドア
+Clothing, Shoes & Jewelry	Boys	Clothing	Swimwear	キッズベビー・マタニティ	キッズ
+Clothing, Shoes & Jewelry	Boys	Clothing	Swim	キッズベビー・マタニティ	キッズ
+Clothing, Shoes & Jewelry	Boys	Clothing	Jackets & Coats	キッズベビー・マタニティ	キッズ
+Clothing, Shoes & Jewelry	Boys	Clothing	Tops, Tees & Shirts	キッズベビー・マタニティ	キッズ
+Clothing, Shoes & Jewelry	Boys	Clothing	Pants	キッズベビー・マタニティ	キッズ
+Clothing, Shoes & Jewelry	Boys	Clothing	Shorts	キッズベビー・マタニティ	キッズ
+Clothing, Shoes & Jewelry	Boys	Clothing	Jeans	キッズベビー・マタニティ	キッズ
+Clothing, Shoes & Jewelry	Boys	Clothing	Sweaters	キッズベビー・マタニティ	キッズ
+Clothing, Shoes & Jewelry	Boys	Clothing	Sleepwear & Robes	キッズベビー・マタニティ	キッズ
+Clothing, Shoes & Jewelry	Boys	Clothing	Underwear	キッズベビー・マタニティ	キッズ
+Clothing, Shoes & Jewelry	Boys	Clothing	Socks & Hosiery	キッズベビー・マタニティ	キッズ
+Clothing, Shoes & Jewelry	Boys	Clothing	Uniforms	キッズベビー・マタニティ	キッズ
