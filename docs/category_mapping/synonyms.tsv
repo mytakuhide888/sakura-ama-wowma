@@ -954,7 +954,7 @@ handbag	handbag,ハンドバッグ
 handbags	handbags,ハンドバッグ
 handball	handball,ハンドボール
 handbells	handbells,ハンドベル
-handheld	handheld,ハンドヘルド
+handheld	handheld,ハンドヘルド,携帯型ゲーム機
 handkerchiefs	handkerchiefs,ハンカチ
 handlebar	handlebar,ハンドルバー
 handling	handling,取り扱い
@@ -2321,7 +2321,7 @@ wrestling	wrestling,レスリング
 wrist	wrist,手首
 wristbands	wristbands,リストバンド
 writing	writing,書き込み
-xbox	xbox
+xbox	xbox,Xbox,エックスボックス
 xylophones	xylophones,木琴
 yams	yams,山芋
 yard	yard,ヤード
@@ -4355,6 +4355,9 @@ gala	gala,ガラ
 gallo	gallo,ガロ
 gambrels	gambrels,ギャンブラー
 gamecube	gamecube,ゲームキューブ
+gameboy	gameboy,ゲームボーイ
+snes	snes,スーパーファミコン
+n64	n64,ニンテンドー64
 gamepads	gamepads,ゲームパッド
 gantry	gantry,ガントリー
 gaps	gaps,ギャップ
@@ -5532,7 +5535,7 @@ negative	negative,否定的な
 negligees	negligees,ネグリジェ
 neogeo	neogeo,ネオジオ
 neon	neon,ネオン
-nes	nes,ネス
+nes	nes,ネス,ファミコン
 netting	netting,網
 nettle	nettle,イラクサ
 network	network,ネットワーク
