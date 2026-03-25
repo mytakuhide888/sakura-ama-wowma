@@ -189,6 +189,9 @@ badge	badge,バッジ
 badges	badges,バッジ
 badminton	badminton,バドミントン
 baguette	baguette,バゲット
+bread	bread,パン,食パン
+breads	breads,パン,パン類
+croissant	croissant,クロワッサン
 bait	bait,餌
 baits	baits,餌
 bakeware	bakeware,耐熱皿
@@ -894,7 +897,7 @@ ginger	ginger,ジンジャー
 gingerbread	gingerbread,ジンジャーブレッド
 girls	girls,女の子
 girths	girths,胴回り
-glasses	glasses,眼鏡
+glasses	glasses,グラス,眼鏡
 globes	globes,地球儀
 glockenspiels	glockenspiels,グロッケンシュピール
 glove	glove,グローブ
@@ -4410,7 +4413,7 @@ glaces	glaces,メガネ
 gladiator	gladiator,剣闘士
 glandular	glandular,腺状の
 glare	glare,まぶしさ
-glass	glass,ガラス
+glass	glass,グラス,ガラス
 glassware	glassware,ガラス製品
 glazes	glazes,釉薬
 glider	glider,グライダー
@@ -5894,8 +5897,8 @@ pistachios	pistachios,ピスタチオ
 pistol	pistol,ピストル
 pistons	pistons,ピストン
 pitch	pitch,ピッチ
-pitcher	pitcher,投手
-pitchers	pitchers,投手
+pitcher	pitcher,ピッチャー,水差し
+pitchers	pitchers,ピッチャー,水差し
 pitchforks	pitchforks,ピッチフォーク
 pitters	pitters,ピッチャー
 pizzas	pizzas,ピザ
@@ -6579,7 +6582,7 @@ serums	serums,血清
 serve	serve,奉仕する
 server	server,サーバー
 serveware	serveware,サーバーウェア
-serving	serving,給仕
+serving	serving,サービング,給仕
 servo	servo,サーボ
 servos	servos,サーボ
 sesame	sesame,ゴマ
