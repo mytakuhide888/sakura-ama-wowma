@@ -9,3 +9,47 @@ Clothing, Shoes & Jewelry	Women	Watches	腕時計	腕時計レディース
 Clothing, Shoes & Jewelry	Men	Shoes	メンズファッション	靴・シューズ
 Clothing, Shoes & Jewelry	Men	Accessories	バッグ・財布・ファッション小物	ファッション小物
 Clothing, Shoes & Jewelry	Men	Watches	腕時計	腕時計メンズ
+# Sport Specific Clothing L3 特化マッピング（スポーツ種目別）
+Clothing, Shoes & Jewelry	Sport Specific Clothing	Cycling	スポーツ・アウトドア	自転車
+Clothing, Shoes & Jewelry	Sport Specific Clothing	Hiking & Outdoor Recreation	スポーツ・アウトドア	アウトドア
+Clothing, Shoes & Jewelry	Sport Specific Clothing	Martial Arts	スポーツ・アウトドア	格闘技
+Clothing, Shoes & Jewelry	Sport Specific Clothing	Running	スポーツ・アウトドア	スポーツウェア
+Clothing, Shoes & Jewelry	Sport Specific Clothing	Skiing	スポーツ・アウトドア	ウィンタースポーツ
+Clothing, Shoes & Jewelry	Sport Specific Clothing	Dance	スポーツ・アウトドア	スポーツウェア
+Clothing, Shoes & Jewelry	Sport Specific Clothing	Golf	スポーツ・アウトドア	ゴルフ
+Clothing, Shoes & Jewelry	Sport Specific Clothing	Competitive Swimwear	スポーツ・アウトドア	水泳
+Clothing, Shoes & Jewelry	Sport Specific Clothing	Baseball	スポーツ・アウトドア	野球
+Clothing, Shoes & Jewelry	Sport Specific Clothing	Soccer & Futsal	スポーツ・アウトドア	サッカー・フットサル
+Clothing, Shoes & Jewelry	Sport Specific Clothing	Tennis	スポーツ・アウトドア	テニス
+Clothing, Shoes & Jewelry	Sport Specific Clothing	Yoga	スポーツ・アウトドア	ヨガ・ピラティス
+Clothing, Shoes & Jewelry	Sport Specific Clothing	Cheerleading	スポーツ・アウトドア	スポーツウェア
+Clothing, Shoes & Jewelry	Sport Specific Clothing	Snowboarding	スポーツ・アウトドア	ウィンタースポーツ
+Clothing, Shoes & Jewelry	Sport Specific Clothing	Ice Hockey	スポーツ・アウトドア	ウィンタースポーツ
+Clothing, Shoes & Jewelry	Sport Specific Clothing	Ice Skating	スポーツ・アウトドア	ウィンタースポーツ
+Clothing, Shoes & Jewelry	Sport Specific Clothing	Softball	スポーツ・アウトドア	野球
+Clothing, Shoes & Jewelry	Sport Specific Clothing	Cricket	スポーツ・アウトドア	スポーツウェア
+Clothing, Shoes & Jewelry	Sport Specific Clothing	Boxing	スポーツ・アウトドア	格闘技
+Clothing, Shoes & Jewelry	Sport Specific Clothing	American Football	スポーツ・アウトドア	アメリカンフットボール
+Clothing, Shoes & Jewelry	Sport Specific Clothing	Basketball	スポーツ・アウトドア	バスケットボール
+Clothing, Shoes & Jewelry	Sport Specific Clothing	Equestrian Sports	スポーツ・アウトドア	スポーツウェア
+Clothing, Shoes & Jewelry	Sport Specific Clothing	Australian Rules Football	スポーツ・アウトドア	スポーツウェア
+Clothing, Shoes & Jewelry	Sport Specific Clothing	Field Hockey	スポーツ・アウトドア	スポーツウェア
+Clothing, Shoes & Jewelry	Sport Specific Clothing	Bowling	スポーツ・アウトドア	ボウリング
+Clothing, Shoes & Jewelry	Sport Specific Clothing	Rugby	スポーツ・アウトドア	ラグビー
+Clothing, Shoes & Jewelry	Sport Specific Clothing	Volleyball	スポーツ・アウトドア	バレーボール
+Clothing, Shoes & Jewelry	Sport Specific Clothing	Lacrosse	スポーツ・アウトドア	ラクロス
+Clothing, Shoes & Jewelry	Sport Specific Clothing	Netball	スポーツ・アウトドア	スポーツウェア
+Clothing, Shoes & Jewelry	Sport Specific Clothing	Gymnastics	スポーツ・アウトドア	スポーツウェア
+# Grocery & Gourmet Food/Pantry Staples L3 特化マッピング
+Grocery & Gourmet Food	Pantry Staples	Cooking & Baking	グルメ・食品	調味料・食用油
+Grocery & Gourmet Food	Pantry Staples	Canned, Jarred & Packaged Foods	グルメ・食品	缶詰
+Grocery & Gourmet Food	Pantry Staples	Herbs, Spices & Seasonings	グルメ・食品	調味料・食用油
+Grocery & Gourmet Food	Pantry Staples	Sauces, Gravies & Marinades	グルメ・食品	調味料・食用油
+Grocery & Gourmet Food	Pantry Staples	Condiments & Salad Dressings	グルメ・食品	調味料・食用油
+Grocery & Gourmet Food	Pantry Staples	Soups, Stocks & Broths	グルメ・食品	惣菜・食材
+Grocery & Gourmet Food	Pantry Staples	Pasta & Noodles	グルメ・食品	麺類
+Grocery & Gourmet Food	Pantry Staples	Olives, Pickles & Relishes	グルメ・食品	惣菜・食材
+Grocery & Gourmet Food	Pantry Staples	Dried Grains & Rice	グルメ・食品	米・雑穀
+Grocery & Gourmet Food	Pantry Staples	Dried Beans, Lentils & Peas	グルメ・食品	乾物
+Grocery & Gourmet Food	Pantry Staples	Jams, Jellies & Sweet Spreads	グルメ・食品	パン・ジャム・シリアル
+Grocery & Gourmet Food	Pantry Staples	Nut & Seed Butters	グルメ・食品	パン・ジャム・シリアル
