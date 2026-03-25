@@ -53,3 +53,38 @@ Grocery & Gourmet Food	Pantry Staples	Dried Grains & Rice	グルメ・食品	米
 Grocery & Gourmet Food	Pantry Staples	Dried Beans, Lentils & Peas	グルメ・食品	乾物
 Grocery & Gourmet Food	Pantry Staples	Jams, Jellies & Sweet Spreads	グルメ・食品	パン・ジャム・シリアル
 Grocery & Gourmet Food	Pantry Staples	Nut & Seed Butters	グルメ・食品	パン・ジャム・シリアル
+# Sports & Outdoors/Outdoor Recreation L3 特化マッピング
+Sports & Outdoors	Outdoor Recreation	Cycling	スポーツ・アウトドア	自転車
+Sports & Outdoors	Outdoor Recreation	Water Sports	スポーツ・アウトドア	マリンスポーツ
+Sports & Outdoors	Outdoor Recreation	Camping & Hiking	スポーツ・アウトドア	アウトドア
+Sports & Outdoors	Outdoor Recreation	Winter Sports	スポーツ・アウトドア	ウィンタースポーツ
+Sports & Outdoors	Outdoor Recreation	Climbing	スポーツ・アウトドア	アウトドア
+Sports & Outdoors	Outdoor Recreation	Accessories	スポーツ・アウトドア	アウトドア
+Sports & Outdoors	Outdoor Recreation	Beach Equipment	スポーツ・アウトドア	マリンスポーツ
+# Grocery & Gourmet Food/Produce L3 特化マッピング
+Grocery & Gourmet Food	Produce	Packaged Produce	グルメ・食品	野菜・きのこ
+Grocery & Gourmet Food	Produce	Fresh Vegetables	グルメ・食品	野菜・きのこ
+Grocery & Gourmet Food	Produce	Fresh Fruits	グルメ・食品	フルーツ・果物
+Grocery & Gourmet Food	Produce	Dried Fruits & Vegetables	グルメ・食品	乾物
+Grocery & Gourmet Food	Produce	Fresh Herbs	グルメ・食品	野菜・きのこ
+# Health & Household/Vitamins, Minerals & Supplements L3 特化マッピング
+Health & Household	Vitamins, Minerals & Supplements	Herbal Supplements	ダイエット・健康	健康食品
+Health & Household	Vitamins, Minerals & Supplements	Antioxidants	ダイエット・健康	サプリメント
+Health & Household	Vitamins, Minerals & Supplements	Vitamins	ダイエット・健康	サプリメント
+Health & Household	Vitamins, Minerals & Supplements	Essential Fatty Acids	ダイエット・健康	サプリメント
+Health & Household	Vitamins, Minerals & Supplements	Minerals	ダイエット・健康	サプリメント
+Health & Household	Vitamins, Minerals & Supplements	Digestive Supplements	ダイエット・健康	サプリメント
+Health & Household	Vitamins, Minerals & Supplements	Enzymes	ダイエット・健康	サプリメント
+Health & Household	Vitamins, Minerals & Supplements	Glandular Extracts	ダイエット・健康	サプリメント
+Health & Household	Vitamins, Minerals & Supplements	Chondroitin & Glucosamine	ダイエット・健康	サプリメント
+# Office Products/Office & School Supplies L3 特化マッピング
+Office Products	Office & School Supplies	Education & Crafts	日用品・文房具・手芸用品	文房具・事務用品・画材
+Office Products	Office & School Supplies	Forms, Recordkeeping & Money Handling	日用品・文房具・手芸用品	文房具・事務用品・画材
+Office Products	Office & School Supplies	Paper	日用品・文房具・手芸用品	文房具・事務用品・画材
+Office Products	Office & School Supplies	Desk Accessories & Workspace Organizers	日用品・文房具・手芸用品	文房具・事務用品・画材
+Office Products	Office & School Supplies	Envelopes, Mailers & Shipping Supplies	日用品・文房具・手芸用品	文房具・事務用品・画材
+Office Products	Office & School Supplies	Labels, Indexes & Stamps	日用品・文房具・手芸用品	文房具・事務用品・画材
+Office Products	Office & School Supplies	Binders & Binding Systems	日用品・文房具・手芸用品	文房具・事務用品・画材
+Office Products	Office & School Supplies	Tape, Adhesives & Fasteners	日用品・文房具・手芸用品	文房具・事務用品・画材
+Office Products	Office & School Supplies	Calendars, Planners & Personal Organizers	日用品・文房具・手芸用品	文房具・事務用品・画材
+Office Products	Office & School Supplies	Staplers & Punches	日用品・文房具・手芸用品	文房具・事務用品・画材
