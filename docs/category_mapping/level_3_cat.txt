@@ -107,3 +107,11 @@ Grocery & Gourmet Food	Meat & Seafood	Beef	グルメ・食品	肉・肉加工品
 Grocery & Gourmet Food	Meat & Seafood	Pork	グルメ・食品	肉・肉加工品
 Grocery & Gourmet Food	Meat & Seafood	Poultry	グルメ・食品	肉・肉加工品
 Grocery & Gourmet Food	Meat & Seafood	Lamb	グルメ・食品	肉・肉加工品
+# Grocery & Gourmet Food/Meat & Seafood/Seafood → sonota_l3fallback有効化（その他魚介類・シーフード）
+Grocery & Gourmet Food	Meat & Seafood	Seafood	グルメ・食品	魚介類・シーフード
+# Grocery & Gourmet Food/Breads & Bakery/Breads → sonota_l3fallback有効化（その他パン・ジャム・シリアル）
+Grocery & Gourmet Food	Breads & Bakery	Breads	グルメ・食品	パン・ジャム・シリアル
+# Musical Instruments/Wind & Woodwind Instruments/Folk & World → sonota_l3fallback有効化（その他管楽器）
+Musical Instruments	Wind & Woodwind Instruments	Folk & World	楽器・音響機器	管楽器
+# Musical Instruments/Band & Orchestra/Wind & Woodwinds → sonota_l3fallback有効化（その他管楽器）
+Musical Instruments	Band & Orchestra	Wind & Woodwinds	楽器・音響機器	管楽器
