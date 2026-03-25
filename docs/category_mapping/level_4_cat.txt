@@ -1,0 +1,38 @@
+AmaL1	AmaL2	AmaL3	AmaL4	WowL1	WowL2
+# Clothing, Shoes & Jewelry の L4 特化マッピング
+# Women/Clothing
+Clothing, Shoes & Jewelry	Women	Clothing	Lingerie, Sleep & Lounge	インナー・ルームウェア	レディースインナー
+Clothing, Shoes & Jewelry	Women	Clothing	Coats, Jackets & Vests	レディースファッション	アウター
+Clothing, Shoes & Jewelry	Women	Clothing	Active	スポーツ・アウトドア	スポーツウェア
+Clothing, Shoes & Jewelry	Women	Clothing	Swimsuits & Cover Ups	レディースファッション	水着
+Clothing, Shoes & Jewelry	Women	Clothing	Socks & Hosiery	インナー・ルームウェア	タイツ・レギンス
+Clothing, Shoes & Jewelry	Women	Clothing	Tops, Tees & Blouses	レディースファッション	トップス
+Clothing, Shoes & Jewelry	Women	Clothing	Suiting & Blazers	レディースファッション	スーツ
+Clothing, Shoes & Jewelry	Women	Clothing	Sweaters	レディースファッション	トップス
+Clothing, Shoes & Jewelry	Women	Clothing	Jumpsuits, Rompers & Overalls	レディースファッション	オールインワン・サロペット
+Clothing, Shoes & Jewelry	Women	Clothing	Clothing Sets	レディースファッション	トップス
+Clothing, Shoes & Jewelry	Women	Clothing	Skirts	レディースファッション	スカート
+Clothing, Shoes & Jewelry	Women	Clothing	Dresses	レディースファッション	ワンピース
+Clothing, Shoes & Jewelry	Women	Clothing	Pants	レディースファッション	パンツ
+Clothing, Shoes & Jewelry	Women	Clothing	Shorts	レディースファッション	パンツ
+Clothing, Shoes & Jewelry	Women	Clothing	Jeans	レディースファッション	パンツ
+Clothing, Shoes & Jewelry	Women	Clothing	Fashion Hoodies & Sweatshirts	レディースファッション	トップス
+Clothing, Shoes & Jewelry	Women	Clothing	Leggings	インナー・ルームウェア	タイツ・レギンス
+Clothing, Shoes & Jewelry	Women	Clothing	Bodysuits	インナー・ルームウェア	レディースインナー
+# Men/Clothing
+Clothing, Shoes & Jewelry	Men	Clothing	Active	スポーツ・アウトドア	スポーツウェア
+Clothing, Shoes & Jewelry	Men	Clothing	Jackets & Coats	メンズファッション	ジャケット・アウター
+Clothing, Shoes & Jewelry	Men	Clothing	Underwear	インナー・ルームウェア	メンズインナー
+Clothing, Shoes & Jewelry	Men	Clothing	Suits & Sport Coats	メンズファッション	スーツ・フォーマル
+Clothing, Shoes & Jewelry	Men	Clothing	Socks & Hosiery	インナー・ルームウェア	メンズ靴下
+Clothing, Shoes & Jewelry	Men	Clothing	Swim	メンズファッション	水着
+Clothing, Shoes & Jewelry	Men	Clothing	Sleep & Lounge	インナー・ルームウェア	メンズナイトウェア・ルームウェア
+Clothing, Shoes & Jewelry	Men	Clothing	Sweaters	メンズファッション	トップス
+Clothing, Shoes & Jewelry	Men	Clothing	Shorts	メンズファッション	パンツ・ボトムス
+Clothing, Shoes & Jewelry	Men	Clothing	Shirts	メンズファッション	トップス
+Clothing, Shoes & Jewelry	Men	Clothing	Pants	メンズファッション	パンツ・ボトムス
+Clothing, Shoes & Jewelry	Men	Clothing	Fashion Hoodies & Sweatshirts	メンズファッション	トップス
+Clothing, Shoes & Jewelry	Men	Clothing	Clothing Sets	メンズファッション	カジュアルセットアップ
+Clothing, Shoes & Jewelry	Men	Clothing	Jeans	メンズファッション	パンツ・ボトムス
+Clothing, Shoes & Jewelry	Men	Clothing	Overalls	メンズファッション	パンツ・ボトムス
+Clothing, Shoes & Jewelry	Men	Clothing	T-Shirts & Tanks	メンズファッション	トップス
