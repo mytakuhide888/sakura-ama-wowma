@@ -8529,3 +8529,20 @@ thriller	thriller,サスペンス,thrillers
 fantasy	fantasy,ファンタジー
 biography	biography,伝記,自伝,memoirs,memoir
 teen	teen,teens,teenager,ティーン,youth
+# ============================================================
+# Phase 17 synonym fixes (2026-03-25)
+# ============================================================
+# Fix: パン = bread (not pan/frying pan) — overrides line 193 (breads), line 5728 (pan)
+bread	bread,breads,パン,パン類,食パン
+# Fix: シリアル = cereal (not serial number) — overrides line 6579 (serial=シリアル)
+cereal	cereal,穀物,シリアル
+# Fix: ジャム = jam (singular canonical) — overrides line 4873 (jams=ジャム)
+jam	jam,jams,ジャム
+# Wind/Folk instrument synonyms — overrides earlier partial entries
+flute	flute,フルート,flutes,fife,fifes,shakuhachi,shakuhachis,whistle,whistles,縦笛,尺八
+trumpet	trumpet,トランペット,kazoo,kazoos,shawm,shawms,suona,suonas,shofar,shofars,bombard,bombards
+oboe	oboe,オーボエ,shenai,shenais
+cornets	cornets,コルネット,zurna,zurnas,bagpipe,bagpipes,harmonica,harmonicas
+# Seafood: 魚介類 → seafood; anchovy → イワシ
+seafood	seafood,シーフード,魚,魚介,魚介類
+anchovy	anchovy,anchovies,イワシ,アンチョビ
