@@ -20,6 +20,7 @@ Sports & Outdoors	腕時計
 Health & Household	医療・介護・医薬品
 Health & Household	ビューティ・コスメ
 Health & Household	ダイエット・健康
+Health & Household	コンタクトレンズ・カラコン
 "Arts, Crafts & Sewing"	おもちゃ・趣味
 "Arts, Crafts & Sewing"	日用品・文房具・手芸用品
 Toys & Games	ゲーム機・ゲームソフト

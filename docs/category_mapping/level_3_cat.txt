@@ -115,3 +115,1734 @@ Grocery & Gourmet Food	Breads & Bakery	Breads	グルメ・食品	パン・ジャ
 Musical Instruments	Wind & Woodwind Instruments	Folk & World	楽器・音響機器	管楽器
 # Musical Instruments/Band & Orchestra/Wind & Woodwinds → sonota_l3fallback有効化（その他管楽器）
 Musical Instruments	Band & Orchestra	Wind & Woodwinds	楽器・音響機器	管楽器
+# Grocery & Gourmet Food/Frozen L3 特化マッピング → sonota_l3fallback有効化（その他惣菜・食材）
+Grocery & Gourmet Food	Frozen	Ice Cream & Novelties	グルメ・食品	惣菜・食材
+Grocery & Gourmet Food	Frozen	Appetizers & Snacks	グルメ・食品	惣菜・食材
+Grocery & Gourmet Food	Frozen	Desserts & Toppings	グルメ・食品	惣菜・食材
+Grocery & Gourmet Food	Frozen	Potatoes & Onion Rings	グルメ・食品	惣菜・食材
+Grocery & Gourmet Food	Frozen	Meats	グルメ・食品	惣菜・食材
+Grocery & Gourmet Food	Frozen	Breakfast Foods	グルメ・食品	惣菜・食材
+Grocery & Gourmet Food	Frozen	Meals & Entrees	グルメ・食品	惣菜・食材
+Grocery & Gourmet Food	Frozen	Vegetables	グルメ・食品	惣菜・食材
+Grocery & Gourmet Food	Frozen	Seafood	グルメ・食品	惣菜・食材
+Grocery & Gourmet Food	Frozen	Bread & Dough	グルメ・食品	惣菜・食材
+# Sports & Outdoors/Hunting & Fishing/Fishing → sonota_l3fallback有効化（その他フィッシング）
+Sports & Outdoors	Hunting & Fishing	Fishing	スポーツ・アウトドア	フィッシング
+# Musical Instruments/Stringed Instruments/Folk & World → sonota_l3fallback有効化（その他弦楽器）
+Musical Instruments	Stringed Instruments	Folk & World	楽器・音響機器	弦楽器
+# Musical Instruments/Studio Recording Equipment L3 特化マッピング → sonota_l3fallback有効化（その他DTM・レコーディング・PA機器）
+Musical Instruments	Studio Recording Equipment	Computer Recording	楽器・音響機器	DTM・レコーディング・PA機器
+Musical Instruments	Studio Recording Equipment	Mastering Recorders	楽器・音響機器	DTM・レコーディング・PA機器
+Musical Instruments	Studio Recording Equipment	Studio Environment	楽器・音響機器	DTM・レコーディング・PA機器
+Musical Instruments	Studio Recording Equipment	Mixers & Accessories	楽器・音響機器	DTM・レコーディング・PA機器
+Musical Instruments	Studio Recording Equipment	Headphone & In-Ear Audio Monitors	楽器・音響機器	DTM・レコーディング・PA機器
+Musical Instruments	Studio Recording Equipment	Studio Subwoofers	楽器・音響機器	DTM・レコーディング・PA機器
+# Home & Kitchen/Kitchen & Dining L3 特化マッピング → sonota_l3fallback有効化（その他キッチン用品・キッチン雑貨）
+Home & Kitchen	Kitchen & Dining	Food Service Equipment & Supplies	キッチン・食器・調理	キッチン用品・キッチン雑貨
+Home & Kitchen	Kitchen & Dining	Small Appliances	キッチン・食器・調理	キッチン用品・キッチン雑貨
+Home & Kitchen	Kitchen & Dining	Storage & Organization	キッチン・食器・調理	キッチン用品・キッチン雑貨
+Home & Kitchen	Kitchen & Dining	Coffee, Tea & Espresso	キッチン・食器・調理	キッチン用品・キッチン雑貨
+Home & Kitchen	Kitchen & Dining	Home Brewing & Wine Making	キッチン・食器・調理	キッチン用品・キッチン雑貨
+Home & Kitchen	Kitchen & Dining	Small Appliance Parts & Accessories	キッチン・食器・調理	キッチン用品・キッチン雑貨
+Home & Kitchen	Kitchen & Dining	Water Coolers & Filters	キッチン・食器・調理	キッチン用品・キッチン雑貨
+Home & Kitchen	Kitchen & Dining	Wine Accessories	キッチン・食器・調理	キッチン用品・キッチン雑貨
+Home & Kitchen	Kitchen & Dining	Travel & To-Go Drinkware	キッチン・食器・調理	キッチン用品・キッチン雑貨
+# Tools & Home Improvement/Power & Hand Tools L3 特化マッピング → sonota_l3fallback有効化（その他DIY工具）
+Tools & Home Improvement	Power & Hand Tools	Power Tool Parts & Accessories	花・ガーデン・DIY工具	DIY工具
+Tools & Home Improvement	Power & Hand Tools	Hand Tools	花・ガーデン・DIY工具	DIY工具
+Tools & Home Improvement	Power & Hand Tools	Power Tools	花・ガーデン・DIY工具	DIY工具
+Tools & Home Improvement	Power & Hand Tools	Tool Organizers	花・ガーデン・DIY工具	DIY工具
+# Tools & Home Improvement/Hardware L3 特化マッピング → sonota_l3fallback有効化（その他DIY工具）
+Tools & Home Improvement	Hardware	Nails, Screws & Fasteners	花・ガーデン・DIY工具	DIY工具
+Tools & Home Improvement	Hardware	Door Hardware & Locks	花・ガーデン・DIY工具	DIY工具
+Tools & Home Improvement	Hardware	Tarps & Tie-Downs	花・ガーデン・DIY工具	DIY工具
+Tools & Home Improvement	Hardware	Window Hardware	花・ガーデン・DIY工具	DIY工具
+Tools & Home Improvement	Hardware	Mailboxes & Accessories	花・ガーデン・DIY工具	DIY工具
+Tools & Home Improvement	Hardware	Cabinet Hardware	花・ガーデン・DIY工具	DIY工具
+Tools & Home Improvement	Hardware	Furniture Hardware	花・ガーデン・DIY工具	DIY工具
+Tools & Home Improvement	Hardware	Grommets	花・ガーデン・DIY工具	DIY工具
+Tools & Home Improvement	Hardware	Gate Hardware	花・ガーデン・DIY工具	DIY工具
+Tools & Home Improvement	Hardware	Bathroom Hardware	花・ガーデン・DIY工具	DIY工具
+Tools & Home Improvement	Hardware	Padlocks & Hasps	花・ガーデン・DIY工具	DIY工具
+Tools & Home Improvement	Hardware	Adhesives & Sealers	花・ガーデン・DIY工具	DIY工具
+Tools & Home Improvement	Hardware	Snaps	花・ガーデン・DIY工具	DIY工具
+Tools & Home Improvement	Hardware	Clock Hardware	花・ガーデン・DIY工具	DIY工具
+Tools & Home Improvement	Hardware	House Numbers, Plaques & Signs	花・ガーデン・DIY工具	DIY工具
+Tools & Home Improvement	Hardware	Shelf Brackets & Supports	花・ガーデン・DIY工具	DIY工具
+Tools & Home Improvement	Hardware	Flashlights	花・ガーデン・DIY工具	DIY工具
+Tools & Home Improvement	Hardware	Braces	花・ガーデン・DIY工具	DIY工具
+Tools & Home Improvement	Hardware	Plugs	花・ガーデン・DIY工具	DIY工具
+# Clothing, Shoes & Jewelry/Novelty & More → sonota_l3fallback有効化（その他コスチューム）
+Clothing, Shoes & Jewelry	Novelty & More	Clothing	レディースファッション	コスチューム
+# Pet Supplies/Dogs L3 特化マッピング → sonota_l3fallback有効化（その他犬用品・ドッグフード）
+Pet Supplies	Dogs	Health Supplies	ペット・ペットグッズ	犬用品・ドッグフード
+Pet Supplies	Dogs	Grooming	ペット・ペットグッズ	犬用品・ドッグフード
+Pet Supplies	Dogs	Collars, Harnesses & Leashes	ペット・ペットグッズ	犬用品・ドッグフード
+Pet Supplies	Dogs	Apparel & Accessories	ペット・ペットグッズ	犬用品・ドッグフード
+Pet Supplies	Dogs	Training & Behavior Aids	ペット・ペットグッズ	犬用品・ドッグフード
+Pet Supplies	Dogs	Carriers & Travel Products	ペット・ペットグッズ	犬用品・ドッグフード
+Pet Supplies	Dogs	Treats	ペット・ペットグッズ	犬用品・ドッグフード
+Pet Supplies	Dogs	Crates, Houses & Pens	ペット・ペットグッズ	犬用品・ドッグフード
+Pet Supplies	Dogs	Feeding & Watering Supplies	ペット・ペットグッズ	犬用品・ドッグフード
+Pet Supplies	Dogs	Food	ペット・ペットグッズ	犬用品・ドッグフード
+Pet Supplies	Dogs	Flea & Tick Control	ペット・ペットグッズ	犬用品・ドッグフード
+Pet Supplies	Dogs	Litter & Housebreaking	ペット・ペットグッズ	犬用品・ドッグフード
+Pet Supplies	Dogs	Beds & Furniture	ペット・ペットグッズ	犬用品・ドッグフード
+Pet Supplies	Dogs	Toys	ペット・ペットグッズ	犬用品・ドッグフード
+Pet Supplies	Dogs	Doors, Gates & Ramps	ペット・ペットグッズ	犬用品・ドッグフード
+Pet Supplies	Dogs	Memorials & Funerary	ペット・ペットグッズ	犬用品・ドッグフード
+# Electronics/Computers & Accessories L3 特化マッピング → sonota_l3fallback有効化（その他PCアクセサリ・サプライ）
+Electronics	Computers & Accessories	Computer Accessories & Peripherals	パソコン・PC周辺機器	PCアクセサリ・サプライ
+Electronics	Computers & Accessories	Computer Components	パソコン・PC周辺機器	PCアクセサリ・サプライ
+Electronics	Computers & Accessories	Laptop Accessories	パソコン・PC周辺機器	PCアクセサリ・サプライ
+Electronics	Computers & Accessories	Networking Products	パソコン・PC周辺機器	PCアクセサリ・サプライ
+Electronics	Computers & Accessories	Tablet Accessories	パソコン・PC周辺機器	PCアクセサリ・サプライ
+Electronics	Computers & Accessories	Data Storage	パソコン・PC周辺機器	PCアクセサリ・サプライ
+Electronics	Computers & Accessories	Computers & Tablets	パソコン・PC周辺機器	PCアクセサリ・サプライ
+Electronics	Computers & Accessories	Tablet Replacement Parts	パソコン・PC周辺機器	PCアクセサリ・サプライ
+Electronics	Computers & Accessories	Servers	パソコン・PC周辺機器	PCアクセサリ・サプライ
+Electronics	Computers & Accessories	Monitors	パソコン・PC周辺機器	PCアクセサリ・サプライ
+# Clothing, Shoes & Jewelry/Baby L3 特化マッピング → sonota_l3fallback有効化（その他ベビー）
+Clothing, Shoes & Jewelry	Baby	Baby Girls	キッズベビー・マタニティ	ベビー
+Clothing, Shoes & Jewelry	Baby	Baby Boys	キッズベビー・マタニティ	ベビー
+# Tools & Home Improvement/Building Supplies L3 → sonota_l3fallback有効化（その他建築・住宅・設備）
+Tools & Home Improvement	Building Supplies	Building Materials	花・ガーデン・DIY工具	建築・住宅・設備
+Tools & Home Improvement	Building Supplies	HVAC	花・ガーデン・DIY工具	建築・住宅・設備
+Tools & Home Improvement	Building Supplies	Job Site Lighting	花・ガーデン・DIY工具	建築・住宅・設備
+Tools & Home Improvement	Building Supplies	Ladders	花・ガーデン・DIY工具	建築・住宅・設備
+Tools & Home Improvement	Building Supplies	Material Handling	花・ガーデン・DIY工具	建築・住宅・設備
+Tools & Home Improvement	Building Supplies	Scaffolding & Accessories	花・ガーデン・DIY工具	建築・住宅・設備
+# Tools & Home Improvement/Appliances L3 → sonota_l3fallback有効化（その他キッチン家電）
+Tools & Home Improvement	Appliances	Air Conditioners & Accessories	家電	キッチン家電
+Tools & Home Improvement	Appliances	Large Appliance Accessories	家電	キッチン家電
+Tools & Home Improvement	Appliances	Ranges	家電	キッチン家電
+Tools & Home Improvement	Appliances	Trash Compactors	家電	キッチン家電
+Tools & Home Improvement	Appliances	Wall Ovens	家電	キッチン家電
+Tools & Home Improvement	Appliances	Washers & Dryers	家電	キッチン家電
+Tools & Home Improvement	Appliances	Wine Cellars	家電	キッチン家電
+# Arts, Crafts & Sewing/Crafting L3 → sonota_l3fallback有効化（その他手芸・クラフト・生地）
+Arts, Crafts & Sewing	Crafting	Basket Making	日用品・文房具・手芸用品	手芸・クラフト・生地
+Arts, Crafts & Sewing	Crafting	Candle Making	日用品・文房具・手芸用品	手芸・クラフト・生地
+Arts, Crafts & Sewing	Crafting	Ceramics & Pottery	日用品・文房具・手芸用品	手芸・クラフト・生地
+Arts, Crafts & Sewing	Crafting	Craft Supplies	日用品・文房具・手芸用品	手芸・クラフト・生地
+Arts, Crafts & Sewing	Crafting	Doll Making	日用品・文房具・手芸用品	手芸・クラフト・生地
+Arts, Crafts & Sewing	Crafting	Floral Arranging	日用品・文房具・手芸用品	手芸・クラフト・生地
+Arts, Crafts & Sewing	Crafting	Leathercraft	日用品・文房具・手芸用品	手芸・クラフト・生地
+Arts, Crafts & Sewing	Crafting	Mosaic Making	日用品・文房具・手芸用品	手芸・クラフト・生地
+Arts, Crafts & Sewing	Crafting	Paper & Paper Crafts	日用品・文房具・手芸用品	手芸・クラフト・生地
+Arts, Crafts & Sewing	Crafting	Picture Framing	日用品・文房具・手芸用品	手芸・クラフト・生地
+Arts, Crafts & Sewing	Crafting	Scratchboards & Foil Engraving	日用品・文房具・手芸用品	手芸・クラフト・生地
+Arts, Crafts & Sewing	Crafting	Sculpture Supplies	日用品・文房具・手芸用品	手芸・クラフト・生地
+Arts, Crafts & Sewing	Crafting	Soap Making	日用品・文房具・手芸用品	手芸・クラフト・生地
+Arts, Crafts & Sewing	Crafting	Stained Glass Making	日用品・文房具・手芸用品	手芸・クラフト・生地
+Arts, Crafts & Sewing	Crafting	Suncatcher Supplies	日用品・文房具・手芸用品	手芸・クラフト・生地
+Arts, Crafts & Sewing	Crafting	Weaving & Spinning	日用品・文房具・手芸用品	手芸・クラフト・生地
+Arts, Crafts & Sewing	Crafting	Woodcrafts	日用品・文房具・手芸用品	手芸・クラフト・生地
+# Home & Kitchen/Furniture L3 → sonota_l3fallback有効化（その他収納家具）
+Home & Kitchen	Furniture	Accent Furniture	インテリア・寝具	収納家具
+Home & Kitchen	Furniture	Bedroom Furniture	インテリア・寝具	収納家具
+Home & Kitchen	Furniture	Dining Room Furniture	インテリア・寝具	収納家具
+Home & Kitchen	Furniture	Entryway Furniture	インテリア・寝具	収納家具
+Home & Kitchen	Furniture	Game & Recreation Room Furniture	インテリア・寝具	収納家具
+Home & Kitchen	Furniture	Home Office Furniture	インテリア・寝具	収納家具
+Home & Kitchen	Furniture	Kids' Furniture	インテリア・寝具	収納家具
+Home & Kitchen	Furniture	Kitchen Furniture	インテリア・寝具	収納家具
+Home & Kitchen	Furniture	Living Room Furniture	インテリア・寝具	収納家具
+Home & Kitchen	Furniture	Nursery Furniture	インテリア・寝具	収納家具
+Home & Kitchen	Furniture	Replacement Parts	インテリア・寝具	収納家具
+# Home & Kitchen/Home Décor Products L3 → sonota_l3fallback有効化（その他インテリア小物・置物）
+Home & Kitchen	Home Décor Products	Artificial Plants & Flowers	インテリア・寝具	インテリア小物・置物
+Home & Kitchen	Home Décor Products	Candles & Holders	インテリア・寝具	インテリア小物・置物
+Home & Kitchen	Home Décor Products	Clocks	インテリア・寝具	インテリア小物・置物
+Home & Kitchen	Home Décor Products	Draft Stoppers	インテリア・寝具	インテリア小物・置物
+Home & Kitchen	Home Décor Products	Dried & Preserved Flora	インテリア・寝具	インテリア小物・置物
+Home & Kitchen	Home Décor Products	Home Décor Accents	インテリア・寝具	インテリア小物・置物
+Home & Kitchen	Home Décor Products	Home Fragrance	インテリア・寝具	インテリア小物・置物
+Home & Kitchen	Home Décor Products	Indoor Fountains & Accessories	インテリア・寝具	インテリア小物・置物
+Home & Kitchen	Home Décor Products	Kids' Room Décor	インテリア・寝具	インテリア小物・置物
+Home & Kitchen	Home Décor Products	Mirrors	インテリア・寝具	インテリア小物・置物
+Home & Kitchen	Home Décor Products	Nursery Décor	インテリア・寝具	インテリア小物・置物
+Home & Kitchen	Home Décor Products	Nursery Keepsakes	インテリア・寝具	インテリア小物・置物
+Home & Kitchen	Home Décor Products	Oil Lamps & Accessories	インテリア・寝具	インテリア小物・置物
+Home & Kitchen	Home Décor Products	Photo Albums, Frames & Accessories	インテリア・寝具	インテリア小物・置物
+Home & Kitchen	Home Décor Products	Rugs, Pads & Protectors	インテリア・寝具	インテリア小物・置物
+Home & Kitchen	Home Décor Products	Slipcovers	インテリア・寝具	インテリア小物・置物
+Home & Kitchen	Home Décor Products	Tapestries	インテリア・寝具	インテリア小物・置物
+Home & Kitchen	Home Décor Products	Vases	インテリア・寝具	インテリア小物・置物
+Home & Kitchen	Home Décor Products	Window Treatment Hardware	インテリア・寝具	インテリア小物・置物
+Home & Kitchen	Home Décor Products	Window Treatments	インテリア・寝具	インテリア小物・置物
+# Health & Household/Health Care L3 → sonota_l3fallback有効化（その他健康グッズ）
+Health & Household	Health Care	Alternative Medicine	ダイエット・健康	健康グッズ
+Health & Household	Health Care	Diabetes Care	ダイエット・健康	健康グッズ
+Health & Household	Health Care	Ear Care	ダイエット・健康	健康グッズ
+Health & Household	Health Care	Eye Health	ダイエット・健康	健康グッズ
+Health & Household	Health Care	Feminine Care	ダイエット・健康	健康グッズ
+Health & Household	Health Care	First Aid	ダイエット・健康	健康グッズ
+Health & Household	Health Care	Foot Health	ダイエット・健康	健康グッズ
+Health & Household	Health Care	Incontinence & Ostomy	ダイエット・健康	健康グッズ
+Health & Household	Health Care	Insect & Pest Repellents	ダイエット・健康	健康グッズ
+Health & Household	Health Care	Over-the-Counter Medication	ダイエット・健康	健康グッズ
+Health & Household	Health Care	Respiratory Aids & Accessories	ダイエット・健康	健康グッズ
+Health & Household	Health Care	Sleep & Snoring	ダイエット・健康	健康グッズ
+Health & Household	Health Care	Smoking Cessation	ダイエット・健康	健康グッズ
+Health & Household	Health Care	Women's Health	ダイエット・健康	健康グッズ
+# Patio, Lawn & Garden/Gardening & Lawn Care L3 → sonota_l3fallback有効化（その他ガーデニング）
+Patio, Lawn & Garden	Gardening & Lawn Care	Composting & Yard Waste Bins	花・ガーデン・DIY工具	ガーデニング
+Patio, Lawn & Garden	Gardening & Lawn Care	Garden Sculptures & Statues	花・ガーデン・DIY工具	ガーデニング
+Patio, Lawn & Garden	Gardening & Lawn Care	Garden Tool Holders	花・ガーデン・DIY工具	ガーデニング
+Patio, Lawn & Garden	Gardening & Lawn Care	Gloves & Protective Gear	花・ガーデン・DIY工具	ガーデニング
+Patio, Lawn & Garden	Gardening & Lawn Care	Greenhouses & Plant Germination Equipment	花・ガーデン・DIY工具	ガーデニング
+Patio, Lawn & Garden	Gardening & Lawn Care	Hand Tools	花・ガーデン・DIY工具	ガーデニング
+Patio, Lawn & Garden	Gardening & Lawn Care	Hydroponics	花・ガーデン・DIY工具	ガーデニング
+Patio, Lawn & Garden	Gardening & Lawn Care	Lawn & Mulch Paint	花・ガーデン・DIY工具	ガーデニング
+Patio, Lawn & Garden	Gardening & Lawn Care	Outdoor Carts	花・ガーデン・DIY工具	ガーデニング
+Patio, Lawn & Garden	Gardening & Lawn Care	Plant & Soil Monitoring	花・ガーデン・DIY工具	ガーデニング
+Patio, Lawn & Garden	Gardening & Lawn Care	Plant Covers	花・ガーデン・DIY工具	ガーデニング
+Patio, Lawn & Garden	Gardening & Lawn Care	Plant Support Structures	花・ガーデン・DIY工具	ガーデニング
+Patio, Lawn & Garden	Gardening & Lawn Care	Pots, Planters & Container Accessories	花・ガーデン・DIY工具	ガーデニング
+Patio, Lawn & Garden	Gardening & Lawn Care	Potting Benches & Tables	花・ガーデン・DIY工具	ガーデニング
+Patio, Lawn & Garden	Gardening & Lawn Care	Sprayers & Accessories	花・ガーデン・DIY工具	ガーデニング
+Patio, Lawn & Garden	Gardening & Lawn Care	Spreaders	花・ガーデン・DIY工具	ガーデニング
+Patio, Lawn & Garden	Gardening & Lawn Care	Water Gardens & Ponds	花・ガーデン・DIY工具	ガーデニング
+Patio, Lawn & Garden	Gardening & Lawn Care	Watering Equipment	花・ガーデン・DIY工具	ガーデニング
+Patio, Lawn & Garden	Gardening & Lawn Care	Weed & Moss Control	花・ガーデン・DIY工具	ガーデニング
+# Pet Supplies/Cats L3 → sonota_l3fallback有効化（その他猫用品・キャットフード）
+Pet Supplies	Cats	Apparel	ペット・ペットグッズ	猫用品・キャットフード
+Pet Supplies	Cats	Beds & Furniture	ペット・ペットグッズ	猫用品・キャットフード
+Pet Supplies	Cats	Cameras & Monitors	ペット・ペットグッズ	猫用品・キャットフード
+Pet Supplies	Cats	Carriers & Strollers	ペット・ペットグッズ	猫用品・キャットフード
+Pet Supplies	Cats	Cat Doors, Steps, Nets & Pens	ペット・ペットグッズ	猫用品・キャットフード
+Pet Supplies	Cats	Collars, Harnesses & Leashes	ペット・ペットグッズ	猫用品・キャットフード
+Pet Supplies	Cats	Feeding & Watering Supplies	ペット・ペットグッズ	猫用品・キャットフード
+Pet Supplies	Cats	Flea & Tick Control	ペット・ペットグッズ	猫用品・キャットフード
+Pet Supplies	Cats	Food	ペット・ペットグッズ	猫用品・キャットフード
+Pet Supplies	Cats	Grooming	ペット・ペットグッズ	猫用品・キャットフード
+Pet Supplies	Cats	Health Supplies	ペット・ペットグッズ	猫用品・キャットフード
+Pet Supplies	Cats	Litter & Housebreaking	ペット・ペットグッズ	猫用品・キャットフード
+Pet Supplies	Cats	Memorials & Funerary	ペット・ペットグッズ	猫用品・キャットフード
+Pet Supplies	Cats	Repellents & Training Aids	ペット・ペットグッズ	猫用品・キャットフード
+Pet Supplies	Cats	Toys	ペット・ペットグッズ	猫用品・キャットフード
+Pet Supplies	Cats	Treats	ペット・ペットグッズ	猫用品・キャットフード
+# Grocery & Gourmet Food/Snacks & Sweets L3 → sonota_l3fallback有効化（その他スナック菓子・駄菓子）
+Grocery & Gourmet Food	Snacks & Sweets	Breakfast & Cereal Bars	スイーツ・お菓子	スナック菓子・駄菓子
+Grocery & Gourmet Food	Snacks & Sweets	Candy & Chocolate	スイーツ・お菓子	スナック菓子・駄菓子
+Grocery & Gourmet Food	Snacks & Sweets	Chocolate Candy	スイーツ・お菓子	スナック菓子・駄菓子
+Grocery & Gourmet Food	Snacks & Sweets	Snack Foods	スイーツ・お菓子	スナック菓子・駄菓子
+# Arts, Crafts & Sewing/Sewing L3 → sonota_l3fallback有効化（その他手芸・クラフト・生地）
+Arts, Crafts & Sewing	Sewing	Designs	日用品・文房具・手芸用品	手芸・クラフト・生地
+Arts, Crafts & Sewing	Sewing	Embroidery Machines	日用品・文房具・手芸用品	手芸・クラフト・生地
+Arts, Crafts & Sewing	Sewing	Industrial Machines	日用品・文房具・手芸用品	手芸・クラフト・生地
+Arts, Crafts & Sewing	Sewing	Quilting	日用品・文房具・手芸用品	手芸・クラフト・生地
+Arts, Crafts & Sewing	Sewing	Serger & Overlock Machine Accessories	日用品・文房具・手芸用品	手芸・クラフト・生地
+Arts, Crafts & Sewing	Sewing	Sergers & Overlock Machines	日用品・文房具・手芸用品	手芸・クラフト・生地
+Arts, Crafts & Sewing	Sewing	Sewing Machine Parts & Accessories	日用品・文房具・手芸用品	手芸・クラフト・生地
+Arts, Crafts & Sewing	Sewing	Sewing Machines	日用品・文房具・手芸用品	手芸・クラフト・生地
+Arts, Crafts & Sewing	Sewing	Sewing Notions & Supplies	日用品・文房具・手芸用品	手芸・クラフト・生地
+Arts, Crafts & Sewing	Sewing	Sewing Patterns & Templates	日用品・文房具・手芸用品	手芸・クラフト・生地
+Arts, Crafts & Sewing	Sewing	Sewing Project Kits	日用品・文房具・手芸用品	手芸・クラフト・生地
+Arts, Crafts & Sewing	Sewing	Storage & Furniture	日用品・文房具・手芸用品	手芸・クラフト・生地
+Arts, Crafts & Sewing	Sewing	Thread & Floss	日用品・文房具・手芸用品	手芸・クラフト・生地
+Arts, Crafts & Sewing	Sewing	Trim & Embellishments	日用品・文房具・手芸用品	手芸・クラフト・生地
+# Sports & Outdoors/Exercise & Fitness L3 → sonota_l3fallback有効化（その他ダイエット）
+Sports & Outdoors	Exercise & Fitness	Accessories	ダイエット・健康	ダイエット
+Sports & Outdoors	Exercise & Fitness	Balance Trainers	ダイエット・健康	ダイエット
+Sports & Outdoors	Exercise & Fitness	Cardio Training	ダイエット・健康	ダイエット
+Sports & Outdoors	Exercise & Fitness	Clothing	ダイエット・健康	ダイエット
+Sports & Outdoors	Exercise & Fitness	Exercise Machine Parts & Accessories	ダイエット・健康	ダイエット
+Sports & Outdoors	Exercise & Fitness	Fitness Technology	ダイエット・健康	ダイエット
+Sports & Outdoors	Exercise & Fitness	Footwear	ダイエット・健康	ダイエット
+Sports & Outdoors	Exercise & Fitness	Pilates	ダイエット・健康	ダイエット
+Sports & Outdoors	Exercise & Fitness	Running	ダイエット・健康	ダイエット
+Sports & Outdoors	Exercise & Fitness	Speed & Agility Training	ダイエット・健康	ダイエット
+Sports & Outdoors	Exercise & Fitness	Strength Training Equipment	ダイエット・健康	ダイエット
+Sports & Outdoors	Exercise & Fitness	Yoga	ダイエット・健康	ダイエット
+# Industrial & Scientific/Lab & Scientific Products L3 → sonota_l3fallback有効化（その他DIY工具）
+Industrial & Scientific	Lab & Scientific Products	Glassware & Labware	花・ガーデン・DIY工具	DIY工具
+Industrial & Scientific	Lab & Scientific Products	Lab Chemicals	花・ガーデン・DIY工具	DIY工具
+Industrial & Scientific	Lab & Scientific Products	Lab Furniture	花・ガーデン・DIY工具	DIY工具
+Industrial & Scientific	Lab & Scientific Products	Lab Instruments & Equipment	花・ガーデン・DIY工具	DIY工具
+Industrial & Scientific	Lab & Scientific Products	Lab Supplies & Consumables	花・ガーデン・DIY工具	DIY工具
+Industrial & Scientific	Lab & Scientific Products	Life Science Supplies	花・ガーデン・DIY工具	DIY工具
+# Industrial & Scientific/Industrial Electrical L3 → sonota_l3fallback有効化（その他DIY工具）
+Industrial & Scientific	Industrial Electrical	Circuit Protection Products	花・ガーデン・DIY工具	DIY工具
+Industrial & Scientific	Industrial Electrical	Controls & Indicators	花・ガーデン・DIY工具	DIY工具
+Industrial & Scientific	Industrial Electrical	Decade Boxes	花・ガーデン・DIY工具	DIY工具
+Industrial & Scientific	Industrial Electrical	Fiber Optic Products	花・ガーデン・DIY工具	DIY工具
+Industrial & Scientific	Industrial Electrical	Lighting Components	花・ガーデン・DIY工具	DIY工具
+Industrial & Scientific	Industrial Electrical	Optoelectronic Products	花・ガーデン・DIY工具	DIY工具
+Industrial & Scientific	Industrial Electrical	Passive Components	花・ガーデン・DIY工具	DIY工具
+Industrial & Scientific	Industrial Electrical	Semiconductor Products	花・ガーデン・DIY工具	DIY工具
+Industrial & Scientific	Industrial Electrical	Sensors	花・ガーデン・DIY工具	DIY工具
+Industrial & Scientific	Industrial Electrical	Thermal Management Products	花・ガーデン・DIY工具	DIY工具
+Industrial & Scientific	Industrial Electrical	Wiring & Connecting	花・ガーデン・DIY工具	DIY工具
+# Industrial & Scientific/Power Transmission Products L3 → sonota_l3fallback有効化（その他DIY工具）
+Industrial & Scientific	Power Transmission Products	Bearings, Balls & Bushings	花・ガーデン・DIY工具	DIY工具
+Industrial & Scientific	Power Transmission Products	Belts	花・ガーデン・DIY工具	DIY工具
+Industrial & Scientific	Power Transmission Products	Brakes & Clutches	花・ガーデン・DIY工具	DIY工具
+Industrial & Scientific	Power Transmission Products	Cables & Accessories	花・ガーデン・DIY工具	DIY工具
+Industrial & Scientific	Power Transmission Products	Cams & Followers	花・ガーデン・DIY工具	DIY工具
+Industrial & Scientific	Power Transmission Products	Chains & Sprockets	花・ガーデン・DIY工具	DIY工具
+Industrial & Scientific	Power Transmission Products	Couplers & Flanges	花・ガーデン・DIY工具	DIY工具
+Industrial & Scientific	Power Transmission Products	Flexible Couplings	花・ガーデン・DIY工具	DIY工具
+Industrial & Scientific	Power Transmission Products	Gears & Gear Drives	花・ガーデン・DIY工具	DIY工具
+Industrial & Scientific	Power Transmission Products	Industrial Fans	花・ガーデン・DIY工具	DIY工具
+Industrial & Scientific	Power Transmission Products	Keys & Keyways	花・ガーデン・DIY工具	DIY工具
+Industrial & Scientific	Power Transmission Products	Linear Motion	花・ガーデン・DIY工具	DIY工具
+Industrial & Scientific	Power Transmission Products	Motor Controls & Drives	花・ガーデン・DIY工具	DIY工具
+Industrial & Scientific	Power Transmission Products	Motors & Generators	花・ガーデン・DIY工具	DIY工具
+Industrial & Scientific	Power Transmission Products	Rigid Couplings	花・ガーデン・DIY工具	DIY工具
+Industrial & Scientific	Power Transmission Products	Ropes & Roping	花・ガーデン・DIY工具	DIY工具
+Industrial & Scientific	Power Transmission Products	Shafts & Shaft Collars	花・ガーデン・DIY工具	DIY工具
+Industrial & Scientific	Power Transmission Products	Universal Joints	花・ガーデン・DIY工具	DIY工具
+# Industrial & Scientific/Hydraulics, Pneumatics & Plumbing L3 → sonota_l3fallback有効化（その他建築・住宅・設備）
+Industrial & Scientific	Hydraulics, Pneumatics & Plumbing	Cylinders	花・ガーデン・DIY工具	建築・住宅・設備
+Industrial & Scientific	Hydraulics, Pneumatics & Plumbing	Fittings & Manifolds	花・ガーデン・DIY工具	建築・住宅・設備
+Industrial & Scientific	Hydraulics, Pneumatics & Plumbing	Hydraulic Seals	花・ガーデン・DIY工具	建築・住宅・設備
+Industrial & Scientific	Hydraulics, Pneumatics & Plumbing	Hydraulic Valves	花・ガーデン・DIY工具	建築・住宅・設備
+Industrial & Scientific	Hydraulics, Pneumatics & Plumbing	Lubrication	花・ガーデン・DIY工具	建築・住宅・設備
+Industrial & Scientific	Hydraulics, Pneumatics & Plumbing	Pneumatics	花・ガーデン・DIY工具	建築・住宅・設備
+Industrial & Scientific	Hydraulics, Pneumatics & Plumbing	Pumps & Accessories	花・ガーデン・DIY工具	建築・住宅・設備
+Industrial & Scientific	Hydraulics, Pneumatics & Plumbing	Push-In Plugs	花・ガーデン・DIY工具	建築・住宅・設備
+Industrial & Scientific	Hydraulics, Pneumatics & Plumbing	Seals & O-Rings	花・ガーデン・DIY工具	建築・住宅・設備
+Industrial & Scientific	Hydraulics, Pneumatics & Plumbing	Tubes, Pipes & Hoses	花・ガーデン・DIY工具	建築・住宅・設備
+# Industrial & Scientific/Raw Materials L3 → sonota_l3fallback有効化（その他DIY工具）
+Industrial & Scientific	Raw Materials	Ceramics, Glass & Industrial Gems	花・ガーデン・DIY工具	DIY工具
+Industrial & Scientific	Raw Materials	Cork	花・ガーデン・DIY工具	DIY工具
+Industrial & Scientific	Raw Materials	Fabrics, Fibers & Textiles	花・ガーデン・DIY工具	DIY工具
+Industrial & Scientific	Raw Materials	Floor Grating	花・ガーデン・DIY工具	DIY工具
+Industrial & Scientific	Raw Materials	Foam	花・ガーデン・DIY工具	DIY工具
+Industrial & Scientific	Raw Materials	Graphite	花・ガーデン・DIY工具	DIY工具
+Industrial & Scientific	Raw Materials	Industrial Wire	花・ガーデン・DIY工具	DIY工具
+Industrial & Scientific	Raw Materials	Laminates & Composites	花・ガーデン・DIY工具	DIY工具
+Industrial & Scientific	Raw Materials	Mesh & Wire Cloth	花・ガーデン・DIY工具	DIY工具
+Industrial & Scientific	Raw Materials	Metals & Alloys	花・ガーデン・DIY工具	DIY工具
+Industrial & Scientific	Raw Materials	Plastics	花・ガーデン・DIY工具	DIY工具
+Industrial & Scientific	Raw Materials	Rubber	花・ガーデン・DIY工具	DIY工具
+Industrial & Scientific	Raw Materials	Wood	花・ガーデン・DIY工具	DIY工具
+# Industrial & Scientific/Test, Measure & Inspect L3 → sonota_l3fallback有効化（その他DIY工具）
+Industrial & Scientific	Test, Measure & Inspect	Airflow & Air Quality	花・ガーデン・DIY工具	DIY工具
+Industrial & Scientific	Test, Measure & Inspect	Calibration	花・ガーデン・DIY工具	DIY工具
+Industrial & Scientific	Test, Measure & Inspect	Dimensional Measurement	花・ガーデン・DIY工具	DIY工具
+Industrial & Scientific	Test, Measure & Inspect	Electrical Testing	花・ガーデン・DIY工具	DIY工具
+Industrial & Scientific	Test, Measure & Inspect	Inspection & Analysis	花・ガーデン・DIY工具	DIY工具
+Industrial & Scientific	Test, Measure & Inspect	Motion, Speed & Force	花・ガーデン・DIY工具	DIY工具
+Industrial & Scientific	Test, Measure & Inspect	Network & Cable Testers	花・ガーデン・DIY工具	DIY工具
+Industrial & Scientific	Test, Measure & Inspect	Pressure & Vacuum	花・ガーデン・DIY工具	DIY工具
+Industrial & Scientific	Test, Measure & Inspect	Recorders & Data Acquisition	花・ガーデン・DIY工具	DIY工具
+Industrial & Scientific	Test, Measure & Inspect	Substance Analysis Instrumentation	花・ガーデン・DIY工具	DIY工具
+Industrial & Scientific	Test, Measure & Inspect	Surface & Hardness Testing	花・ガーデン・DIY工具	DIY工具
+Industrial & Scientific	Test, Measure & Inspect	Temperature & Humidity	花・ガーデン・DIY工具	DIY工具
+# Industrial & Scientific/Cutting Tools L3 → sonota_l3fallback有効化（その他DIY工具）
+Industrial & Scientific	Cutting Tools	Brazed Tools	花・ガーデン・DIY工具	DIY工具
+Industrial & Scientific	Cutting Tools	Broaches	花・ガーデン・DIY工具	DIY工具
+Industrial & Scientific	Cutting Tools	Counterbores	花・ガーデン・DIY工具	DIY工具
+Industrial & Scientific	Cutting Tools	Countersinks	花・ガーデン・DIY工具	DIY工具
+Industrial & Scientific	Cutting Tools	Cutting Tool Coolants	花・ガーデン・DIY工具	DIY工具
+Industrial & Scientific	Cutting Tools	Deburring Cutters	花・ガーデン・DIY工具	DIY工具
+Industrial & Scientific	Cutting Tools	Drill & Tap Sets	花・ガーデン・DIY工具	DIY工具
+Industrial & Scientific	Cutting Tools	Drill Adapters	花・ガーデン・DIY工具	DIY工具
+Industrial & Scientific	Cutting Tools	Fixturing Clamps	花・ガーデン・DIY工具	DIY工具
+Industrial & Scientific	Cutting Tools	Indexable Insert Holders	花・ガーデン・DIY工具	DIY工具
+Industrial & Scientific	Cutting Tools	Indexable Inserts	花・ガーデン・DIY工具	DIY工具
+Industrial & Scientific	Cutting Tools	Industrial Drill Bits	花・ガーデン・DIY工具	DIY工具
+Industrial & Scientific	Cutting Tools	Knurling Tools	花・ガーデン・DIY工具	DIY工具
+Industrial & Scientific	Cutting Tools	Live Centers	花・ガーデン・DIY工具	DIY工具
+Industrial & Scientific	Cutting Tools	Metal Cutting Circular Saw Blades	花・ガーデン・DIY工具	DIY工具
+Industrial & Scientific	Cutting Tools	Metal Cutting Circular Saws	花・ガーデン・DIY工具	DIY工具
+Industrial & Scientific	Cutting Tools	Milling Accessories	花・ガーデン・DIY工具	DIY工具
+Industrial & Scientific	Cutting Tools	Port Contour Cutters	花・ガーデン・DIY工具	DIY工具
+Industrial & Scientific	Cutting Tools	Shell Reamer Arbors	花・ガーデン・DIY工具	DIY工具
+Industrial & Scientific	Cutting Tools	Slotting Cutters	花・ガーデン・DIY工具	DIY工具
+Industrial & Scientific	Cutting Tools	Thread Mills	花・ガーデン・DIY工具	DIY工具
+Industrial & Scientific	Cutting Tools	Tool Holders	花・ガーデン・DIY工具	DIY工具
+# Industrial & Scientific/Material Handling Products L3 → sonota_l3fallback有効化（その他DIY工具）
+Industrial & Scientific	Material Handling Products	Coil Chains	花・ガーデン・DIY工具	DIY工具
+Industrial & Scientific	Material Handling Products	Drum & Pail Handling Equipment	花・ガーデン・DIY工具	DIY工具
+Industrial & Scientific	Material Handling Products	Forklift Booms	花・ガーデン・DIY工具	DIY工具
+Industrial & Scientific	Material Handling Products	HVAC Equipment	花・ガーデン・DIY工具	DIY工具
+Industrial & Scientific	Material Handling Products	Hydraulic Lifting Pumps	花・ガーデン・DIY工具	DIY工具
+Industrial & Scientific	Material Handling Products	Industrial Light Towers	花・ガーデン・DIY工具	DIY工具
+Industrial & Scientific	Material Handling Products	Industrial Magnets	花・ガーデン・DIY工具	DIY工具
+Industrial & Scientific	Material Handling Products	Loading Dock Bumpers	花・ガーデン・DIY工具	DIY工具
+Industrial & Scientific	Material Handling Products	Loading Dock Levelers	花・ガーデン・DIY工具	DIY工具
+Industrial & Scientific	Material Handling Products	Loading Dock Plates	花・ガーデン・DIY工具	DIY工具
+Industrial & Scientific	Material Handling Products	Loading Dock Wheel Chocks	花・ガーデン・DIY工具	DIY工具
+Industrial & Scientific	Material Handling Products	Material Transport Equipment	花・ガーデン・DIY工具	DIY工具
+Industrial & Scientific	Material Handling Products	Pallet Strappers	花・ガーデン・DIY工具	DIY工具
+Industrial & Scientific	Material Handling Products	Personnel Lifts	花・ガーデン・DIY工具	DIY工具
+Industrial & Scientific	Material Handling Products	Pulling & Lifting	花・ガーデン・DIY工具	DIY工具
+Industrial & Scientific	Material Handling Products	Ramps	花・ガーデン・DIY工具	DIY工具
+Industrial & Scientific	Material Handling Products	Securing Straps	花・ガーデン・DIY工具	DIY工具
+Industrial & Scientific	Material Handling Products	Shelves & Racking Systems	花・ガーデン・DIY工具	DIY工具
+Industrial & Scientific	Material Handling Products	Wheels	花・ガーデン・DIY工具	DIY工具
+# Patio, Lawn & Garden/Farm & Ranch L3 → sonota_l3fallback有効化（その他ガーデニング）
+Patio, Lawn & Garden	Farm & Ranch	Agricultural & Construction Machinery	花・ガーデン・DIY工具	ガーデニング
+Patio, Lawn & Garden	Farm & Ranch	Agriculture & Grounds Management	花・ガーデン・DIY工具	ガーデニング
+Patio, Lawn & Garden	Farm & Ranch	Beekeeping Supplies	花・ガーデン・DIY工具	ガーデニング
+Patio, Lawn & Garden	Farm & Ranch	Livestock Supplies	花・ガーデン・DIY工具	ガーデニング
+Patio, Lawn & Garden	Farm & Ranch	Material Transport	花・ガーデン・DIY工具	ガーデニング
+Patio, Lawn & Garden	Farm & Ranch	Pest Control	花・ガーデン・DIY工具	ガーデニング
+Patio, Lawn & Garden	Farm & Ranch	Plant Germination Equipment	花・ガーデン・DIY工具	ガーデニング
+Patio, Lawn & Garden	Farm & Ranch	Plants, Seeds & Bulbs	花・ガーデン・DIY工具	ガーデニング
+Patio, Lawn & Garden	Farm & Ranch	Poultry Care	花・ガーデン・DIY工具	ガーデニング
+Patio, Lawn & Garden	Farm & Ranch	Soils, Fertilizers & Mulches	花・ガーデン・DIY工具	ガーデニング
+Patio, Lawn & Garden	Farm & Ranch	Structures & Hardware	花・ガーデン・DIY工具	ガーデニング
+# Patio, Lawn & Garden/Outdoor Power Tools L3 → sonota_l3fallback有効化（その他DIY工具）
+Patio, Lawn & Garden	Outdoor Power Tools	Chainsaws	花・ガーデン・DIY工具	DIY工具
+Patio, Lawn & Garden	Outdoor Power Tools	Edgers	花・ガーデン・DIY工具	DIY工具
+Patio, Lawn & Garden	Outdoor Power Tools	Interchangeable Battery Packs	花・ガーデン・DIY工具	DIY工具
+Patio, Lawn & Garden	Outdoor Power Tools	Lawn Mowers & Tractors	花・ガーデン・DIY工具	DIY工具
+Patio, Lawn & Garden	Outdoor Power Tools	Leaf Blowers, Vacuums & Accessories	花・ガーデン・DIY工具	DIY工具
+Patio, Lawn & Garden	Outdoor Power Tools	Log Splitters	花・ガーデン・DIY工具	DIY工具
+Patio, Lawn & Garden	Outdoor Power Tools	Metal Detectors	花・ガーデン・DIY工具	DIY工具
+Patio, Lawn & Garden	Outdoor Power Tools	Pole Saws	花・ガーデン・DIY工具	DIY工具
+Patio, Lawn & Garden	Outdoor Power Tools	Pressure Washers	花・ガーデン・DIY工具	DIY工具
+Patio, Lawn & Garden	Outdoor Power Tools	Pruning Shears, Parts & Accessories	花・ガーデン・DIY工具	DIY工具
+Patio, Lawn & Garden	Outdoor Power Tools	Replacement Parts & Accessories	花・ガーデン・DIY工具	DIY工具
+Patio, Lawn & Garden	Outdoor Power Tools	String Trimmers	花・ガーデン・DIY工具	DIY工具
+Patio, Lawn & Garden	Outdoor Power Tools	Tillers	花・ガーデン・DIY工具	DIY工具
+Patio, Lawn & Garden	Outdoor Power Tools	Trimmers & Accessories	花・ガーデン・DIY工具	DIY工具
+Patio, Lawn & Garden	Outdoor Power Tools	Weed Torches	花・ガーデン・DIY工具	DIY工具
+Patio, Lawn & Garden	Outdoor Power Tools	Wood Chippers, Shredders, & Mulchers	花・ガーデン・DIY工具	DIY工具
+# Patio, Lawn & Garden/Outdoor Décor L3 → sonota_l3fallback有効化（その他エクステリア）
+Patio, Lawn & Garden	Outdoor Décor	Address Signs	花・ガーデン・DIY工具	エクステリア
+Patio, Lawn & Garden	Outdoor Décor	Artificial Grass	花・ガーデン・DIY工具	エクステリア
+Patio, Lawn & Garden	Outdoor Décor	Backyard Birding & Wildlife	花・ガーデン・DIY工具	エクステリア
+Patio, Lawn & Garden	Outdoor Décor	Chimes	花・ガーデン・DIY工具	エクステリア
+Patio, Lawn & Garden	Outdoor Décor	Cupolas & Accessories	花・ガーデン・DIY工具	エクステリア
+Patio, Lawn & Garden	Outdoor Décor	Decorative Fences	花・ガーデン・DIY工具	エクステリア
+Patio, Lawn & Garden	Outdoor Décor	Decorative Garden Stakes	花・ガーデン・DIY工具	エクステリア
+Patio, Lawn & Garden	Outdoor Décor	Decorative Garden Stools	花・ガーデン・DIY工具	エクステリア
+Patio, Lawn & Garden	Outdoor Décor	Doormats	花・ガーデン・DIY工具	エクステリア
+Patio, Lawn & Garden	Outdoor Décor	Flagpole Hardware	花・ガーデン・DIY工具	エクステリア
+Patio, Lawn & Garden	Outdoor Décor	Flags	花・ガーデン・DIY工具	エクステリア
+Patio, Lawn & Garden	Outdoor Décor	Fountain Accessories	花・ガーデン・DIY工具	エクステリア
+Patio, Lawn & Garden	Outdoor Décor	Fountains	花・ガーデン・DIY工具	エクステリア
+Patio, Lawn & Garden	Outdoor Décor	Garage Door Decorations	花・ガーデン・DIY工具	エクステリア
+Patio, Lawn & Garden	Outdoor Décor	Garden Bridges	花・ガーデン・DIY工具	エクステリア
+Patio, Lawn & Garden	Outdoor Décor	Hardscaping Materials	花・ガーデン・DIY工具	エクステリア
+Patio, Lawn & Garden	Outdoor Décor	Lighting	花・ガーデン・DIY工具	エクステリア
+Patio, Lawn & Garden	Outdoor Décor	Mailbox Accessories	花・ガーデン・DIY工具	エクステリア
+Patio, Lawn & Garden	Outdoor Décor	Mailbox Covers	花・ガーデン・DIY工具	エクステリア
+Patio, Lawn & Garden	Outdoor Décor	Outdoor Clocks	花・ガーデン・DIY工具	エクステリア
+Patio, Lawn & Garden	Outdoor Décor	Outdoor Curtains	花・ガーデン・DIY工具	エクステリア
+Patio, Lawn & Garden	Outdoor Décor	Outdoor Holiday Decorations	花・ガーデン・DIY工具	エクステリア
+Patio, Lawn & Garden	Outdoor Décor	Outdoor Rugs	花・ガーデン・DIY工具	エクステリア
+Patio, Lawn & Garden	Outdoor Décor	Plaques & Wall Art	花・ガーデン・DIY工具	エクステリア
+Patio, Lawn & Garden	Outdoor Décor	Rain Chains	花・ガーデン・DIY工具	エクステリア
+Patio, Lawn & Garden	Outdoor Décor	Thermometers & Weather Instruments	花・ガーデン・DIY工具	エクステリア
+Patio, Lawn & Garden	Outdoor Décor	Weathervanes	花・ガーデン・DIY工具	エクステリア
+Patio, Lawn & Garden	Outdoor Décor	Windsocks	花・ガーデン・DIY工具	エクステリア
+Patio, Lawn & Garden	Outdoor Décor	Yard Signs	花・ガーデン・DIY工具	エクステリア
+# Patio, Lawn & Garden/Patio Furniture & Accessories L3 → sonota_l3fallback有効化（その他エクステリア）
+Patio, Lawn & Garden	Patio Furniture & Accessories	Canopies, Gazebos & Pergolas	花・ガーデン・DIY工具	エクステリア
+Patio, Lawn & Garden	Patio Furniture & Accessories	Cushion Covers	花・ガーデン・DIY工具	エクステリア
+Patio, Lawn & Garden	Patio Furniture & Accessories	Cushion Storage Bags	花・ガーデン・DIY工具	エクステリア
+Patio, Lawn & Garden	Patio Furniture & Accessories	Cushions	花・ガーデン・DIY工具	エクステリア
+Patio, Lawn & Garden	Patio Furniture & Accessories	Decorative Pillows	花・ガーデン・DIY工具	エクステリア
+Patio, Lawn & Garden	Patio Furniture & Accessories	Hammocks, Stands & Accessories	花・ガーデン・DIY工具	エクステリア
+Patio, Lawn & Garden	Patio Furniture & Accessories	Outdoor Furniture	花・ガーデン・DIY工具	エクステリア
+Patio, Lawn & Garden	Patio Furniture & Accessories	Patio Furniture Covers	花・ガーデン・DIY工具	エクステリア
+Patio, Lawn & Garden	Patio Furniture & Accessories	Patio Furniture Sets	花・ガーデン・DIY工具	エクステリア
+Patio, Lawn & Garden	Patio Furniture & Accessories	Patio Seating	花・ガーデン・DIY工具	エクステリア
+Patio, Lawn & Garden	Patio Furniture & Accessories	Picnic Baskets, Tables & Accessories	花・ガーデン・DIY工具	エクステリア
+Patio, Lawn & Garden	Patio Furniture & Accessories	Privacy Screens & Protection	花・ガーデン・DIY工具	エクステリア
+Patio, Lawn & Garden	Patio Furniture & Accessories	Storage Benches	花・ガーデン・DIY工具	エクステリア
+Patio, Lawn & Garden	Patio Furniture & Accessories	Tables	花・ガーデン・DIY工具	エクステリア
+Patio, Lawn & Garden	Patio Furniture & Accessories	Umbrellas & Shade	花・ガーデン・DIY工具	エクステリア
+# Health & Household/Household Supplies L3 → sonota_l3fallback有効化（その他日用品・生活雑貨）
+Health & Household	Household Supplies	Air Fresheners	日用品・文房具・手芸用品	日用品・生活雑貨
+Health & Household	Household Supplies	Cleaning Tools	日用品・文房具・手芸用品	日用品・生活雑貨
+Health & Household	Household Supplies	Dishwashing	日用品・文房具・手芸用品	日用品・生活雑貨
+Health & Household	Household Supplies	Household Cleaning	日用品・文房具・手芸用品	日用品・生活雑貨
+Health & Household	Household Supplies	Indoor Insect & Pest Control	日用品・文房具・手芸用品	日用品・生活雑貨
+Health & Household	Household Supplies	Laundry	日用品・文房具・手芸用品	日用品・生活雑貨
+Health & Household	Household Supplies	Lighters & Matches	日用品・文房具・手芸用品	日用品・生活雑貨
+Health & Household	Household Supplies	Moisture Absorbers	日用品・文房具・手芸用品	日用品・生活雑貨
+Health & Household	Household Supplies	Paper & Plastic	日用品・文房具・手芸用品	日用品・生活雑貨
+Health & Household	Household Supplies	Produce Wash	日用品・文房具・手芸用品	日用品・生活雑貨
+Health & Household	Household Supplies	Tissues, Toilet Paper & Sprays	日用品・文房具・手芸用品	日用品・生活雑貨
+Health & Household	Household Supplies	Tobacco-Related Products	日用品・文房具・手芸用品	日用品・生活雑貨
+Health & Household	Household Supplies	Toothpicks	日用品・文房具・手芸用品	日用品・生活雑貨
+# Clothing, Shoes & Jewelry/Traditional & Cultural Wear L3 → sonota_l3fallback有効化（その他和装・和服）
+Clothing, Shoes & Jewelry	Traditional & Cultural Wear	African	レディースファッション	和装・和服
+Clothing, Shoes & Jewelry	Traditional & Cultural Wear	Asian	レディースファッション	和装・和服
+Clothing, Shoes & Jewelry	Traditional & Cultural Wear	European	レディースファッション	和装・和服
+Clothing, Shoes & Jewelry	Traditional & Cultural Wear	Latin American	レディースファッション	和装・和服
+Clothing, Shoes & Jewelry	Traditional & Cultural Wear	Middle Eastern	レディースファッション	和装・和服
+# Toys & Games/Remote & App Controlled Vehicles & Parts L3 → sonota_l3fallback有効化（その他ラジコン）
+Toys & Games	Remote & App Controlled Vehicles & Parts	Fuel	おもちゃ・趣味	ラジコン
+Toys & Games	Remote & App Controlled Vehicles & Parts	Remote & App Controlled Vehicle Parts	おもちゃ・趣味	ラジコン
+Toys & Games	Remote & App Controlled Vehicles & Parts	Remote & App Controlled Vehicles	おもちゃ・趣味	ラジコン
+Toys & Games	Remote & App Controlled Vehicles & Parts	Train Tracks	おもちゃ・趣味	ラジコン
+# Grocery & Gourmet Food/Deli & Prepared Foods L3 → sonota_l3fallback有効化（その他惣菜・食材）
+Grocery & Gourmet Food	Deli & Prepared Foods	Appetizers	グルメ・食品	惣菜・食材
+Grocery & Gourmet Food	Deli & Prepared Foods	Box Lunches	グルメ・食品	惣菜・食材
+Grocery & Gourmet Food	Deli & Prepared Foods	Breakfast	グルメ・食品	惣菜・食材
+Grocery & Gourmet Food	Deli & Prepared Foods	Casseroles, Pot Pies & Quiches	グルメ・食品	惣菜・食材
+Grocery & Gourmet Food	Deli & Prepared Foods	Deli Meats & Cheeses	グルメ・食品	惣菜・食材
+Grocery & Gourmet Food	Deli & Prepared Foods	Deli Salads	グルメ・食品	惣菜・食材
+Grocery & Gourmet Food	Deli & Prepared Foods	Dips, Salsas & Spreads	グルメ・食品	惣菜・食材
+Grocery & Gourmet Food	Deli & Prepared Foods	Fresh Pasta & Sauces	グルメ・食品	惣菜・食材
+Grocery & Gourmet Food	Deli & Prepared Foods	Olives & Antipasto	グルメ・食品	惣菜・食材
+Grocery & Gourmet Food	Deli & Prepared Foods	Pizzas & Focaccia	グルメ・食品	惣菜・食材
+Grocery & Gourmet Food	Deli & Prepared Foods	Sandwiches & Wraps	グルメ・食品	惣菜・食材
+Grocery & Gourmet Food	Deli & Prepared Foods	Side Dishes	グルメ・食品	惣菜・食材
+Grocery & Gourmet Food	Deli & Prepared Foods	Soups, Stews & Chili	グルメ・食品	惣菜・食材
+Grocery & Gourmet Food	Deli & Prepared Foods	Stromboli & Calzones	グルメ・食品	惣菜・食材
+# Tools & Home Improvement/Kitchen & Bath Fixtures L3 → sonota_l3fallback有効化（その他建築・住宅・設備）
+Tools & Home Improvement	Kitchen & Bath Fixtures	Bathroom Fixtures	花・ガーデン・DIY工具	建築・住宅・設備
+Tools & Home Improvement	Kitchen & Bath Fixtures	Kitchen Fixtures	花・ガーデン・DIY工具	建築・住宅・設備
+Tools & Home Improvement	Kitchen & Bath Fixtures	Laundry & Utility Fixtures	花・ガーデン・DIY工具	建築・住宅・設備
+Tools & Home Improvement	Kitchen & Bath Fixtures	Water Filtration & Softeners	花・ガーデン・DIY工具	建築・住宅・設備
+# Tools & Home Improvement/Electrical L3 → sonota_l3fallback有効化（その他DIY工具）
+Tools & Home Improvement	Electrical	Breakers, Load Centers & Fuses	花・ガーデン・DIY工具	DIY工具
+Tools & Home Improvement	Electrical	Cords, Adapters & Multi-Outlets	花・ガーデン・DIY工具	DIY工具
+Tools & Home Improvement	Electrical	Door Chimes & Bells	花・ガーデン・DIY工具	DIY工具
+Tools & Home Improvement	Electrical	Electric Motors	花・ガーデン・DIY工具	DIY工具
+Tools & Home Improvement	Electrical	Electrical Boxes, Conduits & Fittings	花・ガーデン・DIY工具	DIY工具
+Tools & Home Improvement	Electrical	Electrical Connectors	花・ガーデン・DIY工具	DIY工具
+Tools & Home Improvement	Electrical	Electrical Wire	花・ガーデン・DIY工具	DIY工具
+Tools & Home Improvement	Electrical	Home Automation Devices	花・ガーデン・DIY工具	DIY工具
+Tools & Home Improvement	Electrical	Light Sockets	花・ガーデン・DIY工具	DIY工具
+Tools & Home Improvement	Electrical	Outlets & Accessories	花・ガーデン・DIY工具	DIY工具
+Tools & Home Improvement	Electrical	Plugs	花・ガーデン・DIY工具	DIY工具
+Tools & Home Improvement	Electrical	Recessed Lighting	花・ガーデン・DIY工具	DIY工具
+Tools & Home Improvement	Electrical	Switches & Dimmers	花・ガーデン・DIY工具	DIY工具
+Tools & Home Improvement	Electrical	Testers	花・ガーデン・DIY工具	DIY工具
+Tools & Home Improvement	Electrical	Timers	花・ガーデン・DIY工具	DIY工具
+Tools & Home Improvement	Electrical	Tools & Hardware	花・ガーデン・DIY工具	DIY工具
+Tools & Home Improvement	Electrical	Wall Plates & Accessories	花・ガーデン・DIY工具	DIY工具
+# Arts, Crafts & Sewing/Painting, Drawing & Art Supplies L3 → sonota_l3fallback有効化（その他文房具・事務用品）
+Arts, Crafts & Sewing	Painting, Drawing & Art Supplies	Art Paper	日用品・文房具・手芸用品	文房具・事務用品・画材
+Arts, Crafts & Sewing	Painting, Drawing & Art Supplies	Artists' Protective Clothing	日用品・文房具・手芸用品	文房具・事務用品・画材
+Arts, Crafts & Sewing	Painting, Drawing & Art Supplies	Boards & Canvas	日用品・文房具・手芸用品	文房具・事務用品・画材
+Arts, Crafts & Sewing	Painting, Drawing & Art Supplies	Brush & Pen Cleaners	日用品・文房具・手芸用品	文房具・事務用品・画材
+Arts, Crafts & Sewing	Painting, Drawing & Art Supplies	Drawing	日用品・文房具・手芸用品	文房具・事務用品・画材
+Arts, Crafts & Sewing	Painting, Drawing & Art Supplies	Easels	日用品・文房具・手芸用品	文房具・事務用品・画材
+Arts, Crafts & Sewing	Painting, Drawing & Art Supplies	Painting	日用品・文房具・手芸用品	文房具・事務用品・画材
+# Health & Household/Personal Care L3 → sonota_l3fallback有効化（その他ボディケア）
+Health & Household	Personal Care	Bath & Bathing Accessories	ビューティ・コスメ	ボディケア
+Health & Household	Personal Care	Deodorants & Antiperspirants	ビューティ・コスメ	ボディケア
+Health & Household	Personal Care	Lip Care	ビューティ・コスメ	ボディケア
+Health & Household	Personal Care	Piercing & Tattoo Supplies	ビューティ・コスメ	ボディケア
+Health & Household	Personal Care	Scrubs & Body Treatments	ビューティ・コスメ	ボディケア
+Health & Household	Personal Care	Shave & Hair Removal	ビューティ・コスメ	ボディケア
+Health & Household	Personal Care	Skin Care	ビューティ・コスメ	ボディケア
+# Home & Kitchen/Heating, Cooling & Air Quality L3 → sonota_l3fallback有効化（その他エアコン）
+Home & Kitchen	Heating, Cooling & Air Quality	Air Conditioners	家電	エアコン
+Home & Kitchen	Heating, Cooling & Air Quality	Air Purifiers	家電	エアコン
+Home & Kitchen	Heating, Cooling & Air Quality	Dehumidifiers	家電	エアコン
+Home & Kitchen	Heating, Cooling & Air Quality	Evaporative Coolers	家電	エアコン
+Home & Kitchen	Heating, Cooling & Air Quality	Household Fans	家電	エアコン
+Home & Kitchen	Heating, Cooling & Air Quality	Humidifiers	家電	エアコン
+Home & Kitchen	Heating, Cooling & Air Quality	Parts & Accessories	家電	エアコン
+Home & Kitchen	Heating, Cooling & Air Quality	Space Heaters	家電	エアコン
+Home & Kitchen	Heating, Cooling & Air Quality	Stoves & Fireplaces	家電	エアコン
+# Clothing, Shoes & Jewelry/Uniforms, Work & Safety L3 → sonota_l3fallback有効化（その他作業服）
+Clothing, Shoes & Jewelry	Uniforms, Work & Safety	Clothing	メンズファッション	作業服
+Clothing, Shoes & Jewelry	Uniforms, Work & Safety	Shoes	メンズファッション	作業服
+# Clothing, Shoes & Jewelry/Girls (152件) sonota_l3fallback → キッズベビー・マタニティ/キッズ
+Clothing, Shoes & Jewelry	Girls	Accessories	キッズベビー・マタニティ	キッズ
+Clothing, Shoes & Jewelry	Girls	Clothing	キッズベビー・マタニティ	キッズ
+Clothing, Shoes & Jewelry	Girls	Jewelry	キッズベビー・マタニティ	キッズ
+Clothing, Shoes & Jewelry	Girls	Shoes	キッズベビー・マタニティ	キッズ
+Clothing, Shoes & Jewelry	Girls	Shops	キッズベビー・マタニティ	キッズ
+Clothing, Shoes & Jewelry	Girls	Watches	キッズベビー・マタニティ	キッズ
+
+# Clothing, Shoes & Jewelry/Boys (130件) sonota_l3fallback → キッズベビー・マタニティ/キッズ
+Clothing, Shoes & Jewelry	Boys	Accessories	キッズベビー・マタニティ	キッズ
+Clothing, Shoes & Jewelry	Boys	Clothing	キッズベビー・マタニティ	キッズ
+Clothing, Shoes & Jewelry	Boys	Jewelry	キッズベビー・マタニティ	キッズ
+Clothing, Shoes & Jewelry	Boys	Shoes	キッズベビー・マタニティ	キッズ
+Clothing, Shoes & Jewelry	Boys	Shops	キッズベビー・マタニティ	キッズ
+Clothing, Shoes & Jewelry	Boys	Watches	キッズベビー・マタニティ	キッズ
+
+# Industrial & Scientific/Hydraulics, Pneumatics & Plumbing (108件) sonota_l3fallback → 花・ガーデン・DIY工具/建築・住宅・設備
+Industrial & Scientific	Hydraulics, Pneumatics & Plumbing	Fittings	花・ガーデン・DIY工具	建築・住宅・設備
+Industrial & Scientific	Hydraulics, Pneumatics & Plumbing	Hose Nozzles	花・ガーデン・DIY工具	建築・住宅・設備
+Industrial & Scientific	Hydraulics, Pneumatics & Plumbing	Hydraulic Equipment	花・ガーデン・DIY工具	建築・住宅・設備
+Industrial & Scientific	Hydraulics, Pneumatics & Plumbing	Pneumatic Equipment	花・ガーデン・DIY工具	建築・住宅・設備
+Industrial & Scientific	Hydraulics, Pneumatics & Plumbing	Protective Caps	花・ガーデン・DIY工具	建築・住宅・設備
+
+# Industrial & Scientific/Power Transmission Products (96件) sonota_l3fallback → 花・ガーデン・DIY工具/DIY工具
+Industrial & Scientific	Power Transmission Products	Chains	花・ガーデン・DIY工具	DIY工具
+Industrial & Scientific	Power Transmission Products	Control Cables & Accessories	花・ガーデン・DIY工具	DIY工具
+Industrial & Scientific	Power Transmission Products	Couplings, Collars & Universal Joiners	花・ガーデン・DIY工具	DIY工具
+Industrial & Scientific	Power Transmission Products	Enclosures & Cases	花・ガーデン・DIY工具	DIY工具
+Industrial & Scientific	Power Transmission Products	Gear Stock & Pinion Wire	花・ガーデン・DIY工具	DIY工具
+Industrial & Scientific	Power Transmission Products	Gearboxes, Gearheads & Speed Reducers	花・ガーデン・DIY工具	DIY工具
+Industrial & Scientific	Power Transmission Products	Gears	花・ガーデン・DIY工具	DIY工具
+Industrial & Scientific	Power Transmission Products	Linear Motion Products	花・ガーデン・DIY工具	DIY工具
+Industrial & Scientific	Power Transmission Products	Lubricants & Oils	花・ガーデン・DIY工具	DIY工具
+Industrial & Scientific	Power Transmission Products	Magnet Wire	花・ガーデン・DIY工具	DIY工具
+Industrial & Scientific	Power Transmission Products	Power Take-Offs (PTOs)	花・ガーデン・DIY工具	DIY工具
+Industrial & Scientific	Power Transmission Products	Ratchets & Pawls	花・ガーデン・DIY工具	DIY工具
+Industrial & Scientific	Power Transmission Products	Roller Chain Sprockets	花・ガーデン・DIY工具	DIY工具
+Industrial & Scientific	Power Transmission Products	Shafting	花・ガーデン・DIY工具	DIY工具
+Industrial & Scientific	Power Transmission Products	Shock & Vibration Control	花・ガーデン・DIY工具	DIY工具
+Industrial & Scientific	Power Transmission Products	Springs	花・ガーデン・DIY工具	DIY工具
+Industrial & Scientific	Power Transmission Products	Worm Wheels	花・ガーデン・DIY工具	DIY工具
+
+# Home & Kitchen/Bedding (82件) sonota_l3fallback → インテリア・寝具/寝具
+Home & Kitchen	Bedding	Air Mattresses & Accessories	インテリア・寝具	寝具
+Home & Kitchen	Bedding	Bed Canopies & Drapes	インテリア・寝具	寝具
+Home & Kitchen	Bedding	Bed Pillows & Positioners	インテリア・寝具	寝具
+Home & Kitchen	Bedding	Bed Runners & Scarves	インテリア・寝具	寝具
+Home & Kitchen	Bedding	Bedding Accessories	インテリア・寝具	寝具
+Home & Kitchen	Bedding	Bedding Sets & Collections	インテリア・寝具	寝具
+Home & Kitchen	Bedding	Bedspreads, Coverlets & Sets	インテリア・寝具	寝具
+Home & Kitchen	Bedding	Blankets & Throws	インテリア・寝具	寝具
+Home & Kitchen	Bedding	Comforters & Sets	インテリア・寝具	寝具
+Home & Kitchen	Bedding	Decorative Pillows, Inserts & Covers	インテリア・寝具	寝具
+Home & Kitchen	Bedding	Duvet Covers & Sets	インテリア・寝具	寝具
+Home & Kitchen	Bedding	Duvets & Sets	インテリア・寝具	寝具
+Home & Kitchen	Bedding	Kids' Bedding	インテリア・寝具	寝具
+Home & Kitchen	Bedding	Mattress Pads & Toppers	インテリア・寝具	寝具
+Home & Kitchen	Bedding	Mattress Protectors & Encasements	インテリア・寝具	寝具
+Home & Kitchen	Bedding	Quilts & Sets	インテリア・寝具	寝具
+Home & Kitchen	Bedding	Sheets & Pillowcases	インテリア・寝具	寝具
+
+# Electronics/Camera & Photo (80件) sonota_l3fallback → テレビ・オーディオ・カメラ/カメラ
+Electronics	Camera & Photo	Binoculars & Scopes	テレビ・オーディオ・カメラ	カメラ
+Electronics	Camera & Photo	Digital Cameras	テレビ・オーディオ・カメラ	カメラ
+Electronics	Camera & Photo	Film & Slide Scanners	テレビ・オーディオ・カメラ	カメラ
+Electronics	Camera & Photo	Film Photography	テレビ・オーディオ・カメラ	カメラ
+Electronics	Camera & Photo	Flashes	テレビ・オーディオ・カメラ	カメラ
+Electronics	Camera & Photo	Lenses	テレビ・オーディオ・カメラ	カメラ
+Electronics	Camera & Photo	Photo Printers	テレビ・オーディオ・カメラ	カメラ
+Electronics	Camera & Photo	Underwater Photography	テレビ・オーディオ・カメラ	カメラ
+Electronics	Camera & Photo	Video	テレビ・オーディオ・カメラ	カメラ
+Electronics	Camera & Photo	Video Projectors	テレビ・オーディオ・カメラ	カメラ
+Electronics	Camera & Photo	Video Surveillance	テレビ・オーディオ・カメラ	カメラ
+
+# Sports & Outdoors/Clothing (78件) sonota_l3fallback → スポーツ・アウトドア/スポーツウェア
+Sports & Outdoors	Clothing	Boys	スポーツ・アウトドア	スポーツウェア
+Sports & Outdoors	Clothing	Girls	スポーツ・アウトドア	スポーツウェア
+Sports & Outdoors	Clothing	Men	スポーツ・アウトドア	スポーツウェア
+Sports & Outdoors	Clothing	Women	スポーツ・アウトドア	スポーツウェア
+
+# Grocery & Gourmet Food/Dairy, Eggs & Plant-Based Alternatives (76件) sonota_l3fallback → グルメ・食品/チーズ・乳製品
+Grocery & Gourmet Food	Dairy, Eggs & Plant-Based Alternatives	Butter, Margarine & Plant-Based Alternatives	グルメ・食品	チーズ・乳製品
+Grocery & Gourmet Food	Dairy, Eggs & Plant-Based Alternatives	Cheese & Charcuterie Gifts	グルメ・食品	チーズ・乳製品
+Grocery & Gourmet Food	Dairy, Eggs & Plant-Based Alternatives	Cheese Assortments & Samplers	グルメ・食品	チーズ・乳製品
+Grocery & Gourmet Food	Dairy, Eggs & Plant-Based Alternatives	Cheese Dips & Spreads	グルメ・食品	チーズ・乳製品
+Grocery & Gourmet Food	Dairy, Eggs & Plant-Based Alternatives	Cottage Cheese	グルメ・食品	チーズ・乳製品
+Grocery & Gourmet Food	Dairy, Eggs & Plant-Based Alternatives	Cream Cheese	グルメ・食品	チーズ・乳製品
+Grocery & Gourmet Food	Dairy, Eggs & Plant-Based Alternatives	Dairy & Plant-Based Yogurt	グルメ・食品	チーズ・乳製品
+Grocery & Gourmet Food	Dairy, Eggs & Plant-Based Alternatives	Dairy Drinks	グルメ・食品	チーズ・乳製品
+Grocery & Gourmet Food	Dairy, Eggs & Plant-Based Alternatives	Eggs & Egg Substitutes	グルメ・食品	チーズ・乳製品
+Grocery & Gourmet Food	Dairy, Eggs & Plant-Based Alternatives	Packaged Cheese	グルメ・食品	チーズ・乳製品
+Grocery & Gourmet Food	Dairy, Eggs & Plant-Based Alternatives	Plant-Based Cheese	グルメ・食品	チーズ・乳製品
+Grocery & Gourmet Food	Dairy, Eggs & Plant-Based Alternatives	Plant-Based Coffee Creamers	グルメ・食品	チーズ・乳製品
+Grocery & Gourmet Food	Dairy, Eggs & Plant-Based Alternatives	Snack Packs & Lunches	グルメ・食品	チーズ・乳製品
+Grocery & Gourmet Food	Dairy, Eggs & Plant-Based Alternatives	Sour Cream	グルメ・食品	チーズ・乳製品
+Grocery & Gourmet Food	Dairy, Eggs & Plant-Based Alternatives	Whipped Toppings	グルメ・食品	チーズ・乳製品
+
+# Home & Kitchen/Storage & Organization (71件) sonota_l3fallback → インテリア・寝具/収納家具
+Home & Kitchen	Storage & Organization	Baskets, Bins & Containers	インテリア・寝具	収納家具
+Home & Kitchen	Storage & Organization	Bathroom Storage & Organization	インテリア・寝具	収納家具
+Home & Kitchen	Storage & Organization	Clothing & Closet Storage	インテリア・寝具	収納家具
+Home & Kitchen	Storage & Organization	Decorative Wreath Storage	インテリア・寝具	収納家具
+Home & Kitchen	Storage & Organization	Gift Wrap Storage	インテリア・寝具	収納家具
+Home & Kitchen	Storage & Organization	Holiday Décor Storage	インテリア・寝具	収納家具
+Home & Kitchen	Storage & Organization	Home Storage Hooks	インテリア・寝具	収納家具
+Home & Kitchen	Storage & Organization	Laundry Storage & Organization	インテリア・寝具	収納家具
+Home & Kitchen	Storage & Organization	Office Storage & Organization	インテリア・寝具	収納家具
+Home & Kitchen	Storage & Organization	Racks, Shelves & Drawers	インテリア・寝具	収納家具
+Home & Kitchen	Storage & Organization	Trash, Recycling & Compost	インテリア・寝具	収納家具
+
+# Industrial & Scientific/Industrial Hardware (71件) sonota_l3fallback → 花・ガーデン・DIY工具/DIY工具
+Industrial & Scientific	Industrial Hardware	Biscuits & Plugs	花・ガーデン・DIY工具	DIY工具
+Industrial & Scientific	Industrial Hardware	Brackets	花・ガーデン・DIY工具	DIY工具
+Industrial & Scientific	Industrial Hardware	Bumpers	花・ガーデン・DIY工具	DIY工具
+Industrial & Scientific	Industrial Hardware	Catches	花・ガーデン・DIY工具	DIY工具
+Industrial & Scientific	Industrial Hardware	Flexible Support Arms	花・ガーデン・DIY工具	DIY工具
+Industrial & Scientific	Industrial Hardware	Handles & Pulls	花・ガーデン・DIY工具	DIY工具
+Industrial & Scientific	Industrial Hardware	Hinges	花・ガーデン・DIY工具	DIY工具
+Industrial & Scientific	Industrial Hardware	Hooks	花・ガーデン・DIY工具	DIY工具
+Industrial & Scientific	Industrial Hardware	Industrial Casters	花・ガーデン・DIY工具	DIY工具
+Industrial & Scientific	Industrial Hardware	Knobs & Hand Wheels	花・ガーデン・DIY工具	DIY工具
+Industrial & Scientific	Industrial Hardware	Latches	花・ガーデン・DIY工具	DIY工具
+Industrial & Scientific	Industrial Hardware	Lock Bolts	花・ガーデン・DIY工具	DIY工具
+Industrial & Scientific	Industrial Hardware	Shims & Shim Stock	花・ガーデン・DIY工具	DIY工具
+
+# Patio, Lawn & Garden/Pools, Hot Tubs & Supplies (69件) sonota_l3fallback → 花・ガーデン・DIY工具/エクステリア
+Patio, Lawn & Garden	Pools, Hot Tubs & Supplies	Cleaning Tools & Chemicals	花・ガーデン・DIY工具	エクステリア
+Patio, Lawn & Garden	Pools, Hot Tubs & Supplies	Filters & Filter Media	花・ガーデン・DIY工具	エクステリア
+Patio, Lawn & Garden	Pools, Hot Tubs & Supplies	Heaters & Accessories	花・ガーデン・DIY工具	エクステリア
+Patio, Lawn & Garden	Pools, Hot Tubs & Supplies	Hot Tubs	花・ガーデン・DIY工具	エクステリア
+Patio, Lawn & Garden	Pools, Hot Tubs & Supplies	Parts & Accessories	花・ガーデン・DIY工具	エクステリア
+Patio, Lawn & Garden	Pools, Hot Tubs & Supplies	Pumps	花・ガーデン・DIY工具	エクステリア
+Patio, Lawn & Garden	Pools, Hot Tubs & Supplies	Saunas	花・ガーデン・DIY工具	エクステリア
+Patio, Lawn & Garden	Pools, Hot Tubs & Supplies	Swimming Pools	花・ガーデン・DIY工具	エクステリア
+
+# Tools & Home Improvement/Paint, Wall Treatments & Supplies (68件) sonota_l3fallback → 花・ガーデン・DIY工具/DIY工具
+Tools & Home Improvement	Paint, Wall Treatments & Supplies	Finishes, Sealers & Stains	花・ガーデン・DIY工具	DIY工具
+Tools & Home Improvement	Paint, Wall Treatments & Supplies	Paint & Primer	花・ガーデン・DIY工具	DIY工具
+Tools & Home Improvement	Paint, Wall Treatments & Supplies	Painting Supplies & Tools	花・ガーデン・DIY工具	DIY工具
+Tools & Home Improvement	Paint, Wall Treatments & Supplies	Wall Stickers & Murals	花・ガーデン・DIY工具	DIY工具
+Tools & Home Improvement	Paint, Wall Treatments & Supplies	Wallpaper & Wallpapering Supplies	花・ガーデン・DIY工具	DIY工具
+
+# Patio, Lawn & Garden/Grills & Outdoor Cooking (68件) sonota_l3fallback → キッチン・食器・調理/調理道具・下ごしらえ用品
+Patio, Lawn & Garden	Grills & Outdoor Cooking	Fryers	キッチン・食器・調理	調理道具・下ごしらえ用品
+Patio, Lawn & Garden	Grills & Outdoor Cooking	Fuel & Firestarters	キッチン・食器・調理	調理道具・下ごしらえ用品
+Patio, Lawn & Garden	Grills & Outdoor Cooking	Grills & Smokers	キッチン・食器・調理	調理道具・下ごしらえ用品
+Patio, Lawn & Garden	Grills & Outdoor Cooking	Outdoor Cooking Replacement Parts	キッチン・食器・調理	調理道具・下ごしらえ用品
+Patio, Lawn & Garden	Grills & Outdoor Cooking	Outdoor Cooking Tools & Accessories	キッチン・食器・調理	調理道具・下ごしらえ用品
+Patio, Lawn & Garden	Grills & Outdoor Cooking	Outdoor Kitchen Appliances & Storage	キッチン・食器・調理	調理道具・下ごしらえ用品
+
+# Health & Household/Diet & Sports Nutrition (68件) sonota_l3fallback → ダイエット・健康/ダイエット
+Health & Household	Diet & Sports Nutrition	Endurance & Energy	ダイエット・健康	ダイエット
+Health & Household	Diet & Sports Nutrition	Nutrition Bars & Drinks	ダイエット・健康	ダイエット
+Health & Household	Diet & Sports Nutrition	Sports Nutrition	ダイエット・健康	ダイエット
+Health & Household	Diet & Sports Nutrition	Weight Loss	ダイエット・健康	ダイエット
+
+# Clothing, Shoes & Jewelry/Men (64件) sonota_l3fallback → メンズファッション/トップス
+Clothing, Shoes & Jewelry	Men	Handbags & Shoulder Bags	メンズファッション	トップス
+Clothing, Shoes & Jewelry	Men	Jewelry	メンズファッション	トップス
+Clothing, Shoes & Jewelry	Men	Shops	メンズファッション	トップス
+
+# Toys & Games/Games & Accessories (64件) sonota_l3fallback → おもちゃ・趣味/ボードゲーム
+Toys & Games	Games & Accessories	Board Games	おもちゃ・趣味	ボードゲーム
+Toys & Games	Games & Accessories	Card Games	おもちゃ・趣味	ボードゲーム
+Toys & Games	Games & Accessories	Casino Equipment	おもちゃ・趣味	ボードゲーム
+Toys & Games	Games & Accessories	DVD Games	おもちゃ・趣味	ボードゲーム
+Toys & Games	Games & Accessories	Dice Games	おもちゃ・趣味	ボードゲーム
+Toys & Games	Games & Accessories	Floor Games	おもちゃ・趣味	ボードゲーム
+Toys & Games	Games & Accessories	Game Accessories	おもちゃ・趣味	ボードゲーム
+Toys & Games	Games & Accessories	Game Collections	おもちゃ・趣味	ボードゲーム
+Toys & Games	Games & Accessories	Gaming Tops	おもちゃ・趣味	ボードゲーム
+Toys & Games	Games & Accessories	Handheld Games	おもちゃ・趣味	ボードゲーム
+Toys & Games	Games & Accessories	Stacking Games	おもちゃ・趣味	ボードゲーム
+Toys & Games	Games & Accessories	Tile Games	おもちゃ・趣味	ボードゲーム
+Toys & Games	Games & Accessories	Travel Games	おもちゃ・趣味	ボードゲーム
+
+# Arts, Crafts & Sewing/Model & Hobby Building (64件) sonota_l3fallback → おもちゃ・趣味/模型・プラモデル
+Arts, Crafts & Sewing	Model & Hobby Building	Accessories, Hardware & Tools	おもちゃ・趣味	模型・プラモデル
+Arts, Crafts & Sewing	Model & Hobby Building	Model Kits	おもちゃ・趣味	模型・プラモデル
+Arts, Crafts & Sewing	Model & Hobby Building	Model Trains & Accessories	おもちゃ・趣味	模型・プラモデル
+Arts, Crafts & Sewing	Model & Hobby Building	Pinewood Derby	おもちゃ・趣味	模型・プラモデル
+Arts, Crafts & Sewing	Model & Hobby Building	Pre-Built & Diecast Models	おもちゃ・趣味	模型・プラモデル
+Arts, Crafts & Sewing	Model & Hobby Building	Rockets	おもちゃ・趣味	模型・プラモデル
+
+# Tools & Home Improvement/Welding & Soldering (63件) sonota_l3fallback → 花・ガーデン・DIY工具/DIY工具
+Tools & Home Improvement	Welding & Soldering	Soldering & Brazing Equipment	花・ガーデン・DIY工具	DIY工具
+Tools & Home Improvement	Welding & Soldering	Welding Equipment	花・ガーデン・DIY工具	DIY工具
+
+# Tools & Home Improvement/Plumbing (61件) sonota_l3fallback → 花・ガーデン・DIY工具/建築・住宅・設備
+Tools & Home Improvement	Plumbing	Drain Cleaning Equipment	花・ガーデン・DIY工具	建築・住宅・設備
+Tools & Home Improvement	Plumbing	Faucet Parts	花・ガーデン・DIY工具	建築・住宅・設備
+Tools & Home Improvement	Plumbing	Pipes, Pipe Fittings & Accessories	花・ガーデン・DIY工具	建築・住宅・設備
+Tools & Home Improvement	Plumbing	Toilet Parts	花・ガーデン・DIY工具	建築・住宅・設備
+Tools & Home Improvement	Plumbing	Valves	花・ガーデン・DIY工具	建築・住宅・設備
+Tools & Home Improvement	Plumbing	Water Heaters & Parts	花・ガーデン・DIY工具	建築・住宅・設備
+Tools & Home Improvement	Plumbing	Water Pumps, Parts & Accessories	花・ガーデン・DIY工具	建築・住宅・設備
+
+# Electronics/Home Audio (59件) sonota_l3fallback → テレビ・オーディオ・カメラ/オーディオ
+Electronics	Home Audio	Compact Radios & Stereos	テレビ・オーディオ・カメラ	オーディオ
+Electronics	Home Audio	Home Audio Accessories	テレビ・オーディオ・カメラ	オーディオ
+Electronics	Home Audio	Home Theater	テレビ・オーディオ・カメラ	オーディオ
+Electronics	Home Audio	Speakers	テレビ・オーディオ・カメラ	オーディオ
+Electronics	Home Audio	Stereo System Components	テレビ・オーディオ・カメラ	オーディオ
+Electronics	Home Audio	Turntables & Accessories	テレビ・オーディオ・カメラ	オーディオ
+Electronics	Home Audio	Wireless & Streaming Audio	テレビ・オーディオ・カメラ	オーディオ
+
+# Toys & Games/Sports & Outdoor Play (59件) sonota_l3fallback → おもちゃ・趣味/大型遊具
+Toys & Games	Sports & Outdoor Play	Balance Boards	おもちゃ・趣味	大型遊具
+Toys & Games	Sports & Outdoor Play	Ball Pits & Accessories	おもちゃ・趣味	大型遊具
+Toys & Games	Sports & Outdoor Play	Bean Bags & Footbags	おもちゃ・趣味	大型遊具
+Toys & Games	Sports & Outdoor Play	Blasters & Foam Play	おもちゃ・趣味	大型遊具
+Toys & Games	Sports & Outdoor Play	Bubbles	おもちゃ・趣味	大型遊具
+Toys & Games	Sports & Outdoor Play	Fitness Equipment	おもちゃ・趣味	大型遊具
+Toys & Games	Sports & Outdoor Play	Gardening Tools	おもちゃ・趣味	大型遊具
+Toys & Games	Sports & Outdoor Play	Inflatable Bouncers	おもちゃ・趣味	大型遊具
+Toys & Games	Sports & Outdoor Play	Kites & Wind Spinners	おもちゃ・趣味	大型遊具
+Toys & Games	Sports & Outdoor Play	Marble Games	おもちゃ・趣味	大型遊具
+Toys & Games	Sports & Outdoor Play	Nature Exploration Toys	おもちゃ・趣味	大型遊具
+Toys & Games	Sports & Outdoor Play	Play Tents & Tunnels	おもちゃ・趣味	大型遊具
+Toys & Games	Sports & Outdoor Play	Playhouses	おもちゃ・趣味	大型遊具
+Toys & Games	Sports & Outdoor Play	Pogo Sticks & Hoppers	おもちゃ・趣味	大型遊具
+Toys & Games	Sports & Outdoor Play	Pools & Water Toys	おもちゃ・趣味	大型遊具
+Toys & Games	Sports & Outdoor Play	Sandboxes & Beach Toys	おもちゃ・趣味	大型遊具
+Toys & Games	Sports & Outdoor Play	Toy Sports	おもちゃ・趣味	大型遊具
+Toys & Games	Sports & Outdoor Play	Yo-yos	おもちゃ・趣味	大型遊具
+
+# Home & Kitchen/Bath (58件) sonota_l3fallback → 日用品・文房具・手芸用品/バス・お風呂用品
+Home & Kitchen	Bath	Bath Linen Sets	日用品・文房具・手芸用品	バス・お風呂用品
+Home & Kitchen	Bath	Bath Rugs	日用品・文房具・手芸用品	バス・お風呂用品
+Home & Kitchen	Bath	Bathroom Accessories	日用品・文房具・手芸用品	バス・お風呂用品
+Home & Kitchen	Bath	Bathroom Furniture	日用品・文房具・手芸用品	バス・お風呂用品
+Home & Kitchen	Bath	Kids' Bath	日用品・文房具・手芸用品	バス・お風呂用品
+Home & Kitchen	Bath	Towels	日用品・文房具・手芸用品	バス・お風呂用品
+
+# Industrial & Scientific/Commercial Door Products (58件) sonota_l3fallback → 花・ガーデン・DIY工具/建築・住宅・設備
+Industrial & Scientific	Commercial Door Products	Commercial Access Control	花・ガーデン・DIY工具	建築・住宅・設備
+Industrial & Scientific	Commercial Door Products	Commercial Door Hardware	花・ガーデン・DIY工具	建築・住宅・設備
+Industrial & Scientific	Commercial Door Products	Commercial Doors	花・ガーデン・DIY工具	建築・住宅・設備
+
+# Video Games/Xbox One (58件) -> ゲーム機・ゲームソフト/Xbox One
+Video Games	Xbox One	Accessories	ゲーム機・ゲームソフト	Xbox One
+Video Games	Xbox One	Downloadable Content	ゲーム機・ゲームソフト	Xbox One
+Video Games	Xbox One	Interactive Gaming Figures	ゲーム機・ゲームソフト	Xbox One
+Video Games	Xbox One	Virtual Reality	ゲーム機・ゲームソフト	Xbox One
+
+# Industrial & Scientific/Adhesives, Sealants & Lubricants (56件) -> 花・ガーデン・DIY工具/DIY工具
+Industrial & Scientific	Adhesives, Sealants & Lubricants	Adhesive Accelerators	花・ガーデン・DIY工具	DIY工具
+Industrial & Scientific	Adhesives, Sealants & Lubricants	Adhesive Dots	花・ガーデン・DIY工具	DIY工具
+Industrial & Scientific	Adhesives, Sealants & Lubricants	Adhesive Primers	花・ガーデン・DIY工具	DIY工具
+Industrial & Scientific	Adhesives, Sealants & Lubricants	Adhesive Tapes	花・ガーデン・DIY工具	DIY工具
+Industrial & Scientific	Adhesives, Sealants & Lubricants	Aerosol Adhesives	花・ガーデン・DIY工具	DIY工具
+Industrial & Scientific	Adhesives, Sealants & Lubricants	Anti-Seizes	花・ガーデン・DIY工具	DIY工具
+Industrial & Scientific	Adhesives, Sealants & Lubricants	Catalysts	花・ガーデン・DIY工具	DIY工具
+Industrial & Scientific	Adhesives, Sealants & Lubricants	Caulk	花・ガーデン・DIY工具	DIY工具
+Industrial & Scientific	Adhesives, Sealants & Lubricants	Coatings	花・ガーデン・DIY工具	DIY工具
+Industrial & Scientific	Adhesives, Sealants & Lubricants	Contact Cements	花・ガーデン・DIY工具	DIY工具
+Industrial & Scientific	Adhesives, Sealants & Lubricants	Cyanoacrylate Adhesives	花・ガーデン・DIY工具	DIY工具
+Industrial & Scientific	Adhesives, Sealants & Lubricants	Epoxy Adhesives	花・ガーデン・DIY工具	DIY工具
+Industrial & Scientific	Adhesives, Sealants & Lubricants	Industrial Adhesives	花・ガーデン・DIY工具	DIY工具
+Industrial & Scientific	Adhesives, Sealants & Lubricants	Industrial Lubricants	花・ガーデン・DIY工具	DIY工具
+Industrial & Scientific	Adhesives, Sealants & Lubricants	Industrial Sealants	花・ガーデン・DIY工具	DIY工具
+Industrial & Scientific	Adhesives, Sealants & Lubricants	Light Cure Pens	花・ガーデン・DIY工具	DIY工具
+Industrial & Scientific	Adhesives, Sealants & Lubricants	Retaining Compounds	花・ガーデン・DIY工具	DIY工具
+Industrial & Scientific	Adhesives, Sealants & Lubricants	Silicone Adhesives	花・ガーデン・DIY工具	DIY工具
+
+# Industrial & Scientific/Retail Store Fixtures & Equipment (55件) -> 花・ガーデン・DIY工具/DIY工具
+Industrial & Scientific	Retail Store Fixtures & Equipment	Anti-Theft Equipment	花・ガーデン・DIY工具	DIY工具
+Industrial & Scientific	Retail Store Fixtures & Equipment	Clothing Forms	花・ガーデン・DIY工具	DIY工具
+Industrial & Scientific	Retail Store Fixtures & Equipment	Mannequins	花・ガーデン・DIY工具	DIY工具
+Industrial & Scientific	Retail Store Fixtures & Equipment	Point-of-Sale (POS) Equipment & Accessories	花・ガーデン・DIY工具	DIY工具
+Industrial & Scientific	Retail Store Fixtures & Equipment	Pricing Supplies	花・ガーデン・DIY工具	DIY工具
+Industrial & Scientific	Retail Store Fixtures & Equipment	Retail Bags & Boxes	花・ガーデン・DIY工具	DIY工具
+Industrial & Scientific	Retail Store Fixtures & Equipment	Retail Displays & Racks	花・ガーデン・DIY工具	DIY工具
+Industrial & Scientific	Retail Store Fixtures & Equipment	Retail Shelving & Wall Displays	花・ガーデン・DIY工具	DIY工具
+Industrial & Scientific	Retail Store Fixtures & Equipment	Shopping Baskets & Carts	花・ガーデン・DIY工具	DIY工具
+Industrial & Scientific	Retail Store Fixtures & Equipment	Store Signs & Displays	花・ガーデン・DIY工具	DIY工具
+
+# Musical Instruments/Electronic Music, DJ & Karaoke (53件) -> 楽器・音響機器/DJ＆VJ機材
+Musical Instruments	Electronic Music, DJ & Karaoke	DJ Equipment	楽器・音響機器	DJ＆VJ機材
+Musical Instruments	Electronic Music, DJ & Karaoke	Electronic Music	楽器・音響機器	DJ＆VJ機材
+Musical Instruments	Electronic Music, DJ & Karaoke	Karaoke Equipment	楽器・音響機器	DJ＆VJ機材
+
+# Electronics/Office Electronics (52件) -> 家電/オフィス家電・電子文具
+Electronics	Office Electronics	Calculators	家電	オフィス家電・電子文具
+Electronics	Office Electronics	Copiers	家電	オフィス家電・電子文具
+Electronics	Office Electronics	Document Cameras	家電	オフィス家電・電子文具
+Electronics	Office Electronics	Electronic Dictionaries, Thesauri & Translators	家電	オフィス家電・電子文具
+Electronics	Office Electronics	Fax Machines	家電	オフィス家電・電子文具
+Electronics	Office Electronics	Other Office Equipment	家電	オフィス家電・電子文具
+Electronics	Office Electronics	PDAs & Handhelds	家電	オフィス家電・電子文具
+Electronics	Office Electronics	Point-of-Sale (POS) Equipment	家電	オフィス家電・電子文具
+Electronics	Office Electronics	Presentation Products	家電	オフィス家電・電子文具
+Electronics	Office Electronics	Printers	家電	オフィス家電・電子文具
+Electronics	Office Electronics	Printers & Accessories	家電	オフィス家電・電子文具
+Electronics	Office Electronics	Scanners	家電	オフィス家電・電子文具
+Electronics	Office Electronics	Scanners & Accessories	家電	オフィス家電・電子文具
+Electronics	Office Electronics	Telephones & Accessories	家電	オフィス家電・電子文具
+Electronics	Office Electronics	Video Projectors & Accessories	家電	オフィス家電・電子文具
+
+# Arts, Crafts & Sewing/Beading & Jewelry Making (52件) -> 日用品・文房具・手芸用品/手芸・クラフト・生地
+Arts, Crafts & Sewing	Beading & Jewelry Making	Beading Supplies	日用品・文房具・手芸用品	手芸・クラフト・生地
+Arts, Crafts & Sewing	Beading & Jewelry Making	Beads & Bead Assortments	日用品・文房具・手芸用品	手芸・クラフト・生地
+Arts, Crafts & Sewing	Beading & Jewelry Making	Charms	日用品・文房具・手芸用品	手芸・クラフト・生地
+Arts, Crafts & Sewing	Beading & Jewelry Making	Engraving Machines & Tools	日用品・文房具・手芸用品	手芸・クラフト・生地
+Arts, Crafts & Sewing	Beading & Jewelry Making	Fusible Glass Supplies	日用品・文房具・手芸用品	手芸・クラフト・生地
+Arts, Crafts & Sewing	Beading & Jewelry Making	Jewelry Casting Supplies	日用品・文房具・手芸用品	手芸・クラフト・生地
+Arts, Crafts & Sewing	Beading & Jewelry Making	Jewelry Findings	日用品・文房具・手芸用品	手芸・クラフト・生地
+Arts, Crafts & Sewing	Beading & Jewelry Making	Jewelry Making Display & Packaging Supplies	日用品・文房具・手芸用品	手芸・クラフト・生地
+Arts, Crafts & Sewing	Beading & Jewelry Making	Jewelry Making Kits	日用品・文房具・手芸用品	手芸・クラフト・生地
+Arts, Crafts & Sewing	Beading & Jewelry Making	Jewelry Making Tools & Accessories	日用品・文房具・手芸用品	手芸・クラフト・生地
+Arts, Crafts & Sewing	Beading & Jewelry Making	Jewelry Patterns	日用品・文房具・手芸用品	手芸・クラフト・生地
+Arts, Crafts & Sewing	Beading & Jewelry Making	Metal Stamping Tools	日用品・文房具・手芸用品	手芸・クラフト・生地
+Arts, Crafts & Sewing	Beading & Jewelry Making	Polishing & Buffing	日用品・文房具・手芸用品	手芸・クラフト・生地
+Arts, Crafts & Sewing	Beading & Jewelry Making	Purse Making	日用品・文房具・手芸用品	手芸・クラフト・生地
+Arts, Crafts & Sewing	Beading & Jewelry Making	Storage	日用品・文房具・手芸用品	手芸・クラフト・生地
+Arts, Crafts & Sewing	Beading & Jewelry Making	Wax Molding Materials	日用品・文房具・手芸用品	手芸・クラフト・生地
+Arts, Crafts & Sewing	Beading & Jewelry Making	Wire	日用品・文房具・手芸用品	手芸・クラフト・生地
+
+# Clothing, Shoes & Jewelry/Costumes & Accessories (51件) -> レディースファッション/コスチューム
+Clothing, Shoes & Jewelry	Costumes & Accessories	Kids & Baby	レディースファッション	コスチューム
+Clothing, Shoes & Jewelry	Costumes & Accessories	Makeup, Facial Hair & Adhesives	レディースファッション	コスチューム
+Clothing, Shoes & Jewelry	Costumes & Accessories	Men	レディースファッション	コスチューム
+Clothing, Shoes & Jewelry	Costumes & Accessories	Props	レディースファッション	コスチューム
+Clothing, Shoes & Jewelry	Costumes & Accessories	Women	レディースファッション	コスチューム
+
+# Home & Kitchen/Event & Party Supplies (50件) -> おもちゃ・趣味/パーティーグッズ
+Home & Kitchen	Event & Party Supplies	Adult Novelty	おもちゃ・趣味	パーティーグッズ
+Home & Kitchen	Event & Party Supplies	Cake Decorating Supplies	おもちゃ・趣味	パーティーグッズ
+Home & Kitchen	Event & Party Supplies	Cards	おもちゃ・趣味	パーティーグッズ
+Home & Kitchen	Event & Party Supplies	Ceremony Supplies	おもちゃ・趣味	パーティーグッズ
+Home & Kitchen	Event & Party Supplies	Children's Party Supplies	おもちゃ・趣味	パーティーグッズ
+Home & Kitchen	Event & Party Supplies	Favors	おもちゃ・趣味	パーティーグッズ
+Home & Kitchen	Event & Party Supplies	Headwear	おもちゃ・趣味	パーティーグッズ
+Home & Kitchen	Event & Party Supplies	Invitations	おもちゃ・趣味	パーティーグッズ
+Home & Kitchen	Event & Party Supplies	Party Games & Activities	おもちゃ・趣味	パーティーグッズ
+Home & Kitchen	Event & Party Supplies	Party Packs	おもちゃ・趣味	パーティーグッズ
+Home & Kitchen	Event & Party Supplies	Photobooth Props	おもちゃ・趣味	パーティーグッズ
+Home & Kitchen	Event & Party Supplies	Place Cards & Place Card Holders	おもちゃ・趣味	パーティーグッズ
+Home & Kitchen	Event & Party Supplies	Tableware	おもちゃ・趣味	パーティーグッズ
+
+# Pet Supplies/Horses (49件) -> ペット・ペットグッズ/小動物・鳥用品
+Pet Supplies	Horses	Boots & Wraps	ペット・ペットグッズ	小動物・鳥用品
+Pet Supplies	Horses	Farrier Supplies	ペット・ペットグッズ	小動物・鳥用品
+Pet Supplies	Horses	Food	ペット・ペットグッズ	小動物・鳥用品
+Pet Supplies	Horses	Grooming & Bathing Supplies	ペット・ペットグッズ	小動物・鳥用品
+Pet Supplies	Horses	Health Supplies	ペット・ペットグッズ	小動物・鳥用品
+Pet Supplies	Horses	Horse Blankets & Sheets	ペット・ペットグッズ	小動物・鳥用品
+Pet Supplies	Horses	Stable Supplies	ペット・ペットグッズ	小動物・鳥用品
+Pet Supplies	Horses	Toys	ペット・ペットグッズ	小動物・鳥用品
+Pet Supplies	Horses	Treats	ペット・ペットグッズ	小動物・鳥用品
+
+# Toys & Games/Dress Up & Pretend Play (46件) -> おもちゃ・趣味/おもちゃ
+Toys & Games	Dress Up & Pretend Play	Costumes	おもちゃ・趣味	おもちゃ
+Toys & Games	Dress Up & Pretend Play	Dress-Up Accessories	おもちゃ・趣味	おもちゃ
+Toys & Games	Dress Up & Pretend Play	Housekeeping	おもちゃ・趣味	おもちゃ
+Toys & Games	Dress Up & Pretend Play	Kitchen Toys	おもちゃ・趣味	おもちゃ
+Toys & Games	Dress Up & Pretend Play	Magnetic & Felt Playboards	おもちゃ・趣味	おもちゃ
+Toys & Games	Dress Up & Pretend Play	Medical Kits	おもちゃ・趣味	おもちゃ
+Toys & Games	Dress Up & Pretend Play	Money & Banking	おもちゃ・趣味	おもちゃ
+Toys & Games	Dress Up & Pretend Play	Pretend Phones & Smartphones	おもちゃ・趣味	おもちゃ
+Toys & Games	Dress Up & Pretend Play	Purses	おもちゃ・趣味	おもちゃ
+Toys & Games	Dress Up & Pretend Play	Sets	おもちゃ・趣味	おもちゃ
+Toys & Games	Dress Up & Pretend Play	Shops & Accessories	おもちゃ・趣味	おもちゃ
+Toys & Games	Dress Up & Pretend Play	Vanities	おもちゃ・趣味	おもちゃ
+
+# Toys & Games/Arts & Crafts (45件) -> おもちゃ・趣味/お絵かき・ねんど・シール
+Toys & Games	Arts & Crafts	Adhesives	おもちゃ・趣味	お絵かき・ねんど・シール
+Toys & Games	Arts & Crafts	Aprons & Smocks	おもちゃ・趣味	お絵かき・ねんど・シール
+Toys & Games	Arts & Crafts	Clay & Dough	おもちゃ・趣味	お絵かき・ねんど・シール
+Toys & Games	Arts & Crafts	Craft Kits	おもちゃ・趣味	お絵かき・ねんど・シール
+Toys & Games	Arts & Crafts	Drawing & Painting Supplies	おもちゃ・趣味	お絵かき・ねんど・シール
+Toys & Games	Arts & Crafts	Drawing & Writing Boards	おもちゃ・趣味	お絵かき・ねんど・シール
+Toys & Games	Arts & Crafts	Easels	おもちゃ・趣味	お絵かき・ねんど・シール
+Toys & Games	Arts & Crafts	Printing & Stamping	おもちゃ・趣味	お絵かき・ねんど・シール
+Toys & Games	Arts & Crafts	Stickers	おもちゃ・趣味	お絵かき・ねんど・シール
+
+# Clothing, Shoes & Jewelry/Luggage & Travel Gear (45件) -> バッグ・財布・ファッション小物/バッグ
+Clothing, Shoes & Jewelry	Luggage & Travel Gear	Backpacks	バッグ・財布・ファッション小物	バッグ
+Clothing, Shoes & Jewelry	Luggage & Travel Gear	Briefcases	バッグ・財布・ファッション小物	バッグ
+Clothing, Shoes & Jewelry	Luggage & Travel Gear	Gym Bags	バッグ・財布・ファッション小物	バッグ
+Clothing, Shoes & Jewelry	Luggage & Travel Gear	Luggage	バッグ・財布・ファッション小物	バッグ
+Clothing, Shoes & Jewelry	Luggage & Travel Gear	Messenger Bags	バッグ・財布・ファッション小物	バッグ
+Clothing, Shoes & Jewelry	Luggage & Travel Gear	Travel Accessories	バッグ・財布・ファッション小物	バッグ
+Clothing, Shoes & Jewelry	Luggage & Travel Gear	Travel Duffels	バッグ・財布・ファッション小物	バッグ
+Clothing, Shoes & Jewelry	Luggage & Travel Gear	Travel Totes	バッグ・財布・ファッション小物	バッグ
+Clothing, Shoes & Jewelry	Luggage & Travel Gear	Umbrellas	バッグ・財布・ファッション小物	バッグ
+Clothing, Shoes & Jewelry	Luggage & Travel Gear	Waist Packs	バッグ・財布・ファッション小物	バッグ
+
+# Pet Supplies/Fish & Aquatic Pets (45件) -> ペット・ペットグッズ/熱帯魚・アクアリウム用品
+Pet Supplies	Fish & Aquatic Pets	Aquarium Cleaners	ペット・ペットグッズ	熱帯魚・アクアリウム用品
+Pet Supplies	Fish & Aquatic Pets	Aquarium Décor	ペット・ペットグッズ	熱帯魚・アクアリウム用品
+Pet Supplies	Fish & Aquatic Pets	Aquarium Heaters & Chillers	ペット・ペットグッズ	熱帯魚・アクアリウム用品
+Pet Supplies	Fish & Aquatic Pets	Aquarium Hoods	ペット・ペットグッズ	熱帯魚・アクアリウム用品
+Pet Supplies	Fish & Aquatic Pets	Aquarium Hydrometers	ペット・ペットグッズ	熱帯魚・アクアリウム用品
+Pet Supplies	Fish & Aquatic Pets	Aquarium Lights	ペット・ペットグッズ	熱帯魚・アクアリウム用品
+Pet Supplies	Fish & Aquatic Pets	Aquarium Pumps & Filters	ペット・ペットグッズ	熱帯魚・アクアリウム用品
+Pet Supplies	Fish & Aquatic Pets	Aquarium Stands	ペット・ペットグッズ	熱帯魚・アクアリウム用品
+Pet Supplies	Fish & Aquatic Pets	Aquarium Substrate	ペット・ペットグッズ	熱帯魚・アクアリウム用品
+Pet Supplies	Fish & Aquatic Pets	Aquarium Test Kits	ペット・ペットグッズ	熱帯魚・アクアリウム用品
+Pet Supplies	Fish & Aquatic Pets	Aquarium Thermometers	ペット・ペットグッズ	熱帯魚・アクアリウム用品
+Pet Supplies	Fish & Aquatic Pets	Aquarium Water Treatments	ペット・ペットグッズ	熱帯魚・アクアリウム用品
+Pet Supplies	Fish & Aquatic Pets	Aquariums & Fish Bowls	ペット・ペットグッズ	熱帯魚・アクアリウム用品
+Pet Supplies	Fish & Aquatic Pets	Automatic Feeders	ペット・ペットグッズ	熱帯魚・アクアリウム用品
+Pet Supplies	Fish & Aquatic Pets	Breeding Tanks	ペット・ペットグッズ	熱帯魚・アクアリウム用品
+Pet Supplies	Fish & Aquatic Pets	Food	ペット・ペットグッズ	熱帯魚・アクアリウム用品
+Pet Supplies	Fish & Aquatic Pets	Medication & Health Supplies	ペット・ペットグッズ	熱帯魚・アクアリウム用品
+
+# Health & Household/Baby & Child Care (44件) -> キッズベビー・マタニティ/ベビー
+Health & Household	Baby & Child Care	Dental Care	キッズベビー・マタニティ	ベビー
+Health & Household	Baby & Child Care	Diaper Care	キッズベビー・マタニティ	ベビー
+Health & Household	Baby & Child Care	Health Care	キッズベビー・マタニティ	ベビー
+Health & Household	Baby & Child Care	Personal Care	キッズベビー・マタニティ	ベビー
+
+# Electronics/Television & Video (43件) -> テレビ・オーディオ・カメラ/テレビ本体
+Electronics	Television & Video	Accessories	テレビ・オーディオ・カメラ	テレビ本体
+Electronics	Television & Video	Blu-ray Players & Recorders	テレビ・オーディオ・カメラ	テレビ本体
+Electronics	Television & Video	Cable Receiver Boxes	テレビ・オーディオ・カメラ	テレビ本体
+Electronics	Television & Video	DVD Players & Recorders	テレビ・オーディオ・カメラ	テレビ本体
+Electronics	Television & Video	DVD-VCR Combos	テレビ・オーディオ・カメラ	テレビ本体
+Electronics	Television & Video	HD DVD Players	テレビ・オーディオ・カメラ	テレビ本体
+Electronics	Television & Video	Satellite Television	テレビ・オーディオ・カメラ	テレビ本体
+Electronics	Television & Video	TV-DVD Combos	テレビ・オーディオ・カメラ	テレビ本体
+Electronics	Television & Video	Televisions	テレビ・オーディオ・カメラ	テレビ本体
+Electronics	Television & Video	VCRs	テレビ・オーディオ・カメラ	テレビ本体
+Electronics	Television & Video	Video Glasses	テレビ・オーディオ・カメラ	テレビ本体
+
+# Tools & Home Improvement/Safety & Security (39件) -> 日用品・文房具・手芸用品/防犯・護身用品
+Tools & Home Improvement	Safety & Security	Emergency Kits & Supplies	日用品・文房具・手芸用品	防犯・護身用品
+Tools & Home Improvement	Safety & Security	Facility Safety Products	日用品・文房具・手芸用品	防犯・護身用品
+Tools & Home Improvement	Safety & Security	Gun Storage	日用品・文房具・手芸用品	防犯・護身用品
+Tools & Home Improvement	Safety & Security	Home & Work	日用品・文房具・手芸用品	防犯・護身用品
+Tools & Home Improvement	Safety & Security	Home Security Systems	日用品・文房具・手芸用品	防犯・護身用品
+Tools & Home Improvement	Safety & Security	Household Sensors & Alarms	日用品・文房具・手芸用品	防犯・護身用品
+Tools & Home Improvement	Safety & Security	Lanterns	日用品・文房具・手芸用品	防犯・護身用品
+Tools & Home Improvement	Safety & Security	Lockout & Tagout Products	日用品・文房具・手芸用品	防犯・護身用品
+Tools & Home Improvement	Safety & Security	Personal Defense Equipment	日用品・文房具・手芸用品	防犯・護身用品
+Tools & Home Improvement	Safety & Security	Personal Protective Equipment	日用品・文房具・手芸用品	防犯・護身用品
+Tools & Home Improvement	Safety & Security	Safes & Safe Accessories	日用品・文房具・手芸用品	防犯・護身用品
+
+# Office Products/Office Furniture & Lighting (38件) -> インテリア・寝具/オフィス家具
+Office Products	Office Furniture & Lighting	Cabinets, Racks & Shelves	インテリア・寝具	オフィス家具
+Office Products	Office Furniture & Lighting	Carts & Stands	インテリア・寝具	オフィス家具
+Office Products	Office Furniture & Lighting	Chairs & Sofas	インテリア・寝具	オフィス家具
+Office Products	Office Furniture & Lighting	Desks & Workstations	インテリア・寝具	オフィス家具
+Office Products	Office Furniture & Lighting	Furniture Accessories	インテリア・寝具	オフィス家具
+Office Products	Office Furniture & Lighting	Office Lighting	インテリア・寝具	オフィス家具
+Office Products	Office Furniture & Lighting	Tables	インテリア・寝具	オフィス家具
+
+# Health & Household/Oral Care (38件) -> ダイエット・健康/デンタルケア
+Health & Household	Oral Care	Breath Fresheners	ダイエット・健康	デンタルケア
+Health & Household	Oral Care	Dental Care Kits	ダイエット・健康	デンタルケア
+Health & Household	Oral Care	Dental Floss & Picks	ダイエット・健康	デンタルケア
+Health & Household	Oral Care	Denture Care	ダイエット・健康	デンタルケア
+Health & Household	Oral Care	Dry Mouth Relief	ダイエット・健康	デンタルケア
+Health & Household	Oral Care	Mouthwash	ダイエット・健康	デンタルケア
+Health & Household	Oral Care	Orthodontic Supplies	ダイエット・健康	デンタルケア
+Health & Household	Oral Care	Sensitivity Treatments	ダイエット・健康	デンタルケア
+Health & Household	Oral Care	Teeth Grinding Guards	ダイエット・健康	デンタルケア
+Health & Household	Oral Care	Teeth Whitening	ダイエット・健康	デンタルケア
+Health & Household	Oral Care	Toothbrushes & Accessories	ダイエット・健康	デンタルケア
+
+# Industrial & Scientific/Filtration (38件) -> 花・ガーデン・DIY工具/DIY工具
+Industrial & Scientific	Filtration	Compressed Air Treatment	花・ガーデン・DIY工具	DIY工具
+Industrial & Scientific	Filtration	Hydraulic Filtration	花・ガーデン・DIY工具	DIY工具
+Industrial & Scientific	Filtration	Industrial Process Filtration	花・ガーデン・DIY工具	DIY工具
+Industrial & Scientific	Filtration	Lab Filters	花・ガーデン・DIY工具	DIY工具
+Industrial & Scientific	Filtration	Strainers	花・ガーデン・DIY工具	DIY工具
+
+# Arts, Crafts & Sewing/Scrapbooking & Stamping (37件) -> 日用品・文房具・手芸用品/手芸・クラフト・生地
+Arts, Crafts & Sewing	Scrapbooking & Stamping	Adhesive Vinyl	日用品・文房具・手芸用品	手芸・クラフト・生地
+Arts, Crafts & Sewing	Scrapbooking & Stamping	Adhesives	日用品・文房具・手芸用品	手芸・クラフト・生地
+Arts, Crafts & Sewing	Scrapbooking & Stamping	Albums & Refills	日用品・文房具・手芸用品	手芸・クラフト・生地
+Arts, Crafts & Sewing	Scrapbooking & Stamping	Chipboard	日用品・文房具・手芸用品	手芸・クラフト・生地
+Arts, Crafts & Sewing	Scrapbooking & Stamping	Die-Cutting & Embossing	日用品・文房具・手芸用品	手芸・クラフト・生地
+Arts, Crafts & Sewing	Scrapbooking & Stamping	Kits	日用品・文房具・手芸用品	手芸・クラフト・生地
+Arts, Crafts & Sewing	Scrapbooking & Stamping	Paper & Card Stock	日用品・文房具・手芸用品	手芸・クラフト・生地
+Arts, Crafts & Sewing	Scrapbooking & Stamping	Pens & Markers	日用品・文房具・手芸用品	手芸・クラフト・生地
+Arts, Crafts & Sewing	Scrapbooking & Stamping	Photo Albums	日用品・文房具・手芸用品	手芸・クラフト・生地
+Arts, Crafts & Sewing	Scrapbooking & Stamping	Photo Transfer & Coloring Supplies	日用品・文房具・手芸用品	手芸・クラフト・生地
+Arts, Crafts & Sewing	Scrapbooking & Stamping	Scrapbooking Embellishments	日用品・文房具・手芸用品	手芸・クラフト・生地
+Arts, Crafts & Sewing	Scrapbooking & Stamping	Scrapbooking Tools	日用品・文房具・手芸用品	手芸・クラフト・生地
+Arts, Crafts & Sewing	Scrapbooking & Stamping	Stamps & Ink Pads	日用品・文房具・手芸用品	手芸・クラフト・生地
+Arts, Crafts & Sewing	Scrapbooking & Stamping	Stickers & Sticker Machines	日用品・文房具・手芸用品	手芸・クラフト・生地
+
+# Toys & Games/Novelty & Gag Toys (37件) -> おもちゃ・趣味/パーティーグッズ
+Toys & Games	Novelty & Gag Toys	Executive Desk Toys	おもちゃ・趣味	パーティーグッズ
+Toys & Games	Novelty & Gag Toys	Fidget Toys	おもちゃ・趣味	パーティーグッズ
+Toys & Games	Novelty & Gag Toys	Flying Toys	おもちゃ・趣味	パーティーグッズ
+Toys & Games	Novelty & Gag Toys	Fortune Telling Toys	おもちゃ・趣味	パーティーグッズ
+Toys & Games	Novelty & Gag Toys	Gag Toys & Practical Jokes	おもちゃ・趣味	パーティーグッズ
+Toys & Games	Novelty & Gag Toys	Juggling Sets	おもちゃ・趣味	パーティーグッズ
+Toys & Games	Novelty & Gag Toys	Magic Kits & Accessories	おもちゃ・趣味	パーティーグッズ
+Toys & Games	Novelty & Gag Toys	Magnets & Magnetic Toys	おもちゃ・趣味	パーティーグッズ
+Toys & Games	Novelty & Gag Toys	Miniatures	おもちゃ・趣味	パーティーグッズ
+Toys & Games	Novelty & Gag Toys	Money Banks	おもちゃ・趣味	パーティーグッズ
+Toys & Games	Novelty & Gag Toys	Nesting Dolls	おもちゃ・趣味	パーティーグッズ
+Toys & Games	Novelty & Gag Toys	Novelty Coins	おもちゃ・趣味	パーティーグッズ
+Toys & Games	Novelty & Gag Toys	Novelty Spinning Tops	おもちゃ・趣味	パーティーグッズ
+Toys & Games	Novelty & Gag Toys	Popping & Jumping Toys	おもちゃ・趣味	パーティーグッズ
+Toys & Games	Novelty & Gag Toys	Prisms & Kaleidoscopes	おもちゃ・趣味	パーティーグッズ
+Toys & Games	Novelty & Gag Toys	Slime & Putty Toys	おもちゃ・趣味	パーティーグッズ
+Toys & Games	Novelty & Gag Toys	Spy Gadgets	おもちゃ・趣味	パーティーグッズ
+Toys & Games	Novelty & Gag Toys	Squeeze Toys	おもちゃ・趣味	パーティーグッズ
+Toys & Games	Novelty & Gag Toys	Viewfinders	おもちゃ・趣味	パーティーグッズ
+Toys & Games	Novelty & Gag Toys	Water Balloons	おもちゃ・趣味	パーティーグッズ
+Toys & Games	Novelty & Gag Toys	Wind-Up Toys	おもちゃ・趣味	パーティーグッズ
+
+# Pet Supplies/Reptiles & Amphibians (37件) -> ペット・ペットグッズ/爬虫類・両生類用品
+Pet Supplies	Reptiles & Amphibians	Apparel	ペット・ペットグッズ	爬虫類・両生類用品
+Pet Supplies	Reptiles & Amphibians	Food	ペット・ペットグッズ	爬虫類・両生類用品
+Pet Supplies	Reptiles & Amphibians	Habitat Décor	ペット・ペットグッズ	爬虫類・両生類用品
+Pet Supplies	Reptiles & Amphibians	Handling Tools	ペット・ペットグッズ	爬虫類・両生類用品
+Pet Supplies	Reptiles & Amphibians	Harnesses	ペット・ペットグッズ	爬虫類・両生類用品
+Pet Supplies	Reptiles & Amphibians	Health Supplies	ペット・ペットグッズ	爬虫類・両生類用品
+Pet Supplies	Reptiles & Amphibians	Shipping Supplies	ペット・ペットグッズ	爬虫類・両生類用品
+Pet Supplies	Reptiles & Amphibians	Terrarium Accessories	ペット・ペットグッズ	爬虫類・両生類用品
+Pet Supplies	Reptiles & Amphibians	Terrarium Bedding, Sand & Substrate	ペット・ペットグッズ	爬虫類・両生類用品
+Pet Supplies	Reptiles & Amphibians	Terrarium Bowls	ペット・ペットグッズ	爬虫類・両生類用品
+Pet Supplies	Reptiles & Amphibians	Terrarium Heat Lamps & Mats	ペット・ペットグッズ	爬虫類・両生類用品
+Pet Supplies	Reptiles & Amphibians	Terrarium Thermometers	ペット・ペットグッズ	爬虫類・両生類用品
+Pet Supplies	Reptiles & Amphibians	Terrariums	ペット・ペットグッズ	爬虫類・両生類用品
+
+# Grocery & Gourmet Food/Beverages (36件) -> 水・ソフトドリンク・お茶/ソフトドリンク
+Grocery & Gourmet Food	Beverages	Beverage Syrups & Concentrates	水・ソフトドリンク・お茶	ソフトドリンク
+Grocery & Gourmet Food	Beverages	Bottled Beverages, Water & Drink Mixes	水・ソフトドリンク・お茶	ソフトドリンク
+Grocery & Gourmet Food	Beverages	Bubble Tea	水・ソフトドリンク・お茶	ソフトドリンク
+Grocery & Gourmet Food	Beverages	Coffee	水・ソフトドリンク・お茶	ソフトドリンク
+Grocery & Gourmet Food	Beverages	Coffee Substitutes	水・ソフトドリンク・お茶	ソフトドリンク
+Grocery & Gourmet Food	Beverages	Hot Chocolate & Malted Drinks	水・ソフトドリンク・お茶	ソフトドリンク
+Grocery & Gourmet Food	Beverages	Infusion Mixers for Alcohol & Spirits	水・ソフトドリンク・お茶	ソフトドリンク
+Grocery & Gourmet Food	Beverages	Tea	水・ソフトドリンク・お茶	ソフトドリンク
+
+# Software/Business & Office (35件) -> パソコン・PC周辺機器/プリンター・インク
+Software	Business & Office	Business & Marketing Plans	パソコン・PC周辺機器	プリンター・インク
+Software	Business & Office	Communication	パソコン・PC周辺機器	プリンター・インク
+Software	Business & Office	Contact Management	パソコン・PC周辺機器	プリンター・インク
+Software	Business & Office	Customer Relationship Management	パソコン・PC周辺機器	プリンター・インク
+Software	Business & Office	Database Management	パソコン・PC周辺機器	プリンター・インク
+Software	Business & Office	Document Management	パソコン・PC周辺機器	プリンター・インク
+Software	Business & Office	Legal	パソコン・PC周辺機器	プリンター・インク
+Software	Business & Office	Note Taking	パソコン・PC周辺機器	プリンター・インク
+Software	Business & Office	Office Suites	パソコン・PC周辺機器	プリンター・インク
+Software	Business & Office	Password Management	パソコン・PC周辺機器	プリンター・インク
+Software	Business & Office	Project Management	パソコン・PC周辺機器	プリンター・インク
+Software	Business & Office	Reports	パソコン・PC周辺機器	プリンター・インク
+Software	Business & Office	Resumes	パソコン・PC周辺機器	プリンター・インク
+Software	Business & Office	Spreadsheet	パソコン・PC周辺機器	プリンター・インク
+Software	Business & Office	Training	パソコン・PC周辺機器	プリンター・インク
+Software	Business & Office	Visualization & Presentation	パソコン・PC周辺機器	プリンター・インク
+Software	Business & Office	Word Processing	パソコン・PC周辺機器	プリンター・インク
+
+# Home & Kitchen/Seasonal Décor (35件) -> キッチン・食器・調理/洋食器
+Home & Kitchen	Seasonal Décor	Advent Calendars	キッチン・食器・調理	洋食器
+Home & Kitchen	Seasonal Décor	Artificial Snow	キッチン・食器・調理	洋食器
+Home & Kitchen	Seasonal Décor	Bows & Ribbons	キッチン・食器・調理	洋食器
+Home & Kitchen	Seasonal Décor	Candleholders	キッチン・食器・調理	洋食器
+Home & Kitchen	Seasonal Décor	Collectible Buildings & Accessories	キッチン・食器・調理	洋食器
+Home & Kitchen	Seasonal Décor	Collectible Figurines	キッチン・食器・調理	洋食器
+Home & Kitchen	Seasonal Décor	Greeting Card Holders	キッチン・食器・調理	洋食器
+Home & Kitchen	Seasonal Décor	Nativity	キッチン・食器・調理	洋食器
+Home & Kitchen	Seasonal Décor	Nutcrackers	キッチン・食器・調理	洋食器
+Home & Kitchen	Seasonal Décor	Ornament Hooks	キッチン・食器・調理	洋食器
+Home & Kitchen	Seasonal Décor	Ornaments	キッチン・食器・調理	洋食器
+Home & Kitchen	Seasonal Décor	Seasonal Lighting	キッチン・食器・調理	洋食器
+Home & Kitchen	Seasonal Décor	Snow Globes	キッチン・食器・調理	洋食器
+Home & Kitchen	Seasonal Décor	Stockings & Holders	キッチン・食器・調理	洋食器
+Home & Kitchen	Seasonal Décor	Tinsel	キッチン・食器・調理	洋食器
+Home & Kitchen	Seasonal Décor	Tree Care & Watering	キッチン・食器・調理	洋食器
+Home & Kitchen	Seasonal Décor	Tree Skirts	キッチン・食器・調理	洋食器
+Home & Kitchen	Seasonal Décor	Tree Stands	キッチン・食器・調理	洋食器
+Home & Kitchen	Seasonal Décor	Tree Toppers	キッチン・食器・調理	洋食器
+Home & Kitchen	Seasonal Décor	Tree Trays & Mats	キッチン・食器・調理	洋食器
+Home & Kitchen	Seasonal Décor	Trees	キッチン・食器・調理	洋食器
+Home & Kitchen	Seasonal Décor	Wreaths, Garlands & Swags	キッチン・食器・調理	洋食器
+
+# Electronics/Portable Audio & Video (34件) -> テレビ・オーディオ・カメラ/オーディオ
+Electronics	Portable Audio & Video	Boomboxes	テレビ・オーディオ・カメラ	オーディオ
+Electronics	Portable Audio & Video	CB & Two-Way Radios	テレビ・オーディオ・カメラ	オーディオ
+Electronics	Portable Audio & Video	Cassette Players & Recorders	テレビ・オーディオ・カメラ	オーディオ
+Electronics	Portable Audio & Video	Digital Voice Recorders	テレビ・オーディオ・カメラ	オーディオ
+Electronics	Portable Audio & Video	MP3 & MP4 Player Accessories	テレビ・オーディオ・カメラ	オーディオ
+Electronics	Portable Audio & Video	MP3 & MP4 Players	テレビ・オーディオ・カメラ	オーディオ
+Electronics	Portable Audio & Video	Microcassette Recorders	テレビ・オーディオ・カメラ	オーディオ
+Electronics	Portable Audio & Video	Minidisc Players	テレビ・オーディオ・カメラ	オーディオ
+Electronics	Portable Audio & Video	Portable Blu-ray Players	テレビ・オーディオ・カメラ	オーディオ
+Electronics	Portable Audio & Video	Portable CD Players	テレビ・オーディオ・カメラ	オーディオ
+Electronics	Portable Audio & Video	Portable DVD Players	テレビ・オーディオ・カメラ	オーディオ
+Electronics	Portable Audio & Video	Radios	テレビ・オーディオ・カメラ	オーディオ
+
+# Industrial & Scientific/Packaging & Shipping Supplies (34件) -> ダイエット・健康/サプリメント
+Industrial & Scientific	Packaging & Shipping Supplies	Bubble Pack Supplies	ダイエット・健康	サプリメント
+Industrial & Scientific	Packaging & Shipping Supplies	Carton Sealing Tape	ダイエット・健康	サプリメント
+Industrial & Scientific	Packaging & Shipping Supplies	Corrugated Boxes	ダイエット・健康	サプリメント
+Industrial & Scientific	Packaging & Shipping Supplies	Corrugated Pads	ダイエット・健康	サプリメント
+Industrial & Scientific	Packaging & Shipping Supplies	Dunnage & Protectors	ダイエット・健康	サプリメント
+Industrial & Scientific	Packaging & Shipping Supplies	Industrial Shrink Wrap Supplies	ダイエット・健康	サプリメント
+Industrial & Scientific	Packaging & Shipping Supplies	Industrial Stretch Wrap Supplies	ダイエット・健康	サプリメント
+Industrial & Scientific	Packaging & Shipping Supplies	Labels & Labeling Equipment	ダイエット・健康	サプリメント
+Industrial & Scientific	Packaging & Shipping Supplies	Mailers	ダイエット・健康	サプリメント
+Industrial & Scientific	Packaging & Shipping Supplies	Packaging Labels & Tags	ダイエット・健康	サプリメント
+Industrial & Scientific	Packaging & Shipping Supplies	Poly & Plastic Packaging Bags	ダイエット・健康	サプリメント
+Industrial & Scientific	Packaging & Shipping Supplies	Strapping	ダイエット・健康	サプリメント
+
+# Electronics/Car & Vehicle Electronics (33件) -> カー用品・バイク用品/カー用品
+Electronics	Car & Vehicle Electronics	Aviation Electronics	カー用品・バイク用品	カー用品
+Electronics	Car & Vehicle Electronics	Car Electronics	カー用品・バイク用品	カー用品
+Electronics	Car & Vehicle Electronics	Marine Electronics	カー用品・バイク用品	カー用品
+Electronics	Car & Vehicle Electronics	Powersports Electronics	カー用品・バイク用品	カー用品
+Electronics	Car & Vehicle Electronics	Vehicle GPS	カー用品・バイク用品	カー用品
+
+# Tools & Home Improvement/Measuring & Layout Tools (33件) -> 花・ガーデン・DIY工具/DIY工具
+Tools & Home Improvement	Measuring & Layout Tools	Calipers	花・ガーデン・DIY工具	DIY工具
+Tools & Home Improvement	Measuring & Layout Tools	Carpentry Squares	花・ガーデン・DIY工具	DIY工具
+Tools & Home Improvement	Measuring & Layout Tools	Laser Levels & Accessories	花・ガーデン・DIY工具	DIY工具
+Tools & Home Improvement	Measuring & Layout Tools	Levels	花・ガーデン・DIY工具	DIY工具
+Tools & Home Improvement	Measuring & Layout Tools	Linear Measurement	花・ガーデン・DIY工具	DIY工具
+Tools & Home Improvement	Measuring & Layout Tools	Marking Tools	花・ガーデン・DIY工具	DIY工具
+Tools & Home Improvement	Measuring & Layout Tools	Measuring Wheels	花・ガーデン・DIY工具	DIY工具
+Tools & Home Improvement	Measuring & Layout Tools	Pipe Locators	花・ガーデン・DIY工具	DIY工具
+Tools & Home Improvement	Measuring & Layout Tools	Plumb Bobs	花・ガーデン・DIY工具	DIY工具
+Tools & Home Improvement	Measuring & Layout Tools	Protractors	花・ガーデン・DIY工具	DIY工具
+Tools & Home Improvement	Measuring & Layout Tools	Saw Gauges	花・ガーデン・DIY工具	DIY工具
+Tools & Home Improvement	Measuring & Layout Tools	Scanners & Testers	花・ガーデン・DIY工具	DIY工具
+Tools & Home Improvement	Measuring & Layout Tools	Sound Measurement	花・ガーデン・DIY工具	DIY工具
+
+# Musical Instruments/Band & Orchestra (33件) -> 楽器・音響機器/管楽器
+Musical Instruments	Band & Orchestra	Brass	楽器・音響機器	管楽器
+Musical Instruments	Band & Orchestra	Orchestral Strings	楽器・音響機器	管楽器
+
+# Arts, Crafts & Sewing/Needlework (32件) -> 日用品・文房具・手芸用品/手芸・クラフト・生地
+Arts, Crafts & Sewing	Needlework	Cross-Stitch	日用品・文房具・手芸用品	手芸・クラフト・生地
+Arts, Crafts & Sewing	Needlework	Embroidery	日用品・文房具・手芸用品	手芸・クラフト・生地
+Arts, Crafts & Sewing	Needlework	Felt Applique Kits	日用品・文房具・手芸用品	手芸・クラフト・生地
+Arts, Crafts & Sewing	Needlework	Latch Hook	日用品・文房具・手芸用品	手芸・クラフト・生地
+Arts, Crafts & Sewing	Needlework	Needle Felting Supplies	日用品・文房具・手芸用品	手芸・クラフト・生地
+Arts, Crafts & Sewing	Needlework	Needlepoint	日用品・文房具・手芸用品	手芸・クラフト・生地
+Arts, Crafts & Sewing	Needlework	Punch Needle & Rug Punch	日用品・文房具・手芸用品	手芸・クラフト・生地
+Arts, Crafts & Sewing	Needlework	Tatting & Lacemaking	日用品・文房具・手芸用品	手芸・クラフト・生地
+
+# Musical Instruments/Scores, Songbooks & Lyrics (31件) -> 楽器・音響機器/弦楽器
+Musical Instruments	Scores, Songbooks & Lyrics	Blank Sheet Music	楽器・音響機器	弦楽器
+Musical Instruments	Scores, Songbooks & Lyrics	Brass	楽器・音響機器	弦楽器
+Musical Instruments	Scores, Songbooks & Lyrics	Choral	楽器・音響機器	弦楽器
+Musical Instruments	Scores, Songbooks & Lyrics	Combination Piano, Vocal, & Guitar	楽器・音響機器	弦楽器
+Musical Instruments	Scores, Songbooks & Lyrics	Folk & Traditional	楽器・音響機器	弦楽器
+Musical Instruments	Scores, Songbooks & Lyrics	General	楽器・音響機器	弦楽器
+Musical Instruments	Scores, Songbooks & Lyrics	Guitars & Fretted Instruments	楽器・音響機器	弦楽器
+Musical Instruments	Scores, Songbooks & Lyrics	Jazz	楽器・音響機器	弦楽器
+Musical Instruments	Scores, Songbooks & Lyrics	Mixed Collections	楽器・音響機器	弦楽器
+Musical Instruments	Scores, Songbooks & Lyrics	Musicals & Film	楽器・音響機器	弦楽器
+Musical Instruments	Scores, Songbooks & Lyrics	Opera & Classical	楽器・音響機器	弦楽器
+Musical Instruments	Scores, Songbooks & Lyrics	Orchestral	楽器・音響機器	弦楽器
+Musical Instruments	Scores, Songbooks & Lyrics	Percussion	楽器・音響機器	弦楽器
+Musical Instruments	Scores, Songbooks & Lyrics	Popular	楽器・音響機器	弦楽器
+Musical Instruments	Scores, Songbooks & Lyrics	Specific Artist	楽器・音響機器	弦楽器
+Musical Instruments	Scores, Songbooks & Lyrics	Strings	楽器・音響機器	弦楽器
+Musical Instruments	Scores, Songbooks & Lyrics	Woodwinds	楽器・音響機器	弦楽器
+
+# Musical Instruments/Live Sound & Stage (31件) -> 楽器・音響機器/DTM・レコーディング・PA機器
+Musical Instruments	Live Sound & Stage	Bags & Cases	楽器・音響機器	DTM・レコーディング・PA機器
+Musical Instruments	Live Sound & Stage	Effects & Signal Processors	楽器・音響機器	DTM・レコーディング・PA機器
+Musical Instruments	Live Sound & Stage	Monitors, Speakers & Subwoofers	楽器・音響機器	DTM・レコーディング・PA機器
+Musical Instruments	Live Sound & Stage	PA Systems	楽器・音響機器	DTM・レコーディング・PA機器
+Musical Instruments	Live Sound & Stage	Power Amplifiers	楽器・音響機器	DTM・レコーディング・PA機器
+Musical Instruments	Live Sound & Stage	Powered Mixers	楽器・音響機器	DTM・レコーディング・PA機器
+Musical Instruments	Live Sound & Stage	Special Effects	楽器・音響機器	DTM・レコーディング・PA機器
+
+# Toys & Games/Vehicles (31件) -> おもちゃ・趣味/ラジコン
+Toys & Games	Vehicles	ATVs	おもちゃ・趣味	ラジコン
+Toys & Games	Vehicles	Airplanes	おもちゃ・趣味	ラジコン
+Toys & Games	Vehicles	Ambulances	おもちゃ・趣味	ラジコン
+Toys & Games	Vehicles	Armored Fighting Vehicles	おもちゃ・趣味	ラジコン
+Toys & Games	Vehicles	Boats	おもちゃ・趣味	ラジコン
+Toys & Games	Vehicles	Buses	おもちゃ・趣味	ラジコン
+Toys & Games	Vehicles	Construction Vehicles	おもちゃ・趣味	ラジコン
+Toys & Games	Vehicles	Crawlers	おもちゃ・趣味	ラジコン
+Toys & Games	Vehicles	Finger Boards & Finger Bikes	おもちゃ・趣味	ラジコン
+Toys & Games	Vehicles	Scooters	おもちゃ・趣味	ラジコン
+Toys & Games	Vehicles	Slot Cars, Race Tracks & Accessories	おもちゃ・趣味	ラジコン
+Toys & Games	Vehicles	Spaceships	おもちゃ・趣味	ラジコン
+Toys & Games	Vehicles	Submarines	おもちゃ・趣味	ラジコン
+Toys & Games	Vehicles	Tractors	おもちゃ・趣味	ラジコン
+Toys & Games	Vehicles	Trucks	おもちゃ・趣味	ラジコン
+Toys & Games	Vehicles	Vehicle Playsets	おもちゃ・趣味	ラジコン
+
+# Pet Supplies/Small Animals (31件) -> ペット・ペットグッズ/小動物・鳥用品
+Pet Supplies	Small Animals	Carriers	ペット・ペットグッズ	小動物・鳥用品
+Pet Supplies	Small Animals	Collars, Harnesses & Leashes	ペット・ペットグッズ	小動物・鳥用品
+Pet Supplies	Small Animals	Exercise Wheels	ペット・ペットグッズ	小動物・鳥用品
+Pet Supplies	Small Animals	Feeding & Watering Supplies	ペット・ペットグッズ	小動物・鳥用品
+Pet Supplies	Small Animals	Food	ペット・ペットグッズ	小動物・鳥用品
+Pet Supplies	Small Animals	Grooming	ペット・ペットグッズ	小動物・鳥用品
+Pet Supplies	Small Animals	Health Supplies	ペット・ペットグッズ	小動物・鳥用品
+Pet Supplies	Small Animals	Houses & Habitats	ペット・ペットグッズ	小動物・鳥用品
+Pet Supplies	Small Animals	Odor & Stain Removers	ペット・ペットグッズ	小動物・鳥用品
+Pet Supplies	Small Animals	Toys	ペット・ペットグッズ	小動物・鳥用品
+Pet Supplies	Small Animals	Treats	ペット・ペットグッズ	小動物・鳥用品
+
+# Tools & Home Improvement/Lighting & Ceiling Fans (30件) -> インテリア・寝具/ライト・照明
+Tools & Home Improvement	Lighting & Ceiling Fans	Ceiling Fans & Accessories	インテリア・寝具	ライト・照明
+Tools & Home Improvement	Lighting & Ceiling Fans	Ceiling Lights	インテリア・寝具	ライト・照明
+Tools & Home Improvement	Lighting & Ceiling Fans	Commercial Lighting	インテリア・寝具	ライト・照明
+Tools & Home Improvement	Lighting & Ceiling Fans	Lamps & Shades	インテリア・寝具	ライト・照明
+Tools & Home Improvement	Lighting & Ceiling Fans	Lighting Accessories	インテリア・寝具	ライト・照明
+Tools & Home Improvement	Lighting & Ceiling Fans	Novelty Lighting	インテリア・寝具	ライト・照明
+Tools & Home Improvement	Lighting & Ceiling Fans	Wall Lights	インテリア・寝具	ライト・照明
+
+# Toys & Games/Learning & Education (24件) -> おもちゃ・趣味/知育玩具・教育玩具
+Toys & Games	Learning & Education	Detective & Spy	おもちゃ・趣味	知育玩具・教育玩具
+Toys & Games	Learning & Education	Electronic Learning Toys	おもちゃ・趣味	知育玩具・教育玩具
+Toys & Games	Learning & Education	Flash Cards	おもちゃ・趣味	知育玩具・教育玩具
+Toys & Games	Learning & Education	Habitats	おもちゃ・趣味	知育玩具・教育玩具
+Toys & Games	Learning & Education	Marble Runs	おもちゃ・趣味	知育玩具・教育玩具
+Toys & Games	Learning & Education	Musical Instruments	おもちゃ・趣味	知育玩具・教育玩具
+Toys & Games	Learning & Education	Optics	おもちゃ・趣味	知育玩具・教育玩具
+Toys & Games	Learning & Education	Reading & Writing	おもちゃ・趣味	知育玩具・教育玩具
+Toys & Games	Learning & Education	Science Kits & Toys	おもちゃ・趣味	知育玩具・教育玩具
+Toys & Games	Learning & Education	Solar Power Kits	おもちゃ・趣味	知育玩具・教育玩具
+
+# Toys & Games/Toy Figures & Playsets (24件) -> おもちゃ・趣味/フィギュア
+Toys & Games	Toy Figures & Playsets	Bendables	おもちゃ・趣味	フィギュア
+Toys & Games	Toy Figures & Playsets	Buildings & Scenery	おもちゃ・趣味	フィギュア
+Toys & Games	Toy Figures & Playsets	Dinosaurs & Prehistoric Creatures	おもちゃ・趣味	フィギュア
+Toys & Games	Toy Figures & Playsets	Fantastic Creatures	おもちゃ・趣味	フィギュア
+Toys & Games	Toy Figures & Playsets	People	おもちゃ・趣味	フィギュア
+Toys & Games	Toy Figures & Playsets	Play Figure Vehicles	おもちゃ・趣味	フィギュア
+Toys & Games	Toy Figures & Playsets	Playsets	おもちゃ・趣味	フィギュア
+
+# Toys & Games/Dolls & Accessories (23件) -> おもちゃ・趣味/おもちゃ
+Toys & Games	Dolls & Accessories	Doll Accessories	おもちゃ・趣味	おもちゃ
+Toys & Games	Dolls & Accessories	Dollhouse Accessories	おもちゃ・趣味	おもちゃ
+Toys & Games	Dolls & Accessories	Dollhouses	おもちゃ・趣味	おもちゃ
+Toys & Games	Dolls & Accessories	Dolls	おもちゃ・趣味	おもちゃ
+Toys & Games	Dolls & Accessories	Paper & Magnetic Dolls	おもちゃ・趣味	おもちゃ
+Toys & Games	Dolls & Accessories	Playsets	おもちゃ・趣味	おもちゃ
+
+# Grocery & Gourmet Food/Home Brewing & Winemaking (23件) -> ビール・ワイン・お酒/リキュール
+Grocery & Gourmet Food	Home Brewing & Winemaking	Beer Brewing Ingredients	ビール・ワイン・お酒	リキュール
+Grocery & Gourmet Food	Home Brewing & Winemaking	Beer Brewing Recipe Kits	ビール・ワイン・お酒	リキュール
+Grocery & Gourmet Food	Home Brewing & Winemaking	Winemaking Ingredients	ビール・ワイン・お酒	リキュール
+
+# Pet Supplies/Birds (23件) -> ペット・ペットグッズ/小動物・鳥用品
+Pet Supplies	Birds	Bird Diapers	ペット・ペットグッズ	小動物・鳥用品
+Pet Supplies	Birds	Birdcage Accessories	ペット・ペットグッズ	小動物・鳥用品
+Pet Supplies	Birds	Birdcages	ペット・ペットグッズ	小動物・鳥用品
+Pet Supplies	Birds	Carriers	ペット・ペットグッズ	小動物・鳥用品
+Pet Supplies	Birds	Feeding & Watering Supplies	ペット・ペットグッズ	小動物・鳥用品
+Pet Supplies	Birds	Food	ペット・ペットグッズ	小動物・鳥用品
+Pet Supplies	Birds	Health Supplies	ペット・ペットグッズ	小動物・鳥用品
+Pet Supplies	Birds	Toys	ペット・ペットグッズ	小動物・鳥用品
+Pet Supplies	Birds	Treats	ペット・ペットグッズ	小動物・鳥用品
+
+# Sports & Outdoors/Sports & Outdoor Recreation Accessories (22件) -> スポーツ・アウトドア/体育館・グラウンド用品
+Sports & Outdoors	Sports & Outdoor Recreation Accessories	Coach & Referee Gear	スポーツ・アウトドア	体育館・グラウンド用品
+Sports & Outdoors	Sports & Outdoor Recreation Accessories	Field, Court & Rink Equipment	スポーツ・アウトドア	体育館・グラウンド用品
+Sports & Outdoors	Sports & Outdoor Recreation Accessories	Trophies, Medals & Awards	スポーツ・アウトドア	体育館・グラウンド用品
+
+# Grocery & Gourmet Food/Fresh Flowers & Live Indoor Plants (22件) -> 花・ガーデン・DIY工具/花・観葉植物・盆栽
+Grocery & Gourmet Food	Fresh Flowers & Live Indoor Plants	Fresh Centerpieces	花・ガーデン・DIY工具	花・観葉植物・盆栽
+Grocery & Gourmet Food	Fresh Flowers & Live Indoor Plants	Fresh Cut Flowers	花・ガーデン・DIY工具	花・観葉植物・盆栽
+Grocery & Gourmet Food	Fresh Flowers & Live Indoor Plants	Fresh Garlands	花・ガーデン・DIY工具	花・観葉植物・盆栽
+Grocery & Gourmet Food	Fresh Flowers & Live Indoor Plants	Fresh Sprays	花・ガーデン・DIY工具	花・観葉植物・盆栽
+Grocery & Gourmet Food	Fresh Flowers & Live Indoor Plants	Fresh Swags	花・ガーデン・DIY工具	花・観葉植物・盆栽
+Grocery & Gourmet Food	Fresh Flowers & Live Indoor Plants	Fresh Wreaths	花・ガーデン・DIY工具	花・観葉植物・盆栽
+Grocery & Gourmet Food	Fresh Flowers & Live Indoor Plants	Live Indoor Plants	花・ガーデン・DIY工具	花・観葉植物・盆栽
+
+# Grocery & Gourmet Food/Alcoholic Beverages (21件) -> ビール・ワイン・お酒/リキュール
+Grocery & Gourmet Food	Alcoholic Beverages	Beer	ビール・ワイン・お酒	リキュール
+Grocery & Gourmet Food	Alcoholic Beverages	Cocktail Mixers	ビール・ワイン・お酒	リキュール
+Grocery & Gourmet Food	Alcoholic Beverages	Spirits	ビール・ワイン・お酒	リキュール
+Grocery & Gourmet Food	Alcoholic Beverages	Wine	ビール・ワイン・お酒	リキュール
+
+# Toys & Games/Baby & Toddler Toys (21件) -> おもちゃ・趣味/コレクション
+Toys & Games	Baby & Toddler Toys	Activity Centers	おもちゃ・趣味	コレクション
+Toys & Games	Baby & Toddler Toys	Balls	おもちゃ・趣味	コレクション
+Toys & Games	Baby & Toddler Toys	Bath Toys	おもちゃ・趣味	コレクション
+Toys & Games	Baby & Toddler Toys	Car Seat & Stroller Toys	おもちゃ・趣味	コレクション
+Toys & Games	Baby & Toddler Toys	Early Development & Activity Toys	おもちゃ・趣味	コレクション
+Toys & Games	Baby & Toddler Toys	Indoor Climbers & Play Structures	おもちゃ・趣味	コレクション
+Toys & Games	Baby & Toddler Toys	Mirrors	おもちゃ・趣味	コレクション
+Toys & Games	Baby & Toddler Toys	Musical Toys	おもちゃ・趣味	コレクション
+Toys & Games	Baby & Toddler Toys	Rattles & Plush Rings	おもちゃ・趣味	コレクション
+Toys & Games	Baby & Toddler Toys	Rocking Horses & Animals	おもちゃ・趣味	コレクション
+Toys & Games	Baby & Toddler Toys	Spinning Tops	おもちゃ・趣味	コレクション
+Toys & Games	Baby & Toddler Toys	Stick Horses	おもちゃ・趣味	コレクション
+Toys & Games	Baby & Toddler Toys	Teethers	おもちゃ・趣味	コレクション
+
+# Arts, Crafts & Sewing/Organization, Storage & Transport (20件) -> おもちゃ・趣味/ラジコン
+Arts, Crafts & Sewing	Organization, Storage & Transport	Art & Poster Tubes	おもちゃ・趣味	ラジコン
+Arts, Crafts & Sewing	Organization, Storage & Transport	Art Tool & Sketch Boxes	おもちゃ・趣味	ラジコン
+Arts, Crafts & Sewing	Organization, Storage & Transport	Craft & Sewing Supplies Storage	おもちゃ・趣味	ラジコン
+Arts, Crafts & Sewing	Organization, Storage & Transport	Drying & Print Racks	おもちゃ・趣味	ラジコン
+Arts, Crafts & Sewing	Organization, Storage & Transport	Flat & Vertical Files	おもちゃ・趣味	ラジコン
+Arts, Crafts & Sewing	Organization, Storage & Transport	Paint Brush Organizers & Holders	おもちゃ・趣味	ラジコン
+Arts, Crafts & Sewing	Organization, Storage & Transport	Pen, Pencil & Marker Cases	おもちゃ・趣味	ラジコン
+Arts, Crafts & Sewing	Organization, Storage & Transport	Portfolios	おもちゃ・趣味	ラジコン
+Arts, Crafts & Sewing	Organization, Storage & Transport	Storage Boxes & Organizers	おもちゃ・趣味	ラジコン
+Arts, Crafts & Sewing	Organization, Storage & Transport	Storage Cabinets	おもちゃ・趣味	ラジコン
+# Phase 24: Video Games 残余グループ
+# Video Games/Legacy Systems (414件)
+Video Games	Legacy Systems	Atari Systems	ゲーム機・ゲームソフト	その他ゲーム機・ゲームソフト
+Video Games	Legacy Systems	ColecoVision	ゲーム機・ゲームソフト	その他ゲーム機・ゲームソフト
+Video Games	Legacy Systems	Commodore Systems	ゲーム機・ゲームソフト	その他ゲーム機・ゲームソフト
+Video Games	Legacy Systems	Handheld Game Systems	ゲーム機・ゲームソフト	その他ゲーム機・ゲームソフト
+Video Games	Legacy Systems	Intellivision	ゲーム機・ゲームソフト	その他ゲーム機・ゲームソフト
+Video Games	Legacy Systems	Microconsoles	ゲーム機・ゲームソフト	その他ゲーム機・ゲームソフト
+Video Games	Legacy Systems	Nintendo Systems	ゲーム機・ゲームソフト	その他ゲーム機・ゲームソフト
+Video Games	Legacy Systems	PlayStation Systems	ゲーム機・ゲームソフト	その他ゲーム機・ゲームソフト
+Video Games	Legacy Systems	Sega Systems	ゲーム機・ゲームソフト	その他ゲーム機・ゲームソフト
+Video Games	Legacy Systems	Xbox Systems	ゲーム機・ゲームソフト	その他ゲーム機・ゲームソフト
+# Video Games/Nintendo Switch (20件)
+Video Games	Nintendo Switch	Accessories	ゲーム機・ゲームソフト	Nintendo Switch
+Video Games	Nintendo Switch	Downloadable Content	ゲーム機・ゲームソフト	Nintendo Switch
+# Video Games/PlayStation 4 (18件)
+Video Games	PlayStation 4	Accessories	ゲーム機・ゲームソフト	PlayStation 4
+# Video Games/Xbox Series X & S (14件)
+Video Games	Xbox Series X & S	Accessories	ゲーム機・ゲームソフト	Xbox Series S/X
+Video Games	Xbox Series X & S	Downloadable Content	ゲーム機・ゲームソフト	Xbox Series S/X
+# Video Games/Handheld Game Systems (9件)
+Video Games	Handheld Game Systems	Logitech G-Cloud	ゲーム機・ゲームソフト	その他ゲーム機・ゲームソフト
+Video Games	Handheld Game Systems	ROG Ally	ゲーム機・ゲームソフト	その他ゲーム機・ゲームソフト
+Video Games	Handheld Game Systems	Steam Deck	ゲーム機・ゲームソフト	その他ゲーム機・ゲームソフト
+# Phase 24: Home & Kitchen 残余グループ
+# Home & Kitchen/Kids' Home Store (21件)
+Home & Kitchen	Kids' Home Store	Nursery Furniture	キッズベビー・マタニティ	ベビー
+Home & Kitchen	Kids' Home Store	Kids' Flatware	キッズベビー・マタニティ	ベビー
+Home & Kitchen	Kids' Home Store	Kids' Baking Supplies	キッズベビー・マタニティ	ベビー
+# Home & Kitchen/Vacuums & Floor Care (15件)
+Home & Kitchen	Vacuums & Floor Care	Vacuums	家電	掃除機・クリーナー
+Home & Kitchen	Vacuums & Floor Care	Steam Cleaners, Steam Mops & Accessories	家電	掃除機・クリーナー
+Home & Kitchen	Vacuums & Floor Care	Carpet & Upholstery Cleaners & Accessories	家電	掃除機・クリーナー
+Home & Kitchen	Vacuums & Floor Care	Sweepers & Accessories	家電	掃除機・クリーナー
+Home & Kitchen	Vacuums & Floor Care	Floor Buffers & Parts	家電	掃除機・クリーナー
+# Home & Kitchen/Irons & Steamers (5件)
+Home & Kitchen	Irons & Steamers	Irons	家電	アイロン
+Home & Kitchen	Irons & Steamers	Ironing Boards	家電	アイロン
+Home & Kitchen	Irons & Steamers	Garment Steamers	家電	アイロン
+Home & Kitchen	Irons & Steamers	Travel Garment Steamers	家電	アイロン
+Home & Kitchen	Irons & Steamers	Trouser Pressers	家電	アイロン
+# Phase 24: Software (85件) → パソコン・PC周辺機器/ソフトウェア
+Software	Accounting & Finance	Personal Finance	パソコン・PC周辺機器	ソフトウェア
+Software	Accounting & Finance	Tax Preparation	パソコン・PC周辺機器	ソフトウェア
+Software	Accounting & Finance	Payroll	パソコン・PC周辺機器	ソフトウェア
+Software	Accounting & Finance	Inventory Management	パソコン・PC周辺機器	ソフトウェア
+Software	Accounting & Finance	Check Printing	パソコン・PC周辺機器	ソフトウェア
+Software	Accounting & Finance	Business Accounting	パソコン・PC周辺機器	ソフトウェア
+Software	Children's	Art & Creativity	パソコン・PC周辺機器	ソフトウェア
+Software	Children's	Early Learning	パソコン・PC周辺機器	ソフトウェア
+Software	Children's	Games	パソコン・PC周辺機器	ソフトウェア
+Software	Children's	Geography	パソコン・PC周辺機器	ソフトウェア
+Software	Children's	Thinking & Problem Solving	パソコン・PC周辺機器	ソフトウェア
+Software	Children's	Math	パソコン・PC周辺機器	ソフトウェア
+Software	Children's	Reading & Language	パソコン・PC周辺機器	ソフトウェア
+Software	Children's	Science & Nature	パソコン・PC周辺機器	ソフトウェア
+Software	Education & Reference	Arts	パソコン・PC周辺機器	ソフトウェア
+Software	Education & Reference	Dictionaries	パソコン・PC周辺機器	ソフトウェア
+Software	Education & Reference	Languages	パソコン・PC周辺機器	ソフトウェア
+Software	Education & Reference	History	パソコン・PC周辺機器	ソフトウェア
+Software	Education & Reference	Atlases, Maps & GPS	パソコン・PC周辺機器	ソフトウェア
+Software	Education & Reference	Science	パソコン・PC周辺機器	ソフトウェア
+Software	Education & Reference	Test Preparation	パソコン・PC周辺機器	ソフトウェア
+Software	Education & Reference	Typing	パソコン・PC周辺機器	ソフトウェア
+Software	Education & Reference	Writing & Literature	パソコン・PC周辺機器	ソフトウェア
+Software	Education & Reference	Encyclopedias	パソコン・PC周辺機器	ソフトウェア
+Software	Education & Reference	Math	パソコン・PC周辺機器	ソフトウェア
+Software	Education & Reference	Religion	パソコン・PC周辺機器	ソフトウェア
+Software	Education & Reference	Script & Screenwriting	パソコン・PC周辺機器	ソフトウェア
+Software	Lifestyle & Hobbies	Home Publishing	パソコン・PC周辺機器	ソフトウェア
+Software	Lifestyle & Hobbies	Sewing	パソコン・PC周辺機器	ソフトウェア
+Software	Lifestyle & Hobbies	Scrapbooking	パソコン・PC周辺機器	ソフトウェア
+Software	Lifestyle & Hobbies	Home & Garden Design	パソコン・PC周辺機器	ソフトウェア
+Software	Lifestyle & Hobbies	Fashion & Beauty	パソコン・PC周辺機器	ソフトウェア
+Software	Lifestyle & Hobbies	Family & Genealogy	パソコン・PC周辺機器	ソフトウェア
+Software	Lifestyle & Hobbies	Cooking	パソコン・PC周辺機器	ソフトウェア
+Software	Utilities	Screen Savers	パソコン・PC周辺機器	ソフトウェア
+Software	Utilities	Partitions	パソコン・PC周辺機器	ソフトウェア
+Software	Utilities	PC Maintenance	パソコン・PC周辺機器	ソフトウェア
+Software	Utilities	Mobile Utilities	パソコン・PC周辺機器	ソフトウェア
+Software	Utilities	Memory Management	パソコン・PC周辺機器	ソフトウェア
+Software	Utilities	Internet Utilities	パソコン・PC周辺機器	ソフトウェア
+Software	Utilities	File Conversion	パソコン・PC周辺機器	ソフトウェア
+Software	Utilities	File Compression & Decompression	パソコン・PC周辺機器	ソフトウェア
+Software	Utilities	Drivers & Driver Recovery	パソコン・PC周辺機器	ソフトウェア
+Software	Utilities	Backup	パソコン・PC周辺機器	ソフトウェア
+Software	Video	Compositing & Effects	パソコン・PC周辺機器	ソフトウェア
+Software	Video	Video Editing	パソコン・PC周辺機器	ソフトウェア
+Software	Video	Encoding	パソコン・PC周辺機器	ソフトウェア
+Software	Video	DVD & Blu-Ray Movie Players	パソコン・PC周辺機器	ソフトウェア
+Software	Music	MP3 Editing & Effects	パソコン・PC周辺機器	ソフトウェア
+Software	Music	CD & DVD Burning & Labeling	パソコン・PC周辺機器	ソフトウェア
+Software	Music	Music Players	パソコン・PC周辺機器	ソフトウェア
+Software	Networking & Servers	Servers	パソコン・PC周辺機器	ソフトウェア
+Software	Networking & Servers	Security	パソコン・PC周辺機器	ソフトウェア
+Software	Networking & Servers	Network Management	パソコン・PC周辺機器	ソフトウェア
+Software	Networking & Servers	Local Area Networks	パソコン・PC周辺機器	ソフトウェア
+Software	Networking & Servers	Firewalls	パソコン・PC周辺機器	ソフトウェア
+Software	Programming & Web Development	Web Design	パソコン・PC周辺機器	ソフトウェア
+Software	Programming & Web Development	Development Utilities	パソコン・PC周辺機器	ソフトウェア
+Software	Programming & Web Development	Web Site Hosting	パソコン・PC周辺機器	ソフトウェア
+Software	Programming & Web Development	Training & Tutorials	パソコン・PC周辺機器	ソフトウェア
+Software	Programming & Web Development	Text Editors	パソコン・PC周辺機器	ソフトウェア
+Software	Programming & Web Development	Programming Languages	パソコン・PC周辺機器	ソフトウェア
+Software	Photography & Graphic Design	Animation & Anime	パソコン・PC周辺機器	ソフトウェア
+Software	Antivirus & Security	Parental Control	パソコン・PC周辺機器	ソフトウェア
+Software	Antivirus & Security	Internet Security Suites	パソコン・PC周辺機器	ソフトウェア
+Software	Antivirus & Security	Antivirus	パソコン・PC周辺機器	ソフトウェア
+# Phase 24: Office Products 残余グループ
+Office Products	Office & School Supplies	Book Covers & Book Accessories	日用品・文房具・手芸用品	文房具・事務用品・画材
+Office Products	Office & School Supplies	Office Storage Supplies	日用品・文房具・手芸用品	文房具・事務用品・画材
+Office Products	Office & School Supplies	Time Clocks & Cards	日用品・文房具・手芸用品	文房具・事務用品・画材
+Office Products	Office & School Supplies	Cutting & Measuring Devices	日用品・文房具・手芸用品	文房具・事務用品・画材
+Office Products	Office & School Supplies	Carrying Cases	日用品・文房具・手芸用品	文房具・事務用品・画材
+# Phase 24: Arts, Crafts & Sewing 残余グループ
+# Printmaking (19件)
+Arts, Crafts & Sewing	Printmaking	Screen Printing	日用品・文房具・手芸用品	文房具・事務用品・画材
+Arts, Crafts & Sewing	Printmaking	Relief & Block Printing Materials	日用品・文房具・手芸用品	文房具・事務用品・画材
+Arts, Crafts & Sewing	Printmaking	Etching Supplies	日用品・文房具・手芸用品	文房具・事務用品・画材
+Arts, Crafts & Sewing	Printmaking	Printing Presses & Accessories	日用品・文房具・手芸用品	文房具・事務用品・画材
+Arts, Crafts & Sewing	Printmaking	Heat Press Machines & Accessories	日用品・文房具・手芸用品	文房具・事務用品・画材
+Arts, Crafts & Sewing	Printmaking	Printmaking Inks	日用品・文房具・手芸用品	文房具・事務用品・画材
+# Gift Wrapping Supplies (13件)
+Arts, Crafts & Sewing	Gift Wrapping Supplies	Gift Bags	日用品・文房具・手芸用品	手芸・クラフト・生地
+Arts, Crafts & Sewing	Gift Wrapping Supplies	Gift Boxes	日用品・文房具・手芸用品	手芸・クラフト・生地
+Arts, Crafts & Sewing	Gift Wrapping Supplies	Gift Wrap Bows	日用品・文房具・手芸用品	手芸・クラフト・生地
+Arts, Crafts & Sewing	Gift Wrapping Supplies	Gift Wrap Paper	日用品・文房具・手芸用品	手芸・クラフト・生地
+Arts, Crafts & Sewing	Gift Wrapping Supplies	Gift Wrap Ribbons	日用品・文房具・手芸用品	手芸・クラフト・生地
+Arts, Crafts & Sewing	Gift Wrapping Supplies	Wrapping Sets	日用品・文房具・手芸用品	手芸・クラフト・生地
+Arts, Crafts & Sewing	Gift Wrapping Supplies	Wrapping Tissue	日用品・文房具・手芸用品	手芸・クラフト・生地
+Arts, Crafts & Sewing	Gift Wrapping Supplies	Enclosure Cards	日用品・文房具・手芸用品	手芸・クラフト・生地
+Arts, Crafts & Sewing	Gift Wrapping Supplies	Gift Wrap Tags	日用品・文房具・手芸用品	手芸・クラフト・生地
+# Party Decorations (14件)
+Arts, Crafts & Sewing	Party Decorations & Supplies	Balloons	おもちゃ・趣味	パーティーグッズ
+Arts, Crafts & Sewing	Party Decorations & Supplies	Streamers	おもちゃ・趣味	パーティーグッズ
+Arts, Crafts & Sewing	Party Decorations & Supplies	Confetti	おもちゃ・趣味	パーティーグッズ
+Arts, Crafts & Sewing	Party Decorations & Supplies	Centerpieces	おもちゃ・趣味	パーティーグッズ
+Arts, Crafts & Sewing	Party Decorations & Supplies	Tablecovers	おもちゃ・趣味	パーティーグッズ
+Arts, Crafts & Sewing	Party Decorations & Supplies	Sky Lanterns	おもちゃ・趣味	パーティーグッズ
+# Knitting & Crochet (12件)
+Arts, Crafts & Sewing	Knitting & Crochet	Yarn Storage	日用品・文房具・手芸用品	手芸・クラフト・生地
+Arts, Crafts & Sewing	Knitting & Crochet	Yarn	日用品・文房具・手芸用品	手芸・クラフト・生地
+Arts, Crafts & Sewing	Knitting & Crochet	Needle Cases	日用品・文房具・手芸用品	手芸・クラフト・生地
+Arts, Crafts & Sewing	Knitting & Crochet	Knitting Patterns	日用品・文房具・手芸用品	手芸・クラフト・生地
+Arts, Crafts & Sewing	Knitting & Crochet	Knitting Needles	日用品・文房具・手芸用品	手芸・クラフト・生地
+Arts, Crafts & Sewing	Knitting & Crochet	Knitting Looms & Boards	日用品・文房具・手芸用品	手芸・クラフト・生地
+Arts, Crafts & Sewing	Knitting & Crochet	Knitting Kits	日用品・文房具・手芸用品	手芸・クラフト・生地
+Arts, Crafts & Sewing	Knitting & Crochet	Knitting & Crochet Notions	日用品・文房具・手芸用品	手芸・クラフト・生地
+Arts, Crafts & Sewing	Knitting & Crochet	Crochet Thread	日用品・文房具・手芸用品	手芸・クラフト・生地
+Arts, Crafts & Sewing	Knitting & Crochet	Crochet Patterns	日用品・文房具・手芸用品	手芸・クラフト・生地
+Arts, Crafts & Sewing	Knitting & Crochet	Crochet Kits	日用品・文房具・手芸用品	手芸・クラフト・生地
+Arts, Crafts & Sewing	Knitting & Crochet	Crochet Hooks	日用品・文房具・手芸用品	手芸・クラフト・生地
+# Fabric Decorating (5件)
+Arts, Crafts & Sewing	Fabric Decorating	Fixatives	日用品・文房具・手芸用品	手芸・クラフト・生地
+Arts, Crafts & Sewing	Fabric Decorating	Fabric Decorating Kits	日用品・文房具・手芸用品	手芸・クラフト・生地
+Arts, Crafts & Sewing	Fabric Decorating	Fabric & Textile Paints	日用品・文房具・手芸用品	手芸・クラフト・生地
+Arts, Crafts & Sewing	Fabric Decorating	Dyes	日用品・文房具・手芸用品	手芸・クラフト・生地
+Arts, Crafts & Sewing	Fabric Decorating	Application Tools	日用品・文房具・手芸用品	手芸・クラフト・生地
+# Phase 24: Patio, Lawn & Garden 残余グループ
+# Outdoor Heating & Cooling (18件)
+Patio, Lawn & Garden	Outdoor Heating & Cooling	Fire Pits & Outdoor Fireplaces	花・ガーデン・DIY工具	ガーデニング
+Patio, Lawn & Garden	Outdoor Heating & Cooling	Patio Heaters	花・ガーデン・DIY工具	ガーデニング
+Patio, Lawn & Garden	Outdoor Heating & Cooling	Patio Heater Replacement Parts	花・ガーデン・DIY工具	ガーデニング
+Patio, Lawn & Garden	Outdoor Heating & Cooling	Patio Heater Covers	花・ガーデン・DIY工具	ガーデニング
+Patio, Lawn & Garden	Outdoor Heating & Cooling	Misting Systems	花・ガーデン・DIY工具	ガーデニング
+Patio, Lawn & Garden	Outdoor Heating & Cooling	Misting Parts & Accessories	花・ガーデン・DIY工具	ガーデニング
+Patio, Lawn & Garden	Outdoor Heating & Cooling	Misting Fans	花・ガーデン・DIY工具	ガーデニング
+Patio, Lawn & Garden	Outdoor Heating & Cooling	Firewood Racks	花・ガーデン・DIY工具	ガーデニング
+Patio, Lawn & Garden	Outdoor Heating & Cooling	Fire Pit Spark Screens	花・ガーデン・DIY工具	ガーデニング
+Patio, Lawn & Garden	Outdoor Heating & Cooling	Fire Pit Covers	花・ガーデン・DIY工具	ガーデニング
+Patio, Lawn & Garden	Outdoor Heating & Cooling	Fire Pit & Outdoor Fireplace Parts	花・ガーデン・DIY工具	ガーデニング
+Patio, Lawn & Garden	Outdoor Heating & Cooling	Fire Glass	花・ガーデン・DIY工具	ガーデニング
+# Snow Removal (11件)
+Patio, Lawn & Garden	Snow Removal	De-Icers & Salt Spreaders	花・ガーデン・DIY工具	DIY工具
+Patio, Lawn & Garden	Snow Removal	Snow Shovels	花・ガーデン・DIY工具	DIY工具
+Patio, Lawn & Garden	Snow Removal	Snow Rakes	花・ガーデン・DIY工具	DIY工具
+Patio, Lawn & Garden	Snow Removal	Snow Plows	花・ガーデン・DIY工具	DIY工具
+Patio, Lawn & Garden	Snow Removal	Snow Plow Attachments & Accessories	花・ガーデン・DIY工具	DIY工具
+Patio, Lawn & Garden	Snow Removal	Snow Blowers	花・ガーデン・DIY工具	DIY工具
+Patio, Lawn & Garden	Snow Removal	Snow Blower Replacement Parts	花・ガーデン・DIY工具	DIY工具
+Patio, Lawn & Garden	Snow Removal	Snow Blower Accessories	花・ガーデン・DIY工具	DIY工具
+# Outdoor Lighting (7件)
+Patio, Lawn & Garden	Outdoor Lighting	Porch & Patio Lights	花・ガーデン・DIY工具	エクステリア
+Patio, Lawn & Garden	Outdoor Lighting	Umbrella Lights	花・ガーデン・DIY工具	エクステリア
+Patio, Lawn & Garden	Outdoor Lighting	Lanterns	花・ガーデン・DIY工具	エクステリア
+Patio, Lawn & Garden	Outdoor Lighting	Floor Lamps	花・ガーデン・DIY工具	エクステリア
+Patio, Lawn & Garden	Outdoor Lighting	Decorative Lighting Projectors	花・ガーデン・DIY工具	エクステリア
+# Generators & Portable Power (6件)
+Patio, Lawn & Garden	Generators & Portable Power	Generators	花・ガーデン・DIY工具	DIY工具
+Patio, Lawn & Garden	Generators & Portable Power	Generator Accessories	花・ガーデン・DIY工具	DIY工具
+Patio, Lawn & Garden	Generators & Portable Power	Generator Replacement Parts	花・ガーデン・DIY工具	DIY工具
+Patio, Lawn & Garden	Generators & Portable Power	Solar & Wind Power	花・ガーデン・DIY工具	DIY工具
+# Outdoor Storage & Housing (5件)
+Patio, Lawn & Garden	Outdoor Storage & Housing	Storage Sheds	花・ガーデン・DIY工具	エクステリア
+Patio, Lawn & Garden	Outdoor Storage & Housing	Tiny House Kits	花・ガーデン・DIY工具	エクステリア
+Patio, Lawn & Garden	Outdoor Storage & Housing	Garden Houses	花・ガーデン・DIY工具	エクステリア
+Patio, Lawn & Garden	Outdoor Storage & Housing	Deck Boxes	花・ガーデン・DIY工具	エクステリア
+Patio, Lawn & Garden	Outdoor Storage & Housing	Carports	花・ガーデン・DIY工具	エクステリア
+# Phase 24: Jewelry/Men (18件) → アクセサリー・ジュエリー/その他アクセサリー・ジュエリー
+Jewelry	Men	Religious	アクセサリー・ジュエリー	その他アクセサリー・ジュエリー
+Jewelry	Men	Earrings	アクセサリー・ジュエリー	その他アクセサリー・ジュエリー
+# Phase 24: Electronics 残余グループ
+# Wearable Technology (18件)
+Electronics	Wearable Technology	Arm & Wristband Accessories	スマホ・タブレット・モバイル通信	ウェアラブルデバイス
+Electronics	Wearable Technology	Virtual Reality	スマホ・タブレット・モバイル通信	ウェアラブルデバイス
+Electronics	Wearable Technology	Temporary Tattoos	スマホ・タブレット・モバイル通信	ウェアラブルデバイス
+Electronics	Wearable Technology	Smartwatches	スマホ・タブレット・モバイル通信	ウェアラブルデバイス
+Electronics	Wearable Technology	Smart Clip Accessories	スマホ・タブレット・モバイル通信	ウェアラブルデバイス
+Electronics	Wearable Technology	Rings	スマホ・タブレット・モバイル通信	ウェアラブルデバイス
+Electronics	Wearable Technology	Pendants	スマホ・タブレット・モバイル通信	ウェアラブルデバイス
+Electronics	Wearable Technology	Glasses	スマホ・タブレット・モバイル通信	ウェアラブルデバイス
+Electronics	Wearable Technology	Baby Wearables	スマホ・タブレット・モバイル通信	ウェアラブルデバイス
+Electronics	Wearable Technology	Activity Trackers	スマホ・タブレット・モバイル通信	ウェアラブルデバイス
+Electronics	Wearable Technology	Clips, Arm & Wristbands	スマホ・タブレット・モバイル通信	ウェアラブルデバイス
+# Household Batteries (17件)
+Electronics	Household Batteries, Chargers & Accessories	Household Batteries	家電	電池・延長コード
+Electronics	Household Batteries, Chargers & Accessories	Battery Testers	家電	電池・延長コード
+Electronics	Household Batteries, Chargers & Accessories	Battery Storage Containers	家電	電池・延長コード
+Electronics	Household Batteries, Chargers & Accessories	Battery Holders	家電	電池・延長コード
+Electronics	Household Batteries, Chargers & Accessories	Battery Chargers	家電	電池・延長コード
+Electronics	Household Batteries, Chargers & Accessories	Battery & Charger Sets	家電	電池・延長コード
+# Phase 24: Toys & Games 残余グループ
+# Collectible Toys (16件)
+Toys & Games	Collectible Toys	Collectible Display & Storage	おもちゃ・趣味	コレクション
+Toys & Games	Collectible Toys	Trading Cards & Accessories	おもちゃ・趣味	コレクション
+Toys & Games	Collectible Toys	Statues, Bobbleheads & Busts	おもちゃ・趣味	コレクション
+# Tricycles, Scooters & Wagons (12件) → 大型遊具
+Toys & Games	Tricycles, Scooters & Wagons	Ride-On Parts & Accessories	おもちゃ・趣味	大型遊具
+Toys & Games	Tricycles, Scooters & Wagons	Push Ride-Ons	おもちゃ・趣味	大型遊具
+Toys & Games	Tricycles, Scooters & Wagons	Pull-Along Wagons	おもちゃ・趣味	大型遊具
+Toys & Games	Tricycles, Scooters & Wagons	Pedal Vehicles	おもちゃ・趣味	大型遊具
+Toys & Games	Tricycles, Scooters & Wagons	Electric Vehicles	おもちゃ・趣味	大型遊具
+Toys & Games	Tricycles, Scooters & Wagons	Balance Bikes	おもちゃ・趣味	大型遊具
+# Kids' Electronics (12件)
+Toys & Games	Kids' Electronics	Tablets & Accessories	おもちゃ・趣味	おもちゃ
+Toys & Games	Kids' Electronics	Walkie Talkies	おもちゃ・趣味	おもちゃ
+Toys & Games	Kids' Electronics	Storytelling Toys	おもちゃ・趣味	おもちゃ
+Toys & Games	Kids' Electronics	Plug & Play Video Games	おもちゃ・趣味	おもちゃ
+Toys & Games	Kids' Electronics	Personal Video Players & Accessories	おもちゃ・趣味	おもちゃ
+Toys & Games	Kids' Electronics	MP3 Players	おもちゃ・趣味	おもちゃ
+Toys & Games	Kids' Electronics	Karaoke Machines	おもちゃ・趣味	おもちゃ
+Toys & Games	Kids' Electronics	Electronic Pets	おもちゃ・趣味	おもちゃ
+Toys & Games	Kids' Electronics	Dance Mats	おもちゃ・趣味	おもちゃ
+Toys & Games	Kids' Electronics	Cameras	おもちゃ・趣味	おもちゃ
+# Puppets & Puppet Theaters (7件)
+Toys & Games	Puppets & Puppet Theaters	Wraparound	おもちゃ・趣味	おもちゃ
+Toys & Games	Puppets & Puppet Theaters	Ventriloquist	おもちゃ・趣味	おもちゃ
+Toys & Games	Puppets & Puppet Theaters	Puppet Theaters	おもちゃ・趣味	おもちゃ
+Toys & Games	Puppets & Puppet Theaters	Plush Puppets	おもちゃ・趣味	おもちゃ
+Toys & Games	Puppets & Puppet Theaters	Marionettes	おもちゃ・趣味	おもちゃ
+Toys & Games	Puppets & Puppet Theaters	Hand Puppets	おもちゃ・趣味	おもちゃ
+Toys & Games	Puppets & Puppet Theaters	Finger Puppets	おもちゃ・趣味	おもちゃ
+# Stuffed Animals & Plush Toys (6件)
+Toys & Games	Stuffed Animals & Plush Toys	Stuffed Animal Clothing & Accessories	おもちゃ・趣味	おもちゃ
+Toys & Games	Stuffed Animals & Plush Toys	Plush Purses	おもちゃ・趣味	おもちゃ
+Toys & Games	Stuffed Animals & Plush Toys	Plush Interactive Toy Figures	おもちゃ・趣味	おもちゃ
+Toys & Games	Stuffed Animals & Plush Toys	Plush Figures	おもちゃ・趣味	おもちゃ
+# Phase 24: Industrial & Scientific 残余グループ
+# Janitorial & Sanitation Supplies (16件)
+Industrial & Scientific	Janitorial & Sanitation Supplies	Mopping Supplies	日用品・文房具・手芸用品	掃除用具
+Industrial & Scientific	Janitorial & Sanitation Supplies	Restroom Fixtures	日用品・文房具・手芸用品	掃除用具
+Industrial & Scientific	Janitorial & Sanitation Supplies	Paper Products	日用品・文房具・手芸用品	掃除用具
+Industrial & Scientific	Janitorial & Sanitation Supplies	Cleaning Chemicals	日用品・文房具・手芸用品	掃除用具
+Industrial & Scientific	Janitorial & Sanitation Supplies	Waste Receptacles & Liners	日用品・文房具・手芸用品	掃除用具
+Industrial & Scientific	Janitorial & Sanitation Supplies	Sweeping Supplies	日用品・文房具・手芸用品	掃除用具
+Industrial & Scientific	Janitorial & Sanitation Supplies	Odor & Drain Maintainers	日用品・文房具・手芸用品	掃除用具
+Industrial & Scientific	Janitorial & Sanitation Supplies	Laundry Supplies	日用品・文房具・手芸用品	掃除用具
+# Additive Manufacturing Products (14件) → DIY工具 (3Dプリンター用品にその他なし)
+Industrial & Scientific	Additive Manufacturing Products	3D Printers	花・ガーデン・DIY工具	DIY工具
+Industrial & Scientific	Additive Manufacturing Products	3D Printer Parts & Accessories	花・ガーデン・DIY工具	DIY工具
+Industrial & Scientific	Additive Manufacturing Products	3D Printing Supplies	花・ガーデン・DIY工具	DIY工具
+Industrial & Scientific	Additive Manufacturing Products	3D Scanners	花・ガーデン・DIY工具	DIY工具
+Industrial & Scientific	Additive Manufacturing Products	3D Printing Pens	花・ガーデン・DIY工具	DIY工具
+# Science Education (9件) → 知育玩具・教育玩具
+Industrial & Scientific	Science Education	Specimens	おもちゃ・趣味	知育玩具・教育玩具
+Industrial & Scientific	Science Education	Optics	おもちゃ・趣味	知育玩具・教育玩具
+Industrial & Scientific	Science Education	Model Animals	おもちゃ・趣味	知育玩具・教育玩具
+Industrial & Scientific	Science Education	Microscope Sample Slides	おもちゃ・趣味	知育玩具・教育玩具
+Industrial & Scientific	Science Education	Measurement Kits	おもちゃ・趣味	知育玩具・教育玩具
+Industrial & Scientific	Science Education	Magnets & Magnetism Kits	おもちゃ・趣味	知育玩具・教育玩具
+Industrial & Scientific	Science Education	Insects & Insect Kits	おもちゃ・趣味	知育玩具・教育玩具
+Industrial & Scientific	Science Education	Fossils	おもちゃ・趣味	知育玩具・教育玩具
+Industrial & Scientific	Science Education	Charts & Posters	おもちゃ・趣味	知育玩具・教育玩具
+# Abrasive & Finishing Products (7件) → DIY工具
+Industrial & Scientific	Abrasive & Finishing Products	Abrasive Accessories	花・ガーデン・DIY工具	DIY工具
+Industrial & Scientific	Abrasive & Finishing Products	Finishing Products	花・ガーデン・DIY工具	DIY工具
+# Digital Signage (5件) → ディスプレイ・モニター
+Industrial & Scientific	Digital Signage	Video Walls	パソコン・PC周辺機器	ディスプレイ・モニター
+Industrial & Scientific	Digital Signage	Video Wall Mounts	パソコン・PC周辺機器	ディスプレイ・モニター
+Industrial & Scientific	Digital Signage	Video Wall Controllers	パソコン・PC周辺機器	ディスプレイ・モニター
+Industrial & Scientific	Digital Signage	Media Players	パソコン・PC周辺機器	ディスプレイ・モニター
+Industrial & Scientific	Digital Signage	Commercial TVs & Displays	パソコン・PC周辺機器	ディスプレイ・モニター
+# Phase 24: Clothing, Shoes & Jewelry/Women 残余グループ
+# Women/Handbags & Wallets (12件)
+Clothing, Shoes & Jewelry	Women	Handbags & Wallets	バッグ・財布・ファッション小物	バッグ
+# Phase 24: Grocery & Gourmet Food 残余グループ
+# Baby Foods (15件)
+Grocery & Gourmet Food	Baby Foods	Beverages	キッズベビー・マタニティ	ベビー
+Grocery & Gourmet Food	Baby Foods	Formula	キッズベビー・マタニティ	ベビー
+Grocery & Gourmet Food	Baby Foods	Cereal & Porridge	キッズベビー・マタニティ	ベビー
+Grocery & Gourmet Food	Baby Foods	Snack Foods	キッズベビー・マタニティ	ベビー
+Grocery & Gourmet Food	Baby Foods	Meals	キッズベビー・マタニティ	ベビー
+# Breakfast Foods (6件)
+Grocery & Gourmet Food	Breakfast Foods	Breakfast Syrups & Toppings	グルメ・食品	パン・ジャム・シリアル
+Grocery & Gourmet Food	Breakfast Foods	Applesauce & Fruit Cups	グルメ・食品	パン・ジャム・シリアル
+# Phase 24: Health & Household 残余グループ
+# Vision (12件) → コンタクトレンズ・カラコン
+Health & Household	Vision	Contact Lens Care	コンタクトレンズ・カラコン	コンタクトレンズ
+Health & Household	Vision	Eyeglasses Care	コンタクトレンズ・カラコン	コンタクトレンズ
+Health & Household	Vision	Eye Patches	コンタクトレンズ・カラコン	コンタクトレンズ
+Health & Household	Vision	Blue Light Blocking Glasses	コンタクトレンズ・カラコン	コンタクトレンズ
+# Vitamins, Minerals & Supplements (10件)
+Health & Household	Vitamins, Minerals & Supplements	Lipid	ダイエット・健康	サプリメント
+Health & Household	Vitamins, Minerals & Supplements	Sleep Supplements	ダイエット・健康	サプリメント
+Health & Household	Vitamins, Minerals & Supplements	Royal Jelly	ダイエット・健康	サプリメント
+Health & Household	Vitamins, Minerals & Supplements	MSM	ダイエット・健康	サプリメント
+Health & Household	Vitamins, Minerals & Supplements	MCT Oil	ダイエット・健康	サプリメント
+Health & Household	Vitamins, Minerals & Supplements	Hyaluronic Acid	ダイエット・健康	サプリメント
+Health & Household	Vitamins, Minerals & Supplements	Collagen	ダイエット・健康	サプリメント
+Health & Household	Vitamins, Minerals & Supplements	Blended Vitamin & Mineral Supplements	ダイエット・健康	サプリメント
+# Stationery & Gift Wrapping Supplies (5件)
+Health & Household	Stationery & Gift Wrapping Supplies	Stationery Supplies	日用品・文房具・手芸用品	文房具・事務用品・画材
+# Phase 24: Sports & Outdoors 残余グループ
+# Memorabilia Display & Storage (5件) → コレクション
+Sports & Outdoors	Memorabilia Display & Storage	Display Cases	おもちゃ・趣味	コレクション
+Sports & Outdoors	Memorabilia Display & Storage	Card Sleeves	おもちゃ・趣味	コレクション
+Sports & Outdoors	Memorabilia Display & Storage	Card Screwdowns	おもちゃ・趣味	コレクション
+Sports & Outdoors	Memorabilia Display & Storage	Card Cases	おもちゃ・趣味	コレクション
+Sports & Outdoors	Memorabilia Display & Storage	Card Albums	おもちゃ・趣味	コレクション
+# Phase 24: Tools & Home Improvement 残余グループ
+# Light Bulbs (8件) → 蛍光灯・電球
+Tools & Home Improvement	Light Bulbs	LED Bulbs	家電	蛍光灯・電球
+Tools & Home Improvement	Light Bulbs	Krypton & Xenon Bulbs	家電	蛍光灯・電球
+Tools & Home Improvement	Light Bulbs	Incandescent Bulbs	家電	蛍光灯・電球
+Tools & Home Improvement	Light Bulbs	High Intensity Discharge Bulbs	家電	蛍光灯・電球
+Tools & Home Improvement	Light Bulbs	Halogen Bulbs	家電	蛍光灯・電球
+Tools & Home Improvement	Light Bulbs	Fluorescent Tubes	家電	蛍光灯・電球
+Tools & Home Improvement	Light Bulbs	Compact Fluorescent Bulbs	家電	蛍光灯・電球
+Tools & Home Improvement	Light Bulbs	Black Light Bulbs	家電	蛍光灯・電球
+# Storage & Home Organization (5件)
+Tools & Home Improvement	Storage & Home Organization	Garage Storage	インテリア・寝具	収納家具
+Tools & Home Improvement	Storage & Home Organization	Storage Lockers	インテリア・寝具	収納家具
+Tools & Home Improvement	Storage & Home Organization	Ladder Racks	インテリア・寝具	収納家具
+# Phase 25: 残余77件の修正
+# Video Games 残余
+Video Games	Virtual Reality	Standalone Hardware	ゲーム機・ゲームソフト	その他ゲーム機・ゲームソフト
+Video Games	PlayStation 5	Accessories	ゲーム機・ゲームソフト	PlayStation 5
+# Arts/Party Decorations 残余L3 (Tissue Pom Poms等)
+Arts, Crafts & Sewing	Party Decorations & Supplies	Tissue Pom Poms	おもちゃ・趣味	パーティーグッズ
+Arts, Crafts & Sewing	Party Decorations & Supplies	Cardboard Cutouts	おもちゃ・趣味	パーティーグッズ
+Arts, Crafts & Sewing	Party Decorations & Supplies	Aisle Runners	おもちゃ・趣味	パーティーグッズ
+Arts, Crafts & Sewing	Party Decorations & Supplies	Card Boxes	おもちゃ・趣味	パーティーグッズ
+Arts, Crafts & Sewing	Party Decorations & Supplies	Guestbooks	おもちゃ・趣味	パーティーグッズ
+Arts, Crafts & Sewing	Party Decorations & Supplies	Luminarias	おもちゃ・趣味	パーティーグッズ
+Arts, Crafts & Sewing	Party Decorations & Supplies	Garlands	おもちゃ・趣味	パーティーグッズ
+Arts, Crafts & Sewing	Party Decorations & Supplies	Banners	おもちゃ・趣味	パーティーグッズ
+# Arts/Gift Wrapping 残余L3
+Arts, Crafts & Sewing	Gift Wrapping Supplies	Gift Wrap Cellophane Bags	日用品・文房具・手芸用品	手芸・クラフト・生地
+Arts, Crafts & Sewing	Gift Wrapping Supplies	Gift Wrap Crinkle & Filler Paper	日用品・文房具・手芸用品	手芸・クラフト・生地
+Arts, Crafts & Sewing	Gift Wrapping Supplies	Gift Card Holders	日用品・文房具・手芸用品	手芸・クラフト・生地
+Arts, Crafts & Sewing	Gift Wrapping Supplies	Bow Makers	日用品・文房具・手芸用品	手芸・クラフト・生地
+# Electronics 残余グループ
+Electronics	GPS, Finders & Accessories	Sports & Handheld GPS	カー用品・バイク用品	カー用品
+Electronics	GPS, Finders & Accessories	GPS Trackers	カー用品・バイク用品	カー用品
+Electronics	Power Accessories	AC Adapters	家電	電池・延長コード
+Electronics	Power Accessories	Isolation Transformers	家電	電池・延長コード
+Electronics	Power Accessories	Power Converters	家電	電池・延長コード
+Electronics	Power Accessories	PDUs	家電	電池・延長コード
+# Musical Instruments 残余グループ
+Musical Instruments	Bass Guitars	Electro-Acoustic Bass Guitars	楽器・音響機器	ベース
+Musical Instruments	Bass Guitars	Electric Basses	楽器・音響機器	ベース
+Musical Instruments	Bass Guitars	Bass Guitar Kits	楽器・音響機器	ベース
+Musical Instruments	Keyboards & MIDI	Electronic Keyboards	楽器・音響機器	キーボード・ピアノ
+# Home & Kitchen/Wall Art 残余グループ
+Home & Kitchen	Wall Art	Paintings	インテリア・寝具	インテリア小物・置物
+Home & Kitchen	Wall Art	Photographs	インテリア・寝具	インテリア小物・置物
+Home & Kitchen	Wall Art	Posters & Prints	インテリア・寝具	インテリア小物・置物
+# Toys & Games 残余グループ
+Toys & Games	Building Toys	Building Sets	おもちゃ・趣味	おもちゃ
+Toys & Games	Building Toys	Gear Sets	おもちゃ・趣味	おもちゃ
+Toys & Games	Building Toys	Magnetic Building	おもちゃ・趣味	おもちゃ
+Toys & Games	Puzzles	Brain Teasers	おもちゃ・趣味	パズル
+# Industrial & Scientific 残余グループ
+Industrial & Scientific	Professional Dental Supplies	Bonding Agents & Adhesives	医療・介護・医薬品	衛生医療品
+Industrial & Scientific	Professional Dental Supplies	Endodontics	医療・介護・医薬品	衛生医療品
+Industrial & Scientific	Professional Dental Supplies	Evacuation	医療・介護・医薬品	衛生医療品
+Industrial & Scientific	Professional Dental Supplies	Consumables	医療・介護・医薬品	衛生医療品
+Industrial & Scientific	Professional Medical Supplies	Wound Care & Dressings	医療・介護・医薬品	衛生医療品
+Industrial & Scientific	Robotics	Robot Parts & Accessories	おもちゃ・趣味	ラジコン
+Industrial & Scientific	Power & Hand Tools	Industrial Power Tools	花・ガーデン・DIY工具	DIY工具
+# Grocery 残余グループ
+Grocery & Gourmet Food	Food & Beverage Gifts	Canned, Jarred & Packaged Food Gifts	グルメ・食品	その他グルメ・食品
+Grocery & Gourmet Food	Food & Beverage Gifts	Home Brewing & Winemaking Gifts	グルメ・食品	その他グルメ・食品
+Grocery & Gourmet Food	Food & Beverage Gifts	Olive, Pickle & Relish Gifts	グルメ・食品	その他グルメ・食品
+# Pet Supplies/Insects 残余グループ
+Pet Supplies	Insects	Food	ペット・ペットグッズ	昆虫用品
+Pet Supplies	Insects	Health Supplies	ペット・ペットグッズ	昆虫用品
+Pet Supplies	Insects	Terrariums & Accessories	ペット・ペットグッズ	昆虫用品
+# Health & Household 残余グループ
+Health & Household	Medical Supplies & Equipment	Health Monitors	医療・介護・医薬品	医療計測器
+Health & Household	Funeral	Urns	日用品・文房具・手芸用品	仏壇・仏具・神具
+Health & Household	Funeral	Caskets	日用品・文房具・手芸用品	仏壇・仏具・神具
+# Clothing/Women 残余グループ
+Clothing, Shoes & Jewelry	Women	Clothing	レディースファッション	トップス
+Clothing, Shoes & Jewelry	Women	Shops	レディースファッション	トップス
+

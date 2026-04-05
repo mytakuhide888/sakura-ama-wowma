@@ -1,72 +1,31 @@
 AmaCatID	AmaPath	WowCatID_candidate	WowPath	score	decision_reason	comment
-1	Books/Arts & Photography	550405	本・コミック・雑誌/アート・建築・デザイン/写真	0.530	level2_fallback_l2map	
-3	Books/Business & Money	551105	本・コミック・雑誌/ビジネス・経済/経営戦略	0.675	level2_fallback_l2map	
-4	Books/Children's Books	553005	本・コミック・雑誌/絵本・児童書/絵本	0.686	level2_fallback_l2map	
-5	Books/Computers & Technology	550801	本・コミック・雑誌/コンピュータ・IT/OS	0.726	level2_fallback_l2map	
-6	Books/Cookbooks, Food & Wine	553104	本・コミック・雑誌/美容・健康・料理・子育て/ワイン・お酒	0.491	level2_fallback_l2map	
-9	Books/History	552602	本・コミック・雑誌/歴史・地理/世界史	0.625	level2_fallback_l2map	
-10	Books/Health, Fitness & Dieting	553103	本・コミック・雑誌/美容・健康・料理・子育て/ダイエット	0.664	level2_fallback_l2map	
-18	Books/Mystery, Thriller & Suspense	551904	本・コミック・雑誌/小説・文芸・エッセイ/ミステリー・ホラー・サスペンス	0.661	level2_fallback_l2map	
-20	Books/Parenting & Relationships	553104	本・コミック・雑誌/美容・健康・料理・子育て/ワイン・お酒	0.511	level2_fallback_l2map	
-21	Books/Reference	553303	本・コミック・雑誌/語学・辞事典・年鑑/フランス語	0.579	level2_fallback_l2map	
-22	Books/Religion & Spirituality	551304	本・コミック・雑誌/人文・思想/宗教	0.605	level2_fallback_l2map	
-23	Books/Romance	551905	本・コミック・雑誌/小説・文芸・エッセイ/古典	0.483	level2_fallback_l2map	
-25	Books/Science Fiction & Fantasy	551901	本・コミック・雑誌/小説・文芸・エッセイ/SF・ファンタジー	0.586	level2_fallback_l2map	
-27	Books/Travel	552303	本・コミック・雑誌/旅行・留学・海外赴任/時刻表	0.623	level2_fallback_l2map	
-28	Books/Teen & Young Adult	551905	本・コミック・雑誌/小説・文芸・エッセイ/古典	0.467	level2_fallback_l2map	
-48	Books/Crafts, Hobbies & Home	553506	本・コミック・雑誌/趣味・ホビー/占い	0.665	level2_fallback_l2map	
-75	Books/Science & Math	552905	本・コミック・雑誌/科学・テクノロジー/数学	0.726	level2_fallback_l2map	
-4366	Books/Comics & Graphic Novels	550705	本・コミック・雑誌/コミック・ライトノベル/コミック・アニメ研究	0.582	level2_fallback_l2map	
-4736	Books/Self-Help	552402	本・コミック・雑誌/暮らし・実用/スピーチ・話し方	0.501	level2_fallback_l2map	
-172435	Electronics/Accessories & Supplies/Camera & Photo Accessories	5301	家電/その他家電	0.390	level2_fallback_l2map	
-172437	Electronics/Accessories & Supplies/Camera & Photo Accessories/Bags & Cases	5301	家電/その他家電	0.357	level2_fallback_l2map	
+1821	Musical Instruments/Scores, Songbooks & Lyrics	563205	楽器・音響機器/弦楽器/ハープ	0.691	level2_fallback_l2map	
 172463	Electronics/Accessories & Supplies/Cables/Computer	5301	家電/その他家電	0.444	level2_fallback_l2map	
 172526	Electronics/GPS, Finders & Accessories	336411	カー用品・バイク用品/カー用品/芳香剤・消臭剤	0.492	level2_fallback_l2map	
-172574	Electronics/Office Electronics	53040503	家電/オフィス家電・電子文具/プロジェクター/付属品・消耗品・アクセサリ	0.390	level2_fallback_l2map	
-172575	Electronics/Accessories & Supplies/Office Electronics Accessories	5301	家電/その他家電	0.375	level2_fallback_l2map	
 172607	Electronics/Accessories & Supplies/Telephone Accessories	5301	家電/その他家電	0.404	level2_fallback_l2map	
-172608	Electronics/Accessories & Supplies/Telephone Accessories/Batteries	5301	家電/その他家電	0.367	level2_fallback_l2map	
-172622	Electronics/Accessories & Supplies/Telephone Accessories/Phone Cards	5301	家電/その他家電	0.350	level2_fallback_l2map	
 172623	Electronics/Portable Audio & Video	44010607	テレビ・オーディオ・カメラ/オーディオ/ラジオ/卓上ラジオ	0.470	level2_fallback_l2map	
-172637	Electronics/Accessories & Supplies/Cables/Computer/Parallel Cables	5301	家電/その他家電	0.385	level2_fallback_l2map	
-173507	Books/Engineering & Transportation	552905	本・コミック・雑誌/科学・テクノロジー/数学	0.600	level2_fallback_l2map	
-173514	Books/Medical Books	551605	本・コミック・雑誌/医学・薬学・看護学・歯科学/栄養学	0.612	level2_fallback_l2map	
 228899	Tools & Home Improvement/Paint, Wall Treatments & Supplies	59260103	花・ガーデン・DIY工具/DIY工具/大工道具・用品/ヤスリ	0.608	level2_fallback_l2map	
-229193	Electronics/Accessories & Supplies/Telephone Accessories/Headsets	5301	家電/その他家電	0.370	level2_fallback_l2map	
 229535	Software/Business & Office	460605	パソコン・PC周辺機器/ソフトウェア/ビジネス	0.609	level2_fallback_l2map	
 229548	Software/Children's	460509	パソコン・PC周辺機器/キーボード・マウス・入力機器/マウス	0.505	level2_fallback_l2map	
 229563	Software/Education & Reference	460906	パソコン・PC周辺機器/プリンター・インク/スキャナー	0.493	level2_fallback_l2map	
 229575	Video Games/PC	3705	ゲーム機・ゲームソフト/PCゲーム	0.638	level2_fallback_l2map	
 229624	Software/Lifestyle & Hobbies	460905	パソコン・PC周辺機器/プリンター・インク/オフィス用プリンター・コピー機	0.483	level2_fallback_l2map	
-229637	Software/Networking & Servers	460507	パソコン・PC周辺機器/キーボード・マウス・入力機器/トラックボール	0.368	level2_fallback	
 229647	Video Games/Mac	3705	ゲーム機・ゲームソフト/PCゲーム	0.706	level2_fallback_l2map	
 229653	Software/Operating Systems	460906	パソコン・PC周辺機器/プリンター・インク/スキャナー	0.562	level2_fallback_l2map	
 229672	Software/Utilities	460607	パソコン・PC周辺機器/ソフトウェア/ユーティリティ	0.594	level2_fallback_l2map	
 229677	Software/Antivirus & Security	460509	パソコン・PC周辺機器/キーボード・マウス・入力機器/マウス	0.501	level2_fallback_l2map	
-281407	Electronics/Accessories & Supplies	5301	家電/その他家電	0.395	level2_fallback_l2map	
 284507	Home & Kitchen/Kitchen & Dining	350618	キッチン・食器・調理/キッチン用品・キッチン雑貨/ミトン・鍋つかみ	0.518	level2_fallback_l2map	
-290458	Electronics/Accessories & Supplies/Cable Organizer Bags & Cases	5301	家電/その他家電	0.384	level2_fallback_l2map	
 290542	Software/Video	460202	パソコン・PC周辺機器/PCケーブル/IDEケーブル	0.510	level2_fallback_l2map	
-294940	Video Games/Legacy Systems	37181104	ゲーム機・ゲームソフト/旧世代ゲーム機/セガサターン/セガサターン本体	0.679	level2_fallback_l2map	
-297859	Electronics/Accessories & Supplies/Mounts/Speaker Mounts	5301	家電/その他家電	0.390	level2_fallback_l2map	
-301889	Books/LGBTQ+ Books	551905	本・コミック・雑誌/小説・文芸・エッセイ/古典	0.466	level2_fallback_l2map	
+294940	Video Games/Legacy Systems	37181304	ゲーム機・ゲームソフト/旧世代ゲーム機/ファミコン/ファミコン本体	0.681	level2_fallback_l2map	
 464394	Electronics/Accessories & Supplies/Cables/Computer/USB Cables	5301	家電/その他家電	0.400	level2_fallback_l2map	
-464396	Electronics/Accessories & Supplies/Cables/Computer/Firewire Cables	5301	家電/その他家電	0.385	level2_fallback_l2map	
-464398	Electronics/Accessories & Supplies/Cables/Computer/Ethernet Cables	5301	家電/その他家電	0.385	level2_fallback_l2map	
-464404	Electronics/Accessories & Supplies/Cables/Computer/Serial Cables	5301	家電/その他家電	0.391	level2_fallback_l2map	
-464406	Electronics/Accessories & Supplies/Cables/Computer/Modem Cables	5301	家電/その他家電	0.394	level2_fallback_l2map	
 495224	Tools & Home Improvement/Lighting & Ceiling Fans	311305	インテリア・寝具/ライト・照明/フットライト	0.718	level2_fallback_l2map	
 495236	Patio, Lawn & Garden/Outdoor Lighting	592611	花・ガーデン・DIY工具/DIY工具/シート	0.657	level2_fallback_l2map	
 495266	Tools & Home Improvement/Electrical	592611	花・ガーデン・DIY工具/DIY工具/シート	0.581	level2_fallback_l2map	
-495306	Electronics/Accessories & Supplies/Cord Management/Cord Reels	5301	家電/その他家電	0.370	level2_fallback_l2map	
 497022	Software/Music	460509	パソコン・PC周辺機器/キーボード・マウス・入力機器/マウス	0.511	level2_fallback_l2map	
 502394	Electronics/Camera & Photo	440205	テレビ・オーディオ・カメラ/カメラ/ストロボ	0.569	level2_fallback_l2map	
-507844	Electronics/Accessories & Supplies/Cord Management/Cable Ties	5301	家電/その他家電	0.372	level2_fallback_l2map	
 510106	Home & Kitchen/Vacuums & Floor Care	3503	キッチン・食器・調理/やかん・ケトル	0.555	level2_fallback_l2map	
 510240	Home & Kitchen/Irons & Steamers	530202	家電/アイロン/アイロン台	0.490	level2_fallback_l2map	
 511228	Tools & Home Improvement/Hardware	59260403	花・ガーデン・DIY工具/DIY工具/作業工具/レンチ	0.562	level2_fallback_l2map	
-516866	Electronics/Accessories & Supplies/Camera & Photo Accessories/Memory Cards	5301	家電/その他家電	0.350	level2_fallback_l2map	
-524136	Electronics/Security & Surveillance	5301	家電/その他家電	0.381	level2_fallback_l2map	
 541966	Electronics/Computers & Accessories	460110	パソコン・PC周辺機器/PCアクセサリ・サプライ/マウスパッド	0.456	level2_fallback_l2map	
 551240	Tools & Home Improvement/Building Supplies	592703	花・ガーデン・DIY工具/建築・住宅・設備/配管・排水設備	0.514	level2_fallback_l2map	
 551242	Patio, Lawn & Garden/Outdoor Power Tools	592609	花・ガーデン・DIY工具/DIY工具/脚立・はしご・作業台	0.577	level2_fallback_l2map	
@@ -76,10 +35,7 @@ AmaCatID	AmaPath	WowCatID_candidate	WowPath	score	decision_reason	comment
 553788	Patio, Lawn & Garden/Outdoor Décor	592505	花・ガーデン・DIY工具/エクステリア/日除け・シェード・カバー	0.575	level2_fallback_l2map	
 553824	Patio, Lawn & Garden/Patio Furniture & Accessories	59250301	花・ガーデン・DIY工具/エクステリア/庭まわり/フェンス・垣	0.541	level2_fallback_l2map	
 559942	Electronics/Accessories & Supplies/GPS System Accessories	5301	家電/その他家電	0.400	level2_fallback_l2map	
-573446	Electronics/Accessories & Supplies/Cables/Computer/SCSI Cables	5301	家電/その他家電	0.397	level2_fallback_l2map	
 764464	Electronics/Accessories & Supplies/Cables/GPS	5301	家電/その他家電	0.467	level2_fallback_l2map	
-764466	Electronics/Accessories & Supplies/GPS System Accessories/Cases	5301	家電/その他家電	0.375	level2_fallback_l2map	
-764574	Electronics/Accessories & Supplies/GPS System Accessories/Vehicle Mounts	5301	家電/その他家電	0.352	level2_fallback_l2map	
 901590	Home & Kitchen/Event & Party Supplies	291503	おもちゃ・趣味/パーティーグッズ/パーティーゲーム	0.544	level2_fallback_l2map	
 1063236	Home & Kitchen/Bath	540522	日用品・文房具・手芸用品/バス・お風呂用品/浴槽・浴室内マット	0.463	level2_fallback_l2map	
 1063252	Home & Kitchen/Bedding	311611	インテリア・寝具/寝具/抱き枕	0.669	level2_fallback_l2map	
@@ -88,9 +44,6 @@ AmaCatID	AmaPath	WowCatID_candidate	WowPath	score	decision_reason	comment
 1069102	Office Products/Office Furniture & Lighting	310503	インテリア・寝具/オフィス家具/テーブル（応接・会議・ロビー）	0.418	level2_fallback_l2map	
 1069242	Office Products/Office & School Supplies	541104	日用品・文房具・手芸用品/文房具・事務用品・画材/のり	0.656	level2_fallback_l2map	
 3043471	Patio, Lawn & Garden/Snow Removal	59260602	花・ガーデン・DIY工具/DIY工具/ネジ・ボルト・素材/ボルト	0.579	level2_fallback_l2map	
-3180231	Tools & Home Improvement/Safety & Security	541808	日用品・文房具・手芸用品/防犯・護身用品/手錠	0.380	level2_fallback_l2map	
-3180341	Electronics/Security & Surveillance/Home Security Systems	5301	家電/その他家電	0.387	level2_fallback_l2map	
-3346261	Electronics/Accessories & Supplies/Camera & Photo Accessories/Rain Covers	5301	家電/その他家電	0.352	level2_fallback_l2map	
 3386071	Sports & Outdoors/Fan Shop	4009	スポーツ・アウトドア/その他のスポーツ	0.707	level2_fallback_l2map	
 3394801	Sports & Outdoors/Sports & Outdoor Recreation Accessories	404414	スポーツ・アウトドア/体育館・グラウンド用品/拡声器・メガホン	0.579	level2_fallback_l2map	
 3394981	Sports & Outdoors/Sports/Team Sports/Other Team Sports/Track & Field/Meet Equipment/Cones	4009	スポーツ・アウトドア/その他のスポーツ	0.429	level2_fallback_l2map	
@@ -309,18 +262,12 @@ AmaCatID	AmaPath	WowCatID_candidate	WowPath	score	decision_reason	comment
 3406001	Sports & Outdoors/Sports/Leisure Sports & Game Room/Darts & Equipment/Shafts	4009	スポーツ・アウトドア/その他のスポーツ	0.480	level2_fallback_l2map	
 3406041	Sports & Outdoors/Sports/Leisure Sports & Game Room/Outdoor Games & Activities/Disc Sports	4009	スポーツ・アウトドア/その他のスポーツ	0.443	level2_fallback_l2map	
 3406051	Sports & Outdoors/Sports/Leisure Sports & Game Room/Outdoor Games & Activities/Disc Sports/Disc Golf	4009	スポーツ・アウトドア/その他のスポーツ	0.416	level2_fallback_l2map	
-3406071	Sports & Outdoors/Sports/Leisure Sports & Game Room/Outdoor Games & Activities/Disc Sports/Disc Golf/Discs/Drivers	4009	スポーツ・アウトドア/その他のスポーツ	0.383	level2_fallback_l2map	
-3406081	Sports & Outdoors/Sports/Leisure Sports & Game Room/Outdoor Games & Activities/Disc Sports/Disc Golf/Discs/Midrange Discs	4009	スポーツ・アウトドア/その他のスポーツ	0.372	level2_fallback_l2map	
-3406091	Sports & Outdoors/Sports/Leisure Sports & Game Room/Outdoor Games & Activities/Disc Sports/Disc Golf/Discs/Putters	4009	スポーツ・アウトドア/その他のスポーツ	0.383	level2_fallback_l2map	
-3406101	Sports & Outdoors/Sports/Leisure Sports & Game Room/Outdoor Games & Activities/Disc Sports/Disc Golf/Starter Sets	4009	スポーツ・アウトドア/その他のスポーツ	0.388	level2_fallback_l2map	
-3406111	Sports & Outdoors/Sports/Leisure Sports & Game Room/Outdoor Games & Activities/Disc Sports/Disc Golf/Targets & Baskets	4009	スポーツ・アウトドア/その他のスポーツ	0.383	level2_fallback_l2map	
 3406181	Sports & Outdoors/Sports/Leisure Sports & Game Room/Outdoor Games & Activities/Disc Sports/Ultimate	4009	スポーツ・アウトドア/その他のスポーツ	0.418	level2_fallback_l2map	
 3407321	Sports & Outdoors/Sports/Other Sports/Equestrian Sports	4009	スポーツ・アウトドア/その他のスポーツ	0.555	level2_fallback_l2map	
 3407351	Sports & Outdoors/Sports/Other Sports/Equestrian Sports/Tack/Bits	4009	スポーツ・アウトドア/その他のスポーツ	0.497	level2_fallback_l2map	
 3407361	Sports & Outdoors/Sports/Other Sports/Equestrian Sports/Tack/Bridles & Accessories	4009	スポーツ・アウトドア/その他のスポーツ	0.456	level2_fallback_l2map	
 3407371	Sports & Outdoors/Sports/Other Sports/Equestrian Sports/Tack/Halters & Leads	4009	スポーツ・アウトドア/その他のスポーツ	0.468	level2_fallback_l2map	
 3407391	Sports & Outdoors/Sports/Other Sports/Equestrian Sports/Riding Gloves	4009	スポーツ・アウトドア/その他のスポーツ	0.490	level2_fallback_l2map	
-3407401	Sports & Outdoors/Sports/Other Sports/Equestrian Sports/Tack/Saddles & Accessories/Saddle Blankets & Pads/Saddle Pads	4009	スポーツ・アウトドア/その他のスポーツ	0.380	level2_fallback_l2map	
 3407421	Sports & Outdoors/Sports/Other Sports/Equestrian Sports/Tack/Saddles & Accessories/Stirrups	4009	スポーツ・アウトドア/その他のスポーツ	0.429	level2_fallback_l2map	
 3407431	Sports & Outdoors/Sports/Other Sports/Equestrian Sports/Trailers	4009	スポーツ・アウトドア/その他のスポーツ	0.508	level2_fallback_l2map	
 3407551	Sports & Outdoors/Sports/Other Sports/Equestrian Sports/Horse Driving Equipment	4009	スポーツ・アウトドア/その他のスポーツ	0.459	level2_fallback_l2map	
@@ -470,7 +417,6 @@ AmaCatID	AmaPath	WowCatID_candidate	WowPath	score	decision_reason	comment
 3414871	Sports & Outdoors/Sports/Team Sports/Lacrosse/Player Equipment/Shafts/Defender Shafts	4009	スポーツ・アウトドア/その他のスポーツ	0.433	level2_fallback_l2map	
 3414881	Sports & Outdoors/Sports/Team Sports/Lacrosse/Player Equipment/Shafts/Goalkeeper Shafts	4009	スポーツ・アウトドア/その他のスポーツ	0.429	level2_fallback_l2map	
 3414901	Sports & Outdoors/Sports/Team Sports/Lacrosse/Player Equipment/Sticks	4009	スポーツ・アウトドア/その他のスポーツ	0.483	level2_fallback_l2map	
-3415001	Sports & Outdoors/Sports/Leisure Sports & Game Room/Outdoor Games & Activities/Trampolines & Accessories/Trampolines	4009	スポーツ・アウトドア/その他のスポーツ	0.393	level2_fallback_l2map	
 3415011	Sports & Outdoors/Sports/Other Sports/Martial Arts	4009	スポーツ・アウトドア/その他のスポーツ	0.580	level2_fallback_l2map	
 3415021	Sports & Outdoors/Sports/Other Sports/Martial Arts/Training Equipment	4009	スポーツ・アウトドア/その他のスポーツ	0.493	level2_fallback_l2map	
 3415031	Sports & Outdoors/Sports/Other Sports/Martial Arts/Training Equipment/Bag Gloves	4009	スポーツ・アウトドア/その他のスポーツ	0.454	level2_fallback_l2map	
@@ -567,23 +513,17 @@ AmaCatID	AmaPath	WowCatID_candidate	WowPath	score	decision_reason	comment
 3419931	Sports & Outdoors/Sports/Team Sports/Tennis & Racquet Sports/Tennis/Accessories/Equipment Bags	4009	スポーツ・アウトドア/その他のスポーツ	0.424	level2_fallback_l2map	
 3419941	Sports & Outdoors/Sports/Team Sports/Tennis & Racquet Sports/Tennis/Court Equipment/Ball Hoppers	4009	スポーツ・アウトドア/その他のスポーツ	0.414	level2_fallback_l2map	
 3419951	Sports & Outdoors/Sports/Team Sports/Tennis & Racquet Sports/Tennis/Court Equipment/Ball Machines	4009	スポーツ・アウトドア/その他のスポーツ	0.412	level2_fallback_l2map	
-3419971	Sports & Outdoors/Sports/Team Sports/Tennis & Racquet Sports/Tennis/Accessories/Racquet Accessories/Racquet Grips	4009	スポーツ・アウトドア/その他のスポーツ	0.386	level2_fallback_l2map	
 3419991	Sports & Outdoors/Sports/Team Sports/Tennis & Racquet Sports/Tennis/Court Equipment/Nets	4009	スポーツ・アウトドア/その他のスポーツ	0.431	level2_fallback_l2map	
-3420011	Sports & Outdoors/Sports/Team Sports/Tennis & Racquet Sports/Tennis/Accessories/Racquet Accessories/Racquet Covers	4009	スポーツ・アウトドア/その他のスポーツ	0.384	level2_fallback_l2map	
-3420021	Sports & Outdoors/Sports/Team Sports/Tennis & Racquet Sports/Tennis/Accessories/Racquet Accessories/Racquet Strings	4009	スポーツ・アウトドア/その他のスポーツ	0.384	level2_fallback_l2map	
 3420031	Sports & Outdoors/Sports/Team Sports/Tennis & Racquet Sports/Tennis/Accessories/Stringing Machines & Tools	4009	スポーツ・アウトドア/その他のスポーツ	0.404	level2_fallback_l2map	
 3420041	Sports & Outdoors/Sports/Team Sports/Sports Training/Tennis	4009	スポーツ・アウトドア/その他のスポーツ	0.532	level2_fallback_l2map	
-3420051	Sports & Outdoors/Sports/Team Sports/Tennis & Racquet Sports/Tennis/Accessories/Racquet Accessories/Vibration Dampeners	4009	スポーツ・アウトドア/その他のスポーツ	0.377	level2_fallback_l2map	
 3420061	Sports & Outdoors/Sports/Team Sports/Tennis & Racquet Sports/Tennis/Balls	4009	スポーツ・アウトドア/その他のスポーツ	0.477	level2_fallback_l2map	
 3420071	Sports & Outdoors/Sports/Team Sports/Tennis & Racquet Sports/Tennis/Racquets	4009	スポーツ・アウトドア/その他のスポーツ	0.468	level2_fallback_l2map	
 3420131	Sports & Outdoors/Sports/Team Sports/Other Team Sports/Track & Field	4009	スポーツ・アウトドア/その他のスポーツ	0.501	level2_fallback_l2map	
 3420421	Sports & Outdoors/Sports/Team Sports/Other Team Sports/Track & Field/Jumping Equipment	4009	スポーツ・アウトドア/その他のスポーツ	0.441	level2_fallback_l2map	
 3420431	Sports & Outdoors/Sports/Team Sports/Other Team Sports/Track & Field/Jumping Equipment/Crossbars	4009	スポーツ・アウトドア/その他のスポーツ	0.414	level2_fallback_l2map	
-3420441	Sports & Outdoors/Sports/Team Sports/Other Team Sports/Track & Field/Jumping Equipment/High Jump Standards	4009	スポーツ・アウトドア/その他のスポーツ	0.395	level2_fallback_l2map	
 3420461	Sports & Outdoors/Sports/Team Sports/Other Team Sports/Track & Field/Jumping Equipment/Landing Pads	4009	スポーツ・アウトドア/その他のスポーツ	0.408	level2_fallback_l2map	
 3420481	Sports & Outdoors/Sports/Team Sports/Other Team Sports/Track & Field/Jumping Equipment/Pits	4009	スポーツ・アウトドア/その他のスポーツ	0.424	level2_fallback_l2map	
 3420501	Sports & Outdoors/Sports/Team Sports/Other Team Sports/Track & Field/Jumping Equipment/Pole Vault Poles	4009	スポーツ・アウトドア/その他のスポーツ	0.400	level2_fallback_l2map	
-3420511	Sports & Outdoors/Sports/Team Sports/Other Team Sports/Track & Field/Jumping Equipment/Pole Vault Standards	4009	スポーツ・アウトドア/その他のスポーツ	0.393	level2_fallback_l2map	
 3420601	Sports & Outdoors/Sports/Team Sports/Other Team Sports/Track & Field/Meet Equipment	4009	スポーツ・アウトドア/その他のスポーツ	0.448	level2_fallback_l2map	
 3420611	Sports & Outdoors/Sports/Team Sports/Other Team Sports/Track & Field/Race Equipment/Batons	4009	スポーツ・アウトドア/その他のスポーツ	0.426	level2_fallback_l2map	
 3420631	Sports & Outdoors/Sports/Team Sports/Other Team Sports/Track & Field/Meet Equipment/Competitor Numbers	4009	スポーツ・アウトドア/その他のスポーツ	0.402	level2_fallback_l2map	
@@ -594,16 +534,12 @@ AmaCatID	AmaPath	WowCatID_candidate	WowPath	score	decision_reason	comment
 3420721	Sports & Outdoors/Sports/Team Sports/Other Team Sports/Track & Field/Throwing Equipment	4009	スポーツ・アウトドア/その他のスポーツ	0.438	level2_fallback_l2map	
 3420731	Sports & Outdoors/Sports/Team Sports/Other Team Sports/Track & Field/Throwing Equipment/Cages	4009	スポーツ・アウトドア/その他のスポーツ	0.420	level2_fallback_l2map	
 3420741	Sports & Outdoors/Sports/Team Sports/Other Team Sports/Track & Field/Throwing Equipment/Discuses	4009	スポーツ・アウトドア/その他のスポーツ	0.414	level2_fallback_l2map	
-3420751	Sports & Outdoors/Sports/Team Sports/Other Team Sports/Track & Field/Throwing Equipment/Hammer & Weight Throws	4009	スポーツ・アウトドア/その他のスポーツ	0.391	level2_fallback_l2map	
-3420761	Sports & Outdoors/Sports/Team Sports/Other Team Sports/Track & Field/Throwing Equipment/Javelin Nockenballs	4009	スポーツ・アウトドア/その他のスポーツ	0.393	level2_fallback_l2map	
 3420771	Sports & Outdoors/Sports/Team Sports/Other Team Sports/Track & Field/Throwing Equipment/Javelins	4009	スポーツ・アウトドア/その他のスポーツ	0.414	level2_fallback_l2map	
 3420801	Sports & Outdoors/Sports/Team Sports/Other Team Sports/Track & Field/Throwing Equipment/Shot Puts	4009	スポーツ・アウトドア/その他のスポーツ	0.412	level2_fallback_l2map	
-3420811	Sports & Outdoors/Sports/Team Sports/Other Team Sports/Track & Field/Throwing Equipment/Throwing Circles	4009	スポーツ・アウトドア/その他のスポーツ	0.398	level2_fallback_l2map	
 3420821	Sports & Outdoors/Sports/Team Sports/Other Team Sports/Track & Field/Throwing Equipment/Toe Boards	4009	スポーツ・アウトドア/その他のスポーツ	0.410	level2_fallback_l2map	
 3420831	Sports & Outdoors/Sports/Team Sports/Other Team Sports/Track & Field/Race Equipment	4009	スポーツ・アウトドア/その他のスポーツ	0.448	level2_fallback_l2map	
 3420851	Sports & Outdoors/Sports/Team Sports/Other Team Sports/Track & Field/Race Equipment/Hurdles	4009	スポーツ・アウトドア/その他のスポーツ	0.424	level2_fallback_l2map	
 3420881	Sports & Outdoors/Sports/Team Sports/Other Team Sports/Track & Field/Race Equipment/Starter Pistols	4009	スポーツ・アウトドア/その他のスポーツ	0.408	level2_fallback_l2map	
-3420891	Sports & Outdoors/Sports/Team Sports/Other Team Sports/Track & Field/Race Equipment/Starters' Hearing Protectors	4009	スポーツ・アウトドア/その他のスポーツ	0.386	level2_fallback_l2map	
 3420901	Sports & Outdoors/Sports/Team Sports/Other Team Sports/Track & Field/Race Equipment/Starting Blanks	4009	スポーツ・アウトドア/その他のスポーツ	0.408	level2_fallback_l2map	
 3420911	Sports & Outdoors/Sports/Team Sports/Other Team Sports/Track & Field/Race Equipment/Starting Blocks	4009	スポーツ・アウトドア/その他のスポーツ	0.408	level2_fallback_l2map	
 3420921	Sports & Outdoors/Sports/Team Sports/Volleyball	4009	スポーツ・アウトドア/その他のスポーツ	0.597	level2_fallback_l2map	
@@ -636,7 +572,6 @@ AmaCatID	AmaPath	WowCatID_candidate	WowPath	score	decision_reason	comment
 3754161	Tools & Home Improvement/Kitchen & Bath Fixtures	59270401	花・ガーデン・DIY工具/建築・住宅・設備/建築金物/ドア金物	0.520	level2_fallback_l2map	
 3760941	Health & Household/Health Care	420608	ダイエット・健康/健康グッズ/湯たんぽ	0.507	level2_fallback_l2map	
 3764441	Health & Household/Diet & Sports Nutrition	420302	ダイエット・健康/ダイエット/ダイエットウエア・サポーター	0.650	level2_fallback_l2map	
-3775161	Health & Household/Medical Supplies & Equipment	520608	医療・介護・医薬品/衛生医療品/包帯	0.369	level2_fallback_l2map	
 3777891	Health & Household/Personal Care	471116	ビューティ・コスメ/ボディケア/脱毛剤・ワックス・クリーム	0.488	level2_fallback_l2map	
 3780081	Clothing, Shoes & Jewelry/Shoe, Jewelry & Watch Accessories/Shoe Care & Accessories/Inserts & Insoles	3001	アクセサリー・ジュエリー/その他アクセサリー・ジュエリー	0.483	level2_fallback_l2map	
 3780091	Clothing, Shoes & Jewelry/Shoe, Jewelry & Watch Accessories/Shoe Care & Accessories/Inserts & Insoles/Arch Supports	3001	アクセサリー・ジュエリー/その他アクセサリー・ジュエリー	0.447	level2_fallback_l2map	
@@ -651,10 +586,6 @@ AmaCatID	AmaPath	WowCatID_candidate	WowPath	score	decision_reason	comment
 10787321	Health & Household/Baby & Child Care	34050503	キッズベビー・マタニティ/ベビー/トイレ・おむつ/おまる	0.530	level2_fallback_l2map	
 10802561	Home & Kitchen/Cleaning Supplies	541010	日用品・文房具・手芸用品/掃除用具/ワックス	0.440	level2_fallback_l2map	
 10966911	Electronics/Accessories & Supplies/Mounts	5301	家電/その他家電	0.460	level2_fallback_l2map	
-10967061	Electronics/Accessories & Supplies/Power Protection/Line Conditioners	5301	家電/その他家電	0.355	level2_fallback_l2map	
-10981291	Electronics/Accessories & Supplies/Vehicle Electronics Accessories	5301	家電/その他家電	0.372	level2_fallback_l2map	
-10981471	Electronics/Accessories & Supplies/Cables/Car Electronics/Power-Cable Terminals	5301	家電/その他家電	0.352	level2_fallback_l2map	
-10981521	Electronics/Accessories & Supplies/Cables/Car Electronics/Power and Ground Cable	5301	家電/その他家電	0.350	level2_fallback_l2map	
 11040971	Electronics/Security & Surveillance/Motion Detectors	5301	家電/その他家電	0.404	level2_fallback_l2map	
 11041121	Electronics/Security & Surveillance/Accessories	5301	家電/その他家電	0.431	level2_fallback_l2map	
 11041181	Electronics/Security & Surveillance/Horns & Sirens	5301	家電/その他家電	0.419	level2_fallback_l2map	
@@ -674,81 +605,26 @@ AmaCatID	AmaPath	WowCatID_candidate	WowPath	score	decision_reason	comment
 11966001	Musical Instruments/Instrument Accessories/Keyboard Accessories/Benches	5605	楽器・音響機器/その他楽器・音響機器	0.450	level2_fallback_l2map	
 11966221	Musical Instruments/Instrument Accessories/Keyboard Accessories/Keyboard Amplifiers	5605	楽器・音響機器/その他楽器・音響機器	0.418	level2_fallback_l2map	
 11966231	Musical Instruments/Instrument Accessories/Keyboard Accessories/Cleaning & Care	5605	楽器・音響機器/その他楽器・音響機器	0.433	level2_fallback_l2map	
-11966311	Musical Instruments/Instrument Accessories/Keyboard Accessories/Expansion Boards & Sound Libraries	5605	楽器・音響機器/その他楽器・音響機器	0.390	level2_fallback_l2map	
 11966321	Musical Instruments/Instrument Accessories/Keyboard Accessories/Pedals & Footswitches	5605	楽器・音響機器/その他楽器・音響機器	0.418	level2_fallback_l2map	
 11966351	Musical Instruments/Instrument Accessories/Keyboard Accessories/Player Piano Accessories	5605	楽器・音響機器/その他楽器・音響機器	0.411	level2_fallback_l2map	
 11966401	Musical Instruments/Instrument Accessories/Keyboard Accessories/Organ Accessories	5605	楽器・音響機器/その他楽器・音響機器	0.428	level2_fallback_l2map	
 11966411	Musical Instruments/Instrument Accessories/Drum & Percussion Accessories	5605	楽器・音響機器/その他楽器・音響機器	0.441	level2_fallback_l2map	
 11966421	Musical Instruments/Instrument Accessories/Drum & Percussion Accessories/Cleaning & Care	5605	楽器・音響機器/その他楽器・音響機器	0.402	level2_fallback_l2map	
-11966431	Musical Instruments/Instrument Accessories/Drum & Percussion Accessories/Concert Percussion Accessories	5605	楽器・音響機器/その他楽器・音響機器	0.374	level2_fallback_l2map	
-11966491	Musical Instruments/Instrument Accessories/Drum & Percussion Accessories/Bags, Cases & Covers/Pedal Bags & Cases	5605	楽器・音響機器/その他楽器・音響機器	0.364	level2_fallback_l2map	
-11966581	Musical Instruments/Instrument Accessories/Drum & Percussion Accessories/Bags, Cases & Covers/Timpani Bags, Cases & Covers	5605	楽器・音響機器/その他楽器・音響機器	0.351	level2_fallback_l2map	
-11966621	Musical Instruments/Instrument Accessories/Drum & Percussion Accessories/Bags, Cases & Covers/Tom-Tom Bags, Cases & Covers	5605	楽器・音響機器/その他楽器・音響機器	0.351	level2_fallback_l2map	
-11966761	Musical Instruments/Instrument Accessories/Drum & Percussion Accessories/Drum Set Accessories	5605	楽器・音響機器/その他楽器・音響機器	0.381	level2_fallback_l2map	
-11966861	Musical Instruments/Instrument Accessories/Drum & Percussion Accessories/Hardware/Mounting Hardware	5605	楽器・音響機器/その他楽器・音響機器	0.374	level2_fallback_l2map	
-11966871	Musical Instruments/Instrument Accessories/Drum & Percussion Accessories/Hardware/Mounting Hardware/Clamps	5605	楽器・音響機器/その他楽器・音響機器	0.360	level2_fallback_l2map	
-11966881	Musical Instruments/Instrument Accessories/Drum & Percussion Accessories/Hardware/Mounting Hardware/Mounting Arms	5605	楽器・音響機器/その他楽器・音響機器	0.350	level2_fallback_l2map	
-11966901	Musical Instruments/Instrument Accessories/Drum & Percussion Accessories/Hardware/Mounting Hardware/Racks	5605	楽器・音響機器/その他楽器・音響機器	0.361	level2_fallback_l2map	
 11966911	Musical Instruments/Instrument Accessories/Drum & Percussion Accessories/Rugs	5605	楽器・音響機器/その他楽器・音響機器	0.423	level2_fallback_l2map	
 11966921	Musical Instruments/Instrument Accessories/Drum & Percussion Accessories/Sound Shields	5605	楽器・音響機器/その他楽器・音響機器	0.402	level2_fallback_l2map	
-11967031	Musical Instruments/Instrument Accessories/Drum & Percussion Accessories/Electronic Drum Accessories	5605	楽器・音響機器/その他楽器・音響機器	0.369	level2_fallback_l2map	
-11967211	Musical Instruments/Instrument Accessories/Drum & Percussion Accessories/Drumsticks, Mallets & Brushes	5605	楽器・音響機器/その他楽器・音響機器	0.377	level2_fallback_l2map	
-11967221	Musical Instruments/Instrument Accessories/Drum & Percussion Accessories/Drumsticks, Mallets & Brushes/Brushes	5605	楽器・音響機器/その他楽器・音響機器	0.361	level2_fallback_l2map	
-11967241	Musical Instruments/Instrument Accessories/Drum & Percussion Accessories/Bags, Cases & Covers/Stick & Mallet Bags & Cases	5605	楽器・音響機器/その他楽器・音響機器	0.354	level2_fallback_l2map	
-11967251	Musical Instruments/Instrument Accessories/Drum & Percussion Accessories/Drumsticks, Mallets & Brushes/Drumsticks	5605	楽器・音響機器/その他楽器・音響機器	0.357	level2_fallback_l2map	
-11967261	Musical Instruments/Instrument Accessories/Drum & Percussion Accessories/Drumsticks, Mallets & Brushes/Mallets	5605	楽器・音響機器/その他楽器・音響機器	0.361	level2_fallback_l2map	
-11967271	Musical Instruments/Instrument Accessories/Drum & Percussion Accessories/Marching Percussion Accessories	5605	楽器・音響機器/その他楽器・音響機器	0.372	level2_fallback_l2map	
-11967481	Musical Instruments/Instrument Accessories/Drum & Percussion Accessories/Practice Pads & Devices	5605	楽器・音響機器/その他楽器・音響機器	0.386	level2_fallback_l2map	
-11967501	Musical Instruments/Instrument Accessories/Folk & World Instrument Accessories/Autoharp Accessories	5605	楽器・音響機器/その他楽器・音響機器	0.392	level2_fallback_l2map	
-11967511	Musical Instruments/Instrument Accessories/Folk & World Instrument Accessories/Banjo Accessories	5605	楽器・音響機器/その他楽器・音響機器	0.398	level2_fallback_l2map	
-11967531	Musical Instruments/Instrument Accessories/Orchestral Strings Accessories & Parts/Bags & Cases/Cello	5605	楽器・音響機器/その他楽器・音響機器	0.390	level2_fallback_l2map	
 11967551	Musical Instruments/Instrument Accessories/Orchestral Strings Accessories & Parts/Bows/Cello	5605	楽器・音響機器/その他楽器・音響機器	0.400	level2_fallback_l2map	
-11967571	Musical Instruments/Instrument Accessories/Orchestral Strings Accessories & Parts/Parts/Cello	5605	楽器・音響機器/その他楽器・音響機器	0.398	level2_fallback_l2map	
-11967591	Musical Instruments/Instrument Accessories/Orchestral Strings Accessories & Parts/Rosin/Cello	5605	楽器・音響機器/その他楽器・音響機器	0.398	level2_fallback_l2map	
-11967601	Musical Instruments/Instrument Accessories/Orchestral Strings Accessories & Parts/Stands & Hangers/Cello	5605	楽器・音響機器/その他楽器・音響機器	0.381	level2_fallback_l2map	
-11967611	Musical Instruments/Instrument Accessories/Orchestral Strings Accessories & Parts/Strings/Cello	5605	楽器・音響機器/その他楽器・音響機器	0.396	level2_fallback_l2map	
-11967631	Musical Instruments/Instrument Accessories/Folk & World Instrument Accessories/Dulcimer Accessories	5605	楽器・音響機器/その他楽器・音響機器	0.392	level2_fallback_l2map	
 11967641	Musical Instruments/Instrument Accessories/Guitar & Bass Accessories	5605	楽器・音響機器/その他楽器・音響機器	0.473	level2_fallback_l2map	
 11967661	Musical Instruments/Amplifiers & Effects/Guitar & Bass Amplifiers & Preamps/Acoustic Guitar Amplifiers & Preamps	5626	楽器・音響機器/エフェクター	0.449	level2_fallback_l2map	
-11967671	Musical Instruments/Instrument Accessories/Guitar & Bass Accessories/Bags & Cases/Acoustic & Classical Guitar Bags & Cases	5605	楽器・音響機器/その他楽器・音響機器	0.360	level2_fallback_l2map	
-11967701	Musical Instruments/Instrument Accessories/Guitar & Bass Accessories/Acoustic & Classical Guitar Parts	5605	楽器・音響機器/その他楽器・音響機器	0.386	level2_fallback_l2map	
-11967711	Musical Instruments/Instrument Accessories/Guitar & Bass Accessories/Acoustic & Classical Guitar Parts/Bindings & Trim	5605	楽器・音響機器/その他楽器・音響機器	0.360	level2_fallback_l2map	
-11967721	Musical Instruments/Instrument Accessories/Guitar & Bass Accessories/Acoustic & Classical Guitar Parts/Bodies	5605	楽器・音響機器/その他楽器・音響機器	0.371	level2_fallback_l2map	
-11967731	Musical Instruments/Instrument Accessories/Guitar & Bass Accessories/Acoustic & Classical Guitar Parts/Bridge & Bridge Parts	5605	楽器・音響機器/その他楽器・音響機器	0.351	level2_fallback_l2map	
-11967751	Musical Instruments/Instrument Accessories/Guitar & Bass Accessories/Acoustic & Classical Guitar Parts/Frets	5605	楽器・音響機器/その他楽器・音響機器	0.372	level2_fallback_l2map	
-11967761	Musical Instruments/Instrument Accessories/Guitar & Bass Accessories/Acoustic & Classical Guitar Parts/Necks	5605	楽器・音響機器/その他楽器・音響機器	0.372	level2_fallback_l2map	
-11967771	Musical Instruments/Instrument Accessories/Guitar & Bass Accessories/Acoustic & Classical Guitar Parts/Nuts	5605	楽器・音響機器/その他楽器・音響機器	0.374	level2_fallback_l2map	
-11967781	Musical Instruments/Instrument Accessories/Guitar & Bass Accessories/Acoustic & Classical Guitar Parts/Pick Guards	5605	楽器・音響機器/その他楽器・音響機器	0.363	level2_fallback_l2map	
-11967801	Musical Instruments/Instrument Accessories/Guitar & Bass Accessories/Acoustic & Classical Guitar Parts/Saddles	5605	楽器・音響機器/その他楽器・音響機器	0.369	level2_fallback_l2map	
-11967811	Musical Instruments/Instrument Accessories/Guitar & Bass Accessories/Acoustic & Classical Guitar Parts/Tuning Pegs	5605	楽器・音響機器/その他楽器・音響機器	0.363	level2_fallback_l2map	
-11967821	Musical Instruments/Instrument Accessories/Guitar & Bass Accessories/Acoustic & Classical Guitar Parts/Wood & Inlay Material	5605	楽器・音響機器/その他楽器・音響機器	0.351	level2_fallback_l2map	
-11967851	Musical Instruments/Instrument Accessories/Guitar & Bass Accessories/Strings/Acoustic Guitar Strings	5605	楽器・音響機器/その他楽器・音響機器	0.386	level2_fallback_l2map	
 11967911	Musical Instruments/Amplifiers & Effects/Guitar & Bass Amplifiers & Preamps/Bass Guitar Amplifiers & Preamps	5626	楽器・音響機器/エフェクター	0.458	level2_fallback_l2map	
 11967921	Musical Instruments/Amplifiers & Effects/Guitar & Bass Amplifiers & Preamps/Bass Guitar Amplifiers & Preamps/Cabinets	5626	楽器・音響機器/エフェクター	0.434	level2_fallback_l2map	
 11967931	Musical Instruments/Amplifiers & Effects/Guitar & Bass Amplifiers & Preamps/Bass Guitar Amplifiers & Preamps/Combo Amps	5626	楽器・音響機器/エフェクター	0.430	level2_fallback_l2map	
 11967941	Musical Instruments/Amplifiers & Effects/Guitar & Bass Amplifiers & Preamps/Bass Guitar Amplifiers & Preamps/Heads	5626	楽器・音響機器/エフェクター	0.440	level2_fallback_l2map	
 11967951	Musical Instruments/Amplifiers & Effects/Guitar & Bass Amplifiers & Preamps/Bass Guitar Amplifiers & Preamps/Preamps	5626	楽器・音響機器/エフェクター	0.436	level2_fallback_l2map	
 11967961	Musical Instruments/Amplifiers & Effects/Guitar & Bass Amplifiers & Preamps/Bass Guitar Amplifiers & Preamps/Stacks	5626	楽器・音響機器/エフェクター	0.438	level2_fallback_l2map	
-11967971	Musical Instruments/Instrument Accessories/Guitar & Bass Accessories/Bags & Cases/Bass Guitar Bags & Cases	5605	楽器・音響機器/その他楽器・音響機器	0.383	level2_fallback_l2map	
 11968001	Musical Instruments/Amplifiers & Effects/Guitar Effects/Bass Guitar Effects	5626	楽器・音響機器/エフェクター	0.538	level2_fallback_l2map	
 11968011	Musical Instruments/Amplifiers & Effects/Guitar Effects/Bass Guitar Effects/Multieffects	5626	楽器・音響機器/エフェクター	0.489	level2_fallback_l2map	
 11968031	Musical Instruments/Instrument Accessories/Guitar & Bass Accessories/Bass Guitar Parts	5605	楽器・音響機器/その他楽器・音響機器	0.415	level2_fallback_l2map	
-11968041	Musical Instruments/Instrument Accessories/Guitar & Bass Accessories/Bass Guitar Parts/Bindings & Trim	5605	楽器・音響機器/その他楽器・音響機器	0.383	level2_fallback_l2map	
-11968051	Musical Instruments/Instrument Accessories/Guitar & Bass Accessories/Bass Guitar Parts/Bodies	5605	楽器・音響機器/その他楽器・音響機器	0.396	level2_fallback_l2map	
-11968061	Musical Instruments/Instrument Accessories/Guitar & Bass Accessories/Bass Guitar Parts/Bridges & Bridge Parts	5605	楽器・音響機器/その他楽器・音響機器	0.371	level2_fallback_l2map	
-11968071	Musical Instruments/Instrument Accessories/Guitar & Bass Accessories/Bass Guitar Parts/Electronics	5605	楽器・音響機器/その他楽器・音響機器	0.386	level2_fallback_l2map	
-11968081	Musical Instruments/Instrument Accessories/Guitar & Bass Accessories/Bass Guitar Parts/Frets	5605	楽器・音響機器/その他楽器・音響機器	0.398	level2_fallback_l2map	
-11968091	Musical Instruments/Instrument Accessories/Guitar & Bass Accessories/Bass Guitar Parts/Hardware	5605	楽器・音響機器/その他楽器・音響機器	0.392	level2_fallback_l2map	
-11968101	Musical Instruments/Instrument Accessories/Guitar & Bass Accessories/Bass Guitar Parts/Knobs	5605	楽器・音響機器/その他楽器・音響機器	0.398	level2_fallback_l2map	
-11968111	Musical Instruments/Instrument Accessories/Guitar & Bass Accessories/Bass Guitar Parts/Necks	5605	楽器・音響機器/その他楽器・音響機器	0.398	level2_fallback_l2map	
 11968121	Musical Instruments/Instrument Accessories/Guitar & Bass Accessories/Bass Guitar Parts/Nuts	5605	楽器・音響機器/その他楽器・音響機器	0.400	level2_fallback_l2map	
-11968131	Musical Instruments/Instrument Accessories/Guitar & Bass Accessories/Bass Guitar Parts/Pick Guards	5605	楽器・音響機器/その他楽器・音響機器	0.386	level2_fallback_l2map	
-11968141	Musical Instruments/Instrument Accessories/Guitar & Bass Accessories/Bass Guitar Parts/Pickups & Pickup Covers	5605	楽器・音響機器/その他楽器・音響機器	0.369	level2_fallback_l2map	
-11968151	Musical Instruments/Instrument Accessories/Guitar & Bass Accessories/Bass Guitar Parts/Saddles	5605	楽器・音響機器/その他楽器・音響機器	0.394	level2_fallback_l2map	
-11968161	Musical Instruments/Instrument Accessories/Guitar & Bass Accessories/Bass Guitar Parts/Tailpieces	5605	楽器・音響機器/その他楽器・音響機器	0.388	level2_fallback_l2map	
-11968171	Musical Instruments/Instrument Accessories/Guitar & Bass Accessories/Bass Guitar Parts/Tuning Machines	5605	楽器・音響機器/その他楽器・音響機器	0.379	level2_fallback_l2map	
-11968181	Musical Instruments/Instrument Accessories/Guitar & Bass Accessories/Bass Guitar Parts/Wood & Inlay Material	5605	楽器・音響機器/その他楽器・音響機器	0.372	level2_fallback_l2map	
-11968211	Musical Instruments/Instrument Accessories/Guitar & Bass Accessories/Strings/Bass Guitar Strings	5605	楽器・音響機器/その他楽器・音響機器	0.394	level2_fallback_l2map	
 11968251	Musical Instruments/Instrument Accessories/Guitar & Bass Accessories/Cleaning & Care	5605	楽器・音響機器/その他楽器・音響機器	0.425	level2_fallback_l2map	
 11968271	Musical Instruments/Amplifiers & Effects/Guitar & Bass Amplifiers & Preamps/Electric Guitar Amplifiers & Preamps	5626	楽器・音響機器/エフェクター	0.449	level2_fallback_l2map	
 11968281	Musical Instruments/Amplifiers & Effects/Guitar & Bass Amplifiers & Preamps/Electric Guitar Amplifiers & Preamps/Cabinets	5626	楽器・音響機器/エフェクター	0.426	level2_fallback_l2map	
@@ -756,7 +632,6 @@ AmaCatID	AmaPath	WowCatID_candidate	WowPath	score	decision_reason	comment
 11968301	Musical Instruments/Amplifiers & Effects/Guitar & Bass Amplifiers & Preamps/Electric Guitar Amplifiers & Preamps/Heads	5626	楽器・音響機器/エフェクター	0.432	level2_fallback_l2map	
 11968311	Musical Instruments/Amplifiers & Effects/Guitar & Bass Amplifiers & Preamps/Electric Guitar Amplifiers & Preamps/Preamps	5626	楽器・音響機器/エフェクター	0.428	level2_fallback_l2map	
 11968321	Musical Instruments/Amplifiers & Effects/Guitar & Bass Amplifiers & Preamps/Electric Guitar Amplifiers & Preamps/Stacks	5626	楽器・音響機器/エフェクター	0.430	level2_fallback_l2map	
-11968331	Musical Instruments/Instrument Accessories/Guitar & Bass Accessories/Bags & Cases/Electric Guitar Bags & Cases	5605	楽器・音響機器/その他楽器・音響機器	0.376	level2_fallback_l2map	
 11968361	Musical Instruments/Amplifiers & Effects/Guitar Effects/Electric Guitar Effects	5626	楽器・音響機器/エフェクター	0.524	level2_fallback_l2map	
 11968371	Musical Instruments/Amplifiers & Effects/Guitar Effects/Electric Guitar Effects/Multieffects	5626	楽器・音響機器/エフェクター	0.478	level2_fallback_l2map	
 11968401	Musical Instruments/Amplifiers & Effects/Guitar Effects/Electric Guitar Effects/Compression	5626	楽器・音響機器/エフェクター	0.481	level2_fallback_l2map	
@@ -766,47 +641,9 @@ AmaCatID	AmaPath	WowCatID_candidate	WowPath	score	decision_reason	comment
 11968441	Musical Instruments/Amplifiers & Effects/Guitar Effects/Bass Guitar Effects/Volume & Expression	5626	楽器・音響機器/エフェクター	0.475	level2_fallback_l2map	
 11968451	Musical Instruments/Amplifiers & Effects/Guitar Effects/Electric Guitar Effects/Wah & Filter	5626	楽器・音響機器/エフェクター	0.483	level2_fallback_l2map	
 11968461	Musical Instruments/Instrument Accessories/Guitar & Bass Accessories/Electric Guitar Parts	5605	楽器・音響機器/その他楽器・音響機器	0.406	level2_fallback_l2map	
-11968471	Musical Instruments/Instrument Accessories/Guitar & Bass Accessories/Electric Guitar Parts/Bindings & Trim	5605	楽器・音響機器/その他楽器・音響機器	0.376	level2_fallback_l2map	
-11968481	Musical Instruments/Instrument Accessories/Guitar & Bass Accessories/Electric Guitar Parts/Bodies	5605	楽器・音響機器/その他楽器・音響機器	0.388	level2_fallback_l2map	
-11968491	Musical Instruments/Instrument Accessories/Guitar & Bass Accessories/Electric Guitar Parts/Bridges & Bridge Parts	5605	楽器・音響機器/その他楽器・音響機器	0.364	level2_fallback_l2map	
-11968501	Musical Instruments/Instrument Accessories/Guitar & Bass Accessories/Electric Guitar Parts/Electronics	5605	楽器・音響機器/その他楽器・音響機器	0.379	level2_fallback_l2map	
-11968511	Musical Instruments/Instrument Accessories/Guitar & Bass Accessories/Electric Guitar Parts/Frets	5605	楽器・音響機器/その他楽器・音響機器	0.390	level2_fallback_l2map	
-11968521	Musical Instruments/Instrument Accessories/Guitar & Bass Accessories/Electric Guitar Parts/Hardware	5605	楽器・音響機器/その他楽器・音響機器	0.384	level2_fallback_l2map	
-11968531	Musical Instruments/Instrument Accessories/Guitar & Bass Accessories/Electric Guitar Parts/Knobs	5605	楽器・音響機器/その他楽器・音響機器	0.390	level2_fallback_l2map	
-11968541	Musical Instruments/Instrument Accessories/Guitar & Bass Accessories/Electric Guitar Parts/Necks	5605	楽器・音響機器/その他楽器・音響機器	0.390	level2_fallback_l2map	
-11968551	Musical Instruments/Instrument Accessories/Guitar & Bass Accessories/Electric Guitar Parts/Nuts	5605	楽器・音響機器/その他楽器・音響機器	0.392	level2_fallback_l2map	
-11968561	Musical Instruments/Instrument Accessories/Guitar & Bass Accessories/Electric Guitar Parts/Pick Guards	5605	楽器・音響機器/その他楽器・音響機器	0.379	level2_fallback_l2map	
-11968571	Musical Instruments/Instrument Accessories/Guitar & Bass Accessories/Electric Guitar Parts/Pickups & Pickup Covers	5605	楽器・音響機器/その他楽器・音響機器	0.363	level2_fallback_l2map	
-11968581	Musical Instruments/Instrument Accessories/Guitar & Bass Accessories/Electric Guitar Parts/Saddles	5605	楽器・音響機器/その他楽器・音響機器	0.386	level2_fallback_l2map	
-11968591	Musical Instruments/Instrument Accessories/Guitar & Bass Accessories/Electric Guitar Parts/Tailpieces	5605	楽器・音響機器/その他楽器・音響機器	0.381	level2_fallback_l2map	
-11968601	Musical Instruments/Instrument Accessories/Guitar & Bass Accessories/Electric Guitar Parts/Tuning Pegs	5605	楽器・音響機器/その他楽器・音響機器	0.379	level2_fallback_l2map	
-11968611	Musical Instruments/Instrument Accessories/Guitar & Bass Accessories/Electric Guitar Parts/Wood & Inlay Material	5605	楽器・音響機器/その他楽器・音響機器	0.366	level2_fallback_l2map	
-11968641	Musical Instruments/Instrument Accessories/Guitar & Bass Accessories/Strings/Electric Guitar Strings	5605	楽器・音響機器/その他楽器・音響機器	0.386	level2_fallback_l2map	
-11968681	Musical Instruments/Instrument Accessories/Guitar & Bass Accessories/Picks & Pick Holders/Picks	5605	楽器・音響機器/その他楽器・音響機器	0.396	level2_fallback_l2map	
 11968691	Musical Instruments/Instrument Accessories/Guitar & Bass Accessories/Footstools	5605	楽器・音響機器/その他楽器・音響機器	0.433	level2_fallback_l2map	
 11968701	Musical Instruments/Instrument Accessories/Guitar & Bass Accessories/Tools	5605	楽器・音響機器/その他楽器・音響機器	0.450	level2_fallback_l2map	
-11968741	Musical Instruments/Instrument Accessories/Folk & World Instrument Accessories/Mandolin Accessories	5605	楽器・音響機器/その他楽器・音響機器	0.392	level2_fallback_l2map	
-11968761	Musical Instruments/Instrument Accessories/Orchestral Strings Accessories & Parts/Bags & Cases/Upright Bass	5605	楽器・音響機器/その他楽器・音響機器	0.377	level2_fallback_l2map	
-11968771	Musical Instruments/Instrument Accessories/Orchestral Strings Accessories & Parts/Bows/Upright Bass	5605	楽器・音響機器/その他楽器・音響機器	0.386	level2_fallback_l2map	
-11968801	Musical Instruments/Instrument Accessories/Orchestral Strings Accessories & Parts/Parts/Upright Bass	5605	楽器・音響機器/その他楽器・音響機器	0.384	level2_fallback_l2map	
-11968811	Musical Instruments/Instrument Accessories/Orchestral Strings Accessories & Parts/Rosin/Upright Bass	5605	楽器・音響機器/その他楽器・音響機器	0.384	level2_fallback_l2map	
-11968821	Musical Instruments/Instrument Accessories/Orchestral Strings Accessories & Parts/Stands & Hangers/Upright Bass	5605	楽器・音響機器/その他楽器・音響機器	0.369	level2_fallback_l2map	
-11968831	Musical Instruments/Instrument Accessories/Orchestral Strings Accessories & Parts/Strings/Upright Bass	5605	楽器・音響機器/その他楽器・音響機器	0.383	level2_fallback_l2map	
-11968841	Musical Instruments/Instrument Accessories/Folk & World Instrument Accessories/Ukulele Accessories	5605	楽器・音響機器/その他楽器・音響機器	0.394	level2_fallback_l2map	
-11968861	Musical Instruments/Instrument Accessories/Orchestral Strings Accessories & Parts/Bags & Cases/Viola	5605	楽器・音響機器/その他楽器・音響機器	0.390	level2_fallback_l2map	
 11968871	Musical Instruments/Instrument Accessories/Orchestral Strings Accessories & Parts/Bows/Viola	5605	楽器・音響機器/その他楽器・音響機器	0.400	level2_fallback_l2map	
-11968891	Musical Instruments/Instrument Accessories/Orchestral Strings Accessories & Parts/Parts/Viola	5605	楽器・音響機器/その他楽器・音響機器	0.398	level2_fallback_l2map	
-11968901	Musical Instruments/Instrument Accessories/Orchestral Strings Accessories & Parts/Rosin/Viola	5605	楽器・音響機器/その他楽器・音響機器	0.398	level2_fallback_l2map	
-11968911	Musical Instruments/Instrument Accessories/Orchestral Strings Accessories & Parts/Shoulder & Chin Rests/Viola	5605	楽器・音響機器/その他楽器・音響機器	0.372	level2_fallback_l2map	
-11968921	Musical Instruments/Instrument Accessories/Orchestral Strings Accessories & Parts/Stands & Hangers/Viola	5605	楽器・音響機器/その他楽器・音響機器	0.381	level2_fallback_l2map	
-11968931	Musical Instruments/Instrument Accessories/Orchestral Strings Accessories & Parts/Strings/Viola	5605	楽器・音響機器/その他楽器・音響機器	0.396	level2_fallback_l2map	
-11968951	Musical Instruments/Instrument Accessories/Orchestral Strings Accessories & Parts/Bags & Cases/Violin	5605	楽器・音響機器/その他楽器・音響機器	0.388	level2_fallback_l2map	
-11968961	Musical Instruments/Instrument Accessories/Orchestral Strings Accessories & Parts/Bows/Violin	5605	楽器・音響機器/その他楽器・音響機器	0.398	level2_fallback_l2map	
-11968981	Musical Instruments/Instrument Accessories/Orchestral Strings Accessories & Parts/Parts/Violin	5605	楽器・音響機器/その他楽器・音響機器	0.396	level2_fallback_l2map	
-11968991	Musical Instruments/Instrument Accessories/Orchestral Strings Accessories & Parts/Rosin/Violin	5605	楽器・音響機器/その他楽器・音響機器	0.396	level2_fallback_l2map	
-11969001	Musical Instruments/Instrument Accessories/Orchestral Strings Accessories & Parts/Shoulder & Chin Rests/Violin	5605	楽器・音響機器/その他楽器・音響機器	0.371	level2_fallback_l2map	
-11969011	Musical Instruments/Instrument Accessories/Orchestral Strings Accessories & Parts/Stands & Hangers/Violin	5605	楽器・音響機器/その他楽器・音響機器	0.379	level2_fallback_l2map	
-11969021	Musical Instruments/Instrument Accessories/Orchestral Strings Accessories & Parts/Strings/Violin	5605	楽器・音響機器/その他楽器・音響機器	0.394	level2_fallback_l2map	
 11969041	Musical Instruments/Instrument Accessories/Brass Accessories	5605	楽器・音響機器/その他楽器・音響機器	0.495	level2_fallback_l2map	
 11969121	Musical Instruments/Instrument Accessories/Brass Accessories/Bags & Cases/French Horn	5605	楽器・音響機器/その他楽器・音響機器	0.415	level2_fallback_l2map	
 11969131	Musical Instruments/Instrument Accessories/Brass Accessories/Cleaning & Care/French Horn	5605	楽器・音響機器/その他楽器・音響機器	0.406	level2_fallback_l2map	
@@ -833,68 +670,24 @@ AmaCatID	AmaPath	WowCatID_candidate	WowPath	score	decision_reason	comment
 11969401	Musical Instruments/Instrument Accessories/Wind & Woodwind Accessories/Parts/Bassoon	5605	楽器・音響機器/その他楽器・音響機器	0.415	level2_fallback_l2map	
 11969411	Musical Instruments/Instrument Accessories/Wind & Woodwind Accessories/Reeds/Bassoon	5605	楽器・音響機器/その他楽器・音響機器	0.415	level2_fallback_l2map	
 11969431	Musical Instruments/Instrument Accessories/Wind & Woodwind Accessories/Bags & Cases/Clarinet	5605	楽器・音響機器/その他楽器・音響機器	0.404	level2_fallback_l2map	
-11969441	Musical Instruments/Instrument Accessories/Wind & Woodwind Accessories/Cleaning & Care/Clarinets	5605	楽器・音響機器/その他楽器・音響機器	0.394	level2_fallback_l2map	
 11969451	Musical Instruments/Instrument Accessories/Wind & Woodwind Accessories/Ligatures/Ligatures	5605	楽器・音響機器/その他楽器・音響機器	0.402	level2_fallback_l2map	
-11969461	Musical Instruments/Instrument Accessories/Wind & Woodwind Accessories/Mouthpieces/Mouthpieces	5605	楽器・音響機器/その他楽器・音響機器	0.394	level2_fallback_l2map	
 11969471	Musical Instruments/Instrument Accessories/Wind & Woodwind Accessories/Parts/Clarinet	5605	楽器・音響機器/その他楽器・音響機器	0.413	level2_fallback_l2map	
 11969481	Musical Instruments/Instrument Accessories/Wind & Woodwind Accessories/Reeds/Clarinet	5605	楽器・音響機器/その他楽器・音響機器	0.413	level2_fallback_l2map	
 11969491	Musical Instruments/Instrument Accessories/Wind & Woodwind Accessories/Stands/Clarinet	5605	楽器・音響機器/その他楽器・音響機器	0.411	level2_fallback_l2map	
-11969531	Musical Instruments/Instrument Accessories/Wind & Woodwind Accessories/Bags & Cases/Flute & Piccolo	5605	楽器・音響機器/その他楽器・音響機器	0.394	level2_fallback_l2map	
-11969541	Musical Instruments/Instrument Accessories/Wind & Woodwind Accessories/Cleaning & Care/Flutes & Piccolos	5605	楽器・音響機器/その他楽器・音響機器	0.383	level2_fallback_l2map	
 11969551	Musical Instruments/Instrument Accessories/Wind & Woodwind Accessories/Parts/Flute	5605	楽器・音響機器/その他楽器・音響機器	0.420	level2_fallback_l2map	
 11969561	Musical Instruments/Instrument Accessories/Wind & Woodwind Accessories/Stands/Flute	5605	楽器・音響機器/その他楽器・音響機器	0.418	level2_fallback_l2map	
-11969581	Musical Instruments/Instrument Accessories/Wind & Woodwind Accessories/Bags & Cases/Oboe & English Horn	5605	楽器・音響機器/その他楽器・音響機器	0.386	level2_fallback_l2map	
 11969591	Musical Instruments/Instrument Accessories/Wind & Woodwind Accessories/Parts/Oboe	5605	楽器・音響機器/その他楽器・音響機器	0.423	level2_fallback_l2map	
 11969601	Musical Instruments/Instrument Accessories/Wind & Woodwind Accessories/Reeds/Oboe	5605	楽器・音響機器/その他楽器・音響機器	0.423	level2_fallback_l2map	
 11969641	Musical Instruments/Instrument Accessories/Wind & Woodwind Accessories/Bags & Cases/Saxophone	5605	楽器・音響機器/その他楽器・音響機器	0.402	level2_fallback_l2map	
-11969651	Musical Instruments/Instrument Accessories/Wind & Woodwind Accessories/Bags & Cases/Saxophone/Alto Sax	5605	楽器・音響機器/その他楽器・音響機器	0.371	level2_fallback_l2map	
-11969661	Musical Instruments/Instrument Accessories/Wind & Woodwind Accessories/Bags & Cases/Saxophone/Baritone Sax	5605	楽器・音響機器/その他楽器・音響機器	0.364	level2_fallback_l2map	
-11969671	Musical Instruments/Instrument Accessories/Wind & Woodwind Accessories/Bags & Cases/Saxophone/Bass Sax	5605	楽器・音響機器/その他楽器・音響機器	0.371	level2_fallback_l2map	
-11969681	Musical Instruments/Instrument Accessories/Wind & Woodwind Accessories/Bags & Cases/Saxophone/Soprano Sax	5605	楽器・音響機器/その他楽器・音響機器	0.366	level2_fallback_l2map	
-11969691	Musical Instruments/Instrument Accessories/Wind & Woodwind Accessories/Bags & Cases/Saxophone/Tenor Sax	5605	楽器・音響機器/その他楽器・音響機器	0.369	level2_fallback_l2map	
-11969701	Musical Instruments/Instrument Accessories/Wind & Woodwind Accessories/Cleaning & Care/Saxophones	5605	楽器・音響機器/その他楽器・音響機器	0.392	level2_fallback_l2map	
 11969711	Musical Instruments/Instrument Accessories/Wind & Woodwind Accessories/Ligatures/Saxophone	5605	楽器・音響機器/その他楽器・音響機器	0.402	level2_fallback_l2map	
-11969721	Musical Instruments/Instrument Accessories/Wind & Woodwind Accessories/Ligatures/Saxophone/Alto Sax	5605	楽器・音響機器/その他楽器・音響機器	0.371	level2_fallback_l2map	
-11969731	Musical Instruments/Instrument Accessories/Wind & Woodwind Accessories/Ligatures/Saxophone/Baritone Sax	5605	楽器・音響機器/その他楽器・音響機器	0.364	level2_fallback_l2map	
-11969741	Musical Instruments/Instrument Accessories/Wind & Woodwind Accessories/Ligatures/Saxophone/Bass Sax	5605	楽器・音響機器/その他楽器・音響機器	0.371	level2_fallback_l2map	
-11969751	Musical Instruments/Instrument Accessories/Wind & Woodwind Accessories/Ligatures/Saxophone/Soprano Sax	5605	楽器・音響機器/その他楽器・音響機器	0.366	level2_fallback_l2map	
-11969761	Musical Instruments/Instrument Accessories/Wind & Woodwind Accessories/Ligatures/Saxophone/Tenor Sax	5605	楽器・音響機器/その他楽器・音響機器	0.369	level2_fallback_l2map	
-11969771	Musical Instruments/Instrument Accessories/Wind & Woodwind Accessories/Mouthpieces/Saxophone	5605	楽器・音響機器/その他楽器・音響機器	0.398	level2_fallback_l2map	
-11969781	Musical Instruments/Instrument Accessories/Wind & Woodwind Accessories/Mouthpieces/Saxophone/Alto Sax	5605	楽器・音響機器/その他楽器・音響機器	0.367	level2_fallback_l2map	
-11969791	Musical Instruments/Instrument Accessories/Wind & Woodwind Accessories/Mouthpieces/Saxophone/Baritone Sax	5605	楽器・音響機器/その他楽器・音響機器	0.361	level2_fallback_l2map	
-11969801	Musical Instruments/Instrument Accessories/Wind & Woodwind Accessories/Mouthpieces/Saxophone/Bass Sax	5605	楽器・音響機器/その他楽器・音響機器	0.367	level2_fallback_l2map	
-11969811	Musical Instruments/Instrument Accessories/Wind & Woodwind Accessories/Mouthpieces/Saxophone/Soprano Sax	5605	楽器・音響機器/その他楽器・音響機器	0.363	level2_fallback_l2map	
-11969821	Musical Instruments/Instrument Accessories/Wind & Woodwind Accessories/Mouthpieces/Saxophone/Tenor Sax	5605	楽器・音響機器/その他楽器・音響機器	0.366	level2_fallback_l2map	
 11969831	Musical Instruments/Instrument Accessories/Wind & Woodwind Accessories/Parts/Saxophone	5605	楽器・音響機器/その他楽器・音響機器	0.411	level2_fallback_l2map	
 11969841	Musical Instruments/Instrument Accessories/Wind & Woodwind Accessories/Reeds/Saxophone	5605	楽器・音響機器/その他楽器・音響機器	0.411	level2_fallback_l2map	
-11969851	Musical Instruments/Instrument Accessories/Wind & Woodwind Accessories/Reeds/Saxophone/Alto Sax	5605	楽器・音響機器/その他楽器・音響機器	0.377	level2_fallback_l2map	
-11969861	Musical Instruments/Instrument Accessories/Wind & Woodwind Accessories/Reeds/Saxophone/Baritone Sax	5605	楽器・音響機器/その他楽器・音響機器	0.371	level2_fallback_l2map	
-11969871	Musical Instruments/Instrument Accessories/Wind & Woodwind Accessories/Reeds/Saxophone/Bass Sax	5605	楽器・音響機器/その他楽器・音響機器	0.377	level2_fallback_l2map	
-11969881	Musical Instruments/Instrument Accessories/Wind & Woodwind Accessories/Reeds/Saxophone/Soprano Sax	5605	楽器・音響機器/その他楽器・音響機器	0.372	level2_fallback_l2map	
-11969891	Musical Instruments/Instrument Accessories/Wind & Woodwind Accessories/Reeds/Saxophone/Tenor Sax	5605	楽器・音響機器/その他楽器・音響機器	0.376	level2_fallback_l2map	
 11969901	Musical Instruments/Instrument Accessories/Wind & Woodwind Accessories/Stands/Saxophone	5605	楽器・音響機器/その他楽器・音響機器	0.409	level2_fallback_l2map	
-11969911	Musical Instruments/Instrument Accessories/Wind & Woodwind Accessories/Stands/Saxophone/Alto Sax	5605	楽器・音響機器/その他楽器・音響機器	0.376	level2_fallback_l2map	
-11969921	Musical Instruments/Instrument Accessories/Wind & Woodwind Accessories/Stands/Saxophone/Baritone Sax	5605	楽器・音響機器/その他楽器・音響機器	0.369	level2_fallback_l2map	
-11969931	Musical Instruments/Instrument Accessories/Wind & Woodwind Accessories/Stands/Saxophone/Bass Sax	5605	楽器・音響機器/その他楽器・音響機器	0.376	level2_fallback_l2map	
-11969941	Musical Instruments/Instrument Accessories/Wind & Woodwind Accessories/Stands/Saxophone/Soprano Sax	5605	楽器・音響機器/その他楽器・音響機器	0.371	level2_fallback_l2map	
-11969951	Musical Instruments/Instrument Accessories/Wind & Woodwind Accessories/Stands/Saxophone/Tenor Sax	5605	楽器・音響機器/その他楽器・音響機器	0.374	level2_fallback_l2map	
 11971311	Musical Instruments/Bass Guitars	562503	楽器・音響機器/ベース/エレキベース	0.721	level2_fallback_l2map	
 11973111	Musical Instruments/Studio Recording Equipment	562305	楽器・音響機器/DTM・レコーディング・PA機器/ミキサー	0.716	level2_fallback_l2map	
 11973131	Musical Instruments/Instrument Accessories/Guitar & Bass Accessories/Amplifier Accessories	5605	楽器・音響機器/その他楽器・音響機器	0.411	level2_fallback_l2map	
-11973141	Musical Instruments/Instrument Accessories/Guitar & Bass Accessories/Amplifier Accessories/Bags, Cases & Covers	5605	楽器・音響機器/その他楽器・音響機器	0.374	level2_fallback_l2map	
-11973151	Musical Instruments/Instrument Accessories/Guitar & Bass Accessories/Amplifier Accessories/Footswitches & Controllers	5605	楽器・音響機器/その他楽器・音響機器	0.361	level2_fallback_l2map	
-11973161	Musical Instruments/Instrument Accessories/Guitar & Bass Accessories/Amplifier Accessories/Parts	5605	楽器・音響機器/その他楽器・音響機器	0.394	level2_fallback_l2map	
-11973171	Musical Instruments/Instrument Accessories/Guitar & Bass Accessories/Amplifier Accessories/Parts/Speakers	5605	楽器・音響機器/その他楽器・音響機器	0.376	level2_fallback_l2map	
-11973181	Musical Instruments/Instrument Accessories/Guitar & Bass Accessories/Amplifier Accessories/Parts/Tubes	5605	楽器・音響機器/その他楽器・音響機器	0.379	level2_fallback_l2map	
-11973191	Musical Instruments/Instrument Accessories/Guitar & Bass Accessories/Amplifier Accessories/Stands	5605	楽器・音響機器/その他楽器・音響機器	0.392	level2_fallback_l2map	
-11973341	Musical Instruments/Instrument Accessories/Drum & Percussion Accessories/Electronic Drum Amps	5605	楽器・音響機器/その他楽器・音響機器	0.377	level2_fallback_l2map	
-11973421	Electronics/Accessories & Supplies/Microphones/Accessories/Cables	5301	家電/その他家電	0.367	level2_fallback_l2map	
 11973881	Musical Instruments/Electronic Music, DJ & Karaoke	560110	楽器・音響機器/DJ＆VJ機材/カートリッジ・交換針	0.572	level2_fallback_l2map	
 11974521	Electronics/Accessories & Supplies/Microphones	5301	家電/その他家電	0.436	level2_fallback_l2map	
-11974541	Electronics/Accessories & Supplies/Microphones/Accessories/Bags & Cases	5301	家電/その他家電	0.357	level2_fallback_l2map	
-11974561	Electronics/Accessories & Supplies/Microphones/Accessories/Clips	5301	家電/その他家電	0.367	level2_fallback_l2map	
-11974581	Electronics/Accessories & Supplies/Microphones/Accessories/Preamps	5301	家電/その他家電	0.362	level2_fallback_l2map	
-11974591	Electronics/Accessories & Supplies/Microphones/Accessories/Stands	5301	家電/その他家電	0.364	level2_fallback_l2map	
 12896081	Arts, Crafts & Sewing/Beading & Jewelry Making	54091202	日用品・文房具・手芸用品/手芸・クラフト・生地/ビーズ/アクリル	0.529	level2_fallback_l2map	
 12896841	Arts, Crafts & Sewing/Fabric Decorating	54093005	日用品・文房具・手芸用品/手芸・クラフト・生地/生地・布/キルティング	0.465	level2_fallback	
 12897221	Arts, Crafts & Sewing/Knitting & Crochet	54093016	日用品・文房具・手芸用品/手芸・クラフト・生地/生地・布/ベルベット	0.504	level2_fallback_l2map	
@@ -924,7 +717,6 @@ AmaCatID	AmaPath	WowCatID_candidate	WowPath	score	decision_reason	comment
 13278341	Sports & Outdoors/Sports/Leisure Sports & Game Room/Darts & Equipment/Flights/V-Wing Flights	4009	スポーツ・アウトドア/その他のスポーツ	0.431	level2_fallback_l2map	
 13279191	Sports & Outdoors/Sports/Other Sports/Equestrian Sports/Crops, Whips & Spurs	4009	スポーツ・アウトドア/その他のスポーツ	0.477	level2_fallback_l2map	
 13279241	Sports & Outdoors/Sports/Other Sports/Equestrian Sports/Tack	4009	スポーツ・アウトドア/その他のスポーツ	0.524	level2_fallback_l2map	
-13279251	Sports & Outdoors/Sports/Other Sports/Equestrian Sports/Tack/Saddles & Accessories/Breastplates, Breast Collars & Martingales/Breastplates	4009	スポーツ・アウトドア/その他のスポーツ	0.352	level2_fallback_l2map	
 13279261	Sports & Outdoors/Sports/Other Sports/Equestrian Sports/Tack/Saddles & Accessories/Girths	4009	スポーツ・アウトドア/その他のスポーツ	0.433	level2_fallback_l2map	
 13279771	Sports & Outdoors/Sports/Team Sports/Other Team Sports/Field Hockey/Protective Gear/Goggles	4009	スポーツ・アウトドア/その他のスポーツ	0.420	level2_fallback_l2map	
 13280071	Sports & Outdoors/Sports/Golf/Golf Clubs	4009	スポーツ・アウトドア/その他のスポーツ	0.643	level2_fallback_l2map	
@@ -945,7 +737,6 @@ AmaCatID	AmaPath	WowCatID_candidate	WowPath	score	decision_reason	comment
 13280971	Sports & Outdoors/Sports/Skates, Skateboards & Scooters/Scooters & Equipment/Scooters/Kick Scooters	4009	スポーツ・アウトドア/その他のスポーツ	0.418	level2_fallback_l2map	
 13281001	Sports & Outdoors/Sports/Skates, Skateboards & Scooters/Scooters & Equipment/Components & Parts	4009	スポーツ・アウトドア/その他のスポーツ	0.436	level2_fallback_l2map	
 13281011	Sports & Outdoors/Sports/Skates, Skateboards & Scooters/Scooters & Equipment/Components & Parts/Decks	4009	スポーツ・アウトドア/その他のスポーツ	0.418	level2_fallback_l2map	
-13281051	Sports & Outdoors/Sports/Skates, Skateboards & Scooters/Scooters & Equipment/Components & Parts/Replacement Wheels	4009	スポーツ・アウトドア/その他のスポーツ	0.393	level2_fallback_l2map	
 13281131	Sports & Outdoors/Sports/Skates, Skateboards & Scooters/Skateboarding/Accessories/Wax	4009	スポーツ・アウトドア/その他のスポーツ	0.451	level2_fallback_l2map	
 13281531	Sports & Outdoors/Sports/Team Sports/Soccer/Training Equipment	4009	スポーツ・アウトドア/その他のスポーツ	0.520	level2_fallback_l2map	
 13281691	Sports & Outdoors/Sports/Leisure Sports & Game Room/Arcade & Table Games/Combination Tables	4009	スポーツ・アウトドア/その他のスポーツ	0.441	level2_fallback_l2map	
@@ -1019,10 +810,8 @@ AmaCatID	AmaPath	WowCatID_candidate	WowPath	score	decision_reason	comment
 13679381	Home & Kitchen/Seasonal Décor	352132	キッチン・食器・調理/鍋・フライパン/圧力鍋	0.599	level2_fallback_l2map	
 13749581	Tools & Home Improvement/Plumbing	592703	花・ガーデン・DIY工具/建築・住宅・設備/配管・排水設備	0.504	level2_fallback_l2map	
 13830051	Clothing, Shoes & Jewelry/Shoe, Jewelry & Watch Accessories/Jewelry Accessories/Cleaning & Care	3001	アクセサリー・ジュエリー/その他アクセサリー・ジュエリー	0.496	level2_fallback_l2map	
-14015021	Electronics/Accessories & Supplies/Camera & Photo Accessories/Viewfinders	5301	家電/その他家電	0.352	level2_fallback_l2map	
 14015081	Electronics/Accessories & Supplies/Cables/Camera & Photo	5301	家電/その他家電	0.424	level2_fallback_l2map	
 14241141	Electronics/Security & Surveillance/Biometrics	5301	家電/その他家電	0.427	level2_fallback_l2map	
-14248481	Electronics/Security & Surveillance/Surveillance Video Equipment	5301	家電/その他家電	0.367	level2_fallback_l2map	
 14329971	Sports & Outdoors/Sports/Leisure Sports & Game Room/Table Tennis	4009	スポーツ・アウトドア/その他のスポーツ	0.524	level2_fallback_l2map	
 14332871	Sports & Outdoors/Sports/Team Sports/Baseball/Training Equipment/Pitching Trainers	4009	スポーツ・アウトドア/その他のスポーツ	0.448	level2_fallback_l2map	
 14335791	Sports & Outdoors/Sports/Team Sports/Tennis & Racquet Sports/Handball	4009	スポーツ・アウトドア/その他のスポーツ	0.497	level2_fallback_l2map	
@@ -1031,7 +820,6 @@ AmaCatID	AmaPath	WowCatID_candidate	WowPath	score	decision_reason	comment
 16310181	Industrial & Scientific/Power Transmission Products	59260202	花・ガーデン・DIY工具/DIY工具/エアー工具/コンプレッサー	0.427	level2_fallback_l2map	
 16310191	Industrial & Scientific/Raw Materials	59260606	花・ガーデン・DIY工具/DIY工具/ネジ・ボルト・素材/スペーサー	0.476	level2_fallback_l2map	
 16310231	Grocery & Gourmet Food/Beverages	570508	水・ソフトドリンク・お茶/ソフトドリンク/栄養・エナジードリンク	0.403	level2_fallback_l2map	
-16310251	Grocery & Gourmet Food/Breakfast Foods	360409	グルメ・食品/パン・ジャム・シリアル/ジャム	0.693	level2_fallback_l2map	
 16323111	Grocery & Gourmet Food/Baby Foods	34050920	キッズベビー・マタニティ/ベビー/ベビー服/ブルマ	0.540	level2_fallback_l2map	
 16350281	Clothing, Shoes & Jewelry/Shoe, Jewelry & Watch Accessories/Jewelry Accessories/Jewelry Boxes & Organizers/Jewelry Armoires	3001	アクセサリー・ジュエリー/その他アクセサリー・ジュエリー	0.430	level2_fallback_l2map	
 16350291	Clothing, Shoes & Jewelry/Shoe, Jewelry & Watch Accessories/Jewelry Accessories/Jewelry Boxes & Organizers/Jewelry Boxes	3001	アクセサリー・ジュエリー/その他アクセサリー・ジュエリー	0.436	level2_fallback_l2map	
@@ -1052,9 +840,7 @@ AmaCatID	AmaPath	WowCatID_candidate	WowPath	score	decision_reason	comment
 166424011	Sports & Outdoors/Sports/Leisure Sports & Game Room/Play Sets & Playground Equipment	4009	スポーツ・アウトドア/その他のスポーツ	0.462	level2_fallback_l2map	
 166426011	Sports & Outdoors/Sports/Leisure Sports & Game Room/Play Sets & Playground Equipment/Freestanding Climbers	4009	スポーツ・アウトドア/その他のスポーツ	0.406	level2_fallback_l2map	
 196601011	Toys & Games/Baby & Toddler Toys	37180103	ゲーム機・ゲームソフト/旧世代ゲーム機/NEOGEO/NEOGEO本体	0.621	level2_fallback_l2map	
-202505011	Electronics/Accessories & Supplies/Cables/Computer/HDMI Cables	5301	家電/その他家電	0.397	level2_fallback_l2map	
 202506011	Electronics/Accessories & Supplies/Cables/Computer/DVI	5301	家電/その他家電	0.420	level2_fallback_l2map	
-256167011	Industrial & Scientific/Abrasive & Finishing Products	420203	ダイエット・健康/サプリメント/ダイエット	0.361	level2_fallback	
 256225011	Industrial & Scientific/Adhesives, Sealants & Lubricants	59260102	花・ガーデン・DIY工具/DIY工具/大工道具・用品/のこぎり	0.458	level2_fallback_l2map	
 256346011	Industrial & Scientific/Material Handling Products	59260510	花・ガーデン・DIY工具/DIY工具/測定工具/温度計・湿度計	0.474	level2_fallback_l2map	
 256409011	Industrial & Scientific/Test, Measure & Inspect	59260610	花・ガーデン・DIY工具/DIY工具/ネジ・ボルト・素材/インサート	0.473	level2_fallback_l2map	
@@ -1062,14 +848,12 @@ AmaCatID	AmaPath	WowCatID_candidate	WowPath	score	decision_reason	comment
 293606011	Sports & Outdoors/Sports/Leisure Sports & Game Room/Outdoor Games & Activities/Tetherball	4009	スポーツ・アウトドア/その他のスポーツ	0.446	level2_fallback_l2map	
 295321011	Sports & Outdoors/Sports/Leisure Sports & Game Room/Arcade & Table Games/Dome Hockey	4009	スポーツ・アウトドア/その他のスポーツ	0.459	level2_fallback_l2map	
 295326011	Sports & Outdoors/Sports/Leisure Sports & Game Room/Arcade & Table Games/Mini Pinball	4009	スポーツ・アウトドア/その他のスポーツ	0.456	level2_fallback_l2map	
-299934011	Sports & Outdoors/Sports/Leisure Sports & Game Room/Billiards & Pool/Tables & Accessories/Table Tennis Conversion Tops	4009	スポーツ・アウトドア/その他のスポーツ	0.380	level2_fallback_l2map	
 299939011	Sports & Outdoors/Sports/Leisure Sports & Game Room/Arcade & Table Games/Arcade Pinball Machines	4009	スポーツ・アウトドア/その他のスポーツ	0.429	level2_fallback_l2map	
 299940011	Sports & Outdoors/Sports/Leisure Sports & Game Room/Arcade & Table Games/Arcade Video Games	4009	スポーツ・アウトドア/その他のスポーツ	0.443	level2_fallback_l2map	
 306506011	Industrial & Scientific/Industrial Electrical	59260612	花・ガーデン・DIY工具/DIY工具/ネジ・ボルト・素材/リベット	0.453	level2_fallback_l2map	
 310355011	Musical Instruments/Instrument Accessories/Keyboard Accessories/Music Wire	5605	楽器・音響機器/その他楽器・音響機器	0.438	level2_fallback_l2map	
 317970011	Industrial & Scientific/Lab & Scientific Products	59260610	花・ガーデン・DIY工具/DIY工具/ネジ・ボルト・素材/インサート	0.464	level2_fallback_l2map	
 317971011	Industrial & Scientific/Janitorial & Sanitation Supplies	541006	日用品・文房具・手芸用品/掃除用具/バケツ	0.412	level2_fallback_l2map	
-318135011	Industrial & Scientific/Occupational Health & Safety Products	520610	医療・介護・医薬品/衛生医療品/綿棒	0.364	level2_fallback_l2map	
 322525011	Tools & Home Improvement/Light Bulbs	592611	花・ガーデン・DIY工具/DIY工具/シート	0.464	level2_fallback	
 328182011	Tools & Home Improvement/Power & Hand Tools	592610	花・ガーデン・DIY工具/DIY工具/台車・リヤカー	0.528	level2_fallback_l2map	
 370742011	Jewelry/Loose Gemstones	3003	アクセサリー・ジュエリー/アンクレット	0.510	level2_fallback	
@@ -1232,8 +1016,6 @@ AmaCatID	AmaPath	WowCatID_candidate	WowPath	score	decision_reason	comment
 393976011	Sports & Outdoors/Sports/Team Sports/Tennis & Racquet Sports/Racquetball/Gloves	4009	スポーツ・アウトドア/その他のスポーツ	0.459	level2_fallback_l2map	
 405757011	Musical Instruments/Live Sound & Stage	562305	楽器・音響機器/DTM・レコーディング・PA機器/ミキサー	0.599	level2_fallback_l2map	
 405758011	Musical Instruments/Band & Orchestra	563303	楽器・音響機器/管楽器/コルネット	0.713	level2_fallback_l2map	
-486149011	Musical Instruments/Instrument Accessories/Guitar & Bass Accessories/Strings/Classical Guitar Strings	5605	楽器・音響機器/その他楽器・音響機器	0.384	level2_fallback_l2map	
-486157011	Musical Instruments/Instrument Accessories/Drum & Percussion Accessories/Drum Set Accessories/Drumheads	5605	楽器・音響機器/その他楽器・音響機器	0.361	level2_fallback_l2map	
 486410011	Musical Instruments/Amplifiers & Effects/Guitar & Bass Amplifiers & Preamps	5626	楽器・音響機器/エフェクター	0.562	level2_fallback_l2map	
 486411011	Musical Instruments/Amplifiers & Effects/Guitar Effects	5626	楽器・音響機器/エフェクター	0.644	level2_fallback_l2map	
 486412011	Musical Instruments/Instrument Accessories/Guitar & Bass Accessories/Bags & Cases	5605	楽器・音響機器/その他楽器・音響機器	0.436	level2_fallback_l2map	
@@ -1257,24 +1039,13 @@ AmaCatID	AmaPath	WowCatID_candidate	WowPath	score	decision_reason	comment
 486437011	Musical Instruments/Amplifiers & Effects/Guitar Effects/Bass Guitar Effects/Compression	5626	楽器・音響機器/エフェクター	0.492	level2_fallback_l2map	
 486439011	Musical Instruments/Amplifiers & Effects/Guitar Effects/Bass Guitar Effects/Distortion & Overdrive	5626	楽器・音響機器/エフェクター	0.467	level2_fallback_l2map	
 486445011	Musical Instruments/Amplifiers & Effects/Guitar Effects/Acoustic Guitar Effects	5626	楽器・音響機器/エフェクター	0.524	level2_fallback_l2map	
-486451011	Musical Instruments/Instrument Accessories/Guitar & Bass Accessories/Acoustic & Classical Guitar Parts/Electronics	5605	楽器・音響機器/その他楽器・音響機器	0.363	level2_fallback_l2map	
-486452011	Musical Instruments/Instrument Accessories/Guitar & Bass Accessories/Acoustic & Classical Guitar Parts/Hardware	5605	楽器・音響機器/その他楽器・音響機器	0.367	level2_fallback_l2map	
-486453011	Musical Instruments/Instrument Accessories/Guitar & Bass Accessories/Acoustic & Classical Guitar Parts/Knobs	5605	楽器・音響機器/その他楽器・音響機器	0.372	level2_fallback_l2map	
-486454011	Musical Instruments/Instrument Accessories/Guitar & Bass Accessories/Acoustic & Classical Guitar Parts/Tailpieces	5605	楽器・音響機器/その他楽器・音響機器	0.364	level2_fallback_l2map	
-486455011	Musical Instruments/Instrument Accessories/Guitar & Bass Accessories/Picks & Pick Holders/Pick Holders	5605	楽器・音響機器/その他楽器・音響機器	0.383	level2_fallback_l2map	
-486457011	Musical Instruments/Instrument Accessories/Guitar & Bass Accessories/Straps & Strap Locks/Strap Locks	5605	楽器・音響機器/その他楽器・音響機器	0.384	level2_fallback_l2map	
-491008011	Musical Instruments/Instrument Accessories/Guitar & Bass Accessories/Straps & Strap Locks/Straps	5605	楽器・音響機器/その他楽器・音響機器	0.394	level2_fallback_l2map	
 491022011	Musical Instruments/Instrument Accessories/Keyboard Accessories/Bags, Cases & Covers	5605	楽器・音響機器/その他楽器・音響機器	0.425	level2_fallback_l2map	
 491023011	Musical Instruments/Instrument Accessories/Keyboard Accessories/Power Supplies	5605	楽器・音響機器/その他楽器・音響機器	0.430	level2_fallback_l2map	
 491024011	Musical Instruments/Instrument Accessories/Keyboard Accessories/Stands	5605	楽器・音響機器/その他楽器・音響機器	0.453	level2_fallback_l2map	
-491045011	Musical Instruments/Instrument Accessories/Drum & Percussion Accessories/Hardware/Mounting Hardware/Boom Arms	5605	楽器・音響機器/その他楽器・音響機器	0.355	level2_fallback_l2map	
-491049011	Musical Instruments/Instrument Accessories/Drum & Percussion Accessories/Hardware/Mounting Hardware/Pedal Mounts	5605	楽器・音響機器/その他楽器・音響機器	0.351	level2_fallback_l2map	
-491052011	Musical Instruments/Instrument Accessories/Drum & Percussion Accessories/Drum Set Accessories/Stands	5605	楽器・音響機器/その他楽器・音響機器	0.366	level2_fallback_l2map	
 492527011	Musical Instruments/Amplifiers & Effects/Guitar Effects/Bass Guitar Effects/Wah & Filter	5626	楽器・音響機器/エフェクター	0.495	level2_fallback_l2map	
 667846011	Electronics/Home Audio	440101	テレビ・オーディオ・カメラ/オーディオ/その他オーディオ	0.421	level2_fallback_l2map	
 676772011	Sports & Outdoors/Sports/Leisure Sports & Game Room/Outdoor Games & Activities/Bocce/Bocce Sets	4009	スポーツ・アウトドア/その他のスポーツ	0.426	level2_fallback_l2map	
 676773011	Sports & Outdoors/Sports/Leisure Sports & Game Room/Outdoor Games & Activities/Croquet	4009	スポーツ・アウトドア/その他のスポーツ	0.454	level2_fallback_l2map	
-689974011	Electronics/Accessories & Supplies/Telephone Accessories/Telephone Cords	5301	家電/その他家電	0.352	level2_fallback_l2map	
 706808011	Sports & Outdoors/Sports/Leisure Sports & Game Room	4009	スポーツ・アウトドア/その他のスポーツ	0.597	level2_fallback_l2map	
 706809011	Sports & Outdoors/Sports/Team Sports	4009	スポーツ・アウトドア/その他のスポーツ	0.690	level2_fallback_l2map	
 706810011	Sports & Outdoors/Sports/Other Sports	4009	スポーツ・アウトドア/その他のスポーツ	0.681	level2_fallback_l2map	
@@ -1294,11 +1065,9 @@ AmaCatID	AmaPath	WowCatID_candidate	WowPath	score	decision_reason	comment
 723418011	Health & Household/Stationery & Gift Wrapping Supplies	420302	ダイエット・健康/ダイエット/ダイエットウエア・サポーター	0.541	level2_fallback_l2map	
 723452011	Arts, Crafts & Sewing/Gift Wrapping Supplies	292605	おもちゃ・趣味/工芸品・民芸品/ビー玉	0.592	level2_fallback_l2map	
 723469011	Arts, Crafts & Sewing/Party Decorations & Supplies	291503	おもちゃ・趣味/パーティーグッズ/パーティーゲーム	0.511	level2_fallback_l2map	
-979861011	Grocery & Gourmet Food/Home Brewing & Winemaking	48070502	ビール・ワイン・お酒/リキュール/果実系/オレンジ	0.387	level2_fallback_l2map	
 1234183011	Sports & Outdoors/Sports/Leisure Sports & Game Room/Outdoor Games & Activities/Kites	4009	スポーツ・アウトドア/その他のスポーツ	0.459	level2_fallback_l2map	
 1240798011	Sports & Outdoors/Sports/Team Sports/Basketball/Accessories/Equipment Bags	4009	スポーツ・アウトドア/その他のスポーツ	0.477	level2_fallback_l2map	
 1240800011	Sports & Outdoors/Sports/Team Sports/Volleyball/Accessories/Equipment Bags	4009	スポーツ・アウトドア/その他のスポーツ	0.477	level2_fallback_l2map	
-1266092011	Electronics/Television & Video	44040601	テレビ・オーディオ・カメラ/テレビ本体/有機ELテレビ/34型以下	0.369	level2_fallback_l2map	
 1272941011	Patio, Lawn & Garden/Pools, Hot Tubs & Supplies	592507	花・ガーデン・DIY工具/エクステリア/標識・道路用品	0.516	level2_fallback_l2map	
 2223901011	Electronics/Accessories & Supplies/Power Protection	5301	家電/その他家電	0.415	level2_fallback_l2map	
 2237329011	Arts, Crafts & Sewing/Needlework	540923	日用品・文房具・手芸用品/手芸・クラフト・生地/定規・メジャー	0.479	level2_fallback_l2map	
@@ -1363,7 +1132,6 @@ AmaCatID	AmaPath	WowCatID_candidate	WowPath	score	decision_reason	comment
 2403096011	Sports & Outdoors/Sports/Other Sports/Boxing/Punching Bags/Focus Bags	4009	スポーツ・アウトドア/その他のスポーツ	0.490	level2_fallback_l2map	
 2403097011	Sports & Outdoors/Sports/Other Sports/Boxing/Punching Bags/Maize Bags	4009	スポーツ・アウトドア/その他のスポーツ	0.490	level2_fallback_l2map	
 2403098011	Sports & Outdoors/Sports/Other Sports/Boxing/Punching Bags/Pedestal Bags	4009	スポーツ・アウトドア/その他のスポーツ	0.480	level2_fallback_l2map	
-2407755011	Electronics/Accessories & Supplies/Cell Phone Accessories	5301	家電/その他家電	0.384	level2_fallback_l2map	
 2421903011	Sports & Outdoors/Sports/Other Sports/Boxing/Boxing Gloves/Fight Gloves	4009	スポーツ・アウトドア/その他のスポーツ	0.477	level2_fallback_l2map	
 2423130011	Sports & Outdoors/Fan Shop/Home & Kitchen/Bath	4009	スポーツ・アウトドア/その他のスポーツ	0.560	level2_fallback_l2map	
 2431377011	Sports & Outdoors/Fan Shop/Clothing Accessories	4009	スポーツ・アウトドア/その他のスポーツ	0.565	level2_fallback_l2map	
@@ -1407,9 +1175,7 @@ AmaCatID	AmaPath	WowCatID_candidate	WowPath	score	decision_reason	comment
 2975504011	Pet Supplies/Reptiles & Amphibians	491507	ペット・ペットグッズ/爬虫類・両生類用品/ケージ・水槽	0.650	level2_fallback_l2map	
 2975520011	Pet Supplies/Small Animals	491308	ペット・ペットグッズ/小動物・鳥用品/ウェア・アクセサリー	0.463	level2_fallback_l2map	
 2983371011	Grocery & Gourmet Food/Alcoholic Beverages	48070404	ビール・ワイン・お酒/リキュール/ハーブ・植物系/ミント	0.528	level2_fallback_l2map	
-3015392011	Electronics/Accessories & Supplies/Cables/Computer/PS/2 Cables	5301	家電/その他家電	0.391	level2_fallback_l2map	
 3015393011	Electronics/Accessories & Supplies/Cables/Computer/SAS Cables	5301	家電/その他家電	0.400	level2_fallback_l2map	
-3015394011	Electronics/Accessories & Supplies/Cables/Computer/SATA Cables	5301	家電/その他家電	0.397	level2_fallback_l2map	
 3021459011	Industrial & Scientific/Power & Hand Tools	42020203	ダイエット・健康/サプリメント/スポーツ/プロテイン	0.420	level2_fallback	
 3021479011	Industrial & Scientific/Hydraulics, Pneumatics & Plumbing	592703	花・ガーデン・DIY工具/建築・住宅・設備/配管・排水設備	0.444	level2_fallback_l2map	
 3061625011	Industrial & Scientific/Filtration	59260608	花・ガーデン・DIY工具/DIY工具/ネジ・ボルト・素材/釘・鋲・かすがい	0.459	level2_fallback_l2map	
@@ -1423,7 +1189,6 @@ AmaCatID	AmaPath	WowCatID_candidate	WowPath	score	decision_reason	comment
 3204005011	Sports & Outdoors/Fan Shop/Clothing/T-Shirts	4009	スポーツ・アウトドア/その他のスポーツ	0.560	level2_fallback_l2map	
 3204006011	Sports & Outdoors/Fan Shop/Clothing/Baby Clothing	4009	スポーツ・アウトドア/その他のスポーツ	0.536	level2_fallback_l2map	
 3204007011	Sports & Outdoors/Fan Shop/Clothing Accessories/Socks	4009	スポーツ・アウトドア/その他のスポーツ	0.528	level2_fallback_l2map	
-3206324011	Home & Kitchen/Heating, Cooling & Air Quality	530304	家電/エアコン/室外機	0.390	level2_fallback_l2map	
 3206325011	Home & Kitchen/Kids' Home Store	34011512	キッズベビー・マタニティ/キッズ/靴（キッズ）/ローファー	0.500	level2_fallback	
 3209245011	Sports & Outdoors/Fan Shop/Auto Accessories/Decals & Bumper Stickers	4009	スポーツ・アウトドア/その他のスポーツ	0.480	level2_fallback_l2map	
 3209246011	Sports & Outdoors/Fan Shop/Cell Phone Accessories	4009	スポーツ・アウトドア/その他のスポーツ	0.532	level2_fallback_l2map	
@@ -1431,15 +1196,11 @@ AmaCatID	AmaPath	WowCatID_candidate	WowPath	score	decision_reason	comment
 3209248011	Sports & Outdoors/Fan Shop/Electronics/MP3 Player Accessories	4009	スポーツ・アウトドア/その他のスポーツ	0.497	level2_fallback_l2map	
 3209249011	Sports & Outdoors/Fan Shop/Patio, Lawn & Garden/Outdoor Statues	4009	スポーツ・アウトドア/その他のスポーツ	0.493	level2_fallback_l2map	
 3209250011	Sports & Outdoors/Fan Shop/Video Games & Accessories	4009	スポーツ・アウトドア/その他のスポーツ	0.555	level2_fallback_l2map	
-3248676011	Electronics/Accessories & Supplies/GPS System Accessories/Antennas	5301	家電/その他家電	0.367	level2_fallback_l2map	
-3248677011	Electronics/Accessories & Supplies/GPS System Accessories/Batteries	5301	家電/その他家電	0.364	level2_fallback_l2map	
-3248681011	Electronics/Accessories & Supplies/GPS System Accessories/Remote Controls	5301	家電/その他家電	0.350	level2_fallback_l2map	
 3248684011	Electronics/Car & Vehicle Electronics	336410	カー用品・バイク用品/カー用品/ETC・DSRC	0.427	level2_fallback_l2map	
 3250697011	Sports & Outdoors/Fan Shop/Sports Collectibles	4009	スポーツ・アウトドア/その他のスポーツ	0.560	level2_fallback_l2map	
 3258927011	Sports & Outdoors/Sports/Skates, Skateboards & Scooters/Skateboarding/Ramps & Rails/Skateboard Ramps	4009	スポーツ・アウトドア/その他のスポーツ	0.416	level2_fallback_l2map	
 3258928011	Sports & Outdoors/Sports/Skates, Skateboards & Scooters/Skateboarding/Ramps & Rails/Skateboard Grind Rails	4009	スポーツ・アウトドア/その他のスポーツ	0.404	level2_fallback_l2map	
 3258929011	Sports & Outdoors/Sports/Skates, Skateboards & Scooters/Skateboarding/Ramps & Rails/Skateboard Ramp Plans	4009	スポーツ・アウトドア/その他のスポーツ	0.406	level2_fallback_l2map	
-3258934011	Sports & Outdoors/Sports/Other Sports/Equestrian Sports/Tack/Saddles & Accessories/Breastplates, Breast Collars & Martingales/Martingales	4009	スポーツ・アウトドア/その他のスポーツ	0.354	level2_fallback_l2map	
 3258935011	Sports & Outdoors/Sports/Other Sports/Equestrian Sports/Crops, Whips & Spurs/Whips	4009	スポーツ・アウトドア/その他のスポーツ	0.454	level2_fallback_l2map	
 3258936011	Sports & Outdoors/Sports/Other Sports/Equestrian Sports/Crops, Whips & Spurs/Crops	4009	スポーツ・アウトドア/その他のスポーツ	0.454	level2_fallback_l2map	
 3258937011	Sports & Outdoors/Fan Shop/Gameday & Tailgating/Grills & Accessories/Grills	4009	スポーツ・アウトドア/その他のスポーツ	0.459	level2_fallback_l2map	
@@ -1452,8 +1213,6 @@ AmaCatID	AmaPath	WowCatID_candidate	WowPath	score	decision_reason	comment
 3258952011	Sports & Outdoors/Sports/Leisure Sports & Game Room/Arcade & Table Games/Foosball/Foosball Accessories	4009	スポーツ・アウトドア/その他のスポーツ	0.416	level2_fallback_l2map	
 3258953011	Sports & Outdoors/Sports/Leisure Sports & Game Room/Arcade & Table Games/Shuffleboard/Shuffleboard Tables	4009	スポーツ・アウトドア/その他のスポーツ	0.406	level2_fallback_l2map	
 3258954011	Sports & Outdoors/Sports/Leisure Sports & Game Room/Arcade & Table Games/Shuffleboard/Shuffleboard Accessories	4009	スポーツ・アウトドア/その他のスポーツ	0.400	level2_fallback_l2map	
-3269906011	Sports & Outdoors/Sports/Team Sports/Tennis & Racquet Sports/Tennis/Accessories/Stringing Machines & Tools/Stringing Machines	4009	スポーツ・アウトドア/その他のスポーツ	0.369	level2_fallback_l2map	
-3269907011	Sports & Outdoors/Sports/Team Sports/Tennis & Racquet Sports/Tennis/Accessories/Stringing Machines & Tools/Stringing Tools	4009	スポーツ・アウトドア/その他のスポーツ	0.375	level2_fallback_l2map	
 3269908011	Sports & Outdoors/Sports/Team Sports/Baseball/Accessories/Mitt Accessories/Mitt Lace	4009	スポーツ・アウトドア/その他のスポーツ	0.446	level2_fallback_l2map	
 3269909011	Sports & Outdoors/Sports/Team Sports/Baseball/Accessories/Mitt Accessories/Mitt Padding	4009	スポーツ・アウトドア/その他のスポーツ	0.438	level2_fallback_l2map	
 3269910011	Sports & Outdoors/Sports/Team Sports/Baseball/Accessories/Mitt Accessories/Mitt Treatments	4009	スポーツ・アウトドア/その他のスポーツ	0.431	level2_fallback_l2map	
@@ -1488,7 +1247,6 @@ AmaCatID	AmaPath	WowCatID_candidate	WowPath	score	decision_reason	comment
 3311068011	Sports & Outdoors/Fan Shop/Sports Collectibles/Clothing & Uniforms/Shoes	4009	スポーツ・アウトドア/その他のスポーツ	0.456	level2_fallback_l2map	
 3311069011	Sports & Outdoors/Fan Shop/Sports Collectibles/Ticket Stubs	4009	スポーツ・アウトドア/その他のスポーツ	0.497	level2_fallback_l2map	
 3311070011	Sports & Outdoors/Fan Shop/Sports Collectibles/Trading Cards	4009	スポーツ・アウトドア/その他のスポーツ	0.493	level2_fallback_l2map	
-3377866011	Books/Politics & Social Sciences	552808	本・コミック・雑誌/社会・政治/軍事	0.469	level2_fallback_l2map	
 3409906011	Sports & Outdoors/Fan Shop/Sports Souvenirs/Helmets	4009	スポーツ・アウトドア/その他のスポーツ	0.528	level2_fallback_l2map	
 3421047011	Clothing, Shoes & Jewelry/Shoe, Jewelry & Watch Accessories/Shoe Care & Accessories/Shoe Care Treatments & Dyes/Shoe Treatments & Polishes	3001	アクセサリー・ジュエリー/その他アクセサリー・ジュエリー	0.407	level2_fallback_l2map	
 3421048011	Clothing, Shoes & Jewelry/Shoe, Jewelry & Watch Accessories/Shoe Care & Accessories/Shoe Care Treatments & Dyes/Dyes	3001	アクセサリー・ジュエリー/その他アクセサリー・ジュエリー	0.443	level2_fallback_l2map	
@@ -1508,26 +1266,16 @@ AmaCatID	AmaPath	WowCatID_candidate	WowPath	score	decision_reason	comment
 3421064011	Clothing, Shoes & Jewelry/Shoe, Jewelry & Watch Accessories/Shoe Care & Accessories/Ice & Snow Grips	3001	アクセサリー・ジュエリー/その他アクセサリー・ジュエリー	0.486	level2_fallback_l2map	
 3421065011	Clothing, Shoes & Jewelry/Shoe, Jewelry & Watch Accessories/Shoe Care & Accessories/Shoe Measuring Devices	3001	アクセサリー・ジュエリー/その他アクセサリー・ジュエリー	0.464	level2_fallback_l2map	
 3621779011	Clothing, Shoes & Jewelry/Shoe, Jewelry & Watch Accessories/Shoe Care & Accessories/Shoe Care Treatments & Dyes/Shoe Care Kits	3001	アクセサリー・ジュエリー/その他アクセサリー・ジュエリー	0.423	level2_fallback_l2map	
-4617688011	Sports & Outdoors/Sports/Skates, Skateboards & Scooters/Inline & Roller Skating/Roller Skates/Roller Derby Skates	4009	スポーツ・アウトドア/その他のスポーツ	0.391	level2_fallback_l2map	
-4617689011	Sports & Outdoors/Sports/Skates, Skateboards & Scooters/Scooters & Equipment/Components & Parts/Batteries & Battery Chargers/Battery Chargers	4009	スポーツ・アウトドア/その他のスポーツ	0.356	level2_fallback_l2map	
 4617690011	Sports & Outdoors/Sports/Skates, Skateboards & Scooters/Scooters & Equipment/Components & Parts/Motors	4009	スポーツ・アウトドア/その他のスポーツ	0.416	level2_fallback_l2map	
-4617694011	Sports & Outdoors/Sports/Skates, Skateboards & Scooters/Inline & Roller Skating/Inline Skates/Children's Inline Skates	4009	スポーツ・アウトドア/その他のスポーツ	0.389	level2_fallback_l2map	
 4617695011	Sports & Outdoors/Sports/Skates, Skateboards & Scooters/Inline & Roller Skating/Inline Skates/Racing Skates	4009	スポーツ・アウトドア/その他のスポーツ	0.402	level2_fallback_l2map	
-4617696011	Sports & Outdoors/Sports/Skates, Skateboards & Scooters/Inline & Roller Skating/Roller Skates/Children's Roller Skates	4009	スポーツ・アウトドア/その他のスポーツ	0.389	level2_fallback_l2map	
 4619352011	Patio, Lawn & Garden/Farm & Ranch	592407	花・ガーデン・DIY工具/ガーデニング/鉢・プランター	0.567	level2_fallback_l2map	
 4911012011	Sports & Outdoors/Sports/Skates, Skateboards & Scooters/Scooters & Equipment/Components & Parts/Grip Tape	4009	スポーツ・アウトドア/その他のスポーツ	0.410	level2_fallback_l2map	
 4911013011	Sports & Outdoors/Sports/Skates, Skateboards & Scooters/Scooters & Equipment/Accessories	4009	スポーツ・アウトドア/その他のスポーツ	0.454	level2_fallback_l2map	
-4911017011	Sports & Outdoors/Sports/Skates, Skateboards & Scooters/Scooters & Equipment/Components & Parts/Batteries & Battery Chargers	4009	スポーツ・アウトドア/その他のスポーツ	0.381	level2_fallback_l2map	
-4911018011	Sports & Outdoors/Sports/Skates, Skateboards & Scooters/Scooters & Equipment/Components & Parts/Batteries & Battery Chargers/Batteries	4009	スポーツ・アウトドア/その他のスポーツ	0.364	level2_fallback_l2map	
 4911019011	Sports & Outdoors/Sports/Skates, Skateboards & Scooters/Scooters & Equipment/Components & Parts/Stems & Forks	4009	スポーツ・アウトドア/その他のスポーツ	0.406	level2_fallback_l2map	
-4911020011	Sports & Outdoors/Sports/Skates, Skateboards & Scooters/Scooters & Equipment/Components & Parts/Stems & Forks/Stems	4009	スポーツ・アウトドア/その他のスポーツ	0.391	level2_fallback_l2map	
-4911021011	Sports & Outdoors/Sports/Skates, Skateboards & Scooters/Scooters & Equipment/Components & Parts/Stems & Forks/Forks	4009	スポーツ・アウトドア/その他のスポーツ	0.391	level2_fallback_l2map	
 4911023011	Sports & Outdoors/Sports/Skates, Skateboards & Scooters/Scooters & Equipment/Components & Parts/Hardware	4009	スポーツ・アウトドア/その他のスポーツ	0.412	level2_fallback_l2map	
 4924889011	Video Games/Mac/Games	3705	ゲーム機・ゲームソフト/PCゲーム	0.615	level2_fallback_l2map	
 4924894011	Video Games/PC/Games	3705	ゲーム機・ゲームソフト/PCゲーム	0.567	level2_fallback_l2map	
-4985187011	Sports & Outdoors/Sports/Skates, Skateboards & Scooters/Skateboarding/Skateboards & Caster Boards/Standard Skateboards	4009	スポーツ・アウトドア/その他のスポーツ	0.383	level2_fallback_l2map	
 4985188011	Sports & Outdoors/Sports/Skates, Skateboards & Scooters/Skateboarding/Skateboards & Caster Boards/Longboards	4009	スポーツ・アウトドア/その他のスポーツ	0.400	level2_fallback_l2map	
-4985189011	Sports & Outdoors/Sports/Skates, Skateboards & Scooters/Skateboarding/Skateboards & Caster Boards/Caster Boards	4009	スポーツ・アウトドア/その他のスポーツ	0.395	level2_fallback_l2map	
 5223260011	Software/Accounting & Finance	460906	パソコン・PC周辺機器/プリンター・インク/スキャナー	0.556	level2_fallback_l2map	
 5223262011	Software/Programming & Web Development	46090104	パソコン・PC周辺機器/プリンター・インク/3Dプリンター/フィラメント	0.554	level2_fallback_l2map	
 5312100011	Jewelry/Novelty & More/Body Jewelry/Piercing Jewelry/Tapers	3001	アクセサリー・ジュエリー/その他アクセサリー・ジュエリー	0.601	level2_fallback_l2map	
@@ -1537,30 +1285,15 @@ AmaCatID	AmaPath	WowCatID_candidate	WowPath	score	decision_reason	comment
 5395826011	Sports & Outdoors/Fan Shop/Sports Collectibles/Lineup Cards	4009	スポーツ・アウトドア/その他のスポーツ	0.497	level2_fallback_l2map	
 5395827011	Sports & Outdoors/Fan Shop/Sports Collectibles/Baseball Bases	4009	スポーツ・アウトドア/その他のスポーツ	0.490	level2_fallback_l2map	
 5395829011	Sports & Outdoors/Fan Shop/Sports Collectibles/Personal Checks	4009	スポーツ・アウトドア/その他のスポーツ	0.487	level2_fallback_l2map	
-5524099011	Musical Instruments/Instrument Accessories/Drum & Percussion Accessories/Bags, Cases & Covers	5605	楽器・音響機器/その他楽器・音響機器	0.396	level2_fallback_l2map	
-5524100011	Musical Instruments/Instrument Accessories/Drum & Percussion Accessories/Bags, Cases & Covers/Bongo Bags, Cases & Covers	5605	楽器・音響機器/その他楽器・音響機器	0.354	level2_fallback_l2map	
 5524101011	Musical Instruments/Instrument Accessories/Drum & Percussion Accessories/Drumheads	5605	楽器・音響機器/その他楽器・音響機器	0.411	level2_fallback_l2map	
-5524102011	Musical Instruments/Instrument Accessories/Drum & Percussion Accessories/Drumheads/Bongo Drumheads	5605	楽器・音響機器/その他楽器・音響機器	0.376	level2_fallback_l2map	
 5524103011	Musical Instruments/Instrument Accessories/Drum & Percussion Accessories/Hardware	5605	楽器・音響機器/その他楽器・音響機器	0.413	level2_fallback_l2map	
-5524104011	Musical Instruments/Instrument Accessories/Drum & Percussion Accessories/Hardware/Stands & Racks	5605	楽器・音響機器/その他楽器・音響機器	0.383	level2_fallback_l2map	
-5524105011	Musical Instruments/Instrument Accessories/Drum & Percussion Accessories/Hardware/Stands & Racks/Bongo Stands	5605	楽器・音響機器/その他楽器・音響機器	0.358	level2_fallback_l2map	
-5524106011	Musical Instruments/Instrument Accessories/Drum & Percussion Accessories/Marching Percussion Accessories/Carriers	5605	楽器・音響機器/その他楽器・音響機器	0.355	level2_fallback_l2map	
 5524108011	Musical Instruments/Instrument Accessories/Folk & World Instrument Accessories	5605	楽器・音響機器/その他楽器・音響機器	0.441	level2_fallback_l2map	
-5524109011	Musical Instruments/Instrument Accessories/Guitar & Bass Accessories/Strings/Lap & Pedal Steel Guitar Strings	5605	楽器・音響機器/その他楽器・音響機器	0.374	level2_fallback_l2map	
 5524110011	Musical Instruments/Instrument Accessories/Orchestral Strings Accessories & Parts	5605	楽器・音響機器/その他楽器・音響機器	0.436	level2_fallback_l2map	
 5524111011	Musical Instruments/Instrument Accessories/Orchestral Strings Accessories & Parts/Bags & Cases	5605	楽器・音響機器/その他楽器・音響機器	0.406	level2_fallback_l2map	
-5524112011	Musical Instruments/Instrument Accessories/Orchestral Strings Accessories & Parts/Bags & Cases/Harp Bags & Cases	5605	楽器・音響機器/その他楽器・音響機器	0.374	level2_fallback_l2map	
 5524113011	Musical Instruments/Instrument Accessories/Orchestral Strings Accessories & Parts/Bows	5605	楽器・音響機器/その他楽器・音響機器	0.418	level2_fallback_l2map	
-5524114011	Musical Instruments/Instrument Accessories/Orchestral Strings Accessories & Parts/Cleaning & Care	5605	楽器・音響機器/その他楽器・音響機器	0.398	level2_fallback_l2map	
-5524115011	Musical Instruments/Instrument Accessories/Orchestral Strings Accessories & Parts/Endpins, Rests & Wheels	5605	楽器・音響機器/その他楽器・音響機器	0.384	level2_fallback_l2map	
 5524116011	Musical Instruments/Instrument Accessories/Orchestral Strings Accessories & Parts/Parts	5605	楽器・音響機器/その他楽器・音響機器	0.415	level2_fallback_l2map	
-5524117011	Musical Instruments/Instrument Accessories/Orchestral Strings Accessories & Parts/Parts/Harp Accessories & Parts	5605	楽器・音響機器/その他楽器・音響機器	0.371	level2_fallback_l2map	
 5524118011	Musical Instruments/Instrument Accessories/Orchestral Strings Accessories & Parts/Rosin	5605	楽器・音響機器/その他楽器・音響機器	0.415	level2_fallback_l2map	
-5524119011	Musical Instruments/Instrument Accessories/Orchestral Strings Accessories & Parts/Shoulder & Chin Rests	5605	楽器・音響機器/その他楽器・音響機器	0.386	level2_fallback_l2map	
-5524120011	Musical Instruments/Instrument Accessories/Orchestral Strings Accessories & Parts/Stands & Hangers	5605	楽器・音響機器/その他楽器・音響機器	0.396	level2_fallback_l2map	
-5524121011	Musical Instruments/Instrument Accessories/Orchestral Strings Accessories & Parts/Stands & Hangers/Harp	5605	楽器・音響機器/その他楽器・音響機器	0.383	level2_fallback_l2map	
 5524122011	Musical Instruments/Instrument Accessories/Orchestral Strings Accessories & Parts/Strings	5605	楽器・音響機器/その他楽器・音響機器	0.413	level2_fallback_l2map	
-5524123011	Musical Instruments/Instrument Accessories/Orchestral Strings Accessories & Parts/Strings/Harp Strings	5605	楽器・音響機器/その他楽器・音響機器	0.384	level2_fallback_l2map	
 5524124011	Musical Instruments/Instrument Accessories/Brass Accessories/Bags & Cases	5605	楽器・音響機器/その他楽器・音響機器	0.453	level2_fallback_l2map	
 5524125011	Musical Instruments/Instrument Accessories/Brass Accessories/Bags & Cases/Alto Horn	5605	楽器・音響機器/その他楽器・音響機器	0.420	level2_fallback_l2map	
 5524126011	Musical Instruments/Instrument Accessories/Brass Accessories/Bags & Cases/Baritone Horn	5605	楽器・音響機器/その他楽器・音響機器	0.411	level2_fallback_l2map	
@@ -1665,7 +1398,6 @@ AmaCatID	AmaPath	WowCatID_candidate	WowPath	score	decision_reason	comment
 5724917011	Sports & Outdoors/Sports/Team Sports/Other Team Sports/Track & Field/Accessories	4009	スポーツ・アウトドア/その他のスポーツ	0.462	level2_fallback_l2map	
 5724918011	Sports & Outdoors/Sports/Team Sports/Other Team Sports/Track & Field/Accessories/Equipment Carts	4009	スポーツ・アウトドア/その他のスポーツ	0.418	level2_fallback_l2map	
 5729150011	Sports & Outdoors/Sports/Team Sports/Other Team Sports/Field Hockey/Player Equipment	4009	スポーツ・アウトドア/その他のスポーツ	0.441	level2_fallback_l2map	
-5729154011	Sports & Outdoors/Sports/Team Sports/Other Team Sports/Field Hockey/Protective Gear/Goalkeeper Helmets	4009	スポーツ・アウトドア/その他のスポーツ	0.398	level2_fallback_l2map	
 5731890011	Sports & Outdoors/Sports/Other Sports/Fencing/Training Equipment	4009	スポーツ・アウトドア/その他のスポーツ	0.512	level2_fallback_l2map	
 5754514011	Musical Instruments/Instrument Accessories/Brass Accessories/Mutes/Sousaphone	5605	楽器・音響機器/その他楽器・音響機器	0.428	level2_fallback_l2map	
 5768574011	Sports & Outdoors/Fan Shop/Bags, Packs & Accessories	4009	スポーツ・アウトドア/その他のスポーツ	0.560	level2_fallback_l2map	
@@ -1744,22 +1476,12 @@ AmaCatID	AmaPath	WowCatID_candidate	WowPath	score	decision_reason	comment
 6469269011	Video Games/Xbox One	371303	ゲーム機・ゲームソフト/Xbox One/Xbox One本体	0.746	level2_fallback_l2map	
 6501422011	Sports & Outdoors/Sports/Skates, Skateboards & Scooters/Inline & Roller Skating/Roller Skate Parts/Laces	4009	スポーツ・アウトドア/その他のスポーツ	0.408	level2_fallback_l2map	
 6501423011	Sports & Outdoors/Sports/Skates, Skateboards & Scooters/Inline & Roller Skating/Roller Skate Parts/Plates	4009	スポーツ・アウトドア/その他のスポーツ	0.406	level2_fallback_l2map	
-6501424011	Sports & Outdoors/Sports/Skates, Skateboards & Scooters/Inline & Roller Skating/Roller Skate Parts/Toe Stops & Plugs	4009	スポーツ・アウトドア/その他のスポーツ	0.389	level2_fallback_l2map	
 6501425011	Sports & Outdoors/Sports/Skates, Skateboards & Scooters/Inline & Roller Skating/Roller Skate Parts/Wheels	4009	スポーツ・アウトドア/その他のスポーツ	0.406	level2_fallback_l2map	
-6501426011	Sports & Outdoors/Sports/Skates, Skateboards & Scooters/Inline & Roller Skating/Roller Skates/Artistic Skates	4009	スポーツ・アウトドア/その他のスポーツ	0.398	level2_fallback_l2map	
 6501427011	Sports & Outdoors/Sports/Skates, Skateboards & Scooters/Inline & Roller Skating/Roller Skates/Jam Skates	4009	スポーツ・アウトドア/その他のスポーツ	0.408	level2_fallback_l2map	
 6501428011	Sports & Outdoors/Sports/Skates, Skateboards & Scooters/Inline & Roller Skating/Roller Skates/Outdoor Skates	4009	スポーツ・アウトドア/その他のスポーツ	0.400	level2_fallback_l2map	
 6501429011	Sports & Outdoors/Sports/Skates, Skateboards & Scooters/Inline & Roller Skating/Roller Skates/Rhythm Skates	4009	スポーツ・アウトドア/その他のスポーツ	0.402	level2_fallback_l2map	
-6501430011	Sports & Outdoors/Sports/Skates, Skateboards & Scooters/Inline & Roller Skating/Roller Skates/Rink & Indoor Skates	4009	スポーツ・アウトドア/その他のスポーツ	0.393	level2_fallback_l2map	
 6501431011	Sports & Outdoors/Sports/Skates, Skateboards & Scooters/Inline & Roller Skating/Roller Skates/Speed Skates	4009	スポーツ・アウトドア/その他のスポーツ	0.404	level2_fallback_l2map	
 6506977011	Grocery & Gourmet Food/Produce	361620	グルメ・食品/野菜・きのこ/レタス	0.718	level2_fallback_l2map	
-6577538011	Electronics/Accessories & Supplies/Cord Management/Floor Cord Covers	5301	家電/その他家電	0.352	level2_fallback_l2map	
-6577540011	Electronics/Accessories & Supplies/Cord Management/Cable Straps	5301	家電/その他家電	0.367	level2_fallback_l2map	
-6577542011	Electronics/Accessories & Supplies/Cord Management/Cable Sleeves	5301	家電/その他家電	0.364	level2_fallback_l2map	
-6577543011	Electronics/Accessories & Supplies/Cord Management/Cable Raceways	5301	家電/その他家電	0.362	level2_fallback_l2map	
-6795231011	Electronics/Accessories & Supplies/Cables/Computer/Mini-SAS Cables	5301	家電/その他家電	0.385	level2_fallback_l2map	
-6795232011	Electronics/Accessories & Supplies/Cables/Computer/Thunderbolt Cables	5301	家電/その他家電	0.377	level2_fallback_l2map	
-6795233011	Electronics/Accessories & Supplies/Cables/Computer/Lightning Cables	5301	家電/その他家電	0.383	level2_fallback_l2map	
 6909234011	Clothing, Shoes & Jewelry/Shoe, Jewelry & Watch Accessories/Watch Accessories/Watch Bands	3001	アクセサリー・ジュエリー/その他アクセサリー・ジュエリー	0.508	level2_fallback_l2map	
 7147440011	Clothing, Shoes & Jewelry/Women	510813	レディースファッション/トップス/パーカー	0.732	level2_fallback_l2map	
 7147441011	Clothing, Shoes & Jewelry/Men	500716	メンズファッション/トップス/ベスト・ジレ	0.706	level2_fallback_l2map	
@@ -1771,7 +1493,6 @@ AmaCatID	AmaPath	WowCatID_candidate	WowPath	score	decision_reason	comment
 7427857011	Sports & Outdoors/Sports/Leisure Sports & Game Room/Billiards & Pool/Tables & Accessories	4009	スポーツ・アウトドア/その他のスポーツ	0.441	level2_fallback_l2map	
 7427858011	Sports & Outdoors/Sports/Leisure Sports & Game Room/Arcade & Table Games	4009	スポーツ・アウトドア/その他のスポーツ	0.504	level2_fallback_l2map	
 7427861011	Sports & Outdoors/Sports/Leisure Sports & Game Room/Outdoor Games & Activities/Trampolines & Accessories	4009	スポーツ・アウトドア/その他のスポーツ	0.420	level2_fallback_l2map	
-7427864011	Sports & Outdoors/Sports/Leisure Sports & Game Room/Billiards & Pool/Cue Sticks & Accessories/Cue Shaft Cleaning & Maintenance	4009	スポーツ・アウトドア/その他のスポーツ	0.371	level2_fallback_l2map	
 7427866011	Sports & Outdoors/Sports/Leisure Sports & Game Room/Billiards & Pool/Tables & Accessories/Parts & Accessories	4009	スポーツ・アウトドア/その他のスポーツ	0.402	level2_fallback_l2map	
 7427884011	Sports & Outdoors/Sports/Leisure Sports & Game Room/Outdoor Games & Activities/Bocce	4009	スポーツ・アウトドア/その他のスポーツ	0.459	level2_fallback_l2map	
 7427886011	Sports & Outdoors/Sports/Leisure Sports & Game Room/Outdoor Games & Activities/Bocce/Accessories & Parts	4009	スポーツ・アウトドア/その他のスポーツ	0.416	level2_fallback_l2map	
@@ -1779,33 +1500,19 @@ AmaCatID	AmaPath	WowCatID_candidate	WowPath	score	decision_reason	comment
 7427890011	Sports & Outdoors/Sports/Leisure Sports & Game Room/Outdoor Games & Activities/Boomerangs	4009	スポーツ・アウトドア/その他のスポーツ	0.446	level2_fallback_l2map	
 7427892011	Sports & Outdoors/Sports/Leisure Sports & Game Room/Outdoor Games & Activities/Toss Games	4009	スポーツ・アウトドア/その他のスポーツ	0.448	level2_fallback_l2map	
 7427894011	Sports & Outdoors/Sports/Leisure Sports & Game Room/Outdoor Games & Activities/Toss Games/Cornhole	4009	スポーツ・アウトドア/その他のスポーツ	0.422	level2_fallback_l2map	
-7427896011	Sports & Outdoors/Sports/Leisure Sports & Game Room/Outdoor Games & Activities/Toss Games/Cornhole/Cornhole Bags	4009	スポーツ・アウトドア/その他のスポーツ	0.393	level2_fallback_l2map	
-7427898011	Sports & Outdoors/Sports/Leisure Sports & Game Room/Outdoor Games & Activities/Toss Games/Cornhole/Cornhole Boards	4009	スポーツ・アウトドア/その他のスポーツ	0.388	level2_fallback_l2map	
-7427900011	Sports & Outdoors/Sports/Leisure Sports & Game Room/Outdoor Games & Activities/Toss Games/Cornhole/Cornhole Sets	4009	スポーツ・アウトドア/その他のスポーツ	0.391	level2_fallback_l2map	
 7427902011	Sports & Outdoors/Sports/Leisure Sports & Game Room/Outdoor Games & Activities/Toss Games/Ladder Ball	4009	スポーツ・アウトドア/その他のスポーツ	0.416	level2_fallback_l2map	
 7427904011	Sports & Outdoors/Sports/Leisure Sports & Game Room/Outdoor Games & Activities/Toss Games/Washers	4009	スポーツ・アウトドア/その他のスポーツ	0.424	level2_fallback_l2map	
 7427908011	Sports & Outdoors/Sports/Leisure Sports & Game Room/Arcade & Table Games/Tabletop Billiards & Pool	4009	スポーツ・アウトドア/その他のスポーツ	0.418	level2_fallback_l2map	
 7427910011	Sports & Outdoors/Sports/Leisure Sports & Game Room/Arcade & Table Games/Tabletop Table Tennis	4009	スポーツ・アウトドア/その他のスポーツ	0.433	level2_fallback_l2map	
 7427916011	Sports & Outdoors/Sports/Leisure Sports & Game Room/Play Sets & Playground Equipment/Play & Swing Sets	4009	スポーツ・アウトドア/その他のスポーツ	0.418	level2_fallback_l2map	
 7427918011	Sports & Outdoors/Sports/Leisure Sports & Game Room/Play Sets & Playground Equipment/Play Set Attachments	4009	スポーツ・アウトドア/その他のスポーツ	0.408	level2_fallback_l2map	
-7427920011	Sports & Outdoors/Sports/Leisure Sports & Game Room/Play Sets & Playground Equipment/Play Set Attachments/Slide Attachments	4009	スポーツ・アウトドア/その他のスポーツ	0.374	level2_fallback_l2map	
-7427922011	Sports & Outdoors/Sports/Leisure Sports & Game Room/Play Sets & Playground Equipment/Play Set Attachments/Climber Attachments	4009	スポーツ・アウトドア/その他のスポーツ	0.371	level2_fallback_l2map	
-7427924011	Sports & Outdoors/Sports/Leisure Sports & Game Room/Play Sets & Playground Equipment/Play Set Attachments/Ring & Trapeze Attachments	4009	スポーツ・アウトドア/その他のスポーツ	0.364	level2_fallback_l2map	
-7427926011	Sports & Outdoors/Sports/Leisure Sports & Game Room/Play Sets & Playground Equipment/Play Set Attachments/Glider Attachments	4009	スポーツ・アウトドア/その他のスポーツ	0.372	level2_fallback_l2map	
 7427928011	Sports & Outdoors/Sports/Leisure Sports & Game Room/Play Sets & Playground Equipment/Parts & Hardware	4009	スポーツ・アウトドア/その他のスポーツ	0.420	level2_fallback_l2map	
 7427930011	Sports & Outdoors/Sports/Leisure Sports & Game Room/Play Sets & Playground Equipment/Freestanding Slides	4009	スポーツ・アウトドア/その他のスポーツ	0.410	level2_fallback_l2map	
 7427932011	Sports & Outdoors/Sports/Leisure Sports & Game Room/Table Tennis/Accessories	4009	スポーツ・アウトドア/その他のスポーツ	0.480	level2_fallback_l2map	
-7427934011	Sports & Outdoors/Sports/Leisure Sports & Game Room/Outdoor Games & Activities/Trampolines & Accessories/Parts & Accessories	4009	スポーツ・アウトドア/その他のスポーツ	0.386	level2_fallback_l2map	
-7427936011	Sports & Outdoors/Sports/Leisure Sports & Game Room/Outdoor Games & Activities/Trampolines & Accessories/Parts & Accessories/Covers	4009	スポーツ・アウトドア/その他のスポーツ	0.372	level2_fallback_l2map	
-7427938011	Sports & Outdoors/Sports/Leisure Sports & Game Room/Outdoor Games & Activities/Trampolines & Accessories/Parts & Accessories/Enclosures	4009	スポーツ・アウトドア/その他のスポーツ	0.367	level2_fallback_l2map	
-7427940011	Sports & Outdoors/Sports/Leisure Sports & Game Room/Outdoor Games & Activities/Trampolines & Accessories/Parts & Accessories/Mats	4009	スポーツ・アウトドア/その他のスポーツ	0.375	level2_fallback_l2map	
-7427942011	Sports & Outdoors/Sports/Leisure Sports & Game Room/Outdoor Games & Activities/Trampolines & Accessories/Parts & Accessories/Pads	4009	スポーツ・アウトドア/その他のスポーツ	0.375	level2_fallback_l2map	
-7427944011	Sports & Outdoors/Sports/Leisure Sports & Game Room/Outdoor Games & Activities/Trampolines & Accessories/Parts & Accessories/Parts	4009	スポーツ・アウトドア/その他のスポーツ	0.374	level2_fallback_l2map	
 7427945011	Sports & Outdoors/Sports/Leisure Sports & Game Room/Bowling/Bags/Bowling Totes	4009	スポーツ・アウトドア/その他のスポーツ	0.465	level2_fallback_l2map	
 7427946011	Sports & Outdoors/Sports/Leisure Sports & Game Room/Bowling/Bags/Bowling Roller Bags	4009	スポーツ・アウトドア/その他のスポーツ	0.451	level2_fallback_l2map	
 7427950011	Sports & Outdoors/Sports/Leisure Sports & Game Room/Play Sets & Playground Equipment/Teeter Totters	4009	スポーツ・アウトドア/その他のスポーツ	0.420	level2_fallback_l2map	
 7427951011	Sports & Outdoors/Sports/Leisure Sports & Game Room/Outdoor Games & Activities/Toss Games/Ring Toss	4009	スポーツ・アウトドア/その他のスポーツ	0.420	level2_fallback_l2map	
-7432792011	Sports & Outdoors/Sports/Leisure Sports & Game Room/Play Sets & Playground Equipment/Play Set Attachments/Swings	4009	スポーツ・アウトドア/その他のスポーツ	0.391	level2_fallback_l2map	
 7439910011	Sports & Outdoors/Sports/Leisure Sports & Game Room/Billiards & Pool/Gloves	4009	スポーツ・アウトドア/その他のスポーツ	0.468	level2_fallback_l2map	
 7454849011	Jewelry/Women/Fine	3009	アクセサリー・ジュエリー/ネックレス	0.660	level2_fallback_l2map	
 7454850011	Jewelry/Women/Fine/Anklets	3009	アクセサリー・ジュエリー/ネックレス	0.576	level2_fallback_l2map	
@@ -1881,8 +1588,6 @@ AmaCatID	AmaPath	WowCatID_candidate	WowPath	score	decision_reason	comment
 7454970011	Jewelry/Novelty & More/Necklaces & Pendants/Pearl Strands	3001	アクセサリー・ジュエリー/その他アクセサリー・ジュエリー	0.421	level2_fallback_l2map	
 7454971011	Jewelry/Novelty & More/Necklaces & Pendants/Pendant Enhancers	3001	アクセサリー・ジュエリー/その他アクセサリー・ジュエリー	0.410	level2_fallback_l2map	
 7454972011	Jewelry/Novelty & More/Necklaces & Pendants/Pendants	3001	アクセサリー・ジュエリー/その他アクセサリー・ジュエリー	0.436	level2_fallback_l2map	
-7454973011	Jewelry/Novelty & More/Necklaces & Pendants/Pendants/Pendant Necklaces	3001	アクセサリー・ジュエリー/その他アクセサリー・ジュエリー	0.384	level2_fallback_l2map	
-7454974011	Jewelry/Novelty & More/Necklaces & Pendants/Pendants/Pendants Only	3001	アクセサリー・ジュエリー/その他アクセサリー・ジュエリー	0.393	level2_fallback_l2map	
 7454975011	Jewelry/Novelty & More/Necklaces & Pendants/Strands	3001	アクセサリー・ジュエリー/その他アクセサリー・ジュエリー	0.439	level2_fallback_l2map	
 7454976011	Jewelry/Novelty & More/Necklaces & Pendants/Torque	3001	アクセサリー・ジュエリー/その他アクセサリー・ジュエリー	0.442	level2_fallback_l2map	
 7454977011	Jewelry/Novelty & More/Necklaces & Pendants/Y-Necklaces	3001	アクセサリー・ジュエリー/その他アクセサリー・ジュエリー	0.427	level2_fallback_l2map	
@@ -1903,20 +1608,14 @@ AmaCatID	AmaPath	WowCatID_candidate	WowPath	score	decision_reason	comment
 7702516011	Sports & Outdoors/Fan Shop/Sports Collectibles/Figurines	4009	スポーツ・アウトドア/その他のスポーツ	0.508	level2_fallback_l2map	
 7941204011	Jewelry/Novelty & More/Wedding & Engagement Rings	3001	アクセサリー・ジュエリー/その他アクセサリー・ジュエリー	0.452	level2_fallback_l2map	
 7941205011	Jewelry/Novelty & More/Wedding & Engagement Rings/Wedding Rings	3001	アクセサリー・ジュエリー/その他アクセサリー・ジュエリー	0.405	level2_fallback_l2map	
-7941210011	Jewelry/Novelty & More/Wedding & Engagement Rings/Engagement Rings	3001	アクセサリー・ジュエリー/その他アクセサリー・ジュエリー	0.398	level2_fallback_l2map	
 7941211011	Jewelry/Novelty & More/Wedding & Engagement Rings/Bridal Sets	3001	アクセサリー・ジュエリー/その他アクセサリー・ジュエリー	0.410	level2_fallback_l2map	
 7941212011	Jewelry/Novelty & More/Wedding & Engagement Rings/Promise Rings	3001	アクセサリー・ジュエリー/その他アクセサリー・ジュエリー	0.405	level2_fallback_l2map	
 8106310011	Tools & Home Improvement/Welding & Soldering	59260314	花・ガーデン・DIY工具/DIY工具/電動工具/サンダー	0.592	level2_fallback_l2map	
-8297370011	Industrial & Scientific/Professional Medical Supplies	520610	医療・介護・医薬品/衛生医療品/綿棒	0.355	level2_fallback_l2map	
-8297371011	Industrial & Scientific/Professional Dental Supplies	520610	医療・介護・医薬品/衛生医療品/綿棒	0.358	level2_fallback_l2map	
 8417290011	Sports & Outdoors/Sports/Other Sports/Equestrian Sports/Arena & Gaming Equipment	4009	スポーツ・アウトドア/その他のスポーツ	0.462	level2_fallback_l2map	
 8417303011	Sports & Outdoors/Sports/Other Sports/Equestrian Sports/Tack/Bridles & Accessories/Headstalls	4009	スポーツ・アウトドア/その他のスポーツ	0.424	level2_fallback_l2map	
 8417305011	Sports & Outdoors/Sports/Other Sports/Equestrian Sports/Tack/Bridles & Accessories/Reins	4009	スポーツ・アウトドア/その他のスポーツ	0.436	level2_fallback_l2map	
 8417306011	Sports & Outdoors/Sports/Other Sports/Equestrian Sports/Tack/Saddles & Accessories	4009	スポーツ・アウトドア/その他のスポーツ	0.456	level2_fallback_l2map	
 8417307011	Sports & Outdoors/Sports/Other Sports/Equestrian Sports/Tack/Saddles & Accessories/Saddle Blankets & Pads	4009	スポーツ・アウトドア/その他のスポーツ	0.404	level2_fallback_l2map	
-8417309011	Sports & Outdoors/Sports/Other Sports/Equestrian Sports/Tack/Saddles & Accessories/Saddle Blankets & Pads/Saddle Blankets	4009	スポーツ・アウトドア/その他のスポーツ	0.374	level2_fallback_l2map	
-8417310011	Sports & Outdoors/Sports/Other Sports/Equestrian Sports/Tack/Saddles & Accessories/Breastplates, Breast Collars & Martingales	4009	スポーツ・アウトドア/その他のスポーツ	0.372	level2_fallback_l2map	
-8417312011	Sports & Outdoors/Sports/Other Sports/Equestrian Sports/Tack/Saddles & Accessories/Breastplates, Breast Collars & Martingales/Breast Collars	4009	スポーツ・アウトドア/その他のスポーツ	0.350	level2_fallback_l2map	
 8417314011	Sports & Outdoors/Sports/Other Sports/Equestrian Sports/Tack/Longeing Equipment	4009	スポーツ・アウトドア/その他のスポーツ	0.454	level2_fallback_l2map	
 8417316011	Sports & Outdoors/Sports/Other Sports/Equestrian Sports/Tack/Pack Equipment	4009	スポーツ・アウトドア/その他のスポーツ	0.465	level2_fallback_l2map	
 8498884011	Industrial & Scientific/Robotics	420203	ダイエット・健康/サプリメント/ダイエット	0.406	level2_fallback	
@@ -1924,10 +1623,7 @@ AmaCatID	AmaPath	WowCatID_candidate	WowPath	score	decision_reason	comment
 8615538011	Industrial & Scientific/Retail Store Fixtures & Equipment	59260608	花・ガーデン・DIY工具/DIY工具/ネジ・ボルト・素材/釘・鋲・かすがい	0.455	level2_fallback_l2map	
 8622234011	Health & Household/Funeral	420203	ダイエット・健康/サプリメント/ダイエット	0.598	level2_fallback_l2map	
 8882485011	Musical Instruments/Instrument Accessories/General Accessories/Conducting Batons	5605	楽器・音響機器/その他楽器・音響機器	0.425	level2_fallback_l2map	
-8882489011	Electronics/Accessories & Supplies/Microphones/Microphones	5301	家電/その他家電	0.384	level2_fallback_l2map	
-8882490011	Electronics/Accessories & Supplies/Microphones/Accessories	5301	家電/その他家電	0.390	level2_fallback_l2map	
 8957827011	Musical Instruments/Instrument Accessories/Guitar & Bass Accessories/Pedal Boards & Cases	5605	楽器・音響機器/その他楽器・音響機器	0.413	level2_fallback_l2map	
-8975347011	Books/Education & Teaching	552107	本・コミック・雑誌/教育・学参・受験/幼児教育	0.643	level2_fallback_l2map	
 8975615011	Clothing, Shoes & Jewelry/Shoe, Jewelry & Watch Accessories/Jewelry Accessories/Loose Gemstones	3001	アクセサリー・ジュエリー/その他アクセサリー・ジュエリー	0.491	level2_fallback_l2map	
 9430228011	Sports & Outdoors/Fan Shop/Sports Collectibles/Trading Cards/Single Cards	4009	スポーツ・アウトドア/その他のスポーツ	0.448	level2_fallback_l2map	
 9430229011	Sports & Outdoors/Fan Shop/Sports Collectibles/Trading Cards/Single Cards/Base Singles	4009	スポーツ・アウトドア/その他のスポーツ	0.414	level2_fallback_l2map	
@@ -1949,7 +1645,7 @@ AmaCatID	AmaPath	WowCatID_candidate	WowPath	score	decision_reason	comment
 9433253011	Sports & Outdoors/Sports/Other Sports/Equestrian Sports/Crops, Whips & Spurs/Spurs	4009	スポーツ・アウトドア/その他のスポーツ	0.454	level2_fallback_l2map	
 9433274011	Sports & Outdoors/Sports/Other Sports/Equestrian Sports/Tack/Halters & Leads/Halters	4009	スポーツ・アウトドア/その他のスポーツ	0.441	level2_fallback_l2map	
 9433287011	Sports & Outdoors/Sports/Other Sports/Equestrian Sports/Tack/Halters & Leads/Leads	4009	スポーツ・アウトドア/その他のスポーツ	0.446	level2_fallback_l2map	
-9479199011	Clothing, Shoes & Jewelry/Luggage & Travel Gear	501313	メンズファッション/靴・シューズ/ローファー	0.737	level2_fallback_l2map	
+9479199011	Clothing, Shoes & Jewelry/Luggage & Travel Gear	450310	バッグ・財布・ファッション小物/バッグ/トートバッグ	0.466	level2_fallback_l2map	
 9502184011	Sports & Outdoors/Fan Shop/Sports Collectibles/Trading Cards/Sets/Promo Sets	4009	スポーツ・アウトドア/その他のスポーツ	0.436	level2_fallback_l2map	
 9523407011	Jewelry/Women/Religious	3009	アクセサリー・ジュエリー/ネックレス	0.614	level2_fallback_l2map	
 9523409011	Jewelry/Girls/Religious	3001	アクセサリー・ジュエリー/その他アクセサリー・ジュエリー	0.556	level2_fallback_l2map	
@@ -1966,7 +1662,6 @@ AmaCatID	AmaPath	WowCatID_candidate	WowPath	score	decision_reason	comment
 9523420011	Jewelry/Women/Religious/Brooches & Pins	3009	アクセサリー・ジュエリー/ネックレス	0.511	level2_fallback_l2map	
 9523421011	Jewelry/Women/Religious/Charms & Charm Bracelets	3009	アクセサリー・ジュエリー/ネックレス	0.496	level2_fallback_l2map	
 9523422011	Jewelry/Women/Religious/Charms & Charm Bracelets/Charm Bracelets	3009	アクセサリー・ジュエリー/ネックレス	0.433	level2_fallback_l2map	
-9523423011	Jewelry/Women/Religious/Charms & Charm Bracelets/Charm Bracelets/Italian Style	3009	アクセサリー・ジュエリー/ネックレス	0.393	level2_fallback_l2map	
 9523424011	Jewelry/Women/Religious/Charms & Charm Bracelets/Charm Bracelets/Link	3009	アクセサリー・ジュエリー/ネックレス	0.414	level2_fallback_l2map	
 9523425011	Jewelry/Women/Religious/Charms & Charm Bracelets/Charm Bracelets/Snake	3009	アクセサリー・ジュエリー/ネックレス	0.412	level2_fallback_l2map	
 9523426011	Jewelry/Women/Religious/Charms & Charm Bracelets/Charms	3009	アクセサリー・ジュエリー/ネックレス	0.461	level2_fallback_l2map	
@@ -1998,9 +1693,6 @@ AmaCatID	AmaPath	WowCatID_candidate	WowPath	score	decision_reason	comment
 9523469011	Jewelry/Girls/Religious/Brooches & Pins	3001	アクセサリー・ジュエリー/その他アクセサリー・ジュエリー	0.500	level2_fallback_l2map	
 9523470011	Jewelry/Girls/Religious/Charms & Charm Bracelets	3001	アクセサリー・ジュエリー/その他アクセサリー・ジュエリー	0.465	level2_fallback_l2map	
 9523471011	Jewelry/Girls/Religious/Charms & Charm Bracelets/Charm Bracelets	3001	アクセサリー・ジュエリー/その他アクセサリー・ジュエリー	0.412	level2_fallback_l2map	
-9523472011	Jewelry/Girls/Religious/Charms & Charm Bracelets/Charm Bracelets/Italian Style	3001	アクセサリー・ジュエリー/その他アクセサリー・ジュエリー	0.394	level2_fallback_l2map	
-9523473011	Jewelry/Girls/Religious/Charms & Charm Bracelets/Charm Bracelets/Link	3001	アクセサリー・ジュエリー/その他アクセサリー・ジュエリー	0.396	level2_fallback_l2map	
-9523474011	Jewelry/Girls/Religious/Charms & Charm Bracelets/Charm Bracelets/Snake	3001	アクセサリー・ジュエリー/その他アクセサリー・ジュエリー	0.393	level2_fallback_l2map	
 9523475011	Jewelry/Girls/Religious/Charms & Charm Bracelets/Charms	3001	アクセサリー・ジュエリー/その他アクセサリー・ジュエリー	0.436	level2_fallback_l2map	
 9523476011	Jewelry/Girls/Religious/Charms & Charm Bracelets/Charms/Bead	3001	アクセサリー・ジュエリー/その他アクセサリー・ジュエリー	0.417	level2_fallback_l2map	
 9523477011	Jewelry/Girls/Religious/Charms & Charm Bracelets/Charms/Clasp	3001	アクセサリー・ジュエリー/その他アクセサリー・ジュエリー	0.414	level2_fallback_l2map	
@@ -2010,7 +1702,6 @@ AmaCatID	AmaPath	WowCatID_candidate	WowPath	score	decision_reason	comment
 9523481011	Jewelry/Girls/Religious/Necklaces & Pendants/Chains	3001	アクセサリー・ジュエリー/その他アクセサリー・ジュエリー	0.430	level2_fallback_l2map	
 9523482011	Jewelry/Girls/Religious/Necklaces & Pendants/Lockets	3001	アクセサリー・ジュエリー/その他アクセサリー・ジュエリー	0.424	level2_fallback_l2map	
 9523483011	Jewelry/Girls/Religious/Necklaces & Pendants/Pendants	3001	アクセサリー・ジュエリー/その他アクセサリー・ジュエリー	0.421	level2_fallback_l2map	
-9523484011	Jewelry/Girls/Religious/Necklaces & Pendants/Pendants/Pendant Necklaces	3001	アクセサリー・ジュエリー/その他アクセサリー・ジュエリー	0.374	level2_fallback_l2map	
 9523485011	Jewelry/Girls/Religious/Necklaces & Pendants/Pendants/Pendants Only	3001	アクセサリー・ジュエリー/その他アクセサリー・ジュエリー	0.400	level2_fallback_l2map	
 9523486011	Jewelry/Girls/Religious/Necklaces & Pendants/Strands	3001	アクセサリー・ジュエリー/その他アクセサリー・ジュエリー	0.445	level2_fallback_l2map	
 9523487011	Jewelry/Girls/Religious/Rings	3001	アクセサリー・ジュエリー/その他アクセサリー・ジュエリー	0.539	level2_fallback_l2map	
@@ -2037,14 +1728,10 @@ AmaCatID	AmaPath	WowCatID_candidate	WowPath	score	decision_reason	comment
 9938303011	Sports & Outdoors/Fan Shop/Clothing/Baby Clothing/Underwear	4009	スポーツ・アウトドア/その他のスポーツ	0.490	level2_fallback_l2map	
 9938304011	Sports & Outdoors/Fan Shop/Clothing/Baby Clothing/Booties & Socks	4009	スポーツ・アウトドア/その他のスポーツ	0.477	level2_fallback_l2map	
 9938306011	Sports & Outdoors/Fan Shop/Clothing/Baby Clothing/Hats	4009	スポーツ・アウトドア/その他のスポーツ	0.508	level2_fallback_l2map	
-9938477011	Electronics/Accessories & Supplies/Cables/Computer/Ethernet Cables/Cat 5e Cables	5301	家電/その他家電	0.350	level2_fallback_l2map	
-9938478011	Electronics/Accessories & Supplies/Cables/Computer/Ethernet Cables/Cat 6 Cables	5301	家電/その他家電	0.352	level2_fallback_l2map	
-9938479011	Electronics/Accessories & Supplies/Cables/Computer/Ethernet Cables/Cat 7 Cables	5301	家電/その他家電	0.352	level2_fallback_l2map	
 10048700011	Electronics/Wearable Technology	410402	スマホ・タブレット・モバイル通信/ウェアラブルデバイス/スマートウォッチ	0.432	level2_fallback_l2map	
 10079992011	Health & Household/Oral Care	420402	ダイエット・健康/デンタルケア/タン（舌）クリーナー	0.591	level2_fallback_l2map	
 10079994011	Health & Household/Vision	420203	ダイエット・健康/サプリメント/ダイエット	0.606	level2_fallback_l2map	
 10079996011	Health & Household/Wellness & Relaxation	420507	ダイエット・健康/リラックス・マッサージ用品/岩盤浴	0.432	level2_fallback_l2map	
-10677101011	Electronics/Accessories & Supplies/Microphones/Accessories/Mounts	5301	家電/その他家電	0.364	level2_fallback_l2map	
 10773802011	Industrial & Scientific/Commercial Door Products	59270209	花・ガーデン・DIY工具/建築・住宅・設備/建築・住宅資材/木材	0.409	level2_fallback_l2map	
 11051398011	Sports & Outdoors/Sports/Skates, Skateboards & Scooters	4009	スポーツ・アウトドア/その他のスポーツ	0.580	level2_fallback_l2map	
 12118748011	Sports & Outdoors/Sports/Team Sports/Basketball/Accessories/Basketball Storage	4009	スポーツ・アウトドア/その他のスポーツ	0.462	level2_fallback_l2map	
@@ -2052,7 +1739,6 @@ AmaCatID	AmaPath	WowCatID_candidate	WowPath	score	decision_reason	comment
 12119317011	Sports & Outdoors/Sports/Team Sports/Football/Protective Gear/Protective Padding	4009	スポーツ・アウトドア/その他のスポーツ	0.451	level2_fallback_l2map	
 12119414011	Sports & Outdoors/Sports/Team Sports/Sports Training	4009	スポーツ・アウトドア/その他のスポーツ	0.575	level2_fallback_l2map	
 12119428011	Sports & Outdoors/Sports/Team Sports/Other Team Sports	4009	スポーツ・アウトドア/その他のスポーツ	0.560	level2_fallback_l2map	
-13130175011	Sports & Outdoors/Sports/Skates, Skateboards & Scooters/Scooters & Equipment/Scooters/Carving & Caster Scooters	4009	スポーツ・アウトドア/その他のスポーツ	0.398	level2_fallback_l2map	
 13130176011	Sports & Outdoors/Sports/Skates, Skateboards & Scooters/Scooters & Equipment/Self Balancing Scooters	4009	スポーツ・アウトドア/その他のスポーツ	0.420	level2_fallback_l2map	
 13130177011	Sports & Outdoors/Sports/Skates, Skateboards & Scooters/Scooters & Equipment/Scooters/Stunt Scooters	4009	スポーツ・アウトドア/その他のスポーツ	0.416	level2_fallback_l2map	
 13227293011	Sports & Outdoors/Fan Shop/Electronics/Tablet Accessories	4009	スポーツ・アウトドア/その他のスポーツ	0.512	level2_fallback_l2map	
@@ -2060,18 +1746,10 @@ AmaCatID	AmaPath	WowCatID_candidate	WowPath	score	decision_reason	comment
 14670123011	Video Games/PC/Virtual Reality	3705	ゲーム機・ゲームソフト/PCゲーム	0.489	level2_fallback_l2map	
 14670124011	Video Games/PC/Virtual Reality/Cameras	3705	ゲーム機・ゲームソフト/PCゲーム	0.444	level2_fallback_l2map	
 14670125011	Video Games/PC/Virtual Reality/Controllers	3705	ゲーム機・ゲームソフト/PCゲーム	0.424	level2_fallback_l2map	
-14670127011	Video Games/PC/Virtual Reality/Motion Tracking Sensors	3705	ゲーム機・ゲームソフト/PCゲーム	0.385	level2_fallback_l2map	
 14733114011	Musical Instruments/Ukuleles, Mandolins & Banjos	563209	楽器・音響機器/弦楽器/マンドリン	0.718	level2_fallback_l2map	
 15701146011	Video Games/PC/Virtual Reality/Accessories	3705	ゲーム機・ゲームソフト/PCゲーム	0.432	level2_fallback_l2map	
-15701147011	Video Games/PC/Virtual Reality/Accessories/Audio Headsets	3705	ゲーム機・ゲームソフト/PCゲーム	0.377	level2_fallback_l2map	
-15701148011	Video Games/PC/Virtual Reality/Accessories/Cases & Storage	3705	ゲーム機・ゲームソフト/PCゲーム	0.380	level2_fallback_l2map	
-15701149011	Video Games/PC/Virtual Reality/Accessories/Chargers	3705	ゲーム機・ゲームソフト/PCゲーム	0.397	level2_fallback_l2map	
-16184244011	Sports & Outdoors/Sports/Leisure Sports & Game Room/Play Sets & Playground Equipment/Playground Fitness Equipment	4009	スポーツ・アウトドア/その他のスポーツ	0.393	level2_fallback_l2map	
 16510975011	Home & Kitchen/Lighting & Ceiling Fans	311305	インテリア・寝具/ライト・照明/フットライト	0.675	level2_fallback_l2map	
-17506666011	Sports & Outdoors/Sports/Team Sports/Other Team Sports/Rugby/Protective Gear/Rugby Shoulder Protectors	4009	スポーツ・アウトドア/その他のスポーツ	0.398	level2_fallback_l2map	
 17596052011	Video Games/Online Game Services	370303	ゲーム機・ゲームソフト/Nintendo DS/Nintendo DS本体	0.453	level2_fallback	
-17854127011	Electronics/Accessories & Supplies/Power Strips & Surge Protectors	5301	家電/その他家電	0.372	level2_fallback_l2map	
-18022313011	Electronics/Accessories & Supplies/Cell Phone Accessories/Finders	5301	家電/その他家電	0.357	level2_fallback_l2map	
 18746931011	Industrial & Scientific/Digital Signage	420203	ダイエット・健康/サプリメント/ダイエット	0.423	level2_fallback	
 18773724011	Grocery & Gourmet Food/Deli & Prepared Foods	360907	グルメ・食品/惣菜・食材/レトルト食品	0.715	level2_fallback_l2map	
 18787303011	Grocery & Gourmet Food/Pantry Staples	36091506	グルメ・食品/惣菜・食材/洋風惣菜/シチュー	0.740	level2_fallback_l2map	
@@ -2094,15 +1772,7 @@ AmaCatID	AmaPath	WowCatID_candidate	WowPath	score	decision_reason	comment
 19633506011	Sports & Outdoors/Sports/Leisure Sports & Game Room/Arcade & Table Games/Drinking Games	4009	スポーツ・アウトドア/その他のスポーツ	0.454	level2_fallback_l2map	
 19651225011	Sports & Outdoors/Sports/Other Sports/Martial Arts/Training Equipment/Dummies	4009	スポーツ・アウトドア/その他のスポーツ	0.462	level2_fallback_l2map	
 19651227011	Sports & Outdoors/Sports/Other Sports/Martial Arts/Training Equipment/Target Boards	4009	スポーツ・アウトドア/その他のスポーツ	0.446	level2_fallback_l2map	
-21209098011	Electronics/Accessories & Supplies/Cell Phone Accessories/Grips	5301	家電/その他家電	0.362	level2_fallback_l2map	
-21209101011	Electronics/Accessories & Supplies/Cell Phone Accessories/Décor	5301	家電/その他家電	0.362	level2_fallback_l2map	
-21209105011	Electronics/Accessories & Supplies/Cell Phone Accessories/Maintenance, Upkeep & Repairs	5301	家電/その他家電	0.358	level2_fallback_l2map	
-21209108011	Electronics/Accessories & Supplies/Cell Phone Accessories/Projectors	5301	家電/その他家電	0.350	level2_fallback_l2map	
-21209121011	Electronics/Accessories & Supplies/Cell Phone Accessories/Maintenance, Upkeep & Repairs/Repair Kits	5301	家電/その他家電	0.350	level2_fallback_l2map	
 21361922011	Sports & Outdoors/Sports/Leisure Sports & Game Room/Play Sets & Playground Equipment/Zipline Kits	4009	スポーツ・アウトドア/その他のスポーツ	0.424	level2_fallback_l2map	
-21381608011	Clothing, Shoes & Jewelry/Shoe, Jewelry & Watch Accessories/Shoe Care & Accessories/Shoe Care Treatments & Dyes/Shoe Treatments & Polishes/Water & Stain Treatments	3001	アクセサリー・ジュエリー/その他アクセサリー・ジュエリー	0.374	level2_fallback_l2map	
-21381609011	Clothing, Shoes & Jewelry/Shoe, Jewelry & Watch Accessories/Shoe Care & Accessories/Shoe Care Treatments & Dyes/Shoe Treatments & Polishes/Shoe Polishes	3001	アクセサリー・ジュエリー/その他アクセサリー・ジュエリー	0.384	level2_fallback_l2map	
-21381610011	Clothing, Shoes & Jewelry/Shoe, Jewelry & Watch Accessories/Shoe Care & Accessories/Shoe Care Treatments & Dyes/Shoe Treatments & Polishes/Shoe Cleaners	3001	アクセサリー・ジュエリー/その他アクセサリー・ジュエリー	0.384	level2_fallback_l2map	
 21393082011	Sports & Outdoors/Sports/Golf/Golf Carts/Electric Golf Carts	4009	スポーツ・アウトドア/その他のスポーツ	0.524	level2_fallback_l2map	
 21393083011	Sports & Outdoors/Sports/Golf/Golf Carts/Push & Pull Carts	4009	スポーツ・アウトドア/その他のスポーツ	0.541	level2_fallback_l2map	
 21422602011	Sports & Outdoors/Fan Shop/Golf Store/Golf Equipment/Golf Tees	4009	スポーツ・アウトドア/その他のスポーツ	0.480	level2_fallback_l2map	
@@ -2135,48 +1805,22 @@ AmaCatID	AmaPath	WowCatID_candidate	WowPath	score	decision_reason	comment
 23479402011	Sports & Outdoors/Sports/Other Sports/Martial Arts/Mixed Martial Arts	4009	スポーツ・アウトドア/その他のスポーツ	0.490	level2_fallback_l2map	
 23539911011	Toys & Games/Vehicles	2910	おもちゃ・趣味/ステッカー	0.700	level2_fallback_l2map	
 23539912011	Arts, Crafts & Sewing/Model & Hobby Building	29280509	おもちゃ・趣味/模型・プラモデル/ミニ四駆/ベアリング	0.522	level2_fallback_l2map	
-23573568011	Musical Instruments/Instrument Accessories/Guitar & Bass Accessories/Stands, Hangers & Racks/Hangers	5605	楽器・音響機器/その他楽器・音響機器	0.388	level2_fallback_l2map	
-23573569011	Musical Instruments/Instrument Accessories/Guitar & Bass Accessories/Stands, Hangers & Racks/Racks	5605	楽器・音響機器/その他楽器・音響機器	0.392	level2_fallback_l2map	
-23573570011	Musical Instruments/Instrument Accessories/Guitar & Bass Accessories/Stands, Hangers & Racks/Stands	5605	楽器・音響機器/その他楽器・音響機器	0.390	level2_fallback_l2map	
-23573571011	Musical Instruments/Instrument Accessories/Guitar & Bass Accessories/Stands, Hangers & Racks/Hangers/Single	5605	楽器・音響機器/その他楽器・音響機器	0.372	level2_fallback_l2map	
-23573572011	Musical Instruments/Instrument Accessories/Guitar & Bass Accessories/Stands, Hangers & Racks/Hangers/Multiple	5605	楽器・音響機器/その他楽器・音響機器	0.369	level2_fallback_l2map	
-23573573011	Musical Instruments/Instrument Accessories/Guitar & Bass Accessories/Stands, Hangers & Racks/Stands/Single	5605	楽器・音響機器/その他楽器・音響機器	0.374	level2_fallback_l2map	
-23573574011	Musical Instruments/Instrument Accessories/Guitar & Bass Accessories/Stands, Hangers & Racks/Stands/Multiple	5605	楽器・音響機器/その他楽器・音響機器	0.371	level2_fallback_l2map	
-23573575011	Musical Instruments/Instrument Accessories/Orchestral Strings Accessories & Parts/Stands & Hangers/Upright Bass/Stands	5605	楽器・音響機器/その他楽器・音響機器	0.355	level2_fallback_l2map	
-23573576011	Musical Instruments/Instrument Accessories/Orchestral Strings Accessories & Parts/Stands & Hangers/Upright Bass/Racks	5605	楽器・音響機器/その他楽器・音響機器	0.357	level2_fallback_l2map	
-23573577011	Musical Instruments/Instrument Accessories/Orchestral Strings Accessories & Parts/Stands & Hangers/Upright Bass/Hangers	5605	楽器・音響機器/その他楽器・音響機器	0.354	level2_fallback_l2map	
-23573578011	Musical Instruments/Instrument Accessories/Orchestral Strings Accessories & Parts/Stands & Hangers/Viola/Hangers	5605	楽器・音響機器/その他楽器・音響機器	0.364	level2_fallback_l2map	
-23573579011	Musical Instruments/Instrument Accessories/Orchestral Strings Accessories & Parts/Stands & Hangers/Viola/Stands	5605	楽器・音響機器/その他楽器・音響機器	0.366	level2_fallback_l2map	
-23573580011	Musical Instruments/Instrument Accessories/Orchestral Strings Accessories & Parts/Stands & Hangers/Viola/Racks	5605	楽器・音響機器/その他楽器・音響機器	0.367	level2_fallback_l2map	
-23573581011	Musical Instruments/Instrument Accessories/Orchestral Strings Accessories & Parts/Stands & Hangers/Violin/Stands	5605	楽器・音響機器/その他楽器・音響機器	0.364	level2_fallback_l2map	
-23573582011	Musical Instruments/Instrument Accessories/Orchestral Strings Accessories & Parts/Stands & Hangers/Violin/Racks	5605	楽器・音響機器/その他楽器・音響機器	0.366	level2_fallback_l2map	
-23573583011	Musical Instruments/Instrument Accessories/Orchestral Strings Accessories & Parts/Stands & Hangers/Violin/Hangers	5605	楽器・音響機器/その他楽器・音響機器	0.363	level2_fallback_l2map	
-23573584011	Musical Instruments/Instrument Accessories/Orchestral Strings Accessories & Parts/Stands & Hangers/Cello/Hangers	5605	楽器・音響機器/その他楽器・音響機器	0.364	level2_fallback_l2map	
-23573585011	Musical Instruments/Instrument Accessories/Orchestral Strings Accessories & Parts/Stands & Hangers/Cello/Stands	5605	楽器・音響機器/その他楽器・音響機器	0.366	level2_fallback_l2map	
-23573586011	Musical Instruments/Instrument Accessories/Orchestral Strings Accessories & Parts/Stands & Hangers/Cello/Racks	5605	楽器・音響機器/その他楽器・音響機器	0.367	level2_fallback_l2map	
 23575622011	Sports & Outdoors/Sports/Golf/Training Equipment/Net Systems	4009	スポーツ・アウトドア/その他のスポーツ	0.528	level2_fallback_l2map	
 23575625011	Sports & Outdoors/Sports/Team Sports/Other Team Sports/Roller Hockey/Goals	4009	スポーツ・アウトドア/その他のスポーツ	0.468	level2_fallback_l2map	
 23575626011	Sports & Outdoors/Sports/Team Sports/Baseball/Training Equipment/Net Systems	4009	スポーツ・アウトドア/その他のスポーツ	0.465	level2_fallback_l2map	
-23575629011	Clothing, Shoes & Jewelry/Sport Specific Clothing	402306	スポーツ・アウトドア/スポーツウェア/リストバンド	0.385	level2_fallback_l2map	
 23621709011	Sports & Outdoors/Sports/Netball/Team Practice Vests	4009	スポーツ・アウトドア/その他のスポーツ	0.570	level2_fallback_l2map	
 23654327011	Sports & Outdoors/Sports/Skates, Skateboards & Scooters/Skateboarding/Skateboards & Caster Boards	4009	スポーツ・アウトドア/その他のスポーツ	0.426	level2_fallback_l2map	
 23654328011	Sports & Outdoors/Sports/Skates, Skateboards & Scooters/Skateboarding/Accessories	4009	スポーツ・アウトドア/その他のスポーツ	0.468	level2_fallback_l2map	
 23675621011	Health & Household/Vitamins, Minerals & Supplements	420207	ダイエット・健康/サプリメント/美容	0.663	level2_fallback_l2map	
-23690035011	Electronics/Accessories & Supplies/Cell Phone Accessories/Mounts	5301	家電/その他家電	0.359	level2_fallback_l2map	
-23690036011	Electronics/Accessories & Supplies/Cell Phone Accessories/Stands	5301	家電/その他家電	0.359	level2_fallback_l2map	
 23722648011	Sports & Outdoors/Sports/Airsoft/Gun Support	4009	スポーツ・アウトドア/その他のスポーツ	0.616	level2_fallback_l2map	
 23722649011	Sports & Outdoors/Sports/Airsoft/Gun Support/Tripods	4009	スポーツ・アウトドア/その他のスポーツ	0.560	level2_fallback_l2map	
 23722650011	Sports & Outdoors/Sports/Airsoft/Gun Support/Bipods	4009	スポーツ・アウトドア/その他のスポーツ	0.565	level2_fallback_l2map	
 23722651011	Sports & Outdoors/Sports/Airsoft/Gun Support/Monopods	4009	スポーツ・アウトドア/その他のスポーツ	0.555	level2_fallback_l2map	
-23732927011	Electronics/Accessories & Supplies/Cables/Computer/Flat Ribbon Cables	5301	家電/その他家電	0.377	level2_fallback_l2map	
-23759921011	Grocery & Gourmet Food/Snacks & Sweets	390806	スイーツ・お菓子/スナック菓子・駄菓子/ラムネ	0.356	level2_fallback_l2map	
 23901057011	Sports & Outdoors/Sports/Team Sports/Other Team Sports/Cricket/Cricket Catching Mitts	4009	スポーツ・アウトドア/その他のスポーツ	0.438	level2_fallback_l2map	
 23901058011	Sports & Outdoors/Sports/Team Sports/Other Team Sports/Cricket/Cricket Gloves	4009	スポーツ・アウトドア/その他のスポーツ	0.459	level2_fallback_l2map	
 23901059011	Sports & Outdoors/Sports/Team Sports/Other Team Sports/Cricket/Cricket Gloves/Inner Gloves	4009	スポーツ・アウトドア/その他のスポーツ	0.422	level2_fallback_l2map	
 23979672011	Musical Instruments/Instrument Accessories/General Accessories/Staff Paper Notebooks	5605	楽器・音響機器/その他楽器・音響機器	0.415	level2_fallback_l2map	
 37222968011	Musical Instruments/Amplifiers & Effects/Guitar & Bass Amplifiers & Preamps/Electric Guitar Amplifiers & Preamps/Headphone Amps	5626	楽器・音響機器/エフェクター	0.415	level2_fallback_l2map	
-37222969011	Musical Instruments/Instrument Accessories/Drum & Percussion Accessories/Hardware/Percussion Tables	5605	楽器・音響機器/その他楽器・音響機器	0.374	level2_fallback_l2map	
-37222998011	Musical Instruments/Instrument Accessories/Drum & Percussion Accessories/Drum Stools	5605	楽器・音響機器/その他楽器・音響機器	0.394	level2_fallback_l2map	
 37223004011	Musical Instruments/Amplifiers & Effects/Guitar Effects/Electric Guitar Effects/Modulation Effects	5626	楽器・音響機器/エフェクター	0.463	level2_fallback_l2map	
 37223005011	Musical Instruments/Amplifiers & Effects/Guitar Effects/Bass Guitar Effects/Modulation Effects	5626	楽器・音響機器/エフェクター	0.473	level2_fallback_l2map	
 37223006011	Musical Instruments/Amplifiers & Effects/Guitar Effects/Electric Guitar Effects/Modulation Effects/Flanger	5626	楽器・音響機器/エフェクター	0.440	level2_fallback_l2map	
@@ -2186,4 +1830,3 @@ AmaCatID	AmaPath	WowCatID_candidate	WowPath	score	decision_reason	comment
 81368238011	Sports & Outdoors/Sports/Team Sports/Basketball/Court Equipment/Basketball Hoops & Goals/Roof-Mounted	4009	スポーツ・アウトドア/その他のスポーツ	0.404	level2_fallback_l2map	
 105753432011	Sports & Outdoors/Sports/Team Handball/Team Handball Balls	4009	スポーツ・アウトドア/その他のスポーツ	0.541	level2_fallback_l2map	
 120387867011	Video Games/Handheld Game Systems	370303	ゲーム機・ゲームソフト/Nintendo DS/Nintendo DS本体	0.447	level2_fallback	
-203593555011	Electronics/Accessories & Supplies/Cables/Computer/DisplayPort Cables	5301	家電/その他家電	0.377	level2_fallback_l2map	

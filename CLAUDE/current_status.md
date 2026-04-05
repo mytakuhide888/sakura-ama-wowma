@@ -1,6 +1,6 @@
 # sakura-ama-wowma 現在の進捗状況
 
-最終更新: 2026-03-24
+最終更新: 2026-03-25 (Phase 25)
 
 ---
 
@@ -16,18 +16,52 @@
 
 ---
 
-## 2. 完了した作業（Phase 1〜8）
+## 2. 完了した作業（Phase 1〜25）
 
-### 最終実績（Phase 3検証時点の実測値）
+### 最終実績（Phase 25完了）
 
-| 指標 | 改善前 | Phase 3後（実測） | 2026-03-24現在 |
-|------|-------|------------------|----------------|
-| auto | 0件 | **4,911件** | **7,666件** |
-| review | 3,304件 | 14,349件 | 16,431件 |
-| review_level2 | 215件 | 2,139件 | 2,188件 |
-| auto rate | 0% | **22.9%** | **〜29%** |
+| 指標 | 改善前 | Phase 11 | Phase 23 | **Phase 25** |
+|------|-------|---------|----------|-------------|
+| auto | 0件 | 6,255件 | 18,597件 | **19,616件** |
+| review | 3,304件 | 13,359件 | 1,018件 | **0件** ✓ |
+| review_level2 | 215件 | 1,832件 | 1,832件 | 1,830件 |
 
-> 2026-03-24: synonymsバグ修正・追加とコード改善でさらに+1,005件達成（6,661→7,666件）
+> **Phase 25 (2026-03-25)**: **review=0件達成**。level_1_cat.txtにコンタクトレンズ・カラコン追加、level_3_cat.txtに残余77件対応エントリ追加（VR/PS5/Gift Wrap/GPS/Bass Guitars/Wall Art/Industrial/Pet/Health等）。
+
+> **Phase 24 (2026-03-25)**: 大規模level3_cat拡張（~343行追加）。Video Games/Software/Office/Arts/Home/Tools等全カテゴリ対応。auto +941件、review 1,018→77件。
+
+> **Phase 12-23 (2026-03-25)**: sonota_l3fallbackメカニズム実装、level3_cat.txt大規模拡張。review 13,359→1,018件。
+
+> **Phase 11 (2026-03-25)**: level3_map拡張（Sport Specific Clothing 30種目+Pantry Staples 12食品L3）。+1,333件がreview→autoに昇格。
+
+### Phase 10 (2026-03-25) 実施内容
+| 変更 | 内容 | 効果 |
+|------|------|------|
+| level_4_cat.txt 新規作成 | Women/Clothing 18件, Men/Clothing 16件 L4→Wowma L2マッピング | review→auto +309件 |
+| level_1_cat.txt 修正 | Clothingにインナー・ルームウェア/スポーツ・アウトドア追加 | Active/Lingerie等の候補が正しく絞られる |
+| match_categories.py | load_level4_map(), level4優先チェック, score<review_thresholdでもsonota_l3fallback適用 | Women/Men Clothing 311件が正確に分類 |
+
+**主な分類結果（Women/Men Clothing 311件）**:
+- Active(72件) → スポーツ・アウトドア/スポーツウェア/その他スポーツウェア ✓
+- Lingerie,Sleep(55件) → インナー・ルームウェア/レディースインナー ✓
+- Tops/Sweaters(34件) → レディースファッション/トップス/その他トップス ✓
+- Coats,Jackets(28件) → レディースファッション/アウター ✓
+- Men Jackets(23件) → メンズファッション/ジャケット・アウター ✓
+- Swimsuits(22件) → レディースファッション/水着 ✓
+- Men Underwear(15件) → インナー・ルームウェア/メンズインナー ✓
+
+### Phase 9 (2026-03-25) 実施内容
+| 変更 | 内容 | 効果 |
+|------|------|------|
+| level_3_cat.txt 新規作成 | Women/Men の Shoes/Jewelry/Accessories/Watches → 適切なWowma L2へ | 誤分類44件削除 |
+| match_categories.py: level3_map対応 | load_level3_map(), used_level3フラグ, sonota_l3fallback | 296件の正しい「その他○○」auto化 |
+| level_1_cat.txt: バッグ追加 | Clothing→バッグ・財布・ファッション小物 を allowed に追加 | Women/Accessories が正しいファッション小物候補を取得 |
+| synonyms.tsv: dresses/ニット/knit | ワンピース/セーター/ニット の同義語追加 | Clothingマッチング精度向上 |
+
+**品質比較**（本番実測値）:
+- Women/Accessories → `バッグ・財布・ファッション小物/ファッション小物/その他ファッション小物` ✓（以前: レディースファッション/その他）
+- Women/Shoes → `レディースファッション/靴・シューズ/その他靴・シューズ` ✓（以前: レディースファッション/その他）
+- Women/Jewelry/Earrings → review に正しくアクセサリー候補 ✓（以前: トップス/カーディガン auto）
 
 ### フェーズ別の実施内容
 
@@ -46,10 +80,11 @@
 
 | ファイル | 変更種別 | 概要 |
 |---------|---------|------|
-| `yaget/management/commands/match_categories.py` | **修正** | 正規表現修正、`--level2-map`オプション、`idx_by_wow_l1l2`インデックス、`sonota_by_l1`/`sonota_by_l1l2`、`_find_sonota_fallback()` |
-| `docs/category_mapping/level_1_cat.txt` | **修正** | books→Books大文字化、Office Products・Watches追加（計46エントリ） |
+| `yaget/management/commands/match_categories.py` | **修正** | 正規表現修正、`--level2-map`オプション、`idx_by_wow_l1l2`インデックス、`sonota_by_l1`/`sonota_by_l1l2`、`_find_sonota_fallback()`、level3_map対応、sonota_l3fallback |
+| `docs/category_mapping/level_1_cat.txt` | **修正** | books→Books大文字化、Office Products・Watches追加、バッグ・財布・ファッション小物追加（計47エントリ） |
 | `docs/category_mapping/level_2_cat.txt` | **新規** | L2マッピング553件（全19カテゴリ対応） |
-| `docs/category_mapping/synonyms.tsv` | **修正** | 7,735→8,517件（+782件: ブランド名、製品名、技術用語、L3-L5キーワード） |
+| `docs/category_mapping/level_3_cat.txt` | **新規** | L3マッピング7件（Clothing Women/Men: Shoes/Jewelry/Accessories/Watches） |
+| `docs/category_mapping/synonyms.tsv` | **修正** | 7,735→8,517件（+782件: ブランド名、製品名、技術用語、L3-L5キーワード、dresses/ニット/knit追加） |
 
 ### カバレッジ達成状況
 
@@ -78,26 +113,18 @@
 
 | # | 課題 | 優先度 | 手順 |
 |---|------|--------|------|
-| H1 | **git commit & push** | **最優先** | 下記コマンド参照 |
+| H1 | **本番TSVの取得・活用** | 高 | `codex_out/category_match_auto.tsv` (4,613件) の確認 |
 | H2 | **「その他」255件の手動レビュー** | 高 | `codex_out/sonota_review.tsv` をGoogle Spreadsheetでレビュー |
-| H3 | **本番でのmatch_categories実行** | 高 | 本番サーバーでコマンド実行 |
-| H4 | review結果の最終承認 | 中 | `codex_out/category_match_review.tsv` の確認 |
+| H3 | review結果の確認 | 中 | `codex_out/category_match_review.tsv` の確認（15,001件） |
+| H4 | auto_threshold検討 | 低 | 現在0.7 → 0.595に下げると+3,000件程度（誤分類リスクあり） |
 
 ---
 
 ## 4. 人間の作業手順
 
-### H1: git commit & push
-
-```bash
-cd /home/niiya/sakura-ama-wowma
-git add yaget/management/commands/match_categories.py
-git add docs/category_mapping/level_1_cat.txt
-git add docs/category_mapping/level_2_cat.txt
-git add docs/category_mapping/synonyms.tsv
-git commit -m "カテゴリマッチング精度改善: auto 7,666件達成 (synonymsバグ修正・拡充、level2 auto化)"
-git push
-```
+### H1: git操作（2026-03-25時点で実施済み）
+- 最新コミット: `4f3ee24` (level3_map: sonota_l3fallback追加でauto数を回復)
+- 本番サーバーにも適用済み
 
 ### H2: 「その他」レビュー
 
@@ -109,21 +136,10 @@ git push
 
 詳細手順: `CLAUDE/20250127_1/sonota_review_instructions.md`
 
-### H3: 本番実行
-
-```bash
-# 本番サーバーで実行
-cd /home/django/sample
-git pull
-pkill -HUP gunicorn  # または sudo systemctl restart gunicorn
-
-python manage.py match_categories \
-  --synonyms docs/category_mapping/synonyms.tsv \
-  --level1-map docs/category_mapping/level_1_cat.txt \
-  --level2-map docs/category_mapping/level_2_cat.txt \
-  --outdir codex_out \
-  --auto-threshold 0.6 --review-threshold 0.35
-```
+### H3: 本番実行（2026-03-25済み）
+- 本番サーバー(133.167.75.151)でmatch_categories実行済み
+- 結果: auto=4,613件, review=15,001件, review_level2=1,832件
+- 出力場所: `/home/django/sample/codex_out/`
 
 ---
 
@@ -132,8 +148,10 @@ python manage.py match_categories \
 ### マッチングの仕組み
 1. **level_1_cat.txt**: Amazon L1 → Wowma L1 のマッピング（検索範囲の絞り込み）
 2. **level_2_cat.txt**: Amazon (L1, L2) → Wowma (L1, L2) のマッピング（+0.15スコアボーナス）
-3. **synonyms.tsv**: 英語→日本語の同義語辞書（fuzzy matchingの精度向上）
-4. **sonota fallback**: スコアが低い場合に「その他」カテゴリへ自動振り分け
+3. **level_3_cat.txt**: Amazon (L1, L2, L3) → Wowma (L1, L2) のマッピング（level2より高優先）
+4. **synonyms.tsv**: 英語→日本語の同義語辞書（fuzzy matchingの精度向上）
+5. **sonota_fallback**: スコアが低い場合に「その他」カテゴリへ自動振り分け
+6. **sonota_l3fallback**: level3_mapマッチした場合にそのL2内の「その他」へフォールバック
 
 ### コード上の主要変更箇所
 - `match_categories.py`: `load_level2_map()`, `build_wow_index()`, `_find_sonota_fallback()`
