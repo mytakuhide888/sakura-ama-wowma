@@ -485,7 +485,14 @@ class Command(BaseCommand):
                         else:
                             review_lvl2_rows.append([a.product_cat_id, ama_path, cid, wow_path, f"{effective_score:.3f}", f"level2_fallback{reason_suffix}", ""])
                     else:
-                        review_lvl2_rows.append([a.product_cat_id, ama_path, cid, wow_path, f"{effective_score:.3f}", f"level2_fallback{reason_suffix}", ""])
+                        # L3なし or level3_map未登録: sonota_fallbackでauto化を試みる
+                        sonota = self._find_sonota_fallback(levels, level1_map, level2_map, wow_index)
+                        if sonota:
+                            sonota_cid, sonota_levels = sonota
+                            sonota_path = "/".join(sonota_levels)
+                            auto_rows.append([a.product_cat_id, ama_path, sonota_cid, sonota_path, "0.600", "sonota_l2fallback", ""])
+                        else:
+                            review_lvl2_rows.append([a.product_cat_id, ama_path, cid, wow_path, f"{effective_score:.3f}", f"level2_fallback{reason_suffix}", ""])
                 else:
                     # スコアが低い場合: level3/4_mapがあればそのL2内の「その他」へ、なければ汎用フォールバック
                     sonota_reason = "sonota_fallback"

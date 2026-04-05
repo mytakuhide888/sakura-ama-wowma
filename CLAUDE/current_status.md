@@ -1,6 +1,6 @@
 # sakura-ama-wowma 現在の進捗状況
 
-最終更新: 2026-03-25 (Phase 25)
+最終更新: 2026-04-05 (Phase 26)
 
 ---
 
@@ -20,19 +20,17 @@
 
 ### 最終実績（Phase 25完了）
 
-| 指標 | 改善前 | Phase 11 | Phase 23 | **Phase 25** |
+| 指標 | 改善前 | Phase 11 | Phase 25 | **Phase 26** |
 |------|-------|---------|----------|-------------|
-| auto | 0件 | 6,255件 | 18,597件 | **19,616件** |
-| review | 3,304件 | 13,359件 | 1,018件 | **0件** ✓ |
-| review_level2 | 215件 | 1,832件 | 1,832件 | 1,830件 |
+| auto | 0件 | 6,255件 | 19,616件 | **21,446件** |
+| review | 3,304件 | 13,359件 | 0件 | **0件** ✓ |
+| review_level2 | 215件 | 1,832件 | 1,830件 | **0件** ✓ |
 
-> **Phase 25 (2026-03-25)**: **review=0件達成**。level_1_cat.txtにコンタクトレンズ・カラコン追加、level_3_cat.txtに残余77件対応エントリ追加（VR/PS5/Gift Wrap/GPS/Bass Guitars/Wall Art/Industrial/Pet/Health等）。
+> **Phase 26 (2026-04-05)**: **全件自動化達成（review=0, review_level2=0）**。level3_catにSports/Fan Shop/Musical Instruments/Jewelry/Clothing/Electronics等90エントリ追加。match_categories.pyにL2のみパスのsonota_l2fallback対応追加。
 
-> **Phase 24 (2026-03-25)**: 大規模level3_cat拡張（~343行追加）。Video Games/Software/Office/Arts/Home/Tools等全カテゴリ対応。auto +941件、review 1,018→77件。
+> **Phase 25 (2026-03-25)**: review=0件達成。level_1_cat.txtにコンタクトレンズ・カラコン追加。
 
-> **Phase 12-23 (2026-03-25)**: sonota_l3fallbackメカニズム実装、level3_cat.txt大規模拡張。review 13,359→1,018件。
-
-> **Phase 11 (2026-03-25)**: level3_map拡張（Sport Specific Clothing 30種目+Pantry Staples 12食品L3）。+1,333件がreview→autoに昇格。
+> **Phase 12-24 (2026-03-25)**: sonota_l3fallbackメカニズム実装、level3_cat.txt大規模拡張。review 13,359→0件。
 
 ### Phase 10 (2026-03-25) 実施内容
 | 変更 | 内容 | 効果 |
