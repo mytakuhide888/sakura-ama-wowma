@@ -70,3 +70,9 @@ Clothing, Shoes & Jewelry	Boys	Clothing	Socks & Hosiery	キッズベビー・マ
 Clothing, Shoes & Jewelry	Boys	Clothing	Uniforms	キッズベビー・マタニティ	キッズ
 # Women/Shops L4 特化マッピング（Maternity等）
 Clothing, Shoes & Jewelry	Women	Shops	Maternity	レディースファッション	トップス
+
+# Phase 27: レビュー結果反映 L4特化マッピング
+# Home & Kitchen / Stove & Fireplace Accessories（Parts & Accessoriesの下）
+Home & Kitchen	Heating, Cooling & Air Quality	Parts & Accessories	Stove & Fireplace Accessories	インテリア・寝具	インテリア小物・置物
+# Electronics / Cables/Computer → PCアクセサリ
+Electronics	Accessories & Supplies	Cables	Computer	パソコン・PC周辺機器	PCアクセサリ・サプライ
