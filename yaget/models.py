@@ -1503,3 +1503,29 @@ class LwaCredential(models.Model):
 
     def __str__(self):
         return f"<LwaCredential:name={self.name}>"
+
+
+class WowmaShopItem(models.Model):
+    """Wowmaショップ商品とAmazon ASINのマッピング管理"""
+    STATUS_PENDING   = 0  # 未処理（商品名取得済み、ASIN未検索）
+    STATUS_MATCHED   = 1  # ASIN取得済み
+    STATUS_NOT_FOUND = 2  # Amazon該当なし
+    STATUS_ERROR     = 9  # エラー
+
+    shop_user_id = models.CharField(max_length=20, db_index=True)
+    wow_item_id  = models.CharField(max_length=20, unique=True)
+    item_name    = models.TextField()
+    item_url     = models.URLField(max_length=512)
+    asin         = models.CharField(max_length=20, null=True, blank=True, db_index=True)
+    asin_name    = models.TextField(null=True, blank=True)
+    status       = models.IntegerField(default=STATUS_PENDING, db_index=True)
+    created_at   = models.DateTimeField(default=timezone.now)
+    updated_at   = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        indexes = [
+            models.Index(fields=['shop_user_id', 'status']),
+        ]
+
+    def __str__(self):
+        return f"<WowmaShopItem:wow_item_id={self.wow_item_id} asin={self.asin}>"

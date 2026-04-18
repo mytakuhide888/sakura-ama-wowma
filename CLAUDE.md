@@ -2,44 +2,27 @@
 
 ## プロジェクト状態の把握
 
-新しいチャットを開始する際は、以下のファイルを **この順番で** 読み込むこと:
+新しいチャットを開始する際は、まず以下を読む:
 
-1. **`CLAUDE/current_status.md`** - 現在の進捗状況、残課題、人間の作業手順
-2. **`CLAUDE/project_overview.md`** - プロジェクト全体概要（技術スタック、ディレクトリ構成等）
-3. **`CLAUDE/20250127_1/summary.md`** - 全フェーズの詳細記録（必要に応じて参照）
+1. **`CLAUDE/README.md`** - インデックス（現状サマリ・次のアクション）
+2. **`CLAUDE/project.md`** - プロジェクト全体概要
+3. 作業内容に応じて参照:
+   - `CLAUDE/features/category_matching.md` - カテゴリマッチング詳細
+   - `CLAUDE/features/spapi.md` - SP-API設定・利用状況
+   - `CLAUDE/ops/server.md` - VPS接続・デプロイ手順
 
-## 現在のタスク概要（2025-01-28時点）
+## 現在の状態（2026-04-18更新）
 
-### タスク: Amazon/Wowma カテゴリマッチング精度改善
-
-- **状態**: Phase 8完了。マッピングデータ作成は完了。本番実行待ち。
-- **成果**: auto（自動採用）0件 → 4,911件（実測）/ 7,500件+（予測）
-- **カバレッジ**: L1〜L5 全階層100%達成
-
-### 残課題
-
-**人間の作業（未実施）:**
-1. git commit & push（変更ファイル4つ）
-2. 「その他」255件の手動レビュー（`codex_out/sonota_review.tsv`）
-3. 本番サーバーでのmatch_categories実行
-
-**システム側（Claude対応可能）:**
-1. 「その他」レビュー結果のsynonyms/L2マップ反映
-2. 本番実行後の結果分析・追加調整
-
-### 主要変更ファイル
-
-```
-yaget/management/commands/match_categories.py  # コア修正
-docs/category_mapping/level_1_cat.txt           # L1マッピング（46件）
-docs/category_mapping/level_2_cat.txt           # L2マッピング（553件）★新規
-docs/category_mapping/synonyms.tsv              # 同義語辞書（8,517件）
-```
+| 機能 | 状態 |
+|------|------|
+| カテゴリマッチング | **完了** Phase 27。VPS DB反映済み（auto 21,147件/98.6%） |
+| SP-API接続 | **完了** wowma_api_pro アプリで接続確認済み |
+| 次のステップ | SP-APIを使ったAmazon商品情報取得・Wowma登録フロー |
 
 ## プロジェクト固有の注意事項
 
-- **Django設定**: `config.settings`（`/home/django/sample` が本番パス）
-- **Python**: 3.8+（venv: `/home/niiya/sakura-ama-wowma/.venv3_8`）
+- **Django設定**: `sample.settings`（`/home/django/sample` が本番パス）
+- **Python**: 3.8+（venv: `/home/django/djangoenv/`）
 - **DB**: SQLite（開発）/ MariaDB（本番）
-- **ログディレクトリ**: `/home/django/sample/yaget/log/`（ローカルでは権限なし、Django起動不可の場合あり）
-- **match_categoriesの実行**: ログディレクトリの権限問題があるため、ローカルでの完全テストは制限あり。部分的なPythonスクリプトで検証可能。
+- **ローカル制約**: ログディレクトリ権限なし、Django起動不可。VPSでのみmanage.py実行可能
+- **LwaCredential**: SP-APIリフレッシュトークンはDBが.envより優先される（要注意）
