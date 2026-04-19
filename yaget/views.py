@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.http import HttpResponse
+from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import redirect
 from django.views import generic
 from django.urls import reverse_lazy
@@ -6821,6 +6821,8 @@ def wowma_match_top(request):
     context = {}
 
     if request.method == 'POST':
+        # PRGパターン: POSTはバッチ起動のみ行い、直後にGETリダイレクト。
+        # リロード時の二重実行を防ぐ。
         shop_url       = request.POST.get('shop_url', '').strip()
         phase          = request.POST.get('phase', 'all')
         limit          = int(request.POST.get('limit', 0) or 0)
@@ -6829,6 +6831,7 @@ def wowma_match_top(request):
         user_id = _extract_user_id(shop_url)
         if not user_id:
             context['error'] = 'ショップURLまたはユーザーIDが取得できませんでした'
+            # エラー時のみ POST のままレンダリング（リダイレクト不要）
         else:
             # BatchStatus に記録
             batch = BatchStatus.objects.create(
@@ -6856,14 +6859,20 @@ def wowma_match_top(request):
                 stdout=subprocess.PIPE,
                 stderr=subprocess.STDOUT,
             )
-            # batch_idをセッションに保存してポーリングに使う
-            request.session['wowma_match_batch_id'] = batch.batch_id
-            request.session['wowma_match_user_id']  = user_id
-            request.session['wowma_match_pid']       = proc.pid
 
-            context['batch_id'] = batch.batch_id
-            context['user_id']  = user_id
-            context['phase']    = phase
+            # GETリダイレクト（PRG）: batch_id/user_id/phaseをクエリパラメータで渡す
+            redirect_url = (
+                reverse('yaget:wowma_match_top')
+                + f'?batch_id={batch.batch_id}&user_id={user_id}&phase={phase}'
+            )
+            return HttpResponseRedirect(redirect_url)
+
+    # GET: クエリパラメータから実行中バッチ情報を復元（PRGリダイレクト後）
+    batch_id = request.GET.get('batch_id')
+    if batch_id:
+        context['batch_id'] = batch_id
+        context['user_id']  = request.GET.get('user_id', '')
+        context['phase']    = request.GET.get('phase', '')
 
     # 直近10件のバッチ履歴
     context['batch_list'] = BatchStatus.objects.filter(
