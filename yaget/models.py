@@ -1505,22 +1505,104 @@ class LwaCredential(models.Model):
         return f"<LwaCredential:name={self.name}>"
 
 
+class AmazonItemDetail(models.Model):
+    """Amazon SP-APIから取得したASIN詳細情報（FBA発送可否判定用）"""
+
+    # --- 基本情報（CatalogItems API）---
+    asin              = models.CharField(max_length=20, unique=True)
+    title             = models.TextField(blank=True)
+    brand             = models.CharField(max_length=255, blank=True)
+    description       = models.TextField(blank=True)
+    bullet_points     = models.TextField(blank=True)       # JSON配列で保存
+    category          = models.CharField(max_length=255, blank=True)  # browseClassification
+    main_image_url    = models.URLField(max_length=600, blank=True)
+    list_price        = models.DecimalField(max_digits=12, decimal_places=2, null=True, blank=True)
+    sales_rank        = models.IntegerField(null=True, blank=True)
+    sales_rank_category = models.CharField(max_length=255, blank=True)
+    is_discontinued   = models.BooleanField(null=True, blank=True)   # 取扱終了フラグ
+
+    # --- FBA・販売状況（ProductPricing API: GetItemOffers）---
+    has_fba_offer          = models.BooleanField(null=True, blank=True)  # FBAオファー存在
+    is_sold_by_amazon      = models.BooleanField(null=True, blank=True)  # Amazon直販
+    fba_price              = models.DecimalField(max_digits=12, decimal_places=2, null=True, blank=True)
+    fba_shipping_price     = models.DecimalField(max_digits=12, decimal_places=2, null=True, blank=True)
+    fba_ship_min_hours     = models.IntegerField(null=True, blank=True)  # 最短発送時間（時間）
+    fba_ship_max_hours     = models.IntegerField(null=True, blank=True)  # 最長発送時間（時間）
+    # NOW=即日発送可, FUTURE_DATE=予約/入荷待ち, UNKNOWN=不明
+    availability_type      = models.CharField(max_length=20, blank=True)
+    available_date         = models.DateTimeField(null=True, blank=True)  # 予約商品の入荷/発売日
+    is_preorder            = models.BooleanField(null=True, blank=True)   # 予約商品フラグ
+    is_prime               = models.BooleanField(null=True, blank=True)   # Prime対象
+    fba_is_buybox_winner   = models.BooleanField(null=True, blank=True)   # FBAがBuyBox獲得中
+    fba_offer_count        = models.IntegerField(null=True, blank=True)   # FBAオファー件数
+    merchant_offer_count   = models.IntegerField(null=True, blank=True)   # 自己出品オファー件数
+    has_quantity_discount  = models.BooleanField(null=True, blank=True)   # 数量割引あり（制限示唆）
+    offers_raw             = models.TextField(blank=True)                  # オファー生JSONデータ
+
+    # --- 出品可否判定（自動計算）---
+    is_listable      = models.BooleanField(null=True, blank=True)  # Wowma出品可否
+    exclusion_reason = models.CharField(max_length=255, blank=True)  # 除外理由
+
+    # --- 取得日時 ---
+    fetched_at        = models.DateTimeField(default=timezone.now)
+    offers_fetched_at = models.DateTimeField(null=True, blank=True)
+
+    # 出品可否しきい値（デフォルト: 96時間=4日以内）
+    FBA_MAX_HOURS_DEFAULT = 96
+
+    def calc_is_listable(self, max_ship_hours=None):
+        """除外条件チェックしてis_listable/exclusion_reasonを更新する"""
+        if max_ship_hours is None:
+            max_ship_hours = self.FBA_MAX_HOURS_DEFAULT
+
+        if not self.has_fba_offer:
+            self.is_listable = False
+            self.exclusion_reason = 'FBAオファーなし'
+        elif self.is_preorder:
+            self.is_listable = False
+            self.exclusion_reason = '予約商品'
+        elif self.availability_type and self.availability_type != 'NOW':
+            self.is_listable = False
+            self.exclusion_reason = f'在庫なし/入荷待ち({self.availability_type})'
+        elif self.fba_ship_max_hours is not None and self.fba_ship_max_hours > max_ship_hours:
+            self.is_listable = False
+            self.exclusion_reason = f'発送{self.fba_ship_max_hours}時間超(>{max_ship_hours}h)'
+        elif self.is_discontinued:
+            self.is_listable = False
+            self.exclusion_reason = '取扱終了'
+        else:
+            self.is_listable = True
+            self.exclusion_reason = ''
+
+    class Meta:
+        verbose_name = 'Amazon商品詳細'
+        verbose_name_plural = 'Amazon商品詳細'
+
+    def __str__(self):
+        return f"<AmazonItemDetail:asin={self.asin}>"
+
+
 class WowmaShopItem(models.Model):
     """Wowmaショップ商品とAmazon ASINのマッピング管理"""
-    STATUS_PENDING   = 0  # 未処理（商品名取得済み、ASIN未検索）
-    STATUS_MATCHED   = 1  # ASIN取得済み
-    STATUS_NOT_FOUND = 2  # Amazon該当なし
-    STATUS_ERROR     = 9  # エラー
+    STATUS_PENDING        = 0  # 未処理（商品名取得済み、ASIN未検索）
+    STATUS_MATCHED        = 1  # ASIN取得済み
+    STATUS_NOT_FOUND      = 2  # Amazon該当なし
+    STATUS_DETAIL_FETCHED = 3  # Amazon詳細取得済み
+    STATUS_ERROR          = 9  # エラー
 
-    shop_user_id = models.CharField(max_length=20, db_index=True)
-    wow_item_id  = models.CharField(max_length=20, unique=True)
-    item_name    = models.TextField()
-    item_url     = models.URLField(max_length=512)
-    asin         = models.CharField(max_length=20, null=True, blank=True, db_index=True)
-    asin_name    = models.TextField(null=True, blank=True)
-    status       = models.IntegerField(default=STATUS_PENDING, db_index=True)
-    created_at   = models.DateTimeField(default=timezone.now)
-    updated_at   = models.DateTimeField(auto_now=True)
+    shop_user_id   = models.CharField(max_length=20, db_index=True)
+    wow_item_id    = models.CharField(max_length=20, unique=True)
+    item_name      = models.TextField()
+    item_url       = models.URLField(max_length=512)
+    asin           = models.CharField(max_length=20, null=True, blank=True, db_index=True)
+    asin_name      = models.TextField(null=True, blank=True)
+    amazon_detail  = models.ForeignKey(
+        AmazonItemDetail, null=True, blank=True, on_delete=models.SET_NULL,
+        related_name='wowma_items'
+    )
+    status         = models.IntegerField(default=STATUS_PENDING, db_index=True)
+    created_at     = models.DateTimeField(default=timezone.now)
+    updated_at     = models.DateTimeField(auto_now=True)
 
     class Meta:
         indexes = [

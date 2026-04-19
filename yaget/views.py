@@ -36,7 +36,8 @@ from .models import (
     Friend, Message, YaItemList, YaItemDetail, YaListUrl,
     YaBuyersItemDetail, BatchStatus,AllOrderInfo, QooOrderInfo, WowmaOrderInfo,
     ErrorGoodsLog,YaBuyersItemBlackList, QooShopInfo, WowmaShopInfo, WowmaOrderDetail,
-    WowmaBuyersOrderDetail,QooBuyersOrderDetail,QooAsinDetail,WowCategory
+    WowmaBuyersOrderDetail,QooBuyersOrderDetail,QooAsinDetail,WowCategory,
+    WowmaShopItem, AmazonItemDetail,
 )
 from .forms import FriendForm, MessageForm, YaItemListForm, YaSetListToSheet, KickYagetForm
 from .models import LwaCredential
@@ -6800,3 +6801,146 @@ def QooAsinCsvExport(request):
                 retobj.asin,
             ])
     return response
+
+
+# =============================================================================
+# Wowmaショップ商品マッチング画面
+# =============================================================================
+import re as _re
+
+WOWMA_USER_ID_RE = _re.compile(r'/user/(\d+)')
+
+def _extract_user_id(url_or_id):
+    """WowmaショップURLまたはuser_idの文字列からuser_idを抽出"""
+    m = WOWMA_USER_ID_RE.search(url_or_id or '')
+    return m.group(1) if m else (url_or_id.strip() if url_or_id else '')
+
+
+def wowma_match_top(request):
+    """操作画面: ショップURL入力・フェーズ選択・実行"""
+    context = {}
+
+    if request.method == 'POST':
+        shop_url       = request.POST.get('shop_url', '').strip()
+        phase          = request.POST.get('phase', 'all')
+        limit          = int(request.POST.get('limit', 0) or 0)
+        max_ship_hours = int(request.POST.get('max_ship_hours', 96) or 96)
+
+        user_id = _extract_user_id(shop_url)
+        if not user_id:
+            context['error'] = 'ショップURLまたはユーザーIDが取得できませんでした'
+        else:
+            # BatchStatus に記録
+            batch = BatchStatus.objects.create(
+                batch_name=f'wowma_match user={user_id} phase={phase}',
+                batch_status=0,
+                start_date=timezone.now(),
+            )
+            # バックグラウンドでコマンド実行
+            cmd = [
+                'python', 'manage.py', 'get_wowma_shop_items',
+                '--user-id', user_id,
+                '--phase', phase,
+                '--max-ship-hours', str(max_ship_hours),
+            ]
+            if limit:
+                cmd += ['--limit', str(limit)]
+
+            manage_py = os.path.join(settings.BASE_DIR, 'manage.py')
+            cmd[1] = manage_py
+
+            import sys as _sys
+            proc = subprocess.Popen(
+                [_sys.executable] + cmd[1:],
+                cwd=str(settings.BASE_DIR),
+                stdout=subprocess.PIPE,
+                stderr=subprocess.STDOUT,
+            )
+            # batch_idをセッションに保存してポーリングに使う
+            request.session['wowma_match_batch_id'] = batch.batch_id
+            request.session['wowma_match_user_id']  = user_id
+            request.session['wowma_match_pid']       = proc.pid
+
+            context['batch_id'] = batch.batch_id
+            context['user_id']  = user_id
+            context['phase']    = phase
+
+    # 直近10件のバッチ履歴
+    context['batch_list'] = BatchStatus.objects.filter(
+        batch_name__startswith='wowma_match'
+    ).order_by('-create_date')[:10]
+
+    # ステータス集計
+    context['status_summary'] = {
+        'pending':        WowmaShopItem.objects.filter(status=WowmaShopItem.STATUS_PENDING).count(),
+        'matched':        WowmaShopItem.objects.filter(status=WowmaShopItem.STATUS_MATCHED).count(),
+        'not_found':      WowmaShopItem.objects.filter(status=WowmaShopItem.STATUS_NOT_FOUND).count(),
+        'detail_fetched': WowmaShopItem.objects.filter(status=WowmaShopItem.STATUS_DETAIL_FETCHED).count(),
+        'error':          WowmaShopItem.objects.filter(status=WowmaShopItem.STATUS_ERROR).count(),
+    }
+
+    return render(request, 'yaget/wowma_match_top.html', context)
+
+
+def wowma_match_status_ajax(request):
+    """Ajax: 処理件数・BatchStatus状態をJSONで返す"""
+    user_id = request.GET.get('user_id', '')
+    data = {
+        'pending':        WowmaShopItem.objects.filter(shop_user_id=user_id, status=WowmaShopItem.STATUS_PENDING).count(),
+        'matched':        WowmaShopItem.objects.filter(shop_user_id=user_id, status=WowmaShopItem.STATUS_MATCHED).count(),
+        'not_found':      WowmaShopItem.objects.filter(shop_user_id=user_id, status=WowmaShopItem.STATUS_NOT_FOUND).count(),
+        'detail_fetched': WowmaShopItem.objects.filter(shop_user_id=user_id, status=WowmaShopItem.STATUS_DETAIL_FETCHED).count(),
+        'error':          WowmaShopItem.objects.filter(shop_user_id=user_id, status=WowmaShopItem.STATUS_ERROR).count(),
+        'listable':       WowmaShopItem.objects.filter(shop_user_id=user_id, amazon_detail__is_listable=True).count(),
+    }
+    batch_id = request.GET.get('batch_id')
+    if batch_id:
+        try:
+            b = BatchStatus.objects.get(batch_id=batch_id)
+            data['batch_status'] = b.batch_status
+        except BatchStatus.DoesNotExist:
+            pass
+    return JsonResponse(data)
+
+
+def wowma_match_list(request):
+    """結果一覧: WowmaShopItem一覧（フィルタ付き）"""
+    user_id    = request.GET.get('user_id', '')
+    status_f   = request.GET.get('status', '')
+    listable_f = request.GET.get('listable', '')
+
+    qs = WowmaShopItem.objects.select_related('amazon_detail').order_by('-updated_at')
+    if user_id:
+        qs = qs.filter(shop_user_id=user_id)
+    if status_f != '':
+        qs = qs.filter(status=int(status_f))
+    if listable_f == '1':
+        qs = qs.filter(amazon_detail__is_listable=True)
+    elif listable_f == '0':
+        qs = qs.filter(amazon_detail__is_listable=False)
+
+    paginator = Paginator(qs, 50)
+    page_num  = request.GET.get('page', 1)
+    page_obj  = paginator.get_page(page_num)
+
+    context = {
+        'page_obj':  page_obj,
+        'user_id':   user_id,
+        'status_f':  status_f,
+        'listable_f': listable_f,
+        'STATUS_LABELS': {
+            WowmaShopItem.STATUS_PENDING:        '未処理',
+            WowmaShopItem.STATUS_MATCHED:        'ASIN取得済',
+            WowmaShopItem.STATUS_NOT_FOUND:      '該当なし',
+            WowmaShopItem.STATUS_DETAIL_FETCHED: '詳細取得済',
+            WowmaShopItem.STATUS_ERROR:          'エラー',
+        },
+    }
+    return render(request, 'yaget/wowma_match_list.html', context)
+
+
+def wowma_match_detail(request, pk):
+    """ASIN詳細表示（モーダルや詳細ページ用）"""
+    from django.shortcuts import get_object_or_404
+    item = get_object_or_404(WowmaShopItem.objects.select_related('amazon_detail'), pk=pk)
+    return render(request, 'yaget/wowma_match_detail.html', {'item': item})

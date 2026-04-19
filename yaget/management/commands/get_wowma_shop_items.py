@@ -6,14 +6,18 @@ Wowmaショップの商品一覧を取得し、SP-API でAmazon ASINを検索し
   python manage.py get_wowma_shop_items --user-id 69303756
   python manage.py get_wowma_shop_items --user-id 69303756 --phase scrape
   python manage.py get_wowma_shop_items --user-id 69303756 --phase match
+  python manage.py get_wowma_shop_items --user-id 69303756 --phase detail
   python manage.py get_wowma_shop_items --user-id 69303756 --limit 50
+  python manage.py get_wowma_shop_items --user-id 69303756 --max-ship-hours 48
 
 フェーズ:
   scrape : Seleniumでショップ商品一覧取得 → og:titleで商品名取得 → DB保存
   match  : DBのPENDINGレコードをSP-APIでASIN検索 → DB更新
-  all    : scrape → match を順に実行（デフォルト）
+  detail : MATCHEDレコードをSP-APIでAmazon詳細・FBA情報取得 → DB更新
+  all    : scrape → match → detail を順に実行（デフォルト）
 """
 import sys
+import json
 import time
 import logging
 import traceback
@@ -23,12 +27,13 @@ from bs4 import BeautifulSoup
 
 from django.core.management.base import BaseCommand
 from django.conf import settings
+from django.utils import timezone
 
 import environ
 
-from yaget.models import WowmaShopItem, LwaCredential
+from yaget.models import WowmaShopItem, LwaCredential, AmazonItemDetail
 
-from sp_api.api import CatalogItems
+from sp_api.api import CatalogItems, Products as ProductPricing
 from sp_api.base.marketplaces import Marketplaces
 from sp_api.base import SellingApiException
 
@@ -50,18 +55,21 @@ class Command(BaseCommand):
     def add_arguments(self, parser):
         parser.add_argument('--user-id', required=True, help='WowmaショップのユーザーID（例: 69303756）')
         parser.add_argument(
-            '--phase', choices=['scrape', 'match', 'all'], default='all',
-            help='実行フェーズ（scrape/match/all）'
+            '--phase', choices=['scrape', 'match', 'detail', 'all'], default='all',
+            help='実行フェーズ（scrape/match/detail/all）'
         )
         parser.add_argument('--limit', type=int, default=0, help='scrapeフェーズで取得する商品数の上限（0=無制限）')
+        parser.add_argument('--max-ship-hours', type=int, default=96,
+                            help='FBA発送時間の上限（時間、デフォルト96=4日）')
 
     # ------------------------------------------------------------------
     # エントリポイント
     # ------------------------------------------------------------------
     def handle(self, *args, **options):
-        user_id = options['user_id']
-        phase   = options['phase']
-        limit   = options['limit']
+        user_id       = options['user_id']
+        phase         = options['phase']
+        limit         = options['limit']
+        max_ship_hours = options['max_ship_hours']
 
         self.stdout.write(f'=== get_wowma_shop_items 開始 user_id={user_id} phase={phase} ===')
 
@@ -70,6 +78,9 @@ class Command(BaseCommand):
 
         if phase in ('match', 'all'):
             self._phase_match(user_id)
+
+        if phase in ('detail', 'all'):
+            self._phase_detail(user_id, max_ship_hours)
 
         self.stdout.write(self.style.SUCCESS('=== 完了 ==='))
 
@@ -139,7 +150,7 @@ class Command(BaseCommand):
         while True:
             script = f"""
 var callback = arguments[arguments.length - 1];
-fetch('/catalog/api/search/items?user={user_id}&ipp={IPP}&page={page}&uads=0&acc_filter=N', {{
+fetch('/catalog/api/search/items?uads=0&user={user_id}&ipp={IPP}&page={page}&acc_filter=N&shop_only=Y&ref_id=catalog_list2&mode=pc', {{
     headers: {{'Accept': 'application/json', 'X-Requested-With': 'XMLHttpRequest'}}
 }})
 .then(function(r) {{ return r.json(); }})
@@ -337,6 +348,198 @@ fetch('/catalog/api/search/items?user={user_id}&ipp={IPP}&page={page}&uads=0&acc
         return asin, asin_name
 
     # ------------------------------------------------------------------
+    # Phase 3: Amazon詳細・FBA情報取得
+    # ------------------------------------------------------------------
+    def _phase_detail(self, user_id, max_ship_hours):
+        self.stdout.write(f'[Phase 3] Amazon詳細・FBA情報取得開始 (max_ship_hours={max_ship_hours})')
+
+        creds = self._build_spapi_creds()
+        if not creds:
+            self.stderr.write('[Phase 3] SP-API認証情報不足')
+            return
+
+        catalog_client  = CatalogItems(credentials=creds, marketplace=Marketplaces.JP)
+        pricing_client  = ProductPricing(credentials=creds, marketplace=Marketplaces.JP)
+
+        targets = WowmaShopItem.objects.filter(
+            shop_user_id=user_id,
+            status=WowmaShopItem.STATUS_MATCHED,
+        ).order_by('id')
+
+        self.stdout.write(f'  対象: {targets.count()} 件')
+        fetched = skipped = error = 0
+
+        for i, item in enumerate(targets, 1):
+            try:
+                detail = self._fetch_amazon_detail(
+                    item.asin, catalog_client, pricing_client, max_ship_hours
+                )
+                detail.save()
+
+                item.amazon_detail = detail
+                item.status = WowmaShopItem.STATUS_DETAIL_FETCHED
+                item.save()
+
+                listable_str = '✓出品可' if detail.is_listable else f'✗除外({detail.exclusion_reason})'
+                self.stdout.write(
+                    f'  [{i}] {item.asin}: {listable_str} '
+                    f'FBA={detail.has_fba_offer} ship={detail.fba_ship_max_hours}h '
+                    f'avail={detail.availability_type}'
+                )
+                fetched += 1
+                time.sleep(SPAPI_INTERVAL * 2)  # Catalog + Pricing で2コール分
+
+            except SellingApiException as e:
+                self.stdout.write(f'  [{i}] ERR {item.asin}: SP-API {e.code} {e.status_code}')
+                logger.debug(traceback.format_exc())
+                error += 1
+                time.sleep(3)
+            except Exception as e:
+                self.stdout.write(f'  [{i}] ERR {item.asin}: {e}')
+                logger.debug(traceback.format_exc())
+                error += 1
+
+        self.stdout.write(
+            f'[Phase 3] 完了: fetched={fetched} skipped={skipped} error={error}'
+        )
+
+    def _fetch_amazon_detail(self, asin, catalog_client, pricing_client, max_ship_hours):
+        """ASIN 1件の詳細情報をCatalogItems + ProductPricingから取得してAmazonItemDetailを返す"""
+        marketplace_id = 'A1VC38T7YXB528'  # Amazon.co.jp
+
+        detail, _ = AmazonItemDetail.objects.get_or_create(asin=asin)
+
+        # ── CatalogItems: 基本情報取得 ─────────────────────────
+        try:
+            cat_res = catalog_client.get_catalog_item(
+                asin=asin,
+                marketplaceIds=[marketplace_id],
+                includedData=['summaries', 'attributes', 'images', 'salesRanks'],
+            )
+            payload = getattr(cat_res, 'payload', {}) or {}
+            if isinstance(payload, dict) and 'payload' in payload:
+                payload = payload['payload']
+
+            summaries   = payload.get('summaries', [{}])
+            summary     = summaries[0] if summaries else {}
+            attributes  = payload.get('attributes', {})
+            images_data = payload.get('images', [])
+            sales_ranks = payload.get('salesRanks', [])
+
+            detail.title    = summary.get('itemName', '')
+            detail.brand    = summary.get('brand', '')
+            detail.category = (summary.get('browseClassification') or {}).get('displayName', '')
+
+            # listPrice
+            lp = summary.get('listPrice', {}) or {}
+            detail.list_price = lp.get('amount') or None
+
+            # 商品説明（attributes）
+            desc_list = attributes.get('item_description', [])
+            detail.description = desc_list[0].get('value', '') if desc_list else ''
+
+            # 箇条書き特徴
+            bullets = attributes.get('bullet_point', [])
+            detail.bullet_points = json.dumps([b.get('value', '') for b in bullets], ensure_ascii=False)
+
+            # 取扱終了
+            disc = attributes.get('discontinued_by_manufacturer', [])
+            detail.is_discontinued = (disc[0].get('value') == 'true') if disc else False
+
+            # メイン画像
+            for img_entry in images_data:
+                for img in (img_entry.get('images') or []):
+                    if img.get('variant') == 'MAIN':
+                        detail.main_image_url = img.get('link', '')
+                        break
+
+            # 販売ランク
+            if sales_ranks:
+                rank_entry = sales_ranks[0]
+                ranks = rank_entry.get('ranks', [])
+                if ranks:
+                    detail.sales_rank          = ranks[0].get('rank')
+                    detail.sales_rank_category = ranks[0].get('title', '')
+
+            detail.fetched_at = timezone.now()
+
+        except Exception as e:
+            logger.debug(f'CatalogItems error asin={asin}: {e}')
+
+        # ── ProductPricing: FBA・オファー情報取得 ──────────────
+        time.sleep(SPAPI_INTERVAL)
+        try:
+            pr_res = pricing_client.get_item_offers(
+                asin=asin,
+                item_condition='New',
+                customer_type='Consumer',
+            )
+            pr_payload = getattr(pr_res, 'payload', {}) or {}
+            if isinstance(pr_payload, dict) and 'payload' in pr_payload:
+                pr_payload = pr_payload['payload']
+
+            offers = pr_payload.get('Offers', [])
+            detail.offers_raw = json.dumps(offers, ensure_ascii=False, default=str)
+            detail.offers_fetched_at = timezone.now()
+
+            fba_offers      = [o for o in offers if o.get('IsFulfilledByAmazon')]
+            merchant_offers = [o for o in offers if not o.get('IsFulfilledByAmazon')]
+
+            detail.fba_offer_count      = len(fba_offers)
+            detail.merchant_offer_count = len(merchant_offers)
+            detail.has_fba_offer        = len(fba_offers) > 0
+
+            if fba_offers:
+                # BuyBox獲得FBAオファーを優先、なければ最初のFBAオファー
+                buybox = next((o for o in fba_offers if o.get('IsBuyBoxWinner')), None)
+                best   = buybox or fba_offers[0]
+
+                detail.fba_is_buybox_winner = bool(buybox)
+                # PrimeInformation は nested dict
+                prime_info = best.get('PrimeInformation') or {}
+                detail.is_prime = prime_info.get('IsPrime', False) or best.get('IsPrime', False)
+                detail.fba_price          = (best.get('ListingPrice') or {}).get('Amount')
+                detail.fba_shipping_price = (best.get('Shipping') or {}).get('Amount')
+                detail.has_quantity_discount = bool(best.get('QuantityDiscountPrices'))
+
+                # 発送時間（APIによりcamelCase/PascalCase混在のため両方対応）
+                ship_time = best.get('ShippingTime') or {}
+                detail.fba_ship_min_hours = (
+                    ship_time.get('minimumHours') if ship_time.get('minimumHours') is not None
+                    else ship_time.get('MinimumHours')
+                )
+                detail.fba_ship_max_hours = (
+                    ship_time.get('maximumHours') if ship_time.get('maximumHours') is not None
+                    else ship_time.get('MaximumHours')
+                )
+                avail_type = ship_time.get('availabilityType') or ship_time.get('AvailabilityType', '')
+                detail.availability_type  = avail_type
+                detail.is_preorder        = (avail_type == 'FUTURE_DATE')
+
+                avail_date = ship_time.get('availableDate') or ship_time.get('AvailableDate')
+                if avail_date:
+                    from django.utils.dateparse import parse_datetime
+                    detail.available_date = parse_datetime(avail_date)
+
+                # Amazon直販判定（SellerId が Amazon JP の既知ID）
+                AMAZON_SELLER_ID = 'AN1VRQENFRJN5'
+                detail.is_sold_by_amazon = any(
+                    o.get('SellerId') == AMAZON_SELLER_ID for o in fba_offers
+                )
+            else:
+                detail.has_fba_offer       = False
+                detail.is_preorder         = False
+                detail.availability_type   = ''
+
+        except Exception as e:
+            logger.debug(f'ProductPricing error asin={asin}: {e}')
+            detail.has_fba_offer = False
+
+        # 出品可否判定
+        detail.calc_is_listable(max_ship_hours=max_ship_hours)
+        return detail
+
+    # ------------------------------------------------------------------
     # ユーティリティ
     # ------------------------------------------------------------------
     def _init_selenium(self):
@@ -375,24 +578,24 @@ fetch('/catalog/api/search/items?user={user_id}&ipp={IPP}&page={page}&uads=0&acc
         driver.set_script_timeout(30)
         return driver
 
-    def _build_spapi_client(self):
-        """SP-APIクライアントを構築して返す"""
-        env = environ.Env()
+    def _build_spapi_creds(self):
+        """SP-API認証情報dictを返す（各クライアント共通）"""
+        _env = environ.Env()
         try:
-            env.read_env(str(getattr(settings, 'BASE_DIR', '.')) + '/.env')
+            _env.read_env(str(getattr(settings, 'BASE_DIR', '.')) + '/.env')
         except Exception:
             pass
 
         refresh_token = (
             LwaCredential.objects.values_list('refresh_token', flat=True).first()
-            or env('SP_API_REFRESH_TOKEN', default=None)
-            or env('LWA_REFRESH_TOKEN', default=None)
+            or _env('SP_API_REFRESH_TOKEN', default=None)
+            or _env('LWA_REFRESH_TOKEN', default=None)
         )
-        lwa_app_id      = env('LWA_CLIENT_ID', default=None) or env('LWA_APP_ID', default=None)
-        lwa_client_secret = env('LWA_CLIENT_SECRET', default=None)
-        aws_access_key  = env('AWS_ACCESS_KEY_ID', default=None)
-        aws_secret_key  = env('AWS_SECRET_ACCESS_KEY', default=None)
-        role_arn        = env('ROLE_ARN', default=None) or env('SP_API_ROLE_ARN', default=None)
+        lwa_app_id        = _env('LWA_CLIENT_ID', default=None) or _env('LWA_APP_ID', default=None)
+        lwa_client_secret = _env('LWA_CLIENT_SECRET', default=None)
+        aws_access_key    = _env('AWS_ACCESS_KEY_ID', default=None)
+        aws_secret_key    = _env('AWS_SECRET_ACCESS_KEY', default=None)
+        role_arn          = _env('ROLE_ARN', default=None) or _env('SP_API_ROLE_ARN', default=None)
 
         if not refresh_token or not lwa_app_id or not lwa_client_secret:
             self.stderr.write('SP-API LWA認証情報が不足しています')
@@ -402,8 +605,8 @@ fetch('/catalog/api/search/items?user={user_id}&ipp={IPP}&page={page}&uads=0&acc
             return None
 
         creds = {
-            'refresh_token':    refresh_token,
-            'lwa_app_id':       lwa_app_id,
+            'refresh_token':     refresh_token,
+            'lwa_app_id':        lwa_app_id,
             'lwa_client_secret': lwa_client_secret,
         }
         if role_arn:
@@ -411,5 +614,11 @@ fetch('/catalog/api/search/items?user={user_id}&ipp={IPP}&page={page}&uads=0&acc
         else:
             creds['aws_access_key'] = aws_access_key
             creds['aws_secret_key'] = aws_secret_key
+        return creds
 
+    def _build_spapi_client(self):
+        """CatalogItemsクライアントを返す（Phase 2用・後方互換）"""
+        creds = self._build_spapi_creds()
+        if not creds:
+            return None
         return CatalogItems(credentials=creds, marketplace=Marketplaces.JP)

@@ -28,6 +28,17 @@
 - **マーケットプレイス**: Amazon.co.jp, Non-Amazon JP
 - 詳細 → [features/spapi.md](features/spapi.md)
 
+### Wowmaショップ商品スクレイピング → ASIN検索パイプライン
+- **状態**: 実装完了・動作確認済み（2026-04-18）
+- **コマンド**: `get_wowma_shop_items --user-id 69303756`
+- **DB**: `WowmaShopItem`（VPS MariaDB migrate済み）
+- **テスト**: 5件 → scrape成功 / match 5/5 ASIN HIT
+- **対象ショップ規模**: Marron Store 40,154件
+- **全件実行**: screen/nohup推奨（~23時間）
+- 詳細 → [sessions/20260418_1/summary.md](sessions/20260418_1/summary.md)
+
 ### 次のアクション候補
-- SP-APIを使ったAmazon商品情報検索の実装
-- Wowmaへの商品登録フロー整備
+- Wowmaショップ全件スクレイピング実行（screen/nohupで）
+- 複数ショップ対応
+- マッチング精度向上
+- Wowmaへの商品登録フロー整備（ASIN情報を使って）

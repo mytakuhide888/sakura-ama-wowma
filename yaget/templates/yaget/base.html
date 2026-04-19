@@ -208,167 +208,181 @@
       <!-- Sidebar Menu -->
       <nav class="mt-2">
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
-          <!-- Add icons to the links using the .nav-icon class
-               with font-awesome or any other icon font library -->
+
+          <!-- ★ Wowmaショップ商品マッチング -->
           <li class="nav-item menu-open">
-            <a href="#" class="nav-link active">
-              <i class="nav-icon fas fa-tachometer-alt"></i>
+            <a href="/yaget/wowma_match/" class="nav-link active" style="background-color:#1e6a3e;">
+              <i class="nav-icon fas fa-search-dollar"></i>
               <p>
-                Dashboard
+                Wowma商品マッチング
                 <i class="right fas fa-angle-left"></i>
               </p>
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="/yaget/buyers_goods_detail_list/" class="nav-link active">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>商品一覧</p>
+                <a href="/yaget/wowma_match/" class="nav-link active">
+                  <i class="fas fa-play-circle nav-icon"></i>
+                  <p>実行・操作</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="/yaget/upd_byers_ct_list/" class="nav-link active">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>buyersリスト更新</p>
+                <a href="/yaget/wowma_match/list/" class="nav-link active">
+                  <i class="fas fa-list nav-icon"></i>
+                  <p>結果一覧</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="/yaget/stock_chk/" class="nav-link active">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>在庫更新</p>
+                <a href="/yaget/wowma_match/list/?listable=1" class="nav-link active">
+                  <i class="fas fa-check-circle nav-icon text-success"></i>
+                  <p>出品可商品のみ</p>
                 </a>
               </li>
+            </ul>
+          </li>
+
+          <!-- 注文管理 -->
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-shopping-cart"></i>
+              <p>
+                注文管理
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="/yaget/buyers_goods_delete/" class="nav-link active">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>商品一括削除</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="/yaget/qoo_order_list/" class="nav-link active">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Qoo10注文一覧</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="/yaget/wow_order_list/" class="nav-link active">
+                <a href="/yaget/wow_order_list/" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Wowma注文一覧</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="/yaget/batch_status_list/" class="nav-link active">
+                <a href="/yaget/qoo_order_list/" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>バッチ状況確認</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="/yaget/error_goods_log_list/" class="nav-link active">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>エラーになった商品確認</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="/yaget/black_list_list/" class="nav-link active">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>ブラックリスト一覧</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="/yaget/wowma_cat_list/" class="nav-link active">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>wowmaカテゴリ一覧</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="/yaget/wowma_cat_model_list/" class="nav-link active">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>wowmaカテゴリ一覧(model版)</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="/yaget/qoo_shop_info_list/" class="nav-link active">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>qoo10ショップ情報一覧</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="/yaget/wow_shop_info_list/" class="nav-link active">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>wowmaショップ情報一覧</p>
-                </a>
-              </li>
-
-              <li class="nav-item">
-                <a href="/yaget/ajax_test" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>ajax テスト</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="./index3.html" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Dashboard v3</p>
+                  <p>Qoo10注文一覧</p>
                 </a>
               </li>
             </ul>
           </li>
 
-          <li class="nav-item menu-open">
-            <a href="#" class="nav-link active">
-              <i class="nav-icon fas fa-tachometer-alt"></i>
+          <!-- 商品管理 -->
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-box-open"></i>
               <p>
-                Qoo10用ASIN管理(SPAPI)
+                商品管理
                 <i class="right fas fa-angle-left"></i>
               </p>
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="/yaget/qoo_asin_detail_list/" class="nav-link active">
+                <a href="/yaget/buyers_goods_detail_list/" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Qoo10用ASIN一覧(SPAPI)</p>
+                  <p>商品一覧</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="/yaget/stock_chk/" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>在庫更新</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="/yaget/buyers_goods_delete/" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>商品一括削除</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="/yaget/upd_byers_ct_list/" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>buyersリスト更新</p>
                 </a>
               </li>
             </ul>
           </li>
 
-          <li class="nav-item">
-            <a href="pages/widgets.html" class="nav-link">
-              <i class="nav-icon fas fa-th"></i>
-              <p>
-                Widgets
-                <span class="right badge badge-danger">New</span>
-              </p>
-            </a>
-          </li>
+          <!-- ASIN管理(SP-API) -->
           <li class="nav-item">
             <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-copy"></i>
+              <i class="nav-icon fab fa-amazon"></i>
               <p>
-                Layout Options
-                <i class="fas fa-angle-left right"></i>
-                <span class="badge badge-info right">6</span>
+                ASIN管理(SP-API)
+                <i class="right fas fa-angle-left"></i>
               </p>
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="pages/layout/top-nav.html" class="nav-link">
+                <a href="/yaget/qoo_asin_detail_list/" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Top Navigation</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="pages/layout/top-nav-sidebar.html" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Top Navigation + Sidebar</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="pages/layout/top-nav-sidebar.html" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>てすとで追加したナビだよ～</p>
+                  <p>Qoo10用ASIN一覧</p>
                 </a>
               </li>
             </ul>
+          </li>
+
+          <!-- マスタ・設定 -->
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-cog"></i>
+              <p>
+                マスタ・設定
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="/yaget/wowma_cat_list/" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Wowmaカテゴリ一覧</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="/yaget/wow_shop_info_list/" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Wowmaショップ情報</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="/yaget/qoo_shop_info_list/" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Qoo10ショップ情報</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="/yaget/black_list_list/" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>ブラックリスト</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+
+          <!-- 運用 -->
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-tools"></i>
+              <p>
+                運用
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="/yaget/batch_status_list/" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>バッチ実行状況</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="/yaget/error_goods_log_list/" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>エラー商品ログ</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+
         </ul>
       </nav>
       <!-- /.sidebar-menu -->

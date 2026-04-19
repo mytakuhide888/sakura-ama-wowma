@@ -152,4 +152,9 @@ urlpatterns = [
     path('qoo_asin_csv_import/', views.QooAsinCsvImport.as_view(), name='qoo_asin_csv_import'),
     path('get_qoo_asin_detail_single/', views.get_qoo_asin_detail_single, name='get_qoo_asin_detail_single'),
     path('get_qoo_asin_detail_upd_csv/', views.get_qoo_asin_detail_upd_csv, name='get_qoo_asin_detail_upd_csv'),
+    # Wowmaショップ商品マッチング
+    path('wowma_match/', views.wowma_match_top, name='wowma_match_top'),
+    path('wowma_match/status/', views.wowma_match_status_ajax, name='wowma_match_status_ajax'),
+    path('wowma_match/list/', views.wowma_match_list, name='wowma_match_list'),
+    path('wowma_match/<int:pk>/detail/', views.wowma_match_detail, name='wowma_match_detail'),
 ]

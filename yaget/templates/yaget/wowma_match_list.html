@@ -1,0 +1,222 @@
+{% extends './base.html' %}
+{% load static %}
+{% block content %}
+<div class="content-wrapper">
+  <div class="content-header">
+    <div class="container-fluid">
+      <div class="row mb-2">
+        <div class="col-sm-6">
+          <h1 class="m-0">商品マッチング結果一覧</h1>
+        </div>
+        <div class="col-sm-6">
+          <ol class="breadcrumb float-sm-right">
+            <li class="breadcrumb-item"><a href="/yaget/top/">Home</a></li>
+            <li class="breadcrumb-item"><a href="{% url 'yaget:wowma_match_top' %}">Wowmaマッチング</a></li>
+            <li class="breadcrumb-item active">結果一覧</li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <section class="content">
+    <div class="container-fluid">
+
+      <!-- フィルタ -->
+      <div class="card card-outline card-secondary mb-3">
+        <div class="card-header"><h3 class="card-title">絞り込み</h3></div>
+        <div class="card-body">
+          <form method="GET" class="form-inline">
+            <div class="form-group mr-3">
+              <label class="mr-1">ユーザーID</label>
+              <input type="text" class="form-control form-control-sm" name="user_id" value="{{ user_id }}">
+            </div>
+            <div class="form-group mr-3">
+              <label class="mr-1">ステータス</label>
+              <select class="form-control form-control-sm" name="status">
+                <option value="">全て</option>
+                <option value="0" {% if status_f == '0' %}selected{% endif %}>未処理</option>
+                <option value="1" {% if status_f == '1' %}selected{% endif %}>ASIN取得済</option>
+                <option value="2" {% if status_f == '2' %}selected{% endif %}>該当なし</option>
+                <option value="3" {% if status_f == '3' %}selected{% endif %}>詳細取得済</option>
+                <option value="9" {% if status_f == '9' %}selected{% endif %}>エラー</option>
+              </select>
+            </div>
+            <div class="form-group mr-3">
+              <label class="mr-1">出品可否</label>
+              <select class="form-control form-control-sm" name="listable">
+                <option value="">全て</option>
+                <option value="1" {% if listable_f == '1' %}selected{% endif %}>出品可のみ</option>
+                <option value="0" {% if listable_f == '0' %}selected{% endif %}>除外のみ</option>
+              </select>
+            </div>
+            <button type="submit" class="btn btn-sm btn-primary mr-2">絞り込み</button>
+            <a href="{% url 'yaget:wowma_match_list' %}" class="btn btn-sm btn-default">リセット</a>
+          </form>
+        </div>
+      </div>
+
+      <!-- 件数 -->
+      <p class="text-muted small">{{ page_obj.paginator.count }} 件中 {{ page_obj.start_index }}〜{{ page_obj.end_index }} 件表示</p>
+
+      <!-- 一覧テーブル -->
+      <div class="card">
+        <div class="card-body p-0">
+          <table class="table table-sm table-hover table-bordered" style="font-size:0.82em;">
+            <thead class="thead-light">
+              <tr>
+                <th style="width:5%">ステータス</th>
+                <th style="width:18%">Wowma商品</th>
+                <th style="width:8%">ASIN</th>
+                <th style="width:5%">出品可否</th>
+                <th style="width:5%">FBA</th>
+                <th style="width:7%">発送(h)</th>
+                <th style="width:7%">在庫状況</th>
+                <th style="width:5%">Prime</th>
+                <th style="width:6%">価格(円)</th>
+                <th style="width:12%">カテゴリ</th>
+                <th style="width:10%">除外理由</th>
+                <th style="width:5%">詳細</th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for item in page_obj %}
+              <tr>
+                <!-- ステータス -->
+                <td class="text-center">
+                  {% if item.status == 0 %}<span class="badge badge-secondary">未処理</span>
+                  {% elif item.status == 1 %}<span class="badge badge-info">ASIN済</span>
+                  {% elif item.status == 2 %}<span class="badge badge-warning">該当なし</span>
+                  {% elif item.status == 3 %}<span class="badge badge-success">詳細済</span>
+                  {% else %}<span class="badge badge-danger">ERR</span>{% endif %}
+                </td>
+
+                <!-- Wowma商品 -->
+                <td>
+                  <a href="{{ item.item_url }}" target="_blank" title="{{ item.item_name }}">
+                    {{ item.item_name|truncatechars:40 }}
+                  </a>
+                </td>
+
+                <!-- ASIN -->
+                <td class="text-center">
+                  {% if item.asin %}
+                  <a href="https://www.amazon.co.jp/dp/{{ item.asin }}" target="_blank">
+                    <small>{{ item.asin }}</small>
+                  </a>
+                  {% else %}-{% endif %}
+                </td>
+
+                {% if item.amazon_detail %}
+                <!-- 出品可否 -->
+                <td class="text-center">
+                  {% if item.amazon_detail.is_listable %}
+                    <span class="text-success font-weight-bold">✓</span>
+                  {% elif item.amazon_detail.is_listable == False %}
+                    <span class="text-danger">✗</span>
+                  {% else %}-{% endif %}
+                </td>
+
+                <!-- FBA -->
+                <td class="text-center">
+                  {% if item.amazon_detail.has_fba_offer %}
+                    <span class="text-success">✓</span>
+                    {% if item.amazon_detail.is_sold_by_amazon %}
+                      <small class="text-muted">Amazon直販</small>
+                    {% endif %}
+                  {% elif item.amazon_detail.has_fba_offer == False %}
+                    <span class="text-danger">✗</span>
+                  {% else %}-{% endif %}
+                </td>
+
+                <!-- 発送時間 -->
+                <td class="text-center">
+                  {% if item.amazon_detail.fba_ship_max_hours is not None %}
+                    {% if item.amazon_detail.fba_ship_max_hours <= 24 %}
+                      <span class="text-success">{{ item.amazon_detail.fba_ship_min_hours }}-{{ item.amazon_detail.fba_ship_max_hours }}h</span>
+                    {% elif item.amazon_detail.fba_ship_max_hours <= 72 %}
+                      <span class="text-warning">{{ item.amazon_detail.fba_ship_min_hours }}-{{ item.amazon_detail.fba_ship_max_hours }}h</span>
+                    {% else %}
+                      <span class="text-danger">{{ item.amazon_detail.fba_ship_min_hours }}-{{ item.amazon_detail.fba_ship_max_hours }}h</span>
+                    {% endif %}
+                  {% else %}-{% endif %}
+                </td>
+
+                <!-- 在庫状況 -->
+                <td class="text-center">
+                  {% if item.amazon_detail.availability_type == 'NOW' %}
+                    <span class="text-success">在庫あり</span>
+                  {% elif item.amazon_detail.availability_type == 'FUTURE_DATE' %}
+                    <span class="text-warning">予約</span>
+                    {% if item.amazon_detail.available_date %}
+                      <small>{{ item.amazon_detail.available_date|date:"m/d" }}</small>
+                    {% endif %}
+                  {% elif item.amazon_detail.availability_type == 'UNKNOWN' %}
+                    <span class="text-muted">不明</span>
+                  {% else %}
+                    <span class="text-muted">-</span>
+                  {% endif %}
+                </td>
+
+                <!-- Prime -->
+                <td class="text-center">
+                  {% if item.amazon_detail.is_prime %}<span class="text-info font-weight-bold">Prime</span>
+                  {% else %}<span class="text-muted">-</span>{% endif %}
+                </td>
+
+                <!-- 価格 -->
+                <td class="text-right">
+                  {% if item.amazon_detail.fba_price %}
+                    ¥{{ item.amazon_detail.fba_price|floatformat:0 }}
+                  {% else %}-{% endif %}
+                </td>
+
+                <!-- カテゴリ -->
+                <td><small>{{ item.amazon_detail.category|truncatechars:30 }}</small></td>
+
+                <!-- 除外理由 -->
+                <td>
+                  {% if item.amazon_detail.exclusion_reason %}
+                    <small class="text-danger">{{ item.amazon_detail.exclusion_reason }}</small>
+                  {% else %}-{% endif %}
+                </td>
+
+                {% else %}
+                <td colspan="9" class="text-center text-muted"><small>詳細未取得</small></td>
+                {% endif %}
+
+                <!-- 詳細リンク -->
+                <td class="text-center">
+                  <a href="{% url 'yaget:wowma_match_detail' item.pk %}" class="btn btn-xs btn-default">
+                    <i class="fas fa-eye"></i>
+                  </a>
+                </td>
+              </tr>
+              {% empty %}
+              <tr><td colspan="12" class="text-center text-muted py-3">データなし</td></tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        </div>
+        <!-- ページネーション -->
+        {% if page_obj.has_other_pages %}
+        <div class="card-footer">
+          <nav>
+            <ul class="pagination pagination-sm mb-0">
+              {% if page_obj.has_previous %}
+              <li class="page-item"><a class="page-link" href="?page={{ page_obj.previous_page_number }}&user_id={{ user_id }}&status={{ status_f }}&listable={{ listable_f }}">«</a></li>
+              {% endif %}
+              <li class="page-item disabled"><a class="page-link">{{ page_obj.number }} / {{ page_obj.paginator.num_pages }}</a></li>
+              {% if page_obj.has_next %}
+              <li class="page-item"><a class="page-link" href="?page={{ page_obj.next_page_number }}&user_id={{ user_id }}&status={{ status_f }}&listable={{ listable_f }}">»</a></li>
+              {% endif %}
+            </ul>
+          </nav>
+        </div>
+        {% endif %}
+      </div>
+
+    </div>
+  </section>
+</div>
+{% endblock %}

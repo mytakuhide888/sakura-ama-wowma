@@ -1,0 +1,190 @@
+{% extends './base.html' %}
+{% load static %}
+{% block content %}
+<div class="content-wrapper">
+  <div class="content-header">
+    <div class="container-fluid">
+      <div class="row mb-2">
+        <div class="col-sm-6">
+          <h1 class="m-0">Wowmaショップ商品マッチング</h1>
+        </div>
+        <div class="col-sm-6">
+          <ol class="breadcrumb float-sm-right">
+            <li class="breadcrumb-item"><a href="/yaget/top/">Home</a></li>
+            <li class="breadcrumb-item active">Wowmaショップ商品マッチング</li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <section class="content">
+    <div class="container-fluid">
+
+      {% if error %}
+      <div class="alert alert-danger">{{ error }}</div>
+      {% endif %}
+
+      <!-- ステータス集計 -->
+      <div class="row mb-3">
+        <div class="col-lg-2 col-6">
+          <div class="small-box bg-secondary">
+            <div class="inner"><h3 id="cnt-pending">{{ status_summary.pending }}</h3><p>未処理</p></div>
+          </div>
+        </div>
+        <div class="col-lg-2 col-6">
+          <div class="small-box bg-info">
+            <div class="inner"><h3 id="cnt-matched">{{ status_summary.matched }}</h3><p>ASIN取得済</p></div>
+          </div>
+        </div>
+        <div class="col-lg-2 col-6">
+          <div class="small-box bg-warning">
+            <div class="inner"><h3 id="cnt-not-found">{{ status_summary.not_found }}</h3><p>Amazon該当なし</p></div>
+          </div>
+        </div>
+        <div class="col-lg-2 col-6">
+          <div class="small-box bg-success">
+            <div class="inner"><h3 id="cnt-detail">{{ status_summary.detail_fetched }}</h3><p>詳細取得済</p></div>
+          </div>
+        </div>
+        <div class="col-lg-2 col-6">
+          <div class="small-box bg-danger">
+            <div class="inner"><h3 id="cnt-error">{{ status_summary.error }}</h3><p>エラー</p></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <!-- 実行フォーム -->
+        <div class="col-md-5">
+          <div class="card card-primary">
+            <div class="card-header"><h3 class="card-title">バッチ実行</h3></div>
+            <form method="POST">
+              {% csrf_token %}
+              <div class="card-body">
+
+                <div class="form-group">
+                  <label>WowmaショップURL または ユーザーID</label>
+                  <input type="text" class="form-control" name="shop_url"
+                         placeholder="https://wowma.jp/user/69303756/list"
+                         value="{{ request.POST.shop_url|default:'' }}">
+                  <small class="text-muted">例: https://wowma.jp/user/69303756/list　または　69303756</small>
+                </div>
+
+                <div class="form-group">
+                  <label>実行フェーズ</label>
+                  <select class="form-control" name="phase">
+                    <option value="all">all（scrape → match → detail）</option>
+                    <option value="scrape">scrape のみ（Wowma商品一覧取得）</option>
+                    <option value="match">match のみ（ASIN検索）</option>
+                    <option value="detail">detail のみ（Amazon詳細・FBA情報取得）</option>
+                  </select>
+                </div>
+
+                <div class="row">
+                  <div class="col-6">
+                    <div class="form-group">
+                      <label>取得件数上限（0=無制限）</label>
+                      <input type="number" class="form-control" name="limit" value="0" min="0">
+                    </div>
+                  </div>
+                  <div class="col-6">
+                    <div class="form-group">
+                      <label>FBA発送上限（時間）</label>
+                      <input type="number" class="form-control" name="max_ship_hours" value="96" min="1">
+                      <small class="text-muted">96h=4日以内</small>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+              <div class="card-footer">
+                <button type="submit" class="btn btn-primary">
+                  <i class="fas fa-play"></i> 実行
+                </button>
+                <a href="{% url 'yaget:wowma_match_list' %}" class="btn btn-default ml-2">
+                  <i class="fas fa-list"></i> 結果一覧
+                </a>
+              </div>
+            </form>
+          </div>
+        </div>
+
+        <!-- 実行状況 -->
+        <div class="col-md-7">
+          {% if batch_id %}
+          <div class="card card-info" id="running-card">
+            <div class="card-header">
+              <h3 class="card-title">
+                <i class="fas fa-spinner fa-spin" id="spin-icon"></i>
+                実行中 ... ユーザーID: {{ user_id }} / フェーズ: {{ phase }}
+              </h3>
+            </div>
+            <div class="card-body">
+              <div class="row text-center">
+                <div class="col-4"><span class="badge badge-info px-3 py-2">ASIN取得済<br><strong id="live-matched">-</strong></span></div>
+                <div class="col-4"><span class="badge badge-success px-3 py-2">詳細取得済<br><strong id="live-detail">-</strong></span></div>
+                <div class="col-4"><span class="badge badge-warning px-3 py-2">出品可<br><strong id="live-listable">-</strong></span></div>
+              </div>
+              <p class="mt-3 text-muted small" id="poll-msg">5秒ごとに自動更新中...</p>
+            </div>
+          </div>
+          <script>
+          (function(){
+            var userId  = "{{ user_id }}";
+            var batchId = "{{ batch_id }}";
+            var timer = setInterval(function(){
+              fetch("/yaget/wowma_match/status/?user_id=" + userId + "&batch_id=" + batchId)
+                .then(function(r){ return r.json(); })
+                .then(function(d){
+                  document.getElementById("live-matched").textContent  = d.matched  || 0;
+                  document.getElementById("live-detail").textContent   = d.detail_fetched || 0;
+                  document.getElementById("live-listable").textContent = d.listable || 0;
+                  document.getElementById("cnt-pending").textContent   = d.pending  || 0;
+                  document.getElementById("cnt-matched").textContent   = d.matched  || 0;
+                  document.getElementById("cnt-not-found").textContent = d.not_found|| 0;
+                  document.getElementById("cnt-detail").textContent    = d.detail_fetched|| 0;
+                  document.getElementById("cnt-error").textContent     = d.error    || 0;
+                  if (d.batch_status === 1 || d.batch_status === 2) {
+                    clearInterval(timer);
+                    document.getElementById("spin-icon").className = "fas fa-check-circle text-success";
+                    document.getElementById("poll-msg").textContent = "完了しました";
+                  }
+                });
+            }, 5000);
+          })();
+          </script>
+          {% endif %}
+
+          <!-- バッチ履歴 -->
+          <div class="card">
+            <div class="card-header"><h3 class="card-title">実行履歴（直近10件）</h3></div>
+            <div class="card-body p-0">
+              <table class="table table-sm table-hover">
+                <thead><tr><th>ID</th><th>バッチ名</th><th>状態</th><th>開始時刻</th></tr></thead>
+                <tbody>
+                  {% for b in batch_list %}
+                  <tr>
+                    <td>{{ b.batch_id }}</td>
+                    <td>{{ b.batch_name }}</td>
+                    <td>
+                      {% if b.batch_status == 0 %}<span class="badge badge-info">実行中</span>
+                      {% elif b.batch_status == 1 %}<span class="badge badge-success">正常終了</span>
+                      {% else %}<span class="badge badge-danger">異常終了</span>{% endif %}
+                    </td>
+                    <td>{{ b.start_date|date:"m/d H:i" }}</td>
+                  </tr>
+                  {% empty %}
+                  <tr><td colspan="4" class="text-center text-muted">履歴なし</td></tr>
+                  {% endfor %}
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+      </div><!-- /row -->
+    </div>
+  </section>
+</div>
+{% endblock %}

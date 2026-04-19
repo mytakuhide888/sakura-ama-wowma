@@ -1,0 +1,203 @@
+{% extends './base.html' %}
+{% load static %}
+{% block content %}
+<div class="content-wrapper">
+  <div class="content-header">
+    <div class="container-fluid">
+      <div class="row mb-2">
+        <div class="col-sm-6">
+          <h1 class="m-0">ASIN詳細</h1>
+        </div>
+        <div class="col-sm-6">
+          <ol class="breadcrumb float-sm-right">
+            <li class="breadcrumb-item"><a href="/yaget/top/">Home</a></li>
+            <li class="breadcrumb-item"><a href="{% url 'yaget:wowma_match_top' %}">Wowmaマッチング</a></li>
+            <li class="breadcrumb-item"><a href="{% url 'yaget:wowma_match_list' %}">一覧</a></li>
+            <li class="breadcrumb-item active">詳細</li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <section class="content">
+    <div class="container-fluid">
+      <div class="row">
+
+        <!-- 左: Wowma / Amazon 基本情報 -->
+        <div class="col-md-6">
+          <div class="card card-primary card-outline">
+            <div class="card-header"><h3 class="card-title">Wowma商品情報</h3></div>
+            <div class="card-body">
+              <dl class="row">
+                <dt class="col-4">商品ID</dt><dd class="col-8">{{ item.wow_item_id }}</dd>
+                <dt class="col-4">商品名</dt><dd class="col-8"><a href="{{ item.item_url }}" target="_blank">{{ item.item_name }}</a></dd>
+                <dt class="col-4">ステータス</dt><dd class="col-8">
+                  {% if item.status == 0 %}<span class="badge badge-secondary">未処理</span>
+                  {% elif item.status == 1 %}<span class="badge badge-info">ASIN取得済</span>
+                  {% elif item.status == 2 %}<span class="badge badge-warning">該当なし</span>
+                  {% elif item.status == 3 %}<span class="badge badge-success">詳細取得済</span>
+                  {% else %}<span class="badge badge-danger">エラー</span>{% endif %}
+                </dd>
+                <dt class="col-4">ASIN</dt><dd class="col-8">
+                  {% if item.asin %}<a href="https://www.amazon.co.jp/dp/{{ item.asin }}" target="_blank">{{ item.asin }}</a>{% else %}-{% endif %}
+                </dd>
+                <dt class="col-4">Amazon商品名</dt><dd class="col-8">{{ item.asin_name|default:'-' }}</dd>
+              </dl>
+            </div>
+          </div>
+
+          {% if item.amazon_detail %}
+          <div class="card card-success card-outline">
+            <div class="card-header"><h3 class="card-title">Amazon基本情報</h3></div>
+            <div class="card-body">
+              <div class="row">
+                <div class="col-4 text-center">
+                  {% if item.amazon_detail.main_image_url %}
+                  <img src="{{ item.amazon_detail.main_image_url }}" class="img-fluid" style="max-height:150px;" alt="商品画像">
+                  {% else %}<span class="text-muted">画像なし</span>{% endif %}
+                </div>
+                <div class="col-8">
+                  <dl class="row">
+                    <dt class="col-5">タイトル</dt><dd class="col-7"><small>{{ item.amazon_detail.title|truncatechars:80 }}</small></dd>
+                    <dt class="col-5">ブランド</dt><dd class="col-7">{{ item.amazon_detail.brand|default:'-' }}</dd>
+                    <dt class="col-5">カテゴリ</dt><dd class="col-7"><small>{{ item.amazon_detail.category|default:'-' }}</small></dd>
+                    <dt class="col-5">参考価格</dt><dd class="col-7">{% if item.amazon_detail.list_price %}¥{{ item.amazon_detail.list_price|floatformat:0 }}{% else %}-{% endif %}</dd>
+                    <dt class="col-5">販売ランク</dt><dd class="col-7">{% if item.amazon_detail.sales_rank %}{{ item.amazon_detail.sales_rank|floatformat:0 }}位{% if item.amazon_detail.sales_rank_category %} ({{ item.amazon_detail.sales_rank_category }}){% endif %}{% else %}-{% endif %}</dd>
+                    <dt class="col-5">取扱終了</dt><dd class="col-7">{% if item.amazon_detail.is_discontinued %}<span class="text-danger">終了</span>{% else %}販売中{% endif %}</dd>
+                  </dl>
+                </div>
+              </div>
+              {% if item.amazon_detail.description %}
+              <p class="mt-2 small text-muted"><strong>説明:</strong> {{ item.amazon_detail.description|truncatechars:300 }}</p>
+              {% endif %}
+            </div>
+          </div>
+          {% endif %}
+        </div>
+
+        <!-- 右: FBA・出品可否 -->
+        <div class="col-md-6">
+          {% if item.amazon_detail %}
+          <div class="card {% if item.amazon_detail.is_listable %}card-success{% elif item.amazon_detail.is_listable == False %}card-danger{% else %}card-secondary{% endif %} card-outline">
+            <div class="card-header">
+              <h3 class="card-title">
+                出品可否判定:
+                {% if item.amazon_detail.is_listable %}
+                  <span class="text-success font-weight-bold">✓ 出品可</span>
+                {% elif item.amazon_detail.is_listable == False %}
+                  <span class="text-danger font-weight-bold">✗ 除外 — {{ item.amazon_detail.exclusion_reason }}</span>
+                {% else %}
+                  <span class="text-muted">未判定</span>
+                {% endif %}
+              </h3>
+            </div>
+            <div class="card-body">
+              <table class="table table-sm table-bordered">
+                <thead class="thead-light"><tr><th>項目</th><th>値</th><th>判定</th></tr></thead>
+                <tbody>
+                  <tr>
+                    <td>FBAオファー存在</td>
+                    <td>{% if item.amazon_detail.has_fba_offer %}あり ({{ item.amazon_detail.fba_offer_count }}件){% elif item.amazon_detail.has_fba_offer == False %}なし{% else %}-{% endif %}</td>
+                    <td>{% if item.amazon_detail.has_fba_offer %}<span class="text-success">OK</span>{% elif item.amazon_detail.has_fba_offer == False %}<span class="text-danger">NG</span>{% else %}-{% endif %}</td>
+                  </tr>
+                  <tr>
+                    <td>在庫状況</td>
+                    <td>
+                      {% if item.amazon_detail.availability_type == 'NOW' %}即日出荷可
+                      {% elif item.amazon_detail.availability_type == 'FUTURE_DATE' %}予約商品{% if item.amazon_detail.available_date %} ({{ item.amazon_detail.available_date|date:"Y/m/d" }}){% endif %}
+                      {% elif item.amazon_detail.availability_type == 'UNKNOWN' %}不明
+                      {% else %}{{ item.amazon_detail.availability_type|default:'-' }}{% endif %}
+                    </td>
+                    <td>{% if item.amazon_detail.availability_type == 'NOW' %}<span class="text-success">OK</span>
+                        {% elif item.amazon_detail.availability_type %}<span class="text-danger">NG</span>
+                        {% else %}-{% endif %}
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>予約商品</td>
+                    <td>{% if item.amazon_detail.is_preorder %}予約品{% else %}通常販売{% endif %}</td>
+                    <td>{% if item.amazon_detail.is_preorder %}<span class="text-danger">NG</span>{% else %}<span class="text-success">OK</span>{% endif %}</td>
+                  </tr>
+                  <tr>
+                    <td>FBA発送時間</td>
+                    <td>
+                      {% if item.amazon_detail.fba_ship_min_hours is not None %}
+                        {{ item.amazon_detail.fba_ship_min_hours }}h 〜 {{ item.amazon_detail.fba_ship_max_hours }}h
+                      {% else %}-{% endif %}
+                    </td>
+                    <td>
+                      {% if item.amazon_detail.fba_ship_max_hours is not None %}
+                        {% if item.amazon_detail.fba_ship_max_hours <= 96 %}
+                          <span class="text-success">OK (≤96h)</span>
+                        {% else %}
+                          <span class="text-danger">NG (>96h)</span>
+                        {% endif %}
+                      {% else %}-{% endif %}
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Amazon直販</td>
+                    <td>{% if item.amazon_detail.is_sold_by_amazon %}あり{% else %}なし{% endif %}</td>
+                    <td>{% if item.amazon_detail.is_sold_by_amazon %}<span class="text-success">◎</span>{% else %}参考{% endif %}</td>
+                  </tr>
+                  <tr>
+                    <td>Prime対象</td>
+                    <td>{% if item.amazon_detail.is_prime %}Prime{% else %}非Prime{% endif %}</td>
+                    <td>{% if item.amazon_detail.is_prime %}<span class="text-info">◎</span>{% else %}-{% endif %}</td>
+                  </tr>
+                  <tr>
+                    <td>BuyBox獲得(FBA)</td>
+                    <td>{% if item.amazon_detail.fba_is_buybox_winner %}獲得中{% else %}なし{% endif %}</td>
+                    <td>{% if item.amazon_detail.fba_is_buybox_winner %}<span class="text-success">◎</span>{% else %}-{% endif %}</td>
+                  </tr>
+                  <tr>
+                    <td>数量割引</td>
+                    <td>{% if item.amazon_detail.has_quantity_discount %}あり{% else %}なし{% endif %}</td>
+                    <td>{% if item.amazon_detail.has_quantity_discount %}<span class="text-warning">注意</span>{% else %}<span class="text-success">OK</span>{% endif %}</td>
+                  </tr>
+                  <tr>
+                    <td>FBA価格</td>
+                    <td>{% if item.amazon_detail.fba_price %}¥{{ item.amazon_detail.fba_price|floatformat:0 }}{% if item.amazon_detail.fba_shipping_price %} + 送料¥{{ item.amazon_detail.fba_shipping_price|floatformat:0 }}{% endif %}{% else %}-{% endif %}</td>
+                    <td>-</td>
+                  </tr>
+                  <tr>
+                    <td>自己出品オファー数</td>
+                    <td>{{ item.amazon_detail.merchant_offer_count|default:'-' }}</td>
+                    <td>-</td>
+                  </tr>
+                </tbody>
+              </table>
+
+              <small class="text-muted">
+                詳細取得: {{ item.amazon_detail.fetched_at|date:"Y/m/d H:i" }}
+                {% if item.amazon_detail.offers_fetched_at %}/ オファー: {{ item.amazon_detail.offers_fetched_at|date:"Y/m/d H:i" }}{% endif %}
+              </small>
+            </div>
+          </div>
+
+          {% if item.amazon_detail.bullet_points %}
+          <div class="card">
+            <div class="card-header"><h3 class="card-title">商品特徴</h3></div>
+            <div class="card-body">
+              <ul class="small">
+                {% for bp in item.amazon_detail.bullet_points|slice:":10" %}
+                  <li>{{ bp }}</li>
+                {% endfor %}
+              </ul>
+            </div>
+          </div>
+          {% endif %}
+
+          {% else %}
+          <div class="alert alert-info">Amazon詳細情報が未取得です。detailフェーズを実行してください。</div>
+          {% endif %}
+        </div>
+
+      </div><!-- /row -->
+
+      <a href="{% url 'yaget:wowma_match_list' %}" class="btn btn-default">← 一覧に戻る</a>
+    </div>
+  </section>
+</div>
+{% endblock %}
