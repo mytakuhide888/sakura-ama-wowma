@@ -97,40 +97,45 @@ class Command(BaseCommand):
             driver.get(shop_url)
             time.sleep(4)  # SPA初期レンダリング待ち
 
-            # ブラウザ内JSでカタログAPIを叩き、全ページの商品IDを収集
-            item_ids = self._fetch_all_item_ids_via_js(driver, user_id, limit)
-            self.stdout.write(f'  商品ID取得数: {len(item_ids)}')
+            # カタログAPIから商品ID・商品名・URLを一括取得（詳細ページアクセス不要）
+            items = self._fetch_all_items_via_js(driver, user_id, limit)
+            self.stdout.write(f'  商品取得数: {len(items)}')
 
-            if not item_ids:
+            if not items:
                 self.stdout.write(self.style.WARNING('  商品が見つかりませんでした'))
                 return
 
-            # 各商品の詳細ページから商品名を取得してDB保存
             saved = 0
-            for i, item_id in enumerate(item_ids, 1):
-                try:
-                    item_name = self._get_item_name(item_id)
-                    if not item_name:
-                        self.stdout.write(f'  [{i}/{len(item_ids)}] {item_id}: 商品名取得失敗、スキップ')
-                        continue
+            for i, item in enumerate(items, 1):
+                lot_no    = item['lot_no']
+                item_name = item['item_name']
+                item_url  = item['item_url']
 
+                # DOMフォールバック時は商品名が空のため詳細ページから補完
+                if not item_name:
+                    item_name = self._get_item_name(lot_no)
+                    if not item_name:
+                        self.stdout.write(f'  [{i}/{len(items)}] {lot_no}: 商品名取得失敗、スキップ')
+                        continue
+                    time.sleep(SCRAPE_INTERVAL)  # 詳細ページfetch後のみ待機
+
+                try:
                     obj, created = WowmaShopItem.objects.update_or_create(
-                        wow_item_id=str(item_id),
+                        wow_item_id=lot_no,
                         defaults={
                             'shop_user_id': user_id,
                             'item_name':    item_name,
-                            'item_url':     ITEM_DETAIL_URL.format(item_id=item_id),
+                            'item_url':     item_url,
                         }
                     )
                     action = '新規' if created else '更新'
-                    self.stdout.write(f'  [{i}/{len(item_ids)}] {item_id}: {item_name[:40]}... → {action}')
+                    self.stdout.write(f'  [{i}/{len(items)}] {lot_no}: {item_name[:40]} → {action}')
                     saved += 1
-                    time.sleep(SCRAPE_INTERVAL)
                 except Exception as e:
-                    self.stdout.write(f'  [{i}/{len(item_ids)}] {item_id}: エラー {e}')
+                    self.stdout.write(f'  [{i}/{len(items)}] {lot_no}: DBエラー {e}')
                     logger.debug(traceback.format_exc())
 
-            self.stdout.write(f'[Phase 1] 完了: {saved}/{len(item_ids)} 件保存')
+            self.stdout.write(f'[Phase 1] 完了: {saved}/{len(items)} 件保存')
 
         except Exception as e:
             logger.debug(traceback.format_exc())
@@ -142,9 +147,12 @@ class Command(BaseCommand):
                 except Exception:
                     pass
 
-    def _fetch_all_item_ids_via_js(self, driver, user_id, limit):
-        """Seleniumブラウザ内でfetch()を実行してカタログAPIから商品IDを収集"""
-        item_ids = []
+    def _fetch_all_items_via_js(self, driver, user_id, limit):
+        """Seleniumブラウザ内でfetch()を実行してカタログAPIから商品情報を収集。
+        hitItemsにitemNameが含まれるため、詳細ページへのアクセスは不要。
+        戻り値: list of dict {lot_no, item_name, item_url}
+        """
+        items_out = []
         page = 1
 
         while True:
@@ -167,7 +175,7 @@ fetch('/catalog/api/search/items?uads=0&user={user_id}&ipp={IPP}&page={page}&acc
                 self.stdout.write(f'  APIエラー page={page}: {data}')
                 break
 
-            pg_info = data.get('pageInformation', {})
+            pg_info     = data.get('pageInformation', {})
             total_pages = pg_info.get('totalPages', 0)
             total_count = pg_info.get('totalCount', 0)
             hit_items   = data.get('hitItems', [])
@@ -175,19 +183,24 @@ fetch('/catalog/api/search/items?uads=0&user={user_id}&ipp={IPP}&page={page}&acc
             self.stdout.write(f'  page={page}/{total_pages} totalCount={total_count} hitItems={len(hit_items)}')
 
             if not hit_items:
-                # ブラウザ内JSでも取得できない場合はDOM fallback
                 if page == 1:
                     self.stdout.write('  APIから商品が取れません。DOM scraping に切り替えます')
-                    return self._fetch_item_ids_from_dom(driver, user_id, limit)
+                    return self._fetch_items_from_dom(driver, user_id, limit)
                 break
 
             for item in hit_items:
-                lot_no = item.get('lotNo')
-                if lot_no:
-                    item_ids.append(str(lot_no))
+                lot_no    = item.get('lotNo')
+                item_name = (item.get('itemName') or '').strip()
+                item_url  = item.get('url') or ITEM_DETAIL_URL.format(item_id=lot_no)
+                if lot_no and item_name:
+                    items_out.append({
+                        'lot_no':    str(lot_no),
+                        'item_name': item_name,
+                        'item_url':  item_url,
+                    })
 
-            if limit and len(item_ids) >= limit:
-                item_ids = item_ids[:limit]
+            if limit and len(items_out) >= limit:
+                items_out = items_out[:limit]
                 break
 
             if page >= total_pages:
@@ -196,12 +209,15 @@ fetch('/catalog/api/search/items?uads=0&user={user_id}&ipp={IPP}&page={page}&acc
             page += 1
             time.sleep(1)
 
-        return item_ids
+        return items_out
 
-    def _fetch_item_ids_from_dom(self, driver, user_id, limit):
-        """カタログAPIが失敗した場合のDOMスクレイピングによるフォールバック"""
+    def _fetch_items_from_dom(self, driver, user_id, limit):
+        """カタログAPIが失敗した場合のDOMスクレイピングフォールバック。
+        商品名はここでは取得できないため、item_nameを空にしておく。
+        後続処理で_get_item_name()により補完される。
+        """
         import re
-        item_ids = []
+        items_out = []
         page = 1
 
         while True:
@@ -210,20 +226,23 @@ fetch('/catalog/api/search/items?uads=0&user={user_id}&ipp={IPP}&page={page}&acc
             time.sleep(4)
 
             html = driver.page_source
-            # /item/数字 のリンクを抽出
             found = list(dict.fromkeys(re.findall(r'/item/(\d+)', html)))
             self.stdout.write(f'  DOM page={page}: {len(found)} 件')
 
             if not found:
                 break
 
-            item_ids.extend(found)
+            for lot_no in found:
+                items_out.append({
+                    'lot_no':    lot_no,
+                    'item_name': '',  # DOMからは名前が取れないため後で補完
+                    'item_url':  ITEM_DETAIL_URL.format(item_id=lot_no),
+                })
 
-            if limit and len(item_ids) >= limit:
-                item_ids = item_ids[:limit]
+            if limit and len(items_out) >= limit:
+                items_out = items_out[:limit]
                 break
 
-            # 次のページボタンの確認
             try:
                 next_btn = driver.find_element('css selector', 'a[aria-label="次のページ"], .pagination-next a, [data-page="next"]')
                 if next_btn:
@@ -234,7 +253,14 @@ fetch('/catalog/api/search/items?uads=0&user={user_id}&ipp={IPP}&page={page}&acc
             except Exception:
                 break
 
-        return list(dict.fromkeys(item_ids))
+        # lot_no重複除去
+        seen = set()
+        unique = []
+        for it in items_out:
+            if it['lot_no'] not in seen:
+                seen.add(it['lot_no'])
+                unique.append(it)
+        return unique
 
     def _get_item_name(self, item_id):
         """商品詳細ページのog:titleから商品名を取得（SSR確認済み）"""
